@@ -1,0 +1,108 @@
+1X - Comboboxes
+	11 - cmbOption1
+	12 - cmbOption2
+	13 - cmbOption3
+	14 - cmbOption4
+	15 - cmbWarlord
+	16 - cmbFactionUpgrade
+	17 - cmbRelic
+2X - Checkboxes
+	21 - cbOption1
+	22 - cbOption2
+	23 - cbOption3
+	25 - cbWarlord
+3X - NumericUpDowns
+	30 - nudUnitSize
+	31 - nudOption1
+	32 - nudOption2
+	33 - nudOption3
+	34 - nudOption4
+	35 - nudOption5
+	36 - nudOption6
+4X - groupBox1 Controls
+	411 - gb_cmbOption1
+	416 - gb_cmbFactionUpgrade
+	421 - cbLeaderOption1
+	422 - cbLeaderOption2
+5X - Subfaction Panel
+6X - Misc. Controls
+	60 - clbPsyker
+	61 - lbModelSelect
+	
+	
+----------------------
+	Template Codes
+----------------------
+M - Combobox
+K - Checkbox
+C - Character
+	- Contains the Warlord and Relic Controls
+NC - Named Character
+P - Psyker/Chaplain
+N - NumericUpDown
+L - Listbox
+S - Sergeant/Unit Leader Groupbox
+	- Paranthesis determine what controls are active in the groupbox
+	
+	
+------------------------------
+	Current Template Codes
+------------------------------
+1m2k_pc
+2m_c
+c
+1k_c
+2m_pc
+1k_pc
+N
+ncp
+1m
+2m
+1m1k
+2m1k
+3m
+NS(2k)
+NL2m1k
+NL2m2k
+nc
+1m1k_c
+2m1k_c
+3N
+1N1m
+4N
+5N
+N1kS(1m)
+-----------------
+  Special Cases
+-----------------
+cultist
+
+------------------------------
+	Uses of Template Codes
+------------------------------
+1m2k_pc - DG Daemon Prince
+2m_c    - DG Chaos Lord, DG Terminator Chaos Lord
+c       - Biologus Putrifier, Foul Blightspawn, Lord of Virulence, Noxious Blightbringer, Plague Surgeon, Tallyman
+1k_c    - Lord of Contagion
+2m_pc   - DG Terminator Sorcerer
+1k_pc   - Malignant Plaguecaster
+N       - Chaos Spawn, DG Possessed, Myphitic Blighthaulers, Poxwalkers
+ncp     - Mortarion, Typhus
+1m      - Foetid Bloat Drone
+2m      - Helbrute, Plagueburst Crawler
+1m1k    - Chaos Land Raider, Chaos Rhino
+2m1k    - Chaos Predator Annihilator, Chaos Land Raider Destructor
+3m      - Defiler
+NS(2k)  - Deathshroud Terminators
+NL2m1k  - Blightlord Terminators
+NL2m2k  - Plague Marines
+
+
+
+
+cbOption1 - 239, 126
+cbOption2 - 239, 156
+cbOption3 - 239, 186
+
+lblFactionUpgrade - 239, 213
+cmbFactionUpgrade - 243, 236
