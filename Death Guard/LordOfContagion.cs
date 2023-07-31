@@ -93,7 +93,7 @@ namespace Roster_Builder.Death_Guard
 
             switch (code)
             {
-                case 21:
+                case 11:
                     Weapons[0] = cmb1.SelectedItem as string;
                     break;
                 case 35:

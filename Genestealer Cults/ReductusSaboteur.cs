@@ -1,5 +1,4 @@
-﻿using Roster_Builder.Adeptus_Custodes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,24 +7,24 @@ using System.Windows.Forms;
 
 namespace Roster_Builder.Genestealer_Cults
 {
-    public class AcolyteIconward : Datasheets
+    public class ReductusSaboteur : Datasheets
     {
         GSC repo = new GSC();
-        public AcolyteIconward()
+        public ReductusSaboteur()
         {
-            DEFAULT_POINTS = 75;
+            DEFAULT_POINTS = 80;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
             {
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
-                "INFANTRY", "CHARACTER", "ACOLYTE ICONWARD"
+                "INFANTRY", "CHARACTER", "REDUCTUS SABOTEUR"
             });
         }
 
         public override Datasheets CreateUnit()
         {
-            return new AcolyteIconward();
+            return new ReductusSaboteur();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -114,7 +113,7 @@ namespace Roster_Builder.Genestealer_Cults
 
         public override string ToString()
         {
-            return "Acolyte Iconward - " + Points + "pts";
+            return "Reductus Saboteur - " + Points + "pts";
         }
     }
 }

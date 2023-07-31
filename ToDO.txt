@@ -39,7 +39,12 @@ Units that have been skipped: (Once I figure out the templates thing than these 
 	Neophyte Hybrids
 	Hybrid Metamorphs
 	Aberrants (Not too different from code "N1kS(1m)")
+	Biophagus (1k_c, very simple implementation)
+	Atalan Jackals
 
 GSC Units that need the Faction Upgrade stuff:
 	Purestrain Genestealers
-	Abominant
+	
+Abominant needs to be reviewed, it's got weird stuff going on
+
+Found an issue with Custodes: if a Knight-Centura is included, it messes up the available Warlord Trait options

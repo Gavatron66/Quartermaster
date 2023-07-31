@@ -1,4 +1,5 @@
-﻿using Roster_Builder.Necrons;
+﻿using Roster_Builder.Adeptus_Custodes;
+using Roster_Builder.Necrons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,20 +45,20 @@ namespace Roster_Builder.Genestealer_Cults
                 //new HybridMetamorphs(),
                 //new Aberrants(),
                 new Abominant(),
-                //new Nexos(),
-                //new Clamavus(),
-                //new Locus(),
-                //new Kelermorph(),
-                //new Sanctus(),
-                //new ReductusSaboteur(),
+                new Nexos(),
+                new Clamavus(),
+                new Locus(),
+                new Kelermorph(),
+                new Sanctus(),
+                new ReductusSaboteur(),
                 //new Biophagus(),
                 //---------- Fast Attack ----------
                 //new AtalanJackals(),
-                //new AchillesRidgerunners(),
+                new AchillesRidgerunners(),
                 //---------- Heavy Support ----------
-                //new GoliathRockgrinder(),
+                new GoliathRockgrinder(),
                 //---------- Transport ----------
-                //new GoliathTruck(),
+                new GoliathTruck(),
             };
         }
 

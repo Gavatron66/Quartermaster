@@ -8,24 +8,25 @@ using System.Windows.Forms;
 
 namespace Roster_Builder.Genestealer_Cults
 {
-    public class AcolyteIconward : Datasheets
+    public class Sanctus : Datasheets
     {
         GSC repo = new GSC();
-        public AcolyteIconward()
+        public Sanctus()
         {
-            DEFAULT_POINTS = 75;
+            DEFAULT_POINTS = 70;
             Points = DEFAULT_POINTS;
-            TemplateCode = "c";
+            TemplateCode = "1m_c";
+            Weapons.Add("Sanctus Bio-dagger");
             Keywords.AddRange(new string[]
             {
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
-                "INFANTRY", "CHARACTER", "ACOLYTE ICONWARD"
+                "INFANTRY", "CHARACTER", "SANCTUS"
             });
         }
 
         public override Datasheets CreateUnit()
         {
-            return new AcolyteIconward();
+            return new Sanctus();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -38,6 +39,15 @@ namespace Roster_Builder.Genestealer_Cults
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+
+            cmbOption1.Items.Clear();
+            cmbOption1.Items.AddRange(new string[]
+            {
+                "Cult Sniper Rifle",
+                "Sanctus Bio-dagger"
+            });
+            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
             if (isWarlord)
             {
@@ -81,9 +91,13 @@ namespace Roster_Builder.Genestealer_Cults
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
 
             switch (code)
             {
+                case 11:
+                    Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
                     {
@@ -114,7 +128,7 @@ namespace Roster_Builder.Genestealer_Cults
 
         public override string ToString()
         {
-            return "Acolyte Iconward - " + Points + "pts";
+            return "Sanctus - " + Points + "pts";
         }
     }
 }

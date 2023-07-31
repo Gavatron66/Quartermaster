@@ -8,24 +8,24 @@ using System.Windows.Forms;
 
 namespace Roster_Builder.Genestealer_Cults
 {
-    public class AcolyteIconward : Datasheets
+    public class Nexos : Datasheets
     {
         GSC repo = new GSC();
-        public AcolyteIconward()
+        public Nexos()
         {
-            DEFAULT_POINTS = 75;
+            DEFAULT_POINTS = 50;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
             {
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
-                "INFANTRY", "CHARACTER", "ACOLYTE ICONWARD"
+                "INFANTRY", "CHARACTER", "NEXOS"
             });
         }
 
         public override Datasheets CreateUnit()
         {
-            return new AcolyteIconward();
+            return new Nexos();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -114,7 +114,7 @@ namespace Roster_Builder.Genestealer_Cults
 
         public override string ToString()
         {
-            return "Acolyte Iconward - " + Points + "pts";
+            return "Nexos - " + Points + "pts";
         }
     }
 }
