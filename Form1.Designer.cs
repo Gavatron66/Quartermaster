@@ -97,6 +97,9 @@
             this.cmbOption1 = new System.Windows.Forms.ComboBox();
             this.cmbOption2 = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.cbStratagem1 = new System.Windows.Forms.CheckBox();
+            this.cbStratagem3 = new System.Windows.Forms.CheckBox();
+            this.cbStratagem2 = new System.Windows.Forms.CheckBox();
             this.MenuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSubFaction.SuspendLayout();
@@ -271,6 +274,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbStratagem2);
+            this.panel1.Controls.Add(this.cbStratagem3);
+            this.panel1.Controls.Add(this.cbStratagem1);
             this.panel1.Controls.Add(this.panelSubFaction);
             this.panel1.Controls.Add(this.lblExtra2);
             this.panel1.Controls.Add(this.lblnud6);
@@ -863,6 +869,42 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // cbStratagem1
+            // 
+            this.cbStratagem1.AutoSize = true;
+            this.cbStratagem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStratagem1.Location = new System.Drawing.Point(629, 48);
+            this.cbStratagem1.Name = "cbStratagem1";
+            this.cbStratagem1.Size = new System.Drawing.Size(90, 24);
+            this.cbStratagem1.TabIndex = 77;
+            this.cbStratagem1.Text = "Warlord";
+            this.cbStratagem1.UseVisualStyleBackColor = true;
+            this.cbStratagem1.CheckedChanged += new System.EventHandler(this.cbStratagem1_CheckedChanged);
+            // 
+            // cbStratagem3
+            // 
+            this.cbStratagem3.AutoSize = true;
+            this.cbStratagem3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStratagem3.Location = new System.Drawing.Point(629, 108);
+            this.cbStratagem3.Name = "cbStratagem3";
+            this.cbStratagem3.Size = new System.Drawing.Size(90, 24);
+            this.cbStratagem3.TabIndex = 78;
+            this.cbStratagem3.Text = "Warlord";
+            this.cbStratagem3.UseVisualStyleBackColor = true;
+            this.cbStratagem3.CheckedChanged += new System.EventHandler(this.cbStratagem3_CheckedChanged);
+            // 
+            // cbStratagem2
+            // 
+            this.cbStratagem2.AutoSize = true;
+            this.cbStratagem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStratagem2.Location = new System.Drawing.Point(629, 78);
+            this.cbStratagem2.Name = "cbStratagem2";
+            this.cbStratagem2.Size = new System.Drawing.Size(90, 24);
+            this.cbStratagem2.TabIndex = 79;
+            this.cbStratagem2.Text = "Warlord";
+            this.cbStratagem2.UseVisualStyleBackColor = true;
+            this.cbStratagem2.CheckedChanged += new System.EventHandler(this.cbStratagem2_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -974,6 +1016,9 @@
         private System.Windows.Forms.Label lblCustomSub1;
         private System.Windows.Forms.ComboBox cmbCustomSub1;
         private System.Windows.Forms.ComboBox cmbCustomSub2;
+        private System.Windows.Forms.CheckBox cbStratagem2;
+        private System.Windows.Forms.CheckBox cbStratagem3;
+        private System.Windows.Forms.CheckBox cbStratagem1;
     }
 }
 

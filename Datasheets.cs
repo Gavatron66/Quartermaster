@@ -114,6 +114,7 @@ namespace Roster_Builder
         public Template Template { get; }
         public string Relic { get; set; }
         public bool antiLoop { get; set; }
+        public string stratagem { get; set; }
         public Datasheets()
         {
             Weapons = new List<string>();

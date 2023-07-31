@@ -31,19 +31,19 @@ namespace Roster_Builder.Genestealer_Cults
             return new List<Datasheets>()
             {
                 //---------- HQ ----------
-                //new Patriarch(),
-                //new Primus(),
-                //new Magus(),
-                //new AcolyteIconward(),
-                //new JackalAlphus(),
+                new Patriarch(),
+                new Primus(),
+                new Magus(),
+                new AcolyteIconward(),
+                new JackalAlphus(),
                 //---------- Troops ----------
                 //new AcolyteHybrids(),
                 //new NeophyteHybrids(),
                 //---------- Elites ----------
-                //new PurestrainGenestealers(),
+                new PurestrainGenestealers(),
                 //new HybridMetamorphs(),
                 //new Aberrants(),
-                //new Abominant(),
+                new Abominant(),
                 //new Nexos(),
                 //new Clamavus(),
                 //new Locus(),
@@ -109,6 +109,7 @@ namespace Roster_Builder.Genestealer_Cults
         {
             return new List<string>()
             {
+                "(None)",
                 "Lying in Wait",
                 "Exacting Planner",
                 "Alchemist Supreme",

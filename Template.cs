@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,12 +14,14 @@ namespace Roster_Builder.Death_Guard
 
         public void LoadTemplate(string code, Panel panel)
         {
+            Form templateForm = new Testing_Form();
             GroupBox groupbox = new GroupBox();
 
             switch (code)
             {
+                //Characters
                 #region case "1m2k_pc"
-                case "1m2k_pc":
+                case "1m2k_pc": /*
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
 
@@ -54,7 +57,31 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["lblRelic"].Location = new System.Drawing.Point(294, 211);
 
                     panel.Controls["cmbRelic"].Visible = true;
-                    panel.Controls["cmbRelic"].Location = new System.Drawing.Point(294, 235);
+                    panel.Controls["cmbRelic"].Location = new System.Drawing.Point(294, 235); */
+                    /*
+                    
+                    Panel controls = templateForm.Controls["panel_1m2k_pc"] as Panel;
+                    List<Control> collection = new List<Control>();
+
+                    foreach (Control control in controls.Controls)
+                    {
+                        collection.Add(control);
+                    }
+                    
+                    foreach (Control control in collection)
+                    {
+                        panel.Controls[control.Name].Location = control.Location;
+                        panel.Controls[control.Name].Visible = true;
+                    } */
+
+                    Panel tempPanel = templateForm.Controls["panel_1m2k_pc"] as Panel;
+
+                    foreach (Control control in tempPanel.Controls)
+                    {
+                        panel.Controls[control.Name].Location = control.Location;
+                        panel.Controls[control.Name].Visible = true;
+                    }
+
                     break;
                 #endregion
                 #region case "2m_c"
@@ -314,6 +341,7 @@ namespace Roster_Builder.Death_Guard
                     break;
                 #endregion
 
+                //Normal Units
                 #region case "1m"
                 case "1m":
                     panel.Controls["lblOption1"].Visible = true;
@@ -411,6 +439,7 @@ namespace Roster_Builder.Death_Guard
                     break;
                 #endregion
 
+                //Units with variable Unit Size
                 #region case "N"
                 case "N":
                     panel.Controls["lblNumModels"].Visible = true;
@@ -571,6 +600,7 @@ namespace Roster_Builder.Death_Guard
                     break;
                 #endregion
 
+                //Units using a Listbox
                 #region case "NL2m1k"
                 case "NL2m1k":
                     panel.Controls["lblNumModels"].Visible = true;
@@ -701,6 +731,7 @@ namespace Roster_Builder.Death_Guard
                     break;
                 #endregion
 
+                //Special Cases
                 #region case "cultist"
                 case "cultist":
                     panel.Controls["lblNumModels"].Visible = true;
@@ -753,7 +784,6 @@ namespace Roster_Builder.Death_Guard
                     groupbox.Controls["gb_cmbFactionupgrade"].Location = new System.Drawing.Point(20, 110);
                     break;
                     #endregion
-
             }
         }
     }

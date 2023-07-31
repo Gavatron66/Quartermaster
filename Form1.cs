@@ -14,6 +14,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Roster_Builder.Necrons;
 using Roster_Builder.Adeptus_Custodes;
+using Roster_Builder.Genestealer_Cults;
 
 namespace Roster_Builder
 {
@@ -23,6 +24,7 @@ namespace Roster_Builder
         int currentIndex = -1;
         Faction units;
         bool isLoading = false;
+        Form testingForm = new Testing_Form();
         public Form1()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace Roster_Builder
             #region Setting up the Form
             lbRoster.Visible = false;
             lbUnits.Visible = false;
-            panel1.Size = new System.Drawing.Size(593, 463);
+            panel1.Size = new System.Drawing.Size(590, 463);
             panel1.Visible = false;
             lblEditingUnit.Text = string.Empty;
             lblPoints.Text = string.Empty;
@@ -45,7 +47,7 @@ namespace Roster_Builder
                 panel1.Controls[i].Visible = false;
             }
 
-            for(int i = 0; i < gbUnitLeader.Controls.Count; i++)
+            for (int i = 0; i < gbUnitLeader.Controls.Count; i++)
             {
                 gbUnitLeader.Controls[i].Visible = false;
             }
@@ -55,6 +57,7 @@ namespace Roster_Builder
             {
                 new AdeptusCustodes(),
                 new DeathGuard(),
+                new GSC(),
                 new Necrons.Necrons(),
             });
 
@@ -75,7 +78,7 @@ namespace Roster_Builder
             btnSave.BringToFront();
             gbCustomSubfaction.Visible = false;
 
-            if(!isLoading)
+            if (!isLoading)
             {
                 units = cmbSelectFaction.SelectedItem as Faction;
             }
@@ -104,24 +107,24 @@ namespace Roster_Builder
                 lbUnits.Items.Add(item);
             }
 
-            if(!isLoading)
+            if (!isLoading)
             {
                 lbRoster.Items.Add(units.subFactionName);
                 updateLBRoster();
             }
 
-            if(!isLoading)
+            if (!isLoading)
             {
                 cmbCustomSub1.Items.Clear();
                 cmbCustomSub2.Items.Clear();
             }
 
-            if(cmbSubFaction.Items.Contains("<Custom>"))
+            if (cmbSubFaction.Items.Contains("<Custom>"))
             {
                 List<string> customList1 = units.GetCustomSubfactionList1();
                 List<string> customList2 = units.GetCustomSubfactionList2();
 
-                foreach(var custom1 in customList1)
+                foreach (var custom1 in customList1)
                 {
                     cmbCustomSub1.Items.Add(custom1);
                 }
@@ -136,7 +139,7 @@ namespace Roster_Builder
         {
             if (lbUnits.SelectedIndex >= 0)
             {
-                if(lbUnits.SelectedItem is Datasheets)
+                if (lbUnits.SelectedItem is Datasheets)
                 {
                     Datasheets newUnit = lbUnits.SelectedItem as Datasheets;
                     roster.Add(newUnit.CreateUnit());
@@ -223,7 +226,7 @@ namespace Roster_Builder
                 control.Enabled = true;
             }
 
-            foreach(Control control in gbUnitLeader.Controls)
+            foreach (Control control in gbUnitLeader.Controls)
             {
                 control.Visible = false;
                 control.Enabled = true;
@@ -239,11 +242,11 @@ namespace Roster_Builder
 
             if (lbRoster.SelectedIndex == -1 || lbRoster.SelectedIndex == currentIndex + 1)
             {
-                if(currentIndex == -10) { panelSubFaction.Visible = true; return; }
-                if(lbRoster.SelectedIndex == -1) { return; }
+                if (currentIndex == -10) { panelSubFaction.Visible = true; return; }
+                if (lbRoster.SelectedIndex == -1) { return; }
             }
 
-            currentIndex = lbRoster.SelectedIndex-1;
+            currentIndex = lbRoster.SelectedIndex - 1;
 
             roster[currentIndex].LoadDatasheets(panel1, units);
 
@@ -269,7 +272,7 @@ namespace Roster_Builder
 
         private void cbWarlord_CheckedChanged(object sender, EventArgs e)
         {
-            if(cbWarlord.Checked)
+            if (cbWarlord.Checked)
             {
                 cmbWarlord.Enabled = true;
                 roster[currentIndex].SaveDatasheets(25, panel1);
@@ -280,7 +283,7 @@ namespace Roster_Builder
                 cmbWarlord.Text = string.Empty;
                 roster[currentIndex].SaveDatasheets(25, panel1);
             }
-            
+
         }
 
         private void cmbWarlord_SelectedIndexChanged(object sender, EventArgs e)
@@ -290,16 +293,16 @@ namespace Roster_Builder
 
         private void cmbFactionupgrade_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbFactionupgrade.SelectedIndex != -1)
+            if (cmbFactionupgrade.SelectedIndex != -1)
             {
                 roster[currentIndex].SaveDatasheets(16, panel1);
             }
-            updateLBRoster() ;
+            updateLBRoster();
         }
 
         private void clbPsyker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(clbPsyker.SelectedIndex != -1)
+            if (clbPsyker.SelectedIndex != -1)
             {
                 roster[currentIndex].SaveDatasheets(60, panel1);
             }
@@ -325,7 +328,8 @@ namespace Roster_Builder
             if (cmbSubFaction.SelectedItem as string == "<Custom>")
             {
                 gbCustomSubfaction.Visible = true;
-            } else
+            }
+            else
             {
                 gbCustomSubfaction.Visible = false;
             }
@@ -421,12 +425,13 @@ namespace Roster_Builder
             sfd.DefaultExt = "json";
             sfd.ShowDialog();
 
-            if(cmbSubFaction.SelectedItem.ToString() == "<Custom>")
+            if (cmbSubFaction.SelectedItem.ToString() == "<Custom>")
             {
                 roster[0].Keywords.Add(cmbCustomSub1.SelectedItem.ToString());
                 roster[0].Keywords.Add(cmbCustomSub2.SelectedItem.ToString());
                 roster[0].Keywords.Add(cmbSubFaction.SelectedItem.ToString());
-            } else
+            }
+            else
             {
                 roster[0].Keywords.Add(cmbSubFaction.SelectedItem.ToString());
             }
@@ -447,12 +452,12 @@ namespace Roster_Builder
 
             var newRoster = JsonSerializer.Deserialize<List<Datasheets>>(json);
 
-            foreach ( Faction faction in cmbSelectFaction.Items)
+            foreach (Faction faction in cmbSelectFaction.Items)
             {
                 List<Datasheets> datasheets = faction.GetDatasheets();
                 Type[] types = new Type[datasheets.Count];
-                
-                for(int i = 0; i < datasheets.Count; i++)
+
+                for (int i = 0; i < datasheets.Count; i++)
                 {
                     types[i] = datasheets[i].GetType();
                 }
@@ -477,7 +482,8 @@ namespace Roster_Builder
                 cmbCustomSub1.SelectedIndex = cmbCustomSub1.Items.IndexOf(roster[0].Keywords[roster[0].Keywords.Count - 3]);
 
                 roster[0].Keywords.RemoveRange(roster[0].Keywords.Count - 3, 3);
-            } else
+            }
+            else
             {
                 cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(roster[0].Keywords.Last());
 
@@ -496,6 +502,24 @@ namespace Roster_Builder
         private void nudOption6_ValueChanged(object sender, EventArgs e)
         {
             roster[currentIndex].SaveDatasheets(36, panel1);
+            updateLBRoster();
+        }
+
+        private void cbStratagem1_CheckedChanged(object sender, EventArgs e)
+        {
+            roster[currentIndex].SaveDatasheets(71, panel1);
+            updateLBRoster();
+        }
+
+        private void cbStratagem2_CheckedChanged(object sender, EventArgs e)
+        {
+            roster[currentIndex].SaveDatasheets(72, panel1);
+            updateLBRoster();
+        }
+
+        private void cbStratagem3_CheckedChanged(object sender, EventArgs e)
+        {
+            roster[currentIndex].SaveDatasheets(73, panel1);
             updateLBRoster();
         }
     }

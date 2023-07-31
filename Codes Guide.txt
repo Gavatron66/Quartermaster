@@ -28,7 +28,10 @@
 6X - Misc. Controls
 	60 - clbPsyker
 	61 - lbModelSelect
-	
+7X - Requisition Boxes
+	71 - cbStratagem1
+	72 - cbStratagem2
+	73 - cbStratagem3
 	
 ----------------------
 	Template Codes

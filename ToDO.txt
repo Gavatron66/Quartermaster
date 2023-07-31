@@ -33,3 +33,13 @@ Models to be reworked:
 	Models to add checks for Numeric Up Down controls:
 		Death Guard Cultists
 		Necron Warriors
+		
+Units that have been skipped: (Once I figure out the templates thing than these can be done, since they might need new templates)
+	Acolyte Hybrids
+	Neophyte Hybrids
+	Hybrid Metamorphs
+	Aberrants (Not too different from code "N1kS(1m)")
+
+GSC Units that need the Faction Upgrade stuff:
+	Purestrain Genestealers
+	Abominant
