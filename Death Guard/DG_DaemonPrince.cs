@@ -133,6 +133,8 @@ namespace Roster_Builder.Death_Guard
             CheckedListBox clb = panel.Controls["clbPsyker"] as CheckedListBox;
             CheckBox isWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
             switch (code)
             {
@@ -186,6 +188,16 @@ namespace Roster_Builder.Death_Guard
                     break;
                 case 17:
                     Relic = cmbRelic.SelectedItem.ToString();
+                    break;
+                case 71:
+                    if (cbStratagem1.Checked)
+                    {
+                        Stratagem = cbStratagem1.Text;
+                    }
+                    else
+                    {
+                        Stratagem = string.Empty;
+                    }
                     break;
                 default: break;
             }

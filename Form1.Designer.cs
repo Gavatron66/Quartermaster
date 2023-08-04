@@ -44,6 +44,9 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.lblEditingUnit = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbStratagem2 = new System.Windows.Forms.CheckBox();
+            this.cbStratagem3 = new System.Windows.Forms.CheckBox();
+            this.cbStratagem1 = new System.Windows.Forms.CheckBox();
             this.panelSubFaction = new System.Windows.Forms.Panel();
             this.gbCustomSubfaction = new System.Windows.Forms.GroupBox();
             this.lblCustomSub2 = new System.Windows.Forms.Label();
@@ -97,9 +100,8 @@
             this.cmbOption1 = new System.Windows.Forms.ComboBox();
             this.cmbOption2 = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.cbStratagem1 = new System.Windows.Forms.CheckBox();
-            this.cbStratagem3 = new System.Windows.Forms.CheckBox();
-            this.cbStratagem2 = new System.Windows.Forms.CheckBox();
+            this.gb_lblOption2 = new System.Windows.Forms.Label();
+            this.gb_cmbOption2 = new System.Windows.Forms.ComboBox();
             this.MenuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSubFaction.SuspendLayout();
@@ -320,6 +322,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1263, 680);
             this.panel1.TabIndex = 8;
+            // 
+            // cbStratagem2
+            // 
+            this.cbStratagem2.AutoSize = true;
+            this.cbStratagem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStratagem2.Location = new System.Drawing.Point(629, 78);
+            this.cbStratagem2.Name = "cbStratagem2";
+            this.cbStratagem2.Size = new System.Drawing.Size(122, 24);
+            this.cbStratagem2.TabIndex = 79;
+            this.cbStratagem2.Text = "Stratagem 2";
+            this.cbStratagem2.UseVisualStyleBackColor = true;
+            this.cbStratagem2.CheckedChanged += new System.EventHandler(this.cbStratagem2_CheckedChanged);
+            // 
+            // cbStratagem3
+            // 
+            this.cbStratagem3.AutoSize = true;
+            this.cbStratagem3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStratagem3.Location = new System.Drawing.Point(629, 108);
+            this.cbStratagem3.Name = "cbStratagem3";
+            this.cbStratagem3.Size = new System.Drawing.Size(122, 24);
+            this.cbStratagem3.TabIndex = 78;
+            this.cbStratagem3.Text = "Stratagem 3";
+            this.cbStratagem3.UseVisualStyleBackColor = true;
+            this.cbStratagem3.CheckedChanged += new System.EventHandler(this.cbStratagem3_CheckedChanged);
+            // 
+            // cbStratagem1
+            // 
+            this.cbStratagem1.AutoSize = true;
+            this.cbStratagem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStratagem1.Location = new System.Drawing.Point(629, 48);
+            this.cbStratagem1.Name = "cbStratagem1";
+            this.cbStratagem1.Size = new System.Drawing.Size(122, 24);
+            this.cbStratagem1.TabIndex = 77;
+            this.cbStratagem1.Text = "Stratagem 1";
+            this.cbStratagem1.UseVisualStyleBackColor = true;
+            this.cbStratagem1.CheckedChanged += new System.EventHandler(this.cbStratagem1_CheckedChanged);
             // 
             // panelSubFaction
             // 
@@ -562,6 +600,8 @@
             // 
             // gbUnitLeader
             // 
+            this.gbUnitLeader.Controls.Add(this.gb_lblOption2);
+            this.gbUnitLeader.Controls.Add(this.gb_cmbOption2);
             this.gbUnitLeader.Controls.Add(this.gb_cmbFactionupgrade);
             this.gbUnitLeader.Controls.Add(this.gb_lblOption1);
             this.gbUnitLeader.Controls.Add(this.gb_lblFactionupgrade);
@@ -869,41 +909,24 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // cbStratagem1
+            // gb_lblOption2
             // 
-            this.cbStratagem1.AutoSize = true;
-            this.cbStratagem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStratagem1.Location = new System.Drawing.Point(629, 48);
-            this.cbStratagem1.Name = "cbStratagem1";
-            this.cbStratagem1.Size = new System.Drawing.Size(90, 24);
-            this.cbStratagem1.TabIndex = 77;
-            this.cbStratagem1.Text = "Warlord";
-            this.cbStratagem1.UseVisualStyleBackColor = true;
-            this.cbStratagem1.CheckedChanged += new System.EventHandler(this.cbStratagem1_CheckedChanged);
+            this.gb_lblOption2.AutoSize = true;
+            this.gb_lblOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_lblOption2.Location = new System.Drawing.Point(7, 144);
+            this.gb_lblOption2.Name = "gb_lblOption2";
+            this.gb_lblOption2.Size = new System.Drawing.Size(219, 20);
+            this.gb_lblOption2.TabIndex = 67;
+            this.gb_lblOption2.Text = "Select One of the Following:";
             // 
-            // cbStratagem3
+            // gb_cmbOption2
             // 
-            this.cbStratagem3.AutoSize = true;
-            this.cbStratagem3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStratagem3.Location = new System.Drawing.Point(629, 108);
-            this.cbStratagem3.Name = "cbStratagem3";
-            this.cbStratagem3.Size = new System.Drawing.Size(90, 24);
-            this.cbStratagem3.TabIndex = 78;
-            this.cbStratagem3.Text = "Warlord";
-            this.cbStratagem3.UseVisualStyleBackColor = true;
-            this.cbStratagem3.CheckedChanged += new System.EventHandler(this.cbStratagem3_CheckedChanged);
-            // 
-            // cbStratagem2
-            // 
-            this.cbStratagem2.AutoSize = true;
-            this.cbStratagem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStratagem2.Location = new System.Drawing.Point(629, 78);
-            this.cbStratagem2.Name = "cbStratagem2";
-            this.cbStratagem2.Size = new System.Drawing.Size(90, 24);
-            this.cbStratagem2.TabIndex = 79;
-            this.cbStratagem2.Text = "Warlord";
-            this.cbStratagem2.UseVisualStyleBackColor = true;
-            this.cbStratagem2.CheckedChanged += new System.EventHandler(this.cbStratagem2_CheckedChanged);
+            this.gb_cmbOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_cmbOption2.FormattingEnabled = true;
+            this.gb_cmbOption2.Location = new System.Drawing.Point(232, 141);
+            this.gb_cmbOption2.Name = "gb_cmbOption2";
+            this.gb_cmbOption2.Size = new System.Drawing.Size(176, 28);
+            this.gb_cmbOption2.TabIndex = 68;
             // 
             // Form1
             // 
@@ -1019,6 +1042,8 @@
         private System.Windows.Forms.CheckBox cbStratagem2;
         private System.Windows.Forms.CheckBox cbStratagem3;
         private System.Windows.Forms.CheckBox cbStratagem1;
+        private System.Windows.Forms.Label gb_lblOption2;
+        private System.Windows.Forms.ComboBox gb_cmbOption2;
     }
 }
 

@@ -48,3 +48,7 @@ GSC Units that need the Faction Upgrade stuff:
 Abominant needs to be reviewed, it's got weird stuff going on
 
 Found an issue with Custodes: if a Knight-Centura is included, it messes up the available Warlord Trait options
+
+Achilles Ridgerunners
+Goliath Rockgrinders
+Goliath Truck

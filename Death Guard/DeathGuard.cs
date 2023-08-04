@@ -15,6 +15,8 @@ namespace Roster_Builder.Death_Guard
             subFactionName = "<Plague Company>";
             currentSubFaction = string.Empty;
             factionUpgradeName = "Deadly Pathogen";
+            warlordStratagem = "Stratagem: Plague-Chosen";
+            relicStratagem = "Stratagem: Gifts of Decay";
         }
 
         public override List<Datasheets> GetDatasheets()

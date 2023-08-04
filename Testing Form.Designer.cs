@@ -36,6 +36,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel_1m2k_pc = new System.Windows.Forms.Panel();
+            this.cbStratagem1 = new System.Windows.Forms.CheckBox();
+            this.cbStratagem2 = new System.Windows.Forms.CheckBox();
             this.cmbRelic = new System.Windows.Forms.ComboBox();
             this.lblOption1 = new System.Windows.Forms.Label();
             this.cbOption1 = new System.Windows.Forms.CheckBox();
@@ -163,7 +165,6 @@
             this.cmbRelic12 = new System.Windows.Forms.ComboBox();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Panel_Panel = new System.Windows.Forms.Panel();
             this.panel_2m_pc = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
             this.comboBox20 = new System.Windows.Forms.ComboBox();
@@ -255,23 +256,6 @@
             this.numericUpDown11 = new System.Windows.Forms.NumericUpDown();
             this.label85 = new System.Windows.Forms.Label();
             this.numericUpDown16 = new System.Windows.Forms.NumericUpDown();
-            this.panel_tombblades = new System.Windows.Forms.Panel();
-            this.label94 = new System.Windows.Forms.Label();
-            this.label93 = new System.Windows.Forms.Label();
-            this.numericUpDown24 = new System.Windows.Forms.NumericUpDown();
-            this.label95 = new System.Windows.Forms.Label();
-            this.label92 = new System.Windows.Forms.Label();
-            this.numericUpDown23 = new System.Windows.Forms.NumericUpDown();
-            this.label91 = new System.Windows.Forms.Label();
-            this.numericUpDown22 = new System.Windows.Forms.NumericUpDown();
-            this.label87 = new System.Windows.Forms.Label();
-            this.numericUpDown18 = new System.Windows.Forms.NumericUpDown();
-            this.label88 = new System.Windows.Forms.Label();
-            this.label89 = new System.Windows.Forms.Label();
-            this.numericUpDown19 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown20 = new System.Windows.Forms.NumericUpDown();
-            this.label90 = new System.Windows.Forms.Label();
-            this.numericUpDown21 = new System.Windows.Forms.NumericUpDown();
             this.panel_5N = new System.Windows.Forms.Panel();
             this.label101 = new System.Windows.Forms.Label();
             this.label102 = new System.Windows.Forms.Label();
@@ -320,15 +304,18 @@
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.label110 = new System.Windows.Forms.Label();
             this.numericUpDown32 = new System.Windows.Forms.NumericUpDown();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
             this.panel_2k = new System.Windows.Forms.Panel();
             this.checkBox33 = new System.Windows.Forms.CheckBox();
             this.checkBox28 = new System.Windows.Forms.CheckBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.cbStratagem1 = new System.Windows.Forms.CheckBox();
-            this.cbStratagem2 = new System.Windows.Forms.CheckBox();
+            this.panel_1k = new System.Windows.Forms.Panel();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.panel4.SuspendLayout();
             this.panel_1m2k_pc.SuspendLayout();
             this.panel_2m_c.SuspendLayout();
@@ -355,7 +342,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel3.SuspendLayout();
-            this.Panel_Panel.SuspendLayout();
             this.panel_2m_pc.SuspendLayout();
             this.panel_1k_pc.SuspendLayout();
             this.panel_ncp.SuspendLayout();
@@ -375,14 +361,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown16)).BeginInit();
-            this.panel_tombblades.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown21)).BeginInit();
             this.panel_5N.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown25)).BeginInit();
@@ -399,6 +377,12 @@
             this.panel_NL2m.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown32)).BeginInit();
             this.panel_2k.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.panel_1k.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbRoster
@@ -486,10 +470,32 @@
             this.panel_1m2k_pc.Controls.Add(this.lblFactionupgrade);
             this.panel_1m2k_pc.Controls.Add(this.lblPsyker);
             this.panel_1m2k_pc.Controls.Add(this.cmbWarlord);
-            this.panel_1m2k_pc.Location = new System.Drawing.Point(1006, 73);
+            this.panel_1m2k_pc.Location = new System.Drawing.Point(26, 0);
             this.panel_1m2k_pc.Name = "panel_1m2k_pc";
             this.panel_1m2k_pc.Size = new System.Drawing.Size(590, 463);
             this.panel_1m2k_pc.TabIndex = 37;
+            // 
+            // cbStratagem1
+            // 
+            this.cbStratagem1.AutoSize = true;
+            this.cbStratagem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStratagem1.Location = new System.Drawing.Point(298, 323);
+            this.cbStratagem1.Name = "cbStratagem1";
+            this.cbStratagem1.Size = new System.Drawing.Size(61, 24);
+            this.cbStratagem1.TabIndex = 54;
+            this.cbStratagem1.Text = "Re1";
+            this.cbStratagem1.UseVisualStyleBackColor = true;
+            // 
+            // cbStratagem2
+            // 
+            this.cbStratagem2.AutoSize = true;
+            this.cbStratagem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStratagem2.Location = new System.Drawing.Point(298, 353);
+            this.cbStratagem2.Name = "cbStratagem2";
+            this.cbStratagem2.Size = new System.Drawing.Size(63, 24);
+            this.cbStratagem2.TabIndex = 55;
+            this.cbStratagem2.Text = "RS2";
+            this.cbStratagem2.UseVisualStyleBackColor = true;
             // 
             // cmbRelic
             // 
@@ -634,9 +640,10 @@
             this.panel_2m_c.Controls.Add(this.label15);
             this.panel_2m_c.Controls.Add(this.label21);
             this.panel_2m_c.Controls.Add(this.comboBox15);
-            this.panel_2m_c.Location = new System.Drawing.Point(229, 135);
+            this.panel_2m_c.Controls.Add(this.panel_1m2k_pc);
+            this.panel_2m_c.Location = new System.Drawing.Point(124, 128);
             this.panel_2m_c.Name = "panel_2m_c";
-            this.panel_2m_c.Size = new System.Drawing.Size(590, 463);
+            this.panel_2m_c.Size = new System.Drawing.Size(590, 475);
             this.panel_2m_c.TabIndex = 54;
             // 
             // comboBox17
@@ -755,7 +762,7 @@
             this.panel_c.Controls.Add(this.label27);
             this.panel_c.Controls.Add(this.label28);
             this.panel_c.Controls.Add(this.comboBox22);
-            this.panel_c.Location = new System.Drawing.Point(206, 135);
+            this.panel_c.Location = new System.Drawing.Point(104, 128);
             this.panel_c.Name = "panel_c";
             this.panel_c.Size = new System.Drawing.Size(590, 463);
             this.panel_c.TabIndex = 56;
@@ -840,7 +847,7 @@
             this.panel_1k_c.Controls.Add(this.checkBox9);
             this.panel_1k_c.Controls.Add(this.label30);
             this.panel_1k_c.Controls.Add(this.comboBox25);
-            this.panel_1k_c.Location = new System.Drawing.Point(186, 135);
+            this.panel_1k_c.Location = new System.Drawing.Point(82, 128);
             this.panel_1k_c.Name = "panel_1k_c";
             this.panel_1k_c.Size = new System.Drawing.Size(590, 463);
             this.panel_1k_c.TabIndex = 56;
@@ -937,7 +944,9 @@
             // 
             this.panel_N.Controls.Add(this.lblNumUnits);
             this.panel_N.Controls.Add(this.nudUnitSize);
-            this.panel_N.Location = new System.Drawing.Point(114, 135);
+            this.panel_N.Controls.Add(this.label2);
+            this.panel_N.Controls.Add(this.comboBox2);
+            this.panel_N.Location = new System.Drawing.Point(22, 0);
             this.panel_N.Name = "panel_N";
             this.panel_N.Size = new System.Drawing.Size(590, 463);
             this.panel_N.TabIndex = 58;
@@ -970,7 +979,7 @@
             this.panel_1m1k.Controls.Add(this.label32);
             this.panel_1m1k.Controls.Add(this.checkBox15);
             this.panel_1m1k.Controls.Add(this.comboBox36);
-            this.panel_1m1k.Location = new System.Drawing.Point(36, 135);
+            this.panel_1m1k.Location = new System.Drawing.Point(137, 128);
             this.panel_1m1k.Name = "panel_1m1k";
             this.panel_1m1k.Size = new System.Drawing.Size(590, 463);
             this.panel_1m1k.TabIndex = 54;
@@ -1009,7 +1018,7 @@
             // 
             this.panel_1m.Controls.Add(this.label48);
             this.panel_1m.Controls.Add(this.comboBox39);
-            this.panel_1m.Location = new System.Drawing.Point(74, 135);
+            this.panel_1m.Location = new System.Drawing.Point(82, 128);
             this.panel_1m.Name = "panel_1m";
             this.panel_1m.Size = new System.Drawing.Size(590, 463);
             this.panel_1m.TabIndex = 57;
@@ -1041,7 +1050,7 @@
             this.panel_3m.Controls.Add(this.comboBox42);
             this.panel_3m.Controls.Add(this.label52);
             this.panel_3m.Controls.Add(this.comboBox43);
-            this.panel_3m.Location = new System.Drawing.Point(3, 135);
+            this.panel_3m.Location = new System.Drawing.Point(102, 128);
             this.panel_3m.Name = "panel_3m";
             this.panel_3m.Size = new System.Drawing.Size(590, 463);
             this.panel_3m.TabIndex = 58;
@@ -1105,12 +1114,13 @@
             // 
             // panel_NS_2k_
             // 
+            this.panel_NS_2k_.Controls.Add(this.panel_N);
             this.panel_NS_2k_.Controls.Add(this.comboBox48);
             this.panel_NS_2k_.Controls.Add(this.label59);
             this.panel_NS_2k_.Controls.Add(this.label54);
             this.panel_NS_2k_.Controls.Add(this.groupBox1);
             this.panel_NS_2k_.Controls.Add(this.numericUpDown3);
-            this.panel_NS_2k_.Location = new System.Drawing.Point(247, 117);
+            this.panel_NS_2k_.Location = new System.Drawing.Point(125, 128);
             this.panel_NS_2k_.Name = "panel_NS_2k_";
             this.panel_NS_2k_.Size = new System.Drawing.Size(590, 463);
             this.panel_NS_2k_.TabIndex = 59;
@@ -1206,7 +1216,7 @@
             this.panel_cultist.Controls.Add(this.label67);
             this.panel_cultist.Controls.Add(this.groupBox3);
             this.panel_cultist.Controls.Add(this.numericUpDown10);
-            this.panel_cultist.Location = new System.Drawing.Point(23, 0);
+            this.panel_cultist.Location = new System.Drawing.Point(157, 131);
             this.panel_cultist.Name = "panel_cultist";
             this.panel_cultist.Size = new System.Drawing.Size(590, 489);
             this.panel_cultist.TabIndex = 74;
@@ -1401,8 +1411,7 @@
             this.panel_NL2m1k.Controls.Add(this.listBox3);
             this.panel_NL2m1k.Controls.Add(this.label72);
             this.panel_NL2m1k.Controls.Add(this.numericUpDown5);
-            this.panel_NL2m1k.Controls.Add(this.panel_cultist);
-            this.panel_NL2m1k.Location = new System.Drawing.Point(206, 117);
+            this.panel_NL2m1k.Location = new System.Drawing.Point(157, 128);
             this.panel_NL2m1k.Name = "panel_NL2m1k";
             this.panel_NL2m1k.Size = new System.Drawing.Size(590, 463);
             this.panel_NL2m1k.TabIndex = 61;
@@ -1522,7 +1531,7 @@
             this.panel_NL2m3k.Controls.Add(this.numericUpDown4);
             this.panel_NL2m3k.Controls.Add(this.label57);
             this.panel_NL2m3k.Controls.Add(this.label55);
-            this.panel_NL2m3k.Location = new System.Drawing.Point(186, 117);
+            this.panel_NL2m3k.Location = new System.Drawing.Point(136, 128);
             this.panel_NL2m3k.Name = "panel_NL2m3k";
             this.panel_NL2m3k.Size = new System.Drawing.Size(590, 463);
             this.panel_NL2m3k.TabIndex = 61;
@@ -1768,7 +1777,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(211, 247);
+            this.label2.Location = new System.Drawing.Point(239, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(145, 20);
             this.label2.TabIndex = 1;
@@ -1778,7 +1787,7 @@
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(215, 270);
+            this.comboBox2.Location = new System.Drawing.Point(243, 82);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(176, 28);
             this.comboBox2.TabIndex = 27;
@@ -1828,8 +1837,6 @@
             this.panel3.Controls.Add(this.cmbRelic12);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.lblRelic12);
-            this.panel3.Controls.Add(this.comboBox2);
-            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.checkedListBox1);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.comboBox3);
@@ -1846,41 +1853,6 @@
             this.panel3.Size = new System.Drawing.Size(590, 463);
             this.panel3.TabIndex = 29;
             // 
-            // Panel_Panel
-            // 
-            this.Panel_Panel.Controls.Add(this.panel_2m_c);
-            this.Panel_Panel.Controls.Add(this.panel_c);
-            this.Panel_Panel.Controls.Add(this.panel_1k_c);
-            this.Panel_Panel.Controls.Add(this.panel_2m_pc);
-            this.Panel_Panel.Controls.Add(this.panel_1k_pc);
-            this.Panel_Panel.Controls.Add(this.panel_N);
-            this.Panel_Panel.Controls.Add(this.panel_ncp);
-            this.Panel_Panel.Controls.Add(this.panel_2m);
-            this.Panel_Panel.Controls.Add(this.panel_1m1k);
-            this.Panel_Panel.Controls.Add(this.panel_2m1k);
-            this.Panel_Panel.Controls.Add(this.panel_3m);
-            this.Panel_Panel.Controls.Add(this.panel_NS_2k_);
-            this.Panel_Panel.Controls.Add(this.panel_NL2m1k);
-            this.Panel_Panel.Controls.Add(this.panel_NL2m3k);
-            this.Panel_Panel.Controls.Add(this.panel_1m);
-            this.Panel_Panel.Controls.Add(this.panel_nc);
-            this.Panel_Panel.Controls.Add(this.panel_1m1k_c);
-            this.Panel_Panel.Controls.Add(this.panel_2m1k_c);
-            this.Panel_Panel.Controls.Add(this.panel_3N);
-            this.Panel_Panel.Controls.Add(this.panel_1N1m);
-            this.Panel_Panel.Controls.Add(this.panel_4N);
-            this.Panel_Panel.Controls.Add(this.panel_tombblades);
-            this.Panel_Panel.Controls.Add(this.panel_5N);
-            this.Panel_Panel.Controls.Add(this.panel_N1kS_1m_);
-            this.Panel_Panel.Controls.Add(this.panel_NL3k);
-            this.Panel_Panel.Controls.Add(this.panel_NL1m1k);
-            this.Panel_Panel.Controls.Add(this.panel_NL2m);
-            this.Panel_Panel.Controls.Add(this.panel_2k);
-            this.Panel_Panel.Location = new System.Drawing.Point(12, 542);
-            this.Panel_Panel.Name = "Panel_Panel";
-            this.Panel_Panel.Size = new System.Drawing.Size(277, 161);
-            this.Panel_Panel.TabIndex = 58;
-            // 
             // panel_2m_pc
             // 
             this.panel_2m_pc.Controls.Add(this.label26);
@@ -1896,7 +1868,7 @@
             this.panel_2m_pc.Controls.Add(this.label77);
             this.panel_2m_pc.Controls.Add(this.label78);
             this.panel_2m_pc.Controls.Add(this.comboBox57);
-            this.panel_2m_pc.Location = new System.Drawing.Point(157, 135);
+            this.panel_2m_pc.Location = new System.Drawing.Point(59, 128);
             this.panel_2m_pc.Name = "panel_2m_pc";
             this.panel_2m_pc.Size = new System.Drawing.Size(590, 463);
             this.panel_2m_pc.TabIndex = 54;
@@ -2040,7 +2012,7 @@
             this.panel_1k_pc.Controls.Add(this.label37);
             this.panel_1k_pc.Controls.Add(this.label38);
             this.panel_1k_pc.Controls.Add(this.comboBox31);
-            this.panel_1k_pc.Location = new System.Drawing.Point(129, 135);
+            this.panel_1k_pc.Location = new System.Drawing.Point(42, 128);
             this.panel_1k_pc.Name = "panel_1k_pc";
             this.panel_1k_pc.Size = new System.Drawing.Size(590, 463);
             this.panel_1k_pc.TabIndex = 56;
@@ -2152,7 +2124,7 @@
             this.panel_ncp.Controls.Add(this.checkedListBox5);
             this.panel_ncp.Controls.Add(this.label40);
             this.panel_ncp.Controls.Add(this.comboBox32);
-            this.panel_ncp.Location = new System.Drawing.Point(88, 135);
+            this.panel_ncp.Location = new System.Drawing.Point(25, 128);
             this.panel_ncp.Name = "panel_ncp";
             this.panel_ncp.Size = new System.Drawing.Size(590, 463);
             this.panel_ncp.TabIndex = 57;
@@ -2213,7 +2185,7 @@
             this.panel_2m.Controls.Add(this.comboBox27);
             this.panel_2m.Controls.Add(this.label33);
             this.panel_2m.Controls.Add(this.comboBox26);
-            this.panel_2m.Location = new System.Drawing.Point(57, 135);
+            this.panel_2m.Location = new System.Drawing.Point(152, 128);
             this.panel_2m.Name = "panel_2m";
             this.panel_2m.Size = new System.Drawing.Size(590, 463);
             this.panel_2m.TabIndex = 58;
@@ -2263,7 +2235,7 @@
             this.panel_2m1k.Controls.Add(this.label41);
             this.panel_2m1k.Controls.Add(this.checkBox12);
             this.panel_2m1k.Controls.Add(this.comboBox29);
-            this.panel_2m1k.Location = new System.Drawing.Point(25, 135);
+            this.panel_2m1k.Location = new System.Drawing.Point(117, 128);
             this.panel_2m1k.Name = "panel_2m1k";
             this.panel_2m1k.Size = new System.Drawing.Size(590, 463);
             this.panel_2m1k.TabIndex = 55;
@@ -2322,7 +2294,7 @@
             this.panel_nc.Controls.Add(this.checkBox6);
             this.panel_nc.Controls.Add(this.label9);
             this.panel_nc.Controls.Add(this.comboBox4);
-            this.panel_nc.Location = new System.Drawing.Point(157, 117);
+            this.panel_nc.Location = new System.Drawing.Point(3, 128);
             this.panel_nc.Name = "panel_nc";
             this.panel_nc.Size = new System.Drawing.Size(590, 463);
             this.panel_nc.TabIndex = 58;
@@ -2369,7 +2341,7 @@
             this.panel_1m1k_c.Controls.Add(this.comboBox44);
             this.panel_1m1k_c.Controls.Add(this.comboBox40);
             this.panel_1m1k_c.Controls.Add(this.label49);
-            this.panel_1m1k_c.Location = new System.Drawing.Point(132, 117);
+            this.panel_1m1k_c.Location = new System.Drawing.Point(150, 104);
             this.panel_1m1k_c.Name = "panel_1m1k_c";
             this.panel_1m1k_c.Size = new System.Drawing.Size(590, 463);
             this.panel_1m1k_c.TabIndex = 54;
@@ -2487,7 +2459,7 @@
             this.panel_2m1k_c.Controls.Add(this.label42);
             this.panel_2m1k_c.Controls.Add(this.comboBox34);
             this.panel_2m1k_c.Controls.Add(this.comboBox35);
-            this.panel_2m1k_c.Location = new System.Drawing.Point(114, 117);
+            this.panel_2m1k_c.Location = new System.Drawing.Point(124, 104);
             this.panel_2m1k_c.Name = "panel_2m1k_c";
             this.panel_2m1k_c.Size = new System.Drawing.Size(590, 463);
             this.panel_2m1k_c.TabIndex = 56;
@@ -2618,7 +2590,7 @@
             this.panel_3N.Controls.Add(this.numericUpDown14);
             this.panel_3N.Controls.Add(this.label84);
             this.panel_3N.Controls.Add(this.numericUpDown15);
-            this.panel_3N.Location = new System.Drawing.Point(93, 117);
+            this.panel_3N.Location = new System.Drawing.Point(96, 128);
             this.panel_3N.Name = "panel_3N";
             this.panel_3N.Size = new System.Drawing.Size(590, 463);
             this.panel_3N.TabIndex = 75;
@@ -2698,7 +2670,7 @@
             this.panel_1N1m.Controls.Add(this.label80);
             this.panel_1N1m.Controls.Add(this.label53);
             this.panel_1N1m.Controls.Add(this.numericUpDown12);
-            this.panel_1N1m.Location = new System.Drawing.Point(71, 117);
+            this.panel_1N1m.Location = new System.Drawing.Point(78, 128);
             this.panel_1N1m.Name = "panel_1N1m";
             this.panel_1N1m.Size = new System.Drawing.Size(590, 463);
             this.panel_1N1m.TabIndex = 76;
@@ -2755,7 +2727,7 @@
             this.panel_4N.Controls.Add(this.numericUpDown11);
             this.panel_4N.Controls.Add(this.label85);
             this.panel_4N.Controls.Add(this.numericUpDown16);
-            this.panel_4N.Location = new System.Drawing.Point(54, 117);
+            this.panel_4N.Location = new System.Drawing.Point(60, 128);
             this.panel_4N.Name = "panel_4N";
             this.panel_4N.Size = new System.Drawing.Size(590, 463);
             this.panel_4N.TabIndex = 76;
@@ -2852,210 +2824,6 @@
             0,
             0});
             // 
-            // panel_tombblades
-            // 
-            this.panel_tombblades.Controls.Add(this.label94);
-            this.panel_tombblades.Controls.Add(this.label93);
-            this.panel_tombblades.Controls.Add(this.numericUpDown24);
-            this.panel_tombblades.Controls.Add(this.label95);
-            this.panel_tombblades.Controls.Add(this.label92);
-            this.panel_tombblades.Controls.Add(this.numericUpDown23);
-            this.panel_tombblades.Controls.Add(this.label91);
-            this.panel_tombblades.Controls.Add(this.numericUpDown22);
-            this.panel_tombblades.Controls.Add(this.label87);
-            this.panel_tombblades.Controls.Add(this.numericUpDown18);
-            this.panel_tombblades.Controls.Add(this.label88);
-            this.panel_tombblades.Controls.Add(this.label89);
-            this.panel_tombblades.Controls.Add(this.numericUpDown19);
-            this.panel_tombblades.Controls.Add(this.numericUpDown20);
-            this.panel_tombblades.Controls.Add(this.label90);
-            this.panel_tombblades.Controls.Add(this.numericUpDown21);
-            this.panel_tombblades.Location = new System.Drawing.Point(30, 117);
-            this.panel_tombblades.Name = "panel_tombblades";
-            this.panel_tombblades.Size = new System.Drawing.Size(590, 463);
-            this.panel_tombblades.TabIndex = 77;
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label94.Location = new System.Drawing.Point(86, 209);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(323, 20);
-            this.label94.TabIndex = 78;
-            this.label94.Text = "Each model may take one of the following:";
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label93.Location = new System.Drawing.Point(126, 270);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(212, 20);
-            this.label93.TabIndex = 75;
-            this.label93.Text = "Models with Shadowlooms:";
-            // 
-            // numericUpDown24
-            // 
-            this.numericUpDown24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown24.Location = new System.Drawing.Point(349, 268);
-            this.numericUpDown24.Name = "numericUpDown24";
-            this.numericUpDown24.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown24.TabIndex = 76;
-            this.numericUpDown24.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label95.Location = new System.Drawing.Point(86, 59);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(333, 20);
-            this.label95.TabIndex = 79;
-            this.label95.Text = "Each model must have one of the following:";
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label92.Location = new System.Drawing.Point(126, 238);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(214, 20);
-            this.label92.TabIndex = 73;
-            this.label92.Text = "Models with Nebuloscopes:";
-            // 
-            // numericUpDown23
-            // 
-            this.numericUpDown23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown23.Location = new System.Drawing.Point(349, 236);
-            this.numericUpDown23.Name = "numericUpDown23";
-            this.numericUpDown23.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown23.TabIndex = 74;
-            this.numericUpDown23.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label91.Location = new System.Drawing.Point(86, 179);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(198, 20);
-            this.label91.TabIndex = 71;
-            this.label91.Text = "Models with Shieldvanes:";
-            // 
-            // numericUpDown22
-            // 
-            this.numericUpDown22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown22.Location = new System.Drawing.Point(309, 177);
-            this.numericUpDown22.Name = "numericUpDown22";
-            this.numericUpDown22.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown22.TabIndex = 72;
-            this.numericUpDown22.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label87.Location = new System.Drawing.Point(126, 149);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(261, 20);
-            this.label87.TabIndex = 69;
-            this.label87.Text = "Models with Twin Tesla Carbines:";
-            // 
-            // numericUpDown18
-            // 
-            this.numericUpDown18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown18.Location = new System.Drawing.Point(393, 147);
-            this.numericUpDown18.Name = "numericUpDown18";
-            this.numericUpDown18.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown18.TabIndex = 70;
-            this.numericUpDown18.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label88.Location = new System.Drawing.Point(126, 85);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(265, 20);
-            this.label88.TabIndex = 67;
-            this.label88.Text = "Models with Twin Gauss Blasters:";
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label89.Location = new System.Drawing.Point(126, 117);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(238, 20);
-            this.label89.TabIndex = 65;
-            this.label89.Text = "Models with Particle Beamers:";
-            // 
-            // numericUpDown19
-            // 
-            this.numericUpDown19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown19.Location = new System.Drawing.Point(393, 83);
-            this.numericUpDown19.Name = "numericUpDown19";
-            this.numericUpDown19.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown19.TabIndex = 68;
-            this.numericUpDown19.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // numericUpDown20
-            // 
-            this.numericUpDown20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown20.Location = new System.Drawing.Point(393, 115);
-            this.numericUpDown20.Name = "numericUpDown20";
-            this.numericUpDown20.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown20.TabIndex = 66;
-            this.numericUpDown20.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label90.Location = new System.Drawing.Point(86, 29);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(151, 20);
-            this.label90.TabIndex = 17;
-            this.label90.Text = "Number of Models:";
-            // 
-            // numericUpDown21
-            // 
-            this.numericUpDown21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown21.Location = new System.Drawing.Point(243, 27);
-            this.numericUpDown21.Name = "numericUpDown21";
-            this.numericUpDown21.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown21.TabIndex = 18;
-            this.numericUpDown21.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
             // panel_5N
             // 
             this.panel_5N.Controls.Add(this.label101);
@@ -3070,7 +2838,7 @@
             this.panel_5N.Controls.Add(this.numericUpDown27);
             this.panel_5N.Controls.Add(this.label99);
             this.panel_5N.Controls.Add(this.numericUpDown28);
-            this.panel_5N.Location = new System.Drawing.Point(3, 117);
+            this.panel_5N.Location = new System.Drawing.Point(35, 128);
             this.panel_5N.Name = "panel_5N";
             this.panel_5N.Size = new System.Drawing.Size(590, 463);
             this.panel_5N.TabIndex = 77;
@@ -3216,7 +2984,7 @@
             this.panel_N1kS_1m_.Controls.Add(this.label104);
             this.panel_N1kS_1m_.Controls.Add(this.groupBox2);
             this.panel_N1kS_1m_.Controls.Add(this.numericUpDown30);
-            this.panel_N1kS_1m_.Location = new System.Drawing.Point(247, 96);
+            this.panel_N1kS_1m_.Location = new System.Drawing.Point(9, 128);
             this.panel_N1kS_1m_.Name = "panel_N1kS_1m_";
             this.panel_N1kS_1m_.Size = new System.Drawing.Size(590, 463);
             this.panel_N1kS_1m_.TabIndex = 60;
@@ -3297,7 +3065,7 @@
             this.panel_NL3k.Controls.Add(this.listBox1);
             this.panel_NL3k.Controls.Add(this.label108);
             this.panel_NL3k.Controls.Add(this.numericUpDown31);
-            this.panel_NL3k.Location = new System.Drawing.Point(229, 96);
+            this.panel_NL3k.Location = new System.Drawing.Point(110, 128);
             this.panel_NL3k.Name = "panel_NL3k";
             this.panel_NL3k.Size = new System.Drawing.Size(590, 463);
             this.panel_NL3k.TabIndex = 75;
@@ -3397,7 +3165,7 @@
             this.panel_NL1m1k.Controls.Add(this.listBox5);
             this.panel_NL1m1k.Controls.Add(this.label114);
             this.panel_NL1m1k.Controls.Add(this.numericUpDown33);
-            this.panel_NL1m1k.Location = new System.Drawing.Point(206, 96);
+            this.panel_NL1m1k.Location = new System.Drawing.Point(92, 128);
             this.panel_NL1m1k.Name = "panel_NL1m1k";
             this.panel_NL1m1k.Size = new System.Drawing.Size(590, 463);
             this.panel_NL1m1k.TabIndex = 75;
@@ -3495,7 +3263,7 @@
             this.panel_NL2m.Controls.Add(this.listBox4);
             this.panel_NL2m.Controls.Add(this.label110);
             this.panel_NL2m.Controls.Add(this.numericUpDown32);
-            this.panel_NL2m.Location = new System.Drawing.Point(186, 96);
+            this.panel_NL2m.Location = new System.Drawing.Point(65, 128);
             this.panel_NL2m.Name = "panel_NL2m";
             this.panel_NL2m.Size = new System.Drawing.Size(590, 463);
             this.panel_NL2m.TabIndex = 75;
@@ -3590,31 +3358,11 @@
             0,
             0});
             // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(1102, 565);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(151, 20);
-            this.label58.TabIndex = 59;
-            this.label58.Text = "Number of Models:";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(1299, 565);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(151, 20);
-            this.label60.TabIndex = 60;
-            this.label60.Text = "Number of Models:";
-            // 
             // panel_2k
             // 
             this.panel_2k.Controls.Add(this.checkBox33);
             this.panel_2k.Controls.Add(this.checkBox28);
-            this.panel_2k.Location = new System.Drawing.Point(157, 93);
+            this.panel_2k.Location = new System.Drawing.Point(61, 128);
             this.panel_2k.Name = "panel_2k";
             this.panel_2k.Size = new System.Drawing.Size(590, 463);
             this.panel_2k.TabIndex = 55;
@@ -3641,59 +3389,135 @@
             this.checkBox28.Text = "checkBox1";
             this.checkBox28.UseVisualStyleBackColor = true;
             // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.Location = new System.Drawing.Point(1102, 565);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(151, 20);
+            this.label58.TabIndex = 59;
+            this.label58.Text = "Number of Models:";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.Location = new System.Drawing.Point(1299, 565);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(151, 20);
+            this.label60.TabIndex = 60;
+            this.label60.Text = "Number of Models:";
+            // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.panel_2m_c);
+            this.groupBox4.Controls.Add(this.panel_c);
+            this.groupBox4.Controls.Add(this.panel_1k_c);
+            this.groupBox4.Controls.Add(this.panel_2m_pc);
+            this.groupBox4.Controls.Add(this.panel_1k_pc);
+            this.groupBox4.Controls.Add(this.panel_ncp);
+            this.groupBox4.Controls.Add(this.panel_nc);
+            this.groupBox4.Controls.Add(this.panel_1m1k_c);
+            this.groupBox4.Controls.Add(this.panel_2m1k_c);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox4.Location = new System.Drawing.Point(306, 542);
+            this.groupBox4.Location = new System.Drawing.Point(12, 542);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(357, 152);
+            this.groupBox4.Size = new System.Drawing.Size(181, 152);
             this.groupBox4.TabIndex = 61;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Character Templates";
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.panel_2m);
+            this.groupBox5.Controls.Add(this.panel_1m1k);
+            this.groupBox5.Controls.Add(this.panel_2m1k);
+            this.groupBox5.Controls.Add(this.panel_3m);
+            this.groupBox5.Controls.Add(this.panel_1m);
+            this.groupBox5.Controls.Add(this.panel_2k);
+            this.groupBox5.Controls.Add(this.panel_1k);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox5.Location = new System.Drawing.Point(669, 542);
+            this.groupBox5.Location = new System.Drawing.Point(200, 542);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(357, 152);
+            this.groupBox5.Size = new System.Drawing.Size(181, 152);
             this.groupBox5.TabIndex = 62;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Listbox Templates";
+            this.groupBox5.Text = "Normal Templates";
             // 
-            // cbStratagem1
+            // panel_1k
             // 
-            this.cbStratagem1.AutoSize = true;
-            this.cbStratagem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStratagem1.Location = new System.Drawing.Point(311, 323);
-            this.cbStratagem1.Name = "cbStratagem1";
-            this.cbStratagem1.Size = new System.Drawing.Size(61, 24);
-            this.cbStratagem1.TabIndex = 54;
-            this.cbStratagem1.Text = "Re1";
-            this.cbStratagem1.UseVisualStyleBackColor = true;
+            this.panel_1k.Controls.Add(this.checkBox7);
+            this.panel_1k.Location = new System.Drawing.Point(36, 128);
+            this.panel_1k.Name = "panel_1k";
+            this.panel_1k.Size = new System.Drawing.Size(590, 463);
+            this.panel_1k.TabIndex = 56;
             // 
-            // cbStratagem2
+            // checkBox7
             // 
-            this.cbStratagem2.AutoSize = true;
-            this.cbStratagem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStratagem2.Location = new System.Drawing.Point(311, 353);
-            this.cbStratagem2.Name = "cbStratagem2";
-            this.cbStratagem2.Size = new System.Drawing.Size(63, 24);
-            this.cbStratagem2.TabIndex = 55;
-            this.cbStratagem2.Text = "RS2";
-            this.cbStratagem2.UseVisualStyleBackColor = true;
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox7.Location = new System.Drawing.Point(316, 51);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(113, 24);
+            this.checkBox7.TabIndex = 46;
+            this.checkBox7.Text = "checkBox1";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.panel_NS_2k_);
+            this.groupBox6.Controls.Add(this.panel_3N);
+            this.groupBox6.Controls.Add(this.panel_1N1m);
+            this.groupBox6.Controls.Add(this.panel_4N);
+            this.groupBox6.Controls.Add(this.panel_5N);
+            this.groupBox6.Controls.Add(this.panel_N1kS_1m_);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.groupBox6.Location = new System.Drawing.Point(388, 542);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(181, 152);
+            this.groupBox6.TabIndex = 62;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Code \"N\" Templates";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.panel_NL2m1k);
+            this.groupBox7.Controls.Add(this.panel_NL2m3k);
+            this.groupBox7.Controls.Add(this.panel_NL3k);
+            this.groupBox7.Controls.Add(this.panel_NL1m1k);
+            this.groupBox7.Controls.Add(this.panel_NL2m);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.groupBox7.Location = new System.Drawing.Point(575, 542);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(181, 152);
+            this.groupBox7.TabIndex = 62;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Listbox Templates";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.panel_cultist);
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.groupBox8.Location = new System.Drawing.Point(762, 542);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(181, 152);
+            this.groupBox8.TabIndex = 63;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Unique Templates";
             // 
             // Testing_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
-            this.Controls.Add(this.panel_1m2k_pc);
+            this.Controls.Add(this.groupBox8);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label60);
             this.Controls.Add(this.label58);
-            this.Controls.Add(this.Panel_Panel);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel3);
@@ -3744,7 +3568,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.Panel_Panel.ResumeLayout(false);
             this.panel_2m_pc.ResumeLayout(false);
             this.panel_2m_pc.PerformLayout();
             this.panel_1k_pc.ResumeLayout(false);
@@ -3775,15 +3598,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown16)).EndInit();
-            this.panel_tombblades.ResumeLayout(false);
-            this.panel_tombblades.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown21)).EndInit();
             this.panel_5N.ResumeLayout(false);
             this.panel_5N.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown29)).EndInit();
@@ -3807,6 +3621,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown32)).EndInit();
             this.panel_2k.ResumeLayout(false);
             this.panel_2k.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.panel_1k.ResumeLayout(false);
+            this.panel_1k.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3947,7 +3768,6 @@
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.CheckBox checkBox19;
-        private System.Windows.Forms.Panel Panel_Panel;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label75;
@@ -4043,23 +3863,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDown16;
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.NumericUpDown numericUpDown17;
-        private System.Windows.Forms.Panel panel_tombblades;
-        private System.Windows.Forms.Label label92;
-        private System.Windows.Forms.NumericUpDown numericUpDown23;
-        private System.Windows.Forms.Label label91;
-        private System.Windows.Forms.NumericUpDown numericUpDown22;
-        private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.NumericUpDown numericUpDown18;
-        private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.NumericUpDown numericUpDown19;
-        private System.Windows.Forms.NumericUpDown numericUpDown20;
-        private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.NumericUpDown numericUpDown21;
-        private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.NumericUpDown numericUpDown24;
-        private System.Windows.Forms.Label label94;
-        private System.Windows.Forms.Label label95;
         private System.Windows.Forms.Panel panel_5N;
         private System.Windows.Forms.Label label96;
         private System.Windows.Forms.NumericUpDown numericUpDown25;
@@ -4112,8 +3915,13 @@
         private System.Windows.Forms.CheckBox checkBox33;
         private System.Windows.Forms.CheckBox checkBox28;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.CheckBox cbStratagem1;
         private System.Windows.Forms.CheckBox cbStratagem2;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Panel panel_1k;
+        private System.Windows.Forms.CheckBox checkBox7;
     }
 }

@@ -133,6 +133,9 @@ namespace Roster_Builder
                     cmbCustomSub2.Items.Add(custom2);
                 }
             }
+
+            cbStratagem1.Text = units.warlordStratagem;
+            cbStratagem2.Text = units.relicStratagem;
         }
 
         private void btnAddToRoster_Click(object sender, EventArgs e)

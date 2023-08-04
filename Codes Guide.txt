@@ -102,10 +102,5 @@ NL2m2k  - Plague Marines
 
 
 
-
-cbOption1 - 239, 126
-cbOption2 - 239, 156
-cbOption3 - 239, 186
-
-lblFactionUpgrade - 239, 213
-cmbFactionUpgrade - 243, 236
+298, 323
+298, 353

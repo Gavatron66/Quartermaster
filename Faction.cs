@@ -11,6 +11,8 @@ namespace Roster_Builder
         public string subFactionName { get; set; }
         public string currentSubFaction { get; set; }
         public string factionUpgradeName { get; set; }
+        public string warlordStratagem { get; set; }
+        public string relicStratagem { get; set; }
 
         public Faction() { }
 

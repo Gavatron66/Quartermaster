@@ -3,15 +3,16 @@ using Roster_Builder.Necrons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Cache;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Roster_Builder.Genestealer_Cults
 {
-    internal class PurestrainGenestealers : Datasheets
+    public class PurestrainGenestealers : Datasheets
     {
-
+        GSC repo = new GSC();
         public PurestrainGenestealers()
         {
             UnitSize = 5;
@@ -33,7 +34,10 @@ namespace Roster_Builder.Genestealer_Cults
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
+            panel.Controls["cmbFactionUpgrade"].Visible = true;
+            panel.Controls["lblFactionUpgrade"].Visible = true;
 
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
 
             int currentSize = UnitSize;
@@ -41,14 +45,30 @@ namespace Roster_Builder.Genestealer_Cults
             nudUnitSize.Value = nudUnitSize.Minimum;
             nudUnitSize.Maximum = 10;
             nudUnitSize.Value = currentSize;
+
+            cmbFaction.Items.Clear();
+            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+
+            if (Factionupgrade != null)
+            {
+                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+            }
+            else
+            {
+                cmbFaction.SelectedIndex = 0;
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
             NumericUpDown nud = panel.Controls["nudUnitSize"] as NumericUpDown;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
+                case 16:
+                    Factionupgrade = cmbFaction.Text;
+                    break;
                 case 30:
                     UnitSize = int.Parse(nud.Value.ToString());
                     break;
