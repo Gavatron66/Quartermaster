@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Roster_Builder.Genestealer_Cults;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace Roster_Builder.Necrons
 {
     public class AchillesRidgerunners : Datasheets
     {
+        GSC repo = new GSC();
         int currentIndex;
         public AchillesRidgerunners()
         {
@@ -40,6 +42,7 @@ namespace Roster_Builder.Necrons
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;
@@ -70,6 +73,21 @@ namespace Roster_Builder.Necrons
                 "Spotter",
                 "Survey Augur"
             });
+
+            cmbFaction.Visible = true;
+            panel.Controls["lblFactionupgrade"].Visible = true;
+
+            cmbFaction.Items.Clear();
+            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+
+            if (Factionupgrade != null)
+            {
+                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+            }
+            else
+            {
+                cmbFaction.SelectedIndex = 0;
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)

@@ -146,6 +146,7 @@
     <Compile Include="Faction.cs" />
     <Compile Include="Genestealer Cults\Abominant.cs" />
     <Compile Include="Genestealer Cults\AchillesRidgerunners.cs" />
+    <Compile Include="Genestealer Cults\AcolyteHybrids.cs" />
     <Compile Include="Genestealer Cults\AcolyteIconward.cs" />
     <Compile Include="Genestealer Cults\Clamavus.cs" />
     <Compile Include="Genestealer Cults\GoliathRockgrinder.cs" />
@@ -155,6 +156,7 @@
     <Compile Include="Genestealer Cults\Kelermorph.cs" />
     <Compile Include="Genestealer Cults\Locus.cs" />
     <Compile Include="Genestealer Cults\Magus.cs" />
+    <Compile Include="Genestealer Cults\NeophyteHybrids.cs" />
     <Compile Include="Genestealer Cults\Nexos.cs" />
     <Compile Include="Genestealer Cults\Patriarch.cs" />
     <Compile Include="Genestealer Cults\Primus.cs" />

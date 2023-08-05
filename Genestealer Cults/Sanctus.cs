@@ -92,6 +92,7 @@ namespace Roster_Builder.Genestealer_Cults
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
@@ -107,6 +108,9 @@ namespace Roster_Builder.Genestealer_Cults
                     {
                         WarlordTrait = string.Empty;
                     }
+                    break;
+                case 16:
+                    Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
                     Relic = cmbRelic.SelectedItem.ToString();

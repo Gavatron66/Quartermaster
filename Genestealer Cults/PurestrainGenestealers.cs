@@ -75,7 +75,7 @@ namespace Roster_Builder.Genestealer_Cults
             }
 
             Points = UnitSize * DEFAULT_POINTS;
-
+            Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }
 
         public override string ToString()

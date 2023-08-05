@@ -38,8 +38,8 @@ namespace Roster_Builder.Genestealer_Cults
                 new AcolyteIconward(),
                 new JackalAlphus(),
                 //---------- Troops ----------
-                //new AcolyteHybrids(),
-                //new NeophyteHybrids(),
+                new AcolyteHybrids(),
+                new NeophyteHybrids(),
                 //---------- Elites ----------
                 new PurestrainGenestealers(),
                 //new HybridMetamorphs(),

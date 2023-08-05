@@ -35,15 +35,10 @@ Models to be reworked:
 		Necron Warriors
 		
 Units that have been skipped: (Once I figure out the templates thing than these can be done, since they might need new templates)
-	Acolyte Hybrids
-	Neophyte Hybrids
 	Hybrid Metamorphs
 	Aberrants (Not too different from code "N1kS(1m)")
 	Biophagus (1k_c, very simple implementation)
 	Atalan Jackals
-
-GSC Units that need the Faction Upgrade stuff:
-	Purestrain Genestealers
 	
 Abominant needs to be reviewed, it's got weird stuff going on
 

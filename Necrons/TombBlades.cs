@@ -9,7 +9,6 @@ namespace Roster_Builder.Necrons
 {
     public class TombBlades : Datasheets
     {
-
         int currentIndex;
         public TombBlades()
         {
