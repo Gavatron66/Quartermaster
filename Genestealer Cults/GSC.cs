@@ -42,8 +42,8 @@ namespace Roster_Builder.Genestealer_Cults
                 new NeophyteHybrids(),
                 //---------- Elites ----------
                 new PurestrainGenestealers(),
-                //new HybridMetamorphs(),
-                //new Aberrants(),
+                new HybridMetamorphs(),
+                new Aberrants(),
                 new Abominant(),
                 new Nexos(),
                 new Clamavus(),
@@ -51,7 +51,7 @@ namespace Roster_Builder.Genestealer_Cults
                 new Kelermorph(),
                 new Sanctus(),
                 new ReductusSaboteur(),
-                //new Biophagus(),
+                new Biophagus(),
                 //---------- Fast Attack ----------
                 //new AtalanJackals(),
                 new AchillesRidgerunners(),

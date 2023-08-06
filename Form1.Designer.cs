@@ -72,6 +72,8 @@
             this.lblnud1 = new System.Windows.Forms.Label();
             this.nudOption1 = new System.Windows.Forms.NumericUpDown();
             this.gbUnitLeader = new System.Windows.Forms.GroupBox();
+            this.gb_lblOption2 = new System.Windows.Forms.Label();
+            this.gb_cmbOption2 = new System.Windows.Forms.ComboBox();
             this.gb_cmbFactionupgrade = new System.Windows.Forms.ComboBox();
             this.gb_lblOption1 = new System.Windows.Forms.Label();
             this.gb_lblFactionupgrade = new System.Windows.Forms.Label();
@@ -100,8 +102,6 @@
             this.cmbOption1 = new System.Windows.Forms.ComboBox();
             this.cmbOption2 = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.gb_lblOption2 = new System.Windows.Forms.Label();
-            this.gb_cmbOption2 = new System.Windows.Forms.ComboBox();
             this.MenuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSubFaction.SuspendLayout();
@@ -616,6 +616,26 @@
             this.gbUnitLeader.TabStop = false;
             this.gbUnitLeader.Text = "groupBox1";
             // 
+            // gb_lblOption2
+            // 
+            this.gb_lblOption2.AutoSize = true;
+            this.gb_lblOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_lblOption2.Location = new System.Drawing.Point(7, 144);
+            this.gb_lblOption2.Name = "gb_lblOption2";
+            this.gb_lblOption2.Size = new System.Drawing.Size(219, 20);
+            this.gb_lblOption2.TabIndex = 67;
+            this.gb_lblOption2.Text = "Select One of the Following:";
+            // 
+            // gb_cmbOption2
+            // 
+            this.gb_cmbOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_cmbOption2.FormattingEnabled = true;
+            this.gb_cmbOption2.Location = new System.Drawing.Point(232, 141);
+            this.gb_cmbOption2.Name = "gb_cmbOption2";
+            this.gb_cmbOption2.Size = new System.Drawing.Size(176, 28);
+            this.gb_cmbOption2.TabIndex = 68;
+            this.gb_cmbOption2.SelectedIndexChanged += new System.EventHandler(this.gb_cmbOption2_SelectedIndexChanged);
+            // 
             // gb_cmbFactionupgrade
             // 
             this.gb_cmbFactionupgrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -908,25 +928,6 @@
             this.btnSave.Text = "Save Roster";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // gb_lblOption2
-            // 
-            this.gb_lblOption2.AutoSize = true;
-            this.gb_lblOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_lblOption2.Location = new System.Drawing.Point(7, 144);
-            this.gb_lblOption2.Name = "gb_lblOption2";
-            this.gb_lblOption2.Size = new System.Drawing.Size(219, 20);
-            this.gb_lblOption2.TabIndex = 67;
-            this.gb_lblOption2.Text = "Select One of the Following:";
-            // 
-            // gb_cmbOption2
-            // 
-            this.gb_cmbOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_cmbOption2.FormattingEnabled = true;
-            this.gb_cmbOption2.Location = new System.Drawing.Point(232, 141);
-            this.gb_cmbOption2.Name = "gb_cmbOption2";
-            this.gb_cmbOption2.Size = new System.Drawing.Size(176, 28);
-            this.gb_cmbOption2.TabIndex = 68;
             // 
             // Form1
             // 

@@ -21,6 +21,7 @@
 	36 - nudOption6
 4X - groupBox1 Controls
 	411 - gb_cmbOption1
+	412 - gb_cmbOption2
 	416 - gb_cmbFactionUpgrade
 	421 - cbLeaderOption1
 	422 - cbLeaderOption2

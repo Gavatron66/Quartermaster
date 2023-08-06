@@ -144,14 +144,17 @@
     <Compile Include="Death Guard\Tallyman.cs" />
     <Compile Include="Death Guard\Typhus.cs" />
     <Compile Include="Faction.cs" />
+    <Compile Include="Genestealer Cults\Aberrants.cs" />
     <Compile Include="Genestealer Cults\Abominant.cs" />
     <Compile Include="Genestealer Cults\AchillesRidgerunners.cs" />
     <Compile Include="Genestealer Cults\AcolyteHybrids.cs" />
     <Compile Include="Genestealer Cults\AcolyteIconward.cs" />
+    <Compile Include="Genestealer Cults\Biophagus.cs" />
     <Compile Include="Genestealer Cults\Clamavus.cs" />
     <Compile Include="Genestealer Cults\GoliathRockgrinder.cs" />
     <Compile Include="Genestealer Cults\GoliathTruck.cs" />
     <Compile Include="Genestealer Cults\GSC.cs" />
+    <Compile Include="Genestealer Cults\HybridMetamorphs.cs" />
     <Compile Include="Genestealer Cults\JackalAlphus.cs" />
     <Compile Include="Genestealer Cults\Kelermorph.cs" />
     <Compile Include="Genestealer Cults\Locus.cs" />

@@ -525,5 +525,11 @@ namespace Roster_Builder
             roster[currentIndex].SaveDatasheets(73, panel1);
             updateLBRoster();
         }
+
+        private void gb_cmbOption2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            roster[currentIndex].SaveDatasheets(412, panel1);
+            updateLBRoster();
+        }
     }
 }

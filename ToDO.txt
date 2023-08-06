@@ -29,21 +29,17 @@ Stratagems
 			Buff a Chaos Spawn
 			
 			
-Models to be reworked:
-	Models to add checks for Numeric Up Down controls:
+Models to add checks for Numeric Up Down controls:
 		Death Guard Cultists
 		Necron Warriors
+		Hybrid Metamorphs
 		
-Units that have been skipped: (Once I figure out the templates thing than these can be done, since they might need new templates)
-	Hybrid Metamorphs
-	Aberrants (Not too different from code "N1kS(1m)")
-	Biophagus (1k_c, very simple implementation)
-	Atalan Jackals
+Units that have been skipped:
+	Atalan Jackals - Could do either way. Could do it with Listbox or nuds
 	
-Abominant needs to be reviewed, it's got weird stuff going on
+Found an issue with Custodes: if a Knight-Centura is included, it messes up the available Warlord Trait options once selected
 
-Found an issue with Custodes: if a Knight-Centura is included, it messes up the available Warlord Trait options
-
-Achilles Ridgerunners
-Goliath Rockgrinders
-Goliath Truck
+The following needs faction upgrade boxes:
+	Achilles Ridgerunners
+	Goliath Rockgrinders
+	Goliath Truck
