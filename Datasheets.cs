@@ -122,7 +122,7 @@ namespace Roster_Builder
         [JsonDerivedType(typeof(Vigilators), "Vigilators")]
         [JsonDerivedType(typeof(Witchseekers), "Witchseekers")]
     #endregion
-        #region Adeptus Custodes JSON
+        #region Genestealer Cults JSON
         [JsonDerivedType(typeof(Aberrants), "Aberrants")]
         [JsonDerivedType(typeof(Abominant), "Abominant")]
         [JsonDerivedType(typeof(AchillesRidgerunners), "AchillesRidgerunners")]
