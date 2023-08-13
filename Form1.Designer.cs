@@ -102,6 +102,8 @@
             this.cmbOption1 = new System.Windows.Forms.ComboBox();
             this.cmbOption2 = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.lblUnitSize2 = new System.Windows.Forms.Label();
+            this.nudUnitSize2 = new System.Windows.Forms.NumericUpDown();
             this.MenuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSubFaction.SuspendLayout();
@@ -114,6 +116,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudOption1)).BeginInit();
             this.gbUnitLeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUnitSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudUnitSize2)).BeginInit();
             this.SuspendLayout();
             // 
             // lbUnits
@@ -276,10 +279,11 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblUnitSize2);
+            this.panel1.Controls.Add(this.nudUnitSize2);
             this.panel1.Controls.Add(this.cbStratagem2);
             this.panel1.Controls.Add(this.cbStratagem3);
             this.panel1.Controls.Add(this.cbStratagem1);
-            this.panel1.Controls.Add(this.panelSubFaction);
             this.panel1.Controls.Add(this.lblExtra2);
             this.panel1.Controls.Add(this.lblnud6);
             this.panel1.Controls.Add(this.lblnud5);
@@ -318,6 +322,7 @@
             this.panel1.Controls.Add(this.lblOption2);
             this.panel1.Controls.Add(this.cmbOption1);
             this.panel1.Controls.Add(this.cmbOption2);
+            this.panel1.Controls.Add(this.panelSubFaction);
             this.panel1.Location = new System.Drawing.Point(211, 75);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1263, 680);
@@ -929,6 +934,25 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // lblUnitSize2
+            // 
+            this.lblUnitSize2.AutoSize = true;
+            this.lblUnitSize2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnitSize2.Location = new System.Drawing.Point(512, 195);
+            this.lblUnitSize2.Name = "lblUnitSize2";
+            this.lblUnitSize2.Size = new System.Drawing.Size(151, 20);
+            this.lblUnitSize2.TabIndex = 81;
+            this.lblUnitSize2.Text = "Number of Models:";
+            // 
+            // nudUnitSize2
+            // 
+            this.nudUnitSize2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudUnitSize2.Location = new System.Drawing.Point(669, 196);
+            this.nudUnitSize2.Name = "nudUnitSize2";
+            this.nudUnitSize2.Size = new System.Drawing.Size(120, 26);
+            this.nudUnitSize2.TabIndex = 80;
+            this.nudUnitSize2.ValueChanged += new System.EventHandler(this.nudUnitSize2_ValueChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -964,6 +988,7 @@
             this.gbUnitLeader.ResumeLayout(false);
             this.gbUnitLeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUnitSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudUnitSize2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1045,6 +1070,8 @@
         private System.Windows.Forms.CheckBox cbStratagem1;
         private System.Windows.Forms.Label gb_lblOption2;
         private System.Windows.Forms.ComboBox gb_cmbOption2;
+        private System.Windows.Forms.Label lblUnitSize2;
+        private System.Windows.Forms.NumericUpDown nudUnitSize2;
     }
 }
 

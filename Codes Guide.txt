@@ -29,6 +29,7 @@
 6X - Misc. Controls
 	60 - clbPsyker
 	61 - lbModelSelect
+	62 - nudUnitSize2
 7X - Requisition Boxes
 	71 - cbStratagem1
 	72 - cbStratagem2

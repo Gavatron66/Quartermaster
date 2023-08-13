@@ -53,7 +53,7 @@ namespace Roster_Builder.Genestealer_Cults
                 new ReductusSaboteur(),
                 new Biophagus(),
                 //---------- Fast Attack ----------
-                //new AtalanJackals(),
+                new AtalanJackals(),
                 new AchillesRidgerunners(),
                 //---------- Heavy Support ----------
                 new GoliathRockgrinder(),

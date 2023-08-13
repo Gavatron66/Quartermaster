@@ -531,5 +531,11 @@ namespace Roster_Builder
             roster[currentIndex].SaveDatasheets(412, panel1);
             updateLBRoster();
         }
+
+        private void nudUnitSize2_ValueChanged(object sender, EventArgs e)
+        {
+            roster[currentIndex].SaveDatasheets(62, panel1);
+            updateLBRoster();
+        }
     }
 }

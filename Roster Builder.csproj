@@ -149,6 +149,7 @@
     <Compile Include="Genestealer Cults\AchillesRidgerunners.cs" />
     <Compile Include="Genestealer Cults\AcolyteHybrids.cs" />
     <Compile Include="Genestealer Cults\AcolyteIconward.cs" />
+    <Compile Include="Genestealer Cults\AtalanJackals.cs" />
     <Compile Include="Genestealer Cults\Biophagus.cs" />
     <Compile Include="Genestealer Cults\Clamavus.cs" />
     <Compile Include="Genestealer Cults\GoliathRockgrinder.cs" />

@@ -1,5 +1,6 @@
 ﻿using Roster_Builder.Death_Guard;
 using Roster_Builder.Necrons;
+using Roster_Builder.Adeptus_Custodes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Roster_Builder.Genestealer_Cults;
 
 namespace Roster_Builder
 {
@@ -97,6 +99,52 @@ namespace Roster_Builder
         [JsonDerivedType(typeof(TriarchPraetorians), "Triarch Praetorians")]
         [JsonDerivedType(typeof(TriarchStalker), "Triarch Stalker")]
         [JsonDerivedType(typeof(Zahndrekh), "Zahndrekh")]
+    #endregion
+        #region Adeptus Custodes JSON
+        [JsonDerivedType(typeof(Aleya), "Aleya")]
+        [JsonDerivedType(typeof(AllarusCustodians), "AllarusCustodians")]
+        [JsonDerivedType(typeof(AllarusShieldCaptain), "AllarusShieldCaptain")]
+        [JsonDerivedType(typeof(AllarusVexilusPraetor), "AllarusVexilusPraetor")]
+        [JsonDerivedType(typeof(AnathemaPsykanaRhino), "AnathemaPsykanaRhino")]
+        [JsonDerivedType(typeof(BladeChampion), "BladeChampion")]
+        [JsonDerivedType(typeof(CustodianGuard), "CustodianGuard")]
+        [JsonDerivedType(typeof(CustodianWardens), "CustodianWardens")]
+        [JsonDerivedType(typeof(KnightCentura), "KnightCentura")]
+        [JsonDerivedType(typeof(Prosecutors), "Prosecutors")]
+        [JsonDerivedType(typeof(ShieldCaptain), "ShieldCaptain")]
+        [JsonDerivedType(typeof(TrajannValoris), "TrajannValoris")]
+        [JsonDerivedType(typeof(Valerian), "Valerian")]
+        [JsonDerivedType(typeof(VCDreadnought), "VCDreadnought")]
+        [JsonDerivedType(typeof(VenerableLandRaider), "VenerableLandRaider")]
+        [JsonDerivedType(typeof(VertusPraetors), "VertusPraetors")]
+        [JsonDerivedType(typeof(VertusShieldCaptain), "VertusShieldCaptain")]
+        [JsonDerivedType(typeof(VexilusPraetor), "VexilusPraetor")]
+        [JsonDerivedType(typeof(Vigilators), "Vigilators")]
+        [JsonDerivedType(typeof(Witchseekers), "Witchseekers")]
+    #endregion
+        #region Adeptus Custodes JSON
+        [JsonDerivedType(typeof(Aberrants), "Aberrants")]
+        [JsonDerivedType(typeof(Abominant), "Abominant")]
+        [JsonDerivedType(typeof(AchillesRidgerunners), "AchillesRidgerunners")]
+        [JsonDerivedType(typeof(AcolyteHybrids), "AcolyteHybrids")]
+        [JsonDerivedType(typeof(AcolyteIconward), "AcolyteIconward")]
+        [JsonDerivedType(typeof(AtalanJackals), "AtalanJackals")]
+        [JsonDerivedType(typeof(Biophagus), "Biophagus")]
+        [JsonDerivedType(typeof(Clamavus), "Clamavus")]
+        [JsonDerivedType(typeof(GoliathRockgrinder), "GoliathRockgrinder")]
+        [JsonDerivedType(typeof(GoliathTruck), "GoliathTruck")]
+        [JsonDerivedType(typeof(HybridMetamorphs), "HybridMetamorphs")]
+        [JsonDerivedType(typeof(JackalAlphus), "JackalAlphus")]
+        [JsonDerivedType(typeof(Kelermorph), "Kelermorph")]
+        [JsonDerivedType(typeof(Locus), "Locus")]
+        [JsonDerivedType(typeof(Magus), "Magus")]
+        [JsonDerivedType(typeof(NeophyteHybrids), "NeophyteHybrids")]
+        [JsonDerivedType(typeof(Nexos), "Nexos")]
+        [JsonDerivedType(typeof(Patriarch), "Patriarch")]
+        [JsonDerivedType(typeof(Primus), "Primus")]
+        [JsonDerivedType(typeof(PurestrainGenestealers), "PurestrainGenestealers")]
+        [JsonDerivedType(typeof(ReductusSaboteur), "ReductusSaboteur")]
+        [JsonDerivedType(typeof(Sanctus), "Sanctus")]
         #endregion
     #endregion
     public abstract class Datasheets

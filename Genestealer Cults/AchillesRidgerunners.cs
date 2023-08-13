@@ -101,6 +101,7 @@ namespace Roster_Builder.Necrons
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
@@ -111,6 +112,9 @@ namespace Roster_Builder.Necrons
                 case 12:
                     Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
                     lbModelSelect.Items[currentIndex] = "Achilles Ridgerunner w/ " + Weapons[(UnitSize - 1) * 2] + " and " + Weapons[((UnitSize - 1) * 2) + 1];
+                    break;
+                case 16:
+                    Factionupgrade = cmbFaction.Text;
                     break;
                 case 30:
                     int temp = UnitSize;
@@ -153,6 +157,8 @@ namespace Roster_Builder.Necrons
             }
 
             Points = DEFAULT_POINTS * UnitSize;
+
+            Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }
 
         public override string ToString()
