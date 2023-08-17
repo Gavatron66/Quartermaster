@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbUnits = new System.Windows.Forms.ListBox();
             this.lbRoster = new System.Windows.Forms.ListBox();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -104,6 +105,8 @@
             this.lblSubfaction = new System.Windows.Forms.Label();
             this.cmbSubFaction = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.lblErrors = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.MenuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUnitSize2)).BeginInit();
@@ -953,13 +956,27 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // lblErrors
+            // 
+            this.lblErrors.AutoSize = true;
+            this.lblErrors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrors.Location = new System.Drawing.Point(667, 460);
+            this.lblErrors.Name = "lblErrors";
+            this.lblErrors.Size = new System.Drawing.Size(155, 20);
+            this.lblErrors.TabIndex = 82;
+            this.lblErrors.Text = "Roster has _ errors";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ShowAlways = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1735, 767);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.MenuPanel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblCurrentPoints);
             this.Controls.Add(this.lblEditingUnit);
@@ -968,6 +985,9 @@
             this.Controls.Add(this.btnAddToRoster);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.lblPoints);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.MenuPanel);
+            this.Controls.Add(this.lblErrors);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";
             this.Text = "Form1";
@@ -1072,6 +1092,8 @@
         private System.Windows.Forms.ComboBox gb_cmbOption2;
         private System.Windows.Forms.Label lblUnitSize2;
         private System.Windows.Forms.NumericUpDown nudUnitSize2;
+        private System.Windows.Forms.Label lblErrors;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

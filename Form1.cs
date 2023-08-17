@@ -20,7 +20,7 @@ namespace Roster_Builder
 {
     public partial class Form1 : Form
     {
-        List<Datasheets> roster = new List<Datasheets>();
+        Roster roster;
         int currentIndex = -1;
         Faction units;
         bool isLoading = false;
@@ -66,7 +66,6 @@ namespace Roster_Builder
 
         private void btnBegin_Click(object sender, EventArgs e)
         {
-
             lbRoster.Visible = true;
             lbUnits.Visible = true;
             panel1.Visible = true;
@@ -77,6 +76,10 @@ namespace Roster_Builder
             btnSave.Visible = true;
             btnSave.BringToFront();
             gbCustomSubfaction.Visible = false;
+            lblErrors.Visible = true;
+            lblErrors.BringToFront();
+
+            roster = new Roster(Convert.ToInt32(txtSelectPoints.Text));
 
             if (!isLoading)
             {
@@ -145,7 +148,7 @@ namespace Roster_Builder
                 if (lbUnits.SelectedItem is Datasheets)
                 {
                     Datasheets newUnit = lbUnits.SelectedItem as Datasheets;
-                    roster.Add(newUnit.CreateUnit());
+                    roster.roster.Add(newUnit.CreateUnit());
                 }
 
                 updateLBRoster();
@@ -158,29 +161,43 @@ namespace Roster_Builder
             lbRoster.Items.Clear();
 
             lbRoster.Items.Add(zeroItem);
-            for (int i = 0; i < roster.Count; i++)
+            for (int i = 0; i < roster.roster.Count; i++)
             {
-                lbRoster.Items.Add(roster[i].ToString());
+                lbRoster.Items.Add(roster.roster[i].ToString());
             }
 
             int pts = 0;
 
-            for (int i = 0; i < roster.Count; i++)
+            for (int i = 0; i < roster.roster.Count; i++)
             {
-                pts += roster[i].Points;
+                pts += roster.roster[i].Points;
             }
 
             lblPoints.Text = pts + " / " + txtSelectPoints.Text;
             if (currentIndex >= 0)
             {
-                lblEditingUnit.Text = "Currently Editing: " + roster[currentIndex].ToString();
+                lblEditingUnit.Text = "Currently Editing: " + roster.roster[currentIndex].ToString();
+            }
+
+            int numErrors = roster.GetErrors(pts);
+
+            if(numErrors == 0)
+            {
+                lblErrors.Visible = false;
+                btnSave.Enabled = true;
+            }
+            else
+            {
+                lblErrors.Visible = true;
+                lblErrors.Text = "Roster has " + numErrors + " errors";
+                btnSave.Enabled = false;
             }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
             if (currentIndex < 0) return;
-            roster.RemoveAt(currentIndex);
+            roster.roster.RemoveAt(currentIndex);
             currentIndex = -1;
 
             updateLBRoster();
@@ -205,19 +222,19 @@ namespace Roster_Builder
 
         private void nudUnitSize_ValueChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(30, panel1);
+            roster.roster[currentIndex].SaveDatasheets(30, panel1);
             updateLBRoster();
         }
 
         private void cmbOption1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(11, panel1);
+            roster.roster[currentIndex].SaveDatasheets(11, panel1);
             updateLBRoster();
         }
 
         private void cmbOption2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(12, panel1);
+            roster.roster[currentIndex].SaveDatasheets(12, panel1);
             updateLBRoster();
         }
 
@@ -251,25 +268,25 @@ namespace Roster_Builder
 
             currentIndex = lbRoster.SelectedIndex - 1;
 
-            roster[currentIndex].LoadDatasheets(panel1, units);
+            roster.roster[currentIndex].LoadDatasheets(panel1, units);
 
-            roster[currentIndex].SaveDatasheets(-1, panel1);
+            roster.roster[currentIndex].SaveDatasheets(-1, panel1);
 
             if (currentIndex >= 0)
             {
-                lblEditingUnit.Text = "Currently Editing: " + roster[currentIndex].ToString();
+                lblEditingUnit.Text = "Currently Editing: " + roster.roster[currentIndex].ToString();
             }
         }
 
         private void cbOption1_CheckedChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(21, panel1);
+            roster.roster[currentIndex].SaveDatasheets(21, panel1);
             updateLBRoster();
         }
 
         private void cbOption2_CheckedChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(22, panel1);
+            roster.roster[currentIndex].SaveDatasheets(22, panel1);
             updateLBRoster();
         }
 
@@ -278,27 +295,28 @@ namespace Roster_Builder
             if (cbWarlord.Checked)
             {
                 cmbWarlord.Enabled = true;
-                roster[currentIndex].SaveDatasheets(25, panel1);
+                roster.roster[currentIndex].SaveDatasheets(25, panel1);
             }
             else
             {
                 cmbWarlord.Enabled = false;
                 cmbWarlord.Text = string.Empty;
-                roster[currentIndex].SaveDatasheets(25, panel1);
+                roster.roster[currentIndex].SaveDatasheets(25, panel1);
             }
-
+            updateLBRoster();
         }
 
         private void cmbWarlord_SelectedIndexChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(15, panel1);
+            roster.roster[currentIndex].SaveDatasheets(15, panel1);
+            updateLBRoster();
         }
 
         private void cmbFactionupgrade_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbFactionupgrade.SelectedIndex != -1)
             {
-                roster[currentIndex].SaveDatasheets(16, panel1);
+                roster.roster[currentIndex].SaveDatasheets(16, panel1);
             }
             updateLBRoster();
         }
@@ -307,7 +325,7 @@ namespace Roster_Builder
         {
             if (clbPsyker.SelectedIndex != -1)
             {
-                roster[currentIndex].SaveDatasheets(60, panel1);
+                roster.roster[currentIndex].SaveDatasheets(60, panel1);
             }
         }
 
@@ -340,25 +358,25 @@ namespace Roster_Builder
         }
         private void cmbOption3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(13, panel1);
+            roster.roster[currentIndex].SaveDatasheets(13, panel1);
             updateLBRoster();
         }
 
         private void cmbOption4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(14, panel1);
+            roster.roster[currentIndex].SaveDatasheets(14, panel1);
             updateLBRoster();
         }
 
         private void cbLeaderOption1_CheckedChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(421, panel1);
+            roster.roster[currentIndex].SaveDatasheets(421, panel1);
             updateLBRoster();
         }
 
         private void cbLeaderOption2_CheckedChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(422, panel1);
+            roster.roster[currentIndex].SaveDatasheets(422, panel1);
             updateLBRoster();
         }
 
@@ -366,58 +384,58 @@ namespace Roster_Builder
         {
             if (clbPsyker.SelectedIndex != -1)
             {
-                roster[currentIndex].SaveDatasheets(60, panel1);
+                roster.roster[currentIndex].SaveDatasheets(60, panel1);
             }
         }
 
         private void gb_cmbOption1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(411, panel1);
+            roster.roster[currentIndex].SaveDatasheets(411, panel1);
             updateLBRoster();
         }
 
         private void nudOption1_ValueChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(31, panel1);
+            roster.roster[currentIndex].SaveDatasheets(31, panel1);
             updateLBRoster();
         }
         private void nudOption2_ValueChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(32, panel1);
+            roster.roster[currentIndex].SaveDatasheets(32, panel1);
             updateLBRoster();
         }
         private void nudOption3_ValueChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(33, panel1);
+            roster.roster[currentIndex].SaveDatasheets(33, panel1);
             updateLBRoster();
         }
         private void nudOption4_ValueChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(34, panel1);
+            roster.roster[currentIndex].SaveDatasheets(34, panel1);
             updateLBRoster();
         }
 
         private void gb_cmbFactionupgrade_SelectedIndexChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(416, panel1);
+            roster.roster[currentIndex].SaveDatasheets(416, panel1);
             updateLBRoster();
         }
 
         private void lbModelSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(61, panel1);
+            roster.roster[currentIndex].SaveDatasheets(61, panel1);
             updateLBRoster();
         }
 
         private void cbOption3_CheckedChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(23, panel1);
+            roster.roster[currentIndex].SaveDatasheets(23, panel1);
             updateLBRoster();
         }
 
         private void cmbRelic_SelectedIndexChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(17, panel1);
+            roster.roster[currentIndex].SaveDatasheets(17, panel1);
             updateLBRoster();
         }
 
@@ -430,18 +448,18 @@ namespace Roster_Builder
 
             if (cmbSubFaction.SelectedItem.ToString() == "<Custom>")
             {
-                roster[0].Keywords.Add(cmbCustomSub1.SelectedItem.ToString());
-                roster[0].Keywords.Add(cmbCustomSub2.SelectedItem.ToString());
-                roster[0].Keywords.Add(cmbSubFaction.SelectedItem.ToString());
+                roster.roster[0].Keywords.Add(cmbCustomSub1.SelectedItem.ToString());
+                roster.roster[0].Keywords.Add(cmbCustomSub2.SelectedItem.ToString());
+                roster.roster[0].Keywords.Add(cmbSubFaction.SelectedItem.ToString());
             }
             else
             {
-                roster[0].Keywords.Add(cmbSubFaction.SelectedItem.ToString());
+                roster.roster[0].Keywords.Add(cmbSubFaction.SelectedItem.ToString());
             }
 
             string savePath = sfd.FileName;
             var options = new JsonSerializerOptions { WriteIndented = true };
-            string json = JsonSerializer.Serialize<List<Datasheets>>(roster, options);
+            string json = JsonSerializer.Serialize<List<Datasheets>>(roster.roster, options);
             File.WriteAllText(savePath, json);
         }
 
@@ -474,23 +492,23 @@ namespace Roster_Builder
 
             btnBegin.PerformClick();
 
-            roster = newRoster;
+            roster.roster = newRoster;
 
             lbRoster.Items.Insert(0, units.subFactionName);
 
             if (newRoster[0].Keywords.Last() == "<Custom>")
             {
-                cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(roster[0].Keywords.Last());
-                cmbCustomSub2.SelectedIndex = cmbCustomSub2.Items.IndexOf(roster[0].Keywords[roster[0].Keywords.Count - 2]);
-                cmbCustomSub1.SelectedIndex = cmbCustomSub1.Items.IndexOf(roster[0].Keywords[roster[0].Keywords.Count - 3]);
+                cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(roster.roster[0].Keywords.Last());
+                cmbCustomSub2.SelectedIndex = cmbCustomSub2.Items.IndexOf(roster.roster[0].Keywords[roster.roster[0].Keywords.Count - 2]);
+                cmbCustomSub1.SelectedIndex = cmbCustomSub1.Items.IndexOf(roster.roster[0].Keywords[roster.roster[0].Keywords.Count - 3]);
 
-                roster[0].Keywords.RemoveRange(roster[0].Keywords.Count - 3, 3);
+                roster.roster[0].Keywords.RemoveRange(roster.roster[0].Keywords.Count - 3, 3);
             }
             else
             {
-                cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(roster[0].Keywords.Last());
+                cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(roster.roster[0].Keywords.Last());
 
-                roster[0].Keywords.RemoveAt(roster[0].Keywords.Count - 1);
+                roster.roster[0].Keywords.RemoveAt(roster.roster[0].Keywords.Count - 1);
             }
 
             updateLBRoster();
@@ -498,44 +516,49 @@ namespace Roster_Builder
 
         private void nudOption5_ValueChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(35, panel1);
+            roster.roster[currentIndex].SaveDatasheets(35, panel1);
             updateLBRoster();
         }
 
         private void nudOption6_ValueChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(36, panel1);
+            roster.roster[currentIndex].SaveDatasheets(36, panel1);
             updateLBRoster();
         }
 
         private void cbStratagem1_CheckedChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(71, panel1);
+            roster.roster[currentIndex].SaveDatasheets(71, panel1);
             updateLBRoster();
         }
 
         private void cbStratagem2_CheckedChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(72, panel1);
+            roster.roster[currentIndex].SaveDatasheets(72, panel1);
             updateLBRoster();
         }
 
         private void cbStratagem3_CheckedChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(73, panel1);
+            roster.roster[currentIndex].SaveDatasheets(73, panel1);
             updateLBRoster();
         }
 
         private void gb_cmbOption2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(412, panel1);
+            roster.roster[currentIndex].SaveDatasheets(412, panel1);
             updateLBRoster();
         }
 
         private void nudUnitSize2_ValueChanged(object sender, EventArgs e)
         {
-            roster[currentIndex].SaveDatasheets(62, panel1);
+            roster.roster[currentIndex].SaveDatasheets(62, panel1);
             updateLBRoster();
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+            toolTip1.SetToolTip(btnRemove, roster.getErrorTooltip());
         }
     }
 }

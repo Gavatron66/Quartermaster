@@ -219,6 +219,7 @@
     <Compile Include="Necrons\TriarchPraetorians.cs" />
     <Compile Include="Necrons\TriarchStalker.cs" />
     <Compile Include="Necrons\Zahndrekh.cs" />
+    <Compile Include="Roster.cs" />
     <Compile Include="Template.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
