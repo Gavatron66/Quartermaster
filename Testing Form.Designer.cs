@@ -87,6 +87,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel_1m1k = new System.Windows.Forms.Panel();
+            this.comboBox71 = new System.Windows.Forms.ComboBox();
+            this.label95 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.checkBox15 = new System.Windows.Forms.CheckBox();
             this.comboBox36 = new System.Windows.Forms.ComboBox();
@@ -321,6 +323,8 @@
             this.comboBox69 = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.panel_1k = new System.Windows.Forms.Panel();
+            this.comboBox72 = new System.Windows.Forms.ComboBox();
+            this.label112 = new System.Windows.Forms.Label();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.panel_3N1kS_2m_ = new System.Windows.Forms.Panel();
@@ -342,8 +346,6 @@
             this.label88 = new System.Windows.Forms.Label();
             this.comboBox12 = new System.Windows.Forms.ComboBox();
             this.numericUpDown21 = new System.Windows.Forms.NumericUpDown();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.panel_NL3k1m = new System.Windows.Forms.Panel();
             this.comboBox70 = new System.Windows.Forms.ComboBox();
             this.label94 = new System.Windows.Forms.Label();
@@ -355,10 +357,8 @@
             this.listBox6 = new System.Windows.Forms.ListBox();
             this.label93 = new System.Windows.Forms.Label();
             this.numericUpDown22 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox71 = new System.Windows.Forms.ComboBox();
-            this.label95 = new System.Windows.Forms.Label();
-            this.comboBox72 = new System.Windows.Forms.ComboBox();
-            this.label112 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.panel4.SuspendLayout();
             this.panel_1m2k_pc.SuspendLayout();
             this.panel_2m_c.SuspendLayout();
@@ -433,10 +433,10 @@
             this.panel_NS_1m_.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown21)).BeginInit();
-            this.groupBox7.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.panel_NL3k1m.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbRoster
@@ -1058,6 +1058,26 @@
             this.panel_1m1k.Name = "panel_1m1k";
             this.panel_1m1k.Size = new System.Drawing.Size(590, 463);
             this.panel_1m1k.TabIndex = 54;
+            // 
+            // comboBox71
+            // 
+            this.comboBox71.Enabled = false;
+            this.comboBox71.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox71.FormattingEnabled = true;
+            this.comboBox71.Location = new System.Drawing.Point(310, 111);
+            this.comboBox71.Name = "comboBox71";
+            this.comboBox71.Size = new System.Drawing.Size(176, 28);
+            this.comboBox71.TabIndex = 42;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label95.Location = new System.Drawing.Point(310, 87);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(52, 20);
+            this.label95.TabIndex = 41;
+            this.label95.Text = "Relic:";
             // 
             // label32
             // 
@@ -3586,6 +3606,7 @@
             this.groupBox5.Controls.Add(this.panel_3m);
             this.groupBox5.Controls.Add(this.panel_1m);
             this.groupBox5.Controls.Add(this.panel_2k);
+            this.groupBox5.Controls.Add(this.panel_1k);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.groupBox5.Location = new System.Drawing.Point(200, 542);
             this.groupBox5.Name = "groupBox5";
@@ -3599,10 +3620,30 @@
             this.panel_1k.Controls.Add(this.comboBox72);
             this.panel_1k.Controls.Add(this.label112);
             this.panel_1k.Controls.Add(this.checkBox7);
-            this.panel_1k.Location = new System.Drawing.Point(1006, 73);
+            this.panel_1k.Location = new System.Drawing.Point(39, 128);
             this.panel_1k.Name = "panel_1k";
             this.panel_1k.Size = new System.Drawing.Size(590, 463);
             this.panel_1k.TabIndex = 56;
+            // 
+            // comboBox72
+            // 
+            this.comboBox72.Enabled = false;
+            this.comboBox72.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox72.FormattingEnabled = true;
+            this.comboBox72.Location = new System.Drawing.Point(98, 53);
+            this.comboBox72.Name = "comboBox72";
+            this.comboBox72.Size = new System.Drawing.Size(176, 28);
+            this.comboBox72.TabIndex = 48;
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label112.Location = new System.Drawing.Point(98, 29);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(52, 20);
+            this.label112.TabIndex = 47;
+            this.label112.Text = "Relic:";
             // 
             // checkBox7
             // 
@@ -3849,32 +3890,6 @@
             0,
             0});
             // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.panel_NL2m1k);
-            this.groupBox7.Controls.Add(this.panel_NL2m3k);
-            this.groupBox7.Controls.Add(this.panel_NL3k);
-            this.groupBox7.Controls.Add(this.panel_NL1m1k);
-            this.groupBox7.Controls.Add(this.panel_NL2m);
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox7.Location = new System.Drawing.Point(575, 542);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(181, 152);
-            this.groupBox7.TabIndex = 62;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Listbox Templates";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.panel_cultist);
-            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox8.Location = new System.Drawing.Point(762, 542);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(181, 152);
-            this.groupBox8.TabIndex = 63;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Unique Templates";
-            // 
             // panel_NL3k1m
             // 
             this.panel_NL3k1m.Controls.Add(this.comboBox70);
@@ -3996,45 +4011,31 @@
             0,
             0});
             // 
-            // comboBox71
+            // groupBox7
             // 
-            this.comboBox71.Enabled = false;
-            this.comboBox71.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox71.FormattingEnabled = true;
-            this.comboBox71.Location = new System.Drawing.Point(310, 111);
-            this.comboBox71.Name = "comboBox71";
-            this.comboBox71.Size = new System.Drawing.Size(176, 28);
-            this.comboBox71.TabIndex = 42;
+            this.groupBox7.Controls.Add(this.panel_NL2m1k);
+            this.groupBox7.Controls.Add(this.panel_NL2m3k);
+            this.groupBox7.Controls.Add(this.panel_NL3k);
+            this.groupBox7.Controls.Add(this.panel_NL1m1k);
+            this.groupBox7.Controls.Add(this.panel_NL2m);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.groupBox7.Location = new System.Drawing.Point(575, 542);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(181, 152);
+            this.groupBox7.TabIndex = 62;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Listbox Templates";
             // 
-            // label95
+            // groupBox8
             // 
-            this.label95.AutoSize = true;
-            this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label95.Location = new System.Drawing.Point(310, 87);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(52, 20);
-            this.label95.TabIndex = 41;
-            this.label95.Text = "Relic:";
-            // 
-            // comboBox72
-            // 
-            this.comboBox72.Enabled = false;
-            this.comboBox72.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox72.FormattingEnabled = true;
-            this.comboBox72.Location = new System.Drawing.Point(98, 53);
-            this.comboBox72.Name = "comboBox72";
-            this.comboBox72.Size = new System.Drawing.Size(176, 28);
-            this.comboBox72.TabIndex = 48;
-            // 
-            // label112
-            // 
-            this.label112.AutoSize = true;
-            this.label112.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label112.Location = new System.Drawing.Point(98, 29);
-            this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(52, 20);
-            this.label112.TabIndex = 47;
-            this.label112.Text = "Relic:";
+            this.groupBox8.Controls.Add(this.panel_cultist);
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.groupBox8.Location = new System.Drawing.Point(762, 542);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(181, 152);
+            this.groupBox8.TabIndex = 63;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Unique Templates";
             // 
             // Testing_Form
             // 
@@ -4047,7 +4048,6 @@
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label60);
-            this.Controls.Add(this.panel_1k);
             this.Controls.Add(this.label58);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label6);
@@ -4171,11 +4171,11 @@
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown21)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
             this.panel_NL3k1m.ResumeLayout(false);
             this.panel_NL3k1m.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

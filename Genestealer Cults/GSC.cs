@@ -142,26 +142,95 @@ namespace Roster_Builder.Genestealer_Cults
             List<string> relics = new List<string>();
 
             relics.Add("(None)");
-            /*
-            relics.Add("Sword of the Void's Eye"); //Primus or Locus
-            relics.Add("Hand of Aberrance"); //Primus
-            relics.Add("Amulet of the Voidwyrm"); //Any
-            relics.Add("Oppressor's Bane"); //Acolyte Iconward, Jackal Alphus, Magus, Biophagus, Clamavus, Nexos Reductus Saboteur
-            relics.Add("Wyrmtooth Rounds"); //Kelermorph
-            relics.Add("Dagger of Swift Sacrifice"); //Magus or Sanctus
-            relics.Add("The Crouchling"); //Magus, Patriarch, Abominant, Biophagus, Sanctus
-            relics.Add("The Gift From Beyond"); //Jackal Alphus or Sanctus
-            relics.Add("The Unwilling Orb"); //Magus or Patriarch
-            relics.Add("Cranial Inlay"); //Nexos
-            relics.Add("The Voice of the Liberator"); //Clamavus
 
-            relics.Add("Sword of the Four-armed Emperor"); //Cult of the Four-armed Emperor Primus or Locus
-            relics.Add("Vockor's Talisman"); // Hivecult
-            relics.Add("Mark of the Clawed Omnissiah"); // Bladed Cog
-            relics.Add("The Nomad's Mantle"); //Rusted Claw
-            relics.Add("Reliquary of Saint Tenndarc"); //Pauper Princes
-            relics.Add("Elixir of the Prime Specimen"); //Twisted Helix
-            */
+            if(keywords.Contains("PRIMUS") || keywords.Contains("LOCUS"))
+            {
+                relics.Add("Sword of the Void's Eye");
+            }
+
+            if (keywords.Contains("PRIMUS"))
+            {
+                relics.Add("Hand of Aberrance");
+            }
+
+            relics.Add("Amulet of the Voidwyrm");
+
+            if (keywords.Contains("ACOLYTE ICONWARD") || keywords.Contains("JACKAL ALPHUS") || 
+                keywords.Contains("MAGUS") || keywords.Contains("BIOPHAGUS") ||
+                keywords.Contains("CLAMAVUS") || keywords.Contains("NEXOS") || 
+                keywords.Contains("REDUCTUS SABOTEUR"))
+            {
+                relics.Add("Oppressor's Bane");
+            }
+
+            if (keywords.Contains("KELERMORPH"))
+            {
+                relics.Add("Wyrmtooth Rounds");
+            }
+
+            if (keywords.Contains("MAGUS") || keywords.Contains("SANCTUS"))
+            {
+                relics.Add("Dagger of Swift Sacrifice");
+            }
+
+            if (keywords.Contains("MAGUS") || keywords.Contains("PATRIARCH") ||
+                keywords.Contains("ABOMINANT") || keywords.Contains("BIOPHAGUS") ||
+                keywords.Contains("SANCTUS"))
+            {
+                relics.Add("The Crouchling");
+            }
+
+            if (keywords.Contains("JACKAL ALPHUS") || keywords.Contains("SANCTUS"))
+            {
+                relics.Add("The Gift From Beyond");
+            }
+
+            if (keywords.Contains("MAGUS") || keywords.Contains("PATRIARCH"))
+            {
+                relics.Add("The Unwilling Orb");
+            }
+
+            if (keywords.Contains("NEXOS"))
+            {
+                relics.Add("Cranial Inlay");
+            }
+
+            if (keywords.Contains("CLAMAVUS"))
+            {
+                relics.Add("The Voice of the Liberator");
+            }
+
+            if ((keywords.Contains("PRIMUS") || keywords.Contains("LOCUS") 
+                && currentSubFaction == "Cult of the Four-armed Emperor"))
+            {
+                relics.Add("Sword of the Four-armed Emperor");
+            }
+
+            if (currentSubFaction == "Hivecult")
+            {
+                relics.Add("Vockor's Talisman");
+            }
+
+            if (currentSubFaction == "Bladed Cog")
+            {
+                relics.Add("Mark of the Clawed Omnissiah");
+            }
+
+            if (currentSubFaction == "Rusted Claw")
+            {
+                relics.Add("The Nomad's Mantle");
+            }
+
+            if (currentSubFaction == "Pauper Princes")
+            {
+                relics.Add("Reliquary of Saint Tenndarc");
+            }
+
+            if (currentSubFaction == "Twisted Helix")
+            {
+                relics.Add("Elixir of the Prime Specimen");
+            }
+
             return relics;
         }
 

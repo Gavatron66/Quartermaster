@@ -181,7 +181,7 @@ namespace Roster_Builder
 
             int numErrors = roster.GetErrors(pts);
 
-            if(numErrors == 0)
+            if (numErrors == 0)
             {
                 lblErrors.Visible = false;
                 btnSave.Enabled = true;
@@ -192,6 +192,8 @@ namespace Roster_Builder
                 lblErrors.Text = "Roster has " + numErrors + " errors";
                 btnSave.Enabled = false;
             }
+
+            toolTip1.SetToolTip(lblErrors, roster.getErrorTooltip());
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -441,26 +443,30 @@ namespace Roster_Builder
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.AddExtension = true;
-            sfd.DefaultExt = "json";
-            sfd.ShowDialog();
-
-            if (cmbSubFaction.SelectedItem.ToString() == "<Custom>")
+            try
             {
-                roster.roster[0].Keywords.Add(cmbCustomSub1.SelectedItem.ToString());
-                roster.roster[0].Keywords.Add(cmbCustomSub2.SelectedItem.ToString());
-                roster.roster[0].Keywords.Add(cmbSubFaction.SelectedItem.ToString());
-            }
-            else
-            {
-                roster.roster[0].Keywords.Add(cmbSubFaction.SelectedItem.ToString());
-            }
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.AddExtension = true;
+                sfd.DefaultExt = "json";
+                sfd.ShowDialog();
 
-            string savePath = sfd.FileName;
-            var options = new JsonSerializerOptions { WriteIndented = true };
-            string json = JsonSerializer.Serialize<List<Datasheets>>(roster.roster, options);
-            File.WriteAllText(savePath, json);
+                if (cmbSubFaction.SelectedItem.ToString() == "<Custom>")
+                {
+                    roster.roster[0].Keywords.Add(cmbCustomSub1.SelectedItem.ToString());
+                    roster.roster[0].Keywords.Add(cmbCustomSub2.SelectedItem.ToString());
+                    roster.roster[0].Keywords.Add(cmbSubFaction.SelectedItem.ToString());
+                }
+                else
+                {
+                    roster.roster[0].Keywords.Add(cmbSubFaction.SelectedItem.ToString());
+                }
+
+                string savePath = sfd.FileName;
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                string json = JsonSerializer.Serialize<List<Datasheets>>(roster.roster, options);
+                File.WriteAllText(savePath, json);
+            }
+            catch { }
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -554,11 +560,6 @@ namespace Roster_Builder
         {
             roster.roster[currentIndex].SaveDatasheets(62, panel1);
             updateLBRoster();
-        }
-
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-            toolTip1.SetToolTip(btnRemove, roster.getErrorTooltip());
         }
     }
 }

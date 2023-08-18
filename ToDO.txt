@@ -1,17 +1,9 @@
-Points
-	Have the points function run when the unit gets initialized?
-
 Validate Roster
-	Provide an error when the roster is invalid
 	Check the following:
-		Under points limit
 		Valid detachment slots filled
 		Death Guard specific:
 			Three FOETID VIRON units can take up one Elite slot
 			Only one LORD OF THE DEATH GUARD per detachment
-	Do this in the overhead class
-		Error shows in the main form, but the overhead dictates when the error shows up
-		Except points. They can be tracked in the main form
 
 Stratagems
 	Requisitions
