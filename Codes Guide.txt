@@ -31,8 +31,8 @@
 	61 - lbModelSelect
 	62 - nudUnitSize2
 7X - Requisition Boxes
-	71 - cbStratagem1
-	72 - cbStratagem2
+	71 - cbStratagem1 (For Warlord Requisition only)
+	72 - cbStratagem2 (For Relic Requisition only)
 	73 - cbStratagem3
 	
 ----------------------

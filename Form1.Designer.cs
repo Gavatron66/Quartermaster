@@ -968,9 +968,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1735, 767);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblCurrentPoints);
             this.Controls.Add(this.lblEditingUnit);
@@ -979,7 +980,6 @@
             this.Controls.Add(this.btnAddToRoster);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.lblPoints);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.MenuPanel);
             this.Controls.Add(this.lblErrors);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -130,6 +130,11 @@ namespace Roster_Builder.Adeptus_Custodes
             return upgrades;
         }
 
+        public override bool GetIfEnabled(int index)
+        {
+            throw new NotImplementedException();
+        }
+
         public override List<string> GetPsykerPowers()
         {
             return new List<string>() { };
@@ -270,6 +275,18 @@ namespace Roster_Builder.Adeptus_Custodes
             //"Silent Judge (Aura)",
             //"Mistress of Persecution (Aura)"
             //};
+        }
+
+        public override void SetPoints(int points)
+        {
+            StratagemCount = new int[] { 0, 0, 0, 0 };
+            StratagemLimit = new int[] { 1 + points / 1000, 1 + points / 1000, 1, 1 };
+
+            if(points % 1000 == 0)
+            {
+                StratagemLimit[0] -= 1;
+                StratagemLimit[1] -= 1;
+            }
         }
 
         public override string ToString()

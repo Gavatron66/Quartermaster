@@ -70,6 +70,31 @@ namespace Roster_Builder.Death_Guard
 
             panel.Controls["lblFactionupgrade"].Visible = true;
             panel.Controls["cmbFactionupgrade"].Visible = true;
+
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+
+            if (Stratagem.Contains(cbStratagem1.Text))
+            {
+                cbStratagem1.Checked = true;
+                cbStratagem1.Enabled = true;
+            }
+            else
+            {
+                cbStratagem1.Checked = false;
+                cbStratagem1.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem1.Text));
+            }
+
+            if (Stratagem.Contains(cbStratagem2.Text))
+            {
+                cbStratagem2.Checked = true;
+                cbStratagem2.Enabled = true;
+            }
+            else
+            {
+                cbStratagem2.Checked = false;
+                cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)

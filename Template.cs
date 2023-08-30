@@ -99,6 +99,12 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["cmbRelic"].Visible = true;
                     panel.Controls["cmbRelic"].Location = new System.Drawing.Point(297, 129);
+
+                    panel.Controls["cbStratagem1"].Visible = true;
+                    panel.Controls["cbStratagem1"].Location = new System.Drawing.Point(298, 218);
+
+                    panel.Controls["cbStratagem2"].Visible = true;
+                    panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(298, 248);
                     break;
                 #endregion
                 #region case "c"
@@ -122,6 +128,11 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(298, 106);
 
+                    panel.Controls["cbStratagem1"].Visible = true;
+                    panel.Controls["cbStratagem1"].Location = new System.Drawing.Point(298, 140);
+
+                    panel.Controls["cbStratagem2"].Visible = true;
+                    panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(298, 170);
 
                     break;
                 #endregion
@@ -151,6 +162,12 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(298, 121);
 
                     panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(298, 145);
+
+                    panel.Controls["cbStratagem1"].Visible = true;
+                    panel.Controls["cbStratagem1"].Location = new System.Drawing.Point(298, 179);
+
+                    panel.Controls["cbStratagem2"].Visible = true;
+                    panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(298, 209);
                     break;
                 #endregion
                 #region case "2m_pc"
@@ -191,6 +208,12 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["cmbRelic"].Visible = true;
                     panel.Controls["cmbRelic"].Location = new System.Drawing.Point(294, 216);
+
+                    panel.Controls["cbStratagem1"].Visible = true;
+                    panel.Controls["cbStratagem1"].Location = new System.Drawing.Point(294, 304);
+
+                    panel.Controls["cbStratagem2"].Visible = true;
+                    panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(294, 334);
                     break;
                 #endregion
                 #region case "1k_pc"
@@ -222,6 +245,12 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["cmbRelic"].Visible = true;
                     panel.Controls["cmbRelic"].Location = new System.Drawing.Point(294, 161);
+
+                    panel.Controls["cbStratagem1"].Visible = true;
+                    panel.Controls["cbStratagem1"].Location = new System.Drawing.Point(294, 249);
+
+                    panel.Controls["cbStratagem2"].Visible = true;
+                    panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(294, 279);
                     break;
                 #endregion
                 #region case "ncp"
@@ -283,6 +312,12 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(293, 145);
 
                     panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(293, 168);
+
+                    panel.Controls["cbStratagem1"].Visible = true;
+                    panel.Controls["cbStratagem1"].Location = new System.Drawing.Point(294, 202);
+
+                    panel.Controls["cbStratagem2"].Visible = true;
+                    panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(294, 232);
                     break;
                 #endregion
                 #region case "2m1k_c"
@@ -321,6 +356,12 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(293, 197);
 
+                    panel.Controls["cbStratagem1"].Visible = true;
+                    panel.Controls["cbStratagem1"].Location = new System.Drawing.Point(294, 231);
+
+                    panel.Controls["cbStratagem2"].Visible = true;
+                    panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(294, 261);
+
                     break;
                 #endregion
                 #region case "1k_c"
@@ -346,6 +387,12 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(298, 121);
 
                     panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(298, 145);
+
+                    panel.Controls["cbStratagem1"].Visible = true;
+                    panel.Controls["cbStratagem1"].Location = new System.Drawing.Point(296, 179);
+
+                    panel.Controls["cbStratagem2"].Visible = true;
+                    panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(296, 209);
                     break;
                 #endregion
 

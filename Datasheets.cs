@@ -162,7 +162,8 @@ namespace Roster_Builder
         public Template Template { get; }
         public string Relic { get; set; }
         public bool antiLoop { get; set; }
-        public string Stratagem { get; set; }
+        public List<string> Stratagem { get; set; }
+        public Faction repo { get; set; }
         public Datasheets()
         {
             Weapons = new List<string>();
@@ -170,6 +171,7 @@ namespace Roster_Builder
             WarlordTrait = string.Empty;
             Template = new Template();
             Relic = "(None)";
+            Stratagem = new List<string>();
         }
 
         public abstract void LoadDatasheets(Panel panel, Faction f);

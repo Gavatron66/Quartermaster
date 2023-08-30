@@ -10,9 +10,10 @@ namespace Roster_Builder
     public class Roster
     {
         public List<Datasheets> roster;
-
-        int Warlord = 0;
-        int Relic = 0;
+        public Faction currentFaction;
+        public int[] StratagemCount;
+        public int[] StratagemLimit;
+        public List<string> Stratagems;
         int Points = 0;
 
         bool[] errorsList = new bool[] { false, false, false, false, false };
@@ -22,27 +23,43 @@ namespace Roster_Builder
         //[3] Missing Warlord
         //[4] Missing Relic
 
-        public Roster(int points)
+        public Roster(int points, Faction faction)
         {
             roster = new List<Datasheets>();
             Points = points;
+            currentFaction = faction;
+            faction.SetPoints(Points);
+            Stratagems = faction.StratagemList;
+            StratagemLimit = faction.StratagemLimit;
+            StratagemCount = new int[StratagemLimit.Length];
         }
 
         public void checkForErrors(int currentPoints)
         {
-            Warlord = 0;
-            Relic = 0;
+            int Warlord = 0;
+            int Relic = 0;
+
+            int WarlordLimit = 1;
+            int RelicLimit = 1;
 
             foreach (Datasheets datasheet in roster)
             {
                 if(datasheet.WarlordTrait != string.Empty)
                 {
                     Warlord++;
+                    if (datasheet.Stratagem.Contains(Stratagems[0]))
+                    {
+                        WarlordLimit++;
+                    }
                 }
 
                 if(datasheet.Relic != "(None)")
                 {
                     Relic++;
+                    if (datasheet.Stratagem.Contains(Stratagems[1]))
+                    {
+                        RelicLimit++;
+                    }
                 }
             }
 
@@ -55,7 +72,7 @@ namespace Roster_Builder
                 errorsList[0] = false;
             }
 
-            if (Warlord > 1)
+            if (Warlord > WarlordLimit)
             {
                 errorsList[1] = true;
             }
@@ -64,7 +81,7 @@ namespace Roster_Builder
                 errorsList[1] = false;
             }
 
-            if(Relic > 1)
+            if(Relic > RelicLimit)
             {
                 errorsList[2] = true;
             }
@@ -144,6 +161,24 @@ namespace Roster_Builder
             }
 
             return errorsString;
+        }
+
+        public void StratagemCheck()
+        {
+            StratagemCount = new int[StratagemLimit.Length];
+
+            foreach(Datasheets unit in roster)
+            {
+                if(unit.Stratagem.Count != 0)
+                {
+                    foreach (string strat in unit.Stratagem)
+                    {
+                        StratagemCount[Stratagems.IndexOf(strat)] += 1;
+                    }
+                }
+            }
+
+            currentFaction.StratagemCount = this.StratagemCount;
         }
     }
 }

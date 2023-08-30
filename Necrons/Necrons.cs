@@ -13,6 +13,12 @@ namespace Roster_Builder.Necrons
             subFactionName = "<Dynasty>";
             currentSubFaction = string.Empty;
             factionUpgradeName = "Cryptek Arkana";
+            StratagemList.AddRange(new string[]
+            {
+                "Stratagem: Rarefied Nobility",
+                "Stratagem: Dynastic Heirlooms",
+                "Stratagem: Hand of the Phaeron"
+            });
         }
 
         public override List<string> GetCustomSubfactionList1()
@@ -203,6 +209,16 @@ namespace Roster_Builder.Necrons
             return upgrades;
         }
 
+        public override bool GetIfEnabled(int index)
+        {
+            if (StratagemCount[index] < StratagemLimit[index])
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public override List<string> GetPsykerPowers()
         {
             return new List<string>()
@@ -329,6 +345,18 @@ namespace Roster_Builder.Necrons
             else if (currentSubFaction == "Szarekhan") { traits.Add("The Triarch's Will"); }
 
             return traits;
+        }
+
+        public override void SetPoints(int points)
+        {
+            StratagemCount = new int[] { 0, 0, 0 };
+            StratagemLimit = new int[] { 1 + points / 1000, 1 + points / 1000, 1 };
+
+            if (points % 1000 == 0)
+            {
+                StratagemLimit[0] -= 1;
+                StratagemLimit[1] -= 1;
+            }
         }
 
         public override string ToString()

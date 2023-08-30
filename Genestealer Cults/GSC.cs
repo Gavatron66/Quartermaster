@@ -124,6 +124,11 @@ namespace Roster_Builder.Genestealer_Cults
             };
         }
 
+        public override bool GetIfEnabled(int index)
+        {
+            throw new NotImplementedException();
+        }
+
         public override List<string> GetPsykerPowers()
         {
             return new List<string>()
@@ -268,6 +273,11 @@ namespace Roster_Builder.Genestealer_Cults
             else if (currentSubFaction == "The Twisted Helix") { traits.Add("Bio-alchemist"); }
 
             return traits;
+        }
+
+        public override void SetPoints(int points)
+        {
+            throw new NotImplementedException();
         }
 
         public override string ToString()

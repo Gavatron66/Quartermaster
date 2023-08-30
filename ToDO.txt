@@ -1,29 +1,49 @@
-Validate Roster
-	Check the following:
-		Valid detachment slots filled
-		Death Guard specific:
-			Three FOETID VIRON units can take up one Elite slot
-			Only one LORD OF THE DEATH GUARD per detachment
-
-Stratagems
-	Requisitions
-		Champion of Disease
-			Give a 'Champion' a Relic
-				Reaper of Glorious Entropy
-				Plague Skull of Glothila
-				Plaguereaper
-				Suppurating Plate
-		Gifts of Decay
-			Give an additional model a relic
-		Plague-chosen
-			Give a character a Warlord Trait
-		Grandfatherly Influence
-			Buff a Chaos Spawn
-			
-			
 Models to add checks for Numeric Up Down controls:
-		Death Guard Cultists
-		Necron Warriors
-		Hybrid Metamorphs
-	
+	Death Guard Cultists
+	Necron Warriors
+	Hybrid Metamorphs
+
 Found an issue with Custodes: if a Knight-Centura is included, it messes up the available Warlord Trait options once selected
+
+Genestealer Cults has weird custome factions
+	Add either more boxes or do a Checkbox system
+	
+Custodes Characters:
+	Blade Champion
+	Knight-Centura
+	Shield Captains
+	Vexilus Praetors
+	
+GSC Characters:
+	Acolyte Iconward
+	Jackal Alphus
+	Magus
+	Patriarch
+	Primus
+	Abominant
+	Biophagus
+	Clamavus
+	Kelermorph
+	Locus
+	Nexos
+	Reductus Saboteur
+---------------------------------------------
+Custodes Characters:
+	Blade Champion
+	Knight-Centura
+	Shield Captains
+	Vexilus Praetors
+	
+GSC Characters:
+	Acolyte Iconward
+	Jackal Alphus
+	Magus
+	Patriarch
+	Primus
+	Abominant
+	Biophagus
+	Clamavus
+	Kelermorph
+	Locus
+	Nexos
+	Reductus Saboteur

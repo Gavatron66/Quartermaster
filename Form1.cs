@@ -79,12 +79,12 @@ namespace Roster_Builder
             lblErrors.Visible = true;
             lblErrors.BringToFront();
 
-            roster = new Roster(Convert.ToInt32(txtSelectPoints.Text));
-
             if (!isLoading)
             {
                 units = cmbSelectFaction.SelectedItem as Faction;
             }
+
+            roster = new Roster(Convert.ToInt32(txtSelectPoints.Text), units);
 
             List<Datasheets> datasheets = units.GetDatasheets();
 
@@ -137,8 +137,8 @@ namespace Roster_Builder
                 }
             }
 
-            cbStratagem1.Text = units.warlordStratagem;
-            cbStratagem2.Text = units.relicStratagem;
+            cbStratagem1.Text = units.StratagemList[0];
+            cbStratagem2.Text = units.StratagemList[1];
         }
 
         private void btnAddToRoster_Click(object sender, EventArgs e)
@@ -148,6 +148,7 @@ namespace Roster_Builder
                 if (lbUnits.SelectedItem is Datasheets)
                 {
                     Datasheets newUnit = lbUnits.SelectedItem as Datasheets;
+                    newUnit.repo = units;
                     roster.roster.Add(newUnit.CreateUnit());
                 }
 
@@ -268,9 +269,11 @@ namespace Roster_Builder
                 if (lbRoster.SelectedIndex == -1) { return; }
             }
 
+            roster.StratagemCheck();
+
             currentIndex = lbRoster.SelectedIndex - 1;
 
-            roster.roster[currentIndex].LoadDatasheets(panel1, units);
+            roster.roster[currentIndex].LoadDatasheets(panel1, roster.currentFaction);
 
             roster.roster[currentIndex].SaveDatasheets(-1, panel1);
 

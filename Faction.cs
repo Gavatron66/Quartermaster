@@ -11,10 +11,11 @@ namespace Roster_Builder
         public string subFactionName { get; set; }
         public string currentSubFaction { get; set; }
         public string factionUpgradeName { get; set; }
-        public string warlordStratagem { get; set; }
-        public string relicStratagem { get; set; }
+        public List<string> StratagemList { get; set; }
+        public int[] StratagemCount { get; set; }
+        public int[] StratagemLimit { get; set; }
 
-        public Faction() { }
+        public Faction() { StratagemList = new List<string>(); }
 
         public abstract List<string> GetPsykerPowers();
         public abstract List<string> GetFactionUpgrades(List<string> keywords);
@@ -25,5 +26,7 @@ namespace Roster_Builder
         public abstract List<string> GetRelics(List<string> keywords);
         public abstract List<string> GetCustomSubfactionList1();
         public abstract List<string> GetCustomSubfactionList2();
+        public abstract void SetPoints(int points);
+        public abstract bool GetIfEnabled(int index);
     }
 }

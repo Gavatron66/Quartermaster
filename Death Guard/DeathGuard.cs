@@ -15,8 +15,14 @@ namespace Roster_Builder.Death_Guard
             subFactionName = "<Plague Company>";
             currentSubFaction = string.Empty;
             factionUpgradeName = "Deadly Pathogen";
-            warlordStratagem = "Stratagem: Plague-Chosen";
-            relicStratagem = "Stratagem: Gifts of Decay";
+            StratagemList.AddRange(new string[]
+            {
+                "Stratagem: Plague-Chosen", //Warlord Stratagem
+                "Stratagem: Gifts of Decay", //Relic Stratagem
+                "Stratagem: Sevenfold Blessings", //Stratagem Code 1
+                "Stratagem: Champion of Disease", //Stratagem Code 2
+                "Stratagem: Grandfatherly Influence"
+            });
         }
 
         public override List<Datasheets> GetDatasheets()
@@ -62,6 +68,16 @@ namespace Roster_Builder.Death_Guard
             //---------- Fortification ----------
             new MiasmicMalignifier(),
         };
+        }
+
+        public override bool GetIfEnabled(int index)
+        {
+            if (StratagemCount[index] < StratagemLimit[index])
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public override List<string> GetPsykerPowers()
@@ -232,6 +248,19 @@ namespace Roster_Builder.Death_Guard
         public override List<string> GetCustomSubfactionList2()
         {
             return new List<string>();
+        }
+
+        public override void SetPoints(int points)
+        {
+            StratagemCount = new int[] { 0, 0, 0, 0, 0 };
+            StratagemLimit = new int[] { 1 + points / 1000, 1 + points / 1000, 1, 1 + points / 1000, 99 };
+
+            if (points % 1000 == 0)
+            {
+                StratagemLimit[0] -= 1;
+                StratagemLimit[1] -= 1;
+                StratagemLimit[3] -= 1;
+            }
         }
     }
 }
