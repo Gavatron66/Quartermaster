@@ -9,7 +9,6 @@ namespace Roster_Builder.Death_Guard
 {
     public class DeathshroudTerminators : Datasheets
     {
-        DeathGuard repo = new DeathGuard();
         public DeathshroudTerminators()
         {
             DEFAULT_POINTS = 50;

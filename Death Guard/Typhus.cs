@@ -9,7 +9,6 @@ namespace Roster_Builder.Death_Guard
 {
     public class Typhus : Datasheets
     {
-        DeathGuard repo = new DeathGuard();
         public Typhus()
         {
             DEFAULT_POINTS = 165;

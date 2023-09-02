@@ -11,7 +11,6 @@ namespace Roster_Builder.Adeptus_Custodes
 {
     public class GoliathTruck : Datasheets
     {
-        GSC repo = new GSC();
         public GoliathTruck()
         {
             DEFAULT_POINTS = 90;

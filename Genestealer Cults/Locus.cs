@@ -9,7 +9,6 @@ namespace Roster_Builder.Genestealer_Cults
 {
     public class Locus : Datasheets
     {
-        GSC repo = new GSC();
         public Locus()
         {
             DEFAULT_POINTS = 50;
@@ -29,6 +28,7 @@ namespace Roster_Builder.Genestealer_Cults
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
+            repo = f as GSC;
             Template.LoadTemplate(TemplateCode, panel);
             panel.Controls["cmbFactionUpgrade"].Visible = true;
             panel.Controls["lblFactionUpgrade"].Visible = true;
@@ -73,6 +73,20 @@ namespace Roster_Builder.Genestealer_Cults
             {
                 cmbFaction.SelectedIndex = 0;
             }
+
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            panel.Controls["cbStratagem2"].Visible = false;
+
+            if (Stratagem.Contains(cbStratagem1.Text))
+            {
+                cbStratagem1.Checked = true;
+                cbStratagem1.Enabled = true;
+            }
+            else
+            {
+                cbStratagem1.Checked = false;
+                cbStratagem1.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem1.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -81,6 +95,7 @@ namespace Roster_Builder.Genestealer_Cults
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
 
             switch (code)
             {
@@ -106,6 +121,19 @@ namespace Roster_Builder.Genestealer_Cults
                         this.isWarlord = true;
                     }
                     else { this.isWarlord = false; }
+                    break;
+                case 71:
+                    if (cbStratagem1.Checked)
+                    {
+                        Stratagem.Add(cbStratagem1.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem1.Text))
+                        {
+                            Stratagem.Remove(cbStratagem1.Text);
+                        }
+                    }
                     break;
                 default: break;
             }

@@ -10,7 +10,6 @@ namespace Roster_Builder.Genestealer_Cults
 {
     public class Sanctus : Datasheets
     {
-        GSC repo = new GSC();
         public Sanctus()
         {
             DEFAULT_POINTS = 70;

@@ -11,7 +11,6 @@ namespace Roster_Builder.Genestealer_Cults
 {
     public class Aberrants : Datasheets
     {
-        GSC repo = new GSC();
         public Aberrants()
         {
             DEFAULT_POINTS = 30;

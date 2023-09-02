@@ -13,6 +13,13 @@ namespace Roster_Builder.Adeptus_Custodes
             subFactionName = "<Shield Host>";
             currentSubFaction = string.Empty;
             factionUpgradeName = "Captain-Commander";
+            StratagemList.AddRange(new string[]
+            {
+                "The Emperor's Heroes",
+                "Open the Vaults",
+                "Victor of the Blood Games",
+                "Eternal Penitent"
+            });
         }
 
         public override List<string> GetCustomSubfactionList1()
@@ -132,7 +139,12 @@ namespace Roster_Builder.Adeptus_Custodes
 
         public override bool GetIfEnabled(int index)
         {
-            throw new NotImplementedException();
+            if (StratagemCount[index] < StratagemLimit[index])
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public override List<string> GetPsykerPowers()
@@ -280,13 +292,7 @@ namespace Roster_Builder.Adeptus_Custodes
         public override void SetPoints(int points)
         {
             StratagemCount = new int[] { 0, 0, 0, 0 };
-            StratagemLimit = new int[] { 1 + points / 1000, 1 + points / 1000, 1, 1 };
-
-            if(points % 1000 == 0)
-            {
-                StratagemLimit[0] -= 1;
-                StratagemLimit[1] -= 1;
-            }
+            StratagemLimit = new int[] { points / 1000, points / 1000, 1, 1 };
         }
 
         public override string ToString()

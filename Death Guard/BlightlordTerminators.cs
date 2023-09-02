@@ -9,7 +9,6 @@ namespace Roster_Builder.Death_Guard
 {
     public class BlightlordTerminators : Datasheets
     {
-        DeathGuard repo = new DeathGuard();
         int currentIndex = 0;
 
         public BlightlordTerminators()

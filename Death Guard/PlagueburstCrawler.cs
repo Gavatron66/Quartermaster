@@ -9,7 +9,6 @@ namespace Roster_Builder.Death_Guard
 {
     public class PlagueburstCrawler : Datasheets
     {
-        DeathGuard repo = new DeathGuard();
         public PlagueburstCrawler()
         {
             DEFAULT_POINTS = 165;

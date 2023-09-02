@@ -10,7 +10,6 @@ namespace Roster_Builder.Genestealer_Cults
 {
     public class GoliathRockgrinder : Datasheets
     {
-        GSC repo = new GSC();
         public GoliathRockgrinder()
         {
             DEFAULT_POINTS = 110;

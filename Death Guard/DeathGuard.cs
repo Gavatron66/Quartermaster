@@ -253,14 +253,7 @@ namespace Roster_Builder.Death_Guard
         public override void SetPoints(int points)
         {
             StratagemCount = new int[] { 0, 0, 0, 0, 0 };
-            StratagemLimit = new int[] { 1 + points / 1000, 1 + points / 1000, 1, 1 + points / 1000, 99 };
-
-            if (points % 1000 == 0)
-            {
-                StratagemLimit[0] -= 1;
-                StratagemLimit[1] -= 1;
-                StratagemLimit[3] -= 1;
-            }
+            StratagemLimit = new int[] { points / 1000, points / 1000, 1, points / 1000, 99 };
         }
     }
 }

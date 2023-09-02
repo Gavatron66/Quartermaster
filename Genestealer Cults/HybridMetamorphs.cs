@@ -9,7 +9,6 @@ namespace Roster_Builder.Genestealer_Cults
 {
     public class HybridMetamorphs : Datasheets
     {
-        GSC repo = new GSC();
         public HybridMetamorphs()
         {
             DEFAULT_POINTS = 12;

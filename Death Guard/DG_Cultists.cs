@@ -10,7 +10,6 @@ namespace Roster_Builder.Death_Guard
 {
     public class DG_Cultists : Datasheets
     {
-        DeathGuard repo = new DeathGuard();
         public DG_Cultists()
         {
             DEFAULT_POINTS = 50;

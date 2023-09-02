@@ -10,8 +10,6 @@ namespace Roster_Builder.Genestealer_Cults
 {
     public class Biophagus : Datasheets
     {
-        GSC repo = new GSC();
-
         public Biophagus()
         {
             DEFAULT_POINTS = 40;
@@ -90,6 +88,20 @@ namespace Roster_Builder.Genestealer_Cults
 
             panel.Controls["lblFactionupgrade"].Visible = true;
             panel.Controls["cmbFactionupgrade"].Visible = true;
+
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            panel.Controls["cbStratagem2"].Visible = false;
+
+            if (Stratagem.Contains(cbStratagem1.Text))
+            {
+                cbStratagem1.Checked = true;
+                cbStratagem1.Enabled = true;
+            }
+            else
+            {
+                cbStratagem1.Checked = false;
+                cbStratagem1.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem1.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -99,6 +111,7 @@ namespace Roster_Builder.Genestealer_Cults
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
 
             switch (code)
             {
@@ -132,6 +145,19 @@ namespace Roster_Builder.Genestealer_Cults
                         this.isWarlord = true;
                     }
                     else { this.isWarlord = false; }
+                    break;
+                case 71:
+                    if (cbStratagem1.Checked)
+                    {
+                        Stratagem.Add(cbStratagem1.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem1.Text))
+                        {
+                            Stratagem.Remove(cbStratagem1.Text);
+                        }
+                    }
                     break;
             }
 

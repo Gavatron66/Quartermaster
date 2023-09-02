@@ -10,7 +10,6 @@ namespace Roster_Builder.Genestealer_Cults
 {
     public class AtalanJackals : Datasheets
     {
-        GSC repo = new GSC();
         int currentIndex;
         int wolfquads = 0;
         List<string> wolfquadWeapons = new List<string>();

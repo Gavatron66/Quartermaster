@@ -9,7 +9,6 @@ namespace Roster_Builder.Death_Guard
 {
     public class PlagueMarines : Datasheets
     {
-        DeathGuard repo = new DeathGuard();
         int currentIndex;
 
         public PlagueMarines()

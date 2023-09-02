@@ -4,46 +4,14 @@ Models to add checks for Numeric Up Down controls:
 	Hybrid Metamorphs
 
 Found an issue with Custodes: if a Knight-Centura is included, it messes up the available Warlord Trait options once selected
+	Simply change the GetWarlordTraits function to accept a Keywords argument, since other factions will use similar functionality
+		Do the same for Psychic Powers, since later on different factions utilize multiple sets of Psychic powers
 
-Genestealer Cults has weird custome factions
+Genestealer Cults has weird custom factions
 	Add either more boxes or do a Checkbox system
 	
-Custodes Characters:
-	Blade Champion
-	Knight-Centura
-	Shield Captains
-	Vexilus Praetors
-	
-GSC Characters:
-	Acolyte Iconward
-	Jackal Alphus
-	Magus
-	Patriarch
-	Primus
-	Abominant
-	Biophagus
-	Clamavus
-	Kelermorph
-	Locus
-	Nexos
-	Reductus Saboteur
----------------------------------------------
-Custodes Characters:
-	Blade Champion
-	Knight-Centura
-	Shield Captains
-	Vexilus Praetors
-	
-GSC Characters:
-	Acolyte Iconward
-	Jackal Alphus
-	Magus
-	Patriarch
-	Primus
-	Abominant
-	Biophagus
-	Clamavus
-	Kelermorph
-	Locus
-	Nexos
-	Reductus Saboteur
+Fix Load/Save buttons
+	With all the changes (i.e. the existence of the Roster class), the Load/Save functions need to be visited to work properly.
+		Hopefully not too hard :) (fingers crossed)
+		
+Provide an error if a datasheet has not selected enough Psychic Powers

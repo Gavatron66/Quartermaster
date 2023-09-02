@@ -9,7 +9,6 @@ namespace Roster_Builder.Death_Guard
 {
     public class FoulBlightspawn : Datasheets
     {
-        DeathGuard repo = new DeathGuard();
         public FoulBlightspawn()
         {
             DEFAULT_POINTS = 75;

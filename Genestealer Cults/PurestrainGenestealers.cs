@@ -12,7 +12,6 @@ namespace Roster_Builder.Genestealer_Cults
 {
     public class PurestrainGenestealers : Datasheets
     {
-        GSC repo = new GSC();
         public PurestrainGenestealers()
         {
             UnitSize = 5;

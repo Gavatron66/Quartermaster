@@ -10,7 +10,6 @@ namespace Roster_Builder.Genestealer_Cults
 {
     public class NeophyteHybrids : Datasheets
     {
-        GSC repo = new GSC();
         int currentIndex;
         public NeophyteHybrids()
         {

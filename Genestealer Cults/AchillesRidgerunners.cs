@@ -10,7 +10,6 @@ namespace Roster_Builder.Necrons
 {
     public class AchillesRidgerunners : Datasheets
     {
-        GSC repo = new GSC();
         int currentIndex;
         public AchillesRidgerunners()
         {
