@@ -427,7 +427,7 @@ namespace Roster_Builder
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        {
+        {/*
             try
             {
                 SaveFileDialog sfd = new SaveFileDialog();
@@ -449,6 +449,20 @@ namespace Roster_Builder
                 string savePath = sfd.FileName;
                 var options = new JsonSerializerOptions { WriteIndented = true };
                 string json = JsonSerializer.Serialize<List<Datasheets>>(roster.roster, options);
+                File.WriteAllText(savePath, json);
+            }
+            catch { }*/
+
+            try
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.AddExtension = true;
+                sfd.DefaultExt = "json";
+                sfd.ShowDialog();
+
+                string savePath = sfd.FileName;
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                string json = JsonSerializer.Serialize(roster, options);
                 File.WriteAllText(savePath, json);
             }
             catch { }
