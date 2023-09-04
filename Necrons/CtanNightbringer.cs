@@ -30,6 +30,7 @@ namespace Roster_Builder.Necrons
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
+            repo = f as Necrons;
             Template.LoadTemplate(TemplateCode, panel);
 
             panel.Controls["cbWarlord"].Visible = false;
@@ -40,6 +41,14 @@ namespace Roster_Builder.Necrons
 
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
+
+            List<string> psykerpowers = new List<string>();
+            psykerpowers = repo.GetPsykerPowers("");
+            clbPsyker.Items.Clear();
+            foreach (string power in psykerpowers)
+            {
+                clbPsyker.Items.Add(power);
+            }
 
             lblPsyker.Text = "Select one of the following:";
             clbPsyker.ClearSelected();

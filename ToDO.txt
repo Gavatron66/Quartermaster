@@ -3,10 +3,6 @@ Models to add checks for Numeric Up Down controls:
 	Necron Warriors
 	Hybrid Metamorphs
 
-Found an issue with Custodes: if a Knight-Centura is included, it messes up the available Warlord Trait options once selected
-	Simply change the GetWarlordTraits function to accept a Keywords argument, since other factions will use similar functionality
-		Do the same for Psychic Powers, since later on different factions utilize multiple sets of Psychic powers
-
 Genestealer Cults has weird custom factions
 	Add either more boxes or do a Checkbox system
 	

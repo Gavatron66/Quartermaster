@@ -147,7 +147,7 @@ namespace Roster_Builder.Adeptus_Custodes
             return false;
         }
 
-        public override List<string> GetPsykerPowers()
+        public override List<string> GetPsykerPowers(string keyword)
         {
             return new List<string>() { };
         }
@@ -255,9 +255,21 @@ namespace Roster_Builder.Adeptus_Custodes
             };
         }
 
-        public override List<string> GetWarlordTraits()
+        public override List<string> GetWarlordTraits(string keyword)
         {
             List<string> traits = new List<string>() { "(None)" };
+
+            if(keyword == "SoS")
+            {
+                traits.AddRange(new string[]
+                {
+                    "Oblivion Knight",
+                    "Silent Judge",
+                    "Mistress of Persecution"
+                });
+
+                return traits;
+            }
 
             traits.AddRange(new string[]
             {
@@ -280,19 +292,18 @@ namespace Roster_Builder.Adeptus_Custodes
             }
 
             return traits;
-
-            //return new List<string>()
-            //{
-            //"Oblivion Knight",
-            //"Silent Judge (Aura)",
-            //"Mistress of Persecution (Aura)"
-            //};
         }
 
         public override void SetPoints(int points)
         {
             StratagemCount = new int[] { 0, 0, 0, 0 };
             StratagemLimit = new int[] { points / 1000, points / 1000, 1, 1 };
+
+            if (points < 1000)
+            {
+                StratagemLimit[0] = 1;
+                StratagemLimit[1] = 1;
+            }
         }
 
         public override string ToString()

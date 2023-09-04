@@ -89,13 +89,6 @@ namespace Roster_Builder
             List<Datasheets> datasheets = units.GetDatasheets();
 
             lblSubfaction.Text = "Select a " + units.subFactionName + " :";
-            subFactionupdate();
-            List<string> powers = units.GetPsykerPowers();
-
-            foreach (var power in powers)
-            {
-                clbPsyker.Items.Add(power);
-            }
 
             panel1.Controls["lblFactionUpgrade"].Text = units.factionUpgradeName;
 
@@ -339,17 +332,6 @@ namespace Roster_Builder
             units.currentSubFaction = cmbSubFaction.SelectedItem.ToString();
             lbRoster.Items.RemoveAt(0);
             lbRoster.Items.Insert(0, units.subFactionName + ": " + units.currentSubFaction);
-            subFactionupdate();
-        }
-
-        private void subFactionupdate()
-        {
-            cmbWarlord.Items.Clear();
-            List<string> traits = units.GetWarlordTraits();
-            foreach (var trait in traits)
-            {
-                cmbWarlord.Items.Add(trait);
-            }
 
             if (cmbSubFaction.SelectedItem as string == "<Custom>")
             {
@@ -359,8 +341,8 @@ namespace Roster_Builder
             {
                 gbCustomSubfaction.Visible = false;
             }
-
         }
+
         private void cmbOption3_SelectedIndexChanged(object sender, EventArgs e)
         {
             roster.roster[currentIndex].SaveDatasheets(13, panel1);

@@ -37,6 +37,14 @@ namespace Roster_Builder.Adeptus_Custodes
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
+            cmbWarlord.Items.Clear();
+            List<string> traits = repo.GetWarlordTraits("SoS");
+            foreach (var item in traits)
+            {
+                cmbWarlord.Items.Add(item);
+            }
+
+
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
@@ -46,18 +54,10 @@ namespace Roster_Builder.Adeptus_Custodes
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            cmbWarlord.Items.Clear();
-            cmbWarlord.Items.AddRange(new string[]
-            {
-                "Oblivion Knight",
-                "Silent Judge",
-                "Mistrss of Persecution"
-            });
-
             if (isWarlord)
             {
                 cbWarlord.Checked = true;
-                cmbWarlord.Enabled = false;
+                cmbWarlord.Enabled = true;
                 cmbWarlord.Text = WarlordTrait;
             }
             else

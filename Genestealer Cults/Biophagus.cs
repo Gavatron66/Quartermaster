@@ -40,6 +40,14 @@ namespace Roster_Builder.Genestealer_Cults
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
+            cmbWarlord.Items.Clear();
+            List<string> traits = repo.GetWarlordTraits("");
+            foreach (var item in traits)
+            {
+                cmbWarlord.Items.Add(item);
+            }
+
+
             cbOption1.Text = "Alchemicus Familiar";
             if (Weapons[0] != string.Empty)
             {

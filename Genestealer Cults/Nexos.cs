@@ -39,6 +39,14 @@ namespace Roster_Builder.Genestealer_Cults
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
+            cmbWarlord.Items.Clear();
+            List<string> traits = repo.GetWarlordTraits("");
+            foreach (var item in traits)
+            {
+                cmbWarlord.Items.Add(item);
+            }
+
+
             if (isWarlord)
             {
                 cbWarlord.Checked = true;

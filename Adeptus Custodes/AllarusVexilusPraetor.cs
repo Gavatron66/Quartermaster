@@ -41,6 +41,14 @@ namespace Roster_Builder.Adeptus_Custodes
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
+            cmbWarlord.Items.Clear();
+            List<string> traits = repo.GetWarlordTraits("");
+            foreach (var item in traits)
+            {
+                cmbWarlord.Items.Add(item);
+            }
+
+
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {

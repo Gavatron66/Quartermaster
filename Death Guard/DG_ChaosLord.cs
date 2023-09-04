@@ -36,6 +36,14 @@ namespace Roster_Builder.Death_Guard
             ComboBox cmb3 = panel.Controls["cmbOption2"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
+            cmb.Items.Clear();
+            List<string> traits = repo.GetWarlordTraits("");
+            foreach (var item in traits)
+            {
+                cmb.Items.Add(item);
+            }
+
+
             if (isWarlord)
             {
                 cb.Checked = true;

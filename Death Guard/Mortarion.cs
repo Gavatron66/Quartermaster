@@ -27,6 +27,7 @@ namespace Roster_Builder.Death_Guard
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
+            repo = f as DeathGuard;
             Template.LoadTemplate(TemplateCode, panel);
 
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
@@ -47,6 +48,14 @@ namespace Roster_Builder.Death_Guard
             else
             {
                 cmbFaction.SelectedIndex = -1;
+            }
+
+            List<string> psykerpowers = new List<string>();
+            psykerpowers = repo.GetPsykerPowers("");
+            clbPsyker.Items.Clear();
+            foreach (string power in psykerpowers)
+            {
+                clbPsyker.Items.Add(power);
             }
 
             lblPsyker.Text = "Select two of the following:";

@@ -278,7 +278,7 @@ namespace Roster_Builder.Space_Marines
             throw new NotImplementedException();
         }
 
-        public override List<string> GetPsykerPowers()
+        public override List<string> GetPsykerPowers(string keywords)
         {
             throw new NotImplementedException();
         }
@@ -329,7 +329,7 @@ namespace Roster_Builder.Space_Marines
             };
         }
 
-        public override List<string> GetWarlordTraits()
+        public override List<string> GetWarlordTraits(string keyword)
         {
             List<string> traits = new List<string>()
             {

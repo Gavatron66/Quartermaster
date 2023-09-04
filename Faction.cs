@@ -17,11 +17,11 @@ namespace Roster_Builder
 
         public Faction() { StratagemList = new List<string>(); }
 
-        public abstract List<string> GetPsykerPowers();
+        public abstract List<string> GetPsykerPowers(string keywords);
         public abstract List<string> GetFactionUpgrades(List<string> keywords);
         public abstract List<string> GetSubFactions();
         public abstract List<Datasheets> GetDatasheets();
-        public abstract List<string> GetWarlordTraits();
+        public abstract List<string> GetWarlordTraits(string keyword);
         public abstract int GetFactionUpgradePoints(string upgrade);
         public abstract List<string> GetRelics(List<string> keywords);
         public abstract List<string> GetCustomSubfactionList1();

@@ -80,7 +80,7 @@ namespace Roster_Builder.Death_Guard
             return false;
         }
 
-        public override List<string> GetPsykerPowers()
+        public override List<string> GetPsykerPowers(string keywords)
         {
             return new List<string>()
             {
@@ -93,7 +93,7 @@ namespace Roster_Builder.Death_Guard
             };
         }
 
-        public override List<String> GetWarlordTraits()
+        public override List<String> GetWarlordTraits(string keyword)
         {
             List<string> traits = new List<string>()
             {
@@ -254,6 +254,12 @@ namespace Roster_Builder.Death_Guard
         {
             StratagemCount = new int[] { 0, 0, 0, 0, 0 };
             StratagemLimit = new int[] { points / 1000, points / 1000, 1, points / 1000, 99 };
+
+            if (points < 1000)
+            {
+                StratagemLimit[0] = 1;
+                StratagemLimit[1] = 1;
+            }
         }
     }
 }

@@ -140,7 +140,7 @@ namespace Roster_Builder.Genestealer_Cults
             return false;
         }
 
-        public override List<string> GetPsykerPowers()
+        public override List<string> GetPsykerPowers(string keywords)
         {
             return new List<string>()
             {
@@ -264,7 +264,7 @@ namespace Roster_Builder.Genestealer_Cults
             };
         }
 
-        public override List<string> GetWarlordTraits()
+        public override List<string> GetWarlordTraits(string keyword)
         {
             List<string> traits = new List<string>()
             {
@@ -290,6 +290,12 @@ namespace Roster_Builder.Genestealer_Cults
         {
             StratagemCount = new int[] { 0, 0, 0 };
             StratagemLimit = new int[] { points / 1000, 1, 1 };
+
+            if (points < 1000)
+            {
+                StratagemLimit[0] = 1;
+                StratagemLimit[1] = 1;
+            }
         }
 
         public override string ToString()

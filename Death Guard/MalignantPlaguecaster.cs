@@ -42,6 +42,14 @@ namespace Roster_Builder.Death_Guard
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
+            cmbWarlord.Items.Clear();
+            List<string> traits = repo.GetWarlordTraits("");
+            foreach (var item in traits)
+            {
+                cmbWarlord.Items.Add(item);
+            }
+
+
             cbOption1.Text = "Bolt Pistol";
             if (Weapons[0] != string.Empty)
             {
@@ -74,6 +82,14 @@ namespace Roster_Builder.Death_Guard
             else
             {
                 cmbFaction.SelectedIndex = 0;
+            }
+
+            List<string> psykerpowers = new List<string>();
+            psykerpowers = repo.GetPsykerPowers("");
+            clbPsyker.Items.Clear();
+            foreach (string power in psykerpowers)
+            {
+                clbPsyker.Items.Add(power);
             }
 
             lblPsyker.Text = "Select two of the following:";

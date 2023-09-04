@@ -47,6 +47,13 @@ namespace Roster_Builder.Necrons
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
+            cmbWarlord.Items.Clear();
+            List<string> traits = repo.GetWarlordTraits("");
+            foreach (var item in traits)
+            {
+                cmbWarlord.Items.Add(item);
+            }
+
             if (isWarlord)
             {
                 cbWarlord.Checked = true;
