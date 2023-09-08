@@ -63,7 +63,6 @@ C:\Users\evans\Desktop\Roster-Builder\bin\Debug\System.Text.Json.xml
 C:\Users\evans\Desktop\Roster-Builder\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\evans\Desktop\Roster-Builder\bin\Debug\System.ValueTuple.xml
 C:\Users\evans\Desktop\Roster-Builder\obj\Debug\Roster Builder.csproj.AssemblyReference.cache
-C:\Users\evans\Desktop\Roster-Builder\obj\Debug\Roster Builder.csproj.SuggestedBindingRedirects.cache
 C:\Users\evans\Desktop\Roster-Builder\obj\Debug\Roster_Builder.Form1.resources
 C:\Users\evans\Desktop\Roster-Builder\obj\Debug\Roster_Builder.Properties.Resources.resources
 C:\Users\evans\Desktop\Roster-Builder\obj\Debug\Roster_Builder.Testing_Form.resources

@@ -49,7 +49,7 @@ namespace Roster_Builder.Necrons
             {
                 cbWarlord.Checked = true;
                 cmbWarlord.Enabled = true;
-                cmbWarlord.SelectedText = WarlordTrait;
+                cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
             }
             else
             {

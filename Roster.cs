@@ -10,12 +10,12 @@ namespace Roster_Builder
 {
     public class Roster
     {
-        public List<Datasheets> roster;
-        public Faction currentFaction;
-        public int[] StratagemCount;
-        public int[] StratagemLimit;
-        public List<string> Stratagems;
-        int Points = 0;
+        public Faction currentFaction { get; set; }
+        public List<Datasheets> roster { get; set; }
+        public int[] StratagemCount { get; set; }
+        public int[] StratagemLimit { get; set; }
+        public List<string> Stratagems { get; set; }
+        public int Points { get; set; }
 
         bool[] errorsList = new bool[] { false, false, false, false, false };
         //[0] Points Issue
@@ -23,6 +23,8 @@ namespace Roster_Builder
         //[2] Too many Relics
         //[3] Missing Warlord
         //[4] Missing Relic
+
+        public Roster() { }
 
         public Roster(int points, Faction faction)
         {
@@ -33,6 +35,16 @@ namespace Roster_Builder
             Stratagems = faction.StratagemList;
             StratagemLimit = faction.StratagemLimit;
             StratagemCount = new int[StratagemLimit.Length];
+        }
+
+        public Roster(Roster roster)
+        {
+            this.roster = roster.roster;
+            this.currentFaction = roster.currentFaction;
+            this.StratagemCount = roster.StratagemCount;
+            this.StratagemLimit = roster.StratagemLimit;
+            this.Stratagems = roster.Stratagems;
+            this.Points = roster.Points;
         }
 
         public void checkForErrors(int currentPoints)

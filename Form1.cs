@@ -82,9 +82,13 @@ namespace Roster_Builder
             if (!isLoading)
             {
                 units = cmbSelectFaction.SelectedItem as Faction;
+                roster = new Roster(Convert.ToInt32(txtSelectPoints.Text), units);
+            }
+            else
+            {
+                units = roster.currentFaction;
             }
 
-            roster = new Roster(Convert.ToInt32(txtSelectPoints.Text), units);
 
             List<Datasheets> datasheets = units.GetDatasheets();
 
@@ -462,7 +466,7 @@ namespace Roster_Builder
 
                 string savePath = sfd.FileName;
                 var options = new JsonSerializerOptions { WriteIndented = true };
-                string json = JsonSerializer.Serialize(roster, options);
+                var json = JsonSerializer.Serialize<Roster>(roster, options);
                 File.WriteAllText(savePath, json);
             }
             catch { }
@@ -470,51 +474,68 @@ namespace Roster_Builder
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
+        //    OpenFileDialog ofd = new OpenFileDialog();
+        //    ofd.ShowDialog();
+
+        //    string path = ofd.FileName;
+        //    string json = File.ReadAllText(path);
+
+        //    var newRoster = JsonSerializer.Deserialize<List<Datasheets>>(json);
+
+        //    foreach (Faction faction in cmbSelectFaction.Items)
+        //    {
+        //        List<Datasheets> datasheets = faction.GetDatasheets();
+        //        Type[] types = new Type[datasheets.Count];
+
+        //        for (int i = 0; i < datasheets.Count; i++)
+        //        {
+        //            types[i] = datasheets[i].GetType();
+        //        }
+
+        //        if (types.Contains(newRoster[0].GetType()))
+        //        {
+        //            isLoading = true;
+        //            units = faction;
+        //        }
+        //    }
+
+        //    btnBegin.PerformClick();
+
+        //    roster.roster = newRoster;
+
+        //    lbRoster.Items.Insert(0, units.subFactionName);
+
+        //    if (newRoster[0].Keywords.Last() == "<Custom>")
+        //    {
+        //        cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(roster.roster[0].Keywords.Last());
+        //        cmbCustomSub2.SelectedIndex = cmbCustomSub2.Items.IndexOf(roster.roster[0].Keywords[roster.roster[0].Keywords.Count - 2]);
+        //        cmbCustomSub1.SelectedIndex = cmbCustomSub1.Items.IndexOf(roster.roster[0].Keywords[roster.roster[0].Keywords.Count - 3]);
+
+        //        roster.roster[0].Keywords.RemoveRange(roster.roster[0].Keywords.Count - 3, 3);
+        //    }
+        //    else
+        //    {
+        //        cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(roster.roster[0].Keywords.Last());
+
+        //        roster.roster[0].Keywords.RemoveAt(roster.roster[0].Keywords.Count - 1);
+        //    }
+
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.ShowDialog();
 
             string path = ofd.FileName;
             string json = File.ReadAllText(path);
 
-            var newRoster = JsonSerializer.Deserialize<List<Datasheets>>(json);
+            var newRoster = JsonSerializer.Deserialize<Roster>(json);
 
-            foreach (Faction faction in cmbSelectFaction.Items)
-            {
-                List<Datasheets> datasheets = faction.GetDatasheets();
-                Type[] types = new Type[datasheets.Count];
+            roster = new Roster(newRoster);
 
-                for (int i = 0; i < datasheets.Count; i++)
-                {
-                    types[i] = datasheets[i].GetType();
-                }
+            txtSelectPoints.Text = roster.Points.ToString();
 
-                if (types.Contains(newRoster[0].GetType()))
-                {
-                    isLoading = true;
-                    units = faction;
-                }
-            }
-
+            isLoading = true;
             btnBegin.PerformClick();
 
-            roster.roster = newRoster;
-
             lbRoster.Items.Insert(0, units.subFactionName);
-
-            if (newRoster[0].Keywords.Last() == "<Custom>")
-            {
-                cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(roster.roster[0].Keywords.Last());
-                cmbCustomSub2.SelectedIndex = cmbCustomSub2.Items.IndexOf(roster.roster[0].Keywords[roster.roster[0].Keywords.Count - 2]);
-                cmbCustomSub1.SelectedIndex = cmbCustomSub1.Items.IndexOf(roster.roster[0].Keywords[roster.roster[0].Keywords.Count - 3]);
-
-                roster.roster[0].Keywords.RemoveRange(roster.roster[0].Keywords.Count - 3, 3);
-            }
-            else
-            {
-                cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(roster.roster[0].Keywords.Last());
-
-                roster.roster[0].Keywords.RemoveAt(roster.roster[0].Keywords.Count - 1);
-            }
 
             updateLBRoster();
         }
