@@ -13,3 +13,31 @@ Implement the remianing unique stratagems for the following:
 	Necrons
 	Adeptus Custodes
 	GSC
+	
+Space Marines has limits on what each unit can take depending on subchapter. Most of the time, this isn't a problem. The following have a codex supplement that adds/changes their rosters:
+	Black Templars
+	Dark Angels
+	Deathwatch
+	Space Wolves
+The following have codex supplements that adds to their rosters:
+	Salamanders
+	Ultramarines
+	Raven Guard
+	White Scars
+	Iron Hands
+	Imperial Fists
+	
+Prohibit selecting of the same custom faction trait
+
+
+Bolt Pistol
+
+Master-crafted Auto Bolt Rifle
+	Master-crafted Stalker Bolt Rifle
+	If equipped with either the above, may take a Master-crafted Power Sword
+	Special Issue Bolt Carbine (Dark Angels only)
+		May take a Power-Fist if it doesn't take a Master-crafted Power Sword
+
+Both
+	Plasma Pistol and Power Fist
+	Heavy Bolt Pistol, Master-crafted Power Sword and Relic Shield

@@ -15,6 +15,7 @@ using System.Text.Json.Serialization;
 using Roster_Builder.Necrons;
 using Roster_Builder.Adeptus_Custodes;
 using Roster_Builder.Genestealer_Cults;
+using Roster_Builder.Space_Marines;
 
 namespace Roster_Builder
 {
@@ -59,6 +60,7 @@ namespace Roster_Builder
                 new DeathGuard(),
                 new GSC(),
                 new Necrons.Necrons(),
+                new SpaceMarines(),
             });
 
             #endregion

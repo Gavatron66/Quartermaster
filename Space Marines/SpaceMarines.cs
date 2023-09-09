@@ -1,4 +1,4 @@
-﻿using Roster_Builder.Necrons;
+﻿using Roster_Builder.Space_Marines;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +14,11 @@ namespace Roster_Builder.Space_Marines
             subFactionName = "<Chapter>";
             currentSubFaction = string.Empty;
             factionUpgradeName = "Masters of the Chapter";
+            StratagemList.AddRange(new string[]
+            {
+                "Stratagem: Hero of the Chapter",
+                "Stratagem: Relic of the Chapter"
+            });
         }
 
         public override List<string> GetCustomSubfactionList1()
@@ -26,7 +31,6 @@ namespace Roster_Builder.Space_Marines
                 "Fearsome Aspect",
                 "Hungry for Battle",
                 "Indomitable",
-                "Inheritors of the Primarch",
                 "Knowledge is Power",
                 "Long-range Marksmen",
                 "Master Artisans",
@@ -72,12 +76,12 @@ namespace Roster_Builder.Space_Marines
             return new List<Datasheets>()
             {
                 //---------- HQ ----------
-                //new PrimarisCpatain(),
-                //new GravisHeavyCaptain(),
-                //new PhobosCaptain(),
-                //new GravisCaptain(),
-                //new TerminatorCaptain(),
-                //mew Captain(),
+                new PrimarisCaptain(),
+                new GravisHeavyCaptain(),
+                new PhobosCaptain(),
+                new GravisCaptain(),
+                new TerminatorCaptain(),
+                //new Captain(),
                 //new BikeCaptain(),
                 //new PrimarisLieutenant(),
                 //new ReiverLieutenant(),
@@ -275,12 +279,58 @@ namespace Roster_Builder.Space_Marines
 
         public override bool GetIfEnabled(int index)
         {
-            throw new NotImplementedException();
+            if (StratagemCount[index] < StratagemLimit[index])
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public override List<string> GetPsykerPowers(string keywords)
         {
-            throw new NotImplementedException();
+            List<string> PsychicPowers = new List<string>();
+
+            if(keywords == "Librarius")
+            {
+                PsychicPowers.AddRange(new string[]
+                {
+                    "Veil of Time",
+                    "Might of Heroes",
+                    "Null Zone",
+                    "Psychic Scourge",
+                    "Fury of the Ancients",
+                    "Psychic Fortress"
+                });
+            }
+
+            if(keywords == "Obscuration")
+            {
+                PsychicPowers.AddRange(new string[]
+                {
+                    "Shrouding",
+                    "Soul Sight",
+                    "Mind Raid",
+                    "Hallucination",
+                    "Tenebrous Curse",
+                    "Temporal Corridor"
+                });
+            }
+
+            if (keywords == "Litanies")
+            {
+                PsychicPowers.AddRange(new string[]
+                {
+                    "Litany of Faith",
+                    "Catechism of Fire",
+                    "Exhortation of Rage",
+                    "Mantra of Strength",
+                    "Recitation of Focus",
+                    "Canticle of Hate"
+                });
+            }
+
+            return PsychicPowers;
         }
 
         public override List<string> GetRelics(List<string> keywords)
@@ -289,7 +339,7 @@ namespace Roster_Builder.Space_Marines
 
             relics.Add("(None)");
 
-            //The Armour Indomitus
+            relics.Add("The Armour Indomitus");
             //The Shield Eternal - Model w/ Storm/Relic/Combat Shield
             //Standard of the Emperor Ascendant - ANCIENT only
             //Teeth of Terra - Astartes Chainsword
@@ -302,7 +352,7 @@ namespace Roster_Builder.Space_Marines
             //Ghostweave Cloak - PHOBOS with Camo Claok
             //Tome of Malcador - LIBRARIAN
             //Benediction of Fury - CHAPLAIN
-            //The Honour Vehement
+            relics.Add("The Honour Vehement");
             //The Vox Espiritum - PRIMARIS
 
             return relics;
@@ -331,10 +381,33 @@ namespace Roster_Builder.Space_Marines
 
         public override List<string> GetWarlordTraits(string keyword)
         {
-            List<string> traits = new List<string>()
+            List<string> traits = new List<string>();
+
+            if(keyword == "Phobos")
+            {
+                traits.AddRange(new string[]
+                {
+                    "Shoot and Fade",
+                    "Lord of Deciet",
+                    "Master of the Vanguard",
+                    "Stealth Adept",
+                    "Target Priority",
+                    "Master Marksman"
+                });
+            }
+            else
             {
 
-            };
+                traits.AddRange(new string[]
+                {
+                    "Fear Made Manifest",
+                    "The Imperium's Sword",
+                    "Iron Resolve",
+                    "Champion of Humanity",
+                    "Storm of Fire",
+                    "Rites of War"
+                });
+            }
 
             if (currentSubFaction == "Dark Angels") { traits.Add("Brilliant Strategist"); }
             else if (currentSubFaction == "White Scars") { traits.Add("Deadly Hunter"); }
@@ -355,7 +428,19 @@ namespace Roster_Builder.Space_Marines
 
         public override void SetPoints(int points)
         {
-            throw new NotImplementedException();
+            StratagemCount = new int[] { 0, 0 };
+            StratagemLimit = new int[] { points / 1000, points / 1000 };
+
+            if (points < 1000)
+            {
+                StratagemLimit[0] = 1;
+                StratagemLimit[1] = 1;
+            }
+        }
+
+        public override string ToString()
+        {
+            return "Space Marines";
         }
     }
 }
