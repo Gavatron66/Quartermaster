@@ -1,11 +1,23 @@
-﻿using System;
+﻿using Roster_Builder.Adeptus_Custodes;
+using Roster_Builder.Death_Guard;
+using Roster_Builder.Genestealer_Cults;
+using Roster_Builder.Necrons;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Roster_Builder
 {
+    [JsonPolymorphic(TypeDiscriminatorPropertyName = "$faction")]
+    #region JSON Factions
+    [JsonDerivedType(typeof(AdeptusCustodes), "Custodes")]
+    [JsonDerivedType(typeof(DeathGuard), "DG")]
+    [JsonDerivedType(typeof(GSC), "GSC")]
+    [JsonDerivedType(typeof(Necrons.Necrons), "Necrons")]
+    #endregion
     public abstract class Faction
     {
         public string subFactionName { get; set; }

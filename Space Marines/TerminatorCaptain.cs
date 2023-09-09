@@ -1,70 +1,97 @@
-﻿using Roster_Builder.Adeptus_Custodes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Adeptus_Custodes
+namespace Roster_Builder.Space_Marines
 {
-    public class AllarusShieldCaptain : Datasheets
+    public class TerminatorCaptain : Datasheets
     {
-        public AllarusShieldCaptain()
+        public TerminatorCaptain()
         {
-            DEFAULT_POINTS = 125;
-            TemplateCode = "1m1k_c";
+            DEFAULT_POINTS = 100;
             Points = DEFAULT_POINTS;
-            Weapons.Add("Guardian Spear");
+            TemplateCode = "2m1k_c";
+            Weapons.Add("Storm Bolter");
+            Weapons.Add("Power Sword");
             Weapons.Add("");
             Keywords.AddRange(new string[]
             {
-                "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
-                "INFANTRY", "CHARACTER", "TELEPORT HOMER", "TERMINATOR", "ALLARUS", "SHIELD-CAPTAIN"
+                "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
+                "INFANTRY", "CHARACTER", "TERMINATOR","CAPTAIN"
             });
         }
 
         public override Datasheets CreateUnit()
         {
-            return new AllarusShieldCaptain();
+            return new TerminatorCaptain();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as AdeptusCustodes;
+            repo = f as SpaceMarines;
             Template.LoadTemplate(TemplateCode, panel);
+            panel.Controls["cmbFactionUpgrade"].Visible = true;
+            panel.Controls["lblFactionUpgrade"].Visible = true;
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
-            CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
+            CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+
+            cmbOption1.Items.Clear();
+            cmbOption1.Items.AddRange(new string[]
+            {
+                "Combi-bolter",
+                "Combi-flamer",
+                "Combi-grav",
+                "Combi-melta",
+                "Combi-plasma",
+                "Lightning Claw",
+                "Power Fist",
+                "Storm Bolter",
+                "Storm Shield",
+                "Thunder Hammer"
+            });
+            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+
+            cmbOption2.Items.Clear();
+            cmbOption2.Items.AddRange(new string[]
+            {
+                "Chainfist",
+                "Lightning Claw",
+                "Power Axe",
+                "Power Fist",
+                "Power Maul",
+                "Power Sword",
+                "Relic Blade",
+                "Storm Shield",
+                "Thunder Hammer"
+            });
+            cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
+
+            cbOption1.Text = "Wrist-mounted Grenade Launcher";
+            if (Weapons[2] == cbOption1.Text)
+            {
+                cbOption1.Checked = true;
+                cbOption1.Visible = true;
+            }
+            else
+            {
+                cbOption1.Checked = false;
+                cbOption1.Visible = false;
+            }
 
             cmbWarlord.Items.Clear();
             List<string> traits = repo.GetWarlordTraits("");
             foreach (var item in traits)
             {
                 cmbWarlord.Items.Add(item);
-            }
-
-
-            cmbOption1.Items.Clear();
-            cmbOption1.Items.AddRange(new string[]
-            {
-                "Castellan Axe",
-                "Guardian Spear"
-            });
-            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
-
-            cbOption1.Text = "Misericordia";
-            if (Weapons[1] == "Misericordia")
-            {
-                cbOption1.Checked = true;
-            }
-            else
-            {
-                cbOption1.Checked = false;
             }
 
             if (isWarlord)
@@ -91,18 +118,16 @@ namespace Roster_Builder.Adeptus_Custodes
                 cmbRelic.SelectedIndex = -1;
             }
 
-            panel.Controls["lblFactionupgrade"].Visible = true;
-            cmbFactionupgrade.Visible = true;
-            cmbFactionupgrade.Items.Clear();
-            cmbFactionupgrade.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+            cmbFaction.Items.Clear();
+            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
 
             if (Factionupgrade != null)
             {
-                cmbFactionupgrade.SelectedIndex = cmbFactionupgrade.Items.IndexOf(Factionupgrade);
+                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
             }
             else
             {
-                cmbFactionupgrade.SelectedIndex = 0;
+                cmbFaction.SelectedIndex = 0;
             }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
@@ -134,18 +159,60 @@ namespace Roster_Builder.Adeptus_Custodes
         public override void SaveDatasheets(int code, Panel panel)
         {
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
-            CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
+            CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
-            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
             switch (code)
             {
                 case 11:
                     Weapons[0] = cmbOption1.SelectedItem.ToString();
+
+                    if (Weapons[0] == "Storm Shield")
+                    {
+                        cmbOption2.Items.Remove(cmbOption2.Items.IndexOf("Storm Shield"));
+                    }
+                    else if (!Weapons.Contains("Storm Shield") && !cmbOption2.Items.Contains("Storm Shield"))
+                    {
+                        if(cmbOption2.Items.Contains("Chainfist"))
+                        {
+                            cmbOption2.Items.Insert(7, "Storm Shield");
+                        }
+                    }
+
+                    if (Weapons[0] == "Power Fist")
+                    {
+                        cbOption1.Visible = true;
+                    }
+                    else
+                    {
+                        cbOption1.Visible = false;
+                    }
+                    break;
+                case 12:
+                    Weapons[1] = cmbOption2.SelectedItem.ToString();
+
+                    if (Weapons[1] == "Storm Shield")
+                    {
+                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Storm Shield"));
+                    }
+                    else if (!Weapons.Contains("Storm Shield") && !cmbOption1.Items.Contains("Storm Shield"))
+                    {
+                        cmbOption1.Items.Insert(8, "Storm Shield");
+                    }
+
+                    if (Weapons[1] == "Power Fist")
+                    {
+                        cbOption1.Visible = true;
+                    }
+                    else
+                    {
+                        cbOption1.Visible = false;
+                    }
                     break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
@@ -158,29 +225,19 @@ namespace Roster_Builder.Adeptus_Custodes
                     }
                     break;
                 case 16:
-                    Factionupgrade = cmbFactionupgrade.Text;
+                    Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
                     Relic = cmbRelic.SelectedItem.ToString();
-
-                    if (cmbRelic.SelectedItem.ToString() == "Gatekeeper")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Guardian Spear");
-                        cmbOption1.Enabled = false;
-                    }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
                     break;
                 case 21:
                     if (cbOption1.Checked)
                     {
-                        Weapons[1] = cbOption1.Text;
+                        Weapons[2] = cbOption1.Text;
                     }
                     else
                     {
-                        Weapons[1] = "";
+                        Weapons[2] = "";
                     }
                     break;
                 case 25:
@@ -203,34 +260,42 @@ namespace Roster_Builder.Adeptus_Custodes
                         }
                     }
                     break;
-                case 72:
-                    if (cbStratagem2.Checked)
-                    {
-                        Stratagem.Add(cbStratagem2.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem2.Text))
-                        {
-                            Stratagem.Remove(cbStratagem2.Text);
-                        }
-                    }
-                    break;
+                default: break;
             }
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Misericordia"))
-            {
-                Points += 5;
-            }
-
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
+
+            string[] weaponpoints = new string[]
+            {
+                "Chainfist",
+                "Combi-flamer",
+                "Combi-grav",
+                "Combi-melta",
+                "Combi-plasma",
+                "Power Fist",
+                "Relic Blade",
+                "Storm Shield",
+                "Wrist-mounted Grenade Launcher"
+            };
+
+            foreach (string weapon in Weapons)
+            {
+                if (weaponpoints.Contains(weapon))
+                {
+                    Points += 5;
+                }
+                else if (weapon == "Thunder Hammer")
+                {
+                    Points += 15;
+                }
+            }
         }
 
         public override string ToString()
         {
-            return "Allarus Shield-Captain - " + Points + "pts";
+            return "Terminator Captain - " + Points + "pts";
         }
     }
 }

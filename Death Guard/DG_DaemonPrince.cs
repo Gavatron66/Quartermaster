@@ -83,7 +83,7 @@ namespace Roster_Builder.Death_Guard
             {
                 cbWarlord.Checked = true;
                 cmbWarlord.Enabled = true;
-                cmbWarlord.SelectedText = WarlordTrait;
+                cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
             }
             else
             {
