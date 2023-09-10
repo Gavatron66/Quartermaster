@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,23 +8,25 @@ using System.Windows.Forms;
 
 namespace Roster_Builder.Space_Marines
 {
-    public class GravisCaptain : Datasheets
+    public class BikeCaptain : Datasheets
     {
-        public GravisCaptain()
+        public BikeCaptain()
         {
-            DEFAULT_POINTS = 115;
+            DEFAULT_POINTS = 100;
             Points = DEFAULT_POINTS;
-            TemplateCode = "c";
+            TemplateCode = "2m_c";
+            Weapons.Add("Bolt Pistol");
+            Weapons.Add("Astartes Chainsword");
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "INFANTRY", "CHARACTER", "PRIMARIS", "MK X GRAVIS","CAPTAIN"
+                "BIKER", "CHARACTER", "CAPTAIN"
             });
         }
 
         public override Datasheets CreateUnit()
         {
-            return new GravisCaptain();
+            return new BikeCaptain();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -33,10 +36,53 @@ namespace Roster_Builder.Space_Marines
             panel.Controls["cmbFactionUpgrade"].Visible = true;
             panel.Controls["lblFactionUpgrade"].Visible = true;
 
+            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+
+            cmbOption1.Items.Clear();
+            cmbOption1.Items.AddRange(new string[]
+            {
+                "Astartes Chainsword",
+                "Bolt Pistol",
+                "Combi-flamer",
+                "Combi-grav",
+                "Combi-melta",
+                "Combi-plasma",
+                "Grav-pistol",
+                "Lightning Claw",
+                "Master-crafted Boltgun",
+                "Plasma Pistol",
+                "Power Axe",
+                "Power Fist",
+                "Power Maul",
+                "Power Sword",
+                "Thunder Hammer"
+            });
+            if (f.currentSubFaction == "Blood Angels")
+            {
+                cmbOption1.Items.Insert(7, "Hand Flamer");
+                cmbOption1.Items.Insert(8, "Inferno Pistol");
+            }
+            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+
+            cmbOption2.Items.Clear();
+            cmbOption2.Items.AddRange(new string[]
+            {
+                "Astartes Chainsword",
+                "Lightning Claw",
+                "Relic Blade",
+                "Power Axe",
+                "Power Fist",
+                "Power Maul",
+                "Power Sword",
+                "Storm Shield",
+                "Thunder Hammer"
+            });
+            cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
             cmbWarlord.Items.Clear();
             List<string> traits = repo.GetWarlordTraits("");
@@ -44,7 +90,6 @@ namespace Roster_Builder.Space_Marines
             {
                 cmbWarlord.Items.Add(item);
             }
-
 
             if (isWarlord)
             {
@@ -110,6 +155,8 @@ namespace Roster_Builder.Space_Marines
 
         public override void SaveDatasheets(int code, Panel panel)
         {
+            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
@@ -119,6 +166,12 @@ namespace Roster_Builder.Space_Marines
 
             switch (code)
             {
+                case 11:
+                    Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    break;
+                case 12:
+                    Weapons[1] = cmbOption2.SelectedItem.ToString();
+                    break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
                     {
@@ -174,11 +227,51 @@ namespace Roster_Builder.Space_Marines
             Points = DEFAULT_POINTS;
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
+
+            string[] fivepointers = new string[]
+            {
+                "Grav-pistol",
+                "Hand Flamer",
+                "Inferno Pistol",
+                "Lightning Claw",
+                "Master-crafted Boltgun",
+                "Plasma Pistol",
+                "Power Axe",
+                "Power Maul",
+                "Power Sword",
+                "Storm Bolter"
+            };
+
+            string[] tenpointers = new string[]
+            {
+                "Combi-flamer",
+                "Combi-grav",
+                "Combi-melta",
+                "Combi-plasma",
+                "Power Fist",
+                "Storm Shield"
+            };
+
+            foreach (string weapon in Weapons)
+            {
+                if (fivepointers.Contains(weapon))
+                {
+                    Points += 5;
+                }
+                else if (tenpointers.Contains(weapon))
+                {
+                    Points += 10;
+                }
+                else if (weapon == "Thunder Hammer")
+                {
+                    Points += 20;
+                }
+            }
         }
 
         public override string ToString()
         {
-            return "Gravis Captain - " + Points + "pts";
+            return "Captain on Bike - " + Points + "pts";
         }
     }
 }

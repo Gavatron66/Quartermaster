@@ -7,36 +7,37 @@ using System.Windows.Forms;
 
 namespace Roster_Builder.Space_Marines
 {
-    public class GravisCaptain : Datasheets
+    public class PrimarisLieutenant : Datasheets
     {
-        public GravisCaptain()
+        public PrimarisLieutenant()
         {
-            DEFAULT_POINTS = 115;
+            DEFAULT_POINTS = 75;
             Points = DEFAULT_POINTS;
-            TemplateCode = "c";
+            TemplateCode = "1m_c";
+            Weapons.Add("Master-crafted Auto Bolt Rifle and Bolt Pistol");
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "INFANTRY", "CHARACTER", "PRIMARIS", "MK X GRAVIS","CAPTAIN"
+                "INFANTRY", "CHARACTER", "PRIMARIS", "LIEUTENANT"
             });
         }
 
         public override Datasheets CreateUnit()
         {
-            return new GravisCaptain();
+            return new PrimarisLieutenant();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             repo = f as SpaceMarines;
             Template.LoadTemplate(TemplateCode, panel);
-            panel.Controls["cmbFactionUpgrade"].Visible = true;
-            panel.Controls["lblFactionUpgrade"].Visible = true;
 
-            ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
+            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
+            ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             cmbWarlord.Items.Clear();
             List<string> traits = repo.GetWarlordTraits("");
@@ -45,6 +46,23 @@ namespace Roster_Builder.Space_Marines
                 cmbWarlord.Items.Add(item);
             }
 
+            cmbOption1.Items.Clear();
+            cmbOption1.Items.AddRange(new string[]
+            {
+                "Master-crafted Auto Bolt Rifle and Bolt Pistol",
+                "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+                "Master-crafted Power Sword, Neo-volkite Pistol and Storm Shield",
+            });
+            if (f.currentSubFaction == "Dark Angels")
+            {
+                cmbOption1.Items.Add("Master-crafted Auto Bolt Rifle and Plasma Pistol");
+                cmbOption1.Items.Add("Master-crafted Stalker Bolt Rifle and Plasma Pistol");
+            }
+            if (f.currentSubFaction == "Space Wolves")
+            {
+                cmbOption1.Items.Add("Special Issue Bolt Carbine, Master-crafted Power Axe and Bolt Pistol");
+            }
+            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
             if (isWarlord)
             {
@@ -70,17 +88,10 @@ namespace Roster_Builder.Space_Marines
                 cmbRelic.SelectedIndex = -1;
             }
 
-            cmbFaction.Items.Clear();
-            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-
-            if (Factionupgrade != null)
-            {
-                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-            }
-            else
-            {
-                cmbFaction.SelectedIndex = 0;
-            }
+            panel.Controls["lblFactionupgrade"].Visible = true;
+            cmbFactionupgrade.Visible = true;
+            cmbFactionupgrade.Items.Clear();
+            cmbFactionupgrade.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
@@ -110,15 +121,19 @@ namespace Roster_Builder.Space_Marines
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
+            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
+            ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
             switch (code)
             {
+                case 11:
+                    Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
                     {
@@ -128,9 +143,6 @@ namespace Roster_Builder.Space_Marines
                     {
                         WarlordTrait = string.Empty;
                     }
-                    break;
-                case 16:
-                    Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
                     Relic = cmbRelic.SelectedItem.ToString();
@@ -168,17 +180,27 @@ namespace Roster_Builder.Space_Marines
                         }
                     }
                     break;
-                default: break;
             }
 
             Points = DEFAULT_POINTS;
-
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
+
+            if (Weapons.Contains("Special Issue Bolt Carbine, Master-crafted Power Axe and Bolt Pistol") ||
+                Weapons.Contains("Master-crafted Auto Bolt Rifle and Plasma Pistol") ||
+                Weapons.Contains("Master-crafted Stalker Bolt Rifle and Plasma Pistol"))
+            {
+                Points += 5;
+            }
+
+            if (Weapons.Contains("Master-crafted Power Sword, Neo-volkite Pistol and Storm Shield"))
+            {
+                Points += 15;
+            }
         }
 
         public override string ToString()
         {
-            return "Gravis Captain - " + Points + "pts";
+            return "Primaris Lieutenant - " + Points + "pts";
         }
     }
 }

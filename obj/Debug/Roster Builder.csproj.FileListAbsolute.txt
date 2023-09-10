@@ -71,3 +71,33 @@ C:\Users\evans\Desktop\Roster-Builder\obj\Debug\Roster Builder.csproj.CoreCompil
 C:\Users\evans\Desktop\Roster-Builder\obj\Debug\Roster Builder.csproj.CopyComplete
 C:\Users\evans\Desktop\Roster-Builder\obj\Debug\Roster Builder.exe
 C:\Users\evans\Desktop\Roster-Builder\obj\Debug\Roster Builder.pdb
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\Roster Builder.exe.config
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\Roster Builder.exe
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\Roster Builder.pdb
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.Buffers.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.Memory.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.Text.Json.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.ValueTuple.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.Buffers.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.Memory.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.Text.Json.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.ValueTuple.xml
+C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster Builder.csproj.AssemblyReference.cache
+C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster_Builder.Form1.resources
+C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster_Builder.Properties.Resources.resources
+C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster_Builder.Testing_Form.resources
+C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster Builder.csproj.GenerateResource.cache
+C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster Builder.csproj.CoreCompileInputs.cache
+C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster Builder.csproj.CopyComplete
+C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster Builder.exe
+C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster Builder.pdb

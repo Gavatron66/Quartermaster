@@ -7,23 +7,24 @@ using System.Windows.Forms;
 
 namespace Roster_Builder.Space_Marines
 {
-    public class GravisCaptain : Datasheets
+    public class ReiverLieutenant : Datasheets
     {
-        public GravisCaptain()
+        public ReiverLieutenant()
         {
-            DEFAULT_POINTS = 115;
+            DEFAULT_POINTS = 75;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "INFANTRY", "CHARACTER", "PRIMARIS", "MK X GRAVIS","CAPTAIN"
+                "INFANTRY", "CHARACTER", "PRIMARIS", "PHOBOS", "REIVER", "SHOCK GRENADE",
+                "SMOKESCREEN", "LIEUTENANT"
             });
         }
 
         public override Datasheets CreateUnit()
         {
-            return new GravisCaptain();
+            return new ReiverLieutenant();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -44,7 +45,6 @@ namespace Roster_Builder.Space_Marines
             {
                 cmbWarlord.Items.Add(item);
             }
-
 
             if (isWarlord)
             {
@@ -178,7 +178,7 @@ namespace Roster_Builder.Space_Marines
 
         public override string ToString()
         {
-            return "Gravis Captain - " + Points + "pts";
+            return "Reiver Lieutenant - " + Points + "pts";
         }
     }
 }

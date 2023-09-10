@@ -115,6 +115,7 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
             switch (code)
             {
@@ -151,6 +152,19 @@ namespace Roster_Builder.Space_Marines
                         if (Stratagem.Contains(cbStratagem1.Text))
                         {
                             Stratagem.Remove(cbStratagem1.Text);
+                        }
+                    }
+                    break;
+                case 72:
+                    if (cbStratagem2.Checked)
+                    {
+                        Stratagem.Add(cbStratagem2.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem2.Text))
+                        {
+                            Stratagem.Remove(cbStratagem2.Text);
                         }
                     }
                     break;

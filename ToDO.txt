@@ -30,14 +30,23 @@ The following have codex supplements that adds to their rosters:
 Prohibit selecting of the same custom faction trait
 
 
-Bolt Pistol
-
-Master-crafted Auto Bolt Rifle
-	Master-crafted Stalker Bolt Rifle
-	If equipped with either the above, may take a Master-crafted Power Sword
-	Special Issue Bolt Carbine (Dark Angels only)
-		May take a Power-Fist if it doesn't take a Master-crafted Power Sword
-
-Both
-	Plasma Pistol and Power Fist
-	Heavy Bolt Pistol, Master-crafted Power Sword and Relic Shield
+Storm Shield
+Combi
+	Combi-flamer
+	Combi-grav
+	Combi-melta
+	Combi-plasma
+Pistols
+	Bolt Pistol
+	Hand Flamer (BA only)
+	Grav-pistol
+	Inferno Pistol (BA only)
+	Plasma Pistol
+Melee
+	Astartes Chainsword
+	Lightning Claw
+	Power Axe
+	Power Fist
+	Power Maul
+	Power Sword
+	Thunder Hammer

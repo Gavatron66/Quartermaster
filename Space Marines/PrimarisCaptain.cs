@@ -223,6 +223,7 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS;
+            Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
             if (Weapons[0] == "Heavy Bolt Pistol, Master-crafted Power Sword and Relic Shield" || Weapons[1] == "Power Fist")
             {
