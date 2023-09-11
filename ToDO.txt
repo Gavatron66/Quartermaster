@@ -2,6 +2,8 @@ Models to add checks for Numeric Up Down controls:
 	Death Guard Cultists
 	Necron Warriors
 	Hybrid Metamorphs
+	
+Detachments?
 
 Genestealer Cults has weird custom factions
 	Add either more boxes or do a Checkbox system
@@ -27,7 +29,11 @@ The following have codex supplements that adds to their rosters:
 	Iron Hands
 	Imperial Fists
 	
-Prohibit selecting of the same custom faction trait
+Prohibit selecting the same custom faction trait
+
+Space Marines
+	Re-add Inheritors of the Primarch in the custom faction box
+		If that is done, change the second box to create a successor chapter of one of the nine Legions
 
 
 Storm Shield
