@@ -222,17 +222,27 @@
     <Compile Include="Roster.cs" />
     <Compile Include="Space Marines\BikeCaptain.cs" />
     <Compile Include="Space Marines\Captain.cs" />
+    <Compile Include="Space Marines\Chaplain.cs" />
     <Compile Include="Space Marines\GravisCaptain.cs" />
     <Compile Include="Space Marines\GravisHeavyCaptain.cs" />
+    <Compile Include="Space Marines\Librarian.cs" />
     <Compile Include="Space Marines\Lieutenant.cs" />
     <Compile Include="Space Marines\PhobosCaptain.cs" />
+    <Compile Include="Space Marines\PhobosLibrarian.cs" />
     <Compile Include="Space Marines\PhobosLieutenant.cs" />
+    <Compile Include="Space Marines\PrimarisBikeChaplain.cs" />
     <Compile Include="Space Marines\PrimarisCaptain.cs" />
+    <Compile Include="Space Marines\PrimarisChaplain.cs" />
+    <Compile Include="Space Marines\PrimarisLibrarian.cs" />
     <Compile Include="Space Marines\PrimarisLieutenant.cs" />
     <Compile Include="Space Marines\PrimarisTechmarine.cs" />
     <Compile Include="Space Marines\ReiverLieutenant.cs" />
+    <Compile Include="Space Marines\Servitors.cs" />
     <Compile Include="Space Marines\SpaceMarines.cs" />
+    <Compile Include="Space Marines\Techmarine.cs" />
     <Compile Include="Space Marines\TerminatorCaptain.cs" />
+    <Compile Include="Space Marines\TerminatorChaplain.cs" />
+    <Compile Include="Space Marines\TerminatorLibrarian.cs" />
     <Compile Include="Template.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

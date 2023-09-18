@@ -87,16 +87,17 @@ namespace Roster_Builder.Space_Marines
                 new ReiverLieutenant(),
                 new Lieutenant(),
                 new PhobosLieutenant(),
-                //new PrimarisLibrarian(),
-                //new Librarian(),
-                //new PhobosLibrarian(),
-                //new TerminatorLibrarian(),
-                //new PrimarisChaplain(),
-                //new PrimarisBikeChaplain(),
-                //new TerminatorChaplain(),
-                //new Chaplain(),
+                new PrimarisLibrarian(),
+                new Librarian(),
+                new PhobosLibrarian(),
+                new TerminatorLibrarian(),
+                new PrimarisChaplain(),
+                new PrimarisBikeChaplain(),
+                new TerminatorChaplain(),
+                new Chaplain(),
                 new PrimarisTechmarine(),
-                //new Techmarine()
+                new Servitors(),
+                new Techmarine()
                 //---------- Troops ----------
                 //new Intercessors(),
                 //new AssaultIntercessors(),
@@ -105,7 +106,6 @@ namespace Roster_Builder.Space_Marines
                 //new Incursors(),
                 //new TacticalSquad(),
                 //---------- Elites ----------
-                //new Servitors(),
                 //new CompanyChampion(),
                 //new ScoutSquad(),
                 //new PrimarisApothecary(),
@@ -397,7 +397,6 @@ namespace Roster_Builder.Space_Marines
             }
             else
             {
-
                 traits.AddRange(new string[]
                 {
                     "Fear Made Manifest",

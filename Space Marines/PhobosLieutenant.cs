@@ -39,7 +39,7 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             cmbWarlord.Items.Clear();
-            List<string> traits = repo.GetWarlordTraits("");
+            List<string> traits = repo.GetWarlordTraits("Phobos");
             foreach (var item in traits)
             {
                 cmbWarlord.Items.Add(item);

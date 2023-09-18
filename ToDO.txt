@@ -56,3 +56,26 @@ Melee
 	Power Maul
 	Power Sword
 	Thunder Hammer
+	
+	
+lblPsyker - 101,126
+clbPsyker - 100,149
+cbWarlord - 313,130
+lblWarlord - 309,157
+cmbWarlord - 311,180
+lblRelic - 309,211
+cmbRelic - 309,235
+lblFaction - 305,266
+cmbFaction - 309,289
+cbStratagem1 - 313,323
+cbStratagem2 - 313,353
+
+
+Bolt Pistol
+	Boltgun
+	Combi
+	Pistol
+Omnissian Axe
+	Melee
+Flamer, Cutter, Servo-arm
+Helfrost Pistol and Tempest Hammer

@@ -1,63 +1,50 @@
-﻿using Roster_Builder.Death_Guard;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Genestealer_Cults
+namespace Roster_Builder.Space_Marines
 {
-    public class Patriarch : Datasheets
+    public class PrimarisChaplain : Datasheets
     {
-        public Patriarch()
+        public PrimarisChaplain()
         {
-            DEFAULT_POINTS = 140;
-            UnitSize = 1;
+            DEFAULT_POINTS = 85;
             Points = DEFAULT_POINTS;
-            TemplateCode = "1k_pc";
-            Weapons.Add(""); // Psychic Familiar
+            TemplateCode = "pc";
             Keywords.AddRange(new string[]
             {
-                "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
-                "INFANTRY", "CHARACTER", "PSYKER", "GENESTEALER", "PATRIARCH"
+                "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
+                "INFANTRY", "CHARACTER", "PRIMARIS", "PRIEST", "CHAPLAIN"
             });
-            PsykerPowers = new string[2] { string.Empty, string.Empty };
+            PsykerPowers = new string[1] { string.Empty };
         }
-
         public override Datasheets CreateUnit()
         {
-            return new Patriarch();
+            return new PrimarisChaplain();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as GSC;
+            repo = f as SpaceMarines;
             Template.LoadTemplate(TemplateCode, panel);
+            panel.Controls["cmbFactionUpgrade"].Visible = true;
+            panel.Controls["lblFactionUpgrade"].Visible = true;
 
-            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
-            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             cmbWarlord.Items.Clear();
-            List<string> traits = repo.GetWarlordTraits("");
+            List<string> traits = repo.GetWarlordTraits("Phobos");
             foreach (var item in traits)
             {
                 cmbWarlord.Items.Add(item);
-            }
-
-            cbOption1.Text = "Psychic Familiar";
-            if (Weapons[0] != string.Empty)
-            {
-                cbOption1.Checked = true;
-            }
-            else
-            {
-                cbOption1.Checked = false;
             }
 
             if (isWarlord)
@@ -85,14 +72,14 @@ namespace Roster_Builder.Genestealer_Cults
             }
 
             List<string> psykerpowers = new List<string>();
-            psykerpowers = repo.GetPsykerPowers("");
+            psykerpowers = repo.GetPsykerPowers("Litanies");
             clbPsyker.Items.Clear();
             foreach (string power in psykerpowers)
             {
                 clbPsyker.Items.Add(power);
             }
 
-            lblPsyker.Text = "Select two of the following:";
+            lblPsyker.Text = "Select one of the following:";
             clbPsyker.ClearSelected();
             for (int i = 0; i < clbPsyker.Items.Count; i++)
             {
@@ -102,10 +89,6 @@ namespace Roster_Builder.Genestealer_Cults
             if (PsykerPowers[0] != string.Empty)
             {
                 clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
-            }
-            if (PsykerPowers[1] != string.Empty)
-            {
-                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
             }
 
             cmbRelic.Items.Clear();
@@ -124,7 +107,7 @@ namespace Roster_Builder.Genestealer_Cults
             panel.Controls["cmbFactionupgrade"].Visible = true;
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
-            panel.Controls["cbStratagem2"].Visible = false;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -136,17 +119,28 @@ namespace Roster_Builder.Genestealer_Cults
                 cbStratagem1.Checked = false;
                 cbStratagem1.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem1.Text));
             }
+
+            if (Stratagem.Contains(cbStratagem2.Text))
+            {
+                cbStratagem2.Checked = true;
+                cbStratagem2.Enabled = true;
+            }
+            else
+            {
+                cbStratagem2.Checked = false;
+                cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
-            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
             switch (code)
             {
@@ -159,20 +153,12 @@ namespace Roster_Builder.Genestealer_Cults
                     {
                         WarlordTrait = string.Empty;
                     }
-
                     break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
                     Relic = cmbRelic.SelectedItem.ToString();
-                    break;
-                case 21:
-                    if (cbOption1.Checked)
-                    {
-                        Weapons[0] = cbOption1.Text;
-                    }
-                    else { Weapons[0] = string.Empty; }
                     break;
                 case 25:
                     if (cbWarlord.Checked)
@@ -182,20 +168,14 @@ namespace Roster_Builder.Genestealer_Cults
                     else { this.isWarlord = false; }
                     break;
                 case 60:
-                    if (clbPsyker.CheckedItems.Count < 2)
+                    if (clbPsyker.CheckedItems.Count == 1)
                     {
-                        break;
-                    }
-                    else if (clbPsyker.CheckedItems.Count == 2)
-                    {
-                        PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                        PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
+                        PsykerPowers[0] = clbPsyker.SelectedItem.ToString();
                     }
                     else
                     {
                         clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
                     }
-
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -210,21 +190,30 @@ namespace Roster_Builder.Genestealer_Cults
                         }
                     }
                     break;
+                case 72:
+                    if (cbStratagem2.Checked)
+                    {
+                        Stratagem.Add(cbStratagem2.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem2.Text))
+                        {
+                            Stratagem.Remove(cbStratagem2.Text);
+                        }
+                    }
+                    break;
+                default: break;
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Psychic Familiar"))
-            {
-                Points += 10;
-            }
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }
 
         public override string ToString()
         {
-            return "Patriarch - " + Points + "pts";
+            return "Primaris Chaplain - " + Points + "pts";
         }
     }
 }
