@@ -21,5 +21,10 @@ namespace Roster_Builder
         {
 
         }
+
+        private void numericUpDown35_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

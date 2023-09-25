@@ -71,11 +71,18 @@ cbStratagem1 - 313,323
 cbStratagem2 - 313,353
 
 
-Bolt Pistol
-	Boltgun
-	Combi
-	Pistol
-Omnissian Axe
-	Melee
-Flamer, Cutter, Servo-arm
-Helfrost Pistol and Tempest Hammer
+Bolt Rifle
+	Astartes Chainsword
+	Auto Bolt Rifle +
+	Bolt Rifle +
+	Hand Flamer
+	Plasma Pistol
+	Power Sword
+	Stalker Bolt Rifle +
+None
+	Astartes Chainsword
+	Power Fist
+	Power Sword
+	Thunder Hammer
+	
+	

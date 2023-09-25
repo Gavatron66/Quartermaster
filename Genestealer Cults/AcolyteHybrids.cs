@@ -38,6 +38,7 @@ namespace Roster_Builder.Genestealer_Cults
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
+            repo = f as GSC;
             Template.LoadTemplate(TemplateCode, panel);
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
@@ -46,6 +47,8 @@ namespace Roster_Builder.Genestealer_Cults
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
+
+            cbOption1.Location = new System.Drawing.Point(282, 184);
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;

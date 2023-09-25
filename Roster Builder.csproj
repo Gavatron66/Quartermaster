@@ -220,11 +220,15 @@
     <Compile Include="Necrons\TriarchStalker.cs" />
     <Compile Include="Necrons\Zahndrekh.cs" />
     <Compile Include="Roster.cs" />
+    <Compile Include="Space Marines\AssaultIntercessors.cs" />
     <Compile Include="Space Marines\BikeCaptain.cs" />
     <Compile Include="Space Marines\Captain.cs" />
     <Compile Include="Space Marines\Chaplain.cs" />
     <Compile Include="Space Marines\GravisCaptain.cs" />
     <Compile Include="Space Marines\GravisHeavyCaptain.cs" />
+    <Compile Include="Space Marines\HeavyIntercessors.cs" />
+    <Compile Include="Space Marines\Infiltrators.cs" />
+    <Compile Include="Space Marines\Intercessors.cs" />
     <Compile Include="Space Marines\Librarian.cs" />
     <Compile Include="Space Marines\Lieutenant.cs" />
     <Compile Include="Space Marines\PhobosCaptain.cs" />

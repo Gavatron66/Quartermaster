@@ -1,4 +1,5 @@
-﻿using Roster_Builder.Space_Marines;
+﻿using Roster_Builder.Genestealer_Cults;
+using Roster_Builder.Space_Marines;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -97,12 +98,12 @@ namespace Roster_Builder.Space_Marines
                 new Chaplain(),
                 new PrimarisTechmarine(),
                 new Servitors(),
-                new Techmarine()
+                new Techmarine(),
                 //---------- Troops ----------
-                //new Intercessors(),
-                //new AssaultIntercessors(),
-                //new HeavyIntercessors(),
-                //new Infiltrators(),
+                new Intercessors(),
+                new AssaultIntercessors(),
+                new HeavyIntercessors(),
+                new Infiltrators(),
                 //new Incursors(),
                 //new TacticalSquad(),
                 //---------- Elites ----------
