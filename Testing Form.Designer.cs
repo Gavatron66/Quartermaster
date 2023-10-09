@@ -378,6 +378,13 @@
             this.label88 = new System.Windows.Forms.Label();
             this.comboBox12 = new System.Windows.Forms.ComboBox();
             this.numericUpDown21 = new System.Windows.Forms.NumericUpDown();
+            this.panel_2N1m = new System.Windows.Forms.Panel();
+            this.label151 = new System.Windows.Forms.Label();
+            this.numericUpDown35 = new System.Windows.Forms.NumericUpDown();
+            this.comboBox100 = new System.Windows.Forms.ComboBox();
+            this.label148 = new System.Windows.Forms.Label();
+            this.label149 = new System.Windows.Forms.Label();
+            this.numericUpDown24 = new System.Windows.Forms.NumericUpDown();
             this.panel_NL3k1m = new System.Windows.Forms.Panel();
             this.comboBox70 = new System.Windows.Forms.ComboBox();
             this.label94 = new System.Windows.Forms.Label();
@@ -469,18 +476,27 @@
             this.panel_NS_2m_ = new System.Windows.Forms.Panel();
             this.label145 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.label147 = new System.Windows.Forms.Label();
+            this.comboBox99 = new System.Windows.Forms.ComboBox();
             this.label146 = new System.Windows.Forms.Label();
             this.comboBox98 = new System.Windows.Forms.ComboBox();
             this.numericUpDown23 = new System.Windows.Forms.NumericUpDown();
-            this.label147 = new System.Windows.Forms.Label();
-            this.comboBox99 = new System.Windows.Forms.ComboBox();
-            this.panel_2N1m = new System.Windows.Forms.Panel();
-            this.comboBox100 = new System.Windows.Forms.ComboBox();
-            this.label148 = new System.Windows.Forms.Label();
-            this.label149 = new System.Windows.Forms.Label();
-            this.numericUpDown24 = new System.Windows.Forms.NumericUpDown();
-            this.label151 = new System.Windows.Forms.Label();
-            this.numericUpDown35 = new System.Windows.Forms.NumericUpDown();
+            this.panel_2N1mS_2m_ = new System.Windows.Forms.Panel();
+            this.label150 = new System.Windows.Forms.Label();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.label152 = new System.Windows.Forms.Label();
+            this.comboBox101 = new System.Windows.Forms.ComboBox();
+            this.label153 = new System.Windows.Forms.Label();
+            this.comboBox102 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown34 = new System.Windows.Forms.NumericUpDown();
+            this.label154 = new System.Windows.Forms.Label();
+            this.numericUpDown36 = new System.Windows.Forms.NumericUpDown();
+            this.label155 = new System.Windows.Forms.Label();
+            this.comboBox103 = new System.Windows.Forms.ComboBox();
+            this.panel_N1k = new System.Windows.Forms.Panel();
+            this.label156 = new System.Windows.Forms.Label();
+            this.numericUpDown37 = new System.Windows.Forms.NumericUpDown();
+            this.checkBox78 = new System.Windows.Forms.CheckBox();
             this.panel4.SuspendLayout();
             this.panel_1m2k_pc.SuspendLayout();
             this.panel_2m_c.SuspendLayout();
@@ -555,6 +571,9 @@
             this.panel_NS_1m_.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown21)).BeginInit();
+            this.panel_2N1m.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown35)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown24)).BeginInit();
             this.panel_NL3k1m.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -568,9 +587,12 @@
             this.panel_NS_2m_.SuspendLayout();
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown23)).BeginInit();
-            this.panel_2N1m.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown35)).BeginInit();
+            this.panel_2N1mS_2m_.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown34)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown36)).BeginInit();
+            this.panel_N1k.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown37)).BeginInit();
             this.SuspendLayout();
             // 
             // lbRoster
@@ -4157,6 +4179,7 @@
             this.groupBox6.Controls.Add(this.panel_3N1kS_2m_);
             this.groupBox6.Controls.Add(this.panel_NS_1m_);
             this.groupBox6.Controls.Add(this.panel_2N1m);
+            this.groupBox6.Controls.Add(this.panel_2N1mS_2m_);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.groupBox6.Location = new System.Drawing.Point(388, 542);
             this.groupBox6.Name = "groupBox6";
@@ -4375,6 +4398,85 @@
             this.numericUpDown21.Size = new System.Drawing.Size(120, 26);
             this.numericUpDown21.TabIndex = 18;
             this.numericUpDown21.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // panel_2N1m
+            // 
+            this.panel_2N1m.Controls.Add(this.label151);
+            this.panel_2N1m.Controls.Add(this.numericUpDown35);
+            this.panel_2N1m.Controls.Add(this.comboBox100);
+            this.panel_2N1m.Controls.Add(this.label148);
+            this.panel_2N1m.Controls.Add(this.label149);
+            this.panel_2N1m.Controls.Add(this.numericUpDown24);
+            this.panel_2N1m.Location = new System.Drawing.Point(104, 107);
+            this.panel_2N1m.Name = "panel_2N1m";
+            this.panel_2N1m.Size = new System.Drawing.Size(590, 463);
+            this.panel_2N1m.TabIndex = 77;
+            // 
+            // label151
+            // 
+            this.label151.AutoSize = true;
+            this.label151.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label151.Location = new System.Drawing.Point(154, 95);
+            this.label151.Name = "label151";
+            this.label151.Size = new System.Drawing.Size(151, 20);
+            this.label151.TabIndex = 45;
+            this.label151.Text = "Number of Models:";
+            // 
+            // numericUpDown35
+            // 
+            this.numericUpDown35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown35.Location = new System.Drawing.Point(311, 93);
+            this.numericUpDown35.Name = "numericUpDown35";
+            this.numericUpDown35.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDown35.TabIndex = 46;
+            this.numericUpDown35.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown35.ValueChanged += new System.EventHandler(this.numericUpDown35_ValueChanged);
+            // 
+            // comboBox100
+            // 
+            this.comboBox100.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox100.FormattingEnabled = true;
+            this.comboBox100.Location = new System.Drawing.Point(311, 59);
+            this.comboBox100.Name = "comboBox100";
+            this.comboBox100.Size = new System.Drawing.Size(176, 28);
+            this.comboBox100.TabIndex = 42;
+            // 
+            // label148
+            // 
+            this.label148.AutoSize = true;
+            this.label148.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label148.Location = new System.Drawing.Point(86, 29);
+            this.label148.Name = "label148";
+            this.label148.Size = new System.Drawing.Size(151, 20);
+            this.label148.TabIndex = 17;
+            this.label148.Text = "Number of Models:";
+            // 
+            // label149
+            // 
+            this.label149.AutoSize = true;
+            this.label149.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label149.Location = new System.Drawing.Point(86, 63);
+            this.label149.Name = "label149";
+            this.label149.Size = new System.Drawing.Size(219, 20);
+            this.label149.TabIndex = 41;
+            this.label149.Text = "Select One of the Following:";
+            // 
+            // numericUpDown24
+            // 
+            this.numericUpDown24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown24.Location = new System.Drawing.Point(243, 27);
+            this.numericUpDown24.Name = "numericUpDown24";
+            this.numericUpDown24.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDown24.TabIndex = 18;
+            this.numericUpDown24.Value = new decimal(new int[] {
             10,
             0,
             0,
@@ -5387,6 +5489,25 @@
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "groupBox12";
             // 
+            // label147
+            // 
+            this.label147.AutoSize = true;
+            this.label147.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label147.Location = new System.Drawing.Point(6, 68);
+            this.label147.Name = "label147";
+            this.label147.Size = new System.Drawing.Size(219, 20);
+            this.label147.TabIndex = 43;
+            this.label147.Text = "Select One of the Following:";
+            // 
+            // comboBox99
+            // 
+            this.comboBox99.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox99.FormattingEnabled = true;
+            this.comboBox99.Location = new System.Drawing.Point(231, 65);
+            this.comboBox99.Name = "comboBox99";
+            this.comboBox99.Size = new System.Drawing.Size(176, 28);
+            this.comboBox99.TabIndex = 44;
+            // 
             // label146
             // 
             this.label146.AutoSize = true;
@@ -5419,109 +5540,188 @@
             0,
             0});
             // 
-            // label147
+            // panel_2N1mS_2m_
             // 
-            this.label147.AutoSize = true;
-            this.label147.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label147.Location = new System.Drawing.Point(6, 68);
-            this.label147.Name = "label147";
-            this.label147.Size = new System.Drawing.Size(219, 20);
-            this.label147.TabIndex = 43;
-            this.label147.Text = "Select One of the Following:";
+            this.panel_2N1mS_2m_.Controls.Add(this.label155);
+            this.panel_2N1mS_2m_.Controls.Add(this.comboBox103);
+            this.panel_2N1mS_2m_.Controls.Add(this.label154);
+            this.panel_2N1mS_2m_.Controls.Add(this.numericUpDown36);
+            this.panel_2N1mS_2m_.Controls.Add(this.label150);
+            this.panel_2N1mS_2m_.Controls.Add(this.groupBox13);
+            this.panel_2N1mS_2m_.Controls.Add(this.numericUpDown34);
+            this.panel_2N1mS_2m_.Location = new System.Drawing.Point(93, 107);
+            this.panel_2N1mS_2m_.Name = "panel_2N1mS_2m_";
+            this.panel_2N1mS_2m_.Size = new System.Drawing.Size(590, 463);
+            this.panel_2N1mS_2m_.TabIndex = 63;
             // 
-            // comboBox99
+            // label150
             // 
-            this.comboBox99.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox99.FormattingEnabled = true;
-            this.comboBox99.Location = new System.Drawing.Point(231, 65);
-            this.comboBox99.Name = "comboBox99";
-            this.comboBox99.Size = new System.Drawing.Size(176, 28);
-            this.comboBox99.TabIndex = 44;
+            this.label150.AutoSize = true;
+            this.label150.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label150.Location = new System.Drawing.Point(86, 29);
+            this.label150.Name = "label150";
+            this.label150.Size = new System.Drawing.Size(151, 20);
+            this.label150.TabIndex = 17;
+            this.label150.Text = "Number of Models:";
             // 
-            // panel_2N1m
+            // groupBox13
             // 
-            this.panel_2N1m.Controls.Add(this.label151);
-            this.panel_2N1m.Controls.Add(this.numericUpDown35);
-            this.panel_2N1m.Controls.Add(this.comboBox100);
-            this.panel_2N1m.Controls.Add(this.label148);
-            this.panel_2N1m.Controls.Add(this.label149);
-            this.panel_2N1m.Controls.Add(this.numericUpDown24);
-            this.panel_2N1m.Location = new System.Drawing.Point(104, 107);
-            this.panel_2N1m.Name = "panel_2N1m";
-            this.panel_2N1m.Size = new System.Drawing.Size(590, 463);
-            this.panel_2N1m.TabIndex = 77;
+            this.groupBox13.Controls.Add(this.label152);
+            this.groupBox13.Controls.Add(this.comboBox101);
+            this.groupBox13.Controls.Add(this.label153);
+            this.groupBox13.Controls.Add(this.comboBox102);
+            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox13.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.groupBox13.Location = new System.Drawing.Point(83, 125);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(426, 105);
+            this.groupBox13.TabIndex = 0;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "groupBox13";
             // 
-            // comboBox100
+            // label152
             // 
-            this.comboBox100.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox100.FormattingEnabled = true;
-            this.comboBox100.Location = new System.Drawing.Point(311, 59);
-            this.comboBox100.Name = "comboBox100";
-            this.comboBox100.Size = new System.Drawing.Size(176, 28);
-            this.comboBox100.TabIndex = 42;
+            this.label152.AutoSize = true;
+            this.label152.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label152.Location = new System.Drawing.Point(6, 68);
+            this.label152.Name = "label152";
+            this.label152.Size = new System.Drawing.Size(219, 20);
+            this.label152.TabIndex = 43;
+            this.label152.Text = "Select One of the Following:";
             // 
-            // label148
+            // comboBox101
             // 
-            this.label148.AutoSize = true;
-            this.label148.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label148.Location = new System.Drawing.Point(86, 29);
-            this.label148.Name = "label148";
-            this.label148.Size = new System.Drawing.Size(151, 20);
-            this.label148.TabIndex = 17;
-            this.label148.Text = "Number of Models:";
+            this.comboBox101.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox101.FormattingEnabled = true;
+            this.comboBox101.Location = new System.Drawing.Point(231, 65);
+            this.comboBox101.Name = "comboBox101";
+            this.comboBox101.Size = new System.Drawing.Size(176, 28);
+            this.comboBox101.TabIndex = 44;
             // 
-            // label149
+            // label153
             // 
-            this.label149.AutoSize = true;
-            this.label149.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label149.Location = new System.Drawing.Point(86, 63);
-            this.label149.Name = "label149";
-            this.label149.Size = new System.Drawing.Size(219, 20);
-            this.label149.TabIndex = 41;
-            this.label149.Text = "Select One of the Following:";
+            this.label153.AutoSize = true;
+            this.label153.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label153.Location = new System.Drawing.Point(6, 34);
+            this.label153.Name = "label153";
+            this.label153.Size = new System.Drawing.Size(219, 20);
+            this.label153.TabIndex = 41;
+            this.label153.Text = "Select One of the Following:";
             // 
-            // numericUpDown24
+            // comboBox102
             // 
-            this.numericUpDown24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown24.Location = new System.Drawing.Point(243, 27);
-            this.numericUpDown24.Name = "numericUpDown24";
-            this.numericUpDown24.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown24.TabIndex = 18;
-            this.numericUpDown24.Value = new decimal(new int[] {
+            this.comboBox102.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox102.FormattingEnabled = true;
+            this.comboBox102.Location = new System.Drawing.Point(231, 31);
+            this.comboBox102.Name = "comboBox102";
+            this.comboBox102.Size = new System.Drawing.Size(176, 28);
+            this.comboBox102.TabIndex = 42;
+            // 
+            // numericUpDown34
+            // 
+            this.numericUpDown34.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown34.Location = new System.Drawing.Point(243, 27);
+            this.numericUpDown34.Name = "numericUpDown34";
+            this.numericUpDown34.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDown34.TabIndex = 18;
+            this.numericUpDown34.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
             // 
-            // label151
+            // label154
             // 
-            this.label151.AutoSize = true;
-            this.label151.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label151.Location = new System.Drawing.Point(154, 95);
-            this.label151.Name = "label151";
-            this.label151.Size = new System.Drawing.Size(151, 20);
-            this.label151.TabIndex = 45;
-            this.label151.Text = "Number of Models:";
+            this.label154.AutoSize = true;
+            this.label154.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label154.Location = new System.Drawing.Point(88, 95);
+            this.label154.Name = "label154";
+            this.label154.Size = new System.Drawing.Size(313, 20);
+            this.label154.TabIndex = 19;
+            this.label154.Text = "Number of Astartes Grenade Launchers:";
             // 
-            // numericUpDown35
+            // numericUpDown36
             // 
-            this.numericUpDown35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown35.Location = new System.Drawing.Point(311, 93);
-            this.numericUpDown35.Name = "numericUpDown35";
-            this.numericUpDown35.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown35.TabIndex = 46;
-            this.numericUpDown35.Value = new decimal(new int[] {
+            this.numericUpDown36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown36.Location = new System.Drawing.Point(404, 93);
+            this.numericUpDown36.Name = "numericUpDown36";
+            this.numericUpDown36.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDown36.TabIndex = 20;
+            this.numericUpDown36.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown35.ValueChanged += new System.EventHandler(this.numericUpDown35_ValueChanged);
+            // 
+            // label155
+            // 
+            this.label155.AutoSize = true;
+            this.label155.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label155.Location = new System.Drawing.Point(88, 63);
+            this.label155.Name = "label155";
+            this.label155.Size = new System.Drawing.Size(219, 20);
+            this.label155.TabIndex = 56;
+            this.label155.Text = "Select One of the Following:";
+            // 
+            // comboBox103
+            // 
+            this.comboBox103.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox103.FormattingEnabled = true;
+            this.comboBox103.Location = new System.Drawing.Point(313, 59);
+            this.comboBox103.Name = "comboBox103";
+            this.comboBox103.Size = new System.Drawing.Size(176, 28);
+            this.comboBox103.TabIndex = 57;
+            // 
+            // panel_N1k
+            // 
+            this.panel_N1k.Controls.Add(this.checkBox78);
+            this.panel_N1k.Controls.Add(this.label156);
+            this.panel_N1k.Controls.Add(this.numericUpDown37);
+            this.panel_N1k.Location = new System.Drawing.Point(1006, 73);
+            this.panel_N1k.Name = "panel_N1k";
+            this.panel_N1k.Size = new System.Drawing.Size(590, 463);
+            this.panel_N1k.TabIndex = 77;
+            // 
+            // label156
+            // 
+            this.label156.AutoSize = true;
+            this.label156.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label156.Location = new System.Drawing.Point(86, 29);
+            this.label156.Name = "label156";
+            this.label156.Size = new System.Drawing.Size(151, 20);
+            this.label156.TabIndex = 17;
+            this.label156.Text = "Number of Models:";
+            // 
+            // numericUpDown37
+            // 
+            this.numericUpDown37.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown37.Location = new System.Drawing.Point(243, 27);
+            this.numericUpDown37.Name = "numericUpDown37";
+            this.numericUpDown37.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDown37.TabIndex = 18;
+            this.numericUpDown37.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // checkBox78
+            // 
+            this.checkBox78.AutoSize = true;
+            this.checkBox78.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox78.Location = new System.Drawing.Point(243, 59);
+            this.checkBox78.Name = "checkBox78";
+            this.checkBox78.Size = new System.Drawing.Size(113, 24);
+            this.checkBox78.TabIndex = 56;
+            this.checkBox78.Text = "checkBox1";
+            this.checkBox78.UseVisualStyleBackColor = true;
             // 
             // Testing_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.panel_N1k);
             this.Controls.Add(this.groupBox11);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
@@ -5653,6 +5853,10 @@
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown21)).EndInit();
+            this.panel_2N1m.ResumeLayout(false);
+            this.panel_2N1m.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown35)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown24)).EndInit();
             this.panel_NL3k1m.ResumeLayout(false);
             this.panel_NL3k1m.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).EndInit();
@@ -5674,10 +5878,15 @@
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown23)).EndInit();
-            this.panel_2N1m.ResumeLayout(false);
-            this.panel_2N1m.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown35)).EndInit();
+            this.panel_2N1mS_2m_.ResumeLayout(false);
+            this.panel_2N1mS_2m_.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown34)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown36)).EndInit();
+            this.panel_N1k.ResumeLayout(false);
+            this.panel_N1k.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown37)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -6138,5 +6347,21 @@
         private System.Windows.Forms.NumericUpDown numericUpDown24;
         private System.Windows.Forms.Label label151;
         private System.Windows.Forms.NumericUpDown numericUpDown35;
+        private System.Windows.Forms.Panel panel_2N1mS_2m_;
+        private System.Windows.Forms.Label label150;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.Label label152;
+        private System.Windows.Forms.ComboBox comboBox101;
+        private System.Windows.Forms.Label label153;
+        private System.Windows.Forms.ComboBox comboBox102;
+        private System.Windows.Forms.NumericUpDown numericUpDown34;
+        private System.Windows.Forms.Label label154;
+        private System.Windows.Forms.NumericUpDown numericUpDown36;
+        private System.Windows.Forms.Label label155;
+        private System.Windows.Forms.ComboBox comboBox103;
+        private System.Windows.Forms.Panel panel_N1k;
+        private System.Windows.Forms.CheckBox checkBox78;
+        private System.Windows.Forms.Label label156;
+        private System.Windows.Forms.NumericUpDown numericUpDown37;
     }
 }

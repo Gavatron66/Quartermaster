@@ -46,7 +46,6 @@ namespace Roster_Builder.Genestealer_Cults
                 cmbWarlord.Items.Add(item);
             }
 
-
             if (isWarlord)
             {
                 cbWarlord.Checked = true;

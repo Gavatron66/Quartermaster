@@ -1005,8 +1005,61 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["nudOption1"].Location = new System.Drawing.Point(311, 93);
                     break;
                 #endregion
-                //case "N1m1k"
-                //case "N1k"
+                #region case "2N1mS(2m)"
+                case "2N1mS(2m)":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(88, 63);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(313, 59);
+
+                    panel.Controls["lblnud1"].Visible = true;
+                    panel.Controls["lblnud1"].Location = new System.Drawing.Point(156, 95);
+
+                    panel.Controls["nudOption1"].Visible = true;
+                    panel.Controls["nudOption1"].Location = new System.Drawing.Point(313, 93);
+
+                    panel.Controls["gbUnitLeader"].Visible = true;
+                    panel.Controls["gbUnitLeader"].Location = new System.Drawing.Point(83, 125);
+                    panel.Controls["gbUnitLeader"].Size = new System.Drawing.Size(426, 112);
+
+                    groupbox = panel.Controls["gbUnitLeader"] as GroupBox;
+
+                    groupbox.Controls["gb_lblOption1"].Visible = true;
+                    groupbox.Controls["gb_lblOption1"].Location = new System.Drawing.Point(6, 34);
+
+                    groupbox.Controls["gb_cmbOption1"].Visible = true;
+                    groupbox.Controls["gb_cmbOption1"].Location = new System.Drawing.Point(231, 31);
+
+                    groupbox.Controls["gb_lblOption2"].Visible = true;
+                    groupbox.Controls["gb_lblOption2"].Location = new System.Drawing.Point(6, 68);
+
+                    groupbox.Controls["gb_cmbOption2"].Visible = true;
+                    groupbox.Controls["gb_cmbOption2"].Location = new System.Drawing.Point(231, 65);
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(86, 170);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(90, 193);
+                    break;
+                #endregion
+                #region case "N1k"
+                case "N1k":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["cbOption1"].Visible = true;
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(243, 59);
+                    break;
+                #endregion
 
                 //Units using a Listbox
                 #region case "NL2m1k"

@@ -34,55 +34,15 @@ Prohibit selecting the same custom faction trait
 Space Marines
 	Re-add Inheritors of the Primarch in the custom faction box
 		If that is done, change the second box to create a successor chapter of one of the nine Legions
-
-
-Storm Shield
-Combi
-	Combi-flamer
-	Combi-grav
-	Combi-melta
-	Combi-plasma
-Pistols
-	Bolt Pistol
-	Hand Flamer (BA only)
-	Grav-pistol
-	Inferno Pistol (BA only)
-	Plasma Pistol
-Melee
-	Astartes Chainsword
-	Lightning Claw
-	Power Axe
-	Power Fist
-	Power Maul
-	Power Sword
-	Thunder Hammer
-	
-	
-lblPsyker - 101,126
-clbPsyker - 100,149
-cbWarlord - 313,130
-lblWarlord - 309,157
-cmbWarlord - 311,180
-lblRelic - 309,211
-cmbRelic - 309,235
-lblFaction - 305,266
-cmbFaction - 309,289
-cbStratagem1 - 313,323
-cbStratagem2 - 313,353
-
-
-Bolt Rifle
-	Astartes Chainsword
-	Auto Bolt Rifle +
-	Bolt Rifle +
+	Intercessor Sergeant has some wierd options, will have to go back and add restrictions when nessecary
+		
+Bolt Rifle (!Chainsword, Sword, Fist, Thunder Hammer)
 	Hand Flamer
 	Plasma Pistol
+	Astartes Chainsword
 	Power Sword
-	Stalker Bolt Rifle +
-None
+One of the following: (!Chainsword or Power Sword)
 	Astartes Chainsword
 	Power Fist
 	Power Sword
 	Thunder Hammer
-	
-	

@@ -11,15 +11,18 @@ namespace Roster_Builder.Genestealer_Cults
 {
     public class Intercessors : Datasheets
     {
-        int currentIndex;
+        bool loading;
+
         public Intercessors()
         {
             DEFAULT_POINTS = 20;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
-            TemplateCode = "NL2m1k";
-            Weapons.Add("Bolt Rifle");
-            Weapons.Add("(None)");
+            TemplateCode = "2N1mS(2m)";
+            Weapons.Add("Bolt Rifle"); //Squad Option
+            Weapons.Add("0"); //Astartes Grenade Launchers
+            Weapons.Add("Bolt Rifle"); //Sergeant Weapons
+            Weapons.Add("(None)"); //^
             for (int i = 1; i < UnitSize; i++)
             {
                 Weapons.Add("Bolt Rifle");
@@ -42,56 +45,59 @@ namespace Roster_Builder.Genestealer_Cults
         {
             repo = f as SpaceMarines;
             Template.LoadTemplate(TemplateCode, panel);
+            loading = true;
 
-            NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
-            ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
+            NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
+            GroupBox gb = panel.Controls["gbUnitLeader"] as GroupBox;
+            ComboBox gb_cmbOption1 = gb.Controls["gb_cmbOption1"] as ComboBox;
+            ComboBox gb_cmbOption2 = gb.Controls["gb_cmbOption2"] as ComboBox;
 
-            cbOption1.Location = new System.Drawing.Point(282, 184);
+            panel.Controls["lblnud1"].Text = "Number of Astartes Grenade Launchers:";
+            panel.Controls["lblnud1"].Location = new System.Drawing.Point(88, 95);
+
+            gb.Text = "Intercessor Sergeant";
+
+            nudOption1.Location = new System.Drawing.Point(404, 93);
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
-            antiLoop = true;
             nudUnitSize.Value = nudUnitSize.Minimum;
-            antiLoop = false;
             nudUnitSize.Maximum = 10;
             nudUnitSize.Value = currentSize;
 
-            lbModelSelect.Items.Clear();
-
-            if (Weapons[1] != "(None)")
-            {
-                lbModelSelect.Items.Add("Intercessor Sergeant  w/ " + Weapons[0] + " and " + Weapons[1]);
-            }
-            else
-            {
-                lbModelSelect.Items.Add("Intercessor Sergeant  w/ " + Weapons[0]);
-            }
-
-            for (int i = 1; i < UnitSize; i++)
-            {
-                if (Weapons[(i * 2) + 1] != "(None)")
-                {
-                    lbModelSelect.Items.Add("Intercessor w/ " + Weapons[i * 2] + " and " + Weapons[(i * 2) + 1]);
-                }
-                else
-                {
-                    lbModelSelect.Items.Add("Intercessor w/ " + Weapons[i * 2]);
-                }
-            }
-
             cmbOption1.Items.Clear();
-            cmbOption1.Items.AddRange(new string[]
+            cmbOption1.Items.AddRange(new object[]
             {
                 "Auto Bolt Rifle",
                 "Bolt Rifle",
                 "Stalker Bolt Rifle"
             });
+            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            cmbOption2.Items.Clear();
-            cmbOption2.Items.AddRange(new string[]
+            currentSize = Convert.ToInt32(Weapons[1]);
+            nudOption1.Minimum = 0;
+            nudOption1.Maximum = 2;
+            nudOption1.Value = currentSize;
+            if(UnitSize < 10)
+            {
+                nudOption1.Maximum--;
+            }
+
+            gb_cmbOption1.Items.Clear();
+            gb_cmbOption1.Items.AddRange(new object[]
+            {
+                "Astartes Chainsword",
+                "Bolt Rifle",
+                "Hand Flamer",
+                "Plasma Pistol",
+                "Power Sword"
+            });
+            gb_cmbOption1.SelectedIndex = gb_cmbOption1.Items.IndexOf(Weapons[2]);
+
+            gb_cmbOption2.Items.Clear();
+            gb_cmbOption2.Items.AddRange(new object[]
             {
                 "(None)",
                 "Astartes Chainsword",
@@ -99,194 +105,92 @@ namespace Roster_Builder.Genestealer_Cults
                 "Power Sword",
                 "Thunder Hammer"
             });
-
-            cbOption1.Text = "Astartes Grenade Launcher";
+            gb_cmbOption2.SelectedIndex = gb_cmbOption2.Items.IndexOf(Weapons[3]);
+            loading = false;
         }
 
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            if (antiLoop)
+            if(loading)
             {
                 return;
             }
 
-            NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
-            ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
+            NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
+            GroupBox gb = panel.Controls["gbUnitLeader"] as GroupBox;
+            ComboBox gb_cmbOption1 = gb.Controls["gb_cmbOption1"] as ComboBox;
+            ComboBox gb_cmbOption2 = gb.Controls["gb_cmbOption2"] as ComboBox;
 
-            switch (code)
+            switch(code)
             {
                 case 11:
-                    if (currentIndex == 0)
-                    {
-                        Weapons[0] = cmbOption1.SelectedItem.ToString();
-                        if (Weapons[1] != "(None)")
-                        {
-                            lbModelSelect.Items[0] = "Intercessor Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
-                        } else
-                        {
-                            lbModelSelect.Items[0] = "Intercessor Sergeant w/ " + Weapons[0];
-                        }
-                        break;
-                    }
+                    string temp = Weapons[0];
 
-                    Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
-                    lbModelSelect.Items[currentIndex] = "Intercessor w/ " + Weapons[currentIndex * 2];
-                    break;
-                case 12:
-                    Weapons[1] = cmbOption2.SelectedItem.ToString();
-                    if (Weapons[1] != "(None)")
+                    Weapons[0] = cmbOption1.SelectedItem.ToString();
+
+                    gb_cmbOption1.Items.Remove(temp);
+
+                    if (Weapons[0] == "Stalker Bolt Rifle")
                     {
-                        lbModelSelect.Items[0] = "Intercessor Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
-                    }
-                    break;
-                case 21:
-                    if (cbOption1.Checked)
-                    {
-                        Weapons[(currentIndex * 2) + 1] = cbOption1.Text;
-                        lbModelSelect.Items[currentIndex] = "Intercessor w/ " + Weapons[currentIndex * 2] + " and " +
-                        Weapons[(currentIndex * 2) + 1];
+                        gb_cmbOption1.Items.Insert(4, Weapons[0]);
                     }
                     else
                     {
-                        Weapons[(currentIndex * 2) + 1] = "(None)";
-                        lbModelSelect.Items[currentIndex] = "Intercessor w/ " + Weapons[currentIndex * 2];
+                        gb_cmbOption1.Items.Insert(1, Weapons[0]);
                     }
 
                     break;
                 case 30:
-                    int temp = UnitSize;
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
-
-                    if (temp < UnitSize)
-                    {
-                        Weapons.Add("Bolt Rifle");
-                        Weapons.Add("(None)");
-                        lbModelSelect.Items.Add("Intercessor w/ Bolt Rifle");
-                    }
-
-                    if (temp > UnitSize)
-                    {
-                        lbModelSelect.Items.RemoveAt(temp - 1);
-                        Weapons.RemoveRange(temp-1 * 2, 2);
-                    }
-                    break;
-                case 61:
-                    currentIndex = lbModelSelect.SelectedIndex;
-
-                    if (currentIndex < 0)
-                    {
-                        cmbOption1.Visible = false;
-                        cmbOption2.Visible = false;
-                        cbOption1.Visible = false;
-                        panel.Controls["lblOption1"].Visible = false;
-                        panel.Controls["lblOption2"].Visible = false;
-                        break;
-                    }
-
-                    if (currentIndex == 0)
-                    {
-                        cmbOption1.Visible = true;
-                        cmbOption2.Visible = true;
-                        cbOption1.Visible = false;
-                        panel.Controls["lblOption1"].Visible = true;
-                        panel.Controls["lblOption2"].Visible = true;
-
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
-
-                        cmbOption1.Items.Insert(0, "Astartes Chainsword");
-                        cmbOption1.Items.Insert(3, "Hand Flamer");
-                        cmbOption1.Items.Insert(4, "Plasma Pistol");
-                        cmbOption1.Items.Insert(5, "Power Sword");
-
-                        break;
-                    }
-
-                    if(cmbOption1.Items.Contains("Hand Flamer"))
-                    {
-                        cmbOption1.Items.RemoveAt(5);
-                        cmbOption1.Items.RemoveAt(4);
-                        cmbOption1.Items.RemoveAt(3);
-                        cmbOption1.Items.RemoveAt(0);
-                    }
-
-                    panel.Controls["lblOption1"].Visible = true;
-                    cmbOption1.Visible = true;
-                    cbOption1.Visible = true;
-                    cmbOption2.Visible = false;
-                    panel.Controls["lblOption2"].Visible = false;
-
-                    cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex * 2]);
-
-                    if (Weapons[(currentIndex * 2) + 1] != "(None)")
-                    {
-                        cbOption1.Checked = true;
-                    }
-                    else
-                    {
-                        cbOption1.Checked = false;
-                    }
-
-                    if(UnitSize < 10)
-                    {
-                        if(Weapons.Contains("Astartes Grenade Launcher"))
-                        {
-                            cbOption1.Enabled = false;
-                        }
-                    }
 
                     if(UnitSize == 10)
                     {
-                        int AGL = 0;
-                        foreach (string weapon in Weapons)
-                        {
-                            if(weapon == cbOption1.Text)
-                            {
-                                AGL++;
-                            }
-                        }
-
-                        if(AGL == 2)
-                        {
-                            cbOption1.Enabled = false;
-                        }
+                        nudOption1.Maximum = 2;
                     }
 
-                    if (Weapons[(currentIndex * 2) + 1] == cbOption1.Text)
+                    if(UnitSize < 10 && nudOption1.Value == 2)
                     {
-                        cbOption1.Enabled = true;
+                        nudOption1.Value--;
+                        nudOption1.Maximum = 1;
                     }
 
                     break;
-
+                case 31:
+                    Weapons[1] = nudOption1.Value.ToString();
+                    break;
+                case 411:
+                    Weapons[2] = gb_cmbOption1.SelectedItem.ToString();
+                    break;
+                case 412:
+                    Weapons[3] = gb_cmbOption2.SelectedItem.ToString();
+                    break;
             }
 
             Points = DEFAULT_POINTS * UnitSize;
+            Points += Convert.ToInt32(nudOption1.Value) * 5;
 
-            foreach (var weapon in Weapons)
+            if(Weapons.Contains("Hand Flamer") || Weapons.Contains("Plasma Pistol") || Weapons.Contains("Power Sword"))
             {
-                if(weapon == cbOption1.Text || weapon == "Hand Flamer" || weapon == "Plasma Pistol" || weapon == "Power Sword")
-                {
-                    Points += 5;
-                }
-                else if (weapon == "Power Fist")
-                {
-                    Points += 10;
-                }
-                else if (weapon == "Thunder Hammer")
-                {
-                    Points += 20;
-                }
+                Points += 5;
+            }
+
+            if(Weapons.Contains("Power Fist"))
+            {
+                Points += 10;
+            }
+
+            if(Weapons.Contains("Thunder Hammer"))
+            {
+                Points += 20;
             }
         }
 
         public override string ToString()
         {
-            return "Intercessors - " + Points + "pts";
+            return "Intercessor Squad - " + Points + "pts";
         }
     }
 }

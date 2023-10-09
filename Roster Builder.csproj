@@ -224,9 +224,11 @@
     <Compile Include="Space Marines\BikeCaptain.cs" />
     <Compile Include="Space Marines\Captain.cs" />
     <Compile Include="Space Marines\Chaplain.cs" />
+    <Compile Include="Space Marines\CompanyChampion.cs" />
     <Compile Include="Space Marines\GravisCaptain.cs" />
     <Compile Include="Space Marines\GravisHeavyCaptain.cs" />
     <Compile Include="Space Marines\HeavyIntercessors.cs" />
+    <Compile Include="Space Marines\Incursors.cs" />
     <Compile Include="Space Marines\Infiltrators.cs" />
     <Compile Include="Space Marines\Intercessors.cs" />
     <Compile Include="Space Marines\Librarian.cs" />
@@ -241,8 +243,10 @@
     <Compile Include="Space Marines\PrimarisLieutenant.cs" />
     <Compile Include="Space Marines\PrimarisTechmarine.cs" />
     <Compile Include="Space Marines\ReiverLieutenant.cs" />
+    <Compile Include="Space Marines\ScoutSquad.cs" />
     <Compile Include="Space Marines\Servitors.cs" />
     <Compile Include="Space Marines\SpaceMarines.cs" />
+    <Compile Include="Space Marines\TacticalSquad.cs" />
     <Compile Include="Space Marines\Techmarine.cs" />
     <Compile Include="Space Marines\TerminatorCaptain.cs" />
     <Compile Include="Space Marines\TerminatorChaplain.cs" />

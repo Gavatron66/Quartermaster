@@ -118,7 +118,7 @@ namespace Roster_Builder.Space_Marines
 
         public override string ToString()
         {
-            return "Heavy Intercessors - " + Points + "pts";
+            return "Heavy Intercessor Squad - " + Points + "pts";
         }
     }
 }
