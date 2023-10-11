@@ -1,0 +1,30 @@
+C:\Users\evans\Desktop\Quartermaster\bin\Release\Roster Builder.exe.config
+C:\Users\evans\Desktop\Quartermaster\bin\Release\Roster Builder.exe
+C:\Users\evans\Desktop\Quartermaster\bin\Release\Roster Builder.pdb
+C:\Users\evans\Desktop\Quartermaster\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.Buffers.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.Memory.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.Numerics.Vectors.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.Text.Encodings.Web.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.Text.Json.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.ValueTuple.dll
+C:\Users\evans\Desktop\Quartermaster\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.Buffers.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.Memory.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.Numerics.Vectors.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.Text.Encodings.Web.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.Text.Json.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\evans\Desktop\Quartermaster\bin\Release\System.ValueTuple.xml
+C:\Users\evans\Desktop\Quartermaster\obj\Release\Roster Builder.csproj.AssemblyReference.cache
+C:\Users\evans\Desktop\Quartermaster\obj\Release\Roster_Builder.Form1.resources
+C:\Users\evans\Desktop\Quartermaster\obj\Release\Roster_Builder.Properties.Resources.resources
+C:\Users\evans\Desktop\Quartermaster\obj\Release\Roster_Builder.Testing_Form.resources
+C:\Users\evans\Desktop\Quartermaster\obj\Release\Roster Builder.csproj.GenerateResource.cache
+C:\Users\evans\Desktop\Quartermaster\obj\Release\Roster Builder.csproj.CoreCompileInputs.cache
+C:\Users\evans\Desktop\Quartermaster\obj\Release\Roster Builder.csproj.CopyComplete
+C:\Users\evans\Desktop\Quartermaster\obj\Release\Roster Builder.exe
+C:\Users\evans\Desktop\Quartermaster\obj\Release\Roster Builder.pdb

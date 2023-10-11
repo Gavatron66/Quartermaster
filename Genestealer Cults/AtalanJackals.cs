@@ -43,6 +43,7 @@ namespace Roster_Builder.Genestealer_Cults
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
+            repo = f as GSC;
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             NumericUpDown nudUnitSize2 = panel.Controls["nudUnitSize2"] as NumericUpDown;
