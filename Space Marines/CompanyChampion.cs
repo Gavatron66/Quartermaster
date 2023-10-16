@@ -19,7 +19,7 @@ namespace Roster_Builder.Space_Marines
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "INFANTRY", "CHAMPION", "COMMAND SQUAD", "COMPANY CHAMPION"
+                "INFANTRY", "CHARACTER", "COMMAND SQUAD", "COMPANY CHAMPION"
             });
         }
 

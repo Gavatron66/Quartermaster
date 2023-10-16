@@ -9,13 +9,13 @@ using System.Windows.Forms;
 
 namespace Roster_Builder.Genestealer_Cults
 {
-    public class Intercessors : Datasheets
+    public class VeteranIntercessors : Datasheets
     {
         bool loading;
 
-        public Intercessors()
+        public VeteranIntercessors()
         {
-            DEFAULT_POINTS = 20;
+            DEFAULT_POINTS = 22;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "2N1mS(2m)";
@@ -27,13 +27,13 @@ namespace Roster_Builder.Genestealer_Cults
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "INFANTRY", "CORE", "PRIMARIS", "INTERCESSORS", "INTERCESSOR SQUAD"
+                "INFANTRY", "CORE", "PRIMARIS", "INTERCESSORS", "VETERAN INTERCESSOR SQUAD"
             });
         }
 
         public override Datasheets CreateUnit()
         {
-            return new Intercessors();
+            return new VeteranIntercessors();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -67,6 +67,7 @@ namespace Roster_Builder.Genestealer_Cults
             {
                 "Auto Bolt Rifle",
                 "Bolt Rifle",
+                "Heavy Bolt Pistol and Astartes Chainsword",
                 "Stalker Bolt Rifle"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
@@ -75,7 +76,7 @@ namespace Roster_Builder.Genestealer_Cults
             nudOption1.Minimum = 0;
             nudOption1.Maximum = 2;
             nudOption1.Value = currentSize;
-            if(UnitSize < 10)
+            if (UnitSize < 10)
             {
                 nudOption1.Maximum--;
             }
@@ -86,8 +87,9 @@ namespace Roster_Builder.Genestealer_Cults
                 "Astartes Chainsword",
                 "Bolt Rifle",
                 "Hand Flamer",
+                "Heavy Bolt Pistol",
                 "Plasma Pistol",
-                "Power Sword"
+                "Power Sword",
             });
             gb_cmbOption1.SelectedIndex = gb_cmbOption1.Items.IndexOf(Weapons[2]);
 
@@ -107,7 +109,7 @@ namespace Roster_Builder.Genestealer_Cults
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            if(loading)
+            if (loading)
             {
                 return;
             }
@@ -119,7 +121,7 @@ namespace Roster_Builder.Genestealer_Cults
             ComboBox gb_cmbOption1 = gb.Controls["gb_cmbOption1"] as ComboBox;
             ComboBox gb_cmbOption2 = gb.Controls["gb_cmbOption2"] as ComboBox;
 
-            switch(code)
+            switch (code)
             {
                 case 11:
                     string temp = Weapons[0];
@@ -132,6 +134,7 @@ namespace Roster_Builder.Genestealer_Cults
                     {
                         gb_cmbOption1.Items.Insert(4, Weapons[0]);
                     }
+                    else if (Weapons[0] == "Heavy Bolt Pistol and Astartes Chainsword") { }
                     else
                     {
                         gb_cmbOption1.Items.Insert(1, Weapons[0]);
@@ -141,12 +144,12 @@ namespace Roster_Builder.Genestealer_Cults
                 case 30:
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
 
-                    if(UnitSize == 10)
+                    if (UnitSize == 10)
                     {
                         nudOption1.Maximum = 2;
                     }
 
-                    if(UnitSize < 10 && nudOption1.Value == 2)
+                    if (UnitSize < 10 && nudOption1.Value == 2)
                     {
                         nudOption1.Value--;
                         nudOption1.Maximum = 1;
@@ -167,17 +170,17 @@ namespace Roster_Builder.Genestealer_Cults
             Points = DEFAULT_POINTS * UnitSize;
             Points += Convert.ToInt32(nudOption1.Value) * 5;
 
-            if(Weapons.Contains("Hand Flamer") || Weapons.Contains("Plasma Pistol") || Weapons.Contains("Power Sword"))
+            if (Weapons.Contains("Hand Flamer") || Weapons.Contains("Plasma Pistol") || Weapons.Contains("Power Sword"))
             {
                 Points += 5;
             }
 
-            if(Weapons.Contains("Power Fist"))
+            if (Weapons.Contains("Power Fist"))
             {
                 Points += 10;
             }
 
-            if(Weapons.Contains("Thunder Hammer"))
+            if (Weapons.Contains("Thunder Hammer"))
             {
                 Points += 20;
             }
@@ -185,7 +188,7 @@ namespace Roster_Builder.Genestealer_Cults
 
         public override string ToString()
         {
-            return "Intercessor Squad - " + Points + "pts";
+            return "Veteran Intercessor Squad - " + Points + "pts";
         }
     }
 }

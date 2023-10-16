@@ -71,7 +71,7 @@ namespace Roster_Builder.Space_Marines
                 "Power Sword",
                 "Thunder Hammer"
             });
-            if (f.currentSubFaction == "Blood Angels")
+            if (f.currentSubFaction == "Blood Angels" || f.currentSubFaction == "Deathwatch")
             {
                 cmbOption1.Items.Insert(3, "Hand Flamer");
                 cmbOption1.Items.Insert(4, "Inferno Pistol");

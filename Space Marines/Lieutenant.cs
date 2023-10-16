@@ -64,7 +64,7 @@ namespace Roster_Builder.Space_Marines
                 "Power Sword",
                 "Thunder Hammer"
             });
-            if (f.currentSubFaction == "Blood Angels")
+            if (f.currentSubFaction == "Blood Angels" || f.currentSubFaction == "Deathwatch")
             {
                 cmbOption1.Items.Insert(7, "Hand Flamer");
                 cmbOption1.Items.Insert(8, "Inferno Pistol");
@@ -171,7 +171,6 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
@@ -192,9 +191,6 @@ namespace Roster_Builder.Space_Marines
                     {
                         WarlordTrait = string.Empty;
                     }
-                    break;
-                case 16:
-                    Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
                     Relic = cmbRelic.SelectedItem.ToString();

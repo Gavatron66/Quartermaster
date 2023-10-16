@@ -220,11 +220,16 @@
     <Compile Include="Necrons\TriarchStalker.cs" />
     <Compile Include="Necrons\Zahndrekh.cs" />
     <Compile Include="Roster.cs" />
+    <Compile Include="Space Marines\Apothecary.cs" />
     <Compile Include="Space Marines\AssaultIntercessors.cs" />
     <Compile Include="Space Marines\BikeCaptain.cs" />
+    <Compile Include="Space Marines\BladeguardAncient.cs" />
+    <Compile Include="Space Marines\BladeguardVeterans.cs" />
     <Compile Include="Space Marines\Captain.cs" />
     <Compile Include="Space Marines\Chaplain.cs" />
+    <Compile Include="Space Marines\CompanyAncient.cs" />
     <Compile Include="Space Marines\CompanyChampion.cs" />
+    <Compile Include="Space Marines\Veterans.cs" />
     <Compile Include="Space Marines\GravisCaptain.cs" />
     <Compile Include="Space Marines\GravisHeavyCaptain.cs" />
     <Compile Include="Space Marines\HeavyIntercessors.cs" />
@@ -236,6 +241,8 @@
     <Compile Include="Space Marines\PhobosCaptain.cs" />
     <Compile Include="Space Marines\PhobosLibrarian.cs" />
     <Compile Include="Space Marines\PhobosLieutenant.cs" />
+    <Compile Include="Space Marines\PrimarisAncient.cs" />
+    <Compile Include="Space Marines\PrimarisApothecary.cs" />
     <Compile Include="Space Marines\PrimarisBikeChaplain.cs" />
     <Compile Include="Space Marines\PrimarisCaptain.cs" />
     <Compile Include="Space Marines\PrimarisChaplain.cs" />
@@ -248,9 +255,11 @@
     <Compile Include="Space Marines\SpaceMarines.cs" />
     <Compile Include="Space Marines\TacticalSquad.cs" />
     <Compile Include="Space Marines\Techmarine.cs" />
+    <Compile Include="Space Marines\TerminatorAncient.cs" />
     <Compile Include="Space Marines\TerminatorCaptain.cs" />
     <Compile Include="Space Marines\TerminatorChaplain.cs" />
     <Compile Include="Space Marines\TerminatorLibrarian.cs" />
+    <Compile Include="Space Marines\VeteranIntercessors.cs" />
     <Compile Include="Template.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

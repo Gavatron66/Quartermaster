@@ -109,15 +109,15 @@ namespace Roster_Builder.Space_Marines
                 //---------- Elites ----------
                 new CompanyChampion(),
                 new ScoutSquad(),
-                //new PrimarisApothecary(),
-                //new Apothecary(),
-                //new CompanyAncient(),
-                //new PrimarisAncient(),
-                //new BladeguardAncient(),
-                //new TerminatorAncient(),
-                //new VeteranIntercessors(),
-                //new BladeguardVeterans(),
-                //new Veterans(),
+                new PrimarisApothecary(),
+                new Apothecary(),
+                new CompanyAncient(),
+                new PrimarisAncient(),
+                new BladeguardAncient(),
+                new TerminatorAncient(),
+                new VeteranIntercessors(),
+                new BladeguardVeterans(),
+                new Veterans(),
                 //new VanguardVeterans(),
                 //new SternguardVeterans(),
                 //new Judicar(),
@@ -260,7 +260,7 @@ namespace Roster_Builder.Space_Marines
                 upgrades.Add("Chief Librarian");
             }
 
-            if (keywords.Contains("APOTHECARY"))
+            if (keywords.Contains("APOTHECARY") || keywords.Contains("PRIMARIS APOTHECARY"))
             {
                 upgrades.Add("Chief Apothecary");
             }

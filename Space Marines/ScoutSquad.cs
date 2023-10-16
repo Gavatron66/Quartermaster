@@ -225,7 +225,7 @@ namespace Roster_Builder.Space_Marines
                             "Storm Bolter",
                             "Thunder Hammer"
                         });
-                        if (repo.currentSubFaction == "Blood Angels")
+                        if (repo.currentSubFaction == "Blood Angels" || repo.currentSubFaction == "Deathwatch")
                         {
                             cmbOption1.Items.Insert(8, "Hand Flamer");
                             cmbOption1.Items.Insert(9, "Inferno Pistol");
@@ -246,7 +246,7 @@ namespace Roster_Builder.Space_Marines
                             "Power Sword",
                             "Thunder Hammer"
                         });
-                        if (repo.currentSubFaction == "Blood Angels")
+                        if (repo.currentSubFaction == "Blood Angels" || repo.currentSubFaction == "Deathwatch")
                         {
                             cmbOption2.Items.Insert(3, "Hand Flamer");
                             cmbOption2.Items.Insert(4, "Inferno Pistol");
