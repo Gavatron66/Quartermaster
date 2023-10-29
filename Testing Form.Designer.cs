@@ -397,6 +397,10 @@
             this.label153 = new System.Windows.Forms.Label();
             this.comboBox102 = new System.Windows.Forms.ComboBox();
             this.numericUpDown34 = new System.Windows.Forms.NumericUpDown();
+            this.panel_N1k = new System.Windows.Forms.Panel();
+            this.checkBox78 = new System.Windows.Forms.CheckBox();
+            this.label156 = new System.Windows.Forms.Label();
+            this.numericUpDown37 = new System.Windows.Forms.NumericUpDown();
             this.panel_NL3k1m = new System.Windows.Forms.Panel();
             this.comboBox70 = new System.Windows.Forms.ComboBox();
             this.label94 = new System.Windows.Forms.Label();
@@ -493,10 +497,6 @@
             this.label146 = new System.Windows.Forms.Label();
             this.comboBox98 = new System.Windows.Forms.ComboBox();
             this.numericUpDown23 = new System.Windows.Forms.NumericUpDown();
-            this.panel_N1k = new System.Windows.Forms.Panel();
-            this.checkBox78 = new System.Windows.Forms.CheckBox();
-            this.label156 = new System.Windows.Forms.Label();
-            this.numericUpDown37 = new System.Windows.Forms.NumericUpDown();
             this.panel_NL2m2k = new System.Windows.Forms.Panel();
             this.checkBox79 = new System.Windows.Forms.CheckBox();
             this.label157 = new System.Windows.Forms.Label();
@@ -510,6 +510,13 @@
             this.numericUpDown38 = new System.Windows.Forms.NumericUpDown();
             this.label159 = new System.Windows.Forms.Label();
             this.label160 = new System.Windows.Forms.Label();
+            this.panel_N1m3k = new System.Windows.Forms.Panel();
+            this.comboBox107 = new System.Windows.Forms.ComboBox();
+            this.label161 = new System.Windows.Forms.Label();
+            this.label162 = new System.Windows.Forms.Label();
+            this.numericUpDown39 = new System.Windows.Forms.NumericUpDown();
+            this.checkBox82 = new System.Windows.Forms.CheckBox();
+            this.checkBox83 = new System.Windows.Forms.CheckBox();
             this.panel4.SuspendLayout();
             this.panel_1m2k_pc.SuspendLayout();
             this.panel_2m_c.SuspendLayout();
@@ -591,6 +598,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown36)).BeginInit();
             this.groupBox13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown34)).BeginInit();
+            this.panel_N1k.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown37)).BeginInit();
             this.panel_NL3k1m.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -604,10 +613,10 @@
             this.panel_NS_2m_.SuspendLayout();
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown23)).BeginInit();
-            this.panel_N1k.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown37)).BeginInit();
             this.panel_NL2m2k.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown38)).BeginInit();
+            this.panel_N1m3k.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown39)).BeginInit();
             this.SuspendLayout();
             // 
             // lbRoster
@@ -4630,6 +4639,50 @@
             0,
             0});
             // 
+            // panel_N1k
+            // 
+            this.panel_N1k.Controls.Add(this.checkBox78);
+            this.panel_N1k.Controls.Add(this.label156);
+            this.panel_N1k.Controls.Add(this.numericUpDown37);
+            this.panel_N1k.Location = new System.Drawing.Point(78, 107);
+            this.panel_N1k.Name = "panel_N1k";
+            this.panel_N1k.Size = new System.Drawing.Size(590, 463);
+            this.panel_N1k.TabIndex = 77;
+            // 
+            // checkBox78
+            // 
+            this.checkBox78.AutoSize = true;
+            this.checkBox78.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox78.Location = new System.Drawing.Point(243, 59);
+            this.checkBox78.Name = "checkBox78";
+            this.checkBox78.Size = new System.Drawing.Size(113, 24);
+            this.checkBox78.TabIndex = 56;
+            this.checkBox78.Text = "checkBox1";
+            this.checkBox78.UseVisualStyleBackColor = true;
+            // 
+            // label156
+            // 
+            this.label156.AutoSize = true;
+            this.label156.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label156.Location = new System.Drawing.Point(86, 29);
+            this.label156.Name = "label156";
+            this.label156.Size = new System.Drawing.Size(151, 20);
+            this.label156.TabIndex = 17;
+            this.label156.Text = "Number of Models:";
+            // 
+            // numericUpDown37
+            // 
+            this.numericUpDown37.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown37.Location = new System.Drawing.Point(243, 27);
+            this.numericUpDown37.Name = "numericUpDown37";
+            this.numericUpDown37.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDown37.TabIndex = 18;
+            this.numericUpDown37.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
             // panel_NL3k1m
             // 
             this.panel_NL3k1m.Controls.Add(this.comboBox70);
@@ -4759,6 +4812,7 @@
             this.groupBox7.Controls.Add(this.panel_NL1m1k);
             this.groupBox7.Controls.Add(this.panel_NL2m);
             this.groupBox7.Controls.Add(this.panel_NL3k1m);
+            this.groupBox7.Controls.Add(this.panel_NL2m2k);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.groupBox7.Location = new System.Drawing.Point(575, 542);
             this.groupBox7.Name = "groupBox7";
@@ -5688,50 +5742,6 @@
             0,
             0});
             // 
-            // panel_N1k
-            // 
-            this.panel_N1k.Controls.Add(this.checkBox78);
-            this.panel_N1k.Controls.Add(this.label156);
-            this.panel_N1k.Controls.Add(this.numericUpDown37);
-            this.panel_N1k.Location = new System.Drawing.Point(78, 107);
-            this.panel_N1k.Name = "panel_N1k";
-            this.panel_N1k.Size = new System.Drawing.Size(590, 463);
-            this.panel_N1k.TabIndex = 77;
-            // 
-            // checkBox78
-            // 
-            this.checkBox78.AutoSize = true;
-            this.checkBox78.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox78.Location = new System.Drawing.Point(243, 59);
-            this.checkBox78.Name = "checkBox78";
-            this.checkBox78.Size = new System.Drawing.Size(113, 24);
-            this.checkBox78.TabIndex = 56;
-            this.checkBox78.Text = "checkBox1";
-            this.checkBox78.UseVisualStyleBackColor = true;
-            // 
-            // label156
-            // 
-            this.label156.AutoSize = true;
-            this.label156.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label156.Location = new System.Drawing.Point(86, 29);
-            this.label156.Name = "label156";
-            this.label156.Size = new System.Drawing.Size(151, 20);
-            this.label156.TabIndex = 17;
-            this.label156.Text = "Number of Models:";
-            // 
-            // numericUpDown37
-            // 
-            this.numericUpDown37.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown37.Location = new System.Drawing.Point(243, 27);
-            this.numericUpDown37.Name = "numericUpDown37";
-            this.numericUpDown37.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown37.TabIndex = 18;
-            this.numericUpDown37.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
             // panel_NL2m2k
             // 
             this.panel_NL2m2k.Controls.Add(this.checkBox79);
@@ -5746,7 +5756,7 @@
             this.panel_NL2m2k.Controls.Add(this.numericUpDown38);
             this.panel_NL2m2k.Controls.Add(this.label159);
             this.panel_NL2m2k.Controls.Add(this.label160);
-            this.panel_NL2m2k.Location = new System.Drawing.Point(1006, 73);
+            this.panel_NL2m2k.Location = new System.Drawing.Point(23, 128);
             this.panel_NL2m2k.Name = "panel_NL2m2k";
             this.panel_NL2m2k.Size = new System.Drawing.Size(590, 463);
             this.panel_NL2m2k.TabIndex = 62;
@@ -5874,12 +5884,89 @@
             this.label160.TabIndex = 41;
             this.label160.Text = "Deadly Pathogens";
             // 
+            // panel_N1m3k
+            // 
+            this.panel_N1m3k.Controls.Add(this.checkBox82);
+            this.panel_N1m3k.Controls.Add(this.checkBox83);
+            this.panel_N1m3k.Controls.Add(this.comboBox107);
+            this.panel_N1m3k.Controls.Add(this.label161);
+            this.panel_N1m3k.Controls.Add(this.label162);
+            this.panel_N1m3k.Controls.Add(this.numericUpDown39);
+            this.panel_N1m3k.Location = new System.Drawing.Point(1006, 73);
+            this.panel_N1m3k.Name = "panel_N1m3k";
+            this.panel_N1m3k.Size = new System.Drawing.Size(590, 463);
+            this.panel_N1m3k.TabIndex = 77;
+            // 
+            // comboBox107
+            // 
+            this.comboBox107.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox107.FormattingEnabled = true;
+            this.comboBox107.Location = new System.Drawing.Point(311, 59);
+            this.comboBox107.Name = "comboBox107";
+            this.comboBox107.Size = new System.Drawing.Size(176, 28);
+            this.comboBox107.TabIndex = 42;
+            // 
+            // label161
+            // 
+            this.label161.AutoSize = true;
+            this.label161.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label161.Location = new System.Drawing.Point(86, 29);
+            this.label161.Name = "label161";
+            this.label161.Size = new System.Drawing.Size(151, 20);
+            this.label161.TabIndex = 17;
+            this.label161.Text = "Number of Models:";
+            // 
+            // label162
+            // 
+            this.label162.AutoSize = true;
+            this.label162.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label162.Location = new System.Drawing.Point(86, 63);
+            this.label162.Name = "label162";
+            this.label162.Size = new System.Drawing.Size(219, 20);
+            this.label162.TabIndex = 41;
+            this.label162.Text = "Select One of the Following:";
+            // 
+            // numericUpDown39
+            // 
+            this.numericUpDown39.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown39.Location = new System.Drawing.Point(243, 27);
+            this.numericUpDown39.Name = "numericUpDown39";
+            this.numericUpDown39.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDown39.TabIndex = 18;
+            this.numericUpDown39.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // checkBox82
+            // 
+            this.checkBox82.AutoSize = true;
+            this.checkBox82.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox82.Location = new System.Drawing.Point(311, 93);
+            this.checkBox82.Name = "checkBox82";
+            this.checkBox82.Size = new System.Drawing.Size(113, 24);
+            this.checkBox82.TabIndex = 56;
+            this.checkBox82.Text = "checkBox1";
+            this.checkBox82.UseVisualStyleBackColor = true;
+            // 
+            // checkBox83
+            // 
+            this.checkBox83.AutoSize = true;
+            this.checkBox83.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox83.Location = new System.Drawing.Point(311, 124);
+            this.checkBox83.Name = "checkBox83";
+            this.checkBox83.Size = new System.Drawing.Size(113, 24);
+            this.checkBox83.TabIndex = 57;
+            this.checkBox83.Text = "checkBox1";
+            this.checkBox83.UseVisualStyleBackColor = true;
+            // 
             // Testing_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
-            this.Controls.Add(this.panel_NL2m2k);
+            this.Controls.Add(this.panel_N1m3k);
             this.Controls.Add(this.groupBox11);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
@@ -6021,6 +6108,9 @@
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown34)).EndInit();
+            this.panel_N1k.ResumeLayout(false);
+            this.panel_N1k.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown37)).EndInit();
             this.panel_NL3k1m.ResumeLayout(false);
             this.panel_NL3k1m.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).EndInit();
@@ -6042,12 +6132,12 @@
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown23)).EndInit();
-            this.panel_N1k.ResumeLayout(false);
-            this.panel_N1k.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown37)).EndInit();
             this.panel_NL2m2k.ResumeLayout(false);
             this.panel_NL2m2k.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown38)).EndInit();
+            this.panel_N1m3k.ResumeLayout(false);
+            this.panel_N1m3k.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown39)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -6537,5 +6627,12 @@
         private System.Windows.Forms.NumericUpDown numericUpDown38;
         private System.Windows.Forms.Label label159;
         private System.Windows.Forms.Label label160;
+        private System.Windows.Forms.Panel panel_N1m3k;
+        private System.Windows.Forms.CheckBox checkBox82;
+        private System.Windows.Forms.CheckBox checkBox83;
+        private System.Windows.Forms.ComboBox comboBox107;
+        private System.Windows.Forms.Label label161;
+        private System.Windows.Forms.Label label162;
+        private System.Windows.Forms.NumericUpDown numericUpDown39;
     }
 }

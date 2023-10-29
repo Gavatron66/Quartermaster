@@ -220,8 +220,10 @@
     <Compile Include="Necrons\TriarchStalker.cs" />
     <Compile Include="Necrons\Zahndrekh.cs" />
     <Compile Include="Roster.cs" />
+    <Compile Include="Space Marines\Aggressors.cs" />
     <Compile Include="Space Marines\Apothecary.cs" />
     <Compile Include="Space Marines\AssaultIntercessors.cs" />
+    <Compile Include="Space Marines\AssaultTerminators.cs" />
     <Compile Include="Space Marines\BikeCaptain.cs" />
     <Compile Include="Space Marines\BladeguardAncient.cs" />
     <Compile Include="Space Marines\BladeguardVeterans.cs" />
@@ -230,6 +232,9 @@
     <Compile Include="Space Marines\CompanyAncient.cs" />
     <Compile Include="Space Marines\CompanyChampion.cs" />
     <Compile Include="Space Marines\Judicar.cs" />
+    <Compile Include="Space Marines\Reivers.cs" />
+    <Compile Include="Space Marines\SternguardVeterans.cs" />
+    <Compile Include="Space Marines\Terminators.cs" />
     <Compile Include="Space Marines\VanguardVeterans.cs" />
     <Compile Include="Space Marines\Veterans.cs" />
     <Compile Include="Space Marines\GravisCaptain.cs" />

@@ -11,7 +11,6 @@ namespace Roster_Builder.Space_Marines
     public class Veterans : Datasheets
     {
         int currentIndex = 0;
-        bool isLoading;
         string[] HeavyWeapons = new string[]
         {
             "Grav-cannon",
