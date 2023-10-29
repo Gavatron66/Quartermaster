@@ -229,6 +229,8 @@
     <Compile Include="Space Marines\Chaplain.cs" />
     <Compile Include="Space Marines\CompanyAncient.cs" />
     <Compile Include="Space Marines\CompanyChampion.cs" />
+    <Compile Include="Space Marines\Judicar.cs" />
+    <Compile Include="Space Marines\VanguardVeterans.cs" />
     <Compile Include="Space Marines\Veterans.cs" />
     <Compile Include="Space Marines\GravisCaptain.cs" />
     <Compile Include="Space Marines\GravisHeavyCaptain.cs" />

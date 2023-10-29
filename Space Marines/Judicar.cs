@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Roster_Builder.Adeptus_Custodes;
+using Roster_Builder.Space_Marines;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,23 +9,23 @@ using System.Windows.Forms;
 
 namespace Roster_Builder.Space_Marines
 {
-    public class PhobosLieutenant : Datasheets
+    public class Judicar : Datasheets
     {
-        public PhobosLieutenant()
+        public Judicar()
         {
-            DEFAULT_POINTS = 80;
+            DEFAULT_POINTS = 85;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "INFANTRY", "CHARACTER", "PRIMARIS", "PHOBOS", "REIVER", "LIEUTENANT"
+                "INFANTRY", "CHARACTER", "PRIMARIS", "JUDICAR"
             });
         }
 
         public override Datasheets CreateUnit()
         {
-            return new PhobosLieutenant();
+            return new Judicar();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -37,7 +39,7 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             cmbWarlord.Items.Clear();
-            List<string> traits = repo.GetWarlordTraits("Phobos");
+            List<string> traits = repo.GetWarlordTraits("");
             foreach (var item in traits)
             {
                 cmbWarlord.Items.Add(item);
@@ -110,7 +112,6 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
@@ -125,9 +126,6 @@ namespace Roster_Builder.Space_Marines
                     {
                         WarlordTrait = string.Empty;
                     }
-                    break;
-                case 16:
-                    Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
                     Relic = cmbRelic.SelectedItem.ToString();
@@ -175,7 +173,7 @@ namespace Roster_Builder.Space_Marines
 
         public override string ToString()
         {
-            return "Phobos Lieutenant - " + Points + "pts";
+            return "Judicar - " + Points + "pts";
         }
     }
 }

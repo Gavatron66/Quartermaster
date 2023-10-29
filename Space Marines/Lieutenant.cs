@@ -34,8 +34,6 @@ namespace Roster_Builder.Space_Marines
         {
             repo = f as SpaceMarines;
             Template.LoadTemplate(TemplateCode, panel);
-            panel.Controls["cmbFactionUpgrade"].Visible = true;
-            panel.Controls["lblFactionUpgrade"].Visible = true;
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;

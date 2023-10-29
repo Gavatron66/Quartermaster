@@ -31,6 +31,8 @@ namespace Roster_Builder.Space_Marines
         {
             repo = f as SpaceMarines;
             Template.LoadTemplate(TemplateCode, panel);
+            panel.Controls["cmbFactionUpgrade"].Visible = true;
+            panel.Controls["lblFactionUpgrade"].Visible = true;
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
@@ -96,11 +98,6 @@ namespace Roster_Builder.Space_Marines
             {
                 cmbRelic.SelectedIndex = -1;
             }
-
-            panel.Controls["lblFactionupgrade"].Visible = true;
-            cmbFactionupgrade.Visible = true;
-            cmbFactionupgrade.Items.Clear();
-            cmbFactionupgrade.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
