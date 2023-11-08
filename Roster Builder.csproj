@@ -233,6 +233,7 @@
     <Compile Include="Space Marines\CompanyChampion.cs" />
     <Compile Include="Space Marines\Judicar.cs" />
     <Compile Include="Space Marines\Reivers.cs" />
+    <Compile Include="Space Marines\RelicTerminators.cs" />
     <Compile Include="Space Marines\SternguardVeterans.cs" />
     <Compile Include="Space Marines\Terminators.cs" />
     <Compile Include="Space Marines\VanguardVeterans.cs" />

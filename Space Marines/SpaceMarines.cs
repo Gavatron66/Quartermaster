@@ -125,7 +125,7 @@ namespace Roster_Builder.Space_Marines
                 new Aggressors(),
                 new AssaultTerminators(),
                 new Terminators(),
-                //new RelicTerminators(),
+                new RelicTerminators(),
                 //new CenturionAssault(),
                 //new Invictor(),
                 //new Dreadnought(),
