@@ -717,6 +717,62 @@ namespace Roster_Builder.Death_Guard
 
                     break;
                 #endregion
+                #region case "3m1k1N"
+                case "3m1k1N":
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 25);
+
+                    panel.Controls["lblOption2"].Visible = true;
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 63);
+
+                    panel.Controls["cmbOption2"].Visible = true;
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 59);
+
+                    panel.Controls["lblOption3"].Visible = true;
+                    panel.Controls["lblOption3"].Location = new System.Drawing.Point(86, 97);
+
+                    panel.Controls["cmbOption3"].Visible = true;
+                    panel.Controls["cmbOption3"].Location = new System.Drawing.Point(311, 93);
+
+                    panel.Controls["lblnud1"].Visible = true;
+                    panel.Controls["lblnud1"].Location = new System.Drawing.Point(154, 129);
+
+                    panel.Controls["nudOption1"].Visible = true;
+                    panel.Controls["nudOption1"].Location = new System.Drawing.Point(311, 127);
+
+                    panel.Controls["cbOption1"].Visible = true;
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 159);
+
+                    break;
+                #endregion
+                #region case "3m1k"
+                case "3m1k":
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 25);
+
+                    panel.Controls["lblOption2"].Visible = true;
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 63);
+
+                    panel.Controls["cmbOption2"].Visible = true;
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 59);
+
+                    panel.Controls["lblOption3"].Visible = true;
+                    panel.Controls["lblOption3"].Location = new System.Drawing.Point(86, 97);
+
+                    panel.Controls["cmbOption3"].Visible = true;
+                    panel.Controls["cmbOption3"].Location = new System.Drawing.Point(311, 93);
+
+                    panel.Controls["cbOption1"].Visible = true;
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 127);
+
+                    break;
+                #endregion
 
                 //Units with variable Unit Size
                 #region case "N"
