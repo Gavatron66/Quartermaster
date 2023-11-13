@@ -134,7 +134,7 @@ namespace Roster_Builder.Space_Marines
                 new IroncladDreadnought(),
                 new RedemptorDreadnought(),
                 //---------- Fast Attack ----------
-                //new AssaultSquad(),
+                new AssaultSquad(),
                 //new Outriders(),
                 //new InvaderATVs(),
                 //new BikeSquad(),

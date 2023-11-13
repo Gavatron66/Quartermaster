@@ -34,8 +34,3 @@ Prohibit selecting the same custom faction trait
 
 Space Marines
 	Intercessor Sergeant has some wierd options, will have to go back and add restrictions where nessecary
-		
-1m - 311,59
-1k - 311,93
-2k - 311,124
-3k - 311,154

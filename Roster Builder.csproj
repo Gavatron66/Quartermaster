@@ -223,6 +223,7 @@
     <Compile Include="Space Marines\Aggressors.cs" />
     <Compile Include="Space Marines\Apothecary.cs" />
     <Compile Include="Space Marines\AssaultIntercessors.cs" />
+    <Compile Include="Space Marines\AssaultSquad.cs" />
     <Compile Include="Space Marines\AssaultTerminators.cs" />
     <Compile Include="Space Marines\BikeCaptain.cs" />
     <Compile Include="Space Marines\BladeguardAncient.cs" />
