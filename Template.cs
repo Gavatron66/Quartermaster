@@ -1324,6 +1324,27 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 258);
                     break;
                 #endregion
+                #region case "NL1m"
+                case "NL1m":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lbModelSelect"].Visible = true;
+                    panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
+                    panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
+
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(239, 127);
+
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(282, 150);
+
+                    panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(239, 268);
+
+                    panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 291);
+                    break;
+                #endregion
 
                 //Special Cases
                 #region case "cultist"
