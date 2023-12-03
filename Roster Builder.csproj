@@ -232,11 +232,18 @@
     <Compile Include="Space Marines\BladeguardVeterans.cs" />
     <Compile Include="Space Marines\Captain.cs" />
     <Compile Include="Space Marines\CenturionAssault.cs" />
+    <Compile Include="Space Marines\CenturionDevastators.cs" />
     <Compile Include="Space Marines\Chaplain.cs" />
     <Compile Include="Space Marines\CompanyAncient.cs" />
     <Compile Include="Space Marines\CompanyChampion.cs" />
     <Compile Include="Space Marines\ContemptorDreadnought.cs" />
+    <Compile Include="Space Marines\Devastators.cs" />
     <Compile Include="Space Marines\Dreadnought.cs" />
+    <Compile Include="Space Marines\Eliminators.cs" />
+    <Compile Include="Space Marines\Eradicators.cs" />
+    <Compile Include="Space Marines\FirestrikeTurret.cs" />
+    <Compile Include="Space Marines\Hellblasters.cs" />
+    <Compile Include="Space Marines\Hunter.cs" />
     <Compile Include="Space Marines\Inceptors.cs" />
     <Compile Include="Space Marines\InvaderATVs.cs" />
     <Compile Include="Space Marines\Invictor.cs" />
@@ -246,16 +253,20 @@
     <Compile Include="Space Marines\LandSpeederTyphoons.cs" />
     <Compile Include="Space Marines\LandSpeeders.cs" />
     <Compile Include="Space Marines\Outriders.cs" />
+    <Compile Include="Space Marines\PredatorAnnihilator.cs" />
+    <Compile Include="Space Marines\PredatorDestructor.cs" />
     <Compile Include="Space Marines\RedemptorDreadnought.cs" />
     <Compile Include="Space Marines\Reivers.cs" />
     <Compile Include="Space Marines\RelicTerminators.cs" />
     <Compile Include="Space Marines\ScoutBikeSquad.cs" />
+    <Compile Include="Space Marines\Stalker.cs" />
     <Compile Include="Space Marines\SternguardVeterans.cs" />
     <Compile Include="Space Marines\StormSpeederHailstrike.cs" />
     <Compile Include="Space Marines\StormSpeederHammerstrike.cs" />
     <Compile Include="Space Marines\StormSpeederThunderstrike.cs" />
     <Compile Include="Space Marines\Suppressors.cs" />
     <Compile Include="Space Marines\Terminators.cs" />
+    <Compile Include="Space Marines\Thunderfire.cs" />
     <Compile Include="Space Marines\VanguardVeterans.cs" />
     <Compile Include="Space Marines\VenerableDreadnought.cs" />
     <Compile Include="Space Marines\Veterans.cs" />
@@ -289,6 +300,7 @@
     <Compile Include="Space Marines\TerminatorChaplain.cs" />
     <Compile Include="Space Marines\TerminatorLibrarian.cs" />
     <Compile Include="Space Marines\VeteranIntercessors.cs" />
+    <Compile Include="Space Marines\Whirlwind.cs" />
     <Compile Include="Template.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
