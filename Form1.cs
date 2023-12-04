@@ -583,5 +583,17 @@ namespace Roster_Builder
             roster.roster[currentIndex].SaveDatasheets(62, panel1);
             updateLBRoster();
         }
+
+        private void cmbOption5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            roster.roster[currentIndex].SaveDatasheets(18, panel1);
+            updateLBRoster();
+        }
+
+        private void cmbOption6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            roster.roster[currentIndex].SaveDatasheets(19, panel1);
+            updateLBRoster();
+        }
     }
 }

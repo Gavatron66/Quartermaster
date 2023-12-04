@@ -107,6 +107,10 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.lblErrors = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblOption6 = new System.Windows.Forms.Label();
+            this.cmbOption6 = new System.Windows.Forms.ComboBox();
+            this.lblOption5 = new System.Windows.Forms.Label();
+            this.cmbOption5 = new System.Windows.Forms.ComboBox();
             this.MenuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUnitSize2)).BeginInit();
@@ -282,6 +286,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblOption5);
+            this.panel1.Controls.Add(this.cmbOption5);
+            this.panel1.Controls.Add(this.lblOption6);
+            this.panel1.Controls.Add(this.cmbOption6);
             this.panel1.Controls.Add(this.lblUnitSize2);
             this.panel1.Controls.Add(this.nudUnitSize2);
             this.panel1.Controls.Add(this.cbStratagem2);
@@ -966,6 +974,46 @@
             this.lblErrors.TabIndex = 82;
             this.lblErrors.Text = "Roster has _ errors";
             // 
+            // lblOption6
+            // 
+            this.lblOption6.AutoSize = true;
+            this.lblOption6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOption6.Location = new System.Drawing.Point(801, 443);
+            this.lblOption6.Name = "lblOption6";
+            this.lblOption6.Size = new System.Drawing.Size(219, 20);
+            this.lblOption6.TabIndex = 82;
+            this.lblOption6.Text = "Select One of the Following:";
+            // 
+            // cmbOption6
+            // 
+            this.cmbOption6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbOption6.FormattingEnabled = true;
+            this.cmbOption6.Location = new System.Drawing.Point(844, 469);
+            this.cmbOption6.Name = "cmbOption6";
+            this.cmbOption6.Size = new System.Drawing.Size(176, 28);
+            this.cmbOption6.TabIndex = 83;
+            this.cmbOption6.SelectedIndexChanged += new System.EventHandler(this.cmbOption6_SelectedIndexChanged);
+            // 
+            // lblOption5
+            // 
+            this.lblOption5.AutoSize = true;
+            this.lblOption5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOption5.Location = new System.Drawing.Point(801, 373);
+            this.lblOption5.Name = "lblOption5";
+            this.lblOption5.Size = new System.Drawing.Size(219, 20);
+            this.lblOption5.TabIndex = 84;
+            this.lblOption5.Text = "Select One of the Following:";
+            // 
+            // cmbOption5
+            // 
+            this.cmbOption5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbOption5.FormattingEnabled = true;
+            this.cmbOption5.Location = new System.Drawing.Point(844, 399);
+            this.cmbOption5.Name = "cmbOption5";
+            this.cmbOption5.Size = new System.Drawing.Size(176, 28);
+            this.cmbOption5.TabIndex = 85;
+            this.cmbOption5.SelectedIndexChanged += new System.EventHandler(this.cmbOption5_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -1088,6 +1136,10 @@
         private System.Windows.Forms.NumericUpDown nudUnitSize2;
         private System.Windows.Forms.Label lblErrors;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lblOption5;
+        private System.Windows.Forms.ComboBox cmbOption5;
+        private System.Windows.Forms.Label lblOption6;
+        private System.Windows.Forms.ComboBox cmbOption6;
     }
 }
 
