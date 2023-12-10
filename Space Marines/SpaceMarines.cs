@@ -177,12 +177,12 @@ namespace Roster_Builder.Space_Marines
                 new DropPod(),
                 new LandSpeederStorm(),
                 //---------- Flyers ----------
-                //new StormhawkInterceptor(),
-                //new StormtalonGunship(),
-                //new StormravenGunship(),
+                new StormhawkInterceptor(),
+                new StormtalonGunship(),
+                new StormravenGunship(),
                 //---------- Lords of War ----------
                 //---------- Fortification ----------
-                //new Hammerfall Bunker()
+                new HammerfallBunker()
             };
         }
 
@@ -341,20 +341,87 @@ namespace Roster_Builder.Space_Marines
             relics.Add("(None)");
 
             relics.Add("The Armour Indomitus");
-            //The Shield Eternal - Model w/ Storm/Relic/Combat Shield
-            //Standard of the Emperor Ascendant - ANCIENT only
-            //Teeth of Terra - Astartes Chainsword
-            //Primarch's Wrath - Boltgun, Master-crafted Boltgun or Special Issue Bolt Carbine
-            //The Burning Blade - Power Sword or Master-crafted Power Sword
-            //Purgatorus - Bolt Pistol, Heavy Bolt Pistol, Master-crafted Special Issue Bolt Pistol or Absolver Pistol
-            //Reliquary of Gathalamor - PRIMARIS only
-            //Bellicos Bolt Rifle - Master-crafted Auto Bolt Rifle
-            //Lament - Master-crafted Stalker Bolt Rifle
-            //Ghostweave Cloak - PHOBOS with Camo Claok
-            //Tome of Malcador - LIBRARIAN
-            //Benediction of Fury - CHAPLAIN
+
+            if((keywords.Contains("CAPTAIN") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS"))) || 
+                ((keywords.Contains("LIEUTENANT") && keywords.Contains("PRIMARIS")) && !keywords.Contains("PHOBOS")) ||
+                (keywords.Contains("TERMINATOR") && keywords.Contains("ANCIENT"))) {
+                relics.Add("The Shield Eternal");
+            }
+
+            if(keywords.Contains("ANCIENT"))
+            {
+                relics.Add("Standard of the Emperor Ascendant");
+            }
+
+            if((keywords.Contains("CAPTAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
+                (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS")) ||
+                (keywords.Contains("APOTHECARY") && !keywords.Contains("PRIMARIS")) ||
+                keywords.Contains("ANCIENT") && keywords.Contains("COMMAND SQUAD"))
+            {
+                relics.Add("The Teeth of Terra");
+            }
+
+            if((keywords.Contains("CAPTAIN") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS") || keywords.Contains("TERMINATOR"))) ||
+                (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
+                (keywords.Contains("LIBRARIAN") && !(keywords.Contains("TERMINATOR") || keywords.Contains("PRIMARIS"))) ||
+                (keywords.Contains("CHAPLAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
+                (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
+                keywords.Contains("ANCIENT") && keywords.Contains("COMMAND SQUAD"))
+            {
+                relics.Add("Primarch's Wrath");
+            }
+
+            if((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS")) ||
+                (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
+                (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
+                keywords.Contains("COMPANY CHAMPION") || keywords.Contains("COMPANY ANCIENT"))
+            {
+                relics.Add("The Burning Blade");
+            }
+
+            if(!keywords.Contains("TERMINATOR") || keywords.Contains("MK X GRAVIS") || (keywords.Contains("TECHMARINE") && keywords.Contains("PRIMARIS")))
+            {
+                relics.Add("Purgatorus");
+            }
+
+            if(keywords.Contains("PRIMARIS"))
+            {
+                relics.Add("Reliquary of Gathalamor");
+            }
+
+            if(keywords.Contains("PRIMARIS") && (keywords.Contains("LIEUTENANT") || keywords.Contains("CAPTAIN")) &&
+                !(keywords.Contains("MK X GRAVIS") || keywords.Contains("PHOBOS"))) 
+            {
+                relics.Add("Bellicos Bolt Rifle");
+            }
+
+            if (keywords.Contains("PRIMARIS") && (keywords.Contains("LIEUTENANT") || keywords.Contains("CAPTAIN")) &&
+                !(keywords.Contains("MK X GRAVIS") || keywords.Contains("PHOBOS")))
+            {
+                relics.Add("Lament");
+            }
+
+            if(keywords.Contains("PHOBOS") && (keywords.Contains("LIBRARIAN") || keywords.Contains("CAPTAIN")))
+            {
+                relics.Add("Ghostweave Cloak");
+            }
+
+            if (keywords.Contains("LIBRARIAN"))
+            {
+                relics.Add("The Vox Espiritum");
+            }
+
+            if (keywords.Contains("CHAPLAIN"))
+            {
+                relics.Add("The Vox Espiritum");
+            }
+
             relics.Add("The Honour Vehement");
-            //The Vox Espiritum - PRIMARIS
+
+            if (keywords.Contains("PRIMARIS"))
+            {
+                relics.Add("The Vox Espiritum");
+            }
 
             return relics;
         }

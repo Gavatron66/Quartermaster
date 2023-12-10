@@ -246,6 +246,7 @@
     <Compile Include="Space Marines\GladiatorLancer.cs" />
     <Compile Include="Space Marines\GladiatorReaper.cs" />
     <Compile Include="Space Marines\GladiatorValiant.cs" />
+    <Compile Include="Space Marines\HammerfallBunker.cs" />
     <Compile Include="Space Marines\Hellblasters.cs" />
     <Compile Include="Space Marines\Hunter.cs" />
     <Compile Include="Space Marines\Impulsor.cs" />
@@ -274,9 +275,12 @@
     <Compile Include="Space Marines\ScoutBikeSquad.cs" />
     <Compile Include="Space Marines\Stalker.cs" />
     <Compile Include="Space Marines\SternguardVeterans.cs" />
+    <Compile Include="Space Marines\StormhawkInterceptor.cs" />
+    <Compile Include="Space Marines\StormravenGunship.cs" />
     <Compile Include="Space Marines\StormSpeederHailstrike.cs" />
     <Compile Include="Space Marines\StormSpeederHammerstrike.cs" />
     <Compile Include="Space Marines\StormSpeederThunderstrike.cs" />
+    <Compile Include="Space Marines\StormtalonGunship.cs" />
     <Compile Include="Space Marines\Suppressors.cs" />
     <Compile Include="Space Marines\Terminators.cs" />
     <Compile Include="Space Marines\Thunderfire.cs" />
