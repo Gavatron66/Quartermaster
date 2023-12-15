@@ -262,6 +262,7 @@
     <Compile Include="Space Marines\LandSpeederTornadoes.cs" />
     <Compile Include="Space Marines\LandSpeederTyphoons.cs" />
     <Compile Include="Space Marines\LandSpeeders.cs" />
+    <Compile Include="Space Marines\LionElJonson.cs" />
     <Compile Include="Space Marines\Outriders.cs" />
     <Compile Include="Space Marines\PredatorAnnihilator.cs" />
     <Compile Include="Space Marines\PredatorDestructor.cs" />
@@ -272,6 +273,7 @@
     <Compile Include="Space Marines\Repulsor.cs" />
     <Compile Include="Space Marines\RepulsorExecutioner.cs" />
     <Compile Include="Space Marines\Rhino.cs" />
+    <Compile Include="Space Marines\RobouteGuilliman.cs" />
     <Compile Include="Space Marines\ScoutBikeSquad.cs" />
     <Compile Include="Space Marines\Stalker.cs" />
     <Compile Include="Space Marines\SternguardVeterans.cs" />

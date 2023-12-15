@@ -181,6 +181,8 @@ namespace Roster_Builder.Space_Marines
                 new StormtalonGunship(),
                 new StormravenGunship(),
                 //---------- Lords of War ----------
+                new RobouteGuilliman(),
+                new LionElJonson(),
                 //---------- Fortification ----------
                 new HammerfallBunker()
             };
