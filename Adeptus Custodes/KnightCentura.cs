@@ -14,12 +14,13 @@ namespace Roster_Builder.Adeptus_Custodes
             DEFAULT_POINTS = 50;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m_c";
-            Weapons.Add("Executioner Greatblade");
+            Weapons.Add("Executioner Greatblade (+5 pts)");
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ANATHEM PSYKANA",
                 "INFANTRY", "CHARACTER", "KNIGHT-CENTURA"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -48,7 +49,7 @@ namespace Roster_Builder.Adeptus_Custodes
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Executioner Greatblade",
+                "Executioner Greatblade (+5 pts)",
                 "Master-crafted Boltgun",
                 "Witchseeker Flamer"
             });
@@ -147,7 +148,7 @@ namespace Roster_Builder.Adeptus_Custodes
 
                         if (cmbRelic.SelectedItem.ToString() == "Raptor Blade")
                         {
-                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Executioner Greatblade");
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Executioner Greatblade (+5 pts)");
                         }
 
                         cmbOption1.Enabled = false;
@@ -194,7 +195,7 @@ namespace Roster_Builder.Adeptus_Custodes
 
             Points = DEFAULT_POINTS;
 
-            if(Weapons.Contains("Executioner Greatblade"))
+            if(Weapons.Contains("Executioner Greatblade (+5 pts)"))
             {
                 Points += 5;
             }

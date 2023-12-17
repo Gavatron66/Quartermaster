@@ -71,22 +71,23 @@ namespace Roster_Builder.Adeptus_Custodes
 
             string[] twentyFive = new string[]
             {
-                "Master of the Stances"
+                "Master of the Stances (+25 pts)"
             };
 
             string[] twenty = new string[]
             {
-                "Defiant to the Last", "Ceaseless Hunter"
+                "Defiant to the Last (+20 pts)", "Ceaseless Hunter (+20 pts)"
             };
 
             string[] fifteen = new string[]
             {
-                "Swift as the Eagle", "Inspirational Exemplar", "Bane of Abominations", "Fierce Conqueror", "Tip of the Spear"
+                "Swift as the Eagle (+15 pts)", "Inspirational Exemplar (+15 pts)",
+                "Bane of Abominations (+15 pts)", "Fierce Conqueror (+15 pts)", "Tip of the Spear (+15 pts)"
             };
 
             string[] ten = new string[]
             {
-                "Unstoppable Destroyer"
+                "Unstoppable Destroyer (+10 pts)"
             };
 
             if (twentyFive.Contains(upgrade))
@@ -115,23 +116,23 @@ namespace Roster_Builder.Adeptus_Custodes
 
             if (keywords.Contains("SHIELD-CAPTAIN") && keywords.Contains("GUARDIAN"))
             {
-                upgrades.Add("Inspirational Exemplar");
-                upgrades.Add("Master of the Stances");
-                upgrades.Add("Swift as the Eagle");
+                upgrades.Add("Inspirational Exemplar (+15 pts)");
+                upgrades.Add("Master of the Stances (+25 pts)");
+                upgrades.Add("Swift as the Eagle (+15 pts)");
             }
 
             if (keywords.Contains("SHIELD-CAPTAIN") && keywords.Contains("ALLARUS"))
             {
-                upgrades.Add("Bane of Abominations");
-                upgrades.Add("Defiant to the Last");
-                upgrades.Add("Unstoppable Destroyer");
+                upgrades.Add("Bane of Abominations (+15 pts)");
+                upgrades.Add("Defiant to the Last (+20 pts)");
+                upgrades.Add("Unstoppable Destroyer (+10 pts)");
             }
 
             if (keywords.Contains("SHIELD-CAPTAIN") && keywords.Contains("VERTUS"))
             {
-                upgrades.Add("Ceaseless Hunter");
-                upgrades.Add("Fierce Conqueror");
-                upgrades.Add("Tip of the Spear");
+                upgrades.Add("Ceaseless Hunter (+20 pts)");
+                upgrades.Add("Fierce Conqueror (+15 pts)");
+                upgrades.Add("Tip of the Spear (+15 pts)");
             }
 
             return upgrades;

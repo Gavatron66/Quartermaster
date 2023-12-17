@@ -16,10 +16,11 @@ namespace Roster_Builder.Adeptus_Custodes
             TemplateCode = "nc";
             Keywords.AddRange(new string[]
             {
-                "IMPERIUM", "ANATHEM PSYKANA",
+                "IMPERIUM", "ANATHEMA PSYKANA",
                 "INFANTRY", "CHARACTER", "KNIGHT-CENTURA", "ALEYA"
             });
             WarlordTrait = "Oblivion Knight";
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()

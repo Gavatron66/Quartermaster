@@ -25,16 +25,22 @@ namespace Roster_Builder
         int currentIndex = -1;
         Faction units;
         bool isLoading = false;
-        Form testingForm = new Testing_Form();
+
         public Form1()
         {
             InitializeComponent();
-            this.Size = new Size(1030, 590);
+            this.Size = new Size(1139, 644);
 
+            SetUpForm();
+        }
+
+        private void SetUpForm()
+        {
             #region Setting up the Form
             lbRoster.Visible = false;
             lbUnits.Visible = false;
-            panel1.Size = new System.Drawing.Size(590, 463);
+            panel1.Size = new System.Drawing.Size(632, 570);
+            panel1.Location = new System.Drawing.Point(242, 96);
             panel1.Visible = false;
             lblEditingUnit.Text = string.Empty;
             lblPoints.Text = string.Empty;
@@ -42,6 +48,10 @@ namespace Roster_Builder
             btnAddToRoster.Visible = false;
             btnRemove.Visible = false;
             btnSave.Visible = false;
+            MenuPanel.Visible = true;
+            MenuPanel.Location = new System.Drawing.Point(242, 35);
+            lblErrors.Visible = false;
+            panelSubFaction.Location = new System.Drawing.Point(242, 96);
 
             for (int i = 0; i < panel1.Controls.Count; i++)
             {
@@ -62,7 +72,12 @@ namespace Roster_Builder
                 new Necrons.Necrons(),
                 new SpaceMarines(),
             });
+            cmbSelectFaction.Text = string.Empty;
 
+            lbUnits.Items.Clear();
+            lbRoster.Items.Clear();
+
+            currentIndex = -1;
             #endregion
         }
 
@@ -73,13 +88,17 @@ namespace Roster_Builder
             panel1.Visible = true;
             MenuPanel.Visible = false;
             btnRemove.Visible = true;
+            btnRemove.BringToFront();
             btnAddToRoster.Visible = true;
+            btnAddToRoster.BringToFront();
             lblCurrentPoints.Visible = true;
             btnSave.Visible = true;
             btnSave.BringToFront();
             gbCustomSubfaction.Visible = false;
             lblErrors.Visible = true;
             lblErrors.BringToFront();
+            lblEditingUnit.BringToFront(); 
+            panelSubFaction.BringToFront();
 
             if (!isLoading)
             {
@@ -260,6 +279,10 @@ namespace Roster_Builder
                 lblEditingUnit.Text = string.Empty;
                 currentIndex = -10;
                 return;
+            }
+            else
+            {
+                panelSubFaction.Visible = false;
             }
 
             if (lbRoster.SelectedIndex == -1 || lbRoster.SelectedIndex == currentIndex + 1)
@@ -594,6 +617,11 @@ namespace Roster_Builder
         {
             roster.roster[currentIndex].SaveDatasheets(19, panel1);
             updateLBRoster();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SetUpForm();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Roster_Builder.Adeptus_Custodes
     {
         public ShieldCaptain()
         {
-            DEFAULT_POINTS = 110;
+            DEFAULT_POINTS = 105;
             TemplateCode = "1m1k_c";
             Points = DEFAULT_POINTS;
             Weapons.Add("Guardian Spear");
@@ -22,6 +22,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "INFANTRY", "CHARACTER", "GUARDIAN", "SHIELD-CAPTAIN"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()

@@ -253,7 +253,7 @@ namespace Roster_Builder.Necrons
 
         public override string ToString()
         {
-            return "Lord - " + Points + "pts";
+            return "Necron Lord - " + Points + "pts";
         }
     }
 }

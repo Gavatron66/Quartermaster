@@ -260,6 +260,7 @@ namespace Roster_Builder.Death_Guard
             }
 
             Points = DEFAULT_POINTS;
+            Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
             if (cb.Checked && (code == 21 || code == -1))
             {

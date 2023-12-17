@@ -43,8 +43,16 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.btnLoad = new System.Windows.Forms.Button();
-            this.lblEditingUnit = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gbCustomSubfaction = new System.Windows.Forms.GroupBox();
+            this.lblCustomSub2 = new System.Windows.Forms.Label();
+            this.lblCustomSub1 = new System.Windows.Forms.Label();
+            this.cmbCustomSub1 = new System.Windows.Forms.ComboBox();
+            this.cmbCustomSub2 = new System.Windows.Forms.ComboBox();
+            this.lblOption5 = new System.Windows.Forms.Label();
+            this.cmbOption5 = new System.Windows.Forms.ComboBox();
+            this.lblOption6 = new System.Windows.Forms.Label();
+            this.cmbOption6 = new System.Windows.Forms.ComboBox();
             this.lblUnitSize2 = new System.Windows.Forms.Label();
             this.nudUnitSize2 = new System.Windows.Forms.NumericUpDown();
             this.cbStratagem2 = new System.Windows.Forms.CheckBox();
@@ -53,6 +61,15 @@
             this.lblExtra2 = new System.Windows.Forms.Label();
             this.lblnud6 = new System.Windows.Forms.Label();
             this.lblnud5 = new System.Windows.Forms.Label();
+            this.gbUnitLeader = new System.Windows.Forms.GroupBox();
+            this.gb_lblOption2 = new System.Windows.Forms.Label();
+            this.gb_cmbOption2 = new System.Windows.Forms.ComboBox();
+            this.gb_cmbFactionupgrade = new System.Windows.Forms.ComboBox();
+            this.gb_lblOption1 = new System.Windows.Forms.Label();
+            this.gb_lblFactionupgrade = new System.Windows.Forms.Label();
+            this.cbLeaderOption2 = new System.Windows.Forms.CheckBox();
+            this.gb_cmbOption1 = new System.Windows.Forms.ComboBox();
+            this.cbLeaderOption1 = new System.Windows.Forms.CheckBox();
             this.nudOption6 = new System.Windows.Forms.NumericUpDown();
             this.nudOption5 = new System.Windows.Forms.NumericUpDown();
             this.cbOption3 = new System.Windows.Forms.CheckBox();
@@ -66,15 +83,6 @@
             this.nudOption2 = new System.Windows.Forms.NumericUpDown();
             this.lblnud1 = new System.Windows.Forms.Label();
             this.nudOption1 = new System.Windows.Forms.NumericUpDown();
-            this.gbUnitLeader = new System.Windows.Forms.GroupBox();
-            this.gb_lblOption2 = new System.Windows.Forms.Label();
-            this.gb_cmbOption2 = new System.Windows.Forms.ComboBox();
-            this.gb_cmbFactionupgrade = new System.Windows.Forms.ComboBox();
-            this.gb_lblOption1 = new System.Windows.Forms.Label();
-            this.gb_lblFactionupgrade = new System.Windows.Forms.Label();
-            this.cbLeaderOption2 = new System.Windows.Forms.CheckBox();
-            this.gb_cmbOption1 = new System.Windows.Forms.ComboBox();
-            this.cbLeaderOption1 = new System.Windows.Forms.CheckBox();
             this.lblOption4 = new System.Windows.Forms.Label();
             this.cmbOption4 = new System.Windows.Forms.ComboBox();
             this.lblOption3 = new System.Windows.Forms.Label();
@@ -97,33 +105,28 @@
             this.cmbOption1 = new System.Windows.Forms.ComboBox();
             this.cmbOption2 = new System.Windows.Forms.ComboBox();
             this.panelSubFaction = new System.Windows.Forms.Panel();
-            this.gbCustomSubfaction = new System.Windows.Forms.GroupBox();
-            this.lblCustomSub2 = new System.Windows.Forms.Label();
-            this.lblCustomSub1 = new System.Windows.Forms.Label();
-            this.cmbCustomSub1 = new System.Windows.Forms.ComboBox();
-            this.cmbCustomSub2 = new System.Windows.Forms.ComboBox();
             this.lblSubfaction = new System.Windows.Forms.Label();
             this.cmbSubFaction = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.lblErrors = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lblOption6 = new System.Windows.Forms.Label();
-            this.cmbOption6 = new System.Windows.Forms.ComboBox();
-            this.lblOption5 = new System.Windows.Forms.Label();
-            this.cmbOption5 = new System.Windows.Forms.ComboBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblErrors = new System.Windows.Forms.Label();
+            this.lblEditingUnit = new System.Windows.Forms.Label();
             this.MenuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.gbCustomSubfaction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUnitSize2)).BeginInit();
+            this.gbUnitLeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOption6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOption5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOption4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOption3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOption2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOption1)).BeginInit();
-            this.gbUnitLeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUnitSize)).BeginInit();
             this.panelSubFaction.SuspendLayout();
-            this.gbCustomSubfaction.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbUnits
@@ -132,9 +135,9 @@
             this.lbUnits.FormattingEnabled = true;
             this.lbUnits.HorizontalScrollbar = true;
             this.lbUnits.ItemHeight = 18;
-            this.lbUnits.Location = new System.Drawing.Point(12, 12);
+            this.lbUnits.Location = new System.Drawing.Point(12, 35);
             this.lbUnits.Name = "lbUnits";
-            this.lbUnits.Size = new System.Drawing.Size(193, 526);
+            this.lbUnits.Size = new System.Drawing.Size(224, 562);
             this.lbUnits.TabIndex = 0;
             // 
             // lbRoster
@@ -143,9 +146,9 @@
             this.lbRoster.FormattingEnabled = true;
             this.lbRoster.HorizontalScrollbar = true;
             this.lbRoster.ItemHeight = 18;
-            this.lbRoster.Location = new System.Drawing.Point(807, 12);
+            this.lbRoster.Location = new System.Drawing.Point(880, 35);
             this.lbRoster.Name = "lbRoster";
-            this.lbRoster.Size = new System.Drawing.Size(193, 526);
+            this.lbRoster.Size = new System.Drawing.Size(224, 562);
             this.lbRoster.TabIndex = 1;
             this.lbRoster.SelectedIndexChanged += new System.EventHandler(this.lbRoster_SelectedIndexChanged);
             // 
@@ -153,7 +156,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(77, 32);
+            this.lblTitle.Location = new System.Drawing.Point(78, 32);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(476, 76);
             this.lblTitle.TabIndex = 2;
@@ -163,7 +166,7 @@
             // 
             this.lblFaction.AutoSize = true;
             this.lblFaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFaction.Location = new System.Drawing.Point(139, 201);
+            this.lblFaction.Location = new System.Drawing.Point(169, 201);
             this.lblFaction.Name = "lblFaction";
             this.lblFaction.Size = new System.Drawing.Size(121, 20);
             this.lblFaction.TabIndex = 3;
@@ -173,7 +176,7 @@
             // 
             this.lblSelectPoints.AutoSize = true;
             this.lblSelectPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectPoints.Location = new System.Drawing.Point(157, 257);
+            this.lblSelectPoints.Location = new System.Drawing.Point(187, 257);
             this.lblSelectPoints.Name = "lblSelectPoints";
             this.lblSelectPoints.Size = new System.Drawing.Size(103, 20);
             this.lblSelectPoints.TabIndex = 4;
@@ -183,7 +186,7 @@
             // 
             this.cmbSelectFaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSelectFaction.FormattingEnabled = true;
-            this.cmbSelectFaction.Location = new System.Drawing.Point(283, 198);
+            this.cmbSelectFaction.Location = new System.Drawing.Point(296, 198);
             this.cmbSelectFaction.Name = "cmbSelectFaction";
             this.cmbSelectFaction.Size = new System.Drawing.Size(166, 28);
             this.cmbSelectFaction.TabIndex = 5;
@@ -191,7 +194,7 @@
             // txtSelectPoints
             // 
             this.txtSelectPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSelectPoints.Location = new System.Drawing.Point(283, 254);
+            this.txtSelectPoints.Location = new System.Drawing.Point(296, 254);
             this.txtSelectPoints.Name = "txtSelectPoints";
             this.txtSelectPoints.Size = new System.Drawing.Size(166, 26);
             this.txtSelectPoints.TabIndex = 6;
@@ -199,7 +202,7 @@
             // btnBegin
             // 
             this.btnBegin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBegin.Location = new System.Drawing.Point(246, 316);
+            this.btnBegin.Location = new System.Drawing.Point(257, 316);
             this.btnBegin.Name = "btnBegin";
             this.btnBegin.Size = new System.Drawing.Size(119, 55);
             this.btnBegin.TabIndex = 7;
@@ -211,7 +214,7 @@
             // 
             this.lblCurrentPoints.AutoSize = true;
             this.lblCurrentPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentPoints.Location = new System.Drawing.Point(347, 12);
+            this.lblCurrentPoints.Location = new System.Drawing.Point(378, 35);
             this.lblCurrentPoints.Name = "lblCurrentPoints";
             this.lblCurrentPoints.Size = new System.Drawing.Size(72, 25);
             this.lblCurrentPoints.TabIndex = 8;
@@ -221,7 +224,7 @@
             // 
             this.lblPoints.AutoSize = true;
             this.lblPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPoints.Location = new System.Drawing.Point(420, 12);
+            this.lblPoints.Location = new System.Drawing.Point(451, 35);
             this.lblPoints.Name = "lblPoints";
             this.lblPoints.Size = new System.Drawing.Size(64, 25);
             this.lblPoints.TabIndex = 9;
@@ -230,7 +233,7 @@
             // btnAddToRoster
             // 
             this.btnAddToRoster.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddToRoster.Location = new System.Drawing.Point(211, 12);
+            this.btnAddToRoster.Location = new System.Drawing.Point(242, 35);
             this.btnAddToRoster.Name = "btnAddToRoster";
             this.btnAddToRoster.Size = new System.Drawing.Size(119, 55);
             this.btnAddToRoster.TabIndex = 10;
@@ -241,7 +244,7 @@
             // btnRemove
             // 
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(682, 12);
+            this.btnRemove.Location = new System.Drawing.Point(755, 35);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(119, 55);
             this.btnRemove.TabIndex = 12;
@@ -258,15 +261,15 @@
             this.MenuPanel.Controls.Add(this.lblSelectPoints);
             this.MenuPanel.Controls.Add(this.cmbSelectFaction);
             this.MenuPanel.Controls.Add(this.txtSelectPoints);
-            this.MenuPanel.Location = new System.Drawing.Point(211, 14);
+            this.MenuPanel.Location = new System.Drawing.Point(12, 603);
             this.MenuPanel.Name = "MenuPanel";
-            this.MenuPanel.Size = new System.Drawing.Size(593, 524);
+            this.MenuPanel.Size = new System.Drawing.Size(632, 562);
             this.MenuPanel.TabIndex = 15;
             // 
             // btnLoad
             // 
             this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoad.Location = new System.Drawing.Point(246, 379);
+            this.btnLoad.Location = new System.Drawing.Point(257, 379);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(119, 55);
             this.btnLoad.TabIndex = 8;
@@ -274,18 +277,9 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // lblEditingUnit
-            // 
-            this.lblEditingUnit.AutoSize = true;
-            this.lblEditingUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditingUnit.Location = new System.Drawing.Point(336, 42);
-            this.lblEditingUnit.Name = "lblEditingUnit";
-            this.lblEditingUnit.Size = new System.Drawing.Size(90, 20);
-            this.lblEditingUnit.TabIndex = 10;
-            this.lblEditingUnit.Text = "EditingUnit";
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.gbCustomSubfaction);
             this.panel1.Controls.Add(this.lblOption5);
             this.panel1.Controls.Add(this.cmbOption5);
             this.panel1.Controls.Add(this.lblOption6);
@@ -298,6 +292,7 @@
             this.panel1.Controls.Add(this.lblExtra2);
             this.panel1.Controls.Add(this.lblnud6);
             this.panel1.Controls.Add(this.lblnud5);
+            this.panel1.Controls.Add(this.gbUnitLeader);
             this.panel1.Controls.Add(this.nudOption6);
             this.panel1.Controls.Add(this.nudOption5);
             this.panel1.Controls.Add(this.cbOption3);
@@ -311,7 +306,6 @@
             this.panel1.Controls.Add(this.nudOption2);
             this.panel1.Controls.Add(this.lblnud1);
             this.panel1.Controls.Add(this.nudOption1);
-            this.panel1.Controls.Add(this.gbUnitLeader);
             this.panel1.Controls.Add(this.lblOption4);
             this.panel1.Controls.Add(this.cmbOption4);
             this.panel1.Controls.Add(this.lblOption3);
@@ -333,11 +327,101 @@
             this.panel1.Controls.Add(this.lblOption2);
             this.panel1.Controls.Add(this.cmbOption1);
             this.panel1.Controls.Add(this.cmbOption2);
-            this.panel1.Controls.Add(this.panelSubFaction);
-            this.panel1.Location = new System.Drawing.Point(211, 75);
+            this.panel1.Location = new System.Drawing.Point(1110, 35);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1263, 680);
             this.panel1.TabIndex = 8;
+            // 
+            // gbCustomSubfaction
+            // 
+            this.gbCustomSubfaction.Controls.Add(this.lblCustomSub2);
+            this.gbCustomSubfaction.Controls.Add(this.lblCustomSub1);
+            this.gbCustomSubfaction.Controls.Add(this.cmbCustomSub1);
+            this.gbCustomSubfaction.Controls.Add(this.cmbCustomSub2);
+            this.gbCustomSubfaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbCustomSubfaction.Location = new System.Drawing.Point(1125, 262);
+            this.gbCustomSubfaction.Name = "gbCustomSubfaction";
+            this.gbCustomSubfaction.Size = new System.Drawing.Size(472, 108);
+            this.gbCustomSubfaction.TabIndex = 77;
+            this.gbCustomSubfaction.TabStop = false;
+            // 
+            // lblCustomSub2
+            // 
+            this.lblCustomSub2.AutoSize = true;
+            this.lblCustomSub2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomSub2.Location = new System.Drawing.Point(38, 68);
+            this.lblCustomSub2.Name = "lblCustomSub2";
+            this.lblCustomSub2.Size = new System.Drawing.Size(198, 20);
+            this.lblCustomSub2.TabIndex = 32;
+            this.lblCustomSub2.Text = "Select a Subfaction Trait:";
+            // 
+            // lblCustomSub1
+            // 
+            this.lblCustomSub1.AutoSize = true;
+            this.lblCustomSub1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomSub1.Location = new System.Drawing.Point(38, 34);
+            this.lblCustomSub1.Name = "lblCustomSub1";
+            this.lblCustomSub1.Size = new System.Drawing.Size(198, 20);
+            this.lblCustomSub1.TabIndex = 31;
+            this.lblCustomSub1.Text = "Select a Subfaction Trait:";
+            // 
+            // cmbCustomSub1
+            // 
+            this.cmbCustomSub1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCustomSub1.FormattingEnabled = true;
+            this.cmbCustomSub1.Location = new System.Drawing.Point(242, 31);
+            this.cmbCustomSub1.Name = "cmbCustomSub1";
+            this.cmbCustomSub1.Size = new System.Drawing.Size(176, 28);
+            this.cmbCustomSub1.TabIndex = 29;
+            // 
+            // cmbCustomSub2
+            // 
+            this.cmbCustomSub2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCustomSub2.FormattingEnabled = true;
+            this.cmbCustomSub2.Location = new System.Drawing.Point(242, 65);
+            this.cmbCustomSub2.Name = "cmbCustomSub2";
+            this.cmbCustomSub2.Size = new System.Drawing.Size(176, 28);
+            this.cmbCustomSub2.TabIndex = 30;
+            // 
+            // lblOption5
+            // 
+            this.lblOption5.AutoSize = true;
+            this.lblOption5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOption5.Location = new System.Drawing.Point(801, 373);
+            this.lblOption5.Name = "lblOption5";
+            this.lblOption5.Size = new System.Drawing.Size(219, 20);
+            this.lblOption5.TabIndex = 84;
+            this.lblOption5.Text = "Select One of the Following:";
+            // 
+            // cmbOption5
+            // 
+            this.cmbOption5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbOption5.FormattingEnabled = true;
+            this.cmbOption5.Location = new System.Drawing.Point(844, 399);
+            this.cmbOption5.Name = "cmbOption5";
+            this.cmbOption5.Size = new System.Drawing.Size(176, 28);
+            this.cmbOption5.TabIndex = 85;
+            this.cmbOption5.SelectedIndexChanged += new System.EventHandler(this.cmbOption5_SelectedIndexChanged);
+            // 
+            // lblOption6
+            // 
+            this.lblOption6.AutoSize = true;
+            this.lblOption6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOption6.Location = new System.Drawing.Point(801, 443);
+            this.lblOption6.Name = "lblOption6";
+            this.lblOption6.Size = new System.Drawing.Size(219, 20);
+            this.lblOption6.TabIndex = 82;
+            this.lblOption6.Text = "Select One of the Following:";
+            // 
+            // cmbOption6
+            // 
+            this.cmbOption6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbOption6.FormattingEnabled = true;
+            this.cmbOption6.Location = new System.Drawing.Point(844, 469);
+            this.cmbOption6.Name = "cmbOption6";
+            this.cmbOption6.Size = new System.Drawing.Size(176, 28);
+            this.cmbOption6.TabIndex = 83;
+            this.cmbOption6.SelectedIndexChanged += new System.EventHandler(this.cmbOption6_SelectedIndexChanged);
             // 
             // lblUnitSize2
             // 
@@ -423,6 +507,108 @@
             this.lblnud5.Size = new System.Drawing.Size(151, 20);
             this.lblnud5.TabIndex = 74;
             this.lblnud5.Text = "Number of Models:";
+            // 
+            // gbUnitLeader
+            // 
+            this.gbUnitLeader.Controls.Add(this.gb_lblOption2);
+            this.gbUnitLeader.Controls.Add(this.gb_cmbOption2);
+            this.gbUnitLeader.Controls.Add(this.gb_cmbFactionupgrade);
+            this.gbUnitLeader.Controls.Add(this.gb_lblOption1);
+            this.gbUnitLeader.Controls.Add(this.gb_lblFactionupgrade);
+            this.gbUnitLeader.Controls.Add(this.cbLeaderOption2);
+            this.gbUnitLeader.Controls.Add(this.gb_cmbOption1);
+            this.gbUnitLeader.Controls.Add(this.cbLeaderOption1);
+            this.gbUnitLeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbUnitLeader.Location = new System.Drawing.Point(1125, 18);
+            this.gbUnitLeader.Name = "gbUnitLeader";
+            this.gbUnitLeader.Size = new System.Drawing.Size(408, 229);
+            this.gbUnitLeader.TabIndex = 60;
+            this.gbUnitLeader.TabStop = false;
+            this.gbUnitLeader.Text = "groupBox1";
+            // 
+            // gb_lblOption2
+            // 
+            this.gb_lblOption2.AutoSize = true;
+            this.gb_lblOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_lblOption2.Location = new System.Drawing.Point(7, 144);
+            this.gb_lblOption2.Name = "gb_lblOption2";
+            this.gb_lblOption2.Size = new System.Drawing.Size(219, 20);
+            this.gb_lblOption2.TabIndex = 67;
+            this.gb_lblOption2.Text = "Select One of the Following:";
+            // 
+            // gb_cmbOption2
+            // 
+            this.gb_cmbOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_cmbOption2.FormattingEnabled = true;
+            this.gb_cmbOption2.Location = new System.Drawing.Point(232, 141);
+            this.gb_cmbOption2.Name = "gb_cmbOption2";
+            this.gb_cmbOption2.Size = new System.Drawing.Size(176, 28);
+            this.gb_cmbOption2.TabIndex = 68;
+            this.gb_cmbOption2.SelectedIndexChanged += new System.EventHandler(this.gb_cmbOption2_SelectedIndexChanged);
+            // 
+            // gb_cmbFactionupgrade
+            // 
+            this.gb_cmbFactionupgrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_cmbFactionupgrade.FormattingEnabled = true;
+            this.gb_cmbFactionupgrade.Location = new System.Drawing.Point(43, 187);
+            this.gb_cmbFactionupgrade.Name = "gb_cmbFactionupgrade";
+            this.gb_cmbFactionupgrade.Size = new System.Drawing.Size(176, 28);
+            this.gb_cmbFactionupgrade.TabIndex = 66;
+            this.gb_cmbFactionupgrade.SelectedIndexChanged += new System.EventHandler(this.gb_cmbFactionupgrade_SelectedIndexChanged);
+            // 
+            // gb_lblOption1
+            // 
+            this.gb_lblOption1.AutoSize = true;
+            this.gb_lblOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_lblOption1.Location = new System.Drawing.Point(7, 110);
+            this.gb_lblOption1.Name = "gb_lblOption1";
+            this.gb_lblOption1.Size = new System.Drawing.Size(219, 20);
+            this.gb_lblOption1.TabIndex = 65;
+            this.gb_lblOption1.Text = "Select One of the Following:";
+            // 
+            // gb_lblFactionupgrade
+            // 
+            this.gb_lblFactionupgrade.AutoSize = true;
+            this.gb_lblFactionupgrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_lblFactionupgrade.Location = new System.Drawing.Point(39, 164);
+            this.gb_lblFactionupgrade.Name = "gb_lblFactionupgrade";
+            this.gb_lblFactionupgrade.Size = new System.Drawing.Size(145, 20);
+            this.gb_lblFactionupgrade.TabIndex = 65;
+            this.gb_lblFactionupgrade.Text = "Deadly Pathogens";
+            // 
+            // cbLeaderOption2
+            // 
+            this.cbLeaderOption2.AutoSize = true;
+            this.cbLeaderOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLeaderOption2.Location = new System.Drawing.Point(25, 63);
+            this.cbLeaderOption2.Name = "cbLeaderOption2";
+            this.cbLeaderOption2.Size = new System.Drawing.Size(122, 24);
+            this.cbLeaderOption2.TabIndex = 1;
+            this.cbLeaderOption2.Text = "checkBox18";
+            this.cbLeaderOption2.UseVisualStyleBackColor = true;
+            this.cbLeaderOption2.CheckedChanged += new System.EventHandler(this.cbLeaderOption2_CheckedChanged);
+            // 
+            // gb_cmbOption1
+            // 
+            this.gb_cmbOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_cmbOption1.FormattingEnabled = true;
+            this.gb_cmbOption1.Location = new System.Drawing.Point(232, 107);
+            this.gb_cmbOption1.Name = "gb_cmbOption1";
+            this.gb_cmbOption1.Size = new System.Drawing.Size(176, 28);
+            this.gb_cmbOption1.TabIndex = 66;
+            this.gb_cmbOption1.SelectedIndexChanged += new System.EventHandler(this.gb_cmbOption1_SelectedIndexChanged);
+            // 
+            // cbLeaderOption1
+            // 
+            this.cbLeaderOption1.AutoSize = true;
+            this.cbLeaderOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLeaderOption1.Location = new System.Drawing.Point(25, 33);
+            this.cbLeaderOption1.Name = "cbLeaderOption1";
+            this.cbLeaderOption1.Size = new System.Drawing.Size(122, 24);
+            this.cbLeaderOption1.TabIndex = 0;
+            this.cbLeaderOption1.Text = "checkBox17";
+            this.cbLeaderOption1.UseVisualStyleBackColor = true;
+            this.cbLeaderOption1.CheckedChanged += new System.EventHandler(this.cbLeaderOption1_CheckedChanged);
             // 
             // nudOption6
             // 
@@ -551,108 +737,6 @@
             this.nudOption1.Size = new System.Drawing.Size(120, 26);
             this.nudOption1.TabIndex = 62;
             this.nudOption1.ValueChanged += new System.EventHandler(this.nudOption1_ValueChanged);
-            // 
-            // gbUnitLeader
-            // 
-            this.gbUnitLeader.Controls.Add(this.gb_lblOption2);
-            this.gbUnitLeader.Controls.Add(this.gb_cmbOption2);
-            this.gbUnitLeader.Controls.Add(this.gb_cmbFactionupgrade);
-            this.gbUnitLeader.Controls.Add(this.gb_lblOption1);
-            this.gbUnitLeader.Controls.Add(this.gb_lblFactionupgrade);
-            this.gbUnitLeader.Controls.Add(this.cbLeaderOption2);
-            this.gbUnitLeader.Controls.Add(this.gb_cmbOption1);
-            this.gbUnitLeader.Controls.Add(this.cbLeaderOption1);
-            this.gbUnitLeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbUnitLeader.Location = new System.Drawing.Point(24, 431);
-            this.gbUnitLeader.Name = "gbUnitLeader";
-            this.gbUnitLeader.Size = new System.Drawing.Size(408, 229);
-            this.gbUnitLeader.TabIndex = 60;
-            this.gbUnitLeader.TabStop = false;
-            this.gbUnitLeader.Text = "groupBox1";
-            // 
-            // gb_lblOption2
-            // 
-            this.gb_lblOption2.AutoSize = true;
-            this.gb_lblOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_lblOption2.Location = new System.Drawing.Point(7, 144);
-            this.gb_lblOption2.Name = "gb_lblOption2";
-            this.gb_lblOption2.Size = new System.Drawing.Size(219, 20);
-            this.gb_lblOption2.TabIndex = 67;
-            this.gb_lblOption2.Text = "Select One of the Following:";
-            // 
-            // gb_cmbOption2
-            // 
-            this.gb_cmbOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_cmbOption2.FormattingEnabled = true;
-            this.gb_cmbOption2.Location = new System.Drawing.Point(232, 141);
-            this.gb_cmbOption2.Name = "gb_cmbOption2";
-            this.gb_cmbOption2.Size = new System.Drawing.Size(176, 28);
-            this.gb_cmbOption2.TabIndex = 68;
-            this.gb_cmbOption2.SelectedIndexChanged += new System.EventHandler(this.gb_cmbOption2_SelectedIndexChanged);
-            // 
-            // gb_cmbFactionupgrade
-            // 
-            this.gb_cmbFactionupgrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_cmbFactionupgrade.FormattingEnabled = true;
-            this.gb_cmbFactionupgrade.Location = new System.Drawing.Point(43, 187);
-            this.gb_cmbFactionupgrade.Name = "gb_cmbFactionupgrade";
-            this.gb_cmbFactionupgrade.Size = new System.Drawing.Size(176, 28);
-            this.gb_cmbFactionupgrade.TabIndex = 66;
-            this.gb_cmbFactionupgrade.SelectedIndexChanged += new System.EventHandler(this.gb_cmbFactionupgrade_SelectedIndexChanged);
-            // 
-            // gb_lblOption1
-            // 
-            this.gb_lblOption1.AutoSize = true;
-            this.gb_lblOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_lblOption1.Location = new System.Drawing.Point(7, 110);
-            this.gb_lblOption1.Name = "gb_lblOption1";
-            this.gb_lblOption1.Size = new System.Drawing.Size(219, 20);
-            this.gb_lblOption1.TabIndex = 65;
-            this.gb_lblOption1.Text = "Select One of the Following:";
-            // 
-            // gb_lblFactionupgrade
-            // 
-            this.gb_lblFactionupgrade.AutoSize = true;
-            this.gb_lblFactionupgrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_lblFactionupgrade.Location = new System.Drawing.Point(39, 164);
-            this.gb_lblFactionupgrade.Name = "gb_lblFactionupgrade";
-            this.gb_lblFactionupgrade.Size = new System.Drawing.Size(145, 20);
-            this.gb_lblFactionupgrade.TabIndex = 65;
-            this.gb_lblFactionupgrade.Text = "Deadly Pathogens";
-            // 
-            // cbLeaderOption2
-            // 
-            this.cbLeaderOption2.AutoSize = true;
-            this.cbLeaderOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbLeaderOption2.Location = new System.Drawing.Point(25, 63);
-            this.cbLeaderOption2.Name = "cbLeaderOption2";
-            this.cbLeaderOption2.Size = new System.Drawing.Size(122, 24);
-            this.cbLeaderOption2.TabIndex = 1;
-            this.cbLeaderOption2.Text = "checkBox18";
-            this.cbLeaderOption2.UseVisualStyleBackColor = true;
-            this.cbLeaderOption2.CheckedChanged += new System.EventHandler(this.cbLeaderOption2_CheckedChanged);
-            // 
-            // gb_cmbOption1
-            // 
-            this.gb_cmbOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_cmbOption1.FormattingEnabled = true;
-            this.gb_cmbOption1.Location = new System.Drawing.Point(232, 107);
-            this.gb_cmbOption1.Name = "gb_cmbOption1";
-            this.gb_cmbOption1.Size = new System.Drawing.Size(176, 28);
-            this.gb_cmbOption1.TabIndex = 66;
-            this.gb_cmbOption1.SelectedIndexChanged += new System.EventHandler(this.gb_cmbOption1_SelectedIndexChanged);
-            // 
-            // cbLeaderOption1
-            // 
-            this.cbLeaderOption1.AutoSize = true;
-            this.cbLeaderOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbLeaderOption1.Location = new System.Drawing.Point(25, 33);
-            this.cbLeaderOption1.Name = "cbLeaderOption1";
-            this.cbLeaderOption1.Size = new System.Drawing.Size(122, 24);
-            this.cbLeaderOption1.TabIndex = 0;
-            this.cbLeaderOption1.Text = "checkBox17";
-            this.cbLeaderOption1.UseVisualStyleBackColor = true;
-            this.cbLeaderOption1.CheckedChanged += new System.EventHandler(this.cbLeaderOption1_CheckedChanged);
             // 
             // lblOption4
             // 
@@ -874,64 +958,12 @@
             // 
             // panelSubFaction
             // 
-            this.panelSubFaction.Controls.Add(this.gbCustomSubfaction);
             this.panelSubFaction.Controls.Add(this.lblSubfaction);
             this.panelSubFaction.Controls.Add(this.cmbSubFaction);
-            this.panelSubFaction.Location = new System.Drawing.Point(-3, 0);
+            this.panelSubFaction.Location = new System.Drawing.Point(242, 96);
             this.panelSubFaction.Name = "panelSubFaction";
-            this.panelSubFaction.Size = new System.Drawing.Size(596, 188);
+            this.panelSubFaction.Size = new System.Drawing.Size(632, 188);
             this.panelSubFaction.TabIndex = 16;
-            // 
-            // gbCustomSubfaction
-            // 
-            this.gbCustomSubfaction.Controls.Add(this.lblCustomSub2);
-            this.gbCustomSubfaction.Controls.Add(this.lblCustomSub1);
-            this.gbCustomSubfaction.Controls.Add(this.cmbCustomSub1);
-            this.gbCustomSubfaction.Controls.Add(this.cmbCustomSub2);
-            this.gbCustomSubfaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCustomSubfaction.Location = new System.Drawing.Point(6, 62);
-            this.gbCustomSubfaction.Name = "gbCustomSubfaction";
-            this.gbCustomSubfaction.Size = new System.Drawing.Size(472, 108);
-            this.gbCustomSubfaction.TabIndex = 77;
-            this.gbCustomSubfaction.TabStop = false;
-            // 
-            // lblCustomSub2
-            // 
-            this.lblCustomSub2.AutoSize = true;
-            this.lblCustomSub2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomSub2.Location = new System.Drawing.Point(38, 68);
-            this.lblCustomSub2.Name = "lblCustomSub2";
-            this.lblCustomSub2.Size = new System.Drawing.Size(198, 20);
-            this.lblCustomSub2.TabIndex = 32;
-            this.lblCustomSub2.Text = "Select a Subfaction Trait:";
-            // 
-            // lblCustomSub1
-            // 
-            this.lblCustomSub1.AutoSize = true;
-            this.lblCustomSub1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomSub1.Location = new System.Drawing.Point(38, 34);
-            this.lblCustomSub1.Name = "lblCustomSub1";
-            this.lblCustomSub1.Size = new System.Drawing.Size(198, 20);
-            this.lblCustomSub1.TabIndex = 31;
-            this.lblCustomSub1.Text = "Select a Subfaction Trait:";
-            // 
-            // cmbCustomSub1
-            // 
-            this.cmbCustomSub1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCustomSub1.FormattingEnabled = true;
-            this.cmbCustomSub1.Location = new System.Drawing.Point(242, 31);
-            this.cmbCustomSub1.Name = "cmbCustomSub1";
-            this.cmbCustomSub1.Size = new System.Drawing.Size(176, 28);
-            this.cmbCustomSub1.TabIndex = 29;
-            // 
-            // cmbCustomSub2
-            // 
-            this.cmbCustomSub2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCustomSub2.FormattingEnabled = true;
-            this.cmbCustomSub2.Location = new System.Drawing.Point(242, 65);
-            this.cmbCustomSub2.Name = "cmbCustomSub2";
-            this.cmbCustomSub2.Size = new System.Drawing.Size(176, 28);
-            this.cmbCustomSub2.TabIndex = 30;
             // 
             // lblSubfaction
             // 
@@ -956,7 +988,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(682, 483);
+            this.btnSave.Location = new System.Drawing.Point(755, 542);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(119, 55);
             this.btnSave.TabIndex = 16;
@@ -964,93 +996,86 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 28);
+            this.menuStrip1.TabIndex = 83;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(99, 24);
+            this.toolStripMenuItem1.Text = "New Roster";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
             // lblErrors
             // 
             this.lblErrors.AutoSize = true;
             this.lblErrors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrors.Location = new System.Drawing.Point(667, 460);
+            this.lblErrors.Location = new System.Drawing.Point(719, 519);
             this.lblErrors.Name = "lblErrors";
             this.lblErrors.Size = new System.Drawing.Size(155, 20);
             this.lblErrors.TabIndex = 82;
             this.lblErrors.Text = "Roster has _ errors";
             // 
-            // lblOption6
+            // lblEditingUnit
             // 
-            this.lblOption6.AutoSize = true;
-            this.lblOption6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOption6.Location = new System.Drawing.Point(801, 443);
-            this.lblOption6.Name = "lblOption6";
-            this.lblOption6.Size = new System.Drawing.Size(219, 20);
-            this.lblOption6.TabIndex = 82;
-            this.lblOption6.Text = "Select One of the Following:";
-            // 
-            // cmbOption6
-            // 
-            this.cmbOption6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbOption6.FormattingEnabled = true;
-            this.cmbOption6.Location = new System.Drawing.Point(844, 469);
-            this.cmbOption6.Name = "cmbOption6";
-            this.cmbOption6.Size = new System.Drawing.Size(176, 28);
-            this.cmbOption6.TabIndex = 83;
-            this.cmbOption6.SelectedIndexChanged += new System.EventHandler(this.cmbOption6_SelectedIndexChanged);
-            // 
-            // lblOption5
-            // 
-            this.lblOption5.AutoSize = true;
-            this.lblOption5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOption5.Location = new System.Drawing.Point(801, 373);
-            this.lblOption5.Name = "lblOption5";
-            this.lblOption5.Size = new System.Drawing.Size(219, 20);
-            this.lblOption5.TabIndex = 84;
-            this.lblOption5.Text = "Select One of the Following:";
-            // 
-            // cmbOption5
-            // 
-            this.cmbOption5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbOption5.FormattingEnabled = true;
-            this.cmbOption5.Location = new System.Drawing.Point(844, 399);
-            this.cmbOption5.Name = "cmbOption5";
-            this.cmbOption5.Size = new System.Drawing.Size(176, 28);
-            this.cmbOption5.TabIndex = 85;
-            this.cmbOption5.SelectedIndexChanged += new System.EventHandler(this.cmbOption5_SelectedIndexChanged);
+            this.lblEditingUnit.AutoSize = true;
+            this.lblEditingUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditingUnit.Location = new System.Drawing.Point(325, 93);
+            this.lblEditingUnit.Name = "lblEditingUnit";
+            this.lblEditingUnit.Size = new System.Drawing.Size(90, 20);
+            this.lblEditingUnit.TabIndex = 10;
+            this.lblEditingUnit.Text = "EditingUnit";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1735, 767);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.lblCurrentPoints);
             this.Controls.Add(this.lblEditingUnit);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.btnAddToRoster);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblCurrentPoints);
             this.Controls.Add(this.lbRoster);
             this.Controls.Add(this.lbUnits);
-            this.Controls.Add(this.btnAddToRoster);
-            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.lblPoints);
-            this.Controls.Add(this.MenuPanel);
             this.Controls.Add(this.lblErrors);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.MenuPanel);
+            this.Controls.Add(this.panelSubFaction);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.MenuPanel.ResumeLayout(false);
             this.MenuPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.gbCustomSubfaction.ResumeLayout(false);
+            this.gbCustomSubfaction.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUnitSize2)).EndInit();
+            this.gbUnitLeader.ResumeLayout(false);
+            this.gbUnitLeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOption6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOption5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOption4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOption3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOption2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOption1)).EndInit();
-            this.gbUnitLeader.ResumeLayout(false);
-            this.gbUnitLeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUnitSize)).EndInit();
             this.panelSubFaction.ResumeLayout(false);
             this.panelSubFaction.PerformLayout();
-            this.gbCustomSubfaction.ResumeLayout(false);
-            this.gbCustomSubfaction.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1089,7 +1114,6 @@
         private System.Windows.Forms.Label lblFactionupgrade;
         private System.Windows.Forms.ComboBox cmbRelic;
         private System.Windows.Forms.Label lblRelic;
-        private System.Windows.Forms.Label lblEditingUnit;
         private System.Windows.Forms.Panel panelSubFaction;
         private System.Windows.Forms.Label lblSubfaction;
         private System.Windows.Forms.ComboBox cmbSubFaction;
@@ -1134,12 +1158,15 @@
         private System.Windows.Forms.ComboBox gb_cmbOption2;
         private System.Windows.Forms.Label lblUnitSize2;
         private System.Windows.Forms.NumericUpDown nudUnitSize2;
-        private System.Windows.Forms.Label lblErrors;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label lblOption5;
         private System.Windows.Forms.ComboBox cmbOption5;
         private System.Windows.Forms.Label lblOption6;
         private System.Windows.Forms.ComboBox cmbOption6;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.Label lblErrors;
+        private System.Windows.Forms.Label lblEditingUnit;
     }
 }
 
