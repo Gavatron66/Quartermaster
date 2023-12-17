@@ -23,6 +23,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "VEHICLE", "TRANSPORT", "CROSSFIRE", "GOLIATH ROCKGRINDER"
             });
+            role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -98,11 +99,6 @@ namespace Roster_Builder.Genestealer_Cults
             Points = DEFAULT_POINTS;
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
-
-            if (Weapons.Contains("Cache of Demolition Charges"))
-            {
-                Points += 5;
-            }
         }
 
         public override string ToString()

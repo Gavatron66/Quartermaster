@@ -16,7 +16,7 @@ namespace Roster_Builder.Genestealer_Cults
 
         public AtalanJackals()
         {
-            DEFAULT_POINTS = 12;
+            DEFAULT_POINTS = 15;
             UnitSize = 4;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "NL3k1m";
@@ -24,7 +24,7 @@ namespace Roster_Builder.Genestealer_Cults
             for(int i = 0; i < UnitSize; i++)
             {
                 Weapons.Add(""); // Atalan Power Weapon
-                Weapons.Add(""); // Demolition Charge
+                Weapons.Add(""); // Demolition Charge (+5 pts)
                 Weapons.Add(""); // Grenade Launcher
             }
 
@@ -33,6 +33,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "BIKER", "CORE", "CROSSFIRE", "ATALAN", "JACKALS"
             });
+            role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()
@@ -66,7 +67,7 @@ namespace Roster_Builder.Genestealer_Cults
             panel.Controls["lblUnitSize2"].Visible = true;
             nudUnitSize2.Visible = true;
 
-            panel.Controls["lblUnitSize2"].Text = "Number of Wolfquads: ";
+            panel.Controls["lblUnitSize2"].Text = "Number of Wolfquads (+30 pts/model): ";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 4;
@@ -91,7 +92,7 @@ namespace Roster_Builder.Genestealer_Cults
             }
 
             cbOption1.Text = "Atalan Power Weapon";
-            cbOption2.Text = "Demolition Charge";
+            cbOption2.Text = "Demolition Charge (+5 pts)";
             cbOption3.Text = "Grenade Launcher";
 
             cmbOption1.Items.Clear();
@@ -99,7 +100,7 @@ namespace Roster_Builder.Genestealer_Cults
             {
                 "Atalan Incinerator",
                 "Heavy Stubber",
-                "Mining Laser"
+                "Mining Laser (+5 pts)"
             });
 
             cmbFactionupgrade.Visible = true;
@@ -292,19 +293,11 @@ namespace Roster_Builder.Genestealer_Cults
 
             Points = DEFAULT_POINTS * UnitSize;
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
-            Points += wolfquads * 24;
+            Points += wolfquads * 30;
 
             foreach (var item in Weapons)
             {
-                if(item == "Atalan Power Weapon")
-                {
-                    Points += 3;
-                }
-                if (item == "Demolition Charge")
-                {
-                    Points += 5;
-                }
-                if (item == "Grenade Launcher")
+                if (item == "Demolition Charge (+5 pts)")
                 {
                     Points += 5;
                 }
@@ -312,14 +305,9 @@ namespace Roster_Builder.Genestealer_Cults
 
             foreach (var item in wolfquadWeapons)
             {
-                if(item == "Atalan Incinerator")
+                if(item == "Mining Laser (+5 pts)")
                 {
-                    Points += 10;
-                }
-
-                if(item == "Mining Laser")
-                {
-                    Points += 15;
+                    Points += 5;
                 }
             }
         }

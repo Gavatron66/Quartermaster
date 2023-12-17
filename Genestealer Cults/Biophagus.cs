@@ -22,6 +22,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "CHARACTER", "BIOPHAGUS"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -170,11 +171,6 @@ namespace Roster_Builder.Genestealer_Cults
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Alchemicus Familiar"))
-            {
-                Points += 10;
-            }
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }

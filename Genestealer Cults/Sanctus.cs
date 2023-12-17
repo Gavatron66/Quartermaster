@@ -21,6 +21,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "CHARACTER", "SANCTUS"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()

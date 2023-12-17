@@ -12,7 +12,7 @@ namespace Roster_Builder.Adeptus_Custodes
     {
         public TrajannValoris()
         {
-            DEFAULT_POINTS = 170;
+            DEFAULT_POINTS = 200;
             TemplateCode = "nc";
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
@@ -21,6 +21,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "INFANTRY", "CHARACTER", "CAPTAIN-GENERAL", "TRAJANN VALORIS"
             });
             WarlordTrait = "Champion of the Imperium; Master of Martial Strategy";
+            role = "HQ";
         }
         public override Datasheets CreateUnit()
         {

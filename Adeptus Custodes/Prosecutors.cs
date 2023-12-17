@@ -12,7 +12,7 @@ namespace Roster_Builder.Adeptus_Custodes
         public Prosecutors()
         {
             UnitSize = 5;
-            DEFAULT_POINTS = 12;
+            DEFAULT_POINTS = 11;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "N";
             Keywords.AddRange(new string[]
@@ -20,6 +20,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ANATHEMA PSYKANA",
                 "INFANTRY", "CORE", "PROSECUTORS"
             });
+            role = "Troops";
         }
 
         public override Datasheets CreateUnit()

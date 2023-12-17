@@ -12,7 +12,7 @@ namespace Roster_Builder.Adeptus_Custodes
     {
         public AllarusShieldCaptain()
         {
-            DEFAULT_POINTS = 125;
+            DEFAULT_POINTS = 115;
             TemplateCode = "1m1k_c";
             Points = DEFAULT_POINTS;
             Weapons.Add("Guardian Spear");
@@ -22,6 +22,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "INFANTRY", "CHARACTER", "TELEPORT HOMER", "TERMINATOR", "ALLARUS", "SHIELD-CAPTAIN"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -219,11 +220,6 @@ namespace Roster_Builder.Adeptus_Custodes
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Misericordia"))
-            {
-                Points += 5;
-            }
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }

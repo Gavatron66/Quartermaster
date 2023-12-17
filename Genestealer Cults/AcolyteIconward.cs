@@ -12,7 +12,7 @@ namespace Roster_Builder.Genestealer_Cults
     {
         public AcolyteIconward()
         {
-            DEFAULT_POINTS = 75;
+            DEFAULT_POINTS = 65;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
@@ -20,6 +20,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "CHARACTER", "ACOLYTE ICONWARD"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()

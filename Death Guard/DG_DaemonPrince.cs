@@ -15,9 +15,9 @@ namespace Roster_Builder.Death_Guard
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m2k_pc";
-            Weapons.Add("Hellforged Sword");
-            Weapons.Add(""); //Plague Spewer
-            Weapons.Add(""); //Foetid Wings
+            Weapons.Add("Hellforged Sword (+10 pts)");
+            Weapons.Add(""); //Plague Spewer (+5 pts)
+            Weapons.Add(""); //Foetid Wings (+35 pts)
             Keywords.AddRange(new string[]
             {
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAUGE COMPANY>",
@@ -25,6 +25,7 @@ namespace Roster_Builder.Death_Guard
                     "DAEMON PRINCE"
             });
             PsykerPowers = new string[1] { string.Empty };
+            role = "HQ";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -53,13 +54,13 @@ namespace Roster_Builder.Death_Guard
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Hellforged Sword", 
-                "Daemonic Axe", 
+                "Hellforged Sword (+10 pts)", 
+                "Daemonic Axe (+10 pts)", 
                 "Malefic Talons"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            check1.Text = "Plague Spewer";
+            check1.Text = "Plague Spewer (+5 pts)";
             if (Weapons[1] != string.Empty)
             {
                 check1.Checked = true;
@@ -69,7 +70,7 @@ namespace Roster_Builder.Death_Guard
                 check1.Checked = false;
             }
 
-            check2.Text = "Foetid Wings";
+            check2.Text = "Foetid Wings (+35 pts)";
             if (Weapons[2] != string.Empty)
             {
                 check2.Checked = true;
@@ -268,7 +269,7 @@ namespace Roster_Builder.Death_Guard
                 cb2.Enabled = false;
                 cb2.Checked = false;
                 Weapons[2] = string.Empty;
-                cmb.SelectedItem = "Hellforged Sword";
+                cmb.SelectedItem = "Hellforged Sword (+10 pts)";
             }
             else if (code == 21)
             {
@@ -277,17 +278,17 @@ namespace Roster_Builder.Death_Guard
                 Weapons[1] = string.Empty;
             }
 
-            if (Weapons.Contains("Daemonic Axe") || Weapons.Contains("Hellforged Sword"))
+            if (Weapons.Contains("Daemonic Axe (+10 pts)") || Weapons.Contains("Hellforged Sword (+10 pts)"))
             {
                 Points += 10;
             }
 
-            if (Weapons.Contains("Plague Spewer"))
+            if (Weapons.Contains("Plague Spewer (+5 pts)"))
             {
                 Points += 5;
             }
 
-            if (Weapons.Contains("Foetid Wings"))
+            if (Weapons.Contains("Foetid Wings (+35 pts)"))
             {
                 Points += 35;
             }

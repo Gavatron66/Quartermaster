@@ -13,7 +13,7 @@ namespace Roster_Builder.Death_Guard
 
         public PlagueMarines()
         {
-            DEFAULT_POINTS = 21;
+            DEFAULT_POINTS = 19;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "NL2m3k";
@@ -31,6 +31,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "INFANTRY", "CORE", "BUBONIC ASTARTES", "PLAGUE MARINES"
             });
+            role = "Troops";
         }
 
         public override Datasheets CreateUnit()
@@ -221,26 +222,6 @@ namespace Roster_Builder.Death_Guard
             }
 
             Points = UnitSize * DEFAULT_POINTS;
-
-            for(int i = 0; i < Weapons.Count; i++)
-            {
-                if (Weapons[i] == "Bubotic Axe")
-                {
-                    Points += 3;
-                }
-
-                if (Weapons[i] == "Mace of Contagion" || Weapons[i] == "Plague Belcher" || Weapons[i] == "Plasma Pistol")
-                {
-                    Points += 5;
-                }
-
-                if (Weapons[i] == "Blight Launcher" || Weapons[i] == "Flail of Corruption" || Weapons[i] == "Great Plague Cleaver" ||
-                    Weapons[i] == "Icon of Despair" || Weapons[i] == "Meltagun" || Weapons[i] == "Plague Spewer" || 
-                    Weapons[i] == "Plasma Gun" || Weapons[i] == "Power Fist" || Weapons[i] == "Sigil of Decay")
-                {
-                    Points += 10;
-                }
-            }
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }

@@ -20,6 +20,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "BIKER", "CHARACTER", "CROSSFIRE", "ATALAN", "JACKAL ALPHUS"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()

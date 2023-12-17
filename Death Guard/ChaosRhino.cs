@@ -22,6 +22,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "VEHICLE", "BUBONIC ASTARTES", "TRANSPORT", "SMOKESCREEN", "CHAOS RHINO"
             });
+            role = "Transport";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -71,21 +72,6 @@ namespace Roster_Builder.Death_Guard
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Combi-bolter"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Havoc Launcher"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Combi-flamer") || Weapons.Contains("Combi-melta") || Weapons.Contains("Combi-plasma"))
-            {
-                Points += 10;
-            }
         }
 
         public override string ToString()

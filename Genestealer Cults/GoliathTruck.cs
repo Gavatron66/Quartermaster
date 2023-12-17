@@ -23,6 +23,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "VEHICLE", "TRANSPORT", "CROSSFIRE", "GOLIATH TRUCK"
             });
+            role = "Transport";
         }
 
         public override Datasheets CreateUnit()
@@ -85,11 +86,6 @@ namespace Roster_Builder.Adeptus_Custodes
             Points = DEFAULT_POINTS;
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
-
-            if (Weapons.Contains("Cache of Demolition Charges"))
-            {
-                Points += 5;
-            }
         }
 
         public override string ToString()

@@ -12,7 +12,7 @@ namespace Roster_Builder.Adeptus_Custodes
     {
         public VenerableLandRaider()
         {
-            DEFAULT_POINTS = 285;
+            DEFAULT_POINTS = 265;
             Points = DEFAULT_POINTS;
             UnitSize = 1;
             TemplateCode = "2k";
@@ -23,6 +23,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "VEHICLE", "TRANSPORT", "MACHINE SPIRIT", "SMOKESCREEN", "VENERABLE LAND RAIDER"
             });
+            role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -81,16 +82,6 @@ namespace Roster_Builder.Adeptus_Custodes
             }
 
             Points = DEFAULT_POINTS;
-
-            if(Weapons.Contains("Hunter-killer Missile"))
-            {
-                Points += 5;
-            }
-
-            if(Weapons.Contains("Storm Bolter"))
-            {
-                Points += 5;
-            }
         }
 
         public override string ToString()

@@ -13,7 +13,7 @@ namespace Roster_Builder.Genestealer_Cults
     {
         public Aberrants()
         {
-            DEFAULT_POINTS = 30;
+            DEFAULT_POINTS = 27;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "NS(1m)";
@@ -23,6 +23,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "ABERRANTS"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()

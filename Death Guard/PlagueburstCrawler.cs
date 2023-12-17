@@ -11,17 +11,18 @@ namespace Roster_Builder.Death_Guard
     {
         public PlagueburstCrawler()
         {
-            DEFAULT_POINTS = 165;
+            DEFAULT_POINTS = 135;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "2m";
-            Weapons.Add("Two Entropy Cannons");
+            Weapons.Add("Two Entropy Cannons (+10 pts)");
             Weapons.Add("Heavy Slugger");
             Keywords.AddRange(new string[]
             {
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "VEHICLE", "DAEMON", "DAEMON ENGINE", "PLAGUEBURST CRAWLER"
             });
+            role = "Heavy Support";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -34,7 +35,7 @@ namespace Roster_Builder.Death_Guard
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Two Entropy Cannons",
+                "Two Entropy Cannons (+10 pts)",
                 "Two Plaguespitters"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
@@ -63,7 +64,7 @@ namespace Roster_Builder.Death_Guard
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Two Entropy Cannons"))
+            if (Weapons.Contains("Two Entropy Cannons (+10 pts)"))
             {
                 Points += 10;
             }

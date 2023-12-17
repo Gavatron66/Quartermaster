@@ -23,6 +23,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "INFANTRY", "CHARACTER", "PSYKER", "GENESTEALER", "PATRIARCH"
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -213,11 +214,6 @@ namespace Roster_Builder.Genestealer_Cults
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Psychic Familiar"))
-            {
-                Points += 10;
-            }
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }

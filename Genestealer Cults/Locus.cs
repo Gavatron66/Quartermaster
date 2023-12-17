@@ -11,7 +11,7 @@ namespace Roster_Builder.Genestealer_Cults
     {
         public Locus()
         {
-            DEFAULT_POINTS = 50;
+            DEFAULT_POINTS = 45;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "CHARACTER", "LOCUS"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()

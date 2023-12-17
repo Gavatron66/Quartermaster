@@ -23,6 +23,7 @@ namespace Roster_Builder.Death_Guard
                 "INFANTRY", "CHARACTER", "PSYKER", "BUBONIC ASTARTES", "TERMINATOR", "SORCERER"
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
+            role = "HQ";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -248,21 +249,6 @@ namespace Roster_Builder.Death_Guard
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Chainfist"))
-            {
-                Points += 15;
-            }
-
-            if (Weapons.Contains("Combi-melta"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Power Fist"))
-            {
-                Points += 10;
-            }
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }

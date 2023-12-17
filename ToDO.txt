@@ -35,3 +35,6 @@ Prohibit selecting the same custom faction trait
 
 Space Marines
 	Intercessor Sergeant has some wierd options, will have to go back and add restrictions where nessecary
+	
+Hybrid Metamorphs needs to be visited when the location and sizing rework is ready
+	Atalan Jackals

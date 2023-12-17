@@ -12,9 +12,9 @@ namespace Roster_Builder.Death_Guard
     {
         public DG_Cultists()
         {
-            DEFAULT_POINTS = 50;
+            DEFAULT_POINTS = 5;
             UnitSize = 10;
-            Points = DEFAULT_POINTS;
+            Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "cultist";
             Weapons.Add("9"); //Autoguns
             Weapons.Add("0"); //Autopistols and Brutal Assault Weapons
@@ -26,6 +26,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "DEATH GUARD",
                 "INFANTRY", "PLAGUE FOLLOWERS", "CULTISTS"
             });
+            role = "Troops";
         }
         public override Datasheets CreateUnit()
         {
@@ -217,8 +218,8 @@ namespace Roster_Builder.Death_Guard
             nudOption3.Maximum = nudUnitSize.Value / 10;
             nudOption4.Maximum = nudUnitSize.Value / 10;
 
-            Points = (Decimal.ToInt16(nudUnitSize.Value) * 5) + (Decimal.ToInt16(nudOption3.Value) * 5)
-                + (Decimal.ToInt16(nudOption4.Value) * 5) + repo.GetFactionUpgradePoints(Factionupgrade);
+            Points = DEFAULT_POINTS * UnitSize;
+            Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }
 
         public override string ToString()

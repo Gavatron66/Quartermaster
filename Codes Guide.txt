@@ -37,6 +37,15 @@
 	72 - cbStratagem2 (For Relic Requisition only)
 	73 - cbStratagem3
 	
+Roles: HQ
+	   Troops
+	   Elites
+	   Fast Attack
+	   Heavy Support
+	   Transport
+	   Flyer
+	   Lord of War
+	   Fortification
 ----------------------
 	Template Codes
 ----------------------

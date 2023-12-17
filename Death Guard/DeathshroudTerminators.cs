@@ -22,6 +22,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "INFANTRY", "CORE", "BUBONIC ASTARTES", "TERMINATOR", "DEATHSHROUD TERMINATORS"
             });
+            role = "Elites";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -111,16 +112,6 @@ namespace Roster_Builder.Death_Guard
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            if (Weapons.Contains("Additional Plaguespurt Gauntlet"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Chimes of Contagion"))
-            {
-                Points += 15;
-            }
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }

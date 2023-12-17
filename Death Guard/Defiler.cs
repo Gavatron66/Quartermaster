@@ -11,7 +11,7 @@ namespace Roster_Builder.Death_Guard
     {
         public Defiler()
         {
-            DEFAULT_POINTS = 165;
+            DEFAULT_POINTS = 175;
             Points = DEFAULT_POINTS;
             TemplateCode = "3m";
             Weapons.Add("Twin Heavy Flamer");
@@ -22,6 +22,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "VEHICLE", "DAEMON", "DAEMON ENGINE", "SMOKESCREEN", "DEFILER"
             });
+            role = "Heavy Support";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -77,36 +78,6 @@ namespace Roster_Builder.Death_Guard
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Defiler Scourge"))
-            {
-                Points += 10;
-            }
-
-            if (Weapons.Contains("Twin Heavy Flamer"))
-            {
-                Points += 15;
-            }
-
-            if (Weapons.Contains("Twin Heavy Bolter"))
-            {
-                Points += 10;
-            }
-
-            if (Weapons.Contains("Twin Lascannon"))
-            {
-                Points += 20;
-            }
-
-            if (Weapons.Contains("Combi-bolter"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Combi-flamer") || Weapons.Contains("Combi-melta") || Weapons.Contains("Combi-plasma"))
-            {
-                Points += 10;
-            }
         }
 
         public override string ToString()

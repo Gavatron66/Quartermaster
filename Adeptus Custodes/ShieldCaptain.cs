@@ -55,7 +55,7 @@ namespace Roster_Builder.Adeptus_Custodes
             {
                 "Castellan Axe",
                 "Guardian Spear",
-                "Sentinel Blade and Praesidium Shield"
+                "Sentinel Blade and Praesidium Shield (+10 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
@@ -148,7 +148,7 @@ namespace Roster_Builder.Adeptus_Custodes
             {
                 case 11:
                     Weapons[0] = cmbOption1.SelectedItem.ToString();
-                    if (Weapons[0] == "Sentinel Blade and Praesidium Shield")
+                    if (Weapons[0] == "Sentinel Blade and Praesidium Shield (+10 pts)")
                     {
                         cbOption1.Enabled = false;
                         cbOption1.Checked = false;
@@ -184,7 +184,7 @@ namespace Roster_Builder.Adeptus_Custodes
 
                     if (cmbRelic.SelectedItem.ToString() == "Veiled Blade")
                     {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Sentinel Blade and Praesidium Shield");
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Sentinel Blade and Praesidium Shield (+10 pts)");
                         cmbOption1.Enabled = false;
                     }
                     else
@@ -239,12 +239,7 @@ namespace Roster_Builder.Adeptus_Custodes
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Misericordia"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Sentinel Blade and Praesidium Shield"))
+            if (Weapons.Contains("Sentinel Blade and Praesidium Shield (+10 pts)"))
             {
                 Points += 10;
             }

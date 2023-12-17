@@ -27,6 +27,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "INFANTRY", "CORE", "CUSTODIAN WARDENS"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -168,14 +169,6 @@ namespace Roster_Builder.Adeptus_Custodes
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            foreach (var item in Weapons)
-            {
-                if (item == "Misericordia")
-                {
-                    Points += 3;
-                }
-            }
         }
 
         public override string ToString()

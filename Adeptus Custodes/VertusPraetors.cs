@@ -13,7 +13,7 @@ namespace Roster_Builder.Adeptus_Custodes
 
         public VertusPraetors()
         {
-            DEFAULT_POINTS = 85;
+            DEFAULT_POINTS = 80;
             UnitSize = 3;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "NL1m1k";
@@ -27,6 +27,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "BIKER", "CORE", "FLY", "VERTUS", "PRAETORS"
             });
+            role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()
@@ -70,7 +71,7 @@ namespace Roster_Builder.Adeptus_Custodes
             cmbOption1.Items.AddRange(new string[]
             {
                 "Hurricane Bolter",
-                "Salvo Launcher"
+                "Salvo Launcher (+5 pts)"
             });
 
             cbOption1.Text = "Misericordia";
@@ -171,12 +172,7 @@ namespace Roster_Builder.Adeptus_Custodes
 
             foreach (var item in Weapons)
             {
-                if (item == "Misericordia")
-                {
-                    Points += 3;
-                }
-
-                if (item == "Salvo Launcher")
+                if (item == "Salvo Launcher (+5 pts)")
                 {
                     Points += 5;
                 }

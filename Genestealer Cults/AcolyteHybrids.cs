@@ -29,6 +29,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "CORE", "CROSSFIRE", "ACOLYTE HYBRIDS"
             });
+            role = "Troops";
         }
 
         public override Datasheets CreateUnit()
@@ -69,22 +70,22 @@ namespace Roster_Builder.Genestealer_Cults
             cmbOption1.Items.AddRange(new string[]
             {
                 "Autopistol",
-                "Demolition Charges",
-                "Hand Flamer",
-                "Heavy Rock Cutter",
-                "Heavy Rock Drill",
-                "Heavy Rock Saw",
+                "Demolition Charges (+5 pts)",
+                "Hand Flamer (+3 pts)",
+                "Heavy Rock Cutter (+10 pts)",
+                "Heavy Rock Drill (+10 pts)",
+                "Heavy Rock Saw (+5 pts)",
             });
 
             cmbOption2.Items.Clear();
             cmbOption2.Items.AddRange(new string[]
             {
-                "Cult Bonesword",
+                "Cult Bonesword (+5 pts)",
                 "Cult Claws and Knife",
                 "Cult Lash Whip"
             });
 
-            cbOption1.Text = "Cult Icon";
+            cbOption1.Text = "Cult Icon (+10 pts)";
 
             cmbFactionupgrade.Visible = true;
             panel.Controls["lblFactionupgrade"].Visible = true;
@@ -174,11 +175,11 @@ namespace Roster_Builder.Genestealer_Cults
                     string[] tempcoll = new string[6]
                     {
                         "Autopistol",
-                        "Demolition Charges",
-                        "Hand Flamer",
-                        "Heavy Rock Cutter",
-                        "Heavy Rock Drill",
-                        "Heavy Rock Saw",
+                        "Demolition Charges (+5 pts)",
+                        "Hand Flamer (+3 pts)",
+                        "Heavy Rock Cutter (+10 pts)",
+                        "Heavy Rock Drill (+10 pts)",
+                        "Heavy Rock Saw (+5 pts)",
                     };
 
                     if (currentIndex < 0)
@@ -204,9 +205,9 @@ namespace Roster_Builder.Genestealer_Cults
                         cmbOption1.Items.AddRange(new string[]
                         {
                             "Autopistol",
-                            "Cult Bonesword",
+                            "Cult Bonesword (+5 pts)",
                             "Cult Lash Whip",
-                            "Hand Flamer"
+                            "Hand Flamer (+3 pts)"
                         });
 
                         antiLoop = true;
@@ -225,19 +226,19 @@ namespace Roster_Builder.Genestealer_Cults
                     int weaponsCheck = 0;
                     for(int i = 0; i < Weapons.Count; i++)
                     {
-                        if (Weapons[i] == "Demolition Charges")
+                        if (Weapons[i] == "Demolition Charges (+5 pts)")
                         {
                             weaponsCheck++;
                         }
-                        if (Weapons[i] == "Heavy Rock Cutter")
+                        if (Weapons[i] == "Heavy Rock Cutter (+10 pts)")
                         {
                             weaponsCheck++;
                         }
-                        if (Weapons[i] == "Heavy Rock Drill")
+                        if (Weapons[i] == "Heavy Rock Drill (+10 pts)")
                         {
                             weaponsCheck++;
                         }
-                        if (Weapons[i] == "Heavy Rock Saw")
+                        if (Weapons[i] == "Heavy Rock Saw (+5 pts)")
                         {
                             weaponsCheck++;
                         }
@@ -245,10 +246,10 @@ namespace Roster_Builder.Genestealer_Cults
 
                     if (weaponsCheck == (UnitSize / 5) * 2)
                     {
-                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Demolition Charges"));
-                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Heavy Rock Cutter"));
-                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Heavy Rock Drill"));
-                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Heavy Rock Saw"));
+                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Demolition Charges (+5 pts)"));
+                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Heavy Rock Cutter (+10 pts)"));
+                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Heavy Rock Drill (+10 pts)"));
+                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Heavy Rock Saw (+5 pts)"));
                     }
 
                     cmbOption1.Visible = true;
@@ -259,7 +260,7 @@ namespace Roster_Builder.Genestealer_Cults
                     cmbOption2.Visible = false;
                     panel.Controls["lblOption2"].Visible = false;
 
-                    if(Weapons.Contains("Cult Icon"))
+                    if(Weapons.Contains("Cult Icon (+10 pts)"))
                     {
                         cbOption1.Enabled = false;
                     }
@@ -269,7 +270,7 @@ namespace Roster_Builder.Genestealer_Cults
                     }
 
                     antiLoop = true;
-                    if (Weapons[currentIndex + 1] == "Cult Icon")
+                    if (Weapons[currentIndex + 1] == "Cult Icon (+10 pts)")
                     {
                         cbOption1.Enabled = true;
                         cbOption1.Checked = true;
@@ -281,10 +282,10 @@ namespace Roster_Builder.Genestealer_Cults
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
                     }
 
-                    if (Weapons[currentIndex + 1] == "Demolition Charges" 
-                        || Weapons[currentIndex + 1] == "Heavy Rock Cutter"
-                        || Weapons[currentIndex + 1] == "Heavy Rock Drill" 
-                        || Weapons[currentIndex + 1] == "Heavy Saw")
+                    if (Weapons[currentIndex + 1] == "Demolition Charges (+5 pts)" 
+                        || Weapons[currentIndex + 1] == "Heavy Rock Cutter (+10 pts)"
+                        || Weapons[currentIndex + 1] == "Heavy Rock Drill (+10 pts)" 
+                        || Weapons[currentIndex + 1] == "Heavy Saw (+5 pts)")
                     {
                         cmbOption1.Items.Clear();
                         for (int i = 0; i < tempcoll.Length; i++)
@@ -305,25 +306,25 @@ namespace Roster_Builder.Genestealer_Cults
 
             foreach (var item in Weapons)
             {
-                if(item == "Cult Bonesword")
+                if(item == "Cult Bonesword (+5 pts)"
+                    || item == "Heavy Rock Saw (+5 pts)"
+                    || item == "Demolition Charges (+5 pts)")
                 {
                     Points += 5;
                 }
 
-                if(item == "Cult Icon")
-                {
-                    Points += 20;
-                }
-
-                if(item == "Demolition Charges"
-                    || item == "Heavy Rock Cutter"
-                    || item == "Heavy Rock Drill"
-                    || item == "Heavy Rock Saw")
+                if(item == "Cult Icon (+10 pts)")
                 {
                     Points += 10;
                 }
 
-                if(item == "Hand Flamer")
+                if(item == "Heavy Rock Cutter (+10 pts)"
+                    || item == "Heavy Rock Drill (+10 pts)")
+                {
+                    Points += 10;
+                }
+
+                if(item == "Hand Flamer (+3 pts)")
                 {
                     Points += 3;
                 }

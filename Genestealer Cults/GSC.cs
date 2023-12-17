@@ -74,24 +74,24 @@ namespace Roster_Builder.Genestealer_Cults
 
             string[] twenty = new string[]
             {
-                "Lying in Wait",
-                "Excavate"
+                "Lying in Wait (+20 pts)",
+                "Excavate (+20 pts)"
             };
 
             string[] fifteen = new string[]
             {
-                "Exacting Planner",
-                "Alchemist Supreme",
-                "A Trap Sprung",
-                "A Perfect Ambush",
-                "Meditations in Shadow",
-                "Our Time is Nigh"
+                "Exacting Planner (+15 pts)",
+                "Alchemist Supreme (+15 pts)",
+                "A Trap Sprung (+15 pts)",
+                "A Perfect Ambush (+15 pts)",
+                "Meditations in Shadow (+15 pts)",
+                "Our Time is Nigh (+15 pts)"
             };
 
             string[] ten = new string[]
             {
-                "From Every Angle",
-                "They Came From Below"
+                "From Every Angle (+10 pts)",
+                "They Came From Below (+10 pts)"
             };
 
             if(twenty.Contains(upgrade))
@@ -117,16 +117,16 @@ namespace Roster_Builder.Genestealer_Cults
             return new List<string>()
             {
                 "(None)",
-                "Lying in Wait",
-                "Exacting Planner",
-                "Alchemist Supreme",
-                "A Trap Sprung",
-                "A Perfect Ambush",
-                "From Every Angle",
-                "Meditations in Shadow",
-                "Excavate",
-                "They Came From Below",
-                "Our Time is Nigh"
+                "Lying in Wait (+20 pts)",
+                "Exacting Planner (+15 pts)",
+                "Alchemist Supreme (+15 pts)",
+                "A Trap Sprung (+15 pts)",
+                "A Perfect Ambush (+15 pts)",
+                "From Every Angle (+10 pts)",
+                "Meditations in Shadow (+15 pts)",
+                "Excavate (+20 pts)",
+                "They Came From Below (+10 pts)",
+                "Our Time is Nigh (+15 pts)"
             };
         }
 

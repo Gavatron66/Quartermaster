@@ -12,7 +12,7 @@ namespace Roster_Builder.Adeptus_Custodes
     {
         public VertusShieldCaptain()
         {
-            DEFAULT_POINTS = 170;
+            DEFAULT_POINTS = 160;
             TemplateCode = "1m1k_c";
             Points = DEFAULT_POINTS;
             Weapons.Add("Hurricane Bolter");
@@ -22,6 +22,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "BIKER", "CHARACTER", "FLY", "VERTUS", "SHIELD-CAPTAIN"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -53,7 +54,7 @@ namespace Roster_Builder.Adeptus_Custodes
             cmbOption1.Items.AddRange(new string[]
             {
                 "Hurricane Bolter",
-                "Salvo Launcher"
+                "Salvo Launcher (+5 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
@@ -210,12 +211,7 @@ namespace Roster_Builder.Adeptus_Custodes
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Misericordia"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Salvo Launcher"))
+            if (Weapons.Contains("Salvo Launcher (+5 pts)"))
             {
                 Points += 5;
             }

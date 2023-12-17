@@ -20,6 +20,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "VEHICLE", "CORE", "DREADNOUGHT", "VENERABLE CONTEMPTOR DREADNOUGHT"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()

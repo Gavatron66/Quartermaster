@@ -11,7 +11,7 @@ namespace Roster_Builder.Death_Guard
     {
         public FoetidBloatDrone()
         {
-            DEFAULT_POINTS = 130;
+            DEFAULT_POINTS = 115;
             Points = DEFAULT_POINTS;
             UnitSize = 1;
             TemplateCode = "1m";
@@ -21,6 +21,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "VEHICLE", "FLY", "DAEMON", "DAEMON ENGINE", "FOETID BLOAT-DRONE"
             });
+            role = "Fast Attack";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -50,16 +51,6 @@ namespace Roster_Builder.Death_Guard
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Fleshmower"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Heavy Blight Launcher"))
-            {
-                Points += 10;
-            }
         }
 
         public override string ToString()

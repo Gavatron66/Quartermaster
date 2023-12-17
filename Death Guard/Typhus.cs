@@ -23,6 +23,7 @@ namespace Roster_Builder.Death_Guard
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
             WarlordTrait = "Shamblerot (Contagion)";
+            role = "HQ";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)

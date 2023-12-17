@@ -20,6 +20,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "INFANTRY", "CHARACTER", "BUBONIC ASTARTES", "TERMINATOR", "LORD OF THE DEATH GUARD", "LORD OF VIRULENCE"
             });
+            role = "HQ";
         }
         public override void LoadDatasheets(Panel panel, Faction f)
         {

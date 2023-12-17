@@ -22,6 +22,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "INFANTRY", "CHARACTER", "TELEPORT HOMER", "TERMINATOR", "ALLARUS", "VEXILUS PRAETOR"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -192,11 +193,6 @@ namespace Roster_Builder.Adeptus_Custodes
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Misericordia"))
-            {
-                Points += 5;
-            }
         }
 
         public override string ToString()

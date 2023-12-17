@@ -12,7 +12,7 @@ namespace Roster_Builder.Death_Guard
         public ChaosSpawn()
         {
             UnitSize = 1;
-            DEFAULT_POINTS = 23;
+            DEFAULT_POINTS = 21;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "N";
             Keywords.AddRange(new string[]
@@ -20,6 +20,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "BEAST", "CHAOS SPAWN"
             });
+            role = "Fast Attack";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)

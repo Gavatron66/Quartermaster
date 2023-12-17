@@ -12,7 +12,7 @@ namespace Roster_Builder.Genestealer_Cults
     {
         public Abominant()
         {
-            DEFAULT_POINTS = 95;
+            DEFAULT_POINTS = 85;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
@@ -20,6 +20,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "CHARACTER", "ABOMINANT"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()
