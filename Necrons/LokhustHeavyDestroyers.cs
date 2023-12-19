@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public LokhustHeavyDestroyers()
         {
-            DEFAULT_POINTS = 70;
+            DEFAULT_POINTS = 50;
             UnitSize = 1;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "3N";
@@ -22,6 +22,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "FLY", "DESTROYER CULT", "LOKHUST HEAVY DESTROYERS"
             });
+            role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()

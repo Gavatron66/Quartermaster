@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public Zahndrekh()
         {
-            DEFAULT_POINTS = 135;
+            DEFAULT_POINTS = 125;
             UnitSize = 1;
             TemplateCode = "nc";
             Points = DEFAULT_POINTS;
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "INFANTRY", "CHARACTER", "OVERLORD", "NOBLE", "NEMESOR ZAHNDREKH"
             });
             WarlordTrait = "Eternal Madness";
+            role = "HQ";
         }
         public override Datasheets CreateUnit()
         {

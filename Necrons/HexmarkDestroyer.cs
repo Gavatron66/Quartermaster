@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public HexmarkDestroyer()
         {
-            DEFAULT_POINTS = 75;
+            DEFAULT_POINTS = 65;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
@@ -20,6 +20,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "DESTROYER CULT", "<DYNASTY>",
                 "INFANTRY", "CHARACTER", "HYPERSPACE HUNTER", "HEXMARK DESTROYER"
             });
+            role = "Elites";
         }
         public override Datasheets CreateUnit()
         {

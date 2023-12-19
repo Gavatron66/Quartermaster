@@ -11,16 +11,17 @@ namespace Roster_Builder.Necrons
     {
         public TriarchStalker()
         {
-            DEFAULT_POINTS = 135;
+            DEFAULT_POINTS = 110;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m";
-            Weapons.Add("Heat Ray");
+            Weapons.Add("Heat Ray (+5 pts)");
             Keywords.AddRange(new string[]
             {
                 "NECRONS",
                 "VEHICLE", "DYNASTIC AGENT", "TRIARCH", "TRIARCH STALKER"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -37,9 +38,9 @@ namespace Roster_Builder.Necrons
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Heat Ray",
+                "Heat Ray (+5 pts)",
                 "Particle Shredder",
-                "Twin Heavy Gauss Cannon"
+                "Twin Heavy Gauss Cannon (+15 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
         }
@@ -57,12 +58,12 @@ namespace Roster_Builder.Necrons
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Heat Ray"))
+            if (Weapons.Contains("Heat Ray (+5 pts)"))
             {
                 Points += 5;
             }
 
-            if (Weapons.Contains("Twin Heavy Gauss Cannon"))
+            if (Weapons.Contains("Twin Heavy Gauss Cannon (+15 pts)"))
             {
                 Points += 15;
             }

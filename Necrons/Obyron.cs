@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public Obyron()
         {
-            DEFAULT_POINTS = 100;
+            DEFAULT_POINTS = 90;
             UnitSize = 1;
             TemplateCode = "nc";
             Points = DEFAULT_POINTS;
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "INFANTRY", "CHARACTER", "LORD", "NOBLE", "VARGARD OBYRON"
             });
             WarlordTrait = "Honourable Combatant";
+            role = "HQ";
         }
         public override Datasheets CreateUnit()
         {

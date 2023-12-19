@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public Technomancer()
         {
-            DEFAULT_POINTS = 75;
+            DEFAULT_POINTS = 70;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m_c";
             Weapons.Add("(None)");
@@ -20,6 +20,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "CHARACTER", "CRYPTEK", "TECHNOMANCER"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -43,7 +44,7 @@ namespace Roster_Builder.Necrons
             {
                 "(None)",
                 "Canoptek Cloak",
-                "Canoptek Control Node"
+                "Canoptek Control Node (+10 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
@@ -193,14 +194,9 @@ namespace Roster_Builder.Necrons
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Canoptek Cloak"))
+            if (Weapons.Contains("Canoptek Control Node (+10 pts)"))
             {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Canoptek Control Node"))
-            {
-                Points += 15;
+                Points += 10;
             }
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);

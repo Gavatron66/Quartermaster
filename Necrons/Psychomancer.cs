@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public Psychomancer()
         {
-            DEFAULT_POINTS = 70;
+            DEFAULT_POINTS = 65;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "CHARACTER", "FLY", "CRYPTEK", "PSYCHOMANCER"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()

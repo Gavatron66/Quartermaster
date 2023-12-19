@@ -12,7 +12,7 @@ namespace Roster_Builder.Necrons
         public FlayedOnes()
         {
             UnitSize = 5;
-            DEFAULT_POINTS = 13;
+            DEFAULT_POINTS = 10;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "N";
             Keywords.AddRange(new string[]
@@ -20,6 +20,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFATRY", "FLAYED ONES"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()

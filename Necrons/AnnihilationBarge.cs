@@ -15,12 +15,13 @@ namespace Roster_Builder.Necrons
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m";
-            Weapons.Add("Gauss Cannon");
+            Weapons.Add("Gauss Cannon (+5 pts)");
             Keywords.AddRange(new string[]
             {
                 "NECRONS", "<DYNASTY>",
                 "VEHICLE", "QUANTUM SHIELDING", "FLY", "ANNIHILATION BARGE"
             });
+            role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -37,7 +38,7 @@ namespace Roster_Builder.Necrons
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Gauss Cannon",
+                "Gauss Cannon (+5 pts)",
                 "Tesla Cannon"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
@@ -56,7 +57,7 @@ namespace Roster_Builder.Necrons
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Gauss Cannon"))
+            if (Weapons.Contains("Gauss Cannon (+5 pts)"))
             {
                 Points += 5;
             }

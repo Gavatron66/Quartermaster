@@ -12,16 +12,16 @@ namespace Roster_Builder.Necrons
         int currentIndex;
         public TombBlades()
         {
-            DEFAULT_POINTS = 25;
+            DEFAULT_POINTS = 18;
             UnitSize = 3;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "NL2m1k";
 
             for(int i = 0; i < UnitSize; i++)
             {
-                Weapons.Add("Twin Gauss Blaster"); // Twin Gauss Blaster, Particle Beamer or Twin Tesla Carbine
-                Weapons.Add(""); // Shieldvanes
-                Weapons.Add("(None)"); // Nebuloscope, Shadowloom or (None)
+                Weapons.Add("Twin Gauss Blaster (+5 pts)"); // Twin Gauss Blaster (+5 pts), Particle Beamer or Twin Tesla Carbine (+5 pts)
+                Weapons.Add(""); // Shieldvanes (+3 pts)
+                Weapons.Add("(None)"); // Nebuloscope (+3 pts), Shadowloom (+3 pts) or (None)
             }
 
             Keywords.AddRange(new string[]
@@ -29,6 +29,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "BIKER", "FLY", "CORE", "TOMB BLADES"
             });
+            role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()
@@ -65,19 +66,19 @@ namespace Roster_Builder.Necrons
             cmbOption1.Items.AddRange(new string[]
             {
                 "Particle Beamer",
-                "Twin Gauss Blaster",
-                "Twin Tesla Carbine"
+                "Twin Gauss Blaster (+5 pts)",
+                "Twin Tesla Carbine (+5 pts)"
             });
 
             cmbOption2.Items.Clear();
             cmbOption2.Items.AddRange(new string[]
             {
                 "(None)",
-                "Nebuloscope",
-                "Shadowloom"
+                "Nebuloscope (+3 pts)",
+                "Shadowloom (+3 pts)"
             });
 
-            cbOption1.Text = "Shieldvanes";
+            cbOption1.Text = "Shieldvanes (+3 pts)";
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -118,7 +119,7 @@ namespace Roster_Builder.Necrons
                     if (temp < UnitSize)
                     {
                         lbModelSelect.Items.Add("Tomb Blade");
-                        Weapons.Add("Twin Gauss Blaster");
+                        Weapons.Add("Twin Gauss Blaster (+5 pts)");
                         Weapons.Add("");
                         Weapons.Add("(None)");
                     }
@@ -167,12 +168,12 @@ namespace Roster_Builder.Necrons
 
             foreach (var weapon in Weapons)
             {
-                if(weapon == "Nebuloscope" || weapon == "Shieldvanes")
+                if(weapon == "Nebuloscope (+3 pts)" || weapon == "Shieldvanes (+3 pts)")
                 {
                     Points += 3;
                 }
 
-                if(weapon == "Shadowloom" || weapon == "Twin Gauss Blaster" || weapon == "Twin Tesla Carbine")
+                if(weapon == "Shadowloom (+3 pts)" || weapon == "Twin Gauss Blaster (+5 pts)" || weapon == "Twin Tesla Carbine (+5 pts)")
                 {
                     Points += 5;
                 }

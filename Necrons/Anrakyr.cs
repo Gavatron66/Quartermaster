@@ -12,7 +12,7 @@ namespace Roster_Builder.Necrons
     {
         public Anrakyr()
         {
-            DEFAULT_POINTS = 140;
+            DEFAULT_POINTS = 130;
             TemplateCode = "nc";
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "INFANTRY", "CHARACTER", "NOBLE", "DYNASTIC AGENT", "OVERLORD", "ANRAKYR THE TRAVELLER"
             });
             WarlordTrait = "Implacable Conqueror (Aura)";
+            role = "HQ";
         }
         public override Datasheets CreateUnit()
         {

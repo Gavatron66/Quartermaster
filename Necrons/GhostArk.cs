@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public GhostArk()
         {
-            DEFAULT_POINTS = 145;
+            DEFAULT_POINTS = 115;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "VEHICLE", "QUANTUM SHIELDING", "TRANSPORT", "FLY", "GHOST ARK"
             });
+            role = "Transport";
         }
         public override Datasheets CreateUnit()
         {

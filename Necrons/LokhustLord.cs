@@ -11,16 +11,17 @@ namespace Roster_Builder.Necrons
     {
         public LokhustLord()
         {
-            DEFAULT_POINTS = 105;
+            DEFAULT_POINTS = 100;
             TemplateCode = "2m_c";
             Points = DEFAULT_POINTS;
             Weapons.Add("Staff of Light");
-            Weapons.Add("");
+            Weapons.Add("(None)");
             Keywords.AddRange(new string[]
             {
                 "NECRONS", "DESTROYER CULT", "<DYNASTY>",
                 "INFANTRY", "CHARACTER", "FLY", "LOKHUST LORD"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -61,8 +62,8 @@ namespace Roster_Builder.Necrons
             cmbOption2.Items.AddRange(new string[]
             {
                 "(None)",
-                "Phylactery",
-                "Resurrection Orb"
+                "Phylactery (+5 pts)",
+                "Resurrection Orb (+30 pts)"
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
@@ -167,7 +168,7 @@ namespace Roster_Builder.Necrons
                         cmbOption1.Enabled = true;
                     }
 
-                    if (cmbRelic.SelectedItem.ToString() == "Resurrection Orb")
+                    if (cmbRelic.SelectedItem.ToString() == "Resurrection Orb (+30 pts)")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Orb of Eternity");
                         cmbOption1.Enabled = false;
@@ -234,17 +235,12 @@ namespace Roster_Builder.Necrons
 
             Points = DEFAULT_POINTS;
 
-            if(Weapons.Contains("Phylactery"))
+            if(Weapons.Contains("Phylactery (+5 pts)"))
             {
                 Points += 5;
             }
 
-            if(Weapons.Contains("Warscythe"))
-            {
-                Points += 5;
-            }
-
-            if(Weapons.Contains("Resurrection Orb"))
+            if(Weapons.Contains("Resurrection Orb (+30 pts)"))
             {
                 Points += 30;
             }

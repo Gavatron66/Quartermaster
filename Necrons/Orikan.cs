@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public Orikan()
         {
-            DEFAULT_POINTS = 110;
+            DEFAULT_POINTS = 100;
             UnitSize = 1;
             TemplateCode = "nc";
             Points = DEFAULT_POINTS;
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "INFANTRY", "CHARACTER", "CHRONOMANCER", "DYNASTIC AGENT", "CRYPTEK", "ORIKAN THE DIVINER"
             });
             WarlordTrait = "Immortal Pride";
+            role = "HQ";
         }
         public override Datasheets CreateUnit()
         {

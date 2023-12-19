@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public Szeras()
         {
-            DEFAULT_POINTS = 160;
+            DEFAULT_POINTS = 145;
             UnitSize = 1;
             TemplateCode = "nc";
             Points = DEFAULT_POINTS;
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "INFANTRY", "CHARACTER", "DYNASTIC AGENT", "CRYPTEK", "TECHNOMANCER", "ILLUMINOR SZERAS"
             });
             WarlordTrait = "Enduring Will";
+            role = "HQ";
         }
         public override Datasheets CreateUnit()
         {

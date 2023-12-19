@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public NecronWarriors()
         {
-            DEFAULT_POINTS = 13;
+            DEFAULT_POINTS = 11;
             UnitSize = 10;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "3N";
@@ -22,6 +22,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "CORE", "NECRON WARRIORS"
             });
+            role = "Troops";
         }
 
         public override Datasheets CreateUnit()

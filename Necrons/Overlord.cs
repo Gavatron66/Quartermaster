@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public Overlord()
         {
-            DEFAULT_POINTS = 95;
+            DEFAULT_POINTS = 90;
             TemplateCode = "1m1k_c";
             Points = DEFAULT_POINTS;
             Weapons.Add("Tachyon Arrow and Hyperphaise Glaive");
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "CHARACTER", "NOBLE", "OVERLORD"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -54,13 +55,13 @@ namespace Roster_Builder.Necrons
                 "Staff of Light",
                 "Tachyon Arrow and Hyperphaise Glaive",
                 "Voidblade",
-                "Voidscythe",
+                "Voidscythe (+10 pts)",
                 "Warscythe"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            cbOption1.Text = "Resurrection Orb";
-            if (Weapons[1] == "Resurrection Orb")
+            cbOption1.Text = "Resurrection Orb (+25 pts)";
+            if (Weapons[1] == "Resurrection Orb (+25 pts)")
             {
                 cbOption1.Checked = true;
             }
@@ -269,24 +270,14 @@ namespace Roster_Builder.Necrons
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Warscythe"))
+            if (Weapons.Contains("Voidscythe (+10 pts)"))
             {
-                Points += 5;
+                Points += 10;
             }
 
-            if (Weapons.Contains("Voidscythe"))
+            if (Weapons.Contains("Resurrection Orb (+25 pts)"))
             {
-                Points += 15;
-            }
-
-            if (Weapons.Contains("Resurrection Orb"))
-            {
-                Points += 30;
-            }
-
-            if(Weapons.Contains("Tachyon Arrow and Hyperphaise Glaive"))
-            {
-                Points += 5;
+                Points += 25;
             }
         }
 

@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public Obelisk()
         {
-            DEFAULT_POINTS = 370;
+            DEFAULT_POINTS = 270;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "VEHICLE", "TITANIC", "FLY", "OBELISK"
             });
+            role = "Lord of War";
         }
         public override Datasheets CreateUnit()
         {

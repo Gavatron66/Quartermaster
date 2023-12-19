@@ -12,7 +12,7 @@ namespace Roster_Builder.Necrons
     {
         public SilentKing()
         {
-            DEFAULT_POINTS = 450;
+            DEFAULT_POINTS = 400;
             TemplateCode = "nc";
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
@@ -23,6 +23,7 @@ namespace Roster_Builder.Necrons
                 "TRIARCHAL MENHIRS"
             });
             WarlordTrait = "The Triarch's Will";
+            role = "Lord of War";
         }
         public override Datasheets CreateUnit()
         {

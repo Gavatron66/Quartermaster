@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public DoomScythe()
         {
-            DEFAULT_POINTS = 200;
+            DEFAULT_POINTS = 165;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "VEHICLE", "AIRCRAFT", "FLY", "DOOM SCYTHE"
             });
+            role = "Flyer";
         }
         public override Datasheets CreateUnit()
         {

@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public NecronLord()
         {
-            DEFAULT_POINTS = 70;
+            DEFAULT_POINTS = 65;
             TemplateCode = "1m1k_c";
             Points = DEFAULT_POINTS;
             Weapons.Add("Staff of Light");
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "CHARACTER", "NOBLE", "LORD"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -57,8 +58,8 @@ namespace Roster_Builder.Necrons
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            cbOption1.Text = "Resurrection Orb";
-            if (Weapons[1] == "Resurrection Orb")
+            cbOption1.Text = "Resurrection Orb (+25 pts)";
+            if (Weapons[1] == "Resurrection Orb (+25 pts)")
             {
                 cbOption1.Checked = true;
             } else
@@ -240,14 +241,9 @@ namespace Roster_Builder.Necrons
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Warscythe"))
+            if (Weapons.Contains("Resurrection Orb (+25 pts)"))
             {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Resurrection Orb"))
-            {
-                Points += 30;
+                Points += 25;
             }
         }
 

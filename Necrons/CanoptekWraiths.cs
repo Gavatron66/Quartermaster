@@ -28,6 +28,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "MONSTER", "FLY", "CANOPTEK", "CANOPTEK SPYDERS"
             });
+            role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()
@@ -70,8 +71,8 @@ namespace Roster_Builder.Necrons
             cmbOption2.Items.AddRange(new string[]
             {
                 "(None)",
-                "Particle Caster",
-                "Transdimensional Beamer"
+                "Particle Caster (+5 pts)",
+                "Transdimensional Beamer (+10 pts)"
             });
         }
 
@@ -139,12 +140,12 @@ namespace Roster_Builder.Necrons
 
             foreach (var weapon in Weapons)
             {
-                if(weapon == "Particle Caster")
+                if(weapon == "Particle Caster (+5 pts)")
                 {
                     Points += 5;
                 }
 
-                if(weapon == "Transdimensional Beamer")
+                if(weapon == "Transdimensional Beamer (+10 pts)")
                 {
                     Points += 10;
                 }

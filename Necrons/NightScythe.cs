@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public NightScythe()
         {
-            DEFAULT_POINTS = 145;
+            DEFAULT_POINTS = 120;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "VEHICLE", "AIRCRAFT", "FLY", "TRANSPORT", "NIGHT SCYTHE"
             });
+            role = "Flyer";
         }
         public override Datasheets CreateUnit()
         {

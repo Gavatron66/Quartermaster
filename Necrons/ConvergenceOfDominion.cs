@@ -11,13 +11,14 @@ namespace Roster_Builder.Necrons
     {
         public ConvergenceOfDominion()
         {
-            DEFAULT_POINTS = 120;
+            DEFAULT_POINTS = 80;
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
             {
                 "NECRONS", "<DYNASTY>",
                 "BUILDING", "VEHICLE", "STARSTELE", "CONVERGENCE OF DOMINION"
             });
+            role = "Fortification";
         }
 
         public override Datasheets CreateUnit()

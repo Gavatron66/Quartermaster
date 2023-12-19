@@ -17,14 +17,15 @@ namespace Roster_Builder.Necrons
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "NL3k";
-            Weapons.Add(""); // Particle Beamers
-            Weapons.Add(""); // Fabricator Claw Array
-            Weapons.Add(""); // Gloom Prism
+            Weapons.Add(""); // Particle Beamers (+5 pts)
+            Weapons.Add(""); // Fabricator Claw Array (+5 pts)
+            Weapons.Add(""); // Gloom Prism (+5 pts)
             Keywords.AddRange(new string[]
             {
                 "NECRONS", "<DYNASTY>",
                 "MONSTER", "FLY", "CANOPTEK", "CANOPTEK SPYDERS"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -57,9 +58,9 @@ namespace Roster_Builder.Necrons
                 lbModelSelect.Items.Add("Canoptek Spyder");
             }
 
-            cbOption1.Text = "Two Particle Beamers";
-            cbOption2.Text = "Fabricator Claw Array";
-            cbOption3.Text = "Gloom Prism";
+            cbOption1.Text = "Two Particle Beamers (+5 pts)";
+            cbOption2.Text = "Fabricator Claw Array (+5 pts)";
+            cbOption3.Text = "Gloom Prism (+5 pts)";
         }
 
         public override void SaveDatasheets(int code, Panel panel)

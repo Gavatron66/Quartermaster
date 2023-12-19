@@ -12,7 +12,7 @@ namespace Roster_Builder.Necrons
         public SkorpekhDestroyers()
         {
             UnitSize = 3;
-            DEFAULT_POINTS = 35;
+            DEFAULT_POINTS = 30;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "N";
             Keywords.AddRange(new string[]
@@ -20,6 +20,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "DESTROYER CULT", "<DYNASTY>",
                 "INFATRY", "SKORPEKH DESTROYERS"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()

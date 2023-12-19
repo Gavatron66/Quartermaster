@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public Immortals()
         {
-            DEFAULT_POINTS = 17;
+            DEFAULT_POINTS = 16;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "N1m";
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFATRY", "CORE", "IMMORTALS"
             });
+            role = "Troops";
         }
 
         public override Datasheets CreateUnit()
@@ -66,11 +67,6 @@ namespace Roster_Builder.Necrons
             }
 
             Points = (DEFAULT_POINTS * UnitSize);
-
-            if (Weapons[0] == "Tesla Carbine")
-            {
-                Points += 2 * UnitSize;
-            }
         }
 
         public override string ToString()

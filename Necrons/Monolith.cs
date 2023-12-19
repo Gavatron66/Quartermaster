@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public Monolith()
         {
-            DEFAULT_POINTS = 360;
+            DEFAULT_POINTS = 270;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m";
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "VEHICLE", "TITANIC", "MONOLITH"
             });
+            role = "Lord of War";
         }
 
         public override Datasheets CreateUnit()
