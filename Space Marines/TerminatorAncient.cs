@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public TerminatorAncient()
         {
-            DEFAULT_POINTS = 100;
+            DEFAULT_POINTS = 90;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m_c";
             Weapons.Add("Storm Bolter and Power Fist");
@@ -20,6 +20,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "TERMINATOR", "ANCIENT"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -193,16 +194,6 @@ namespace Roster_Builder.Space_Marines
 
             Points = DEFAULT_POINTS;
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
-
-            if(Weapons.Contains("Thunder Hammer"))
-            {
-                Points += 10;
-            }
-
-            if(Weapons.Contains("Thunder Hammer and Storm Shield"))
-            {
-                Points += 20;
-            }
         }
 
         public override string ToString()

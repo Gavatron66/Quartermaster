@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public PrimarisChaplain()
         {
-            DEFAULT_POINTS = 85;
+            DEFAULT_POINTS = 75;
             Points = DEFAULT_POINTS;
             TemplateCode = "pc";
             Keywords.AddRange(new string[]
@@ -20,6 +20,7 @@ namespace Roster_Builder.Space_Marines
                 "INFANTRY", "CHARACTER", "PRIMARIS", "PRIEST", "CHAPLAIN"
             });
             PsykerPowers = new string[1] { string.Empty };
+            role = "HQ";
         }
         public override Datasheets CreateUnit()
         {

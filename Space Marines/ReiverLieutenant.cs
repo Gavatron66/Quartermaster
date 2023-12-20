@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public ReiverLieutenant()
         {
-            DEFAULT_POINTS = 75;
+            DEFAULT_POINTS = 65;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
@@ -20,6 +20,7 @@ namespace Roster_Builder.Space_Marines
                 "INFANTRY", "CHARACTER", "PRIMARIS", "PHOBOS", "REIVER", "SHOCK GRENADE",
                 "SMOKESCREEN", "LIEUTENANT"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()

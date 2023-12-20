@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public PhobosCaptain()
         {
-            DEFAULT_POINTS = 95;
+            DEFAULT_POINTS = 85;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "PRIMARIS", "PHOBOS","CAPTAIN"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()

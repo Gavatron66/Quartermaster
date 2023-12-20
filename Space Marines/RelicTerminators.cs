@@ -17,7 +17,7 @@ namespace Roster_Builder.Space_Marines
 
         public RelicTerminators()
         {
-            DEFAULT_POINTS = 34;
+            DEFAULT_POINTS = 33;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "NL2m1k";
@@ -32,6 +32,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "TERMINATOR", "RELIC TERMINATOR SQUAD"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -310,26 +311,6 @@ namespace Roster_Builder.Space_Marines
 
             restrictionCount = 0;
             restrictionCount2 = 0;
-            foreach(string weapon in Weapons)
-            {
-                if(weapon == "Chainfist" || weapon == "Plasma Blaster" || weapon == "Power Fist" 
-                    || weapon == "Volkite Charger")
-                {
-                    Points += 5;
-                }
-
-                if(weapon == "Grenade Harness")
-                {
-                    Points += 5;
-                    restrictionCount2++;
-                }
-
-                if(weapon == "Heavy Flamer" || weapon == "Reaper Autocannon")
-                {
-                    Points += 5;
-                    restrictionCount++;
-                }
-            }
 
             //Heavy Flamer, Reaper Autocannon, Grenade Harness
         }

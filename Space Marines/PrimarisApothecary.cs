@@ -13,7 +13,7 @@ namespace Roster_Builder.Space_Marines
     {
         public PrimarisApothecary()
         {
-            DEFAULT_POINTS = 80;
+            DEFAULT_POINTS = 70;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
@@ -21,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "PRIMARIS", "PRIMARIS APOTHECARY"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()

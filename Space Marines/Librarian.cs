@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Librarian()
         {
-            DEFAULT_POINTS = 90;
+            DEFAULT_POINTS = 80;
             Points = DEFAULT_POINTS;
             TemplateCode = "2m1k_pc";
             Weapons.Add("Bolt Pistol");
@@ -23,6 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "INFANTRY", "CHARACTER", "PSYKER", "LIBRARIAN"
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -75,7 +76,7 @@ namespace Roster_Builder.Space_Marines
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
-            cbOption1.Text = "Jump Pack";
+            cbOption1.Text = "Jump Pack (+25 pts)";
             if (Weapons[2] == cbOption1.Text)
             {
                 cbOption1.Checked = true;
@@ -281,34 +282,7 @@ namespace Roster_Builder.Space_Marines
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
-            string[] tens = new string[]
-            {
-                "Combi-flamer",
-                "Combi-grav",
-                "Combi-melta",
-                "Combi-plasma"
-            };
-
-            string[] fives = new string[]
-            {
-                "Grav-pistol",
-                "Hand Flamer",
-                "Inferno Pistol",
-                "Plasma Pistol",
-                "Storm Bolter"
-            };
-
-            if (tens.Contains(Weapons[0]))
-            {
-                Points += 10;
-            }
-
-            if (fives.Contains(Weapons[0]))
-            {
-                Points += 5;
-            }
-
-            if (Weapons[2] == "Jump Pack")
+            if (Weapons[2] == "Jump Pack (+25 pts)")
             {
                 Points += 25;
             }

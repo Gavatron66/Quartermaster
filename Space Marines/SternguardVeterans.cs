@@ -27,6 +27,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "STERNGUARD VETERAN SQUAD"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -192,39 +193,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = UnitSize * DEFAULT_POINTS;
-            foreach (string item in Weapons)
-            {
-                if(item == "Storm Bolter")
-                {
-                    Points += 3;
-                }
-
-                if(item == "Combi-flamer" || item == "Combi-grav" || item == "Combi-melta"
-                    || item == "Combi-plasma" || item == "Flamer" || item == "Grav-pistol"
-                    || item == "Hand Flamer" || item == "Inferno Pistol" || item == "Lightning Claw"
-                    || item == "Plasma Pistol" || item == "Power Axe" || item == "Plasma Maul"
-                    || item == "Power Sword")
-                {
-                    Points += 5;
-                }
-
-                if(item == "Grav-cannon" || item == "Grav-gun" || item == "Heavy Bolter"
-                    || item == "Heavy Flamer" || item == "Meltagun" || item == "Plasma Gun"
-                    || item == "Power Fist")
-                {
-                    Points += 10;
-                }
-
-                if(item == "Lascannon" || item == "Missile Launcher" || item == "Plasma Cannon")
-                {
-                    Points += 15;
-                }
-
-                if(item == "Multi-melta")
-                {
-                    Points += 20;
-                }
-            }
         }
 
         public override string ToString()

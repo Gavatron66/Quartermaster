@@ -194,25 +194,25 @@ namespace Roster_Builder.Space_Marines
 
             string[] forty = new string[]
             {
-                "Chapter Master"
+                "Chapter Master (+35 pts)"
             };
 
             string[] twentyfive = new string[]
             {
-                "Master of Sanctity",
-                "Chief Librarian"
+                "Master of Sanctity (+20 pts)",
+                "Chief Librarian (+20 pts)"
             };
 
             string[] twenty = new string[]
             {
-                "Master of the Forge",
-                "Chapter Ancient"
+                "Master of the Forge (+15 pts)",
+                "Chapter Ancient (+15 pts)"
             };
 
             string[] fifteen = new string[]
             {
-                "Chief Apothecary",
-                "Chapter Champion"
+                "Chief Apothecary (+30 pts)",
+                "Chapter Champion (+10 pts)"
             };
 
             if (forty.Contains(upgrade))
@@ -244,37 +244,37 @@ namespace Roster_Builder.Space_Marines
 
             if (keywords.Contains("CAPTAIN"))
             {
-                upgrades.Add("Chapter Master");
+                upgrades.Add("Chapter Master (+35 pts)");
             }
 
             if (keywords.Contains("CHAPLAIN"))
             {
-                upgrades.Add("Master of Sanctity");
+                upgrades.Add("Master of Sanctity (+20 pts)");
             }
 
             if (keywords.Contains("TECHMARINE"))
             {
-                upgrades.Add("Master of the Forge");
+                upgrades.Add("Master of the Forge (+15 pts)");
             }
 
             if (keywords.Contains("LIBRARIAN"))
             {
-                upgrades.Add("Chief Librarian");
+                upgrades.Add("Chief Librarian (+20 pts)");
             }
 
             if (keywords.Contains("APOTHECARY") || keywords.Contains("PRIMARIS APOTHECARY"))
             {
-                upgrades.Add("Chief Apothecary");
+                upgrades.Add("Chief Apothecary (+30 pts)");
             }
 
             if (keywords.Contains("ANCIENT"))
             {
-                upgrades.Add("Chapter Ancient");
+                upgrades.Add("Chapter Ancient (+15 pts)");
             }
 
             if (keywords.Contains("COMPANY CHAMPION"))
             {
-                upgrades.Add("Chapter Champion");
+                upgrades.Add("Chapter Champion (+10 pts)");
             }
 
             return upgrades;

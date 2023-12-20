@@ -13,7 +13,7 @@ namespace Roster_Builder.Space_Marines
     {
         public CompanyChampion()
         {
-            DEFAULT_POINTS = 55;
+            DEFAULT_POINTS = 50;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
@@ -21,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "COMMAND SQUAD", "COMPANY CHAMPION"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()

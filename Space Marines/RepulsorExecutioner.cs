@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public RepulsorExecutioner()
         {
-            DEFAULT_POINTS = 355;
+            DEFAULT_POINTS = 250;
             UnitSize = 1;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "1m2k";
@@ -23,6 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "TRANSPORT", "MACHINE SPIRIT", "REPULSOR FIELD", "REPULSOR EXECUTIONER"
             });
+            role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -94,21 +95,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Icarus Rocket Pod"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Ironhail Heavy Stubber"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Heavy Laser Destroyer"))
-            {
-                Points += 10;
-            }
         }
 
         public override string ToString()

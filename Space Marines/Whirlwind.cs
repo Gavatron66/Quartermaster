@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Whirlwind()
         {
-            DEFAULT_POINTS = 150;
+            DEFAULT_POINTS = 125;
             UnitSize = 1;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "1m2k";
@@ -23,6 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "SMOKESCREEN", "HUNTER",
             });
+            role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -45,7 +46,7 @@ namespace Roster_Builder.Space_Marines
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            cbOption1.Text = "Hunter-killer Missile";
+            cbOption1.Text = "Hunter-killer Missile (+5 pts)";
             if (Weapons[1] != string.Empty)
             {
                 cbOption1.Checked = true;
@@ -95,19 +96,9 @@ namespace Roster_Builder.Space_Marines
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Hunter-killer Missile"))
+            if (Weapons.Contains("Hunter-killer Missile (+5 pts)"))
             {
                 Points += 5;
-            }
-
-            if (Weapons.Contains("Storm Bolter"))
-            {
-                Points += 5;
-            }
-
-            if(Weapons.Contains("Whirlwind Vengeance Launcher"))
-            {
-                Points += 10;
             }
         }
 

@@ -14,7 +14,7 @@ namespace Roster_Builder.Space_Marines
 
         public LandSpeederTyphoons()
         {
-            DEFAULT_POINTS = 110;
+            DEFAULT_POINTS = 100;
             UnitSize = 1;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "NL1m";
@@ -27,6 +27,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "FLY", "LAND SPEEDERS TYPHOONS"
             });
+            role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()
@@ -117,14 +118,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            foreach (string weapon in Weapons)
-            {
-                if (weapon == "Multi-melta")
-                {
-                    Points += 10;
-                }
-            }
         }
 
         public override string ToString()

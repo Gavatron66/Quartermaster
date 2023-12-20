@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public GravisCaptain()
         {
-            DEFAULT_POINTS = 115;
+            DEFAULT_POINTS = 105;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "PRIMARIS", "MK X GRAVIS","CAPTAIN"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()

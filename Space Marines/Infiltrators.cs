@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Infiltrators()
         {
-            DEFAULT_POINTS = 24;
+            DEFAULT_POINTS = 20;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "N1m";
@@ -21,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "PRIMARIS", "PHOBOS", "SMOKESCREEN", "INFILTRATOR SQUAD"
             });
+            role = "Troops";
         }
 
         public override Datasheets CreateUnit()
@@ -68,15 +69,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            if(Weapons.Contains("Helix Gauntlet"))
-            {
-                Points += 10;
-            }
-            if(Weapons.Contains("Infiltrator Comms Array"))
-            {
-                Points += 5;
-            }
         }
 
         public override string ToString()

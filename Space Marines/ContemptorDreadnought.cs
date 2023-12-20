@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public ContemptorDreadnought()
         {
-            DEFAULT_POINTS = 150;
+            DEFAULT_POINTS = 140;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m";
@@ -21,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "CORE", "DREADNOUGHT", "CONTEMPTOR DREADNOUGHT"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()

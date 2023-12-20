@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public InvaderATVs()
         {
-            DEFAULT_POINTS = 80;
+            DEFAULT_POINTS = 70;
             UnitSize = 1;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "3N";
@@ -22,6 +22,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "BIKER", "PRIMARIS", "INVADER ATV SQUAD"
             });
+            role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()
@@ -98,8 +99,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = UnitSize * DEFAULT_POINTS;
-
-            Points += 5 * Convert.ToInt32(Weapons[0]);
         }
 
         public override string ToString()

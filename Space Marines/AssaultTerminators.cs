@@ -27,6 +27,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "TERMINATOR", "TERMINATOR ASSAULT SQUAD"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -148,19 +149,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            foreach (var item in Weapons)
-            {
-                if (item == "Thunder Hammer and Storm Shield")
-                {
-                    Points += 10;
-                }
-            }
-
-            if(Weapons.Contains("Teleport Homer"))
-            {
-                Points += 5;
-            }
         }
 
         public override string ToString()

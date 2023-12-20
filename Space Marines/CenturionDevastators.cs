@@ -27,6 +27,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CENTURION", "CENTURION DEVASTATOR SQUAD"
             });
+            role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -153,19 +154,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = UnitSize * DEFAULT_POINTS;
-
-            foreach(string weapon in Weapons)
-            {
-                if(weapon == "Grav-cannon" || weapon == "Two Heavy Bolters")
-                {
-                    Points += 15;
-                }
-
-                if(weapon == "Two Lascannons")
-                {
-                    Points += 20;
-                }
-            }
         }
 
         public override string ToString()

@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Incursors()
         {
-            DEFAULT_POINTS = 21;
+            DEFAULT_POINTS = 18;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "N1k";
@@ -21,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "PRIMARIS", "PHOBOS", "SMOKESCREEN", "INCURSOR SQUAD"
             });
+            role = "Troops";
         }
 
         public override Datasheets CreateUnit()
@@ -76,11 +77,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            if(Weapons.Contains(cbOption1.Text))
-            {
-                Points += 10;
-            }
         }
 
         public override string ToString()

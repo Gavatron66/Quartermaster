@@ -14,7 +14,7 @@ namespace Roster_Builder.Space_Marines
 
         public VanguardVeterans()
         {
-            DEFAULT_POINTS = 19;
+            DEFAULT_POINTS = 20;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "NL2m2k";
@@ -29,6 +29,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "MELTA BOMBS", "VANGAURD VETERAN SQUAD"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -73,14 +74,14 @@ namespace Roster_Builder.Space_Marines
                 "Astartes Chainsword",
                 "Bolt Pistol",
                 "Grav-pistol",
-                "Lightning Claw",
+                "Lightning Claw (+3 pts)",
                 "Plasma Pistol",
                 "Power Axe",
-                "Power Fist",
+                "Power Fist (+5 pts)",
                 "Power Maul",
                 "Power Sword",
-                "Storm Shield",
-                "Thunder Hammer"
+                "Storm Shield (+5 pts)",
+                "Thunder Hammer (+10 pts)"
             });
             if (f.currentSubFaction == "Blood Angels" || f.currentSubFaction == "Deathwatch")
             {
@@ -94,15 +95,15 @@ namespace Roster_Builder.Space_Marines
                 "Astartes Chainsword",
                 "Bolt Pistol",
                 "Grav-pistol",
-                "Lightning Claw",
+                "Lightning Claw (+3 pts)",
                 "Plasma Pistol",
                 "Power Axe",
-                "Power Fist",
+                "Power Fist (+5 pts)",
                 "Power Maul",
                 "Power Sword",
                 //Relic Blade - Sergeant only
-                "Storm Shield",
-                "Thunder Hammer"
+                "Storm Shield (+5 pts)",
+                "Thunder Hammer (+10 pts)"
             });
             if (f.currentSubFaction == "Blood Angels" || f.currentSubFaction == "Deathwatch")
             {
@@ -110,8 +111,8 @@ namespace Roster_Builder.Space_Marines
                 cmbOption2.Items.Insert(4, "Inferno Pistol");
             }
 
-            cbOption1.Text = "Heavy Thunder Hammer";
-            cbOption2.Text = "Jump Packs (All Models)";
+            cbOption1.Text = "Heavy Thunder Hammer (+12 pts)";
+            cbOption2.Text = "Jump Pack (+3 pts/model) (All Models)";
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -155,7 +156,7 @@ namespace Roster_Builder.Space_Marines
                 case 21:
                     if (cbOption1.Checked)
                     {
-                        Weapons[(currentIndex * 2) + 1] = "Heavy Thunder Hammer";
+                        Weapons[(currentIndex * 2) + 1] = "Heavy Thunder Hammer (+12 pts)";
                         Weapons[(currentIndex * 2) + 2] = "";
                         if(currentIndex == 0)
                         {
@@ -238,7 +239,7 @@ namespace Roster_Builder.Space_Marines
                     panel.Controls["lblOption2"].Visible = true;
                     cbOption2.Visible = true;
 
-                    if (Weapons[(currentIndex * 2) + 1] != "Heavy Thunder Hammer")
+                    if (Weapons[(currentIndex * 2) + 1] != "Heavy Thunder Hammer (+12 pts)")
                     {
                         cmbOption1.Enabled = true;
                         cmbOption2.Enabled = true;
@@ -268,7 +269,7 @@ namespace Roster_Builder.Space_Marines
 
                     cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
                     cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 2]);
-                    if (Weapons[(currentIndex * 2) + 1] == "Heavy Thunder Hammer")
+                    if (Weapons[(currentIndex * 2) + 1] == "Heavy Thunder Hammer (+12 pts)")
                     {
                         cbOption1.Checked = true;
                     }
@@ -291,13 +292,13 @@ namespace Roster_Builder.Space_Marines
 
             foreach (var weapon in Weapons)
             {
-                if (weapon == "Lightning Claw" || weapon == "Power Axe" ||
+                if (weapon == "Lightning Claw (+3 pts)" || weapon == "Power Axe" ||
                     weapon == "Power Maul" || weapon == "Power Sword")
                 {
                     Points += 3;
                 }
 
-                if (weapon == "Storm Shield")
+                if (weapon == "Storm Shield (+5 pts)")
                 {
                     Points += 4;
                 }
@@ -308,7 +309,7 @@ namespace Roster_Builder.Space_Marines
                     Points += 5;
                 }
 
-                if (weapon == "Power Fist")
+                if (weapon == "Power Fist (+5 pts)")
                 {
                     Points += 8;
                 }
@@ -318,12 +319,12 @@ namespace Roster_Builder.Space_Marines
                     Points += 10;
                 }
 
-                if (weapon == "Thunder Hammer")
+                if (weapon == "Thunder Hammer (+10 pts)")
                 {
                     Points += 12;
                 }
 
-                if (weapon == "Heavy Thunder Hammer")
+                if (weapon == "Heavy Thunder Hammer (+12 pts)")
                 {
                     Points += 15;
                 }

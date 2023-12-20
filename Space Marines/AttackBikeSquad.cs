@@ -14,7 +14,7 @@ namespace Roster_Builder.Space_Marines
 
         public AttackBikeSquad()
         {
-            DEFAULT_POINTS = 45;
+            DEFAULT_POINTS = 50;
             UnitSize = 1;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "NL1m";
@@ -27,6 +27,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "BIKER", "CORE", "ATTACK BIKE SQUAD"
             });
+            role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()
@@ -117,14 +118,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            foreach(string weapon in Weapons)
-            {
-                if(weapon == "Multi-melta")
-                {
-                    Points += 10;
-                }
-            }
         }
 
         public override string ToString()

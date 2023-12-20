@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public PhobosLibrarian()
         {
-            DEFAULT_POINTS = 100;
+            DEFAULT_POINTS = 90;
             Points = DEFAULT_POINTS;
             TemplateCode = "pc";
             Keywords.AddRange(new string[]
@@ -20,6 +20,7 @@ namespace Roster_Builder.Space_Marines
                 "INFANTRY", "CHARACTER", "PRIMARIS", "PHOBOS", "PSYKER", "LIBRARIAN"
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
+            role = "HQ";
         }
         public override Datasheets CreateUnit()
         {

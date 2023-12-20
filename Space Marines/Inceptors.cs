@@ -21,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "PRIMARIS", "FLY", "JUMP PACK", "MK X GRAVIS", "INCEPTOR SQUAD"
             });
+            role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()
@@ -67,11 +68,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            if (Weapons.Contains("Plasma Exterminators"))
-            {
-                Points += 5 * UnitSize;
-            }
         }
 
         public override string ToString()

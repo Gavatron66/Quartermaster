@@ -21,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "AIRCRAFT", "FLY", "STORMTALON GUNSHIP"
             });
+            role = "Flyer";
         }
 
         public override Datasheets CreateUnit()
@@ -58,21 +59,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Two Heavy Bolters"))
-            {
-                Points += 10;
-            }
-
-            if (Weapons.Contains("Typhoon Missile Launcher"))
-            {
-                Points += 20;
-            }
-
-            if (Weapons.Contains("Two Lascannons"))
-            {
-                Points += 20;
-            }
         }
 
         public override string ToString()

@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Chaplain()
         {
-            DEFAULT_POINTS = 80;
+            DEFAULT_POINTS = 70;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m1k_pc";
             Weapons.Add("Bolt Pistol");
@@ -22,6 +22,7 @@ namespace Roster_Builder.Space_Marines
                 "INFANTRY", "CHARACTER", "PRIEST", "CHAPLAIN"
             });
             PsykerPowers = new string[1] { string.Empty };
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -65,7 +66,7 @@ namespace Roster_Builder.Space_Marines
             }
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            cbOption1.Text = "Jump Pack";
+            cbOption1.Text = "Jump Pack (+25 pts)";
             if (Weapons[1] == cbOption1.Text)
             {
                 cbOption1.Checked = true;
@@ -257,38 +258,9 @@ namespace Roster_Builder.Space_Marines
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
-            string[] five = new string[]
+            if (Weapons.Contains("Jump Pack (+25 pts)"))
             {
-                "Grav-pistol",
-                "Hand Flamer",
-                "Inferno Pistol",
-                "Plasma Pistol",
-                "Storm Bolter"
-            };
-
-            string[] ten = new string[]
-            {
-                "Combi-flamer",
-                "Combi-grav",
-                "Combi-melta",
-                "Combi-plasma",
-                "Power Fist",
-            };
-
-            foreach (string weapon in Weapons)
-            {
-                if (five.Contains(weapon))
-                {
-                    Points += 5;
-                }
-                else if (ten.Contains(weapon))
-                {
-                    Points += 10;
-                }
-                else if (weapon == "Jump Pack")
-                {
-                    Points += 25;
-                }
+                Points += 25;
             }
         }
 

@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public TerminatorLibrarian()
         {
-            DEFAULT_POINTS = 105;
+            DEFAULT_POINTS = 95;
             Points = DEFAULT_POINTS;
             TemplateCode = "2m_pc";
             Weapons.Add("Force Stave");
@@ -22,6 +22,7 @@ namespace Roster_Builder.Space_Marines
                 "INFANTRY", "CHARACTER", "TERMINATOR", "PSYKER", "LIBRARIAN"
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -257,24 +258,6 @@ namespace Roster_Builder.Space_Marines
             Points = DEFAULT_POINTS;
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
-
-            string[] tens = new string[]
-            {
-                "Combi-flamer",
-                "Combi-grav",
-                "Combi-melta",
-                "Combi-plasma"
-            };
-
-            if(Weapons.Contains("Storm Bolter"))
-            {
-                Points += 5;
-            }
-            else if (Weapons.Contains("(None)")) { }
-            else
-            {
-                Points += 10;
-            }
         }
 
         public override string ToString()

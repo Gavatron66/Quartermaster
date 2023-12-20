@@ -13,7 +13,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Judicar()
         {
-            DEFAULT_POINTS = 85;
+            DEFAULT_POINTS = 75;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
@@ -21,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "PRIMARIS", "JUDICAR"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()

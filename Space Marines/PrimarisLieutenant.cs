@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public PrimarisLieutenant()
         {
-            DEFAULT_POINTS = 75;
+            DEFAULT_POINTS = 65;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m_c";
             Weapons.Add("Master-crafted Auto Bolt Rifle and Bolt Pistol");
@@ -20,6 +20,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "PRIMARIS", "LIEUTENANT"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -178,18 +179,6 @@ namespace Roster_Builder.Space_Marines
 
             Points = DEFAULT_POINTS;
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
-
-            if (Weapons.Contains("Special Issue Bolt Carbine, Master-crafted Power Axe and Bolt Pistol") ||
-                Weapons.Contains("Master-crafted Auto Bolt Rifle and Plasma Pistol") ||
-                Weapons.Contains("Master-crafted Stalker Bolt Rifle and Plasma Pistol"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Master-crafted Power Sword, Neo-volkite Pistol and Storm Shield"))
-            {
-                Points += 15;
-            }
         }
 
         public override string ToString()

@@ -21,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "CHARACTER", "MONSTER", "PRIMARCH", "ROBOUTE GUILLIMAN"
             });
             WarlordTrait = "Nobility Made Manifest";
+            role = "Lord of War";
         }
 
         public override Datasheets CreateUnit()

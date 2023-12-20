@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Vindicator()
         {
-            DEFAULT_POINTS = 130;
+            DEFAULT_POINTS = 120;
             UnitSize = 1;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "3k";
@@ -23,6 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "SMOKESCREEN", "VINDICATOR"
             });
+            role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -47,7 +48,7 @@ namespace Roster_Builder.Space_Marines
                 cbOption1.Checked = false;
             }
 
-            cbOption2.Text = "Hunter-killer Missile";
+            cbOption2.Text = "Hunter-killer Missile (+5 pts)";
             if (Weapons[1] != string.Empty)
             {
                 cbOption2.Checked = true;
@@ -101,15 +102,7 @@ namespace Roster_Builder.Space_Marines
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons[0] != string.Empty)
-            {
-                Points += 10;
-            }
             if (Weapons[1] != string.Empty)
-            {
-                Points += 5;
-            }
-            if (Weapons[2] != string.Empty)
             {
                 Points += 5;
             }

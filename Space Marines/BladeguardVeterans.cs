@@ -23,6 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "PRIMARIS", "BLADEGUARD", "BLADEGUARD VETERAN SQUAD"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -76,11 +77,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            if(!Weapons.Contains("Heavy Bolt Pistol"))
-            {
-                Points += 5;
-            }
         }
 
         public override string ToString()

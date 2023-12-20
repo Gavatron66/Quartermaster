@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public PrimarisTechmarine()
         {
-            DEFAULT_POINTS = 80;
+            DEFAULT_POINTS = 70;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "PRIMARIS", "TECHMARINE"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()

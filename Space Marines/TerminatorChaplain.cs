@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public TerminatorChaplain()
         {
-            DEFAULT_POINTS = 95;
+            DEFAULT_POINTS = 85;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m_pc";
             Weapons.Add("Storm Bolter");
@@ -225,11 +225,6 @@ namespace Roster_Builder.Space_Marines
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
-            if (Weapons.Contains("Storm Bolter")) { }
-            else
-            {
-                Points += 5;
-            }
         }
 
         public override string ToString()

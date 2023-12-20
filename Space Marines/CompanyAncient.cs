@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public CompanyAncient()
         {
-            DEFAULT_POINTS = 75;
+            DEFAULT_POINTS = 65;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m_c";
             Weapons.Add("Bolt Pistol");
@@ -20,6 +20,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "ANCIENT", "COMMAND SQUAD", "COMPANY ANCIENT"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -195,44 +196,6 @@ namespace Roster_Builder.Space_Marines
 
             Points = DEFAULT_POINTS;
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
-
-            string[] fivepointers = new string[]
-            {
-                "Grav-pistol",
-                "Hand Flamer",
-                "Inferno Pistol",
-                "Lightning Claw",
-                "Plasma Pistol",
-                "Power Axe",
-                "Power Maul",
-                "Power Sword",
-                "Storm Bolter"
-            };
-
-            string[] tenpointers = new string[]
-            {
-                "Combi-flamer",
-                "Combi-grav",
-                "Combi-melta",
-                "Combi-plasma",
-                "Power Fist",
-            };
-
-            foreach (string weapon in Weapons)
-            {
-                if (fivepointers.Contains(weapon))
-                {
-                    Points += 5;
-                }
-                else if (tenpointers.Contains(weapon))
-                {
-                    Points += 10;
-                }
-                else if (weapon == "Thunder Hammer")
-                {
-                    Points += 20;
-                }
-            }
         }
 
         public override string ToString()

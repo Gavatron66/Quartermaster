@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Invictor()
         {
-            DEFAULT_POINTS = 160;
+            DEFAULT_POINTS = 140;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m";
@@ -21,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "INVICTOR TACTICAL WARSUIT"
             });
+            role = "Elites";
         }
 
         public override Datasheets CreateUnit()

@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Hellblasters()
         {
-            DEFAULT_POINTS = 33;
+            DEFAULT_POINTS = 30;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "N1m1k";
@@ -22,6 +22,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "PRIMARIS", "HELLBLASTER SQUAD"
             });
+            role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -91,11 +92,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            if (Weapons[1] != "")
-            {
-                Points += 5;
-            }
         }
 
         public override string ToString()

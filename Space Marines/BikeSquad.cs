@@ -31,6 +31,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "BIKER", "CORE", "BIKE SQUAD"
             });
+            role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()
@@ -77,7 +78,7 @@ namespace Roster_Builder.Space_Marines
                 lbModelSelect.Items.Add("Space Marine Biker w/ " + Weapons[i + 2]);
             }
 
-            cbOption1.Text = "Includes an Attack Bike";
+            cbOption1.Text = "Include an Attack Bike (+50 pts)";
             cbOption1.Location = new System.Drawing.Point(243, 59);
             if (Weapons[0] == "")
             {
@@ -211,7 +212,7 @@ namespace Roster_Builder.Space_Marines
                             cmbOption1.Items.AddRange(new string[]
                             {
                                 "Heavy Bolter",
-                                "Multi-melta"
+                                "Multi-melta (+10 pts)"
                             });
                             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[1]);
                         }
@@ -247,47 +248,14 @@ namespace Roster_Builder.Space_Marines
             Points = DEFAULT_POINTS * UnitSize;
             special = 0;
 
-            foreach(string weapon in Weapons)
+            if(Weapons.Contains("Attack Bike"))
             {
-                if(weapon == "Grav-pistol" || weapon == "Hand Flamer" || weapon == "Inferno Pistol" || weapon == "Lightning Claw"
-                    || weapon == "Plasma Pistol" || weapon == "Power Axe" || weapon == "Power Maul" || weapon == "Power Sword" ||
-                    weapon == "Storm Bolter")
-                {
-                    Points += 5;
-                }
+                Points += 50;
+            }
 
-                if(weapon == "Flamer")
-                {
-                    Points += 5;
-                    special++;
-                }
-
-                if(weapon == "Combi-flamer" || weapon == "Combi-grav" || weapon == "Combi-melta" || weapon == "Combi-plasma"
-                    || weapon == "Power Fist")
-                {
-                    Points += 10;
-                }
-
-                if(weapon == "Grav-gun" || weapon == "Meltagun" || weapon == "Plasma Gun")
-                {
-                    Points += 10;
-                    special++;
-                }
-
-                if(weapon == "Heavy Bolter" || weapon == "Thunder Hammer")
-                {
-                    Points += 15;
-                }
-
-                if(weapon == "Multi-melta")
-                {
-                    Points += 25;
-                }
-
-                if(weapon == "Attack Bike")
-                {
-                    Points += 45;
-                }
+            if(Weapons.Contains("Multi-melta (+10 pts)"))
+            {
+                Points += 10;
             }
         }
 

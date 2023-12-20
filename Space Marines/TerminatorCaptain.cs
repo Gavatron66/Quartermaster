@@ -22,6 +22,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "TERMINATOR","CAPTAIN"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -56,7 +57,7 @@ namespace Roster_Builder.Space_Marines
                 "Power Fist",
                 "Storm Bolter",
                 "Storm Shield",
-                "Thunder Hammer"
+                "Thunder Hammer (+5 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
@@ -71,7 +72,7 @@ namespace Roster_Builder.Space_Marines
                 "Power Sword",
                 "Relic Blade",
                 "Storm Shield",
-                "Thunder Hammer"
+                "Thunder Hammer (+5 pts)"
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
@@ -281,28 +282,11 @@ namespace Roster_Builder.Space_Marines
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
-            string[] weaponpoints = new string[]
-            {
-                "Chainfist",
-                "Combi-flamer",
-                "Combi-grav",
-                "Combi-melta",
-                "Combi-plasma",
-                "Power Fist",
-                "Relic Blade",
-                "Storm Shield",
-                "Wrist-mounted Grenade Launcher"
-            };
-
             foreach (string weapon in Weapons)
             {
-                if (weaponpoints.Contains(weapon))
+                if (weapon == "Thunder Hammer (+5 pts)")
                 {
                     Points += 5;
-                }
-                else if (weapon == "Thunder Hammer")
-                {
-                    Points += 15;
                 }
             }
         }

@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public HeavyIntercessors()
         {
-            DEFAULT_POINTS = 28;
+            DEFAULT_POINTS = 23;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "2N1m";
@@ -22,6 +22,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "PRIMARIS", "INTERCESSORS", "MK X GRAVIS", "HEAVY INTERCESSOR SQUAD"
             });
+            role = "Troops";
         }
 
         public override Datasheets CreateUnit()
@@ -112,8 +113,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = (DEFAULT_POINTS * UnitSize);
-
-            Points += 10 * int.Parse(Weapons[1]);
         }
 
         public override string ToString()

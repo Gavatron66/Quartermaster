@@ -25,6 +25,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "TECHMARINE"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -294,44 +295,6 @@ namespace Roster_Builder.Space_Marines
             Points = DEFAULT_POINTS;
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
-
-            string[] tens = new string[]
-            {
-                "Combi-flamer",
-                "Combi-grav",
-                "Combi-melta",
-                "Combi-plasma"
-            };
-
-            string[] fives = new string[]
-            {
-                "Grav-pistol",
-                "Hand Flamer",
-                "Inferno Pistol",
-                "Plasma Pistol",
-                "Power Fist",
-                "Storm Bolter"
-            };
-
-            foreach (string weapon in Weapons)
-            {
-                if (fives.Contains(weapon))
-                {
-                    Points += 5;
-                }
-                else if (tens.Contains(weapon))
-                {
-                    Points += 10;
-                }
-                else if (weapon == "Thunder Hammer" | weapon == "Flamer, Plasma Cutter and Servo-arm")
-                {
-                    Points += 15;
-                }
-                else if (weapon == "Helfrost Pistol")
-                {
-                    Points += 20;
-                }
-            }
         }
 
         public override string ToString()

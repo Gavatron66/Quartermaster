@@ -13,7 +13,7 @@ namespace Roster_Builder.Space_Marines
         int currentIndex;
         public LandSpeederTornadoes()
         {
-            DEFAULT_POINTS = 75;
+            DEFAULT_POINTS = 70;
             UnitSize = 1;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "NL2m";
@@ -27,6 +27,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CENTURION", "CENTURION ASSAULT SQUAD"
             });
+            role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()
@@ -137,19 +138,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = UnitSize * DEFAULT_POINTS;
-
-            foreach (string weapon in Weapons)
-            {
-                if(weapon == "Assault Cannon")
-                {
-                    Points += 5;
-                }
-
-                if (weapon == "Multi-melta")
-                {
-                    Points += 10;
-                }
-            }
         }
 
         public override string ToString()

@@ -22,6 +22,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "BIKER", "CHARACTER", "CAPTAIN"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -60,7 +61,7 @@ namespace Roster_Builder.Space_Marines
                 "Power Fist",
                 "Power Maul",
                 "Power Sword",
-                "Thunder Hammer"
+                "Thunder Hammer (+10 pts)"
             });
             if (f.currentSubFaction == "Blood Angels" || f.currentSubFaction == "Deathwatch")
             {
@@ -80,7 +81,7 @@ namespace Roster_Builder.Space_Marines
                 "Power Maul",
                 "Power Sword",
                 "Storm Shield",
-                "Thunder Hammer"
+                "Thunder Hammer (+10 pts)"
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
@@ -228,43 +229,11 @@ namespace Roster_Builder.Space_Marines
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
-            string[] fivepointers = new string[]
-            {
-                "Grav-pistol",
-                "Hand Flamer",
-                "Inferno Pistol",
-                "Lightning Claw",
-                "Master-crafted Boltgun",
-                "Plasma Pistol",
-                "Power Axe",
-                "Power Maul",
-                "Power Sword",
-                "Storm Bolter"
-            };
-
-            string[] tenpointers = new string[]
-            {
-                "Combi-flamer",
-                "Combi-grav",
-                "Combi-melta",
-                "Combi-plasma",
-                "Power Fist",
-                "Storm Shield"
-            };
-
             foreach (string weapon in Weapons)
             {
-                if (fivepointers.Contains(weapon))
-                {
-                    Points += 5;
-                }
-                else if (tenpointers.Contains(weapon))
+                if (weapon == "Thunder Hammer (+10 pts)")
                 {
                     Points += 10;
-                }
-                else if (weapon == "Thunder Hammer")
-                {
-                    Points += 20;
                 }
             }
         }

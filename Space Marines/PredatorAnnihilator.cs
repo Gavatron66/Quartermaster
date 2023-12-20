@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public PredatorAnnihilator()
         {
-            DEFAULT_POINTS = 130;
+            DEFAULT_POINTS = 115;
             UnitSize = 1;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "1m2k";
@@ -23,6 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "PREDATOR", "SMOKESCREEN", "PREDATOR ANNIHILATOR"
             });
+            role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -42,11 +43,11 @@ namespace Roster_Builder.Space_Marines
             {
                 "(None)",
                 "Two Heavy Bolters",
-                "Two Lascannons"
+                "Two Lascannons (+20 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            cbOption1.Text = "Hunter-killer Missile";
+            cbOption1.Text = "Hunter-killer Missile (+5 pts)";
             if (Weapons[1] != string.Empty)
             {
                 cbOption1.Checked = true;
@@ -96,22 +97,12 @@ namespace Roster_Builder.Space_Marines
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Hunter-killer Missile"))
+            if (Weapons.Contains("Hunter-killer Missile (+5 pts)"))
             {
                 Points += 5;
             }
 
-            if (Weapons.Contains("Storm Bolter"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Two Heavy Bolters"))
-            {
-                Points += 15;
-            }
-
-            if(Weapons.Contains("Two Lascannons"))
+            if(Weapons.Contains("Two Lascannons (+20 pts)"))
             {
                 Points += 20;
             }

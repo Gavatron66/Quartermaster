@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public PrimarisCaptain()
         {
-            DEFAULT_POINTS = 90;
+            DEFAULT_POINTS = 80;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m1k_c";
             Weapons.Add("Master-crafted Auto Bolt Rifle");
@@ -21,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "PRIMARIS", "CAPTAIN"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -228,16 +229,6 @@ namespace Roster_Builder.Space_Marines
 
             Points = DEFAULT_POINTS;
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
-
-            if (Weapons[0] == "Heavy Bolt Pistol, Master-crafted Power Sword and Relic Shield" || Weapons[1] == "Power Fist")
-            {
-                Points += 10;
-            }
-
-            if (Weapons[1] == "Master-crafted Power Sword")
-            {
-                Points += 5;
-            }
         }
 
         public override string ToString()

@@ -23,6 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "CAPTAIN"
             });
+            role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -63,7 +64,7 @@ namespace Roster_Builder.Space_Marines
                 "Power Maul",
                 "Power Sword",
                 "Storm Shield",
-                "Thunder Hammer"
+                "Thunder Hammer (+10 pts)"
             });
             if(f.currentSubFaction == "Blood Angels" || f.currentSubFaction == "Deathwatch")
             {
@@ -83,7 +84,7 @@ namespace Roster_Builder.Space_Marines
                 "Power Maul",
                 "Power Sword",
                 "Storm Shield",
-                "Thunder Hammer"
+                "Thunder Hammer (+10 pts)"
             });
             if (f.currentSubFaction == "Deathwatch")
             {
@@ -91,7 +92,7 @@ namespace Roster_Builder.Space_Marines
             }
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
-            cbOption1.Text = "Jump Pack";
+            cbOption1.Text = "Jump Pack (+25 pts)";
             if (Weapons[2] == cbOption1.Text)
             {
                 cbOption1.Checked = true;
@@ -298,27 +299,14 @@ namespace Roster_Builder.Space_Marines
 
             foreach (string weapon in Weapons)
             {
-                if (fivepointers.Contains(weapon))
-                {
-                    Points += 5;
-                }
-                else if (tenpointers.Contains(weapon))
+                if (weapon == "Thunder Hammer (+10 pts)")
                 {
                     Points += 10;
                 }
-                else if (weapon == "Thunder Hammer")
-                {
-                    Points += 20;
-                }
-                else if (weapon == "Jump Pack")
+                else if (weapon == "Jump Pack (+25 pts)")
                 {
                     Points += 25;
                 }
-            }
-
-            if(Weapons.Contains("Lightning Claw"))
-            {
-                Points += 5;
             }
         }
 

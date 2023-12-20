@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Eliminators()
         {
-            DEFAULT_POINTS = 30;
+            DEFAULT_POINTS = 25;
             UnitSize = 3;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "2m";
@@ -22,6 +22,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "PRIMARIS", "PHOBOS", "ELIMINATOR SQUAD"
             });
+            role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -74,15 +75,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            if (Weapons[0] == "Las Fusil")
-            {
-                Points += 20;
-            }
-            if (Weapons[1] == "Las Fusil")
-            {
-                Points += 10;
-            }
         }
 
         public override string ToString()

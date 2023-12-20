@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Impulsor()
         {
-            DEFAULT_POINTS = 110;
+            DEFAULT_POINTS = 100;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "2m1k";
@@ -23,6 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "TRANSPORT", "REPULSOR FIELD", "IMPULSOR"
             });
+            role = "Transport";
         }
 
         public override Datasheets CreateUnit()
@@ -92,31 +93,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS;
-
-            if(Weapons.Contains("Ironhail Heavy Stubber"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Ironhail Skytalon Array"))
-            {
-                Points += 10;
-            }
-
-            if (Weapons.Contains("Orbital Comms Array"))
-            {
-                Points += 15;
-            }
-
-            if (Weapons.Contains("Shield Dome"))
-            {
-                Points += 15;
-            }
-
-            if (Weapons.Contains("Bellicatus Missile Array"))
-            {
-                Points += 20;
-            }
         }
 
         public override string ToString()
