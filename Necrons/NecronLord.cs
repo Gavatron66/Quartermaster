@@ -47,7 +47,6 @@ namespace Roster_Builder.Necrons
                 cmbWarlord.Items.Add(item);
             }
 
-
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
@@ -209,7 +208,7 @@ namespace Roster_Builder.Necrons
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)

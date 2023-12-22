@@ -50,6 +50,7 @@ namespace Roster_Builder
             btnSave.Visible = false;
             MenuPanel.Visible = true;
             MenuPanel.Location = new System.Drawing.Point(242, 35);
+            MenuPanel.BringToFront();
             lblErrors.Visible = false;
             panelSubFaction.Location = new System.Drawing.Point(242, 96);
 
@@ -76,6 +77,7 @@ namespace Roster_Builder
 
             lbUnits.Items.Clear();
             lbRoster.Items.Clear();
+            cmbSubFaction.Items.Clear();
 
             currentIndex = -1;
             #endregion
@@ -83,6 +85,11 @@ namespace Roster_Builder
 
         private void btnBegin_Click(object sender, EventArgs e)
         {
+            if(cmbSelectFaction.SelectedIndex < 0 || nudSelectPoints.Value < 500)
+            {
+                return;
+            }
+
             lbRoster.Visible = true;
             lbUnits.Visible = true;
             panel1.Visible = true;
@@ -103,7 +110,7 @@ namespace Roster_Builder
             if (!isLoading)
             {
                 units = cmbSelectFaction.SelectedItem as Faction;
-                roster = new Roster(Convert.ToInt32(txtSelectPoints.Text), units);
+                roster = new Roster(Convert.ToInt32(nudSelectPoints.Value), units);
             }
             else
             {
@@ -192,7 +199,7 @@ namespace Roster_Builder
                 pts += roster.roster[i].Points;
             }
 
-            lblPoints.Text = pts + " / " + txtSelectPoints.Text;
+            lblPoints.Text = pts + " / " + nudSelectPoints.Text;
             if (currentIndex >= 0)
             {
                 lblEditingUnit.Text = "Currently Editing: " + roster.roster[currentIndex].ToString();
@@ -555,7 +562,7 @@ namespace Roster_Builder
 
             roster = new Roster(newRoster);
 
-            txtSelectPoints.Text = roster.Points.ToString();
+            nudSelectPoints.Value = Convert.ToInt32(roster.Points.ToString());
 
             isLoading = true;
             btnBegin.PerformClick();

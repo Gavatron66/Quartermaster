@@ -38,3 +38,43 @@ Space Marines
 	
 Hybrid Metamorphs needs to be visited when the location and sizing rework is ready
 	Atalan Jackals
+	
+	
+	
+	
+Captain
+Captain in Phobos Armour
+Captain in Terminator Armour
+Captain on Bike
+Captain with Master-crafted Heavy Bolt Rifle
+Chaplain
+Chaplain in Terminator Armour
+Librarian
+Librarian in Phobos Armour
+Librarian in Terminator Armour
+Lieutenant
+Lieutenant in Phobos Armour
+Lieutenant in Reiver Armour
+Primaris Captain
+Primaris Chaplain
+Primaris Chaplain on Bike
+Primaris Librarian
+Primaris Techmarine
+Techmarine
+Ancient in Terminator Armour
+Apothecary
+Bladeguard Ancient
+Company Ancient
+Company Champion
+Judiciar
+Primaris Apothecary
+Primaris Ancient
+
+Purgatorus - Bolt Pistol, Heavy Bolt Pistol, 
+			 Master-crafted Special Issue Bolt Pistol, 
+			 Absolvor Bolt Pistol
+Teeth of Terra - Astartes Chainsword
+The Burning Blade - Power Sword, Master-crafted Power Sword
+The Shield Eternal - Storm Shield, Relic Shield, Combat Shield
+
+

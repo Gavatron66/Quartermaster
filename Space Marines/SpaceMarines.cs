@@ -120,7 +120,7 @@ namespace Roster_Builder.Space_Marines
                 new Veterans(),
                 new VanguardVeterans(),
                 new SternguardVeterans(),
-                new Judicar(),
+                new Judiciar(),
                 new Reivers(),
                 new Aggressors(),
                 new AssaultTerminators(),
@@ -363,8 +363,8 @@ namespace Roster_Builder.Space_Marines
                 relics.Add("The Teeth of Terra");
             }
 
-            if((keywords.Contains("CAPTAIN") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS") || keywords.Contains("TERMINATOR"))) ||
-                (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
+            if((keywords.Contains("CAPTAIN") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS") || keywords.Contains("TERMINATOR")) && currentSubFaction == "Dark Angels") ||
+                (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS") && currentSubFaction == "Space Wolves") ||
                 (keywords.Contains("LIBRARIAN") && !(keywords.Contains("TERMINATOR") || keywords.Contains("PRIMARIS"))) ||
                 (keywords.Contains("CHAPLAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
                 (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||

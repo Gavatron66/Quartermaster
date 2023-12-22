@@ -80,7 +80,7 @@ namespace Roster_Builder.Death_Guard
                         warlord.Text = WarlordTrait;
                         warlord.Enabled = false;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; warlord.SelectedIndex = -1; }
                     break;
                 case 60:
                     if (clb.CheckedItems.Count < 2)

@@ -254,7 +254,7 @@
     <Compile Include="Space Marines\InvaderATVs.cs" />
     <Compile Include="Space Marines\Invictor.cs" />
     <Compile Include="Space Marines\IroncladDreadnought.cs" />
-    <Compile Include="Space Marines\Judicar.cs" />
+    <Compile Include="Space Marines\Judiciar.cs" />
     <Compile Include="Space Marines\LandRaider.cs" />
     <Compile Include="Space Marines\LandRaiderCrusader.cs" />
     <Compile Include="Space Marines\LandRaiderRedeemer.cs" />

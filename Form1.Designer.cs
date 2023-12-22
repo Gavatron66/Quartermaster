@@ -35,7 +35,6 @@
             this.lblFaction = new System.Windows.Forms.Label();
             this.lblSelectPoints = new System.Windows.Forms.Label();
             this.cmbSelectFaction = new System.Windows.Forms.ComboBox();
-            this.txtSelectPoints = new System.Windows.Forms.TextBox();
             this.btnBegin = new System.Windows.Forms.Button();
             this.lblCurrentPoints = new System.Windows.Forms.Label();
             this.lblPoints = new System.Windows.Forms.Label();
@@ -113,6 +112,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lblErrors = new System.Windows.Forms.Label();
             this.lblEditingUnit = new System.Windows.Forms.Label();
+            this.nudSelectPoints = new System.Windows.Forms.NumericUpDown();
             this.MenuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gbCustomSubfaction.SuspendLayout();
@@ -127,6 +127,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudUnitSize)).BeginInit();
             this.panelSubFaction.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSelectPoints)).BeginInit();
             this.SuspendLayout();
             // 
             // lbUnits
@@ -184,20 +185,13 @@
             // 
             // cmbSelectFaction
             // 
+            this.cmbSelectFaction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSelectFaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSelectFaction.FormattingEnabled = true;
             this.cmbSelectFaction.Location = new System.Drawing.Point(296, 198);
             this.cmbSelectFaction.Name = "cmbSelectFaction";
             this.cmbSelectFaction.Size = new System.Drawing.Size(166, 28);
             this.cmbSelectFaction.TabIndex = 5;
-            // 
-            // txtSelectPoints
-            // 
-            this.txtSelectPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSelectPoints.Location = new System.Drawing.Point(296, 254);
-            this.txtSelectPoints.Name = "txtSelectPoints";
-            this.txtSelectPoints.Size = new System.Drawing.Size(166, 26);
-            this.txtSelectPoints.TabIndex = 6;
             // 
             // btnBegin
             // 
@@ -254,13 +248,13 @@
             // 
             // MenuPanel
             // 
+            this.MenuPanel.Controls.Add(this.nudSelectPoints);
             this.MenuPanel.Controls.Add(this.btnLoad);
             this.MenuPanel.Controls.Add(this.lblTitle);
             this.MenuPanel.Controls.Add(this.btnBegin);
             this.MenuPanel.Controls.Add(this.lblFaction);
             this.MenuPanel.Controls.Add(this.lblSelectPoints);
             this.MenuPanel.Controls.Add(this.cmbSelectFaction);
-            this.MenuPanel.Controls.Add(this.txtSelectPoints);
             this.MenuPanel.Location = new System.Drawing.Point(12, 603);
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(632, 562);
@@ -327,9 +321,9 @@
             this.panel1.Controls.Add(this.lblOption2);
             this.panel1.Controls.Add(this.cmbOption1);
             this.panel1.Controls.Add(this.cmbOption2);
-            this.panel1.Location = new System.Drawing.Point(1110, 35);
+            this.panel1.Location = new System.Drawing.Point(242, 290);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1263, 680);
+            this.panel1.Size = new System.Drawing.Size(1670, 680);
             this.panel1.TabIndex = 8;
             // 
             // gbCustomSubfaction
@@ -341,7 +335,7 @@
             this.gbCustomSubfaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbCustomSubfaction.Location = new System.Drawing.Point(1125, 262);
             this.gbCustomSubfaction.Name = "gbCustomSubfaction";
-            this.gbCustomSubfaction.Size = new System.Drawing.Size(472, 108);
+            this.gbCustomSubfaction.Size = new System.Drawing.Size(486, 108);
             this.gbCustomSubfaction.TabIndex = 77;
             this.gbCustomSubfaction.TabStop = false;
             // 
@@ -367,6 +361,7 @@
             // 
             // cmbCustomSub1
             // 
+            this.cmbCustomSub1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCustomSub1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCustomSub1.FormattingEnabled = true;
             this.cmbCustomSub1.Location = new System.Drawing.Point(242, 31);
@@ -376,6 +371,7 @@
             // 
             // cmbCustomSub2
             // 
+            this.cmbCustomSub2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCustomSub2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCustomSub2.FormattingEnabled = true;
             this.cmbCustomSub2.Location = new System.Drawing.Point(242, 65);
@@ -395,6 +391,7 @@
             // 
             // cmbOption5
             // 
+            this.cmbOption5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOption5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOption5.FormattingEnabled = true;
             this.cmbOption5.Location = new System.Drawing.Point(844, 399);
@@ -415,6 +412,7 @@
             // 
             // cmbOption6
             // 
+            this.cmbOption6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOption6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOption6.FormattingEnabled = true;
             this.cmbOption6.Location = new System.Drawing.Point(844, 469);
@@ -521,7 +519,7 @@
             this.gbUnitLeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbUnitLeader.Location = new System.Drawing.Point(1125, 18);
             this.gbUnitLeader.Name = "gbUnitLeader";
-            this.gbUnitLeader.Size = new System.Drawing.Size(408, 229);
+            this.gbUnitLeader.Size = new System.Drawing.Size(486, 229);
             this.gbUnitLeader.TabIndex = 60;
             this.gbUnitLeader.TabStop = false;
             this.gbUnitLeader.Text = "groupBox1";
@@ -538,6 +536,7 @@
             // 
             // gb_cmbOption2
             // 
+            this.gb_cmbOption2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.gb_cmbOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_cmbOption2.FormattingEnabled = true;
             this.gb_cmbOption2.Location = new System.Drawing.Point(232, 141);
@@ -548,6 +547,7 @@
             // 
             // gb_cmbFactionupgrade
             // 
+            this.gb_cmbFactionupgrade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.gb_cmbFactionupgrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_cmbFactionupgrade.FormattingEnabled = true;
             this.gb_cmbFactionupgrade.Location = new System.Drawing.Point(43, 187);
@@ -590,6 +590,7 @@
             // 
             // gb_cmbOption1
             // 
+            this.gb_cmbOption1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.gb_cmbOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_cmbOption1.FormattingEnabled = true;
             this.gb_cmbOption1.Location = new System.Drawing.Point(232, 107);
@@ -646,9 +647,9 @@
             this.lbModelSelect.FormattingEnabled = true;
             this.lbModelSelect.HorizontalScrollbar = true;
             this.lbModelSelect.ItemHeight = 20;
-            this.lbModelSelect.Location = new System.Drawing.Point(826, 20);
+            this.lbModelSelect.Location = new System.Drawing.Point(868, 11);
             this.lbModelSelect.Name = "lbModelSelect";
-            this.lbModelSelect.Size = new System.Drawing.Size(194, 324);
+            this.lbModelSelect.Size = new System.Drawing.Size(224, 324);
             this.lbModelSelect.TabIndex = 70;
             this.lbModelSelect.SelectedIndexChanged += new System.EventHandler(this.lbModelSelect_SelectedIndexChanged);
             // 
@@ -750,6 +751,7 @@
             // 
             // cmbOption4
             // 
+            this.cmbOption4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOption4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOption4.FormattingEnabled = true;
             this.cmbOption4.Location = new System.Drawing.Point(396, 258);
@@ -770,6 +772,7 @@
             // 
             // cmbOption3
             // 
+            this.cmbOption3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOption3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOption3.FormattingEnabled = true;
             this.cmbOption3.Location = new System.Drawing.Point(245, 187);
@@ -780,6 +783,7 @@
             // 
             // cmbRelic
             // 
+            this.cmbRelic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRelic.Enabled = false;
             this.cmbRelic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRelic.FormattingEnabled = true;
@@ -801,6 +805,7 @@
             // 
             // cmbFactionupgrade
             // 
+            this.cmbFactionupgrade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFactionupgrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFactionupgrade.FormattingEnabled = true;
             this.cmbFactionupgrade.Location = new System.Drawing.Point(214, 338);
@@ -843,6 +848,7 @@
             // 
             // cmbWarlord
             // 
+            this.cmbWarlord.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbWarlord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbWarlord.FormattingEnabled = true;
             this.cmbWarlord.Location = new System.Drawing.Point(214, 284);
@@ -938,6 +944,7 @@
             // 
             // cmbOption1
             // 
+            this.cmbOption1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOption1.FormattingEnabled = true;
             this.cmbOption1.Location = new System.Drawing.Point(245, 49);
@@ -948,6 +955,7 @@
             // 
             // cmbOption2
             // 
+            this.cmbOption2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOption2.FormattingEnabled = true;
             this.cmbOption2.Location = new System.Drawing.Point(245, 83);
@@ -977,6 +985,7 @@
             // 
             // cmbSubFaction
             // 
+            this.cmbSubFaction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSubFaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSubFaction.FormattingEnabled = true;
             this.cmbSubFaction.Location = new System.Drawing.Point(245, 28);
@@ -1010,7 +1019,7 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(99, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(99, 26);
             this.toolStripMenuItem1.Text = "New Roster";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -1034,6 +1043,23 @@
             this.lblEditingUnit.TabIndex = 10;
             this.lblEditingUnit.Text = "EditingUnit";
             // 
+            // nudSelectPoints
+            // 
+            this.nudSelectPoints.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudSelectPoints.Location = new System.Drawing.Point(296, 255);
+            this.nudSelectPoints.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudSelectPoints.Name = "nudSelectPoints";
+            this.nudSelectPoints.Size = new System.Drawing.Size(166, 26);
+            this.nudSelectPoints.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -1050,8 +1076,8 @@
             this.Controls.Add(this.lblPoints);
             this.Controls.Add(this.lblErrors);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.MenuPanel);
             this.Controls.Add(this.panelSubFaction);
+            this.Controls.Add(this.MenuPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -1076,6 +1102,7 @@
             this.panelSubFaction.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSelectPoints)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1089,7 +1116,6 @@
         private System.Windows.Forms.Label lblFaction;
         private System.Windows.Forms.Label lblSelectPoints;
         private System.Windows.Forms.ComboBox cmbSelectFaction;
-        private System.Windows.Forms.TextBox txtSelectPoints;
         private System.Windows.Forms.Button btnBegin;
         private System.Windows.Forms.Label lblCurrentPoints;
         private System.Windows.Forms.Label lblPoints;
@@ -1167,6 +1193,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Label lblErrors;
         private System.Windows.Forms.Label lblEditingUnit;
+        private System.Windows.Forms.NumericUpDown nudSelectPoints;
     }
 }
 

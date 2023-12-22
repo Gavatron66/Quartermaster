@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Roster_Builder.Space_Marines
 {
-    public class Judicar : Datasheets
+    public class Judiciar : Datasheets
     {
-        public Judicar()
+        public Judiciar()
         {
             DEFAULT_POINTS = 75;
             Points = DEFAULT_POINTS;
@@ -19,14 +19,14 @@ namespace Roster_Builder.Space_Marines
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "INFANTRY", "CHARACTER", "PRIMARIS", "JUDICAR"
+                "INFANTRY", "CHARACTER", "PRIMARIS", "JUDICIAR"
             });
             role = "Elites";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new Judicar();
+            return new Judiciar();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -136,7 +136,7 @@ namespace Roster_Builder.Space_Marines
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -174,7 +174,7 @@ namespace Roster_Builder.Space_Marines
 
         public override string ToString()
         {
-            return "Judicar - " + Points + "pts";
+            return "Judiciar - " + Points + "pts";
         }
     }
 }
