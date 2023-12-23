@@ -230,7 +230,22 @@ namespace Roster_Builder.Space_Marines
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if (chosenRelic == "The Burning Blade")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Shield Eternal")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Storm Shield");
+                        cmbOption2.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption2.Enabled = true;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 21:
                     if (cbOption1.Checked)

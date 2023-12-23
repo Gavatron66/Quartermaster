@@ -117,7 +117,6 @@ namespace Roster_Builder.Space_Marines
         public override void SaveDatasheets(int code, Panel panel)
         {
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
@@ -146,19 +145,58 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 0;
                         cmbOption1.Enabled = false;
                     }
-                    if (chosenRelic == "Lament")
+                    else if (chosenRelic == "Lament")
                     {
                         cmbOption1.SelectedIndex = 1;
                         cmbOption1.Enabled = false;
                     }
-                    if (chosenRelic == "Primarch's Wrath")
+                    else if (chosenRelic == "Primarch's Wrath")
                     {
                         cmbOption1.SelectedIndex = 3;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Purgatorus")
+                    {
+                        cmbOption1.Items.Clear();
+                        cmbOption1.Items.AddRange(new string[]
+                        {
+                            "Master-crafted Auto Bolt Rifle and Bolt Pistol",
+                            "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+                        });
+                    }
+                    else if (chosenRelic == "The Burning Blade")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Shield Eternal")
+                    {
+                        cmbOption1.SelectedIndex = 2;
                         cmbOption1.Enabled = false;
                     }
                     else
                     {
                         cmbOption1.Enabled = true;
+                        if (!cmbOption1.Items.Contains("Master-crafted Power Sword, Neo-volkite Pistol and Storm Shield"))
+                        {
+
+                            cmbOption1.Items.Clear();
+                            cmbOption1.Items.AddRange(new string[]
+                            {
+                                "Master-crafted Auto Bolt Rifle and Bolt Pistol",
+                                "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+                                "Master-crafted Power Sword, Neo-volkite Pistol and Storm Shield",
+                            });
+                            if (repo.currentSubFaction == "Dark Angels")
+                            {
+                                cmbOption1.Items.Add("Master-crafted Auto Bolt Rifle and Plasma Pistol");
+                                cmbOption1.Items.Add("Master-crafted Stalker Bolt Rifle and Plasma Pistol");
+                            }
+                            if (repo.currentSubFaction == "Space Wolves")
+                            {
+                                cmbOption1.Items.Add("Special Issue Bolt Carbine, Master-crafted Power Axe and Bolt Pistol");
+                            }
+                        }
                     }
                     Relic = chosenRelic;
                     break;

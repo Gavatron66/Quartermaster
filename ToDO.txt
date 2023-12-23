@@ -70,11 +70,4 @@ Judiciar
 Primaris Apothecary
 Primaris Ancient
 
-Purgatorus - Bolt Pistol, Heavy Bolt Pistol, 
-			 Master-crafted Special Issue Bolt Pistol, 
-			 Absolvor Bolt Pistol
-Teeth of Terra - Astartes Chainsword
-The Burning Blade - Power Sword, Master-crafted Power Sword
-The Shield Eternal - Storm Shield, Relic Shield, Combat Shield
-
 

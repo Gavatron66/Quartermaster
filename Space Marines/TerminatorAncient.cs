@@ -100,6 +100,11 @@ namespace Roster_Builder.Space_Marines
                 cmbRelic.SelectedIndex = -1;
             }
 
+            panel.Controls["lblFactionupgrade"].Visible = true;
+            cmbFactionupgrade.Visible = true;
+            cmbFactionupgrade.Items.Clear();
+            cmbFactionupgrade.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
@@ -155,7 +160,17 @@ namespace Roster_Builder.Space_Marines
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if (chosenRelic == "The Shield Eternal" && repo.currentSubFaction == "Dark Angels")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 25:
                     if (cbWarlord.Checked)

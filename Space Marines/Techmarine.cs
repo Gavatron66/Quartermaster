@@ -223,9 +223,25 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
                         cmbOption1.Enabled = false;
                     }
+                    else if (chosenRelic == "Purgatorus")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Teeth of Terra")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Astartes Chainsword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Burning Blade")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
                     else
                     {
                         cmbOption1.Enabled = true;
+                        cmbOption2.Enabled = true;
                     }
                     Relic = chosenRelic;
                     break;

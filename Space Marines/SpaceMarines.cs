@@ -346,7 +346,7 @@ namespace Roster_Builder.Space_Marines
 
             if((keywords.Contains("CAPTAIN") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS"))) || 
                 ((keywords.Contains("LIEUTENANT") && keywords.Contains("PRIMARIS")) && !keywords.Contains("PHOBOS")) ||
-                (keywords.Contains("TERMINATOR") && keywords.Contains("ANCIENT"))) {
+                (keywords.Contains("TERMINATOR") && keywords.Contains("ANCIENT") && currentSubFaction == "Dark Angels")) {
                 relics.Add("The Shield Eternal");
             }
 

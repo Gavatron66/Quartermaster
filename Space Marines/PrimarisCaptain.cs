@@ -196,6 +196,16 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Special Issue Bolt Carbine");
                         cmbOption1.Enabled = false;
                     }
+                    else if (chosenRelic == "The Burning Blade")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Shield Eternal")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
                     else
                     {
                         cmbOption1.Enabled = true;
