@@ -21,7 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "PRIMARIS", "CAPTAIN"
             });
-            role = "HQ";
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -113,6 +113,15 @@ namespace Roster_Builder.Space_Marines
             cmbFactionupgrade.Visible = true;
             cmbFactionupgrade.Items.Clear();
             cmbFactionupgrade.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+
+            if (Factionupgrade != null)
+            {
+                cmbFactionupgrade.SelectedIndex = cmbFactionupgrade.Items.IndexOf(Factionupgrade);
+            }
+            else
+            {
+                cmbFactionupgrade.SelectedIndex = 0;
+            }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;

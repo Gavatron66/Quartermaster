@@ -19,7 +19,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "FLY", "STORM SPEEDER", "HAILSTRIKE"
             });
-            role = "Fast Attack";
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()

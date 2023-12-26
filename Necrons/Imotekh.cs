@@ -22,7 +22,7 @@ namespace Roster_Builder.Necrons
                 "INFANTRY", "CHARACTER", "PHAERON", "OVERLORD", "NOBLE", "IMOTEKH THE STORMLORD"
             });
             WarlordTrait = "Hyperlogical Strategist";
-            role = "HQ";
+            Role = "HQ";
         }
         public override Datasheets CreateUnit()
         {

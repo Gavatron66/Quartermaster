@@ -32,7 +32,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "TERMINATOR", "RELIC TERMINATOR SQUAD"
             });
-            role = "Elites";
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()

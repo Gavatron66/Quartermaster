@@ -20,7 +20,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "INFANTRY", "POXWALKERS"
             });
-            role = "Troops";
+            Role = "Troops";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)

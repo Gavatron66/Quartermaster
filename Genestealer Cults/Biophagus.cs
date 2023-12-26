@@ -22,7 +22,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "CHARACTER", "BIOPHAGUS"
             });
-            role = "Elites";
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()

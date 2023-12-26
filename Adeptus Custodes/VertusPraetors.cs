@@ -27,7 +27,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "BIKER", "CORE", "FLY", "VERTUS", "PRAETORS"
             });
-            role = "Fast Attack";
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()

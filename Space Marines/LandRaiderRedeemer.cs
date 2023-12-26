@@ -24,7 +24,7 @@ namespace Roster_Builder.Space_Marines
                 "VEHICLE", "LAND RAIDER", "TRANSPORT", "ASSAULT LAUNCHERS",  "SMOKESCREEN", "MACHINE SPIRIT",
                 "LAND RAIDER REDEEMER"
             });
-            role = "Heavy Support";
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()

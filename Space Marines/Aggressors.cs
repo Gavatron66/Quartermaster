@@ -21,7 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "PRIMARIS", "MK X GRAVIS", "AGGRESSOR SQUAD"
             });
-            role = "Elites";
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()

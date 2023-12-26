@@ -20,7 +20,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "INFANTRY", "CHARACTER", "BUBONIC ASTARTES", "FOETID VIRION", "NOXIOUS BLIGHTBRINGER"
             });
-            role = "Elites";
+            Role = "Elites";
         }
         public override void LoadDatasheets(Panel panel, Faction f)
         {

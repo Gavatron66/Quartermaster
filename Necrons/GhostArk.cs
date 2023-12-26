@@ -19,7 +19,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "VEHICLE", "QUANTUM SHIELDING", "TRANSPORT", "FLY", "GHOST ARK"
             });
-            role = "Transport";
+            Role = "Transport";
         }
         public override Datasheets CreateUnit()
         {

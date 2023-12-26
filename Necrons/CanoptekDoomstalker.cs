@@ -19,7 +19,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "CANOPTEK", "<DYNASTY>",
                 "MONSTER", "CANOPTEK DOOMSTALKER"
             });
-            role = "Heavy Support";
+            Role = "Heavy Support";
         }
         public override Datasheets CreateUnit()
         {

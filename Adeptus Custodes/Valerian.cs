@@ -20,7 +20,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "INFANTRY", "CHARACTER", "GUARDIAN", "SHIELD-CAPTAIN", "VALERIAN"
             });
             WarlordTrait = "Peerless Warrior";
-            role = "HQ";
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()

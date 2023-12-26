@@ -21,7 +21,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "INFANTRY", "CHARACTER", "CAPTAIN-GENERAL", "TRAJANN VALORIS"
             });
             WarlordTrait = "Champion of the Imperium; Master of Martial Strategy";
-            role = "HQ";
+            Role = "HQ";
         }
         public override Datasheets CreateUnit()
         {

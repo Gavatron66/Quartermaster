@@ -23,7 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "PRIMARIS", "INTERCESSORS", "ASSAULT INTERCESSOR SQUAD"
             });
-            role = "Troops";
+            Role = "Troops";
         }
 
         public override Datasheets CreateUnit()

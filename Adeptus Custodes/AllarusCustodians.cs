@@ -27,7 +27,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "INFANTRY", "CORE", "TELEPORT HOMER", "TERMINATOR", "ALLARUS", "CUSTODIANS"
             });
-            role = "Elites";
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()

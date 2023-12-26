@@ -19,7 +19,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "BIKER", "CORE", "PRIMARIS", "OUTRIDER SQUAD"
             });
-            role = "Fast Attack";
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()

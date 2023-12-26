@@ -21,7 +21,7 @@ namespace Roster_Builder.Necrons
                 "INFANTRY", "CHARACTER", "CHRONOMANCER", "DYNASTIC AGENT", "CRYPTEK", "ORIKAN THE DIVINER"
             });
             WarlordTrait = "Immortal Pride";
-            role = "HQ";
+            Role = "HQ";
         }
         public override Datasheets CreateUnit()
         {

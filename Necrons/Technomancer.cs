@@ -20,7 +20,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "CHARACTER", "CRYPTEK", "TECHNOMANCER"
             });
-            role = "HQ";
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()

@@ -20,7 +20,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "CHARACTER", "ACOLYTE ICONWARD"
             });
-            role = "HQ";
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()

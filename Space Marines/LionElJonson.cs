@@ -21,7 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "MONSTER", "CHARACTER", "PRIMARCH", "SUPREME COMMANDER", "INNER CIRCLE", "LION EL'JONSON"
             });
             WarlordTrait = "No Hiding from the Watchers";
-            role = "Lord of War";
+            Role = "Lord of War";
         }
 
         public override Datasheets CreateUnit()

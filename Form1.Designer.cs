@@ -41,6 +41,9 @@
             this.btnAddToRoster = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.cmbDetachment = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nudSelectPoints = new System.Windows.Forms.NumericUpDown();
             this.btnLoad = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gbCustomSubfaction = new System.Windows.Forms.GroupBox();
@@ -106,14 +109,30 @@
             this.panelSubFaction = new System.Windows.Forms.Panel();
             this.lblSubfaction = new System.Windows.Forms.Label();
             this.cmbSubFaction = new System.Windows.Forms.ComboBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblErrors = new System.Windows.Forms.Label();
+            this.newRosterts = new System.Windows.Forms.ToolStripMenuItem();
             this.lblEditingUnit = new System.Windows.Forms.Label();
-            this.nudSelectPoints = new System.Windows.Forms.NumericUpDown();
+            this.cmbCurrentDetachment = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnDetachAdd = new System.Windows.Forms.Button();
+            this.btnDetachRemove = new System.Windows.Forms.Button();
+            this.panelNewDetach = new System.Windows.Forms.Panel();
+            this.cmbNDDetachment = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnNewDetachment = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbNDFaction = new System.Windows.Forms.ComboBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.lblErrors = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtNDname = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbDiscipline = new System.Windows.Forms.ComboBox();
+            this.lblPsykerList = new System.Windows.Forms.Label();
             this.MenuPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSelectPoints)).BeginInit();
             this.panel1.SuspendLayout();
             this.gbCustomSubfaction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUnitSize2)).BeginInit();
@@ -127,7 +146,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudUnitSize)).BeginInit();
             this.panelSubFaction.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSelectPoints)).BeginInit();
+            this.panelNewDetach.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbUnits
@@ -177,7 +196,7 @@
             // 
             this.lblSelectPoints.AutoSize = true;
             this.lblSelectPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectPoints.Location = new System.Drawing.Point(187, 257);
+            this.lblSelectPoints.Location = new System.Drawing.Point(187, 234);
             this.lblSelectPoints.Name = "lblSelectPoints";
             this.lblSelectPoints.Size = new System.Drawing.Size(103, 20);
             this.lblSelectPoints.TabIndex = 4;
@@ -190,13 +209,13 @@
             this.cmbSelectFaction.FormattingEnabled = true;
             this.cmbSelectFaction.Location = new System.Drawing.Point(296, 198);
             this.cmbSelectFaction.Name = "cmbSelectFaction";
-            this.cmbSelectFaction.Size = new System.Drawing.Size(166, 28);
+            this.cmbSelectFaction.Size = new System.Drawing.Size(196, 28);
             this.cmbSelectFaction.TabIndex = 5;
             // 
             // btnBegin
             // 
             this.btnBegin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBegin.Location = new System.Drawing.Point(257, 316);
+            this.btnBegin.Location = new System.Drawing.Point(257, 346);
             this.btnBegin.Name = "btnBegin";
             this.btnBegin.Size = new System.Drawing.Size(119, 55);
             this.btnBegin.TabIndex = 7;
@@ -208,7 +227,7 @@
             // 
             this.lblCurrentPoints.AutoSize = true;
             this.lblCurrentPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentPoints.Location = new System.Drawing.Point(378, 35);
+            this.lblCurrentPoints.Location = new System.Drawing.Point(367, 35);
             this.lblCurrentPoints.Name = "lblCurrentPoints";
             this.lblCurrentPoints.Size = new System.Drawing.Size(72, 25);
             this.lblCurrentPoints.TabIndex = 8;
@@ -218,7 +237,7 @@
             // 
             this.lblPoints.AutoSize = true;
             this.lblPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPoints.Location = new System.Drawing.Point(451, 35);
+            this.lblPoints.Location = new System.Drawing.Point(434, 35);
             this.lblPoints.Name = "lblPoints";
             this.lblPoints.Size = new System.Drawing.Size(64, 25);
             this.lblPoints.TabIndex = 9;
@@ -248,6 +267,10 @@
             // 
             // MenuPanel
             // 
+            this.MenuPanel.Controls.Add(this.txtName);
+            this.MenuPanel.Controls.Add(this.label4);
+            this.MenuPanel.Controls.Add(this.cmbDetachment);
+            this.MenuPanel.Controls.Add(this.label2);
             this.MenuPanel.Controls.Add(this.nudSelectPoints);
             this.MenuPanel.Controls.Add(this.btnLoad);
             this.MenuPanel.Controls.Add(this.lblTitle);
@@ -255,24 +278,64 @@
             this.MenuPanel.Controls.Add(this.lblFaction);
             this.MenuPanel.Controls.Add(this.lblSelectPoints);
             this.MenuPanel.Controls.Add(this.cmbSelectFaction);
-            this.MenuPanel.Location = new System.Drawing.Point(12, 603);
+            this.MenuPanel.Location = new System.Drawing.Point(12, 605);
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(632, 562);
             this.MenuPanel.TabIndex = 15;
             // 
+            // cmbDetachment
+            // 
+            this.cmbDetachment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDetachment.FormattingEnabled = true;
+            this.cmbDetachment.Items.AddRange(new object[] {
+            "Arks of Omen Detachment",
+            "Patrol Detachment"});
+            this.cmbDetachment.Location = new System.Drawing.Point(296, 265);
+            this.cmbDetachment.Name = "cmbDetachment";
+            this.cmbDetachment.Size = new System.Drawing.Size(196, 28);
+            this.cmbDetachment.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(185, 268);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Detachment:";
+            // 
+            // nudSelectPoints
+            // 
+            this.nudSelectPoints.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudSelectPoints.Location = new System.Drawing.Point(296, 232);
+            this.nudSelectPoints.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudSelectPoints.Name = "nudSelectPoints";
+            this.nudSelectPoints.Size = new System.Drawing.Size(196, 26);
+            this.nudSelectPoints.TabIndex = 9;
+            // 
             // btnLoad
             // 
             this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoad.Location = new System.Drawing.Point(257, 379);
+            this.btnLoad.Location = new System.Drawing.Point(257, 409);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(119, 55);
             this.btnLoad.TabIndex = 8;
-            this.btnLoad.Text = "Load a Roster";
+            this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cmbDiscipline);
+            this.panel1.Controls.Add(this.lblPsykerList);
             this.panel1.Controls.Add(this.gbCustomSubfaction);
             this.panel1.Controls.Add(this.lblOption5);
             this.panel1.Controls.Add(this.cmbOption5);
@@ -321,7 +384,7 @@
             this.panel1.Controls.Add(this.lblOption2);
             this.panel1.Controls.Add(this.cmbOption1);
             this.panel1.Controls.Add(this.cmbOption2);
-            this.panel1.Location = new System.Drawing.Point(242, 290);
+            this.panel1.Location = new System.Drawing.Point(1110, 35);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1670, 680);
             this.panel1.TabIndex = 8;
@@ -968,7 +1031,7 @@
             // 
             this.panelSubFaction.Controls.Add(this.lblSubfaction);
             this.panelSubFaction.Controls.Add(this.cmbSubFaction);
-            this.panelSubFaction.Location = new System.Drawing.Point(242, 96);
+            this.panelSubFaction.Location = new System.Drawing.Point(221, 308);
             this.panelSubFaction.Name = "panelSubFaction";
             this.panelSubFaction.Size = new System.Drawing.Size(632, 188);
             this.panelSubFaction.TabIndex = 16;
@@ -994,6 +1057,139 @@
             this.cmbSubFaction.TabIndex = 28;
             this.cmbSubFaction.SelectedIndexChanged += new System.EventHandler(this.cmbSubFaction_SelectedIndexChanged);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newRosterts});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 28);
+            this.menuStrip1.TabIndex = 83;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // newRosterts
+            // 
+            this.newRosterts.Name = "newRosterts";
+            this.newRosterts.Size = new System.Drawing.Size(138, 24);
+            this.newRosterts.Text = "New Detachment";
+            this.newRosterts.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // lblEditingUnit
+            // 
+            this.lblEditingUnit.AutoSize = true;
+            this.lblEditingUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditingUnit.Location = new System.Drawing.Point(368, 93);
+            this.lblEditingUnit.Name = "lblEditingUnit";
+            this.lblEditingUnit.Size = new System.Drawing.Size(90, 20);
+            this.lblEditingUnit.TabIndex = 10;
+            this.lblEditingUnit.Text = "EditingUnit";
+            // 
+            // cmbCurrentDetachment
+            // 
+            this.cmbCurrentDetachment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCurrentDetachment.FormattingEnabled = true;
+            this.cmbCurrentDetachment.Location = new System.Drawing.Point(540, 62);
+            this.cmbCurrentDetachment.Name = "cmbCurrentDetachment";
+            this.cmbCurrentDetachment.Size = new System.Drawing.Size(209, 28);
+            this.cmbCurrentDetachment.TabIndex = 84;
+            this.cmbCurrentDetachment.SelectedIndexChanged += new System.EventHandler(this.cmbCurrentDetachment_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(368, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(166, 20);
+            this.label1.TabIndex = 85;
+            this.label1.Text = "Current Detachment:";
+            // 
+            // btnDetachAdd
+            // 
+            this.btnDetachAdd.Location = new System.Drawing.Point(685, 32);
+            this.btnDetachAdd.Name = "btnDetachAdd";
+            this.btnDetachAdd.Size = new System.Drawing.Size(29, 28);
+            this.btnDetachAdd.TabIndex = 86;
+            this.btnDetachAdd.Text = "+";
+            this.btnDetachAdd.UseVisualStyleBackColor = true;
+            this.btnDetachAdd.Click += new System.EventHandler(this.btnDetachAdd_Click);
+            // 
+            // btnDetachRemove
+            // 
+            this.btnDetachRemove.Location = new System.Drawing.Point(720, 32);
+            this.btnDetachRemove.Name = "btnDetachRemove";
+            this.btnDetachRemove.Size = new System.Drawing.Size(29, 28);
+            this.btnDetachRemove.TabIndex = 87;
+            this.btnDetachRemove.Text = "R";
+            this.btnDetachRemove.UseVisualStyleBackColor = true;
+            this.btnDetachRemove.Click += new System.EventHandler(this.btnDetachRemove_Click);
+            // 
+            // panelNewDetach
+            // 
+            this.panelNewDetach.Controls.Add(this.txtNDname);
+            this.panelNewDetach.Controls.Add(this.cmbNDDetachment);
+            this.panelNewDetach.Controls.Add(this.label6);
+            this.panelNewDetach.Controls.Add(this.label3);
+            this.panelNewDetach.Controls.Add(this.btnNewDetachment);
+            this.panelNewDetach.Controls.Add(this.label5);
+            this.panelNewDetach.Controls.Add(this.cmbNDFaction);
+            this.panelNewDetach.Location = new System.Drawing.Point(372, 116);
+            this.panelNewDetach.Name = "panelNewDetach";
+            this.panelNewDetach.Size = new System.Drawing.Size(377, 186);
+            this.panelNewDetach.TabIndex = 16;
+            // 
+            // cmbNDDetachment
+            // 
+            this.cmbNDDetachment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNDDetachment.FormattingEnabled = true;
+            this.cmbNDDetachment.Items.AddRange(new object[] {
+            "Arks of Omen Detachment",
+            "Patrol Detachment"});
+            this.cmbNDDetachment.Location = new System.Drawing.Point(141, 42);
+            this.cmbNDDetachment.Name = "cmbNDDetachment";
+            this.cmbNDDetachment.Size = new System.Drawing.Size(196, 28);
+            this.cmbNDDetachment.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(30, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 20);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Detachment:";
+            // 
+            // btnNewDetachment
+            // 
+            this.btnNewDetachment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewDetachment.Location = new System.Drawing.Point(129, 111);
+            this.btnNewDetachment.Name = "btnNewDetachment";
+            this.btnNewDetachment.Size = new System.Drawing.Size(119, 55);
+            this.btnNewDetachment.TabIndex = 7;
+            this.btnNewDetachment.Text = "Create";
+            this.btnNewDetachment.UseVisualStyleBackColor = true;
+            this.btnNewDetachment.Click += new System.EventHandler(this.btnNewDetachment_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 20);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Select Faction:";
+            // 
+            // cmbNDFaction
+            // 
+            this.cmbNDFaction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNDFaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNDFaction.FormattingEnabled = true;
+            this.cmbNDFaction.Location = new System.Drawing.Point(141, 8);
+            this.cmbNDFaction.Name = "cmbNDFaction";
+            this.cmbNDFaction.Size = new System.Drawing.Size(196, 28);
+            this.cmbNDFaction.TabIndex = 5;
+            // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1001,27 +1197,9 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(119, 55);
             this.btnSave.TabIndex = 16;
-            this.btnSave.Text = "Save Roster";
+            this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 28);
-            this.menuStrip1.TabIndex = 83;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(99, 26);
-            this.toolStripMenuItem1.Text = "New Roster";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // lblErrors
             // 
@@ -1033,42 +1211,76 @@
             this.lblErrors.TabIndex = 82;
             this.lblErrors.Text = "Roster has _ errors";
             // 
-            // lblEditingUnit
+            // label4
             // 
-            this.lblEditingUnit.AutoSize = true;
-            this.lblEditingUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditingUnit.Location = new System.Drawing.Point(325, 93);
-            this.lblEditingUnit.Name = "lblEditingUnit";
-            this.lblEditingUnit.Size = new System.Drawing.Size(90, 20);
-            this.lblEditingUnit.TabIndex = 10;
-            this.lblEditingUnit.Text = "EditingUnit";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(232, 302);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 20);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Name:";
             // 
-            // nudSelectPoints
+            // txtName
             // 
-            this.nudSelectPoints.Increment = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.nudSelectPoints.Location = new System.Drawing.Point(296, 255);
-            this.nudSelectPoints.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.nudSelectPoints.Name = "nudSelectPoints";
-            this.nudSelectPoints.Size = new System.Drawing.Size(166, 26);
-            this.nudSelectPoints.TabIndex = 9;
+            this.txtName.Location = new System.Drawing.Point(296, 299);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(196, 26);
+            this.txtName.TabIndex = 13;
+            this.txtName.Text = "<Optional>";
+            // 
+            // txtNDname
+            // 
+            this.txtNDname.Location = new System.Drawing.Point(141, 76);
+            this.txtNDname.Name = "txtNDname";
+            this.txtNDname.Size = new System.Drawing.Size(196, 26);
+            this.txtNDname.TabIndex = 15;
+            this.txtNDname.Text = "<Optional>";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(77, 79);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(58, 20);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Name:";
+            // 
+            // cmbDiscipline
+            // 
+            this.cmbDiscipline.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDiscipline.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDiscipline.FormattingEnabled = true;
+            this.cmbDiscipline.Location = new System.Drawing.Point(17, 451);
+            this.cmbDiscipline.Name = "cmbDiscipline";
+            this.cmbDiscipline.Size = new System.Drawing.Size(176, 28);
+            this.cmbDiscipline.TabIndex = 87;
+            this.cmbDiscipline.SelectedIndexChanged += new System.EventHandler(this.cmbDiscipline_SelectedIndexChanged);
+            // 
+            // lblPsykerList
+            // 
+            this.lblPsykerList.AutoSize = true;
+            this.lblPsykerList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPsykerList.Location = new System.Drawing.Point(15, 428);
+            this.lblPsykerList.Name = "lblPsykerList";
+            this.lblPsykerList.Size = new System.Drawing.Size(204, 20);
+            this.lblPsykerList.TabIndex = 86;
+            this.lblPsykerList.Text = "Select Psychic Discipline:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.lblEditingUnit);
-            this.Controls.Add(this.btnRemove);
+            this.ClientSize = new System.Drawing.Size(1924, 917);
+            this.Controls.Add(this.panelNewDetach);
             this.Controls.Add(this.btnAddToRoster);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.btnDetachRemove);
+            this.Controls.Add(this.btnDetachAdd);
+            this.Controls.Add(this.MenuPanel);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblEditingUnit);
+            this.Controls.Add(this.cmbCurrentDetachment);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblCurrentPoints);
             this.Controls.Add(this.lbRoster);
@@ -1077,13 +1289,13 @@
             this.Controls.Add(this.lblErrors);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panelSubFaction);
-            this.Controls.Add(this.MenuPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.MenuPanel.ResumeLayout(false);
             this.MenuPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSelectPoints)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.gbCustomSubfaction.ResumeLayout(false);
@@ -1102,7 +1314,8 @@
             this.panelSubFaction.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSelectPoints)).EndInit();
+            this.panelNewDetach.ResumeLayout(false);
+            this.panelNewDetach.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1165,7 +1378,6 @@
         private System.Windows.Forms.NumericUpDown nudOption3;
         private System.Windows.Forms.ListBox lbModelSelect;
         private System.Windows.Forms.CheckBox cbOption3;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Label lblnud6;
         private System.Windows.Forms.Label lblnud5;
@@ -1190,10 +1402,29 @@
         private System.Windows.Forms.Label lblOption6;
         private System.Windows.Forms.ComboBox cmbOption6;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.Label lblErrors;
+        private System.Windows.Forms.ToolStripMenuItem newRosterts;
         private System.Windows.Forms.Label lblEditingUnit;
         private System.Windows.Forms.NumericUpDown nudSelectPoints;
+        private System.Windows.Forms.ComboBox cmbCurrentDetachment;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbDetachment;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnDetachAdd;
+        private System.Windows.Forms.Button btnDetachRemove;
+        private System.Windows.Forms.Panel panelNewDetach;
+        private System.Windows.Forms.ComboBox cmbNDDetachment;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnNewDetachment;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbNDFaction;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblErrors;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtNDname;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbDiscipline;
+        private System.Windows.Forms.Label lblPsykerList;
     }
 }
 

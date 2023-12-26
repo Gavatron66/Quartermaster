@@ -21,7 +21,7 @@ namespace Roster_Builder.Necrons
                 "VEHICLE", "TITANIC", "FLY", "C'TAN SHARD", "TESSERACT VAULT"
             });
             PsykerPowers = new string[4] { string.Empty, string.Empty, string.Empty, string.Empty };
-            role = "Lord of War";
+            Role = "Lord of War";
         }
 
         public override Datasheets CreateUnit()

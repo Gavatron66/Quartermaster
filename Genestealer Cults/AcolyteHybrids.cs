@@ -29,7 +29,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "CORE", "CROSSFIRE", "ACOLYTE HYBRIDS"
             });
-            role = "Troops";
+            Role = "Troops";
         }
 
         public override Datasheets CreateUnit()

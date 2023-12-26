@@ -20,7 +20,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "DESTROYER CULT", "<DYNASTY>",
                 "INFANTRY", "CHARACTER", "HYPERSPACE HUNTER", "HEXMARK DESTROYER"
             });
-            role = "Elites";
+            Role = "Elites";
         }
         public override Datasheets CreateUnit()
         {

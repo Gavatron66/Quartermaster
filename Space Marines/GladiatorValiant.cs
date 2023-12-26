@@ -23,7 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "GLADIATOR", "REPULSOR FIELD", "GLADIATOR VALIANT"
             });
-            role = "Heavy Support";
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()

@@ -23,7 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "TRANSPORT", "MACHINE SPIRIT", "SMOKESCREEN", "LAND RAIDER"
             });
-            role = "Heavy Support";
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()

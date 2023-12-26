@@ -21,7 +21,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS",
                 "VEHICLE", "DYNASTIC AGENT", "TRIARCH", "TRIARCH STALKER"
             });
-            role = "Elites";
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()

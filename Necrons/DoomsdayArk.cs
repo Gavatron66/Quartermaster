@@ -19,7 +19,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "VEHICLE", "QUANTUM SHIELDING", "FLY", "DOOMSDAY ARK"
             });
-            role = "Heavy Support";
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()

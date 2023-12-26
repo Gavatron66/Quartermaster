@@ -27,7 +27,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "MELTA BOMBS", "TACTICAL SQUAD"
             });
-            role = "Troops";
+            Role = "Troops";
         }
 
         public override Datasheets CreateUnit()

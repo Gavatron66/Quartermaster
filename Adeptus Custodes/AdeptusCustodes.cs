@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -140,12 +141,15 @@ namespace Roster_Builder.Adeptus_Custodes
 
         public override bool GetIfEnabled(int index)
         {
+            /*
             if (StratagemCount[index] < StratagemLimit[index])
             {
                 return true;
             }
 
             return false;
+            */
+            return true;
         }
 
         public override List<string> GetPsykerPowers(string keyword)
@@ -258,7 +262,7 @@ namespace Roster_Builder.Adeptus_Custodes
 
         public override List<string> GetWarlordTraits(string keyword)
         {
-            List<string> traits = new List<string>() { "(None)" };
+            List<string> traits = new List<string>();
 
             if(keyword == "SoS")
             {

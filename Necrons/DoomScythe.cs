@@ -19,7 +19,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "VEHICLE", "AIRCRAFT", "FLY", "DOOM SCYTHE"
             });
-            role = "Flyer";
+            Role = "Flyer";
         }
         public override Datasheets CreateUnit()
         {

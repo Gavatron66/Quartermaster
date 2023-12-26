@@ -23,7 +23,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "VEHICLE", "TRANSPORT", "CROSSFIRE", "GOLIATH TRUCK"
             });
-            role = "Transport";
+            Role = "Transport";
         }
 
         public override Datasheets CreateUnit()

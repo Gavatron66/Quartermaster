@@ -21,7 +21,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFATRY", "FLY", "DYNASTIC AGENT", "TRIARCH", "TRIARCH PRAETORIANS"
             });
-            role = "Fast Attack";
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()

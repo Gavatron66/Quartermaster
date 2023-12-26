@@ -132,12 +132,15 @@ namespace Roster_Builder.Genestealer_Cults
 
         public override bool GetIfEnabled(int index)
         {
+            /*
             if (StratagemCount[index] < StratagemLimit[index])
             {
                 return true;
             }
 
-            return false;
+            /return false;
+            */
+            return true;
         }
 
         public override List<string> GetPsykerPowers(string keywords)

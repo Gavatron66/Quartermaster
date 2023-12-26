@@ -23,7 +23,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "VEHICLE", "TRANSPORT", "CROSSFIRE", "GOLIATH ROCKGRINDER"
             });
-            role = "Heavy Support";
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()

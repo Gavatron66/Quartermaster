@@ -143,6 +143,7 @@
     <Compile Include="Death Guard\Poxwalkers.cs" />
     <Compile Include="Death Guard\Tallyman.cs" />
     <Compile Include="Death Guard\Typhus.cs" />
+    <Compile Include="DetachmentOrg.cs" />
     <Compile Include="Faction.cs" />
     <Compile Include="Genestealer Cults\Aberrants.cs" />
     <Compile Include="Genestealer Cults\Abominant.cs" />
@@ -219,6 +220,7 @@
     <Compile Include="Necrons\TriarchPraetorians.cs" />
     <Compile Include="Necrons\TriarchStalker.cs" />
     <Compile Include="Necrons\Zahndrekh.cs" />
+    <Compile Include="Detachment.cs" />
     <Compile Include="Roster.cs" />
     <Compile Include="Space Marines\Aggressors.cs" />
     <Compile Include="Space Marines\Apothecary.cs" />

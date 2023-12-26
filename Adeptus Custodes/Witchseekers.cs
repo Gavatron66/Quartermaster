@@ -20,7 +20,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ANATHEMA PSYKANA",
                 "INFANTRY", "CORE", "WITCHSEEKERS"
             });
-            role = "Fast Attack";
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()

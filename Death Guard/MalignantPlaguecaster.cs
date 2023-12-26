@@ -22,7 +22,7 @@ namespace Roster_Builder.Death_Guard
                 "INFANTRY", "CHARACTER", "PSYKER", "BUBONIC ASTARTES", "MALIGNANT PLAGUECASTER"
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
-            role = "HQ";
+            Role = "HQ";
         }
 
         public override string ToString()

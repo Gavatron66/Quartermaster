@@ -22,7 +22,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "CORE", "NECRON WARRIORS"
             });
-            role = "Troops";
+            Role = "Troops";
         }
 
         public override Datasheets CreateUnit()

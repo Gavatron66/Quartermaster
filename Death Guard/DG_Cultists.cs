@@ -26,7 +26,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "DEATH GUARD",
                 "INFANTRY", "PLAGUE FOLLOWERS", "CULTISTS"
             });
-            role = "Troops";
+            Role = "Troops";
         }
         public override Datasheets CreateUnit()
         {

@@ -20,7 +20,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "INFANTRY", "CHARACTER", "KNIGHT-CENTURA", "ALEYA"
             });
             WarlordTrait = "Oblivion Knight";
-            role = "HQ";
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()

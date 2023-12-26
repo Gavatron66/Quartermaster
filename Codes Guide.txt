@@ -8,6 +8,7 @@
 	17 - cmbRelic
 	18 - cmbOption5
 	19 - cmbOption6
+	111 - cmbDiscipline
 2X - Checkboxes
 	21 - cbOption1
 	22 - cbOption2

@@ -23,7 +23,7 @@ namespace Roster_Builder.Necrons
                 "TRIARCHAL MENHIRS"
             });
             WarlordTrait = "The Triarch's Will";
-            role = "Lord of War";
+            Role = "Lord of War";
         }
         public override Datasheets CreateUnit()
         {

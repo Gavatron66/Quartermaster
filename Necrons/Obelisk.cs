@@ -19,7 +19,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "VEHICLE", "TITANIC", "FLY", "OBELISK"
             });
-            role = "Lord of War";
+            Role = "Lord of War";
         }
         public override Datasheets CreateUnit()
         {

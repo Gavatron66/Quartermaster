@@ -23,7 +23,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "VEHICLE", "TRANSPORT", "MACHINE SPIRIT", "SMOKESCREEN", "VENERABLE LAND RAIDER"
             });
-            role = "Heavy Support";
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()

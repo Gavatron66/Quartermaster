@@ -21,7 +21,7 @@ namespace Roster_Builder.Necrons
                 "INFANTRY", "CHARACTER", "LORD", "NOBLE", "VARGARD OBYRON"
             });
             WarlordTrait = "Honourable Combatant";
-            role = "HQ";
+            Role = "HQ";
         }
         public override Datasheets CreateUnit()
         {

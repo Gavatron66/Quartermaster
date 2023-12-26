@@ -20,7 +20,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ANATHEM PSYKANA",
                 "INFANTRY", "CHARACTER", "KNIGHT-CENTURA"
             });
-            role = "HQ";
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()

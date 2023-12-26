@@ -17,7 +17,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "LAND SPEEDER", "SCOUT", "FLY", "TRANSPORT", "LAND SPEEDER STORM"
             });
-            role = "Transport";
+            Role = "Transport";
         }
 
         public override Datasheets CreateUnit()

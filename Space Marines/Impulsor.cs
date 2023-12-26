@@ -23,7 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "TRANSPORT", "REPULSOR FIELD", "IMPULSOR"
             });
-            role = "Transport";
+            Role = "Transport";
         }
 
         public override Datasheets CreateUnit()

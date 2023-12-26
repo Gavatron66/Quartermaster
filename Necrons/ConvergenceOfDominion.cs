@@ -18,7 +18,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "BUILDING", "VEHICLE", "STARSTELE", "CONVERGENCE OF DOMINION"
             });
-            role = "Fortification";
+            Role = "Fortification";
         }
 
         public override Datasheets CreateUnit()

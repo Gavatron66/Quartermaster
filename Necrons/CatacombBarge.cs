@@ -23,7 +23,7 @@ namespace Roster_Builder.Necrons
                 "VEHICLE", "CHARACTER", "QUANTUM SHIELDING", "NOBLE", "OVERLORD", "FLY",
                 "CATACOMB COMMAND BARGE"
             });
-            role = "HQ";
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()

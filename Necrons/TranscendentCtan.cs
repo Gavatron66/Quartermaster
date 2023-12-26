@@ -21,7 +21,7 @@ namespace Roster_Builder.Necrons
                 "MONSTER", "CHARACTER", "FLY", "C'TAN SHARD", "TRANSCENDENT C'TAN"
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
-            role = "Elites";
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()

@@ -21,7 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "BUILDING", "HAMMERFALL BUNKER"
             });
-            role = "Fortification";
+            Role = "Fortification";
         }
 
         public override Datasheets CreateUnit()

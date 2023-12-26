@@ -22,7 +22,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "AIRCRAFT", "FLY", "STORMHAWK INTERCEPTOR"
             });
-            role = "Flyer";
+            Role = "Flyer";
         }
 
         public override Datasheets CreateUnit()

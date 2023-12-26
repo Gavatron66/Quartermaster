@@ -21,7 +21,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "VEHICLE", "FLY", "DAEMON", "DAEMON ENGINE", "FOETID BLOAT-DRONE"
             });
-            role = "Fast Attack";
+            Role = "Fast Attack";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)

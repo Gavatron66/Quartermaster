@@ -20,7 +20,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "DESTROYER CULT", "<DYNASTY>",
                 "INFATRY", "SKORPEKH DESTROYERS"
             });
-            role = "Elites";
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()

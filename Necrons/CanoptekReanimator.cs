@@ -19,7 +19,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "CANOPTEK", "<DYNASTY>",
                 "MONSTER", "CANOPTEK REANIMATOR"
             });
-            role = "Elites";
+            Role = "Elites";
         }
         public override Datasheets CreateUnit()
         {

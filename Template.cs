@@ -49,6 +49,10 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 149);
 
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 307);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 330);
+
                     panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(290, 266);
 
                     panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(294, 289);
@@ -199,6 +203,12 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 130);
 
+                    panel.Controls["lblPsykerList"].Visible = true;
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 288);
+
+                    panel.Controls["cmbDiscipline"].Visible = true;
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 311);
+
                     panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(290, 247);
 
                     panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(294, 270);
@@ -230,10 +240,8 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["cmbWarlord"].Visible = true;
                     panel.Controls["cmbWarlord"].Location = new System.Drawing.Point(294, 106);
 
-                    panel.Controls["lblPsyker"].Visible = true;
                     panel.Controls["lblPsyker"].Location = new System.Drawing.Point(86, 52);
 
-                    panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 75);
 
                     panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(290, 192);
@@ -269,6 +277,10 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 52);
+
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 210);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 233);
                     break;
                 #endregion
                 #region case "nc"
@@ -412,6 +424,10 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 52);
 
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 210);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 233);
+
                     panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(290, 169);
 
                     panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(294, 192);
@@ -452,6 +468,10 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 149);
+
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 307);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 330);
 
                     panel.Controls["cbWarlord"].Visible = true;
                     panel.Controls["cbWarlord"].Location = new System.Drawing.Point(298, 130);
@@ -503,6 +523,10 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 95);
 
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 253);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 276);
+
                     panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(290, 212);
 
                     panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(294, 235);
@@ -536,6 +560,10 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 119);
+
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 277);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 300);
 
                     panel.Controls["cbWarlord"].Visible = true;
                     panel.Controls["cbWarlord"].Location = new System.Drawing.Point(298, 100);

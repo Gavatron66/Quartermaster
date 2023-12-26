@@ -22,7 +22,7 @@ namespace Roster_Builder.Space_Marines
                 "INFANTRY", "CHARACTER", "PRIEST", "CHAPLAIN"
             });
             PsykerPowers = new string[1] { string.Empty };
-            role = "HQ";
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()

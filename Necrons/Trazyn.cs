@@ -21,7 +21,7 @@ namespace Roster_Builder.Necrons
                 "INFANTRY", "CHARACTER", "OVERLORD", "NOBLE", "DYNASTIC AGENT", "TRAZYN THE INFINITE"
             });
             WarlordTrait = "Enduring Will";
-            role = "HQ";
+            Role = "HQ";
         }
         public override Datasheets CreateUnit()
         {

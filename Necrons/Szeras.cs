@@ -21,7 +21,7 @@ namespace Roster_Builder.Necrons
                 "INFANTRY", "CHARACTER", "DYNASTIC AGENT", "CRYPTEK", "TECHNOMANCER", "ILLUMINOR SZERAS"
             });
             WarlordTrait = "Enduring Will";
-            role = "HQ";
+            Role = "HQ";
         }
         public override Datasheets CreateUnit()
         {

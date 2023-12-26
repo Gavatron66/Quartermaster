@@ -25,7 +25,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "MONSTER", "FLY", "CANOPTEK", "CANOPTEK SPYDERS"
             });
-            role = "Elites";
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()

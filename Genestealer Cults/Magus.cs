@@ -23,7 +23,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "INFANTRY", "CHARACTER", "PSYKER", "MAGUS"
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
-            role = "HQ";
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()

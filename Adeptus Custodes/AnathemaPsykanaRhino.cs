@@ -22,7 +22,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ANATHEMA PSYKANA",
                 "VEHICLE", "TRANSPORT", "SMOKESCREEN", "RHINO"
             });
-            role = "Transport";
+            Role = "Transport";
         }
 
         public override Datasheets CreateUnit()

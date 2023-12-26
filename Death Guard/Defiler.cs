@@ -22,7 +22,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "VEHICLE", "DAEMON", "DAEMON ENGINE", "SMOKESCREEN", "DEFILER"
             });
-            role = "Heavy Support";
+            Role = "Heavy Support";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)

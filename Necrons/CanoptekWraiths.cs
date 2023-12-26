@@ -28,7 +28,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "MONSTER", "FLY", "CANOPTEK", "CANOPTEK SPYDERS"
             });
-            role = "Fast Attack";
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()

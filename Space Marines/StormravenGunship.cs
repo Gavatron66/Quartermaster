@@ -23,7 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "AIRCRAFT", "TRANSPORT", "FLY", "MACHINE SPIRIT", "STORMRAVEN GUNSHIP"
             });
-            role = "Flyer";
+            Role = "Flyer";
         }
 
         public override Datasheets CreateUnit()

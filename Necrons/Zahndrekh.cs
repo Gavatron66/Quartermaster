@@ -21,7 +21,7 @@ namespace Roster_Builder.Necrons
                 "INFANTRY", "CHARACTER", "OVERLORD", "NOBLE", "NEMESOR ZAHNDREKH"
             });
             WarlordTrait = "Eternal Madness";
-            role = "HQ";
+            Role = "HQ";
         }
         public override Datasheets CreateUnit()
         {

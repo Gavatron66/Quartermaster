@@ -25,7 +25,7 @@ namespace Roster_Builder.Death_Guard
                     "DAEMON PRINCE"
             });
             PsykerPowers = new string[1] { string.Empty };
-            role = "HQ";
+            Role = "HQ";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)

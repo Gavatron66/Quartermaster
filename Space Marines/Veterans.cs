@@ -39,7 +39,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "COMMAND SQUAD", "COMPANY VETERANS"
             });
-            role = "Elites";
+            Role = "Elites";
         }
         
         public override Datasheets CreateUnit()

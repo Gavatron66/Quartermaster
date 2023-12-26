@@ -26,7 +26,7 @@ namespace Roster_Builder.Necrons
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "VEHICLE", "CROSSFIRE", "ACHILLES RIDGERUNNERS"
             });
-            role = "Fast Attack";
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()

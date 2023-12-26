@@ -23,7 +23,7 @@ namespace Roster_Builder.Death_Guard
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
             WarlordTrait = "Revolting Resilient; Living Plague; Arch-Contaminator";
-            role = "Lord of War";
+            Role = "Lord of War";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)

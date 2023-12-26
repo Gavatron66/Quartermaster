@@ -21,7 +21,7 @@ namespace Roster_Builder.Necrons
                 "INFANTRY", "CHARACTER", "NOBLE", "DYNASTIC AGENT", "OVERLORD", "ANRAKYR THE TRAVELLER"
             });
             WarlordTrait = "Implacable Conqueror (Aura)";
-            role = "HQ";
+            Role = "HQ";
         }
         public override Datasheets CreateUnit()
         {
