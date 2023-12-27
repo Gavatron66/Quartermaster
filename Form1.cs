@@ -414,6 +414,12 @@ namespace Roster_Builder
             {
                 gbCustomSubfaction.Visible = false;
             }
+
+            if(currentDetachment.currentFaction.ToString() == "Space Marines")
+            {
+                lbUnits.Items.Clear();
+                lbUnits.Items.AddRange(currentDetachment.currentFaction.GetDatasheets().ToArray());
+            }
         }
 
         private void cmbOption3_SelectedIndexChanged(object sender, EventArgs e)

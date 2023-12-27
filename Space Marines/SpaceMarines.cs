@@ -1,5 +1,6 @@
 ﻿using Roster_Builder.Genestealer_Cults;
 using Roster_Builder.Space_Marines;
+using Roster_Builder.Space_Marines.Ultramarines;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,7 +76,7 @@ namespace Roster_Builder.Space_Marines
 
         public override List<Datasheets> GetDatasheets()
         {
-            return new List<Datasheets>()
+            var datasheets = new List<Datasheets>()
             {
                 //---------- HQ ----------
                 new PrimarisCaptain(),
@@ -99,7 +100,7 @@ namespace Roster_Builder.Space_Marines
                 new Chaplain(),
                 new PrimarisTechmarine(),
                 new Servitors(),
-                new Techmarine(),
+                new Techmarine(),   //[21]
                 //---------- Troops ----------
                 new Intercessors(),
                 new AssaultIntercessors(),
@@ -133,7 +134,7 @@ namespace Roster_Builder.Space_Marines
                 new ContemptorDreadnought(),
                 new VenerableDreadnought(),
                 new IroncladDreadnought(),
-                new RedemptorDreadnought(),
+                new RedemptorDreadnought(), //[53]
                 //---------- Fast Attack ----------
                 new AssaultSquad(),
                 new Outriders(),
@@ -187,6 +188,23 @@ namespace Roster_Builder.Space_Marines
                 //---------- Fortification ----------
                 new HammerfallBunker()
             };
+
+            if(currentSubFaction == "Ultramarines")
+            {
+                datasheets.Insert(22, new MarneusCalgar()); //Marneus Calgar
+                datasheets.Insert(55, new VictrixGuard()); //Victrix Guard
+                datasheets.Insert(23, new ChiefLibrarianTigurius()); //Tigurius
+                datasheets.Insert(23, new LionElJonson()); //Cassius
+                datasheets.Insert(23, new LionElJonson()); //Sicarius
+                datasheets.Insert(23, new LionElJonson()); //Telion
+                datasheets.Insert(23, new LionElJonson()); //Chronus
+                datasheets.Insert(55, new LionElJonson()); //Chapter Ancient
+                datasheets.Insert(55, new LionElJonson()); //Chapter Champion
+                datasheets.Insert(55, new LionElJonson()); //Honour Guard
+                datasheets.Insert(55, new LionElJonson()); //Tyrannic War Veterans
+            }
+
+            return datasheets;
         }
 
         public override int GetFactionUpgradePoints(string upgrade)
@@ -479,9 +497,26 @@ namespace Roster_Builder.Space_Marines
                 {
                     relics.Add("Vengeance of Ultramar"); //Firstborn only
                 }
-                
 
                 relics.Add("Tarentian Cloak");
+                relics.Add("Adamantine Mantle");
+                relics.Add("Artificer Armour");
+                relics.Add("Master-crafted Weapon");
+                relics.Add("Digital Weapons");
+                relics.Add("Reliquary of Vengeance");
+                relics.Add("Seal of Oath");
+                relics.Add("Hellfury Bolts");
+
+                if((keywords.Contains("CAPTAIN") && !(keywords.Contains("GRAVIS") || keywords.Contains("PHOBOS"))) ||
+                    (keywords.Contains("CHAPLAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
+                    keywords.Contains("COMPANY ANCIENT") ||
+                    (keywords.Contains("LIBRARIAN") && !(keywords.Contains("PHOBOS") || keywords.Contains("TERMINATOR"))) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS"))
+                    )
+                {
+                    relics.Add("Sunwrath Pistol");
+                }
             }
             #endregion
 

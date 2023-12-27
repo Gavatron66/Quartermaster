@@ -288,6 +288,9 @@
     <Compile Include="Space Marines\Suppressors.cs" />
     <Compile Include="Space Marines\Terminators.cs" />
     <Compile Include="Space Marines\Thunderfire.cs" />
+    <Compile Include="Space Marines\Ultramarines\ChiefLibrarianTigurius.cs" />
+    <Compile Include="Space Marines\Ultramarines\MarneusCalgar.cs" />
+    <Compile Include="Space Marines\Ultramarines\VictrixGuard.cs" />
     <Compile Include="Space Marines\VanguardVeterans.cs" />
     <Compile Include="Space Marines\VenerableDreadnought.cs" />
     <Compile Include="Space Marines\Veterans.cs" />
