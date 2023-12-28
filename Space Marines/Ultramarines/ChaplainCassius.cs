@@ -7,29 +7,29 @@ using System.Windows.Forms;
 
 namespace Roster_Builder.Space_Marines.Ultramarines
 {
-    public class ChiefLibrarianTigurius : Datasheets
+    public class ChaplainCassius : Datasheets
     {
         string disciplineSelected;
 
-        public ChiefLibrarianTigurius()
+        public ChaplainCassius()
         {
-            DEFAULT_POINTS = 120;
+            DEFAULT_POINTS = 85;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "ncp";
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "ULTRAMARINES",
-                "CHARACTER", "INFANTRY", "PRIMARIS", "PSYKER", "LIBRARIAN", "CHIEF LIBRARIAN TIGURIUS"
+                "CHARACTER", "INFANTRY", "PRIEST", "CHAPLAIN", "MASTER PF SAMCTITY", "CASSIUS"
             });
-            PsykerPowers = new string[3] { string.Empty, string.Empty, string.Empty };
-            WarlordTrait = "Master of Strategy";
+            PsykerPowers = new string[2] { string.Empty, string.Empty };
+            WarlordTrait = "Warden of Macragge";
             Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new ChiefLibrarianTigurius();
+            return new ChaplainCassius();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -39,35 +39,11 @@ namespace Roster_Builder.Space_Marines.Ultramarines
 
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
-            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
 
-            cmbDiscipline.Visible = true;
-            panel.Controls["lblPsykerList"].Visible = true;
-            cmbDiscipline.Items.Clear();
-            cmbDiscipline.Items.Add("Librarius");
-            cmbDiscipline.Items.Add("Indomitus");
-
             List<string> psykerpowers = new List<string>();
-            psykerpowers = repo.GetPsykerPowers("Librarius");
-            bool doesContain = false;
-            foreach (var power in psykerpowers)
-            {
-                if (power == PsykerPowers[0])
-                {
-                    doesContain = true;
-                }
-            }
-
-            if (!doesContain)
-            {
-                psykerpowers = repo.GetPsykerPowers(disciplineSelected);
-            }
-            else
-            {
-                disciplineSelected = "Librarius";
-            }
+            psykerpowers = repo.GetPsykerPowers("Litanies");
 
             clbPsyker.Items.Clear();
             foreach (string power in psykerpowers)
@@ -75,9 +51,7 @@ namespace Roster_Builder.Space_Marines.Ultramarines
                 clbPsyker.Items.Add(power);
             }
 
-            cmbDiscipline.SelectedItem = disciplineSelected;
-
-            lblPsyker.Text = "Select three of the following:";
+            lblPsyker.Text = "Select two of the following:";
             clbPsyker.ClearSelected();
             for (int i = 0; i < clbPsyker.Items.Count; i++)
             {
@@ -88,14 +62,10 @@ namespace Roster_Builder.Space_Marines.Ultramarines
             {
                 clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
             }
-            if (PsykerPowers[1] != string.Empty)
-            {
-                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
-            }
 
             cmbWarlord.Enabled = false;
             cmbWarlord.Items.Clear();
-            cmbWarlord.Items.Add("Master of Strategy");
+            cmbWarlord.Items.Add(WarlordTrait);
             cmbWarlord.SelectedIndex = 0;
 
             if (isWarlord)
@@ -139,15 +109,14 @@ namespace Roster_Builder.Space_Marines.Ultramarines
                     break;
                 default: break;
                 case 60:
-                    if (clbPsyker.CheckedItems.Count < 3)
+                    if (clbPsyker.CheckedItems.Count < 2)
                     {
                         break;
                     }
-                    else if (clbPsyker.CheckedItems.Count == 3)
+                    else if (clbPsyker.CheckedItems.Count == 2)
                     {
                         PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
                         PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
-                        PsykerPowers[2] = clbPsyker.CheckedItems[2] as string;
                     }
                     else
                     {
@@ -159,7 +128,7 @@ namespace Roster_Builder.Space_Marines.Ultramarines
 
         public override string ToString()
         {
-            return "Chief Librarian Tigurius - " + Points + "pts";
+            return "Chaplain Cassius - " + Points + "pts";
         }
     }
 }

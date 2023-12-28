@@ -274,7 +274,17 @@ namespace Roster_Builder.Space_Marines
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if (chosenRelic == "Vengeance of Ultramar")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Storm Bolter");
+                        cmbOption2.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption2.Enabled = true;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 111:
                     if (cmbDiscipline.SelectedItem.ToString() == disciplineSelected)

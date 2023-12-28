@@ -60,7 +60,8 @@ namespace Roster_Builder.Space_Marines
                 "Combi-melta",
                 "Combi-plasma",
                 "Grav Pistol",
-                "Plasma Pistol"
+                "Plasma Pistol",
+                "Storm Bolter"
             });
             if (f.currentSubFaction == "Blood Angels" || f.currentSubFaction == "Deathwatch")
             {
@@ -294,6 +295,16 @@ namespace Roster_Builder.Space_Marines
                     else if (chosenRelic == "Purgatorus")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Vengeance of Ultramar")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
                         cmbOption1.Enabled = false;
                     }
                     else

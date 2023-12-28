@@ -178,6 +178,21 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
                         cmbOption1.Enabled = false;
                     }
+                    else if (chosenRelic == "Soldier's Blade")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Vengeance of Ultramar")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
+                        cmbOption1.Enabled = false;
+                    }
                     else
                     {
                         cmbOption1.Enabled = true;

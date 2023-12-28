@@ -40,7 +40,9 @@ namespace Roster_Builder.Death_Guard
             cbWarlord.Checked = true;
             cbWarlord.Enabled = false;
             cmbWarlord.Enabled = false;
-            cmbWarlord.Text = WarlordTrait;
+            cmbWarlord.Items.Clear();
+            cmbWarlord.Items.Add("Revolting Resilient; Living Plague; Arch-Contaminator");
+            cmbWarlord.SelectedIndex = 0;
 
             if (Factionupgrade != null)
             {

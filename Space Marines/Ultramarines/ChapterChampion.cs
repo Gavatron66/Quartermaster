@@ -1,5 +1,4 @@
-﻿using Roster_Builder.Adeptus_Custodes;
-using Roster_Builder.Space_Marines;
+﻿using Roster_Builder.Necrons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,27 +6,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Space_Marines
+namespace Roster_Builder.Space_Marines.Ultramarines
 {
-    public class PrimarisAncient : Datasheets
+    public class ChapterChampion : Datasheets
     {
-        public PrimarisAncient()
+        public ChapterChampion()
         {
-            DEFAULT_POINTS = 70;
+            DEFAULT_POINTS = 65;
             Points = DEFAULT_POINTS;
-            TemplateCode = "1m_c";
-            Weapons.Add("Bolt Pistol");
+            TemplateCode = "c";
             Keywords.AddRange(new string[]
             {
-                "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "INFANTRY", "CHARACTER", "PRIMARIS", "ANCIENT"
+                "IMPERIUM", "ADEPTUS ASTARTES", "ULTRAMARINES",
+                "CHARACTER", "INFANTRY", "CHAPTER CHAMPION"
             });
             Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new PrimarisAncient();
+            return new ChapterChampion();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -41,15 +39,6 @@ namespace Roster_Builder.Space_Marines
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
-            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-
-            cmbOption1.Items.Clear();
-            cmbOption1.Items.AddRange(new string[]
-            {
-                "Bolt Pistol",
-                "Power Sword"
-            });
-            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
             cmbWarlord.Items.Clear();
             List<string> traits = repo.GetWarlordTraits("");
@@ -128,13 +117,9 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
 
             switch (code)
             {
-                case 11:
-                    Weapons[0] = cmbOption1.SelectedItem.ToString();
-                    break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
                     {
@@ -149,27 +134,7 @@ namespace Roster_Builder.Space_Marines
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    string chosenRelic = cmbRelic.SelectedItem.ToString();
-                    if (chosenRelic == "The Burning Blade")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Purgatorus")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Soldier's Blade")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
-                        cmbOption1.Enabled = false;
-                    }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-                    Relic = chosenRelic;
+                    Relic = cmbRelic.SelectedItem.ToString();
                     break;
                 case 25:
                     if (cbWarlord.Checked)
@@ -214,7 +179,7 @@ namespace Roster_Builder.Space_Marines
 
         public override string ToString()
         {
-            return "Primaris Ancient - " + Points + "pts";
+            return "Chapter Champion - " + Points + "pts";
         }
     }
 }

@@ -41,4 +41,6 @@ Hybrid Metamorphs needs to be visited when the location and sizing rework is rea
 
 Need to Fix the custom faction stuff, it doesn't seem to working
 
+Fix Named Characters? Some named Characters belong to specific subfactions, and technically if they contain a different subfaction keyword than they invalidate the detachment.
+	Finish fixing Warlord traits for Necrons
 

@@ -174,6 +174,11 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 2;
                         cmbOption1.Enabled = false;
                     }
+                    else if (chosenRelic == "Soldier's Blade")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
                     else
                     {
                         cmbOption1.Enabled = true;

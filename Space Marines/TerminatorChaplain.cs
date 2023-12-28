@@ -173,7 +173,17 @@ namespace Roster_Builder.Space_Marines
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if (chosenRelic == "Vengeance of Ultramar")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 25:
                     if (cbWarlord.Checked)

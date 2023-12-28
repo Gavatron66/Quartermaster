@@ -13,7 +13,8 @@ namespace Roster_Builder.Space_Marines
         {
             DEFAULT_POINTS = 105;
             Points = DEFAULT_POINTS;
-            TemplateCode = "c";
+            TemplateCode = "1m_c";
+            Weapons.Add("Astartes Chainsword");
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
@@ -38,6 +39,16 @@ namespace Roster_Builder.Space_Marines
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+
+            cmbOption1.Items.Clear();
+            cmbOption1.Items.AddRange(new string[]
+            {
+                "Astartes Chainsword",
+                "Power Fist",
+                "Power Sword"
+            });
+            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
             cmbWarlord.Items.Clear();
             List<string> traits = repo.GetWarlordTraits("");
@@ -45,7 +56,6 @@ namespace Roster_Builder.Space_Marines
             {
                 cmbWarlord.Items.Add(item);
             }
-
 
             if (isWarlord)
             {
@@ -117,9 +127,13 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
 
             switch (code)
             {
+                case 11:
+                    Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
                     {
@@ -134,7 +148,22 @@ namespace Roster_Builder.Space_Marines
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if (chosenRelic == "The Burning Blade")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Soldier's Blade")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 25:
                     if (cbWarlord.Checked)

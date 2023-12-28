@@ -61,6 +61,7 @@ namespace Roster_Builder.Space_Marines
                 "Power Fist",
                 "Power Maul",
                 "Power Sword",
+                "Storm Bolter",
                 "Thunder Hammer (+10 pts)"
             });
             if (f.currentSubFaction == "Blood Angels" || f.currentSubFaction == "Deathwatch")
@@ -212,6 +213,21 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Storm Shield");
                         cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Soldier's Blade")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Vengeance of Ultramar")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
+                        cmbOption1.Enabled = false;
                     }
                     else
                     {

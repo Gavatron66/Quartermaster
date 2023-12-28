@@ -40,7 +40,9 @@ namespace Roster_Builder.Space_Marines
             cbWarlord.Checked = true;
             cbWarlord.Enabled = false;
             cmbWarlord.Enabled = false;
-            cmbWarlord.Text = WarlordTrait;
+            cmbWarlord.Items.Clear();
+            cmbWarlord.Items.Add("Nobility Made Manifest");
+            cmbWarlord.SelectedIndex = 0;
         }
 
         public override void SaveDatasheets(int code, Panel panel) { }

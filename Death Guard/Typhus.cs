@@ -36,11 +36,14 @@ namespace Roster_Builder.Death_Guard
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
 
+            cmbWarlord.Items.Clear();
+            cmbWarlord.Items.Add("Shamblerot (Contagion)");
+            cmbWarlord.SelectedIndex = 0;
+
             if (isWarlord)
             {
                 cbWarlord.Checked = true;
                 cmbWarlord.Enabled = true;
-                cmbWarlord.Text = WarlordTrait;
             }
             else
             {
@@ -88,7 +91,7 @@ namespace Roster_Builder.Death_Guard
                         warlord.Text = WarlordTrait;
                         warlord.Enabled = false;
                     }
-                    else { this.isWarlord = false; warlord.SelectedIndex = -1; }
+                    else { this.isWarlord = false; }
                     break;
                 case 60:
                     if (clb.CheckedItems.Count < 2)

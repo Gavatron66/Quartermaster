@@ -276,6 +276,8 @@
     <Compile Include="Space Marines\RepulsorExecutioner.cs" />
     <Compile Include="Space Marines\Rhino.cs" />
     <Compile Include="Space Marines\RobouteGuilliman.cs" />
+    <Compile Include="Space Marines\Salamanders\AdraxAgatone.cs" />
+    <Compile Include="Space Marines\Salamanders\VulkanHestan.cs" />
     <Compile Include="Space Marines\ScoutBikeSquad.cs" />
     <Compile Include="Space Marines\Stalker.cs" />
     <Compile Include="Space Marines\SternguardVeterans.cs" />
@@ -288,8 +290,16 @@
     <Compile Include="Space Marines\Suppressors.cs" />
     <Compile Include="Space Marines\Terminators.cs" />
     <Compile Include="Space Marines\Thunderfire.cs" />
+    <Compile Include="Space Marines\Ultramarines\CaptainSicarius.cs" />
+    <Compile Include="Space Marines\Ultramarines\ChaplainCassius.cs" />
+    <Compile Include="Space Marines\Ultramarines\ChapterAncient.cs" />
+    <Compile Include="Space Marines\Ultramarines\ChapterChampion.cs" />
     <Compile Include="Space Marines\Ultramarines\ChiefLibrarianTigurius.cs" />
+    <Compile Include="Space Marines\Ultramarines\HonourGuard.cs" />
     <Compile Include="Space Marines\Ultramarines\MarneusCalgar.cs" />
+    <Compile Include="Space Marines\Ultramarines\SergeantChronus.cs" />
+    <Compile Include="Space Marines\Ultramarines\SergeantTelion.cs" />
+    <Compile Include="Space Marines\Ultramarines\TyrannicVeterans.cs" />
     <Compile Include="Space Marines\Ultramarines\VictrixGuard.cs" />
     <Compile Include="Space Marines\VanguardVeterans.cs" />
     <Compile Include="Space Marines\VenerableDreadnought.cs" />

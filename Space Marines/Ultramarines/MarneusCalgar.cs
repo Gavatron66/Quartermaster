@@ -36,13 +36,50 @@ namespace Roster_Builder.Space_Marines.Ultramarines
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
 
-            cbWarlord.Checked = true;
-            cbWarlord.Enabled = false;
             cmbWarlord.Enabled = false;
-            cmbWarlord.Text = WarlordTrait;
+            cmbWarlord.Items.Clear();
+            cmbWarlord.Items.Add("Adept of the Codex");
+            cmbWarlord.SelectedIndex = 0;
+
+            if (isWarlord)
+            {
+                cbWarlord.Checked = true;
+            }
+            else
+            {
+                cbWarlord.Checked = false;
+            }
         }
 
-        public override void SaveDatasheets(int code, Panel panel) { }
+        public override void SaveDatasheets(int code, Panel panel)
+        {
+
+            ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
+            CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
+
+            switch (code)
+            {
+                case 25:
+                    if (cbWarlord.Checked)
+                    {
+                        this.isWarlord = true;
+                        cmbWarlord.Text = WarlordTrait;
+                        cmbWarlord.Enabled = false;
+                    }
+                    else { this.isWarlord = false; }
+                    break;
+                default: break;
+            }
+
+            if (code == -1)
+            {
+                if (this.isWarlord)
+                {
+                    cmbWarlord.Text = WarlordTrait;
+                    cmbWarlord.Enabled = false;
+                }
+            }
+        }
 
         public override string ToString()
         {

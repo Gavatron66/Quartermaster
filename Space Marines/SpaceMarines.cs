@@ -1,6 +1,7 @@
 ﻿using Roster_Builder.Genestealer_Cults;
 using Roster_Builder.Space_Marines;
 using Roster_Builder.Space_Marines.Ultramarines;
+using Roster_Builder.Space_Marines.Salamanders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -194,14 +195,19 @@ namespace Roster_Builder.Space_Marines
                 datasheets.Insert(22, new MarneusCalgar()); //Marneus Calgar
                 datasheets.Insert(55, new VictrixGuard()); //Victrix Guard
                 datasheets.Insert(23, new ChiefLibrarianTigurius()); //Tigurius
-                datasheets.Insert(23, new LionElJonson()); //Cassius
-                datasheets.Insert(23, new LionElJonson()); //Sicarius
-                datasheets.Insert(23, new LionElJonson()); //Telion
-                datasheets.Insert(23, new LionElJonson()); //Chronus
-                datasheets.Insert(55, new LionElJonson()); //Chapter Ancient
-                datasheets.Insert(55, new LionElJonson()); //Chapter Champion
-                datasheets.Insert(55, new LionElJonson()); //Honour Guard
-                datasheets.Insert(55, new LionElJonson()); //Tyrannic War Veterans
+                datasheets.Insert(24, new ChaplainCassius()); //Cassius
+                datasheets.Insert(25, new CaptainSicarius()); //Sicarius
+                datasheets.Insert(26, new SergeantTelion()); //Telion
+                datasheets.Insert(27, new SergeantChronus()); //Chronus
+                datasheets.Insert(61, new ChapterAncient()); //Chapter Ancient
+                datasheets.Insert(62, new ChapterChampion()); //Chapter Champion
+                datasheets.Insert(63, new HonourGuard()); //Honour Guard
+                datasheets.Insert(64, new TyrannicVeterans()); //Tyrannic War Veterans
+            }
+            else if(currentSubFaction == "Salamanders")
+            {
+                datasheets.Insert(22, new VulkanHestan());
+                datasheets.Insert(23, new AdraxAgatone());
             }
 
             return datasheets;
@@ -411,7 +417,9 @@ namespace Roster_Builder.Space_Marines
             if ((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS")) ||
                 (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
                 (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
-                keywords.Contains("COMPANY CHAMPION") || keywords.Contains("COMPANY ANCIENT"))
+                keywords.Contains("COMPANY CHAMPION") || keywords.Contains("COMPANY ANCIENT") ||
+                keywords.Contains("CHAPTER ANCIENT") || keywords.Contains("CHAPTER CHAMPION") || 
+                keywords.Contains("ANCIENT") && keywords.Contains("PRIMARIS"))
             {
                 relics.Add("The Burning Blade");
             }
@@ -466,7 +474,8 @@ namespace Roster_Builder.Space_Marines
                 if (keywords.Contains("CAPTAIN") ||
                     keywords.Contains("LIEUTENANT") ||
                     (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
-                    keywords.Contains("COMPANY CHAMPION") || keywords.Contains("COMPANY ANCIENT"))
+                    keywords.Contains("COMPANY CHAMPION") || keywords.Contains("CHAPTER CHAMPION") ||
+                    (keywords.Contains("ANCIENT") && !(keywords.Contains("BLADEGUARD") || keywords.Contains("TERMINATOR"))))
                 {
                     relics.Add("Soldier's Blade");
                 }
@@ -511,7 +520,7 @@ namespace Roster_Builder.Space_Marines
                     (keywords.Contains("CHAPLAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
                     keywords.Contains("COMPANY ANCIENT") ||
                     (keywords.Contains("LIBRARIAN") && !(keywords.Contains("PHOBOS") || keywords.Contains("TERMINATOR"))) ||
-                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS")) ||
                     (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS"))
                     )
                 {
@@ -582,7 +591,8 @@ namespace Roster_Builder.Space_Marines
             else if (currentSubFaction == "Blood Angels") { traits.Add("Speed of the Primarch"); }
             else if (currentSubFaction == "Flesh Tearers") { traits.Add("Merciless Butcher"); }
             else if (currentSubFaction == "Iron Hands") { traits.Add("Adept of the Omnissiah"); }
-            else if (currentSubFaction == "Ultramarines") { 
+            else if (currentSubFaction == "Ultramarines") 
+            { 
                 traits.Add("Adept of the Codex");
                 traits.Add("Master of Stratgey");
                 traits.Add("Calm Under Fire");
@@ -590,7 +600,15 @@ namespace Roster_Builder.Space_Marines
                 traits.Add("Nobility Made Manifest");
                 traits.Add("Warden of Macragge");
             }
-            else if (currentSubFaction == "Salamanders") { traits.Add("Anvil of Strength"); }
+            else if (currentSubFaction == "Salamanders") 
+            { 
+                traits.Add("Anvil of Strength");
+                traits.Add("Miraculous Constitution");
+                traits.Add("Never Give Up");
+                traits.Add("Forge Master");
+                traits.Add("Lord of Fire");
+                traits.Add("Patient and Determined");
+            }
             else if (currentSubFaction == "Raven Guard") { traits.Add("Echo of the Ravenspire"); }
             else if (currentSubFaction == "Deathwatch") { traits.Add("Vigilance Incarnate"); }
 

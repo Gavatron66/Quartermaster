@@ -8,24 +8,24 @@ using System.Windows.Forms;
 
 namespace Roster_Builder.Space_Marines.Ultramarines
 {
-    public class VictrixGuard : Datasheets
+    public class HonourGuard : Datasheets
     {
-        public VictrixGuard()
+        public HonourGuard()
         {
-            DEFAULT_POINTS = 55;
+            DEFAULT_POINTS = 45;
             UnitSize = 2;
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "ULTRAMARINES",
-                "INFANTRY", "CORE", "PRIMARIS", "VICTRIX HONOUR GUARD"
+                "INFANTRY", "CORE", "HONOUR GUARD"
             });
             Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new VictrixGuard();
+            return new HonourGuard();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -38,7 +38,7 @@ namespace Roster_Builder.Space_Marines.Ultramarines
 
         public override string ToString()
         {
-            return "Victrix Honour Guard - " + Points + "pts";
+            return "Honour Guard - " + Points + "pts";
         }
     }
 }
