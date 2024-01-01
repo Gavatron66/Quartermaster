@@ -169,6 +169,7 @@
     <Compile Include="Genestealer Cults\PurestrainGenestealers.cs" />
     <Compile Include="Genestealer Cults\ReductusSaboteur.cs" />
     <Compile Include="Genestealer Cults\Sanctus.cs" />
+    <Compile Include="Harlequins\Harlequins.cs" />
     <Compile Include="Necrons\AnnihilationBarge.cs" />
     <Compile Include="Necrons\Anrakyr.cs" />
     <Compile Include="Necrons\CanoptekDoomstalker.cs" />
