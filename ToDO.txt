@@ -45,3 +45,9 @@ Fix Named Characters? Some named Characters belong to specific subfactions, and 
 	Finish fixing Warlord traits for Necrons
 
 Compare Primaris Lieutenant
+
+Battle
+Fate
+Fortune
+
+Fortune/Fate

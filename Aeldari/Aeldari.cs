@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -85,19 +86,19 @@ namespace Roster_Builder.Aeldari
             return new List<Datasheets>
             {
                 //---------- HQ ----------
-                //new AvatarofKhaine(),
-                //new FarseerSkyrunner(),
-                //new EldradUlthran(),
-                //new Farseer(),
-                //new Autarch(),
-                //new PrinceYriel(),
-                //new AutarchSkyrunner(),
-                //new Asurmen(),
-                //new Baharroth(),
-                //new Fuegan(),
-                //new JainZar(),
-                //new Karandras(),
-                //new MauganRa(),
+                new AvatarofKhaine(),
+                new FarseerSkyrunner(),
+                new EldradUlthran(),
+                new Farseer(),
+                new Autarch(),
+                new PrinceYriel(),
+                new AutarchSkyrunner(),
+                new Asurmen(),
+                new Baharroth(),
+                new Fuegan(),
+                new JainZar(),
+                new Karandras(),
+                new MauganRa(),
                 //new IllicNightspear(),
                 //new Spiritseer(),
                 //---------- Troops ----------
@@ -362,6 +363,25 @@ namespace Roster_Builder.Aeldari
                 });
             }
 
+            if(keywords == "Farseer")
+            {
+                PsychicPowers.AddRange(new string[]
+                {
+                    "Guide",
+                    "Doom",
+                    "Fortune",
+                    "Executioner",
+                    "Will of Asuryan",
+                    "Mind War",
+                    "Fateful Divergence",
+                    "Witch Strike",
+                    "Ghostwalk",
+                    "Crushing Orb",
+                    "Focus Will",
+                    "Impair Senses"
+                });
+            }
+
             return PsychicPowers;
         }
 
@@ -411,6 +431,27 @@ namespace Roster_Builder.Aeldari
                 relics.Add("Sunstorm");
                 relics.Add("Aegis of Eldanesh");
                 relics.Add("The Weeping Stones");
+
+                if(currentSubFaction == "Ulthwé")
+                {
+                    relics.Add("The Ghosthelm of Alishazier");
+                }
+                else if (currentSubFaction == "Alaitoc")
+                {
+                    relics.Add("Shiftshroud of Alanssair");
+                }
+                else if(currentSubFaction == "Biel-tan")
+                {
+                    relics.Add("The Spirit Stone of Anath'lan");
+                }
+                else if(currentSubFaction == "Iyanden")
+                {
+                    relics.Add("Psytronome of Iyanden");
+                }
+                else if (currentSubFaction == "Saim-hann")
+                {
+                    relics.Add("Talisman of Tionchar");
+                }
             }
 
             return relics;
@@ -431,7 +472,7 @@ namespace Roster_Builder.Aeldari
 
         public override List<string> GetWarlordTraits(string keyword)
         {
-            return new List<string>()
+            List<string> traits = new List<string>()
             {
                 "Ambush of Blades",
                 "Walker of Many Paths",
@@ -440,6 +481,29 @@ namespace Roster_Builder.Aeldari
                 "Mark of the Incomparable Hunter",
                 "Seer of the Shifting Vector"
             };
+
+            if (currentSubFaction == "Ulthwé")
+            {
+                traits.Add("Fate Reader");
+            }
+            else if (currentSubFaction == "Alaitoc")
+            {
+                traits.Add("Master of Ambush");
+            }
+            else if (currentSubFaction == "Biel-tan")
+            {
+                traits.Add("Natural Leader");
+            }
+            else if (currentSubFaction == "Iyanden")
+            {
+                traits.Add("Enduring Resolve");
+            }
+            else if (currentSubFaction == "Saim-hann")
+            {
+                traits.Add("Wild Rider Chieftain");
+            }
+
+            return traits;
         }
 
         public override void SetPoints(int points)

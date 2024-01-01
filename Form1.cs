@@ -16,6 +16,8 @@ using Roster_Builder.Necrons;
 using Roster_Builder.Adeptus_Custodes;
 using Roster_Builder.Genestealer_Cults;
 using Roster_Builder.Space_Marines;
+using Roster_Builder.Aeldari;
+using Roster_Builder.Harlequins;
 
 namespace Roster_Builder
 {
@@ -71,8 +73,10 @@ namespace Roster_Builder
             cmbSelectFaction.Items.AddRange(new Faction[]
             {
                 new AdeptusCustodes(),
+                new Aeldari.Aeldari(),
                 new DeathGuard(),
                 new GSC(),
+                new Harlequins.Harlequins(),
                 new Necrons.Necrons(),
                 new SpaceMarines(),
             });
