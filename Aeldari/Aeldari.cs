@@ -99,13 +99,13 @@ namespace Roster_Builder.Aeldari
                 new JainZar(),
                 new Karandras(),
                 new MauganRa(),
-                //new IllicNightspear(),
-                //new Spiritseer(),
+                new IllicNightspear(),
+                new Spiritseer(),
                 //---------- Troops ----------
-                //new GuardianDefenders(),
-                //new Rangers(),
-                //new StormGuardians(),
-                //new CorsairVoidreavers(),
+                new GuardianDefenders(),
+                new Rangers(),
+                new StormGuardians(),
+                new CorsairVoidreavers(),
                 //---------- Elites ----------
                 //new CorsairVoidscarred(),
                 //new Warlocks(),
@@ -373,6 +373,25 @@ namespace Roster_Builder.Aeldari
                     "Executioner",
                     "Will of Asuryan",
                     "Mind War",
+                    "Fateful Divergence",
+                    "Witch Strike",
+                    "Ghostwalk",
+                    "Crushing Orb",
+                    "Focus Will",
+                    "Impair Senses"
+                });
+            }
+
+            if(keywords == "Spiritseer")
+            {
+                PsychicPowers.AddRange(new string[]
+                {
+                    "Conceal/Reveal",
+                    "Embolden/Horrify",
+                    "Enhance/Drain",
+                    "Protect/Jinx",
+                    "Quicken/Restrain",
+                    "Empower/Enervate",
                     "Fateful Divergence",
                     "Witch Strike",
                     "Ghostwalk",

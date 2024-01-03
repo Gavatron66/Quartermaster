@@ -41,11 +41,15 @@
             this.btnAddToRoster = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.cmbDetachment = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.nudSelectPoints = new System.Windows.Forms.NumericUpDown();
             this.btnLoad = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbDiscipline = new System.Windows.Forms.ComboBox();
+            this.lblPsykerList = new System.Windows.Forms.Label();
             this.gbCustomSubfaction = new System.Windows.Forms.GroupBox();
             this.lblCustomSub2 = new System.Windows.Forms.Label();
             this.lblCustomSub1 = new System.Windows.Forms.Label();
@@ -118,19 +122,15 @@
             this.btnDetachAdd = new System.Windows.Forms.Button();
             this.btnDetachRemove = new System.Windows.Forms.Button();
             this.panelNewDetach = new System.Windows.Forms.Panel();
+            this.txtNDname = new System.Windows.Forms.TextBox();
             this.cmbNDDetachment = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnNewDetachment = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbNDFaction = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblErrors = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtNDname = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cmbDiscipline = new System.Windows.Forms.ComboBox();
-            this.lblPsykerList = new System.Windows.Forms.Label();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSelectPoints)).BeginInit();
             this.panel1.SuspendLayout();
@@ -283,6 +283,23 @@
             this.MenuPanel.Size = new System.Drawing.Size(632, 562);
             this.MenuPanel.TabIndex = 15;
             // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(296, 299);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(196, 26);
+            this.txtName.TabIndex = 13;
+            this.txtName.Text = "<Optional>";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(232, 302);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 20);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Name:";
+            // 
             // cmbDetachment
             // 
             this.cmbDetachment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -388,6 +405,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1670, 680);
             this.panel1.TabIndex = 8;
+            // 
+            // cmbDiscipline
+            // 
+            this.cmbDiscipline.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDiscipline.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDiscipline.FormattingEnabled = true;
+            this.cmbDiscipline.Location = new System.Drawing.Point(17, 451);
+            this.cmbDiscipline.Name = "cmbDiscipline";
+            this.cmbDiscipline.Size = new System.Drawing.Size(176, 28);
+            this.cmbDiscipline.TabIndex = 87;
+            this.cmbDiscipline.SelectedIndexChanged += new System.EventHandler(this.cmbDiscipline_SelectedIndexChanged);
+            // 
+            // lblPsykerList
+            // 
+            this.lblPsykerList.AutoSize = true;
+            this.lblPsykerList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPsykerList.Location = new System.Drawing.Point(15, 428);
+            this.lblPsykerList.Name = "lblPsykerList";
+            this.lblPsykerList.Size = new System.Drawing.Size(204, 20);
+            this.lblPsykerList.TabIndex = 86;
+            this.lblPsykerList.Text = "Select Psychic Discipline:";
             // 
             // gbCustomSubfaction
             // 
@@ -1138,6 +1176,14 @@
             this.panelNewDetach.Size = new System.Drawing.Size(377, 186);
             this.panelNewDetach.TabIndex = 16;
             // 
+            // txtNDname
+            // 
+            this.txtNDname.Location = new System.Drawing.Point(141, 76);
+            this.txtNDname.Name = "txtNDname";
+            this.txtNDname.Size = new System.Drawing.Size(196, 26);
+            this.txtNDname.TabIndex = 15;
+            this.txtNDname.Text = "<Optional>";
+            // 
             // cmbNDDetachment
             // 
             this.cmbNDDetachment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1149,6 +1195,15 @@
             this.cmbNDDetachment.Name = "cmbNDDetachment";
             this.cmbNDDetachment.Size = new System.Drawing.Size(196, 28);
             this.cmbNDDetachment.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(77, 79);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(58, 20);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Name:";
             // 
             // label3
             // 
@@ -1210,61 +1265,6 @@
             this.lblErrors.Size = new System.Drawing.Size(155, 20);
             this.lblErrors.TabIndex = 82;
             this.lblErrors.Text = "Roster has _ errors";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(232, 302);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 20);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Name:";
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(296, 299);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(196, 26);
-            this.txtName.TabIndex = 13;
-            this.txtName.Text = "<Optional>";
-            // 
-            // txtNDname
-            // 
-            this.txtNDname.Location = new System.Drawing.Point(141, 76);
-            this.txtNDname.Name = "txtNDname";
-            this.txtNDname.Size = new System.Drawing.Size(196, 26);
-            this.txtNDname.TabIndex = 15;
-            this.txtNDname.Text = "<Optional>";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(77, 79);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 20);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Name:";
-            // 
-            // cmbDiscipline
-            // 
-            this.cmbDiscipline.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDiscipline.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDiscipline.FormattingEnabled = true;
-            this.cmbDiscipline.Location = new System.Drawing.Point(17, 451);
-            this.cmbDiscipline.Name = "cmbDiscipline";
-            this.cmbDiscipline.Size = new System.Drawing.Size(176, 28);
-            this.cmbDiscipline.TabIndex = 87;
-            this.cmbDiscipline.SelectedIndexChanged += new System.EventHandler(this.cmbDiscipline_SelectedIndexChanged);
-            // 
-            // lblPsykerList
-            // 
-            this.lblPsykerList.AutoSize = true;
-            this.lblPsykerList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPsykerList.Location = new System.Drawing.Point(15, 428);
-            this.lblPsykerList.Name = "lblPsykerList";
-            this.lblPsykerList.Size = new System.Drawing.Size(204, 20);
-            this.lblPsykerList.TabIndex = 86;
-            this.lblPsykerList.Text = "Select Psychic Discipline:";
             // 
             // Form1
             // 
