@@ -1598,6 +1598,33 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 291);
                     break;
                 #endregion
+                #region case "NL1m3k"
+                case "NL1m3k":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lbModelSelect"].Visible = true;
+                    panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
+                    panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
+
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(239, 97);
+
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(282, 120);
+
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(243, 153);
+
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(243, 183);
+
+                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(243, 208);
+
+                    panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(239, 235);
+
+                    panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 258);
+                    break;
+                #endregion
 
                 //Special Cases
                 #region case "cultist"
@@ -1707,6 +1734,39 @@ namespace Roster_Builder.Death_Guard
 
                     break;
                 #endregion
+                #region case "voidscarred"
+                case "voidscarred":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lbModelSelect"].Visible = true;
+                    panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
+                    panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
+
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(239, 97);
+
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(282, 120);
+
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(243, 333);
+
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(243, 363);
+
+                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(243, 393);
+
+                    panel.Controls["cbOption4"].Location = new System.Drawing.Point(248, 154);
+
+                    panel.Controls["lblPsyker"].Location = new System.Drawing.Point(239, 97);
+
+                    panel.Controls["clbPsyker"].Location = new System.Drawing.Point(243, 120);
+
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(244, 274);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(244, 298);
+                    break;
+                    #endregion
             }
         }
     }

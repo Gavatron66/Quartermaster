@@ -107,7 +107,7 @@ namespace Roster_Builder.Aeldari
                 new StormGuardians(),
                 new CorsairVoidreavers(),
                 //---------- Elites ----------
-                //new CorsairVoidscarred(),
+                new CorsairVoidscarred(),
                 //new Warlocks(),
                 //new WarlockSkyrunners(),
                 //new DireAvengers(),

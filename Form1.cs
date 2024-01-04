@@ -747,5 +747,11 @@ namespace Roster_Builder
             currentDetachment.roster[currentIndex].SaveDatasheets(111, panel1);
             updateLBRoster();
         }
+
+        private void cbOption4_CheckedChanged(object sender, EventArgs e)
+        {
+            currentDetachment.roster[currentIndex].SaveDatasheets(24, panel1);
+            updateLBRoster();
+        }
     }
 }

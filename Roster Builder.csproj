@@ -117,6 +117,7 @@
     <Compile Include="Aeldari\AvatarofKhaine.cs" />
     <Compile Include="Aeldari\Baharroth.cs" />
     <Compile Include="Aeldari\CorsairVoidreavers.cs" />
+    <Compile Include="Aeldari\CorsairVoidscarred.cs" />
     <Compile Include="Aeldari\EldradUlthran.cs" />
     <Compile Include="Aeldari\Farseer.cs" />
     <Compile Include="Aeldari\FarseerSkyrunner.cs" />
