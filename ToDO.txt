@@ -45,9 +45,11 @@ Fix Named Characters? Some named Characters belong to specific subfactions, and 
 	Finish fixing Warlord traits for Necrons
 
 Compare Primaris Lieutenant
+Some Aeldari Vehicles show points cost in the select list.
 
 Battle
 Fate
 Fortune
 
 Fortune/Fate
+Battle/Fortune
