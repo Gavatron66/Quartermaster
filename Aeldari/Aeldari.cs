@@ -125,21 +125,21 @@ namespace Roster_Builder.Aeldari
                 new ShiningSpears(),
                 new ShroudRunners(),
                 //---------- Heavy Support ----------
-                //new WarWalkers(),
-                //new DarkReapers(),
-                //new SupportWeapons(),
-                //new Falcon(),
-                //new NightSpinner(),
-                //new FirePrism(),
+                new WarWalkers(),
+                new DarkReapers(),
+                new SupportWeapons(),
+                new Falcon(),
+                new NightSpinner(),
+                new FirePrism(),
                 //---------- Transport ----------
-                //new WaveSerpent(),
+                new WaveSerpent(),
                 //---------- Flyers ----------
-                //new CrimsonHunter(),
-                //new HemlockWraithfighter(),
+                new CrimsonHunter(),
+                new HemlockWraithfighter(),
                 //---------- Lords of War ----------
-                //new Wraithknight(),
+                new Wraithknight(),
                 //---------- Fortification ----------
-                //new WebwayGate()
+                new WebwayGate()
             };
         }
 
@@ -222,7 +222,7 @@ namespace Roster_Builder.Aeldari
         {
             List<string> upgrades = new List<string>() { "(None)" };
 
-            if(keywords.Contains("CRIMSON HUNTERS"))
+            if(keywords.Contains("CRIMSON HUNTER"))
             {
                 upgrades.AddRange(new string[]
                 {

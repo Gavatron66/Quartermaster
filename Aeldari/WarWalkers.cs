@@ -1,49 +1,46 @@
-﻿using Roster_Builder.Genestealer_Cults;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Genestealer_Cults
+
+namespace Roster_Builder.Aeldari
 {
-    public class AchillesRidgerunners : Datasheets
+    public class WarWalkers : Datasheets
     {
         int currentIndex;
-        public AchillesRidgerunners()
+        public WarWalkers()
         {
-            DEFAULT_POINTS = 80;
+            DEFAULT_POINTS = 55;
             UnitSize = 1;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "NL2m";
-
-            Weapons.Add("Heavy Mining Laser");
-            Weapons.Add("Flare Launcher");
-
+            Weapons.Add("Shuriken Cannon (+5 pts)");
+            Weapons.Add("Shuriken Cannon (+5 pts)");
             Keywords.AddRange(new string[]
             {
-                "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
-                "VEHICLE", "CROSSFIRE", "ACHILLES RIDGERUNNERS"
+                "AELDARI", "ASURYANI", "<CRAFTWORLD>",
+                "VEHICLE", "WAR WALKERS"
             });
-            Role = "Fast Attack";
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new AchillesRidgerunners();
+            return new WarWalkers();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
-            repo = f as GSC;
+            repo = f as Aeldari;
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;
@@ -56,39 +53,28 @@ namespace Roster_Builder.Genestealer_Cults
             lbModelSelect.Items.Clear();
             for (int i = 0; i < UnitSize; i++)
             {
-                lbModelSelect.Items.Add("Achilles Ridgerunner w/ " + Weapons[i*2] + " and " + Weapons[(i*2)+1]);
+                lbModelSelect.Items.Add("War Walker w/ " + Weapons[i * 2] + " and " + Weapons[(i * 2) + 1]);
             }
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Achilles Missile Launcher",
-                "Heavy Mining Laser",
-                "Heavy Mortar"
+                "Aeldari Missile Launcher (+10 pts)",
+                "Bright Lance (+15 pts)",
+                "Scatter Laser",
+                "Shuriken Cannon (+5 pts)",
+                "Starcannon (+10 pts)"
             });
 
             cmbOption2.Items.Clear();
             cmbOption2.Items.AddRange(new string[]
             {
-                "Flare Launcher",
-                "Spotter",
-                "Survey Augur"
+                "Aeldari Missile Launcher (+10 pts)",
+                "Bright Lance (+15 pts)",
+                "Scatter Laser",
+                "Shuriken Cannon (+5 pts)",
+                "Starcannon (+10 pts)"
             });
-
-            cmbFaction.Visible = true;
-            panel.Controls["lblFactionupgrade"].Visible = true;
-
-            cmbFaction.Items.Clear();
-            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-
-            if (Factionupgrade != null)
-            {
-                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-            }
-            else
-            {
-                cmbFaction.SelectedIndex = 0;
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -102,20 +88,16 @@ namespace Roster_Builder.Genestealer_Cults
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
                 case 11:
                     Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
-                    lbModelSelect.Items[currentIndex] = "Achilles Ridgerunner w/ " + Weapons[(UnitSize - 1) * 2] + " and " + Weapons[((UnitSize - 1) * 2) + 1];
+                    lbModelSelect.Items[currentIndex] = "War Walker w/ " + Weapons[currentIndex * 2] + " and " + Weapons[(currentIndex * 2) + 1];
                     break;
                 case 12:
                     Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
-                    lbModelSelect.Items[currentIndex] = "Achilles Ridgerunner w/ " + Weapons[(UnitSize - 1) * 2] + " and " + Weapons[((UnitSize - 1) * 2) + 1];
-                    break;
-                case 16:
-                    Factionupgrade = cmbFaction.Text;
+                    lbModelSelect.Items[currentIndex] = "War Walker w/ " + Weapons[currentIndex * 2] + " and " + Weapons[(currentIndex * 2) + 1];
                     break;
                 case 30:
                     int temp = UnitSize;
@@ -123,9 +105,9 @@ namespace Roster_Builder.Genestealer_Cults
 
                     if (temp < UnitSize)
                     {
-                        Weapons.Add("Heavy Mining Laser");
-                        Weapons.Add("Flare Launcher");
-                        lbModelSelect.Items.Add("Achilles Ridgerunner w/ " + Weapons[(UnitSize - 1) * 2] + " and " + Weapons[((UnitSize - 1) * 2) + 1]);
+                        Weapons.Add("Shuriken Cannon (+5 pts)");
+                        Weapons.Add("Shuriken Cannon (+5 pts)");
+                        lbModelSelect.Items.Add("War Walker w/ " + Weapons[(UnitSize - 1) * 2] + " and " + Weapons[((UnitSize - 1) * 2) + 1]);
                     }
 
                     if (temp > UnitSize)
@@ -160,11 +142,29 @@ namespace Roster_Builder.Genestealer_Cults
             Points = DEFAULT_POINTS * UnitSize;
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
+
+            foreach (var weapon in Weapons)
+            {
+                if(weapon == "Shuriken Cannon (+5 pts)")
+                {
+                    Points += 5;
+                }
+
+                if(weapon == "Aeldari Missile Launcher (+10 pts)" || weapon == "Starcannon (+10 pts)")
+                {
+                    Points += 10;
+                }
+
+                if(weapon == "Bright Lance (+15 pts)")
+                {
+                    Points += 15;
+                }
+            }
         }
 
         public override string ToString()
         {
-            return "Achilles Ridgerunners - " + Points + "pts";
+            return "War Walkers - " + Points + "pts";
         }
     }
 }

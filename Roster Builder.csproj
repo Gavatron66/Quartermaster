@@ -118,18 +118,24 @@
     <Compile Include="Aeldari\Baharroth.cs" />
     <Compile Include="Aeldari\CorsairVoidreavers.cs" />
     <Compile Include="Aeldari\CorsairVoidscarred.cs" />
+    <Compile Include="Aeldari\CrimsonHunter.cs" />
+    <Compile Include="Aeldari\DarkReapers.cs" />
     <Compile Include="Aeldari\DireAvengers.cs" />
     <Compile Include="Aeldari\EldradUlthran.cs" />
+    <Compile Include="Aeldari\Falcon.cs" />
     <Compile Include="Aeldari\Farseer.cs" />
     <Compile Include="Aeldari\FarseerSkyrunner.cs" />
     <Compile Include="Aeldari\FireDragons.cs" />
+    <Compile Include="Aeldari\FirePrism.cs" />
     <Compile Include="Aeldari\Fuegan.cs" />
     <Compile Include="Aeldari\GuardianDefenders.cs" />
+    <Compile Include="Aeldari\HemlockWraithfighter.cs" />
     <Compile Include="Aeldari\HowlingBanshees.cs" />
     <Compile Include="Aeldari\IllicNightspear.cs" />
     <Compile Include="Aeldari\JainZar.cs" />
     <Compile Include="Aeldari\Karandras.cs" />
     <Compile Include="Aeldari\MauganRa.cs" />
+    <Compile Include="Aeldari\NightSpinner.cs" />
     <Compile Include="Aeldari\PrinceYriel.cs" />
     <Compile Include="Aeldari\Rangers.cs" />
     <Compile Include="Aeldari\ShiningSpears.cs" />
@@ -137,14 +143,19 @@
     <Compile Include="Aeldari\Spiritseer.cs" />
     <Compile Include="Aeldari\StormGuardians.cs" />
     <Compile Include="Aeldari\StrikingScorpions.cs" />
+    <Compile Include="Aeldari\SupportWeapons.cs" />
     <Compile Include="Aeldari\SwoopingHawks.cs" />
     <Compile Include="Aeldari\Vypers.cs" />
     <Compile Include="Aeldari\Warlocks.cs" />
     <Compile Include="Aeldari\WarlockSkyrunners.cs" />
     <Compile Include="Aeldari\WarpSpiders.cs" />
+    <Compile Include="Aeldari\WarWalkers.cs" />
+    <Compile Include="Aeldari\WaveSerpent.cs" />
+    <Compile Include="Aeldari\WebwayGate.cs" />
     <Compile Include="Aeldari\Windriders.cs" />
     <Compile Include="Aeldari\Wraithblades.cs" />
     <Compile Include="Aeldari\Wraithguard.cs" />
+    <Compile Include="Aeldari\Wraithknight.cs" />
     <Compile Include="Aeldari\Wraithlord.cs" />
     <Compile Include="Datasheets.cs" />
     <Compile Include="Death Guard\BiologusPutrifier.cs" />
@@ -437,6 +448,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Aeldari\Ynnari\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
