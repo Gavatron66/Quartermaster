@@ -12,6 +12,7 @@ namespace Roster_Builder.Space_Marines
     {
         int currentIndex;
         int weaponsCheck;
+
         string[] heavyArray = new string[]
         {
             "Grav-cannon",

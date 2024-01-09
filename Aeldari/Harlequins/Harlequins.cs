@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Roster_Builder.Harlequins
+namespace Roster_Builder.Aeldari.Harlequins
 {
     public class Harlequins : Faction
     {
@@ -38,8 +38,8 @@ namespace Roster_Builder.Harlequins
             return new List<Datasheets>()
             {
                 //---------- HQ ----------
-                //new TroupeMaster(),
-                //new Shadowseer(),
+                new TroupeMaster(),
+                new Shadowseer(),
                 //---------- Troops ----------
                 //new Troupe(),
                 //---------- Elites ----------
@@ -147,7 +147,7 @@ namespace Roster_Builder.Harlequins
                 upgrades.AddRange(new string[]
                 {
                     "Agent of Pandemonium (+30 pts)",
-                    "Gloom Sphere (+20 pts)",
+                    "Gloom Spider (+20 pts)",
                     "Mirror Architect (+25 pts)"
                 });
             }
@@ -184,6 +184,19 @@ namespace Roster_Builder.Harlequins
             relics.Add("The Starmist Raiment");
             relics.Add("The Laughing God's Eye");
 
+            if(currentSubFaction == "Light")
+            {
+                relics.Add("Shadow Stone");
+            }
+            if(currentSubFaction == "Dark")
+            {
+                relics.Add("The Ghoulmask");
+            }
+            if (currentSubFaction == "Twilight")
+            {
+                relics.Add("Twilight Fang");
+            }
+
             return relics;
         }
 
@@ -199,12 +212,27 @@ namespace Roster_Builder.Harlequins
 
         public override List<string> GetWarlordTraits(string keyword)
         {
-            return new List<string>()
+            List<string> traits = new List<string>()
             {
                 "Favour of Cegorach",
                 "Fractal Storm",
                 "A Foot in the Future"
             };
+
+            if (currentSubFaction == "Light")
+            {
+                traits.Add("Player of the Light");
+            }
+            if (currentSubFaction == "Dark")
+            {
+                traits.Add("Player of the Dark");
+            }
+            if(currentSubFaction == "Twilight")
+            {
+                traits.Add("Player of the Twilight");
+            }
+
+            return traits;
         }
 
         public override void SetPoints(int points)
