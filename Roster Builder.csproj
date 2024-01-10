@@ -129,8 +129,14 @@
     <Compile Include="Aeldari\FirePrism.cs" />
     <Compile Include="Aeldari\Fuegan.cs" />
     <Compile Include="Aeldari\GuardianDefenders.cs" />
+    <Compile Include="Aeldari\Harlequins\DeathJester.cs" />
     <Compile Include="Aeldari\Harlequins\Shadowseer.cs" />
+    <Compile Include="Aeldari\Harlequins\Skyweavers.cs" />
+    <Compile Include="Aeldari\Harlequins\Solitaire.cs" />
+    <Compile Include="Aeldari\Harlequins\Starweaver.cs" />
+    <Compile Include="Aeldari\Harlequins\Troupe.cs" />
     <Compile Include="Aeldari\Harlequins\TroupeMaster.cs" />
+    <Compile Include="Aeldari\Harlequins\Voidweavers.cs" />
     <Compile Include="Aeldari\HemlockWraithfighter.cs" />
     <Compile Include="Aeldari\HowlingBanshees.cs" />
     <Compile Include="Aeldari\IllicNightspear.cs" />

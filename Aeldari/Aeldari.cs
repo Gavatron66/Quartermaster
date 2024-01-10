@@ -170,7 +170,8 @@ namespace Roster_Builder.Aeldari
                 "Graceful Avoidance (+20 pts)",
                 "Deadly Ambush (+20 pts)",
                 "Blazing Fury (+20 pts)",
-                "Rapid Deployment (+20 pts)"
+                "Rapid Deployment (+20 pts)",
+                "Heartstrike (+20 pts)",
             };
 
             string[] fifteen = new string[]
@@ -178,19 +179,18 @@ namespace Roster_Builder.Aeldari
                 "Spider's Lair (+15 pts)",
                 "Surprise Assault (+15 pts)",
                 "Web of Deceit (+15 pts)",
-                "Heartstrike (+15 pts)",
                 "Piercing Strikes (+15 pts)",
                 "Curshing Blows (+15 pts)",
                 "Focused Fire (+15 pts)",
                 "Reaper's Reach (+15 pts)",
                 "Dragon's Bite (+15 pts)",
                 "Suppressing Fire (+15 pts)",
-                "Winged Evasion (+15 pts)"
+                "Winged Evasion (+15 pts)",
+                "Stand Firm (+15 pts)",
             };
 
             string[] ten = new string[]
             {
-                "Stand Firm (+10 pts)",
                 "Nerve Shredding Shriek (+10 pts)"
             };
 
@@ -238,7 +238,7 @@ namespace Roster_Builder.Aeldari
                 {
                     "Defensive Stance (+20 pts)",
                     "Shredding Fire (+25 pts)",
-                    "Stand Firm (+10 pts)",
+                    "Stand Firm (+15 pts)",
                 });
             }
 
@@ -257,7 +257,7 @@ namespace Roster_Builder.Aeldari
                 upgrades.AddRange(new string[]
                 {
                     "Expert Lancers (+20 pts)",
-                    "Heartstrike (+15 pts)",
+                    "Heartstrike (+20 pts)",
                     "Lightning Attacks (+20 pts)"
                 });
             }

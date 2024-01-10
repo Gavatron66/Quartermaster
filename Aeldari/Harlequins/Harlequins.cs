@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.VisualStyles;
 
 namespace Roster_Builder.Aeldari.Harlequins
 {
@@ -41,24 +42,34 @@ namespace Roster_Builder.Aeldari.Harlequins
                 new TroupeMaster(),
                 new Shadowseer(),
                 //---------- Troops ----------
-                //new Troupe(),
+                new Troupe(),
                 //---------- Elites ----------
-                //new DeathJester(),
-                //new Solitaire(),
+                new DeathJester(),
+                new Solitaire(),
                 //---------- Fast Attack ----------
-                //new Skyweavers(),
+                new Skyweavers(),
                 //---------- Heavy Support ----------
-                //new Voidweavers(),
+                new Voidweavers(),
                 //---------- Transport ----------
-                //new Starweaver(),
+                new Starweaver(),
                 //---------- Fortification ----------
-                //new WebwayGate()
+                new WebwayGate()
             };
         }
 
         public override int GetFactionUpgradePoints(string upgrade)
         {
             int points = 0;
+
+            string[] sixty = new string[]
+            {
+                "Mirror Architect (+60 pts)"
+            };
+
+            string[] fourty = new string[]
+            {
+                "Harvester of Torment (+40 pts)"
+            };
 
             string[] thirty = new string[]
             {
@@ -84,9 +95,18 @@ namespace Roster_Builder.Aeldari.Harlequins
 
             string[] fifteen = new string[]
             {
-                "Harvester of Torment (+15 pts)",
                 "Spectre of Despair (+15 pts)"
             };
+
+            if(sixty.Contains(upgrade))
+            {
+                points += 60;
+            }
+
+            if(fourty.Contains(upgrade))
+            {
+                points += 40;
+            }
 
             if (thirty.Contains(upgrade))
             {
@@ -126,7 +146,7 @@ namespace Roster_Builder.Aeldari.Harlequins
             {
                 upgrades.AddRange(new string[]
                 {
-                    "Harvester of Torment (+15 pts)",
+                    "Harvester of Torment (+40 pts)",
                     "Lord of Crystal Bones (+20 pts)",
                     "Rift Ghoul (+20 pts)"
                 });
@@ -148,7 +168,7 @@ namespace Roster_Builder.Aeldari.Harlequins
                 {
                     "Agent of Pandemonium (+30 pts)",
                     "Gloom Spider (+20 pts)",
-                    "Mirror Architect (+25 pts)"
+                    "Mirror Architect (+60 pts)"
                 });
             }
 
