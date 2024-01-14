@@ -41,7 +41,7 @@ namespace Roster_Builder.Aeldari
 
             cmbWarlord.Enabled = false;
             cmbWarlord.Items.Clear();
-            cmbWarlord.Items.Add("Master of Strategy");
+            cmbWarlord.Items.Add(WarlordTrait);
             cmbWarlord.SelectedIndex = 0;
 
             if (isWarlord)

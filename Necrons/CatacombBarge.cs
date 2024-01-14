@@ -169,42 +169,22 @@ namespace Roster_Builder.Necrons
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Warscythe (+5 pts)");
                         cmbOption2.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption2.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Solar Staff")
+                    else if (cmbRelic.SelectedItem.ToString() == "Solar Staff")
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Staff of Light");
                         cmbOption2.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption2.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Orb of Eternity")
+                    else if(cmbRelic.SelectedItem.ToString() == "Orb of Eternity")
                     {
                         cbOption1.Checked = true;
                         cbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Voidreaper")
+                    else if(cmbRelic.SelectedItem.ToString() == "Voidreaper")
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Warscythe (+5 pts)");
                         cmbOption2.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption2.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Voltaic Staff")
+                    else if (cmbRelic.SelectedItem.ToString() == "Voltaic Staff")
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Staff of Light");
                         cmbOption2.Enabled = false;

@@ -153,7 +153,17 @@ namespace Roster_Builder.Death_Guard
                     Factionupgrade = factionud.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if(chosenRelic == "Ferryman's Scythe")
+                    {
+                        cmb1.SelectedIndex = 1;
+                        cmb1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmb1.Enabled = true;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 71:
                     if (cbStratagem1.Checked)

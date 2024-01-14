@@ -163,6 +163,7 @@ namespace Roster_Builder.Space_Marines
                             "Master-crafted Auto Bolt Rifle and Bolt Pistol",
                             "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
                         });
+                        cmbOption1.Enabled = true;
                     }
                     else if (chosenRelic == "The Burning Blade")
                     {

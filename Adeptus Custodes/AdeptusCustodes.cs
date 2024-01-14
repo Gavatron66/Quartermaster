@@ -193,6 +193,11 @@ namespace Roster_Builder.Adeptus_Custodes
                     relics.Add("Fulminaris Aggressor");
                 }
 
+                if(keywords.Contains("TERMINATOR"))
+                {
+                    relics.Add("Praetorian Plate");
+                }
+
                 relics.Add("Castellan's Mark");
 
                 if (keywords.Contains("VEXILUS PRAETOR"))

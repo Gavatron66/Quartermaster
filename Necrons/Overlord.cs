@@ -118,6 +118,8 @@ namespace Roster_Builder.Necrons
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
+
+            cbOption1.Enabled = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -163,57 +165,28 @@ namespace Roster_Builder.Necrons
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Warscythe");
                         cmbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Solar Staff")
+                    else if (cmbRelic.SelectedItem.ToString() == "Solar Staff")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Staff of Light");
                         cmbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "The Arrow of Infinity")
+                    else if(cmbRelic.SelectedItem.ToString() == "The Arrow of Infinity")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Tachyon Arrow and Hyperphaise Glaive");
                         cmbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Orb of Eternity")
+                    else if(cmbRelic.SelectedItem.ToString() == "Orb of Eternity")
                     {
                         cbOption1.Checked = true;
                         cbOption1.Enabled = false;
                         cmbOption1.Items.Remove("Tachyon Arrow and Hyperphaise Glaive");
                     }
-                    else
-                    {
-                        cbOption1.Enabled = true;
-                        if(!Weapons.Contains("Tachyon Arrow and Hyperphaise Glaive"))
-                        {
-                            cmbOption1.Items.Insert(2, "Tachyon Arrow and Hyperphaise Glaive");
-                        }
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Voidreaper")
+                    else if(cmbRelic.SelectedItem.ToString() == "Voidreaper")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Warscythe");
                         cmbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Voltaic Staff")
+                    else if(cmbRelic.SelectedItem.ToString() == "Voltaic Staff")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Staff of Light");
                         cmbOption1.Enabled = false;
@@ -221,16 +194,19 @@ namespace Roster_Builder.Necrons
                     else
                     {
                         cmbOption1.Enabled = true;
+                        cbOption1.Enabled = true;
                     }
                     break;
                 case 21:
                     if (cbOption1.Checked)
                     {
                         Weapons[1] = cbOption1.Text;
+                        cmbOption1.Items.RemoveAt(2);
                     }
                     else
                     {
                         Weapons[1] = "";
+                        cmbOption1.Items.Insert(2, "Tachyon Arrow and Hyperphaise Glaive");
                     }
                     break;
                 case 25:

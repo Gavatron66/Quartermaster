@@ -218,6 +218,8 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
                     if (chosenRelic == "Primarch's Wrath")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
@@ -252,11 +254,6 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
                         cmbOption1.Enabled = false;
-                    }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                        cmbOption2.Enabled = true;
                     }
                     Relic = chosenRelic;
                     break;

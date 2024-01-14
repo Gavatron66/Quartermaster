@@ -240,8 +240,10 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["cmbWarlord"].Visible = true;
                     panel.Controls["cmbWarlord"].Location = new System.Drawing.Point(294, 106);
 
+                    panel.Controls["lblPsyker"].Visible = true;
                     panel.Controls["lblPsyker"].Location = new System.Drawing.Point(86, 52);
 
+                    panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 75);
 
                     panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(290, 192);

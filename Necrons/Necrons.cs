@@ -266,12 +266,12 @@ namespace Roster_Builder.Necrons
                 relics.Add("Voidreaper");   //Lokhust Lord, Lord, Catacomb Command Barge, Overlord
             }
 
-            if (keywords.Contains("LORD") || keywords.Contains("OVERLORD"))
+            if (keywords.Contains("LORD") || (keywords.Contains("OVERLORD") && !keywords.Contains("CATACOMB COMMAND BARGE")))
             {
                 relics.Add("Sempiternal Weave");    //Lord, Overlord
             }
 
-            if (keywords.Contains("OVERLORD"))
+            if (keywords.Contains("OVERLORD") && !keywords.Contains("CATACOMB COMMAND BARGE"))
             {
                 relics.Add("The Arrow of Infinity");    //Overlord
             }
@@ -306,7 +306,7 @@ namespace Roster_Builder.Necrons
             }
 
             if ((keywords.Contains("LORD") || keywords.Contains("CATACOMB COMMAND BARGE") ||
-                keywords.Contains("OVERLORD")) && currentSubFaction == "Szerekhan")
+                keywords.Contains("OVERLORD")) && currentSubFaction == "Szarekhan")
             {
                 relics.Add("The Sovereign Coronal"); //Szarekhan - Lord, Catacomb Command Barge, Overlord
             }

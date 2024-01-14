@@ -51,7 +51,6 @@ namespace Roster_Builder.Genestealer_Cults
                 cmbWarlord.Items.Add(item);
             }
 
-
             cbOption1.Text = "Psychic Familiar";
             if (Weapons[0] != string.Empty)
             {
@@ -168,7 +167,17 @@ namespace Roster_Builder.Genestealer_Cults
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if(chosenRelic == "The Crouchling")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cbOption1.Enabled = true;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 21:
                     if (cbOption1.Checked)

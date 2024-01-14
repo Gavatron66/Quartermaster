@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Roster_Builder.Aeldari.Ynnari;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -139,7 +140,11 @@ namespace Roster_Builder.Aeldari
                 //---------- Lords of War ----------
                 new Wraithknight(),
                 //---------- Fortification ----------
-                new WebwayGate()
+                new WebwayGate(),
+                //---------- Ynarri (Temp) ----------
+                new Yvraine(),
+                new TheVisarch(),
+                new Yncarne()
             };
         }
 
@@ -398,6 +403,19 @@ namespace Roster_Builder.Aeldari
                     "Crushing Orb",
                     "Focus Will",
                     "Impair Senses"
+                });
+            }
+
+            if (keywords == "Revenant")
+            {
+                PsychicPowers.AddRange(new string[]
+                {
+                    "Gaze of Ynnead",
+                    "Storm of Whispers",
+                    "Word of the Phoenix",
+                    "Unbind Souls",
+                    "Shield of Ynnead",
+                    "Ancestors' Grace"
                 });
             }
 

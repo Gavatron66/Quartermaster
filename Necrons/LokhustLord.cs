@@ -146,49 +146,29 @@ namespace Roster_Builder.Necrons
                     }
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString(); 
-                    
+                    Relic = cmbRelic.SelectedItem.ToString();
+
                     if (cmbRelic.SelectedItem.ToString() == "Blood Scythe")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Warscythe");
                         cmbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Solar Staff")
+                    else if (cmbRelic.SelectedItem.ToString() == "Solar Staff")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Staff of Light");
                         cmbOption1.Enabled = false;
                     }
-                    else
+                    else if (cmbRelic.SelectedItem.ToString() == "Orb of Eternity")
                     {
-                        cmbOption1.Enabled = true;
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Resurrection Orb (+30 pts)");
+                        cmbOption2.Enabled = false;
                     }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Resurrection Orb (+30 pts)")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Orb of Eternity");
-                        cmbOption1.Enabled = false;
-                    }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Voidreaper")
+                    else if (cmbRelic.SelectedItem.ToString() == "Voidreaper")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Warscythe");
                         cmbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Voltaic Staff")
+                    else if (cmbRelic.SelectedItem.ToString() == "Voltaic Staff")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Staff of Light");
                         cmbOption1.Enabled = false;
@@ -196,6 +176,7 @@ namespace Roster_Builder.Necrons
                     else
                     {
                         cmbOption1.Enabled = true;
+                        cmbOption2.Enabled = true;
                     }
                     break;
                 case 25:

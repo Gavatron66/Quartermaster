@@ -482,7 +482,9 @@ namespace Roster_Builder.Space_Marines
 
             if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS"))) ||
                 ((keywords.Contains("LIEUTENANT") && keywords.Contains("PRIMARIS")) && !keywords.Contains("PHOBOS")) ||
-                (keywords.Contains("TERMINATOR") && keywords.Contains("ANCIENT") && currentSubFaction == "Dark Angels")) {
+                (keywords.Contains("TERMINATOR") && keywords.Contains("ANCIENT") && currentSubFaction == "Dark Angels") ||
+                keywords.Contains("COMPANY CHAMPION"))
+            {
                 relics.Add("The Shield Eternal");
             }
 
@@ -492,15 +494,18 @@ namespace Roster_Builder.Space_Marines
             }
 
             if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
+                (keywords.Contains("PRIMARIS") && keywords.Contains("MK X GRAVIS") && !keywords.Contains("HBR")) ||
                 (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS")) ||
+                (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
                 (keywords.Contains("APOTHECARY") && !keywords.Contains("PRIMARIS")) ||
                 keywords.Contains("ANCIENT") && keywords.Contains("COMMAND SQUAD"))
             {
                 relics.Add("The Teeth of Terra");
             }
 
-            if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS") || keywords.Contains("TERMINATOR")) && currentSubFaction == "Dark Angels") ||
-                (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS") && currentSubFaction == "Space Wolves") ||
+            if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS") || keywords.Contains("TERMINATOR") || currentSubFaction != "Dark Angels")) ||
+                (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS")) || 
+                (keywords.Contains("PRIMARIS") && keywords.Contains("LIEUTENANT") && currentSubFaction == "Space Wolves") ||
                 (keywords.Contains("LIBRARIAN") && !(keywords.Contains("TERMINATOR") || keywords.Contains("PRIMARIS"))) ||
                 (keywords.Contains("CHAPLAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
                 (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
@@ -514,12 +519,12 @@ namespace Roster_Builder.Space_Marines
                 (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
                 keywords.Contains("COMPANY CHAMPION") || keywords.Contains("COMPANY ANCIENT") ||
                 keywords.Contains("CHAPTER ANCIENT") || keywords.Contains("CHAPTER CHAMPION") || 
-                keywords.Contains("ANCIENT") && keywords.Contains("PRIMARIS"))
+                keywords.Contains("ANCIENT") && keywords.Contains("PRIMARIS") && !keywords.Contains("BLADEGUARD"))
             {
                 relics.Add("The Burning Blade");
             }
 
-            if (!keywords.Contains("TERMINATOR") || keywords.Contains("MK X GRAVIS") || (keywords.Contains("TECHMARINE") && keywords.Contains("PRIMARIS")))
+            if (!(keywords.Contains("TERMINATOR") || keywords.Contains("MK X GRAVIS") || (keywords.Contains("TECHMARINE") && keywords.Contains("PRIMARIS"))))
             {
                 relics.Add("Purgatorus");
             }
@@ -548,12 +553,12 @@ namespace Roster_Builder.Space_Marines
 
             if (keywords.Contains("LIBRARIAN"))
             {
-                relics.Add("The Vox Espiritum");
+                relics.Add("Tome of Malcador");
             }
 
             if (keywords.Contains("CHAPLAIN"))
             {
-                relics.Add("The Vox Espiritum");
+                relics.Add("Benediction of Fury");
             }
 
             relics.Add("The Honour Vehement");
@@ -700,7 +705,7 @@ namespace Roster_Builder.Space_Marines
             if (currentSubFaction == "Ultramarines")
             {
                 if (keywords.Contains("CAPTAIN") ||
-                    keywords.Contains("LIEUTENANT") ||
+                    keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS") ||
                     (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
                     keywords.Contains("COMPANY CHAMPION") || keywords.Contains("CHAPTER CHAMPION") ||
                     (keywords.Contains("ANCIENT") && !(keywords.Contains("BLADEGUARD") || keywords.Contains("TERMINATOR"))))
@@ -730,7 +735,7 @@ namespace Roster_Builder.Space_Marines
                     (keywords.Contains("LIBRARIAN") && !keywords.Contains("PRIMARIS")) ||
                     (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS")) ||
                     (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
-                    (keywords.Contains("ANCIENT") && !keywords.Contains("PRIMARIS"))) 
+                    (keywords.Contains("ANCIENT") && !(keywords.Contains("PRIMARIS") || keywords.Contains("CHAPTER ANCIENT")))) 
                 {
                     relics.Add("Vengeance of Ultramar"); //Firstborn only
                 }
@@ -744,10 +749,10 @@ namespace Roster_Builder.Space_Marines
                 relics.Add("Seal of Oath");
                 relics.Add("Hellfury Bolts");
 
-                if((keywords.Contains("CAPTAIN") && !(keywords.Contains("GRAVIS") || keywords.Contains("PHOBOS"))) ||
+                if((keywords.Contains("CAPTAIN") && !(keywords.Contains("MK X GRAVIS") || keywords.Contains("PHOBOS") || keywords.Contains("TERMINATOR"))) ||
                     (keywords.Contains("CHAPLAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
                     keywords.Contains("COMPANY ANCIENT") ||
-                    (keywords.Contains("LIBRARIAN") && !(keywords.Contains("PHOBOS") || keywords.Contains("TERMINATOR"))) ||
+                    (keywords.Contains("LIBRARIAN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
                     (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS")) ||
                     (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS"))
                     )

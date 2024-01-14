@@ -17,7 +17,7 @@ namespace Roster_Builder.Adeptus_Custodes
             Weapons.Add("Executioner Greatblade (+5 pts)");
             Keywords.AddRange(new string[]
             {
-                "IMPERIUM", "ANATHEM PSYKANA",
+                "IMPERIUM", "ANATHEMA PSYKANA",
                 "INFANTRY", "CHARACTER", "KNIGHT-CENTURA"
             });
             Role = "HQ";
@@ -68,13 +68,7 @@ namespace Roster_Builder.Adeptus_Custodes
             }
 
             cmbRelic.Items.Clear();
-            cmbRelic.Items.AddRange(new string[]
-            {
-
-                "Raptor Blade",
-                "Excruciatus Flamer",
-                "Enhanced Voidsheen Cloak"
-            });
+            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
             if (Relic != null)
             {

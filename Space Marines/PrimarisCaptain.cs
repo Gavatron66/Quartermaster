@@ -61,6 +61,10 @@ namespace Roster_Builder.Space_Marines
                 cmbOption1.Items.Add("Special Issue Bolt Carbine");
             }
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+            if(Relic == "Purgatorus")
+            {
+                cmbOption1.Items.RemoveAt(3);
+            }
 
             if(f.currentSubFaction == "Dark Angels")
             {
@@ -230,6 +234,10 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption1.SelectedIndex = 3;
                         cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Purgatorus")
+                    {
+                        cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
                     }
                     else
                     {

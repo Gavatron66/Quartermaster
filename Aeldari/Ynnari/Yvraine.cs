@@ -5,46 +5,56 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Space_Marines.Ultramarines
+namespace Roster_Builder.Aeldari
 {
-    public class ChaplainCassius : Datasheets
+    public class Yvraine : Datasheets
     {
-        string disciplineSelected;
-
-        public ChaplainCassius()
+        public Yvraine()
         {
-            DEFAULT_POINTS = 85;
-            UnitSize = 1;
+            DEFAULT_POINTS = 140;
             Points = DEFAULT_POINTS;
             TemplateCode = "ncp";
             Keywords.AddRange(new string[]
             {
-                "IMPERIUM", "ADEPTUS ASTARTES", "ULTRAMARINES",
-                "CHARACTER", "INFANTRY", "PRIEST", "CHAPLAIN", "MASTER PF SANCTITY", "CASSIUS"
+                "AELDARI", "ASURYANI", "YNNARI",
+                "CHARACTER", "INFANTRY", "PSYKER", "YVRAINE"
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
-            WarlordTrait = "Warden of Macragge";
+            WarlordTrait = "Warden of Souls";
             Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new ChaplainCassius();
+            return new Yvraine();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as SpaceMarines;
+            repo = f as Aeldari;
             Template.LoadTemplate(TemplateCode, panel);
 
-            Label lblPsyker = panel.Controls["lblPsyker"] as Label;
-            CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
+            Label lblPsyker = panel.Controls["lblPsyker"] as Label;
+            CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
+
+            cmbWarlord.Enabled = false;
+            cmbWarlord.Items.Clear();
+            cmbWarlord.Items.Add(WarlordTrait);
+            cmbWarlord.SelectedIndex = 0;
+
+            if (isWarlord)
+            {
+                cbWarlord.Checked = true;
+            }
+            else
+            {
+                cbWarlord.Checked = false;
+            }
 
             List<string> psykerpowers = new List<string>();
-            psykerpowers = repo.GetPsykerPowers("Litanies");
-
+            psykerpowers = repo.GetPsykerPowers("Revenant");
             clbPsyker.Items.Clear();
             foreach (string power in psykerpowers)
             {
@@ -62,42 +72,21 @@ namespace Roster_Builder.Space_Marines.Ultramarines
             {
                 clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
             }
-
-            cmbWarlord.Enabled = false;
-            cmbWarlord.Items.Clear();
-            cmbWarlord.Items.Add(WarlordTrait);
-            cmbWarlord.SelectedIndex = 0;
-
-            if (isWarlord)
+            if (PsykerPowers[1] != string.Empty)
             {
-                cbWarlord.Checked = true;
-            }
-            else
-            {
-                cbWarlord.Checked = false;
+                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
             }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
-            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
+            Label lblPsyker = panel.Controls["lblPsyker"] as Label;
+            CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
 
             switch (code)
             {
-                case 111:
-                    if (cmbDiscipline.SelectedItem.ToString() == disciplineSelected)
-                    {
-                        break;
-                    }
-
-                    disciplineSelected = cmbDiscipline.SelectedItem.ToString();
-                    clbPsyker.Items.Clear();
-                    clbPsyker.Items.AddRange(repo.GetPsykerPowers(disciplineSelected).ToArray());
-                    PsykerPowers = new string[3] { string.Empty, string.Empty, string.Empty };
-                    break;
                 case 25:
                     if (cbWarlord.Checked)
                     {
@@ -128,7 +117,7 @@ namespace Roster_Builder.Space_Marines.Ultramarines
 
         public override string ToString()
         {
-            return "Chaplain Cassius - " + Points + "pts";
+            return "Yvraine - " + Points + "pts";
         }
     }
 }

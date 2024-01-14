@@ -219,7 +219,7 @@ namespace Roster_Builder.Death_Guard
 
             relicsList.Add("Suppurating Plate");
 
-            if (Keywords.Contains("CHAOS LORD") || Keywords.Contains("BIOLOGUS PUTRIFIER")
+            if ((Keywords.Contains("CHAOS LORD") && !Keywords.Contains("TERMINATOR")) || Keywords.Contains("BIOLOGUS PUTRIFIER")
                 || Keywords.Contains("PLAGUE SURGEON"))
             {
                 relicsList.Add("Plaguebringer");
@@ -230,10 +230,28 @@ namespace Roster_Builder.Death_Guard
                 if (currentSubFaction == "Harbingers") { relicsList.Add("Infected Remains"); }
                 else if (currentSubFaction == "The Inexorable") { relicsList.Add("Leechspore Casket"); }
                 else if (currentSubFaction == "Mortarion's Anvil") { relicsList.Add("Warp Insect Hive"); }
-                else if (currentSubFaction == "The Wretched") { relicsList.Add("The Daemon's Favour"); }
+                else if (currentSubFaction == "The Wretched")
+                { 
+                    if(Keywords.Contains("MALIGNANT PLAGUECASTER"))
+                    {
+                        relicsList.Add("The Daemon's Favour");
+                    }
+                }
                 else if (currentSubFaction == "The Poxmongers") { relicsList.Add("Ironclot Furnace"); }
-                else if (currentSubFaction == "The Ferrymen") { relicsList.Add("Ferryman's Scythe"); }
-                else if (currentSubFaction == "Mortarion's Chosen Sons") { relicsList.Add("Vomitryx"); }
+                else if (currentSubFaction == "The Ferrymen")
+                {
+                    if (Keywords.Contains("LORD OF CONTAGION"))
+                    {
+                        relicsList.Add("Ferryman's Scythe");
+                    }
+                }
+                else if (currentSubFaction == "Mortarion's Chosen Sons")
+                {
+                    if (Keywords.Contains("FOUL BLIGHTSPAWN"))
+                    {
+                        relicsList.Add("Vomitryx");
+                    }
+                }
             }
 
             return relicsList;

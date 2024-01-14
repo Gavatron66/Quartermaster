@@ -177,14 +177,30 @@ namespace Roster_Builder.Adeptus_Custodes
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Guardian Spear");
                         cmbOption1.Enabled = false;
-                    } else
-                    {
-                        cmbOption1.Enabled = true;
                     }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Veiled Blade")
+                    else if (cmbRelic.SelectedItem.ToString() == "Veiled Blade")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Sentinel Blade and Praesidium Shield (+10 pts)");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (cmbRelic.SelectedItem.ToString() == "Paragon Spear")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Guardian Spear");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (cmbRelic.SelectedItem.ToString() == "Admonimortis")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Castellan Axe");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (cmbRelic.SelectedItem.ToString() == "Praesidius")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Sentinel Blade and Praesidium Shield (+10 pts)");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (cmbRelic.SelectedItem.ToString() == "Swiftsilver Talon")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Guardian Spear");
                         cmbOption1.Enabled = false;
                     }
                     else

@@ -17,7 +17,7 @@ namespace Roster_Builder.Space_Marines
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "INFANTRY", "CHARACTER", "PRIMARIS", "MK X GRAVIS","CAPTAIN"
+                "INFANTRY", "CHARACTER", "PRIMARIS", "MK X GRAVIS","CAPTAIN", "HBR"
             });
             Role = "HQ";
         }
