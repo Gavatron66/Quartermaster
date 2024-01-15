@@ -40,3 +40,5 @@ Fix Named Characters? Some named Characters belong to specific subfactions, and 
 Compare Primaris Lieutenant
 Some Aeldari Vehicles show points cost in the select list.
 Warlocks can be characters if the unit size is 1
+
+Tyranids need a look at custome Hive Fleets

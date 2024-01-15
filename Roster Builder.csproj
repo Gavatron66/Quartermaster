@@ -419,6 +419,7 @@
     <Compile Include="Testing Form.Designer.cs">
       <DependentUpon>Testing Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tyranids\Tyranids.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -460,8 +461,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tyranids\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
