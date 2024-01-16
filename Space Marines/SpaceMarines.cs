@@ -575,14 +575,38 @@ namespace Roster_Builder.Space_Marines
             #region Crimson Fists Relics
             if (currentSubFaction == "Crimson Fists")
             {
-                relics.Add("Duty's Burden"); //MC Auto/Stalker Bolt Rifle
-                relics.Add("Fist of Vengeance"); //Power Fist
+                if ((keywords.Contains("CAPTAIN") && keywords.Contains("PRIMARIS") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS"))) ||
+                    (keywords.Contains("LIEUTENANT") && keywords.Contains("PRIMARIS") && !keywords.Contains("PHOBOS"))
+                    )
+                {
+                    relics.Add("Duty's Burden"); //MC Auto/Stalker Bolt Rifle
+                }
+
+                if ((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("ANCIENT") && !keywords.Contains("BLADEGUARD"))
+                    )
+                {
+                    relics.Add("Fist of Vengeance"); //Power Fist
+                }
 
                 relics.Add("Adamantine Mantle");
                 relics.Add("Artificer Armour");
                 relics.Add("Master-crafted Weapon");
                 relics.Add("Digital Weapons");
-                relics.Add("Fist of Terra"); //Power Fist
+
+                if ((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("ANCIENT") && !keywords.Contains("BLADEGUARD"))
+                    )
+                {
+                    relics.Add("Fist of Terra"); //Power Fist
+                }
+
                 relics.Add("Gatebreaker Bolts");
                 relics.Add("Auric Aquila");
                 relics.Add("Warden's Cuirass");
@@ -597,7 +621,18 @@ namespace Roster_Builder.Space_Marines
             #region Imperial Fists Relics
             if (currentSubFaction == "Imperial Fists")
             {
-                relics.Add("The Spartean"); //Bolt Pistol, Heavy Bolt Pistol
+                if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("MK X GRAVIS") || keywords.Contains("TERMINATOR"))) ||
+                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("LIBRARIAN") && !keywords.Contains("TERMINATOR")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("REIVER")) ||
+                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("APOTHECARY") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("ANCIENT") && !keywords.Contains("TERMINATOR")) ||
+                    keywords.Contains("COMPANY CHAMPION")
+                    )
+                {
+                    relics.Add("The Spartean"); //Bolt Pistol, Heavy Bolt Pistol
+                }
 
                 if(keywords.Contains("ANCIENT"))
                 {
@@ -615,7 +650,17 @@ namespace Roster_Builder.Space_Marines
                 relics.Add("Artificer Armour");
                 relics.Add("Master-crafted Weapon");
                 relics.Add("Digital Weapons");
-                relics.Add("Fist of Terra"); //Power Fist
+
+                if ((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("ANCIENT") && !keywords.Contains("BLADEGUARD"))
+                    )
+                {
+                    relics.Add("Fist of Terra"); //Power Fist
+                }
+
                 relics.Add("Gatebreaker Bolts");
                 relics.Add("Auric Aquila");
                 relics.Add("Warden's Cuirass");
@@ -624,15 +669,36 @@ namespace Roster_Builder.Space_Marines
             #region Iron Hands Relics
             if (currentSubFaction == "Iron Hands")
             {
-                relics.Add("The Axe of Medusa"); //Power Axe
+                if((keywords.Contains("CAPTAIN") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
+                    keywords.Contains("COMPANY ANCIENT")
+                    )
+                {
+                    relics.Add("The Axe of Medusa"); //Power Axe
+                }
 
                 if(keywords.Contains("PRIMARIS"))
                 {
                     relics.Add("The Aegis Ferrum");
                 }
 
-                relics.Add("The Mindforge"); //Force Sword/Axe/Stave
-                relics.Add("Betrayer's Bane"); //Combi-melta
+                if (keywords.Contains("LIBRARIAN"))
+                {
+                    relics.Add("The Mindforge"); //Force Sword/Axe/Stave
+                }
+
+                if (keywords.Contains("CAPTAIN") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("LIBRARIAN") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("ANCIENT") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))
+                    )
+                {
+                    relics.Add("Betrayer's Bane"); //Combi-melta
+                }
+
                 relics.Add("The Ironstone");
                 relics.Add("The Tempered Helm");
                 relics.Add("The Gorgon's Chain");
@@ -641,7 +707,17 @@ namespace Roster_Builder.Space_Marines
                 relics.Add("Master-crafted Weapon");
                 relics.Add("Digital Weapons");
                 relics.Add("Auto-Medicae Bionics");
-                relics.Add("Teeth of Mars"); //Chainsword
+
+                if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
+                    (keywords.Contains("PRIMARIS") && keywords.Contains("MK X GRAVIS") && !keywords.Contains("HBR")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("APOTHECARY") && !keywords.Contains("PRIMARIS")) ||
+                    keywords.Contains("ANCIENT") && keywords.Contains("COMMAND SQUAD"))
+                {
+                    relics.Add("Teeth of Mars"); //Chainsword
+                }
+
                 relics.Add("Haywire Bolts");
 
                 if(keywords.Contains("TECHMARINE"))
@@ -654,8 +730,26 @@ namespace Roster_Builder.Space_Marines
             if (currentSubFaction == "Salamanders")
             {
                 relics.Add("Vulkan's Sigil");
-                relics.Add("Drake-smiter"); //Thunder Hammer
-                relics.Add("Wrath of Prometheus"); //Boltgun only
+
+                if(keywords.Contains("CAPTAIN") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("ANCIENT") && !keywords.Contains("PRIMARIS")
+                )
+                {
+                    relics.Add("Drake-smiter"); //Thunder Hammer
+                }
+
+                if(keywords.Contains("CAPTAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR")) ||
+                    keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("LIBRARIAN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR")) ||
+                    keywords.Contains("CHAPLAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR")) ||
+                    keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("ANCIENT") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))
+                    )
+                {
+                    relics.Add("Wrath of Prometheus"); //Boltgun only
+                }
 
                 if(keywords.Contains("LIBRARIAN"))
                 {
@@ -663,7 +757,17 @@ namespace Roster_Builder.Space_Marines
                 }
 
                 relics.Add("The Salamander's Mantle");
-                relics.Add("Nocturne's Vengeance"); //Combi-flamer
+
+                if(keywords.Contains("CAPTAIN") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("LIBRARIAN") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("ANCIENT") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))
+                    )
+                {
+                    relics.Add("Nocturne's Vengeance"); //Combi-flamer
+                }
 
                 if (keywords.Contains("PRIMARIS"))
                 {
@@ -677,7 +781,16 @@ namespace Roster_Builder.Space_Marines
                 relics.Add("Obsidian Aquila");
                 relics.Add("Promethean Plate");
                 relics.Add("Dragonrage Bolts");
-                relics.Add("Drakeblade"); // Power Sword, MC Power Sword or Combat Knife
+
+                if((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
+                    keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS") ||
+                    keywords.Contains("ANCIENT") && !(keywords.Contains("TERMINATOR") || keywords.Contains("BLADEGUARD")) ||
+                    keywords.Contains("COMPANY CHAMPION")
+                    )
+                {
+                    relics.Add("Drakeblade"); // Power Sword, MC Power Sword or Combat Knife
+                }
             }
             #endregion
             #region Space Wolves Relics
@@ -685,18 +798,58 @@ namespace Roster_Builder.Space_Marines
             #region Raven Guard Relics
             if (currentSubFaction == "Raven Guard")
             {
-                relics.Add("The Ebonclaws"); //Two Lightning Claws
+                if((keywords.Contains("CAPTAIN") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS"))
+                    )
+                {
+                    relics.Add("The Ebonclaws"); //Two Lightning Claws
+                }
+
                 relics.Add("The Armour of Shadows");
                 relics.Add("The Raven Skull of Korvaad");
-                relics.Add("Raven's Fury"); //Jump Pack only
-                relics.Add("Ex Tenebris"); //MC Stalker Bolt Rifle, MC Occulus Bolt Carbine, MC Instigator Bolt Carbine
-                relics.Add("Oppressor's End"); //Combat Knife
+
+                if((keywords.Contains("CAPTAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR") || keywords.Contains("BIKER"))) ||
+                    (keywords.Contains("CHAPLAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
+                    (keywords.Contains("LIBRARIAN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS"))
+                    )
+                {
+                    relics.Add("Raven's Fury"); //Jump Pack only
+                }
+
+                if((keywords.Contains("CAPTAIN") && keywords.Contains("PRIMARIS") && !keywords.Contains("MK X GRAVIS")) ||
+                    (keywords.Contains("LIEUTENANT") && keywords.Contains("PRIMARIS") && !keywords.Contains("REIVER"))
+                    )
+                {
+                    relics.Add("Ex Tenebris"); //MC Stalker Bolt Rifle, MC Occulus Bolt Carbine, MC Instigator Bolt Carbine
+                }
+
+                if((keywords.Contains("CAPTAIN") && keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("LIEUTENANT") && keywords.Contains("REIVER"))
+                    )
+                {
+                    relics.Add("Oppressor's End"); //Combat Knife
+                }
+
                 relics.Add("Adamantine Mantle");
                 relics.Add("Artificer Armour");
                 relics.Add("Master-crafted Weapon");
                 relics.Add("Digital Weapons");
                 relics.Add("Shadowmaster Cloak");
-                relics.Add("Silentus Pistol"); //Bolt Pistol, Heavy Bolt Pistol
+
+                if((keywords.Contains("CAPTAIN") && !(keywords.Contains("MK X GRAVIS") || keywords.Contains("TERMINATOR"))) ||
+                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("LIBRARIAN") && !keywords.Contains("TERMINATOR")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("REIVER")) ||
+                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("APOTHECARY") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("ANCIENT") && !keywords.Contains("TERMINATOR")) ||
+                    keywords.Contains("COMPANY CHAMPION")
+                    )
+                {
+                    relics.Add("Silentus Pistol"); //Bolt Pistol, Heavy Bolt Pistol
+                }
+
                 relics.Add("Korvidari Bolts");
                 relics.Add("Shard of Isstvan");
             }
@@ -781,7 +934,15 @@ namespace Roster_Builder.Space_Marines
                     relics.Add("Wrath of the Heavens");
                 }
 
-                relics.Add("Scimitar of the Great Khan"); //Power Sword, MC Power Sword, Relic Blade
+                if ((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
+                    keywords.Contains("COMPANY CHAMPION") || keywords.Contains("COMPANY ANCIENT") ||
+                    keywords.Contains("ANCIENT") && keywords.Contains("PRIMARIS") && !keywords.Contains("BLADEGUARD"))
+                {
+                    relics.Add("Scimitar of the Great Khan"); //Power Sword, MC Power Sword, Relic Blade
+                }
+
                 relics.Add("Plume of the Plainsrunner");
 
                 if(keywords.Contains("KHAN"))
@@ -793,7 +954,20 @@ namespace Roster_Builder.Space_Marines
                 relics.Add("Artificer Armour");
                 relics.Add("Master-crafted Weapon");
                 relics.Add("Digital Weapons");
-                relics.Add("Equis-pattern Bolt Pistol"); //Bolt Pistol, Heavy Bolt Pistol
+
+                if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("MK X GRAVIS") || keywords.Contains("TERMINATOR"))) ||
+                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("LIBRARIAN") && !keywords.Contains("TERMINATOR")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("REIVER")) ||
+                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("APOTHECARY") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("ANCIENT") && !keywords.Contains("TERMINATOR")) ||
+                    keywords.Contains("COMPANY CHAMPION")
+                    )
+                {
+                    relics.Add("Equis-pattern Bolt Pistol"); //Bolt Pistol, Heavy Bolt Pistol
+                }
+
                 relics.Add("Headtaker's Trophies");
                 relics.Add("Stormwrath Bolts");
                 relics.Add("Cyber-eagle Helm");
