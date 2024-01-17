@@ -108,6 +108,29 @@ namespace Roster_Builder.Aeldari
                     break;
                 case 17:
                     Relic = cmbRelic.SelectedItem.ToString();
+                    if(Relic != "(None)")
+                    {
+                        cmbOption1.Items.Clear();
+                        cmbOption1.Items.AddRange(new string[]
+                        {
+                            "Shimmershield and Diresword (+5 pts)",
+                            "Shuriken Pistol and Diresword",
+                        });
+                    }
+                    else
+                    {
+                        cmbOption1.Items.Clear();
+                        cmbOption1.Items.AddRange(new string[]
+                        {
+                            "Avenger Shuriken Catapult",
+                            "Shimmershield and Diresword (+5 pts)",
+                            "Shimmershield and Power Glaive (+5 pts)",
+                            "Shuriken Pistol and Diresword",
+                            "Shuriken Pistol and Power Glaive",
+                            "Two Avenger Shuriken Catapults"
+                        });
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+                    }
                     break;
                 case 30:
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());

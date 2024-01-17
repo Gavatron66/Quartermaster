@@ -192,6 +192,28 @@ namespace Roster_Builder.Aeldari
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if(chosenRelic == "Kurnous' Bow")
+                    {
+                        cmbOption1.SelectedIndex = 3;
+                        cmbOption1.Enabled = false;
+                        cbOption3.Enabled = false;
+                    }
+                    else if (chosenRelic == "Shard of Anaris")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Firesabre")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                        cmbOption2.Enabled = true;
+                        cbOption3.Enabled = true;
+                    }
                     Relic = chosenRelic;
                     break;
                 case 21:

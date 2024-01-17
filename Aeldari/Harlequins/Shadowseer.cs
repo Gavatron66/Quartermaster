@@ -179,6 +179,15 @@ namespace Roster_Builder.Aeldari.Harlequins
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if(chosenRelic == "Crescendo")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                    }
                     Relic = chosenRelic;
                     break;
                 case 25:

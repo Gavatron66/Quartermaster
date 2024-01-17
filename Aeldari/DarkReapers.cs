@@ -99,6 +99,15 @@ namespace Roster_Builder.Aeldari
                     break;
                 case 17:
                     Relic = cmbRelic.SelectedItem.ToString();
+                    if(Relic != "(None)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                    }
                     break;
             }
 

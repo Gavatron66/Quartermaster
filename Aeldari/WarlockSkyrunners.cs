@@ -47,6 +47,9 @@ namespace Roster_Builder.Aeldari
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
             NumericUpDown nudOption2 = panel.Controls["nudOption2"] as NumericUpDown;
+            ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
+            CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             Label lblnud1 = panel.Controls["lblnud1"] as Label;
             Label lblnud2 = panel.Controls["lblnud2"] as Label;
@@ -109,6 +112,53 @@ namespace Roster_Builder.Aeldari
                     clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
                 }
             }
+
+            cmbWarlord.Items.Clear();
+            List<string> traits = repo.GetWarlordTraits("");
+            foreach (var item in traits)
+            {
+                cmbWarlord.Items.Add(item);
+            }
+
+            if (isWarlord)
+            {
+                cbWarlord.Checked = true;
+                cmbWarlord.Enabled = true;
+                cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
+            }
+            else
+            {
+                cbWarlord.Checked = false;
+                cmbWarlord.Enabled = false;
+            }
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
+            if (Relic != null)
+            {
+                cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+            }
+            else
+            {
+                cmbRelic.SelectedIndex = -1;
+            }
+
+            if(UnitSize != 1)
+            {
+                cbWarlord.Visible = false;
+                panel.Controls["lblWarlord"].Visible = false;
+                panel.Controls["lblRelic"].Visible = false;
+                cmbWarlord.Visible = false;
+                cmbRelic.Visible = false;
+            } else
+            {
+                cbWarlord.Visible = true;
+                panel.Controls["lblWarlord"].Visible = true;
+                panel.Controls["lblRelic"].Visible = true;
+                cmbWarlord.Visible = true;
+                cmbRelic.Visible = true;
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -118,6 +168,9 @@ namespace Roster_Builder.Aeldari
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
             NumericUpDown nudOption2 = panel.Controls["nudOption2"] as NumericUpDown;
+            ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
+            CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
@@ -157,6 +210,23 @@ namespace Roster_Builder.Aeldari
                         }
                         string[] temp = new string[1] { PsykerPowers[0] };
                         PsykerPowers = temp;
+                    }
+
+                    if (UnitSize != 1)
+                    {
+                        cbWarlord.Visible = false;
+                        panel.Controls["lblWarlord"].Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbWarlord.Visible = false;
+                        cmbRelic.Visible = false;
+                    }
+                    else
+                    {
+                        cbWarlord.Visible = true;
+                        panel.Controls["lblWarlord"].Visible = true;
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbWarlord.Visible = true;
+                        cmbRelic.Visible = true;
                     }
                     break;
                 case 31:

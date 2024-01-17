@@ -164,6 +164,31 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Astartes Chainsword");
                         cmbOption1.Enabled = false;
                     }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Teeth of Mars")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Astartes Chainsword");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Scimitar of the Great Khan")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Vengeance")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Fist");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Terra")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Fist");
+                        cmbOption1.Enabled = false;
+                    }
                     else
                     {
                         cmbOption1.Enabled = true;

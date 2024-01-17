@@ -197,16 +197,32 @@ namespace Roster_Builder.Aeldari.Harlequins
         {
             List<string> relics = new List<string>() { "(None)" };
 
-            relics.Add("The Storied Sword");
+            if(keywords.Contains("TROUPE MASTER"))
+            {
+                relics.Add("The Storied Sword");
+            }
+
             relics.Add("The Suit of Hidden Knives");
-            relics.Add("Crescendo");
-            relics.Add("Cegorah's Rose");
+
+            if(!keywords.Contains("DEATH JESTER"))
+            {
+                relics.Add("Crescendo");
+            }
+
+            if (keywords.Contains("TROUPE MASTER"))
+            {
+                relics.Add("Cegorah's Rose");
+            }
+
             relics.Add("The Starmist Raiment");
             relics.Add("The Laughing God's Eye");
 
             if(currentSubFaction == "Light")
             {
-                relics.Add("Shadow Stone");
+                if (keywords.Contains("SHADOWSEER"))
+                {
+                    relics.Add("Shadow Stone");
+                }
             }
             if(currentSubFaction == "Dark")
             {
@@ -214,7 +230,10 @@ namespace Roster_Builder.Aeldari.Harlequins
             }
             if (currentSubFaction == "Twilight")
             {
-                relics.Add("Twilight Fang");
+                if (keywords.Contains("TROUPE MASTER"))
+                {
+                    relics.Add("Twilight Fang");
+                }
             }
 
             return relics;

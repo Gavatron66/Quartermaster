@@ -239,6 +239,48 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
                     }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Ex Tenebris")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Silentus Pistol")
+                    {
+                        cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
+                    }
+                    else if (chosenRelic == "Scimitar of the Great Khan")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Equis-pattern Bolt Pistol")
+                    {
+                        cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
+                    }
+                    else if (chosenRelic == "The Spartean")
+                    {
+                        cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
+                    }
+                    else if (chosenRelic == "Duty's Burden")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Stalker Bolt Rifle");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Vengeance")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Terra")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
                     else
                     {
                         cmbOption1.Enabled = true;

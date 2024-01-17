@@ -180,6 +180,61 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 2;
                         cmbOption1.Enabled = false;
                     }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Ex Tenebris")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Silentus Pistol")
+                    {
+                        cmbOption1.Items.Clear();
+                        cmbOption1.Items.AddRange(new string[]
+                        {
+                            "Master-crafted Auto Bolt Rifle and Bolt Pistol",
+                            "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+                        });
+                        cmbOption1.Enabled = true;
+                    }
+                    else if (chosenRelic == "Scimitar of the Great Khan")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Equis-pattern Bolt Pistol")
+                    {
+                        cmbOption1.Items.Clear();
+                        cmbOption1.Items.AddRange(new string[]
+                        {
+                            "Master-crafted Auto Bolt Rifle and Bolt Pistol",
+                            "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+                        });
+                        cmbOption1.Enabled = true;
+                    }
+                    else if (chosenRelic == "The Spartean")
+                    {
+                        cmbOption1.Items.Clear();
+                        cmbOption1.Items.AddRange(new string[]
+                        {
+                            "Master-crafted Auto Bolt Rifle and Bolt Pistol",
+                            "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+                        });
+                        cmbOption1.Enabled = true;
+                    }
+                    else if (chosenRelic == "Duty's Burden")
+                    {
+                        cmbOption1.Items.Clear();
+                        cmbOption1.Items.AddRange(new string[]
+                        {
+                            "Master-crafted Auto Bolt Rifle and Bolt Pistol",
+                            "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+                        });
+                        cmbOption1.Enabled = true;
+                    }
                     else
                     {
                         cmbOption1.Enabled = true;

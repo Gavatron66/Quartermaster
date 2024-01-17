@@ -107,6 +107,10 @@ namespace Roster_Builder.Aeldari
                     break;
                 case 17:
                     Relic = cmbRelic.SelectedItem.ToString();
+                    if(Relic != "(None)")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                    }
                     break;
                 case 30:
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());

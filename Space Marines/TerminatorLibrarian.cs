@@ -40,7 +40,6 @@ namespace Roster_Builder.Space_Marines
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
@@ -241,13 +240,11 @@ namespace Roster_Builder.Space_Marines
         {
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
-            Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
@@ -278,6 +275,16 @@ namespace Roster_Builder.Space_Marines
                     if (chosenRelic == "Vengeance of Ultramar")
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Storm Bolter");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Nocturne's Vengeance")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Combi-flamer");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Betrayer's Bane")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Combi-melta");
                         cmbOption2.Enabled = false;
                     }
                     else

@@ -255,6 +255,71 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
                         cmbOption1.Enabled = false;
                     }
+                    else if (chosenRelic == "Drake-smiter")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Thunder Hammer");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Wrath of Prometheus")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Nocturne's Vengeance")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-flamer");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Silentus Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Axe of Medusa")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Betrayer's Bane")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-melta");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Teeth of Mars")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Astartes Chainsword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Scimitar of the Great Khan")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Equis-pattern Bolt Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Spartean")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Vengeance")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Fist");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Terra")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Fist");
+                        cmbOption2.Enabled = false;
+                    }
                     Relic = chosenRelic;
                     break;
                 case 21:

@@ -1546,6 +1546,21 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 303);
 
                     panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 316);
+
+                    panel.Controls["cbWarlord"].Visible = true;
+                    panel.Controls["cbWarlord"].Location = new System.Drawing.Point(298, 116);
+
+                    panel.Controls["lblWarlord"].Visible = true;
+                    panel.Controls["lblWarlord"].Location = new System.Drawing.Point(294, 143);
+
+                    panel.Controls["cmbWarlord"].Visible = true;
+                    panel.Controls["cmbWarlord"].Location = new System.Drawing.Point(294, 166);
+
+                    panel.Controls["lblRelic"].Visible = true;
+                    panel.Controls["lblRelic"].Location = new System.Drawing.Point(294, 197);
+
+                    panel.Controls["cmbRelic"].Visible = true;
+                    panel.Controls["cmbRelic"].Location = new System.Drawing.Point(294, 221);
                     break;
                 #endregion
                 #region case "N2m1k"

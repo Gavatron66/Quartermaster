@@ -167,6 +167,31 @@ namespace Roster_Builder.Aeldari.Harlequins
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if (chosenRelic == "The Storied Sword")
+                    {
+                        cmbOption2.SelectedIndex = 0;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Crescendo")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Cegorach's Rose")
+                    {
+                        cmbOption2.SelectedIndex = 4;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Twilight Fang")
+                    {
+                        cmbOption2.SelectedIndex = 0;
+                        cmbOption2.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                        cmbOption2.Enabled = true;
+                    }
                     Relic = chosenRelic;
                     break;
                 case 25:

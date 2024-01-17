@@ -218,9 +218,55 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
                         cmbOption1.Enabled = false;
                     }
+                    else if (chosenRelic == "Wrath of Prometheus")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Nocturne's Vengeance")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-flamer");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Raven's Fury")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Silentus Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Betrayer's Bane")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-melta");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Equis-pattern Bolt Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Spartean")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Vengeance")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Fist");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Terra")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Fist");
+                        cmbOption1.Enabled = false;
+                    }
                     else
                     {
                         cmbOption1.Enabled = true;
+                        cbOption1.Enabled = true;
                     }
                     Relic = chosenRelic;
                     break;

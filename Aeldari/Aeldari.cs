@@ -460,24 +460,51 @@ namespace Roster_Builder.Aeldari
             }
             else
             {
-                relics.Add("Kurnous' Bow");
-                relics.Add("The Phoenix Gem");
-                relics.Add("Shard of Anaris");
-                relics.Add("Faolchú's Wing");
-                relics.Add("Firesabre");
-                relics.Add("Sunstorm");
-                relics.Add("Aegis of Eldanesh");
-                relics.Add("The Weeping Stones");
+                if(!keywords.Contains("AUTARCH SKYRUNNER")) {
+                    relics.Add("Kurnous' Bow");
+                }
 
-                if(currentSubFaction == "Ulthwé")
+                relics.Add("The Phoenix Gem");
+
+                if(keywords.Contains("AUTARCH"))
+                {
+                    relics.Add("Shard of Anaris");
+                }
+
+                if(!keywords.Contains("BIKER"))
+                {
+                    relics.Add("Faolchú's Wing");
+                }
+
+                if (keywords.Contains("AUTARCH"))
+                {
+                    relics.Add("Firesabre");
+                }
+
+                if (keywords.Contains("BIKER"))
+                {
+                    relics.Add("Sunstorm");
+                }
+
+                if (keywords.Contains("AUTARCH"))
+                {
+                    relics.Add("Aegis of Eldanesh");
+                }
+
+                if(keywords.Contains("PSYKER") && keywords.Contains("BIKER"))
+                {
+                    relics.Add("The Weeping Stones");
+                }
+                
+                if(currentSubFaction == "Ulthwé" && keywords.Contains("PSYKER"))
                 {
                     relics.Add("The Ghosthelm of Alishazier");
                 }
-                else if (currentSubFaction == "Alaitoc")
+                else if (currentSubFaction == "Alaitoc" && !keywords.Contains("BIKER"))
                 {
                     relics.Add("Shiftshroud of Alanssair");
                 }
-                else if(currentSubFaction == "Biel-tan")
+                else if(currentSubFaction == "Biel-tan" && keywords.Contains("PSYKER"))
                 {
                     relics.Add("The Spirit Stone of Anath'lan");
                 }

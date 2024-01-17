@@ -136,6 +136,20 @@ namespace Roster_Builder.Aeldari
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if (chosenRelic == "Shard of Anaris")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Firesabre")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                    }
                     Relic = chosenRelic;
                     break;
                 case 25:

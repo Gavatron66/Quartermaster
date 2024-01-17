@@ -18,6 +18,7 @@ using Roster_Builder.Genestealer_Cults;
 using Roster_Builder.Space_Marines;
 using Roster_Builder.Aeldari;
 using Roster_Builder.Aeldari.Harlequins;
+using Roster_Builder.Tyranids;
 
 namespace Roster_Builder
 {
@@ -79,6 +80,7 @@ namespace Roster_Builder
                 new Harlequins(),
                 new Necrons.Necrons(),
                 new SpaceMarines(),
+                new Tyranids.Tyranids()
             });
             cmbSelectFaction.Text = string.Empty;
 
@@ -98,6 +100,7 @@ namespace Roster_Builder
                 new Harlequins(),
                 new Necrons.Necrons(),
                 new SpaceMarines(),
+                new Tyranids.Tyranids()
             });
             #endregion
         }

@@ -37,7 +37,8 @@ Need to Fix the custom faction stuff, it doesn't seem to working
 Fix Named Characters? Some named Characters belong to specific subfactions, and technically if they contain a different subfaction keyword than they invalidate the detachment.
 	Finish fixing Warlord traits for Necrons
 
-Compare Primaris Lieutenant
+Compare Primaris Lieutenant and Primaris Captain
+	They have annoyingly complicated options, so going to need some testing for it
 Some Aeldari Vehicles show points cost in the select list.
 Warlocks can be characters if the unit size is 1
 

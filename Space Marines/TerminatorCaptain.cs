@@ -253,6 +253,53 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
                         cmbOption1.Enabled = false;
                     }
+                    else if (chosenRelic == "Drake-smiter")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Thunder Hammer (+5 pts)");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Nocturne's Vengeance")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-flamer");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Ebonclaws")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Lightning Claw");
+                        cmbOption1.Enabled = false;
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Lightning Claw");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Axe of Medusa")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Betrayer's Bane")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-melta");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Scimitar of the Great Khan")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Vengeance")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Fist");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Terra")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Fist");
+                        cmbOption2.Enabled = false;
+                    }
                     Relic = chosenRelic;
                     break;
                 case 21:
