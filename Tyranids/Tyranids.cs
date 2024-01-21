@@ -23,12 +23,73 @@ namespace Roster_Builder.Tyranids
 
         public override List<string> GetCustomSubfactionList1()
         {
-            return new List<string> { };
+            return new List<string> 
+            {
+                "Adrenalised Onslaught",
+                "Heightened Reflexes",
+                "Augmented Ferocity",
+                "Synaptic Goading",
+                "Ambush Predators",
+                "Exoskeletal Reinforcement",
+                "Naturalised Camouflage",
+                "Territorial Insticts",
+                "Unfeeling Resilience",
+                "Synaptic Ganglia",
+                "Stabilising Membranes",
+                "Exoskeletal Stabilisation",
+                "Wreathed in Shadow",
+                "Relentless Hunger",
+                "Unstoppable Swarm"
+            };
         }
 
         public override List<string> GetCustomSubfactionList2()
         {
-            return new List<string> { };
+            string[] hunt = new string[]
+            {
+                "Adrenalised Onslaught",
+                "Heightened Reflexes",
+                "Augmented Ferocity",
+                "Synaptic Goading",
+                "Ambush Predators"
+            };
+
+            string[] lurk = new string[]
+            {
+                "Exoskeletal Reinforcement",
+                "Naturalised Camouflage",
+                "Territorial Insticts",
+                "Unfeeling Resilience",
+                "Synaptic Ganglia"
+            };
+
+            string[] feed = new string[]
+            {
+                "Stabilising Membranes",
+                "Exoskeletal Stabilisation",
+                "Wreathed in Shadow",
+                "Relentless Hunger",
+                "Unstoppable Swarm"
+            };
+
+            return new List<string>
+            {
+                "Adrenalised Onslaught",
+                "Heightened Reflexes",
+                "Augmented Ferocity",
+                "Synaptic Goading",
+                "Ambush Predators",
+                "Exoskeletal Reinforcement",
+                "Naturalised Camouflage",
+                "Territorial Insticts",
+                "Unfeeling Resilience",
+                "Synaptic Ganglia",
+                "Stabilising Membranes",
+                "Exoskeletal Stabilisation",
+                "Wreathed in Shadow",
+                "Relentless Hunger",
+                "Unstoppable Swarm"
+            };
         }
 
         public override List<Datasheets> GetDatasheets()
@@ -36,17 +97,17 @@ namespace Roster_Builder.Tyranids
             var datasheets = new List<Datasheets>()
             {
                 //---------- HQ ----------
-                //new WingedHiveTyrant(),
-                //new HiveTyrant(),
-                //new Swarmlord(),
-                //new Broodlord(),
-                //new Neurothrope(),
-                //new TyranidPrime(),
-                //new Tervigon(),
-                //new TrygonPrime(),
-                //new OldOneEye(),
+                new WingedHiveTyrant(),
+                new HiveTyrant(),
+                new Swarmlord(),
+                new Broodlord(),
+                new Neurothrope(),
+                new TyranidPrime(),
+                new Tervigon(),
+                new TrygonPrime(),
+                new OldOneEye(),
                 //---------- Troops ----------
-                //new TyranidWarriors(),
+                new TyranidWarriors(),
                 //new Termagants(),
                 //new Hormagaunts(),
                 //new Gargoyles(),
@@ -143,7 +204,6 @@ namespace Roster_Builder.Tyranids
                 "Synaptic Enhancement (+15 pts)",
                 "Whipcoil Reflexes (+15 pts)",
                 "Voracious Ammunition (+15 pts)"
-
             };
 
             return upgrades;
