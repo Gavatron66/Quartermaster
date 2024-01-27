@@ -131,10 +131,10 @@ namespace Roster_Builder.Tyranids
                 new MucolidSpores(),
                 new SporeMines(),
                 //---------- Heavy Support ----------
-                //new Exocrine(),
-                //new Biovores(),
-                //new Carnifexes(),
-                //new ScreamerKillers(),
+                new Exocrine(),
+                new Biovores(),
+                new Carnifexes(),
+                new ScreamerKillers(),
                 //new Thornbacks(),
                 //new HiveGuard(),
                 //new Tyrannofex(),
@@ -202,8 +202,8 @@ namespace Roster_Builder.Tyranids
                 "Precognitive Sensoria (+20 pts)",
                 "Predator Instincts (+15 pts)",
                 "Synaptic Enhancement (+15 pts)",
-                "Whipcoil Reflexes (+15 pts)",
-                "Voracious Ammunition (+15 pts)"
+                "Voracious Ammunition (+15 pts)",
+                "Whipcoil Reflexes (+15 pts)"
             };
 
             return upgrades;

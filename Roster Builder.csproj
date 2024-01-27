@@ -419,7 +419,10 @@
     <Compile Include="Testing Form.Designer.cs">
       <DependentUpon>Testing Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tyranids\Biovores.cs" />
+    <Compile Include="Tyranids\Carnifexes.cs" />
     <Compile Include="Tyranids\Deathleaper.cs" />
+    <Compile Include="Tyranids\Exocrine.cs" />
     <Compile Include="Tyranids\Gargoyles.cs" />
     <Compile Include="Tyranids\Genestealers.cs" />
     <Compile Include="Tyranids\Haruspex.cs" />
@@ -436,6 +439,7 @@
     <Compile Include="Tyranids\Pyrovores.cs" />
     <Compile Include="Tyranids\Raveners.cs" />
     <Compile Include="Tyranids\RipperSwarms.cs" />
+    <Compile Include="Tyranids\ScreamerKillers.cs" />
     <Compile Include="Tyranids\SporeMines.cs" />
     <Compile Include="Tyranids\Swarmlord.cs" />
     <Compile Include="Tyranids\Termagants.cs" />
