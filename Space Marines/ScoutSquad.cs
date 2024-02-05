@@ -12,7 +12,7 @@ namespace Roster_Builder.Space_Marines
         int currentIndex;
         public ScoutSquad()
         {
-            DEFAULT_POINTS = 14;
+            DEFAULT_POINTS = 12;
             UnitSize = 5;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "NL2m1k";
@@ -29,6 +29,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "SCOUT", "SMOKESCREEN", "SCOUT SQUAD"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -280,34 +281,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            foreach (var weapon in Weapons)
-            {
-                if(weapon == "Camo Cloak" || weapon == "Scout Sniper Rifle")
-                {
-                    Points += 2;
-                }
-
-                if(weapon == "Flamer" || weapon == "Grav-gun" || weapon == "Grav-pistol" ||
-                    weapon == "Hand Flamer" || weapon == "Inferno Pistol" || weapon == "Lightning Claw" ||
-                    weapon == "Plasma Pistol" || weapon == "Power Axe" || weapon == "Power Maul" ||
-                    weapon == "Power Sword" || weapon == "Storm Bolter")
-                {
-                    Points += 5;
-                }
-
-                if(weapon == "Combi-flmaer" || weapon == "Combi-grav" || weapon == "Combi-melta" || 
-                    weapon == "Combi-plasma" || weapon == "Heavy Bolter" || weapon == "Meltagun" ||
-                    weapon == "Plasma Gun" || weapon == "Power Fist")
-                {
-                    Points += 10;
-                }
-
-                if(weapon == "Missile Launcher" || weapon == "Thunder Hammer")
-                {
-                    Points += 15;
-                }
-            }
         }
 
         public override string ToString()

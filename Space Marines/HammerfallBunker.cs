@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public HammerfallBunker()
         {
-            DEFAULT_POINTS = 175;
+            DEFAULT_POINTS = 100;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m";
@@ -21,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "BUILDING", "HAMMERFALL BUNKER"
             });
+            Role = "Fortification";
         }
 
         public override Datasheets CreateUnit()

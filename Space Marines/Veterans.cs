@@ -13,13 +13,13 @@ namespace Roster_Builder.Space_Marines
         int currentIndex = 0;
         string[] HeavyWeapons = new string[]
         {
-            "Grav-cannon",
-            "Heavy Bolter",
-            "Heavy Flamer",
-            "Lascannon",
-            "Missile Launcher",
-            "Multi-melta",
-            "Plasma Cannon"
+            "Grav-cannon (+10 pts)",
+            "Heavy Bolter (+10 pts)",
+            "Heavy Flamer (+10 pts)",
+            "Lascannon (+15 pts)",
+            "Missile Launcher (+15 pts)",
+            "Multi-melta (+20 pts)",
+            "Plasma Cannon (+15 pts)"
         };
 
         public Veterans()
@@ -39,6 +39,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "COMMAND SQUAD", "COMPANY VETERANS"
             });
+            Role = "Elites";
         }
         
         public override Datasheets CreateUnit()
@@ -66,7 +67,7 @@ namespace Roster_Builder.Space_Marines
             nudUnitSize.Value = currentSize;
 
             lbModelSelect.Items.Clear();
-            if (Weapons[2] == "Combat Shield")
+            if (Weapons[2] == "Combat Shield (+3 pts)")
             {
                 lbModelSelect.Items.Add("Company Veteran Sergeant w/ " + Weapons[0] + ", " + Weapons[1] + " and " + Weapons[2]);
             }
@@ -77,7 +78,7 @@ namespace Roster_Builder.Space_Marines
 
             for (int i = 1; i < UnitSize; i++)
             {
-                if (Weapons[(i * 3) + 2] == "Combat Shield")
+                if (Weapons[(i * 3) + 2] == "Combat Shield (+3 pts)")
                 {
                     lbModelSelect.Items.Add("Company Veteran w/ " + Weapons[i * 3] + ", " + Weapons[(i * 3) + 1] + " and " + Weapons[(i * 3) + 2]);
                 }
@@ -92,22 +93,22 @@ namespace Roster_Builder.Space_Marines
             {
                 "Astartes Chainsword",
                 "Boltgun",
-                "Combi-flamer",
-                "Combi-grav",
-                "Combi-melta",
-                "Combi-plasma",
-                "Flamer",
-                "Grav-gun",
-                "Lightning Claw",
-                "Melta Gun",
-                "Plasma Gun",
-                "Power Axe",
-                "Power Fist",
-                "Power Maul",
-                "Power Sword",
-                "Storm Bolter",
-                "Storm Shield",
-                "Thunder Hammer"
+                "Combi-flamer (+10 pts)",
+                "Combi-grav (+10 pts)",
+                "Combi-melta (+10 pts)",
+                "Combi-plasma (+10 pts)",
+                "Flamer (+5 pts)",
+                "Grav-gun (+10 pts)",
+                "Lightning Claw (+3 pts)",
+                "Meltagun (+10 pts)",
+                "Plasma Gun (+10 pts)",
+                "Power Axe (+3 pts)",
+                "Power Fist (+8 pts)",
+                "Power Maul (+3 pts)",
+                "Power Sword (+3 pts)",
+                "Storm Bolter (+5 pts)",
+                "Storm Shield (+4 pts)",
+                "Thunder Hammer (+12 pts)"
             });
 
             cmbOption2.Items.Clear();
@@ -115,23 +116,23 @@ namespace Roster_Builder.Space_Marines
             {
                 "Astartes Chainsword",
                 "Bolt Pistol",
-                "Grav-pistol",
-                "Lightning Claw",
-                "Plasma Pistol",
-                "Power Axe",
-                "Power Fist",
-                "Power Maul",
-                "Power Sword",
-                "Storm Shield",
-                "Thunder Hammer"
+                "Grav-pistol (+5 pts)",
+                "Lightning Claw (+3 pts)",
+                "Plasma Pistol (+5 pts)",
+                "Power Axe (+3 pts)",
+                "Power Fist (+8 pts)",
+                "Power Maul (+3 pts)",
+                "Power Sword (+3 pts)",
+                "Storm Shield (+4 pts)",
+                "Thunder Hammer (+12 pts)"
             });
             if (f.currentSubFaction == "Blood Angels" || f.currentSubFaction == "Deathwatch")
             {
-                cmbOption2.Items.Insert(3, "Hand Flamer");
-                cmbOption2.Items.Insert(4, "Inferno Pistol");
+                cmbOption2.Items.Insert(3, "Hand Flamer (+5 pts)");
+                cmbOption2.Items.Insert(4, "Inferno Pistol (+5 pts)");
             }
 
-            cbOption1.Text = "Combat Shield";
+            cbOption1.Text = "Combat Shield (+3 pts)";
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -255,33 +256,33 @@ namespace Roster_Builder.Space_Marines
                             {
                                 "Astartes Chainsword",
                                 "Boltgun",
-                                "Combi-flamer",
-                                "Combi-grav",
-                                "Combi-melta",
-                                "Combi-plasma",
-                                "Flamer",
-                                "Grav-cannon",
-                                "Grav-gun",
-                                "Heavy Bolter",
-                                //"Heavy Flamer",
-                                "Lascannon",
-                                "Lightning Claw",
-                                "Melta Gun",
-                                "Missile Launcher",
-                                "Multi-melta",
-                                "Plasma Cannon",
-                                "Plasma Gun",
-                                "Power Axe",
-                                "Power Fist",
-                                "Power Maul",
-                                "Power Sword",
-                                "Storm Bolter",
-                                "Storm Shield",
-                                "Thunder Hammer"
+                                "Combi-flamer (+10 pts)",
+                                "Combi-grav (+10 pts)",
+                                "Combi-melta (+10 pts)",
+                                "Combi-plasma (+10 pts)",
+                                "Flamer (+5 pts)",
+                                "Grav-cannon (+10 pts)",
+                                "Grav-gun (+10 pts)",
+                                "Heavy Bolter (+10 pts)",
+                                //"Heavy Flamer (+10 pts)",
+                                "Lascannon (+15 pts)",
+                                "Lightning Claw (+3 pts)",
+                                "Meltagun (+10 pts)",
+                                "Missile Launcher (+15 pts)",
+                                "Multi-melta (+20 pts)",
+                                "Plasma Cannon (+15 pts)",
+                                "Plasma Gun (+10 pts)",
+                                "Power Axe (+3 pts)",
+                                "Power Fist (+8 pts)",
+                                "Power Maul (+3 pts)",
+                                "Power Sword (+3 pts)",
+                                "Storm Bolter (+5 pts)",
+                                "Storm Shield (+4 pts)",
+                                "Thunder Hammer (+12 pts)"
                             });
                             if (repo.currentSubFaction == "Blood Angels" || repo.currentSubFaction == "Deathwatch")
                             {
-                                cmbOption1.Items.Insert(10, "Heavy Flamer");
+                                cmbOption1.Items.Insert(10, "Heavy Flamer (+10 pts)");
                             }
                         }
                         else
@@ -291,22 +292,22 @@ namespace Roster_Builder.Space_Marines
                             {
                                 "Astartes Chainsword",
                                 "Boltgun",
-                                "Combi-flamer",
-                                "Combi-grav",
-                                "Combi-melta",
-                                "Combi-plasma",
-                                "Flamer",
-                                "Grav-gun",
-                                "Lightning Claw",
-                                "Melta Gun",
-                                "Plasma Gun",
-                                "Power Axe",
-                                "Power Fist",
-                                "Power Maul",
-                                "Power Sword",
-                                "Storm Bolter",
-                                "Storm Shield",
-                                "Thunder Hammer"
+                                "Combi-flamer (+10 pts)",
+                                "Combi-grav (+10 pts)",
+                                "Combi-melta (+10 pts)",
+                                "Combi-plasma (+10 pts)",
+                                "Flamer (+5 pts)",
+                                "Grav-gun (+10 pts)",
+                                "Lightning Claw (+3 pts)",
+                                "Meltagun (+10 pts)",
+                                "Plasma Gun (+10 pts)",
+                                "Power Axe (+3 pts)",
+                                "Power Fist (+8 pts)",
+                                "Power Maul (+3 pts)",
+                                "Power Sword (+3 pts)",
+                                "Storm Bolter (+5 pts)",
+                                "Storm Shield (+4 pts)",
+                                "Thunder Hammer (+12 pts)"
                             });
                         }
                     }
@@ -317,22 +318,22 @@ namespace Roster_Builder.Space_Marines
                         {
                                 "Astartes Chainsword",
                                 "Boltgun",
-                                "Combi-flamer",
-                                "Combi-grav",
-                                "Combi-melta",
-                                "Combi-plasma",
-                                "Flamer",
-                                "Grav-gun",
-                                "Lightning Claw",
-                                "Melta Gun",
-                                "Plasma Gun",
-                                "Power Axe",
-                                "Power Fist",
-                                "Power Maul",
-                                "Power Sword",
-                                "Storm Bolter",
-                                "Storm Shield",
-                                "Thunder Hammer"
+                                "Combi-flamer (+10 pts)",
+                                "Combi-grav (+10 pts)",
+                                "Combi-melta (+10 pts)",
+                                "Combi-plasma (+10 pts)",
+                                "Flamer (+5 pts)",
+                                "Grav-gun (+10 pts)",
+                                "Lightning Claw (+3 pts)",
+                                "Meltagun (+10 pts)",
+                                "Plasma Gun (+10 pts)",
+                                "Power Axe (+3 pts)",
+                                "Power Fist (+8 pts)",
+                                "Power Maul (+3 pts)",
+                                "Power Sword (+3 pts)",
+                                "Storm Bolter (+5 pts)",
+                                "Storm Shield (+4 pts)",
+                                "Thunder Hammer (+12 pts)"
                         });
                     }
 
@@ -357,47 +358,47 @@ namespace Roster_Builder.Space_Marines
 
             foreach (var weapon in Weapons)
             {
-                if(weapon == "Combat Shield" || weapon == "Lightning Claw" || weapon == "Power Axe" ||
-                    weapon == "Power Maul" || weapon == "Power Sword")
+                if(weapon == "Combat Shield (+3 pts)" || weapon == "Lightning Claw (+3 pts)" || weapon == "Power Axe (+3 pts)" ||
+                    weapon == "Power Maul (+3 pts)" || weapon == "Power Sword (+3 pts)")
                 {
                     Points += 3;
                 }
 
-                if(weapon == "Storm Shield")
+                if(weapon == "Storm Shield (+4 pts)")
                 {
                     Points += 4;
                 }
 
-                if(weapon == "Flamer" || weapon == "Grav-pistol" || weapon == "Hand Flamer" ||
-                    weapon == "Inferno Pistol" || weapon == "Plasma Pistol" || weapon == "Storm Bolter")
+                if(weapon == "Flamer (+5 pts)" || weapon == "Grav-pistol (+5 pts)" || weapon == "Hand Flamer (+5 pts)" ||
+                    weapon == "Inferno Pistol (+5 pts)" || weapon == "Plasma Pistol (+5 pts)" || weapon == "Storm Bolter (+5 pts)")
                 {
                     Points += 5;
                 }
 
-                if(weapon == "Power Fist")
+                if(weapon == "Power Fist (+8 pts)")
                 {
                     Points += 8;
                 }
 
-                if(weapon == "Combi-flamer" || weapon == "Combi-grav" || weapon == "Combi-melta" || 
-                    weapon == "Combi-plasma" || weapon == "Grav-cannon" || weapon == "Grav-gun" ||
-                    weapon == "Heavy Bolter" || weapon == "Heavy Flamer" || weapon == "Meltagun" ||
-                    weapon == "Plasma Gun")
+                if(weapon == "Combi-flamer (+10 pts)" || weapon == "Combi-grav (+10 pts)" || weapon == "Combi-melta (+10 pts)" || 
+                    weapon == "Combi-plasma (+10 pts)" || weapon == "Grav-cannon (+10 pts)" || weapon == "Grav-gun (+10 pts)" ||
+                    weapon == "Heavy Bolter (+10 pts)" || weapon == "Heavy Flamer (+10 pts)" || weapon == "Meltagun (+10 pts)" ||
+                    weapon == "Plasma Gun (+10 pts)")
                 {
                     Points += 10;
                 }
 
-                if(weapon == "Thunder Hammer")
+                if(weapon == "Thunder Hammer (+12 pts)")
                 {
                     Points += 12;
                 }
 
-                if(weapon == "Lascannon" || weapon == "Missile Launcher" || weapon == "Plasma Cannon")
+                if(weapon == "Lascannon (+15 pts)" || weapon == "Missile Launcher (+15 pts)" || weapon == "Plasma Cannon (+15 pts)")
                 {
                     Points += 15;
                 }
 
-                if(weapon == "Multi-melta")
+                if(weapon == "Multi-melta (+20 pts)")
                 {
                     Points += 20;
                 }

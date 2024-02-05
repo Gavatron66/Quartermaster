@@ -15,7 +15,7 @@ namespace Roster_Builder.Genestealer_Cults
 
         public Intercessors()
         {
-            DEFAULT_POINTS = 20;
+            DEFAULT_POINTS = 18;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "2N1mS(2m)";
@@ -29,6 +29,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "PRIMARIS", "INTERCESSORS", "INTERCESSOR SQUAD"
             });
+            Role = "Troops";
         }
 
         public override Datasheets CreateUnit()
@@ -137,6 +138,11 @@ namespace Roster_Builder.Genestealer_Cults
                         gb_cmbOption1.Items.Insert(1, Weapons[0]);
                     }
 
+                    if (Weapons[0].Contains("Bolt Rifle"))
+                    {
+                        gb_cmbOption1.SelectedIndex = gb_cmbOption1.Items.IndexOf(Weapons[0]);
+                    }
+
                     break;
                 case 30:
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
@@ -165,22 +171,6 @@ namespace Roster_Builder.Genestealer_Cults
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-            Points += Convert.ToInt32(nudOption1.Value) * 5;
-
-            if(Weapons.Contains("Hand Flamer") || Weapons.Contains("Plasma Pistol") || Weapons.Contains("Power Sword"))
-            {
-                Points += 5;
-            }
-
-            if(Weapons.Contains("Power Fist"))
-            {
-                Points += 10;
-            }
-
-            if(Weapons.Contains("Thunder Hammer"))
-            {
-                Points += 20;
-            }
         }
 
         public override string ToString()

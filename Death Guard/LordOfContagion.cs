@@ -21,6 +21,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "INFANTRY", "CHARACTER", "BUBONIC ASTARTES", "TERMINATOR", "LORD OF THE DEATH GUARD", "LORD OF CONTAGION"
             });
+            Role = "HQ";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -135,7 +136,7 @@ namespace Roster_Builder.Death_Guard
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; warlord.SelectedIndex = -1; }
                     break;
                 case 15:
                     if (warlord.SelectedIndex != -1)
@@ -152,7 +153,17 @@ namespace Roster_Builder.Death_Guard
                     Factionupgrade = factionud.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if(chosenRelic == "Ferryman's Scythe")
+                    {
+                        cmb1.SelectedIndex = 1;
+                        cmb1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmb1.Enabled = true;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -183,11 +194,6 @@ namespace Roster_Builder.Death_Guard
             }
 
             Points = DEFAULT_POINTS;
-
-            if (!Weapons.Contains("Plaguereaper"))
-            {
-                Points += 5;
-            }
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }

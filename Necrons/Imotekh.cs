@@ -12,7 +12,7 @@ namespace Roster_Builder.Necrons
     {
         public Imotekh()
         {
-            DEFAULT_POINTS = 145;
+            DEFAULT_POINTS = 130;
             UnitSize = 1;
             TemplateCode = "nc";
             Points = DEFAULT_POINTS;
@@ -22,6 +22,7 @@ namespace Roster_Builder.Necrons
                 "INFANTRY", "CHARACTER", "PHAERON", "OVERLORD", "NOBLE", "IMOTEKH THE STORMLORD"
             });
             WarlordTrait = "Hyperlogical Strategist";
+            Role = "HQ";
         }
         public override Datasheets CreateUnit()
         {
@@ -62,7 +63,7 @@ namespace Roster_Builder.Necrons
                         cmbWarlord.Text = WarlordTrait;
                         cmbWarlord.Enabled = false;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 default: break;
             }

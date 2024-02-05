@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public TerminatorAncient()
         {
-            DEFAULT_POINTS = 100;
+            DEFAULT_POINTS = 90;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m_c";
             Weapons.Add("Storm Bolter and Power Fist");
@@ -20,6 +20,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "TERMINATOR", "ANCIENT"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -99,6 +100,11 @@ namespace Roster_Builder.Space_Marines
                 cmbRelic.SelectedIndex = -1;
             }
 
+            panel.Controls["lblFactionupgrade"].Visible = true;
+            cmbFactionupgrade.Visible = true;
+            cmbFactionupgrade.Items.Clear();
+            cmbFactionupgrade.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
@@ -154,14 +160,24 @@ namespace Roster_Builder.Space_Marines
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if (chosenRelic == "The Shield Eternal" && repo.currentSubFaction == "Dark Angels")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 25:
                     if (cbWarlord.Checked)
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -193,16 +209,6 @@ namespace Roster_Builder.Space_Marines
 
             Points = DEFAULT_POINTS;
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
-
-            if(Weapons.Contains("Thunder Hammer"))
-            {
-                Points += 10;
-            }
-
-            if(Weapons.Contains("Thunder Hammer and Storm Shield"))
-            {
-                Points += 20;
-            }
         }
 
         public override string ToString()

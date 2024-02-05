@@ -15,7 +15,7 @@ namespace Roster_Builder.Genestealer_Cults
 
         public VeteranIntercessors()
         {
-            DEFAULT_POINTS = 22;
+            DEFAULT_POINTS = 20;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "2N1mS(2m)";
@@ -168,22 +168,6 @@ namespace Roster_Builder.Genestealer_Cults
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-            Points += Convert.ToInt32(nudOption1.Value) * 5;
-
-            if (Weapons.Contains("Hand Flamer") || Weapons.Contains("Plasma Pistol") || Weapons.Contains("Power Sword"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Power Fist"))
-            {
-                Points += 10;
-            }
-
-            if (Weapons.Contains("Thunder Hammer"))
-            {
-                Points += 20;
-            }
         }
 
         public override string ToString()

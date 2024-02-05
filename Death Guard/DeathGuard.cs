@@ -72,12 +72,16 @@ namespace Roster_Builder.Death_Guard
 
         public override bool GetIfEnabled(int index)
         {
+
+            /*
             if (StratagemCount[index] < StratagemLimit[index])
             {
                 return true;
             }
 
             return false;
+            */
+            return true;
         }
 
         public override List<string> GetPsykerPowers(string keywords)
@@ -124,39 +128,39 @@ namespace Roster_Builder.Death_Guard
             return new List<string>()
             {
                 "(None)",
-                "Acidic Malady",
-                "Explosive Outbreak",
-                "Virulent Fever",
-                "Befouling Runoff",
-                "Unstable Sickness",
-                "Corrosive Filth",
-                "Viscous Death"
+                "Acidic Malady (+15 pts)",
+                "Explosive Outbreak (+15 pts)",
+                "Virulent Fever (+15 pts)",
+                "Befouling Runoff (+5 pts)",
+                "Unstable Sickness (+10 pts)",
+                "Corrosive Filth (+15 pts)",
+                "Viscous Death (+5 pts)"
             };
         }
 
         public override int GetFactionUpgradePoints(string upgrade)
         {
-            string[] twenty = new string[]
+            string[] fifteen = new string[]
             {
-                "Acidic Malady", "Explosive Outbreak", "Virulent Fever", "Corrosive Filth"
+                "Acidic Malady (+15 pts)", "Explosive Outbreak (+15 pts)", "Virulent Fever (+15 pts)", "Corrosive Filth (+15 pts)"
             };
 
-            string[] ten = new string[]
+            string[] five = new string[]
             {
-                "Befouling Runoff", "Viscous Death"
+                "Befouling Runoff (+5 pts)", "Viscous Death (+5 pts)"
             };
 
-            if (twenty.Contains(upgrade))
-            {
-                return 20;
-            }
-            else if (ten.Contains(upgrade))
-            {
-                return 10;
-            }
-            else if (upgrade == "Unstable Sickness")
+            if (fifteen.Contains(upgrade))
             {
                 return 15;
+            }
+            else if (five.Contains(upgrade))
+            {
+                return 5;
+            }
+            else if (upgrade == "Unstable Sickness (+10 pts)")
+            {
+                return 10;
             }
             else
             {
@@ -215,7 +219,7 @@ namespace Roster_Builder.Death_Guard
 
             relicsList.Add("Suppurating Plate");
 
-            if (Keywords.Contains("CHAOS LORD") || Keywords.Contains("BIOLOGUS PUTRIFIER")
+            if ((Keywords.Contains("CHAOS LORD") && !Keywords.Contains("TERMINATOR")) || Keywords.Contains("BIOLOGUS PUTRIFIER")
                 || Keywords.Contains("PLAGUE SURGEON"))
             {
                 relicsList.Add("Plaguebringer");
@@ -226,10 +230,28 @@ namespace Roster_Builder.Death_Guard
                 if (currentSubFaction == "Harbingers") { relicsList.Add("Infected Remains"); }
                 else if (currentSubFaction == "The Inexorable") { relicsList.Add("Leechspore Casket"); }
                 else if (currentSubFaction == "Mortarion's Anvil") { relicsList.Add("Warp Insect Hive"); }
-                else if (currentSubFaction == "The Wretched") { relicsList.Add("The Daemon's Favour"); }
+                else if (currentSubFaction == "The Wretched")
+                { 
+                    if(Keywords.Contains("MALIGNANT PLAGUECASTER"))
+                    {
+                        relicsList.Add("The Daemon's Favour");
+                    }
+                }
                 else if (currentSubFaction == "The Poxmongers") { relicsList.Add("Ironclot Furnace"); }
-                else if (currentSubFaction == "The Ferrymen") { relicsList.Add("Ferryman's Scythe"); }
-                else if (currentSubFaction == "Mortarion's Chosen Sons") { relicsList.Add("Vomitryx"); }
+                else if (currentSubFaction == "The Ferrymen")
+                {
+                    if (Keywords.Contains("LORD OF CONTAGION"))
+                    {
+                        relicsList.Add("Ferryman's Scythe");
+                    }
+                }
+                else if (currentSubFaction == "Mortarion's Chosen Sons")
+                {
+                    if (Keywords.Contains("FOUL BLIGHTSPAWN"))
+                    {
+                        relicsList.Add("Vomitryx");
+                    }
+                }
             }
 
             return relicsList;

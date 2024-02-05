@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public RedemptorDreadnought()
         {
-            DEFAULT_POINTS = 175;
+            DEFAULT_POINTS = 185;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "3m1k";
@@ -24,6 +24,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "CORE", "DREADNOUGHT", "REDEMPTOR DREADNOUGHT"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -107,16 +108,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons[1] == "Onslaught Gatling Cannon")
-            {
-                Points += 5;
-            }
-
-            if (Weapons[3] == "Icarus Rocket Pod")
-            {
-                Points += 5;
-            }
         }
 
         public override string ToString()

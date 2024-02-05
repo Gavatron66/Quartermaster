@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public CanoptekReanimator()
         {
-            DEFAULT_POINTS = 110;
+            DEFAULT_POINTS = 80;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "CANOPTEK", "<DYNASTY>",
                 "MONSTER", "CANOPTEK REANIMATOR"
             });
+            Role = "Elites";
         }
         public override Datasheets CreateUnit()
         {

@@ -11,7 +11,7 @@ namespace Roster_Builder.Death_Guard
     {
         public NoxiousBlightbringer()
         {
-            DEFAULT_POINTS = 60;
+            DEFAULT_POINTS = 55;
             UnitSize = 1;
             TemplateCode = "c";
             Points = DEFAULT_POINTS;
@@ -20,6 +20,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "INFANTRY", "CHARACTER", "BUBONIC ASTARTES", "FOETID VIRION", "NOXIOUS BLIGHTBRINGER"
             });
+            Role = "Elites";
         }
         public override void LoadDatasheets(Panel panel, Faction f)
         {
@@ -120,7 +121,7 @@ namespace Roster_Builder.Death_Guard
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; warlord.SelectedIndex = -1; }
                     break;
                 case 15:
                     if (warlord.SelectedIndex != -1)

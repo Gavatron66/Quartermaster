@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public TesseractVault()
         {
-            DEFAULT_POINTS = 500;
+            DEFAULT_POINTS = 360;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "ncp";
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "VEHICLE", "TITANIC", "FLY", "C'TAN SHARD", "TESSERACT VAULT"
             });
             PsykerPowers = new string[4] { string.Empty, string.Empty, string.Empty, string.Empty };
+            Role = "Lord of War";
         }
 
         public override Datasheets CreateUnit()

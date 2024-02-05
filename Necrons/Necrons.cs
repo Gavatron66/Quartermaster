@@ -127,23 +127,23 @@ namespace Roster_Builder.Necrons
 
             string[] thirty = new string[]
             {
-                "Countertemporal Nanomines", "Fail-Safe Overcharger"
+                "Countertemporal Nanomines (+25 pts)", "Fail-Safe Overcharger (+25 pts)"
             };
 
             string[] twentyFive = new string[]
             {
-                "Atavindicator", "Hypermaterial Ablator"
+                "Atavindicator (+20 pts)", "Hypermaterial Ablator (+20 pts)"
             };
 
             string[] twenty = new string[]
             {
-                "Metalodermal Tesla Weave", "Photonic Transubjector", "Phylacterine Hive",
-                "Prismatic Obfuscatron", "Quantum Orb"
+                "Metalodermal Telsa Weave (+15 pts)", "Photonic Transubjector (+15 pts)", "Phylacterine Hive (+15 pts)",
+                "Prismatic Obfuscatron (+15 pts)", "Quantum Orb (+15 pts)"
             };
 
             string[] fifteen = new string[]
             {
-                "Cortical Subjugator Scarabs", "Cryptogeometric Adjustor", "Dimensional Sanctum"
+                "Cortical Subjugator Scarabs (+10 pts)", "Cryptogeometric Adjustor (+10 pts)", "Dimensional Sanctum (+10 pts)"
             };
 
             if(thirty.Contains(upgrade))
@@ -172,38 +172,38 @@ namespace Roster_Builder.Necrons
 
             if(keywords.Contains("PSYCHOMANCER"))
             {
-                upgrades.Add("Atavindicator");
+                upgrades.Add("Atavindicator (+20 pts)");
             }
 
-            upgrades.Add("Cortical Subjugator Scarabs");
+            upgrades.Add("Cortical Subjugator Scarabs (+10 pts)");
 
             if(keywords.Contains("CHRONOMANCER"))
             {
-                upgrades.Add("Countertemporal Nanomines");
+                upgrades.Add("Countertemporal Nanomines (+25 pts)");
             }
 
-            upgrades.Add("Cryptogeometric Adjustor");
-            upgrades.Add("Dimensional Sanctum");
+            upgrades.Add("Cryptogeometric Adjustor (+10 pts)");
+            upgrades.Add("Dimensional Sanctum (+10 pts)");
 
             if (keywords.Contains("TECHNOMANCER"))
             {
-                upgrades.Add("Fail-Safe Overcharger");
+                upgrades.Add("Fail-Safe Overcharger (+25 pts)");
             }
 
-            upgrades.Add("Hypermaterial Ablator");
-            upgrades.Add("Metalodermal Tesla Weave");
-            upgrades.Add("Photonic Transubjector");
+            upgrades.Add("Hypermaterial Ablator (+20 pts)");
+            upgrades.Add("Metalodermal Telsa Weave (+15 pts)");
+            upgrades.Add("Photonic Transubjector (+15 pts)");
 
             if (keywords.Contains("TECHNOMANCER"))
             {
-                upgrades.Add("Phylacterine Hive");
+                upgrades.Add("Phylacterine Hive (+15 pts)");
             }
 
-            upgrades.Add("Prismatic Obfuscatron");
+            upgrades.Add("Prismatic Obfuscatron (+15 pts)");
 
             if (keywords.Contains("PLASMANCER"))
             {
-                upgrades.Add("Quantum Orb");
+                upgrades.Add("Quantum Orb (+15 pts)");
             }
 
             return upgrades;
@@ -211,12 +211,15 @@ namespace Roster_Builder.Necrons
 
         public override bool GetIfEnabled(int index)
         {
+            /*
             if (StratagemCount[index] < StratagemLimit[index])
             {
                 return true;
             }
 
             return false;
+            */
+            return true;
         }
 
         public override List<string> GetPsykerPowers(string keywords)
@@ -263,12 +266,12 @@ namespace Roster_Builder.Necrons
                 relics.Add("Voidreaper");   //Lokhust Lord, Lord, Catacomb Command Barge, Overlord
             }
 
-            if (keywords.Contains("LORD") || keywords.Contains("OVERLORD"))
+            if (keywords.Contains("LORD") || (keywords.Contains("OVERLORD") && !keywords.Contains("CATACOMB COMMAND BARGE")))
             {
                 relics.Add("Sempiternal Weave");    //Lord, Overlord
             }
 
-            if (keywords.Contains("OVERLORD"))
+            if (keywords.Contains("OVERLORD") && !keywords.Contains("CATACOMB COMMAND BARGE"))
             {
                 relics.Add("The Arrow of Infinity");    //Overlord
             }
@@ -303,7 +306,7 @@ namespace Roster_Builder.Necrons
             }
 
             if ((keywords.Contains("LORD") || keywords.Contains("CATACOMB COMMAND BARGE") ||
-                keywords.Contains("OVERLORD")) && currentSubFaction == "Szerekhan")
+                keywords.Contains("OVERLORD")) && currentSubFaction == "Szarekhan")
             {
                 relics.Add("The Sovereign Coronal"); //Szarekhan - Lord, Catacomb Command Barge, Overlord
             }

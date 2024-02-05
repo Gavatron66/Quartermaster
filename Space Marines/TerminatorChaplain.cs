@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public TerminatorChaplain()
         {
-            DEFAULT_POINTS = 95;
+            DEFAULT_POINTS = 85;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m_pc";
             Weapons.Add("Storm Bolter");
@@ -173,14 +173,34 @@ namespace Roster_Builder.Space_Marines
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if (chosenRelic == "Vengeance of Ultramar")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Nocturne's Vengeance")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-flamer");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Betrayer's Bane")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-melta");
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 25:
                     if (cbWarlord.Checked)
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
                     if (clbPsyker.CheckedItems.Count == 1)
@@ -225,11 +245,6 @@ namespace Roster_Builder.Space_Marines
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
-            if (Weapons.Contains("Storm Bolter")) { }
-            else
-            {
-                Points += 5;
-            }
         }
 
         public override string ToString()

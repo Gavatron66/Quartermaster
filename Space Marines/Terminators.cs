@@ -13,7 +13,7 @@ namespace Roster_Builder.Space_Marines
         int restriction = 1;
         public Terminators()
         {
-            DEFAULT_POINTS = 38;
+            DEFAULT_POINTS = 33;
             UnitSize = 5;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "NL2m1k";
@@ -28,6 +28,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "TERMINATOR", "TERMINATOR SQUAD"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -187,29 +188,6 @@ namespace Roster_Builder.Space_Marines
 
             Points = DEFAULT_POINTS * UnitSize;
             restriction = 0;
-
-            foreach(string weapon in Weapons)
-            {
-                if(weapon == "Assault Cannon" || weapon == "Heavy Flamer" || weapon == "Cyclone Missile Launcher and Storm Bolter")
-                {
-                    restriction++;
-                }
-
-                if(weapon == "Heavy Flamer" || weapon == "Teleport Homer")
-                {
-                    Points += 5;
-                }
-
-                if(weapon == "Assault Cannon")
-                {
-                    Points += 10;
-                }
-
-                if(weapon == "Cyclone Missile Launcher and Storm Bolter")
-                {
-                    Points += 25;
-                }
-            }
         }
 
         public override string ToString()

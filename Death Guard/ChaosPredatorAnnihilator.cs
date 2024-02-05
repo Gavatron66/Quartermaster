@@ -11,7 +11,7 @@ namespace Roster_Builder.Death_Guard
     {
         public ChaosPredatorAnnihilator()
         {
-            DEFAULT_POINTS = 130;
+            DEFAULT_POINTS = 115;
             Points = DEFAULT_POINTS;
             UnitSize = 1;
             TemplateCode = "2m1k";
@@ -23,6 +23,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "VEHICLE", "BUBONIC ASTARTES", "SMOKESCREEN", "CHAOS PREDATOR ANNIHILATOR"
             });
+            Role = "Heavy Support";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -38,7 +39,7 @@ namespace Roster_Builder.Death_Guard
             {
                 "(None)",
                 "Two Heavy Bolters",
-                "Two Lascannons"
+                "Two Lascannons (+20 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
@@ -86,29 +87,9 @@ namespace Roster_Builder.Death_Guard
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Combi-bolter"))
+            if (Weapons.Contains("Two Lascannons (+20 pts)"))
             {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Havoc Launcher"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Combi-flamer") || Weapons.Contains("Combi-melta") || Weapons.Contains("Combi-plasma"))
-            {
-                Points += 10;
-            }
-
-            if (Weapons.Contains("Two Heavy Bolters"))
-            {
-                Points += 30;
-            }
-
-            if (Weapons.Contains("Two Lascannons"))
-            {
-                Points += 40;
+                Points += 20;
             }
         }
 

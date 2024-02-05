@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Chaplain()
         {
-            DEFAULT_POINTS = 80;
+            DEFAULT_POINTS = 70;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m1k_pc";
             Weapons.Add("Bolt Pistol");
@@ -22,6 +22,7 @@ namespace Roster_Builder.Space_Marines
                 "INFANTRY", "CHARACTER", "PRIEST", "CHAPLAIN"
             });
             PsykerPowers = new string[1] { string.Empty };
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -56,7 +57,8 @@ namespace Roster_Builder.Space_Marines
                 "Combi-plasma",
                 "Grav-pistol",
                 "Plasma Pistol",
-                "Power Fist"
+                "Power Fist",
+                "Storm Bolter"
             });
             if (f.currentSubFaction == "Blood Angels" || f.currentSubFaction == "Deathwatch")
             {
@@ -65,7 +67,7 @@ namespace Roster_Builder.Space_Marines
             }
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            cbOption1.Text = "Jump Pack";
+            cbOption1.Text = "Jump Pack (+25 pts)";
             if (Weapons[1] == cbOption1.Text)
             {
                 cbOption1.Checked = true;
@@ -195,7 +197,78 @@ namespace Roster_Builder.Space_Marines
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if (chosenRelic == "Primarch's Wrath")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Purgatorus")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Vengeance of Ultramar")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Wrath of Prometheus")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Nocturne's Vengeance")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-flamer");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Raven's Fury")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Silentus Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Betrayer's Bane")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-melta");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Equis-pattern Bolt Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Spartean")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Vengeance")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Fist");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Terra")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Fist");
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                        cbOption1.Enabled = true;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 21:
                     if (cbOption1.Checked)
@@ -212,7 +285,7 @@ namespace Roster_Builder.Space_Marines
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
                     if (clbPsyker.CheckedItems.Count == 1)
@@ -257,38 +330,9 @@ namespace Roster_Builder.Space_Marines
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
-            string[] five = new string[]
+            if (Weapons.Contains("Jump Pack (+25 pts)"))
             {
-                "Grav-pistol",
-                "Hand Flamer",
-                "Inferno Pistol",
-                "Plasma Pistol",
-                "Storm Bolter"
-            };
-
-            string[] ten = new string[]
-            {
-                "Combi-flamer",
-                "Combi-grav",
-                "Combi-melta",
-                "Combi-plasma",
-                "Power Fist",
-            };
-
-            foreach (string weapon in Weapons)
-            {
-                if (five.Contains(weapon))
-                {
-                    Points += 5;
-                }
-                else if (ten.Contains(weapon))
-                {
-                    Points += 10;
-                }
-                else if (weapon == "Jump Pack")
-                {
-                    Points += 25;
-                }
+                Points += 25;
             }
         }
 

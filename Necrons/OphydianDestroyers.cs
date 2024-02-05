@@ -12,7 +12,7 @@ namespace Roster_Builder.Necrons
         public OphydianDestroyers()
         {
             UnitSize = 3;
-            DEFAULT_POINTS = 35;
+            DEFAULT_POINTS = 30;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "N";
             Keywords.AddRange(new string[]
@@ -20,6 +20,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "DESTROYER CULT", "OPHYDIAN DESTROYERS"
             });
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()

@@ -11,14 +11,15 @@ namespace Roster_Builder.Space_Marines
     {
         public Suppressors()
         {
-            DEFAULT_POINTS = 33;
+            DEFAULT_POINTS = 30;
             UnitSize = 3;
-            Points = 100;
+            Points = DEFAULT_POINTS * UnitSize;
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "PRIMARIS", "FLY", "JUMP PACK", "SMOKESCREEN", "SUPPRESSOR SQUAD"
             });
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()

@@ -9,9 +9,10 @@ namespace Roster_Builder.Space_Marines
 {
     public class PrimarisLibrarian : Datasheets
     {
+        string disciplineSelected;
         public PrimarisLibrarian()
         {
-            DEFAULT_POINTS = 95;
+            DEFAULT_POINTS = 85;
             Points = DEFAULT_POINTS;
             TemplateCode = "pc";
             Keywords.AddRange(new string[]
@@ -20,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "INFANTRY", "CHARACTER", "PRIMARIS", "PSYKER", "LIBRARIAN"
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
+            Role = "HQ";
         }
         public override Datasheets CreateUnit()
         {
@@ -39,6 +41,7 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
+            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
 
             cmbWarlord.Items.Clear();
             List<string> traits = repo.GetWarlordTraits("");
@@ -71,13 +74,81 @@ namespace Roster_Builder.Space_Marines
                 cmbFaction.SelectedIndex = 0;
             }
 
+            cmbDiscipline.Visible = true;
+            panel.Controls["lblPsykerList"].Visible = true;
+            cmbDiscipline.Items.Clear();
+            cmbDiscipline.Items.Add("Librarius");
+
+            switch (repo.currentSubFaction)
+            {
+                case "Blood Angels":
+                    cmbDiscipline.Items.Add("Sanguinary");
+                    disciplineSelected = "Sanguinary";
+                    break;
+                case "Dark Angels":
+                    cmbDiscipline.Items.Add("Interromancy");
+                    disciplineSelected = "Interromancy";
+                    break;
+                case "Imperial Fists":
+                    cmbDiscipline.Items.Add("Geokinesis");
+                    disciplineSelected = "Geokinesis";
+                    break;
+                case "Iron Hands":
+                    cmbDiscipline.Items.Add("Technomancy");
+                    disciplineSelected = "Technomancy";
+                    break;
+                case "Raven Guard":
+                    cmbDiscipline.Items.Add("Umbramancy");
+                    disciplineSelected = "Umbramancy";
+                    break;
+                case "Salamanders":
+                    cmbDiscipline.Items.Add("Promethean");
+                    disciplineSelected = "Promethean";
+                    break;
+                case "Space Wolves":
+                    cmbDiscipline.Items.Add("Tempestas");
+                    disciplineSelected = "Tempestas";
+                    break;
+                case "Ultramarines":
+                    cmbDiscipline.Items.Add("Indomitus");
+                    disciplineSelected = "Indomitus";
+                    break;
+                case "White Scars":
+                    cmbDiscipline.Items.Add("Stormspeaking");
+                    disciplineSelected = "Stormspeaking";
+                    break;
+                default:
+                    disciplineSelected = "Librarius";
+                    break;
+            }
+
             List<string> psykerpowers = new List<string>();
             psykerpowers = repo.GetPsykerPowers("Librarius");
+            bool doesContain = false;
+            foreach (var power in psykerpowers)
+            {
+                if (power == PsykerPowers[0])
+                {
+                    doesContain = true;
+                }
+            }
+
+            if (!doesContain)
+            {
+                psykerpowers = repo.GetPsykerPowers(disciplineSelected);
+            }
+            else
+            {
+                disciplineSelected = "Librarius";
+            }
+
             clbPsyker.Items.Clear();
             foreach (string power in psykerpowers)
             {
                 clbPsyker.Items.Add(power);
             }
+
+            cmbDiscipline.SelectedItem = disciplineSelected;
 
             lblPsyker.Text = "Select two of the following:";
             clbPsyker.ClearSelected();
@@ -142,6 +213,7 @@ namespace Roster_Builder.Space_Marines
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
@@ -164,12 +236,23 @@ namespace Roster_Builder.Space_Marines
                 case 17:
                     Relic = cmbRelic.SelectedItem.ToString();
                     break;
+                case 111:
+                    if (cmbDiscipline.SelectedItem.ToString() == disciplineSelected)
+                    {
+                        break;
+                    }
+
+                    disciplineSelected = cmbDiscipline.SelectedItem.ToString();
+                    clbPsyker.Items.Clear();
+                    clbPsyker.Items.AddRange(repo.GetPsykerPowers(disciplineSelected).ToArray());
+                    PsykerPowers = new string[2] { string.Empty, string.Empty };
+                    break;
                 case 25:
                     if (cbWarlord.Checked)
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
                     if (clbPsyker.CheckedItems.Count < 2)

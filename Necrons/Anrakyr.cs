@@ -12,7 +12,7 @@ namespace Roster_Builder.Necrons
     {
         public Anrakyr()
         {
-            DEFAULT_POINTS = 140;
+            DEFAULT_POINTS = 130;
             TemplateCode = "nc";
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "INFANTRY", "CHARACTER", "NOBLE", "DYNASTIC AGENT", "OVERLORD", "ANRAKYR THE TRAVELLER"
             });
             WarlordTrait = "Implacable Conqueror (Aura)";
+            Role = "HQ";
         }
         public override Datasheets CreateUnit()
         {
@@ -61,7 +62,7 @@ namespace Roster_Builder.Necrons
                         cmbWarlord.Text = WarlordTrait;
                         cmbWarlord.Enabled = false;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 default: break;
             }

@@ -12,7 +12,7 @@ namespace Roster_Builder.Adeptus_Custodes
     {
         public ShieldCaptain()
         {
-            DEFAULT_POINTS = 110;
+            DEFAULT_POINTS = 105;
             TemplateCode = "1m1k_c";
             Points = DEFAULT_POINTS;
             Weapons.Add("Guardian Spear");
@@ -22,6 +22,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "INFANTRY", "CHARACTER", "GUARDIAN", "SHIELD-CAPTAIN"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -54,7 +55,7 @@ namespace Roster_Builder.Adeptus_Custodes
             {
                 "Castellan Axe",
                 "Guardian Spear",
-                "Sentinel Blade and Praesidium Shield"
+                "Sentinel Blade and Praesidium Shield (+10 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
@@ -147,7 +148,7 @@ namespace Roster_Builder.Adeptus_Custodes
             {
                 case 11:
                     Weapons[0] = cmbOption1.SelectedItem.ToString();
-                    if (Weapons[0] == "Sentinel Blade and Praesidium Shield")
+                    if (Weapons[0] == "Sentinel Blade and Praesidium Shield (+10 pts)")
                     {
                         cbOption1.Enabled = false;
                         cbOption1.Checked = false;
@@ -176,14 +177,30 @@ namespace Roster_Builder.Adeptus_Custodes
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Guardian Spear");
                         cmbOption1.Enabled = false;
-                    } else
-                    {
-                        cmbOption1.Enabled = true;
                     }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Veiled Blade")
+                    else if (cmbRelic.SelectedItem.ToString() == "Veiled Blade")
                     {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Sentinel Blade and Praesidium Shield");
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Sentinel Blade and Praesidium Shield (+10 pts)");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (cmbRelic.SelectedItem.ToString() == "Paragon Spear")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Guardian Spear");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (cmbRelic.SelectedItem.ToString() == "Admonimortis")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Castellan Axe");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (cmbRelic.SelectedItem.ToString() == "Praesidius")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Sentinel Blade and Praesidium Shield (+10 pts)");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (cmbRelic.SelectedItem.ToString() == "Swiftsilver Talon")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Guardian Spear");
                         cmbOption1.Enabled = false;
                     }
                     else
@@ -206,7 +223,7 @@ namespace Roster_Builder.Adeptus_Custodes
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -238,12 +255,7 @@ namespace Roster_Builder.Adeptus_Custodes
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Misericordia"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Sentinel Blade and Praesidium Shield"))
+            if (Weapons.Contains("Sentinel Blade and Praesidium Shield (+10 pts)"))
             {
                 Points += 10;
             }

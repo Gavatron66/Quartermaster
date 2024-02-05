@@ -12,7 +12,7 @@ namespace Roster_Builder.Necrons
         public Deathmarks()
         {
             UnitSize = 5;
-            DEFAULT_POINTS = 18;
+            DEFAULT_POINTS = 13;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "N";
             Keywords.AddRange(new string[]
@@ -20,6 +20,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "CORE", "HYPERPHASE SWORD", "DEATHMARKS"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()

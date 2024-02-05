@@ -21,6 +21,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "CHARACTER", "SANCTUS"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -121,14 +122,24 @@ namespace Roster_Builder.Genestealer_Cults
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if (chosenRelic == "The Gift From Beyond")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 25:
                     if (cbWarlord.Checked)
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 default: break;
             }

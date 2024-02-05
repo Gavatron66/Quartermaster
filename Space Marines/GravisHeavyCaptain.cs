@@ -11,14 +11,15 @@ namespace Roster_Builder.Space_Marines
     {
         public GravisHeavyCaptain()
         {
-            DEFAULT_POINTS = 105;
+            DEFAULT_POINTS = 95;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "INFANTRY", "CHARACTER", "PRIMARIS", "MK X GRAVIS","CAPTAIN"
+                "INFANTRY", "CHARACTER", "PRIMARIS", "MK X GRAVIS","CAPTAIN", "HBR"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -140,7 +141,7 @@ namespace Roster_Builder.Space_Marines
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)

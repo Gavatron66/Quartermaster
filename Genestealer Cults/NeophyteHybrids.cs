@@ -29,6 +29,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "CORE", "CROSSFIRE", "ACOLYTE HYBRIDS"
             });
+            Role = "Troops";
         }
 
         public override Datasheets CreateUnit()
@@ -71,8 +72,8 @@ namespace Roster_Builder.Genestealer_Cults
                 "Flamer",
                 "Grenade Lancher",
                 "Heavy Stubber",
-                "Mining Laser",
-                "Seismic Cannon",
+                "Mining Laser (+15 pts)",
+                "Seismic Cannon (+15 pts)",
                 "Webber"
             });
 
@@ -84,7 +85,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "Web Pistol"
             });
 
-            cbOption1.Text = "Cult Icon";
+            cbOption1.Text = "Cult Icon (+10 pts)";
 
             cmbFactionupgrade.Visible = true;
             panel.Controls["lblFactionupgrade"].Visible = true;
@@ -177,8 +178,8 @@ namespace Roster_Builder.Genestealer_Cults
                         "Flamer",
                         "Grenade Launcher",
                         "Heavy Stubber",
-                        "Mining Laser",
-                        "Seismic Cannon",
+                        "Mining Laser (+15 pts)",
+                        "Seismic Cannon (+15 pts)",
                         "Webber"
                     };
 
@@ -230,11 +231,11 @@ namespace Roster_Builder.Genestealer_Cults
                         {
                             weaponsCheck[0]++;
                         }
-                        if (Weapons[i] == "Mining Laser")
+                        if (Weapons[i] == "Mining Laser (+15 pts)")
                         {
                             weaponsCheck[0]++;
                         }
-                        if (Weapons[i] == "Seismic Cannon")
+                        if (Weapons[i] == "Seismic Cannon (+15 pts)")
                         {
                             weaponsCheck[0]++;
                         }
@@ -255,8 +256,8 @@ namespace Roster_Builder.Genestealer_Cults
                     if (weaponsCheck[0] == (UnitSize / 10) * 2)
                     {
                         cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Heavy Stubber"));
-                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Mining Laser"));
-                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Seismic Cannon"));
+                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Mining Laser (+15 pts)"));
+                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Seismic Cannon (+15 pts)"));
                     }
                     if (weaponsCheck[1] == (UnitSize / 10) * 2)
                     {
@@ -273,7 +274,7 @@ namespace Roster_Builder.Genestealer_Cults
                     cmbOption2.Visible = false;
                     panel.Controls["lblOption2"].Visible = false;
 
-                    if (Weapons.Contains("Cult Icon"))
+                    if (Weapons.Contains("Cult Icon (+10 pts)"))
                     {
                         cbOption1.Enabled = false;
                     }
@@ -283,7 +284,7 @@ namespace Roster_Builder.Genestealer_Cults
                     }
 
                     antiLoop = true;
-                    if (Weapons[currentIndex + 1] == "Cult Icon")
+                    if (Weapons[currentIndex + 1] == "Cult Icon (+10 pts)")
                     {
                         cbOption1.Enabled = true;
                         cbOption1.Checked = true;
@@ -296,13 +297,13 @@ namespace Roster_Builder.Genestealer_Cults
                     }
 
                     if ((Weapons[currentIndex + 1] == "Heavy Stubber"
-                        || Weapons[currentIndex + 1] == "Mining Laser"
-                        || Weapons[currentIndex + 1] == "Seismic Cannon")
+                        || Weapons[currentIndex + 1] == "Mining Laser (+15 pts)"
+                        || Weapons[currentIndex + 1] == "Seismic Cannon (+15 pts)")
                         && !cmbOption1.Items.Contains("Heavy Stubber"))
                     {
                         cmbOption1.Items.Add("Heavy Stubber");
-                        cmbOption1.Items.Add("Mining Laser");
-                        cmbOption1.Items.Add("Seismic Cannon");
+                        cmbOption1.Items.Add("Mining Laser (+15 pts)");
+                        cmbOption1.Items.Add("Seismic Cannon (+15 pts)");
 
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
                     }
@@ -329,35 +330,15 @@ namespace Roster_Builder.Genestealer_Cults
 
             foreach (var item in Weapons)
             {
-                if (item == "Cult Icon")
-                {
-                    Points += 20;
-                }
-
-                if (item == "Bolt Pistol")
-                {
-                    Points += 2;
-                }
-
-                if (item == "Flamer"
-                    || item == "Grenade Launcher"
-                    || item == "Heavy Stubber"
-                    || item == "Power Maul"
-                    || item == "Power Pick"
-                    || item == "Web Pistol")
-                {
-                    Points += 5;
-                }
-
-                if (item == "Mining Laser"
-                    || item == "Seismic Cannon")
-                {
-                    Points += 15;
-                }
-
-                if (item == "Webber")
+                if (item == "Cult Icon (+10 pts)")
                 {
                     Points += 10;
+                }
+
+                if (item == "Mining Laser (+15 pts)"
+                    || item == "Seismic Cannon (+15 pts)")
+                {
+                    Points += 15;
                 }
             }
 

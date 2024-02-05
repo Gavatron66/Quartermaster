@@ -20,6 +20,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "INFANTRY", "CHARACTER", "BUBONIC ASTARTES", "TERMINATOR", "LORD OF THE DEATH GUARD", "LORD OF VIRULENCE"
             });
+            Role = "HQ";
         }
         public override void LoadDatasheets(Panel panel, Faction f)
         {
@@ -120,7 +121,7 @@ namespace Roster_Builder.Death_Guard
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; warlord.SelectedIndex = -1; }
                     break;
                 case 15:
                     if (warlord.SelectedIndex != -1)

@@ -9,9 +9,10 @@ namespace Roster_Builder.Space_Marines
 {
     public class Librarian : Datasheets
     {
+        string disciplineSelected;
         public Librarian()
         {
-            DEFAULT_POINTS = 90;
+            DEFAULT_POINTS = 80;
             Points = DEFAULT_POINTS;
             TemplateCode = "2m1k_pc";
             Weapons.Add("Bolt Pistol");
@@ -23,6 +24,7 @@ namespace Roster_Builder.Space_Marines
                 "INFANTRY", "CHARACTER", "PSYKER", "LIBRARIAN"
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -46,6 +48,7 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
+            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -57,7 +60,8 @@ namespace Roster_Builder.Space_Marines
                 "Combi-melta",
                 "Combi-plasma",
                 "Grav Pistol",
-                "Plasma Pistol"
+                "Plasma Pistol",
+                "Storm Bolter"
             });
             if (f.currentSubFaction == "Blood Angels" || f.currentSubFaction == "Deathwatch")
             {
@@ -75,7 +79,7 @@ namespace Roster_Builder.Space_Marines
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
-            cbOption1.Text = "Jump Pack";
+            cbOption1.Text = "Jump Pack (+25 pts)";
             if (Weapons[2] == cbOption1.Text)
             {
                 cbOption1.Checked = true;
@@ -128,13 +132,81 @@ namespace Roster_Builder.Space_Marines
                 cmbFaction.SelectedIndex = 0;
             }
 
+            cmbDiscipline.Visible = true;
+            panel.Controls["lblPsykerList"].Visible = true;
+            cmbDiscipline.Items.Clear();
+            cmbDiscipline.Items.Add("Librarius");
+
+            switch (repo.currentSubFaction)
+            {
+                case "Blood Angels":
+                    cmbDiscipline.Items.Add("Sanguinary");
+                    disciplineSelected = "Sanguinary";
+                    break;
+                case "Dark Angels":
+                    cmbDiscipline.Items.Add("Interromancy");
+                    disciplineSelected = "Interromancy";
+                    break;
+                case "Imperial Fists":
+                    cmbDiscipline.Items.Add("Geokinesis");
+                    disciplineSelected = "Geokinesis";
+                    break;
+                case "Iron Hands":
+                    cmbDiscipline.Items.Add("Technomancy");
+                    disciplineSelected = "Technomancy";
+                    break;
+                case "Raven Guard":
+                    cmbDiscipline.Items.Add("Umbramancy");
+                    disciplineSelected = "Umbramancy";
+                    break;
+                case "Salamanders":
+                    cmbDiscipline.Items.Add("Promethean");
+                    disciplineSelected = "Promethean";
+                    break;
+                case "Space Wolves":
+                    cmbDiscipline.Items.Add("Tempestas");
+                    disciplineSelected = "Tempestas";
+                    break;
+                case "Ultramarines":
+                    cmbDiscipline.Items.Add("Indomitus");
+                    disciplineSelected = "Indomitus";
+                    break;
+                case "White Scars":
+                    cmbDiscipline.Items.Add("Stormspeaking");
+                    disciplineSelected = "Stormspeaking";
+                    break;
+                default:
+                    disciplineSelected = "Librarius";
+                    break;
+            }
+
             List<string> psykerpowers = new List<string>();
             psykerpowers = repo.GetPsykerPowers("Librarius");
+            bool doesContain = false;
+            foreach(var power in psykerpowers)
+            {
+                if (power == PsykerPowers[0])
+                {
+                    doesContain = true;
+                }
+            }
+
+            if(!doesContain)
+            {
+                psykerpowers = repo.GetPsykerPowers(disciplineSelected);
+            }
+            else
+            {
+                disciplineSelected = "Librarius";
+            }
+
             clbPsyker.Items.Clear();
             foreach (string power in psykerpowers)
             {
                 clbPsyker.Items.Add(power);
             }
+
+            cmbDiscipline.SelectedItem = disciplineSelected;
 
             lblPsyker.Text = "Select two of the following:";
             clbPsyker.ClearSelected();
@@ -187,7 +259,7 @@ namespace Roster_Builder.Space_Marines
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
-            Label lblPsyker = panel.Controls["lblPsyker"] as Label;
+            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
@@ -214,7 +286,79 @@ namespace Roster_Builder.Space_Marines
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if (chosenRelic == "Primarch's Wrath")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Purgatorus")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Vengeance of Ultramar")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Wrath of Prometheus")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Nocturne's Vengeance")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-flamer");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Raven's Fury")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Silentus Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Betrayer's Bane")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-melta");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Equis-pattern Bolt Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Spartean")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                        cbOption1.Enabled = true;
+                    }
+                    Relic = chosenRelic;
+                    break;
+                case 111:
+                    if(cmbDiscipline.SelectedItem.ToString() == disciplineSelected)
+                    {
+                        break;
+                    }
+
+                    disciplineSelected = cmbDiscipline.SelectedItem.ToString();
+                    clbPsyker.Items.Clear();
+                    clbPsyker.Items.AddRange(repo.GetPsykerPowers(disciplineSelected).ToArray());
+                    PsykerPowers = new string[2] {string.Empty, string.Empty};
                     break;
                 case 21:
                     if (cbOption1.Checked)
@@ -231,7 +375,7 @@ namespace Roster_Builder.Space_Marines
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
                     if (clbPsyker.CheckedItems.Count < 2)
@@ -281,34 +425,7 @@ namespace Roster_Builder.Space_Marines
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
-            string[] tens = new string[]
-            {
-                "Combi-flamer",
-                "Combi-grav",
-                "Combi-melta",
-                "Combi-plasma"
-            };
-
-            string[] fives = new string[]
-            {
-                "Grav-pistol",
-                "Hand Flamer",
-                "Inferno Pistol",
-                "Plasma Pistol",
-                "Storm Bolter"
-            };
-
-            if (tens.Contains(Weapons[0]))
-            {
-                Points += 10;
-            }
-
-            if (fives.Contains(Weapons[0]))
-            {
-                Points += 5;
-            }
-
-            if (Weapons[2] == "Jump Pack")
+            if (Weapons[2] == "Jump Pack (+25 pts)")
             {
                 Points += 25;
             }

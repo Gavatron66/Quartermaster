@@ -12,7 +12,7 @@ namespace Roster_Builder.Space_Marines
     {
         public AssaultIntercessors()
         {
-            DEFAULT_POINTS = 19;
+            DEFAULT_POINTS = 17;
             UnitSize = 5;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "NS(2m)";
@@ -23,6 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "PRIMARIS", "INTERCESSORS", "ASSAULT INTERCESSOR SQUAD"
             });
+            Role = "Troops";
         }
 
         public override Datasheets CreateUnit()
@@ -91,21 +92,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            if(Weapons.Contains("Hand Flamer") || Weapons.Contains("Plasma Pistol") || Weapons.Contains("Power Sword"))
-            {
-                Points += 5;
-            }
-
-            if(Weapons.Contains("Power Fist"))
-            {
-                Points += 10;
-            }
-
-            if(Weapons.Contains("Thunder Hammer"))
-            {
-                Points += 20;
-            }
         }
 
         public override string ToString()

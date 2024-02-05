@@ -12,7 +12,7 @@ namespace Roster_Builder.Necrons
     {
         public RoyalWarden()
         {
-            DEFAULT_POINTS = 75;
+            DEFAULT_POINTS = 70;
             UnitSize = 1;
             TemplateCode = "c";
             Points = DEFAULT_POINTS;
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "CHARACTER", "ROYAL WARDEN"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -123,7 +124,7 @@ namespace Roster_Builder.Necrons
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 default: break;
                 case 71:

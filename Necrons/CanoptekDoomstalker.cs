@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public CanoptekDoomstalker()
         {
-            DEFAULT_POINTS = 140;
+            DEFAULT_POINTS = 130;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "CANOPTEK", "<DYNASTY>",
                 "MONSTER", "CANOPTEK DOOMSTALKER"
             });
+            Role = "Heavy Support";
         }
         public override Datasheets CreateUnit()
         {

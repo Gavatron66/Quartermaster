@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public DoomsdayArk()
         {
-            DEFAULT_POINTS = 190;
+            DEFAULT_POINTS = 145;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "VEHICLE", "QUANTUM SHIELDING", "FLY", "DOOMSDAY ARK"
             });
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()

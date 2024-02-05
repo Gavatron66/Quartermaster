@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public PrimarisLieutenant()
         {
-            DEFAULT_POINTS = 75;
+            DEFAULT_POINTS = 65;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m_c";
             Weapons.Add("Master-crafted Auto Bolt Rifle and Bolt Pistol");
@@ -20,6 +20,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "PRIMARIS", "LIEUTENANT"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -116,7 +117,6 @@ namespace Roster_Builder.Space_Marines
         public override void SaveDatasheets(int code, Panel panel)
         {
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
@@ -139,14 +139,134 @@ namespace Roster_Builder.Space_Marines
                     }
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if (chosenRelic == "Bellicos Bolt Rifle")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Lament")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Primarch's Wrath")
+                    {
+                        cmbOption1.SelectedIndex = 3;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Purgatorus")
+                    {
+                        cmbOption1.Items.Clear();
+                        cmbOption1.Items.AddRange(new string[]
+                        {
+                            "Master-crafted Auto Bolt Rifle and Bolt Pistol",
+                            "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+                        });
+                        cmbOption1.Enabled = true;
+                    }
+                    else if (chosenRelic == "The Burning Blade")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Shield Eternal")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Soldier's Blade")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Ex Tenebris")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Silentus Pistol")
+                    {
+                        cmbOption1.Items.Clear();
+                        cmbOption1.Items.AddRange(new string[]
+                        {
+                            "Master-crafted Auto Bolt Rifle and Bolt Pistol",
+                            "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+                        });
+                        cmbOption1.Enabled = true;
+                    }
+                    else if (chosenRelic == "Scimitar of the Great Khan")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Equis-pattern Bolt Pistol")
+                    {
+                        cmbOption1.Items.Clear();
+                        cmbOption1.Items.AddRange(new string[]
+                        {
+                            "Master-crafted Auto Bolt Rifle and Bolt Pistol",
+                            "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+                        });
+                        cmbOption1.Enabled = true;
+                    }
+                    else if (chosenRelic == "The Spartean")
+                    {
+                        cmbOption1.Items.Clear();
+                        cmbOption1.Items.AddRange(new string[]
+                        {
+                            "Master-crafted Auto Bolt Rifle and Bolt Pistol",
+                            "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+                        });
+                        cmbOption1.Enabled = true;
+                    }
+                    else if (chosenRelic == "Duty's Burden")
+                    {
+                        cmbOption1.Items.Clear();
+                        cmbOption1.Items.AddRange(new string[]
+                        {
+                            "Master-crafted Auto Bolt Rifle and Bolt Pistol",
+                            "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+                        });
+                        cmbOption1.Enabled = true;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                        if (!cmbOption1.Items.Contains("Master-crafted Power Sword, Neo-volkite Pistol and Storm Shield"))
+                        {
+
+                            cmbOption1.Items.Clear();
+                            cmbOption1.Items.AddRange(new string[]
+                            {
+                                "Master-crafted Auto Bolt Rifle and Bolt Pistol",
+                                "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+                                "Master-crafted Power Sword, Neo-volkite Pistol and Storm Shield",
+                            });
+                            if (repo.currentSubFaction == "Dark Angels")
+                            {
+                                cmbOption1.Items.Add("Master-crafted Auto Bolt Rifle and Plasma Pistol");
+                                cmbOption1.Items.Add("Master-crafted Stalker Bolt Rifle and Plasma Pistol");
+                            }
+                            if (repo.currentSubFaction == "Space Wolves")
+                            {
+                                cmbOption1.Items.Add("Special Issue Bolt Carbine, Master-crafted Power Axe and Bolt Pistol");
+                            }
+                        }
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 25:
                     if (cbWarlord.Checked)
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -178,18 +298,6 @@ namespace Roster_Builder.Space_Marines
 
             Points = DEFAULT_POINTS;
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
-
-            if (Weapons.Contains("Special Issue Bolt Carbine, Master-crafted Power Axe and Bolt Pistol") ||
-                Weapons.Contains("Master-crafted Auto Bolt Rifle and Plasma Pistol") ||
-                Weapons.Contains("Master-crafted Stalker Bolt Rifle and Plasma Pistol"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Master-crafted Power Sword, Neo-volkite Pistol and Storm Shield"))
-            {
-                Points += 15;
-            }
         }
 
         public override string ToString()

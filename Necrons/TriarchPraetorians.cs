@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public TriarchPraetorians()
         {
-            DEFAULT_POINTS = 25;
+            DEFAULT_POINTS = 20;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "N1m";
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFATRY", "FLY", "DYNASTIC AGENT", "TRIARCH", "TRIARCH PRAETORIANS"
             });
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()

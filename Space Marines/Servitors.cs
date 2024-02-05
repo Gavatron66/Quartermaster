@@ -22,6 +22,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "SERVITORS"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -39,9 +40,9 @@ namespace Roster_Builder.Space_Marines
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Heavy Bolter",
-                "Multi-melta",
-                "Plasma Cannon",
+                "Heavy Bolter (+5 pts)",
+                "Multi-melta (+15 pts)",
+                "Plasma Cannon (+10 pts)",
                 "Servo-arm"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
@@ -49,9 +50,9 @@ namespace Roster_Builder.Space_Marines
             cmbOption2.Items.Clear();
             cmbOption2.Items.AddRange(new string[]
             {
-                "Heavy Bolter",
-                "Multi-melta",
-                "Plasma Cannon",
+                "Heavy Bolter (+5 pts)",
+                "Multi-melta (+15 pts)",
+                "Plasma Cannon (+10 pts)",
                 "Servo-arm"
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
@@ -76,15 +77,15 @@ namespace Roster_Builder.Space_Marines
 
             foreach (string weapon in Weapons)
             {
-                if(weapon == "Heavy Bolter")
+                if(weapon == "Heavy Bolter (+5 pts)")
                 {
                     Points += 5;
                 }
-                else if (weapon == "Plasma Cannon")
+                else if (weapon == "Plasma Cannon (+10 pts)")
                 {
                     Points += 10;
                 }
-                else if(weapon == "Multi-melta")
+                else if(weapon == "Multi-melta (+15 pts)")
                 {
                     Points += 15;
                 }

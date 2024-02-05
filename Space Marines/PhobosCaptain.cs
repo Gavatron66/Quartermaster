@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public PhobosCaptain()
         {
-            DEFAULT_POINTS = 95;
+            DEFAULT_POINTS = 85;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "PRIMARIS", "PHOBOS","CAPTAIN"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -140,7 +141,7 @@ namespace Roster_Builder.Space_Marines
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)

@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public StormravenGunship()
         {
-            DEFAULT_POINTS = 310;
+            DEFAULT_POINTS = 260;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "2m1k";
@@ -23,6 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "AIRCRAFT", "TRANSPORT", "FLY", "MACHINE SPIRIT", "STORMRAVEN GUNSHIP"
             });
+            Role = "Flyer";
         }
 
         public override Datasheets CreateUnit()
@@ -92,26 +93,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Twin Lascannon"))
-            {
-                Points += 10;
-            }
-
-            if (Weapons.Contains("Typhoon Missile Launcher"))
-            {
-                Points += 10;
-            }
-
-            if (Weapons.Contains("Twin Multi-melta"))
-            {
-                Points += 20;
-            }
-
-            if (Weapons.Contains("Two Hurricane Bolters"))
-            {
-                Points += 30;
-            }
         }
 
         public override string ToString()

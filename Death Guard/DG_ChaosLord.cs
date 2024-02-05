@@ -22,6 +22,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "INFANTRY", "CHARACTER", "BUBONIC ASTARTES", "LORD OF THE DEATH GUARD", "CHAOS LORD"
             });
+            Role = "HQ";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -169,7 +170,7 @@ namespace Roster_Builder.Death_Guard
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; warlord.SelectedIndex = -1; }
                     break;
                 case 15:
                     if (warlord.SelectedIndex != -1)
@@ -226,18 +227,6 @@ namespace Roster_Builder.Death_Guard
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Balesword") || Weapons.Contains("Combi-flamer") || Weapons.Contains("Combi-melta")
-                || Weapons.Contains("Combi-plasma") || Weapons.Contains("Power Fist"))
-            {
-                Points += 10;
-            }
-
-            if (Weapons.Contains("Lightning Claw") || Weapons.Contains("Power Axe") || Weapons.Contains("Power Maul")
-                || Weapons.Contains("Power Sword"))
-            {
-                Points += 5;
-            }
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }

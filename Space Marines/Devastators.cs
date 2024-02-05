@@ -12,19 +12,20 @@ namespace Roster_Builder.Space_Marines
     {
         int currentIndex;
         int weaponsCheck;
+
         string[] heavyArray = new string[]
         {
             "Grav-cannon",
             "Heavy Bolter",
             "Lascannon",
             "Missile Launcher",
-            "Multi-melta",
+            "Multi-melta (+10 pts)",
             "Plasma Cannon",
         };
 
         public Devastators()
         {
-            DEFAULT_POINTS = 18;
+            DEFAULT_POINTS = 23;
             UnitSize = 5;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "NL2m";
@@ -38,6 +39,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "DEVASTATOR SQUAD"
             });
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -204,7 +206,7 @@ namespace Roster_Builder.Space_Marines
                             "Heavy Bolter",
                             "Lascannon",
                             "Missile Launcher",
-                            "Multi-melta",
+                            "Multi-melta (+10 pts)",
                             "Plasma Cannon",
                         });
                         if (repo.currentSubFaction == "Deathwatch" || repo.currentSubFaction == "Blood Angels")
@@ -232,29 +234,9 @@ namespace Roster_Builder.Space_Marines
             weaponsCheck = 0;
             foreach (string item in Weapons)
             {
-                if (item == "Grav-pistol" || item == "Hand Flamer" || item == "Inferno Pistol"
-                    || item == "Lightning Claw" || item == "Plasma Pistol" || item == "Power Axe"
-                    || item == "Power Maul" || item == "Power Sword" || item == "Storm Bolter")
-                {
-                    Points += 5;
-                }
-
-                if (item == "Combi-flamer" || item == "Combi-grav" || item == "Combi-melta"
-                    || item == "Combi-plasma" || item == "Grav-cannon"|| item == "Heavy Bolter" 
-                    || item == "Heavy Flamer" || item == "Power Fist")
+                if (item == "Multi-melta (+10 pts)")
                 {
                     Points += 10;
-                }
-
-                if (item == "Lascannon" || item == "Missile Launcher" || item == "Plasma Cannon"
-                    || item == "Thunder Hammer")
-                {
-                    Points += 15;
-                }
-
-                if (item == "Multi-melta")
-                {
-                    Points += 20;
                 }
 
                 if(heavyArray.Contains(item))

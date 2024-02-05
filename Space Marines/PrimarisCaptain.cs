@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public PrimarisCaptain()
         {
-            DEFAULT_POINTS = 90;
+            DEFAULT_POINTS = 80;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m1k_c";
             Weapons.Add("Master-crafted Auto Bolt Rifle");
@@ -21,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "PRIMARIS", "CAPTAIN"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -60,6 +61,10 @@ namespace Roster_Builder.Space_Marines
                 cmbOption1.Items.Add("Special Issue Bolt Carbine");
             }
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+            if(Relic == "Purgatorus")
+            {
+                cmbOption1.Items.RemoveAt(3);
+            }
 
             if(f.currentSubFaction == "Dark Angels")
             {
@@ -113,6 +118,15 @@ namespace Roster_Builder.Space_Marines
             cmbFactionupgrade.Items.Clear();
             cmbFactionupgrade.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
 
+            if (Factionupgrade != null)
+            {
+                cmbFactionupgrade.SelectedIndex = cmbFactionupgrade.Items.IndexOf(Factionupgrade);
+            }
+            else
+            {
+                cmbFactionupgrade.SelectedIndex = 0;
+            }
+
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
@@ -163,6 +177,11 @@ namespace Roster_Builder.Space_Marines
                     else
                     {
                         cbOption1.Enabled = true;
+                        if(Relic == "Soldier's Blade" || Relic == "The Burning Blade")
+                        {
+                            cbOption1.Checked = true;
+                            cbOption1.Enabled = false;
+                        }
                     }
                     break;
                 case 15:
@@ -179,7 +198,99 @@ namespace Roster_Builder.Space_Marines
                     Factionupgrade = cmbFactionupgrade.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if(chosenRelic == "Bellicos Bolt Rifle")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Auto Bolt Rifle");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Lament")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Stalker Bolt Rifle");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Primarch's Wrath")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Special Issue Bolt Carbine");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Burning Blade")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                        cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
+                    }
+                    else if (chosenRelic == "The Shield Eternal")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Soldier's Blade")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol")
+                    {
+                        cmbOption1.SelectedIndex = 3;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Purgatorus")
+                    {
+                        cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Ex Tenebris")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Silentus Pistol")
+                    {
+                        cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
+                    }
+                    else if (chosenRelic == "Scimitar of the Great Khan")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Equis-pattern Bolt Pistol")
+                    {
+                        cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
+                    }
+                    else if (chosenRelic == "The Spartean")
+                    {
+                        cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
+                    }
+                    else if (chosenRelic == "Duty's Burden")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Stalker Bolt Rifle");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Vengeance")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Terra")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                        cbOption1.Enabled = true;
+                        if(!(cmbOption1.Items.Contains("Plasma Pistol and Power Fist")))
+                        {
+                            cmbOption1.Items.Insert(3, "Plasma Pistol and Power Fist");
+                        }
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 21:
                     if (cbOption1.Checked)
@@ -196,7 +307,7 @@ namespace Roster_Builder.Space_Marines
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -228,16 +339,6 @@ namespace Roster_Builder.Space_Marines
 
             Points = DEFAULT_POINTS;
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
-
-            if (Weapons[0] == "Heavy Bolt Pistol, Master-crafted Power Sword and Relic Shield" || Weapons[1] == "Power Fist")
-            {
-                Points += 10;
-            }
-
-            if (Weapons[1] == "Master-crafted Power Sword")
-            {
-                Points += 5;
-            }
         }
 
         public override string ToString()

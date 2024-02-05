@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public Overlord()
         {
-            DEFAULT_POINTS = 95;
+            DEFAULT_POINTS = 90;
             TemplateCode = "1m1k_c";
             Points = DEFAULT_POINTS;
             Weapons.Add("Tachyon Arrow and Hyperphaise Glaive");
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "CHARACTER", "NOBLE", "OVERLORD"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -54,13 +55,13 @@ namespace Roster_Builder.Necrons
                 "Staff of Light",
                 "Tachyon Arrow and Hyperphaise Glaive",
                 "Voidblade",
-                "Voidscythe",
+                "Voidscythe (+10 pts)",
                 "Warscythe"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            cbOption1.Text = "Resurrection Orb";
-            if (Weapons[1] == "Resurrection Orb")
+            cbOption1.Text = "Resurrection Orb (+25 pts)";
+            if (Weapons[1] == "Resurrection Orb (+25 pts)")
             {
                 cbOption1.Checked = true;
             }
@@ -117,6 +118,8 @@ namespace Roster_Builder.Necrons
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
+
+            cbOption1.Enabled = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -162,57 +165,28 @@ namespace Roster_Builder.Necrons
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Warscythe");
                         cmbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Solar Staff")
+                    else if (cmbRelic.SelectedItem.ToString() == "Solar Staff")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Staff of Light");
                         cmbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "The Arrow of Infinity")
+                    else if(cmbRelic.SelectedItem.ToString() == "The Arrow of Infinity")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Tachyon Arrow and Hyperphaise Glaive");
                         cmbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Orb of Eternity")
+                    else if(cmbRelic.SelectedItem.ToString() == "Orb of Eternity")
                     {
                         cbOption1.Checked = true;
                         cbOption1.Enabled = false;
                         cmbOption1.Items.Remove("Tachyon Arrow and Hyperphaise Glaive");
                     }
-                    else
-                    {
-                        cbOption1.Enabled = true;
-                        if(!Weapons.Contains("Tachyon Arrow and Hyperphaise Glaive"))
-                        {
-                            cmbOption1.Items.Insert(2, "Tachyon Arrow and Hyperphaise Glaive");
-                        }
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Voidreaper")
+                    else if(cmbRelic.SelectedItem.ToString() == "Voidreaper")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Warscythe");
                         cmbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Voltaic Staff")
+                    else if(cmbRelic.SelectedItem.ToString() == "Voltaic Staff")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Staff of Light");
                         cmbOption1.Enabled = false;
@@ -220,16 +194,19 @@ namespace Roster_Builder.Necrons
                     else
                     {
                         cmbOption1.Enabled = true;
+                        cbOption1.Enabled = true;
                     }
                     break;
                 case 21:
                     if (cbOption1.Checked)
                     {
                         Weapons[1] = cbOption1.Text;
+                        cmbOption1.Items.RemoveAt(2);
                     }
                     else
                     {
                         Weapons[1] = "";
+                        cmbOption1.Items.Insert(2, "Tachyon Arrow and Hyperphaise Glaive");
                     }
                     break;
                 case 25:
@@ -237,7 +214,7 @@ namespace Roster_Builder.Necrons
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -269,24 +246,14 @@ namespace Roster_Builder.Necrons
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Warscythe"))
+            if (Weapons.Contains("Voidscythe (+10 pts)"))
             {
-                Points += 5;
+                Points += 10;
             }
 
-            if (Weapons.Contains("Voidscythe"))
+            if (Weapons.Contains("Resurrection Orb (+25 pts)"))
             {
-                Points += 15;
-            }
-
-            if (Weapons.Contains("Resurrection Orb"))
-            {
-                Points += 30;
-            }
-
-            if(Weapons.Contains("Tachyon Arrow and Hyperphaise Glaive"))
-            {
-                Points += 5;
+                Points += 25;
             }
         }
 

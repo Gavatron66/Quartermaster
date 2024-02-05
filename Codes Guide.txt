@@ -8,11 +8,14 @@
 	17 - cmbRelic
 	18 - cmbOption5
 	19 - cmbOption6
+	111 - cmbDiscipline
 2X - Checkboxes
 	21 - cbOption1
 	22 - cbOption2
 	23 - cbOption3
+	24 - cbOption4
 	25 - cbWarlord
+	26 - cbOption5
 3X - NumericUpDowns
 	30 - nudUnitSize
 	31 - nudOption1
@@ -37,6 +40,15 @@
 	72 - cbStratagem2 (For Relic Requisition only)
 	73 - cbStratagem3
 	
+Roles: HQ
+	   Troops
+	   Elites
+	   Fast Attack
+	   Heavy Support
+	   Transport
+	   Flyer
+	   Lord of War
+	   Fortification
 ----------------------
 	Template Codes
 ----------------------

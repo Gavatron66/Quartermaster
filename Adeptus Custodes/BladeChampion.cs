@@ -11,7 +11,7 @@ namespace Roster_Builder.Adeptus_Custodes
     {
         public BladeChampion()
         {
-            DEFAULT_POINTS = 110;
+            DEFAULT_POINTS = 120;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "INFANTRY", "CHARACTER", "BLADE CHAMPION"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -121,7 +122,7 @@ namespace Roster_Builder.Adeptus_Custodes
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)

@@ -22,6 +22,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ANATHEMA PSYKANA",
                 "VEHICLE", "TRANSPORT", "SMOKESCREEN", "RHINO"
             });
+            Role = "Transport";
         }
 
         public override Datasheets CreateUnit()
@@ -35,7 +36,7 @@ namespace Roster_Builder.Adeptus_Custodes
 
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
 
-            cbOption1.Text = "Hunter-killer Missile";
+            cbOption1.Text = "Hunter-killer Missile (+5 pts)";
             if (Weapons[0] != string.Empty)
             {
                 cbOption1.Checked = true;
@@ -62,7 +63,7 @@ namespace Roster_Builder.Adeptus_Custodes
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Hunter-killer Missile"))
+            if (Weapons.Contains("Hunter-killer Missile (+5 pts)"))
             {
                 Points += 5;
             }

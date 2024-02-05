@@ -23,6 +23,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "GENESTEALER", "PURESTRAIN GENESTEALERS"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -33,6 +34,8 @@ namespace Roster_Builder.Genestealer_Cults
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
+            repo = f as GSC;
+
             panel.Controls["cmbFactionUpgrade"].Visible = true;
             panel.Controls["lblFactionUpgrade"].Visible = true;
 

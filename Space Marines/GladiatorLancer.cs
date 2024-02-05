@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public GladiatorLancer()
         {
-            DEFAULT_POINTS = 200;
+            DEFAULT_POINTS = 125;
             UnitSize = 1;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "1m3k";
@@ -24,6 +24,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "GLADIATOR", "REPULSOR FIELD", "GLADIATOR LANCER"
             });
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -114,19 +115,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons[1] != string.Empty)
-            {
-                Points += 5;
-            }
-            if (Weapons[2] != string.Empty)
-            {
-                Points += 5;
-            }
-            if (Weapons[3] != string.Empty)
-            {
-                Points += 5;
-            }
         }
 
         public override string ToString()

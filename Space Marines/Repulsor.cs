@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Repulsor()
         {
-            DEFAULT_POINTS = 315;
+            DEFAULT_POINTS = 220;
             UnitSize = 1;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "6m1k";
@@ -27,6 +27,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "TRANSPORT", "MACHINE SPIRIT", "REPULSOR FIELD", "REPULSOR"
             });
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -147,21 +148,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons[0] == "Twin Lascannon")
-            {
-                Points += 10;
-            }
-
-            if (Weapons[1] == "Las-talon")
-            {
-                Points += 5;
-            }
-
-            if (Weapons[2] == "Onslaught Gatling Cannon")
-            {
-                Points += 15;
-            }
         }
 
         public override string ToString()

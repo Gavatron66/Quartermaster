@@ -27,6 +27,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "INFANTRY", "CORE", "CUSTODIAN GUARD"
             });
+            Role = "Troops";
         }
 
         public override Datasheets CreateUnit()
@@ -70,7 +71,7 @@ namespace Roster_Builder.Adeptus_Custodes
             cmbOption1.Items.AddRange(new string[]
             {
                 "Guardian Spear",
-                "Sentinel Blade and Praesidium Shield"
+                "Sentinel Blade and Praesidium Shield (+5 pts)"
             });
 
             cbOption1.Text = "Misericordia";
@@ -87,7 +88,7 @@ namespace Roster_Builder.Adeptus_Custodes
             {
                 case 11:
                     Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
-                    if (Weapons[currentIndex * 2] == "Sentinel Blade and Praesidium Shield")
+                    if (Weapons[currentIndex * 2] == "Sentinel Blade and Praesidium Shield (+5 pts)")
                     {
                         cbOption1.Enabled = false;
                         cbOption1.Checked = false;
@@ -179,12 +180,7 @@ namespace Roster_Builder.Adeptus_Custodes
 
             foreach (var item in Weapons)
             {
-                if(item == "Misericordia")
-                {
-                    Points += 3;
-                }
-
-                if(item == "Sentinel Blade and Praesidium Shield")
+                if(item == "Sentinel Blade and Praesidium Shield (+5 pts)")
                 {
                     Points += 5;
                 }

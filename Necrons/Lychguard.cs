@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public Lychguard()
         {
-            DEFAULT_POINTS = 28;
+            DEFAULT_POINTS = 25;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "N1m";
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFATRY", "CORE", "LYCHGUARD"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()

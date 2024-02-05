@@ -20,6 +20,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "SWARM", "FLY", "CANOPTEK", "CANOPTEK SCARAB SWARMS"
             });
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()

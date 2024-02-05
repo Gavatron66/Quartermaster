@@ -12,7 +12,7 @@ namespace Roster_Builder.Adeptus_Custodes
         public Vigilators()
         {
             UnitSize = 5;
-            DEFAULT_POINTS = 14;
+            DEFAULT_POINTS = 12;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "N";
             Keywords.AddRange(new string[]
@@ -20,6 +20,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ANATHEMA PSYKANA",
                 "INFANTRY", "CORE", "VIGILATORS"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()

@@ -12,7 +12,7 @@ namespace Roster_Builder.Adeptus_Custodes
     {
         public AllarusShieldCaptain()
         {
-            DEFAULT_POINTS = 125;
+            DEFAULT_POINTS = 115;
             TemplateCode = "1m1k_c";
             Points = DEFAULT_POINTS;
             Weapons.Add("Guardian Spear");
@@ -22,6 +22,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "INFANTRY", "CHARACTER", "TELEPORT HOMER", "TERMINATOR", "ALLARUS", "SHIELD-CAPTAIN"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -168,6 +169,21 @@ namespace Roster_Builder.Adeptus_Custodes
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Guardian Spear");
                         cmbOption1.Enabled = false;
                     }
+                    else if (cmbRelic.SelectedItem.ToString() == "Paragon Spear")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Guardian Spear");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (cmbRelic.SelectedItem.ToString() == "Admonimortis")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Castellan Axe");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (cmbRelic.SelectedItem.ToString() == "Swiftsilver Talon")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Guardian Spear");
+                        cmbOption1.Enabled = false;
+                    }
                     else
                     {
                         cmbOption1.Enabled = true;
@@ -188,7 +204,7 @@ namespace Roster_Builder.Adeptus_Custodes
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -219,11 +235,6 @@ namespace Roster_Builder.Adeptus_Custodes
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Misericordia"))
-            {
-                Points += 5;
-            }
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }

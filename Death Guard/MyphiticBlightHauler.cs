@@ -11,7 +11,7 @@ namespace Roster_Builder.Death_Guard
     {
         public MyphiticBlightHauler()
         {
-            DEFAULT_POINTS = 140;
+            DEFAULT_POINTS = 110;
             Points = DEFAULT_POINTS;
             UnitSize = 1;
             TemplateCode = "N";
@@ -20,6 +20,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "VEHICLE", "DAEMON", "DAEMON ENGINE", "MYPHITIC BLIGHT-HAULERS"
             });
+            Role = "Fast Attack";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)

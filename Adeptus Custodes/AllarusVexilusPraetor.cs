@@ -22,6 +22,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "INFANTRY", "CHARACTER", "TELEPORT HOMER", "TERMINATOR", "ALLARUS", "VEXILUS PRAETOR"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -161,7 +162,7 @@ namespace Roster_Builder.Adeptus_Custodes
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -192,11 +193,6 @@ namespace Roster_Builder.Adeptus_Custodes
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Misericordia"))
-            {
-                Points += 5;
-            }
         }
 
         public override string ToString()

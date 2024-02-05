@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public StormSpeederHailstrike()
         {
-            DEFAULT_POINTS = 150;
+            DEFAULT_POINTS = 115;
             UnitSize = 1;
             Points = DEFAULT_POINTS * UnitSize;
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "FLY", "STORM SPEEDER", "HAILSTRIKE"
             });
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()

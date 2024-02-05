@@ -21,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "TRANSPORT", "DROP POD"
             });
+            Role = "Transport";
         }
 
         public override Datasheets CreateUnit()

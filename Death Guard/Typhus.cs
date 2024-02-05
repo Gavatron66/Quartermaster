@@ -23,6 +23,7 @@ namespace Roster_Builder.Death_Guard
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
             WarlordTrait = "Shamblerot (Contagion)";
+            Role = "HQ";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -35,11 +36,14 @@ namespace Roster_Builder.Death_Guard
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
 
+            cmbWarlord.Items.Clear();
+            cmbWarlord.Items.Add("Shamblerot (Contagion)");
+            cmbWarlord.SelectedIndex = 0;
+
             if (isWarlord)
             {
                 cbWarlord.Checked = true;
                 cmbWarlord.Enabled = true;
-                cmbWarlord.Text = WarlordTrait;
             }
             else
             {
@@ -48,6 +52,14 @@ namespace Roster_Builder.Death_Guard
             }
 
             lblPsyker.Text = "Select two of the following:";
+            List<string> psykerpowers = new List<string>();
+            psykerpowers = repo.GetPsykerPowers("");
+            clbPsyker.Items.Clear();
+            foreach (string power in psykerpowers)
+            {
+                clbPsyker.Items.Add(power);
+            }
+
             clbPsyker.ClearSelected();
             for (int i = 0; i < clbPsyker.Items.Count; i++)
             {

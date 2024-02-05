@@ -12,7 +12,7 @@ namespace Roster_Builder.Death_Guard
     {
         public BiologusPutrifier()
         {
-            DEFAULT_POINTS = 65;
+            DEFAULT_POINTS = 60;
             UnitSize = 1;
             TemplateCode = "c";
             Points = DEFAULT_POINTS;
@@ -21,6 +21,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "INFANTRY", "CHARACTER", "BUBONIC ASTARTES", "FOETID VIRION", "BIOLOGUS PUTRIFIER"
             });
+            Role = "Elites";
         }
         public override void LoadDatasheets(Panel panel, Faction f)
         {

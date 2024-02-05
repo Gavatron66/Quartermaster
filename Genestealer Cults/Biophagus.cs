@@ -22,6 +22,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "CHARACTER", "BIOPHAGUS"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -138,7 +139,17 @@ namespace Roster_Builder.Genestealer_Cults
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if (chosenRelic == "The Crouchling")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cbOption1.Enabled = true;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 21:
                     if (cbOption1.Checked)
@@ -152,7 +163,7 @@ namespace Roster_Builder.Genestealer_Cults
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -170,11 +181,6 @@ namespace Roster_Builder.Genestealer_Cults
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Alchemicus Familiar"))
-            {
-                Points += 10;
-            }
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }

@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public Psychomancer()
         {
-            DEFAULT_POINTS = 70;
+            DEFAULT_POINTS = 65;
             Points = DEFAULT_POINTS;
             TemplateCode = "c";
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "CHARACTER", "FLY", "CRYPTEK", "PSYCHOMANCER"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -141,7 +142,7 @@ namespace Roster_Builder.Necrons
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)

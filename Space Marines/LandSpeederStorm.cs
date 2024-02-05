@@ -11,12 +11,13 @@ namespace Roster_Builder.Space_Marines
     {
         public LandSpeederStorm()
         {
-            Points = 55;
+            Points = 50;
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "LAND SPEEDER", "SCOUT", "FLY", "TRANSPORT", "LAND SPEEDER STORM"
             });
+            Role = "Transport";
         }
 
         public override Datasheets CreateUnit()

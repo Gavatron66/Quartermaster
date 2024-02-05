@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public TranscendentCtan()
         {
-            DEFAULT_POINTS = 270;
+            DEFAULT_POINTS = 230;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "ncp";
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "MONSTER", "CHARACTER", "FLY", "C'TAN SHARD", "TRANSCENDENT C'TAN"
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()

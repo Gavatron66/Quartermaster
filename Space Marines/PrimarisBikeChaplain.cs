@@ -20,6 +20,7 @@ namespace Roster_Builder.Space_Marines
                 "BIKER", "CHARACTER", "PRIMARIS", "PRIEST", "CHAPLAIN"
             });
             PsykerPowers = new string[1] { string.Empty };
+            Role = "HQ";
         }
         public override Datasheets CreateUnit()
         {
@@ -165,7 +166,7 @@ namespace Roster_Builder.Space_Marines
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
                     if (clbPsyker.CheckedItems.Count == 1)

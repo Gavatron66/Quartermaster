@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Aggressors()
         {
-            DEFAULT_POINTS = 40;
+            DEFAULT_POINTS = 30;
             UnitSize = 3;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "N1m";
@@ -21,6 +21,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "PRIMARIS", "MK X GRAVIS", "AGGRESSOR SQUAD"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -67,11 +68,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            if (!Weapons.Contains("Flamestorm Gauntlets"))
-            {
-                Points += 5 * UnitSize;
-            }
         }
 
         public override string ToString()

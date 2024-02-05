@@ -16,8 +16,8 @@ namespace Roster_Builder.Genestealer_Cults
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "3N1kS(2m)";
             Weapons.Add("5"); //AutopistolS
-            Weapons.Add("0"); //Hand FlamerS
-            Weapons.Add("0"); //Cult Icon
+            Weapons.Add("0"); //Hand Flamer (+3 pts)S
+            Weapons.Add("0"); //Cult Icon (+10 pts)
             Weapons.Add("Autopistol"); //Leader Option 1
             Weapons.Add("Metamorph Mutations"); //Leader Option 2
             Keywords.AddRange(new string[]
@@ -25,6 +25,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "CORE", "CROSSFIRE", "HYBRID METAMORPHS"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -35,6 +36,7 @@ namespace Roster_Builder.Genestealer_Cults
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
+            repo = f as GSC;
 
             panel.Controls["lblFactionUpgrade"].Visible = true;
             panel.Controls["cmbFactionUpgrade"].Visible = true;
@@ -54,9 +56,9 @@ namespace Roster_Builder.Genestealer_Cults
             ComboBox gb_cmbOption2 = groupBox.Controls["gb_cmbOption2"] as ComboBox;
 
             lblnud1.Text = "Models with Autopistols:";
-            lblnud2.Text = "Models with Hand Flamer:";
+            lblnud2.Text = "Models with Hand Flamers (+3 pts):";
 
-            cbOption1.Text = "Cult Icon";
+            cbOption1.Text = "Cult Icon (+10 pts)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -93,14 +95,14 @@ namespace Roster_Builder.Genestealer_Cults
             gb_cmbOption1.Items.Clear();
             gb_cmbOption1.Items.AddRange(new string[] {
                 "Autopistol",
-                "Cult Bonesword",
+                "Cult Bonesword (+5 pts)",
                 "Cult Lash Whip"
             });
             gb_cmbOption1.SelectedIndex = gb_cmbOption1.Items.IndexOf(Weapons[3]);
 
             gb_cmbOption2.Items.Clear();
             gb_cmbOption2.Items.AddRange(new string[] {
-                "Cult Bonesword",
+                "Cult Bonesword (+5 pts)",
                 "Cult Lash Whip",
                 "Metamorph Mutations"
             });
@@ -195,7 +197,7 @@ namespace Roster_Builder.Genestealer_Cults
 
             for(int i = 3; i < 5; i++)
             {
-                if (Weapons[i] == "Cult Bonesword")
+                if (Weapons[i] == "Cult Bonesword (+5 pts)")
                 {
                     Points += 5;
                 }

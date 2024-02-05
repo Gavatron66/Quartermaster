@@ -3,8 +3,8 @@ Models to add checks for Numeric Up Down controls:
 	Necron Warriors
 	Hybrid Metamorphs
 	InvaderATVs
-	
-Detachments?
+	Sicarian Infiltrators
+	Sicarian Ruststalkers
 
 Genestealer Cults has weird custom factions
 	Add either more boxes or do a Checkbox system
@@ -17,21 +17,33 @@ Implement the remianing unique stratagems for the following:
 	Adeptus Custodes
 	GSC
 	Space Marines
+	Aeldari
+	Harlequins
+	Tyranids
+	Mechanicus
 	
 Space Marines has limits on what each unit can take depending on subchapter. Most of the time, this isn't a problem. The following have a codex supplement that adds/changes their rosters:
 	Black Templars
 	Dark Angels
 	Deathwatch
 	Space Wolves
-The following have codex supplements that adds to their rosters:
-	Salamanders
-	Ultramarines
-	Raven Guard
-	White Scars
-	Iron Hands
-	Imperial Fists
+	Blood Angels
 	
 Prohibit selecting the same custom faction trait
 
 Space Marines
 	Intercessor Sergeant has some wierd options, will have to go back and add restrictions where nessecary
+	
+Hybrid Metamorphs needs to be visited when the location and sizing rework is ready
+	Atalan Jackals
+
+Need to Fix the custom faction stuff, it doesn't seem to working
+
+Fix Named Characters? Some named Characters belong to specific subfactions, and technically if they contain a different subfaction keyword than they invalidate the detachment.
+	Finish fixing Warlord traits for Necrons
+
+Compare Primaris Lieutenant and Primaris Captain
+	They have annoyingly complicated options, so going to need some testing for it
+Some Aeldari Vehicles show points cost in the select list.
+
+Tyranids need a look at custom Hive Fleets

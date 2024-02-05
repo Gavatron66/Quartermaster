@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public NecronLord()
         {
-            DEFAULT_POINTS = 70;
+            DEFAULT_POINTS = 65;
             TemplateCode = "1m1k_c";
             Points = DEFAULT_POINTS;
             Weapons.Add("Staff of Light");
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "CHARACTER", "NOBLE", "LORD"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -46,7 +47,6 @@ namespace Roster_Builder.Necrons
                 cmbWarlord.Items.Add(item);
             }
 
-
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
@@ -57,8 +57,8 @@ namespace Roster_Builder.Necrons
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            cbOption1.Text = "Resurrection Orb";
-            if (Weapons[1] == "Resurrection Orb")
+            cbOption1.Text = "Resurrection Orb (+25 pts)";
+            if (Weapons[1] == "Resurrection Orb (+25 pts)")
             {
                 cbOption1.Checked = true;
             } else
@@ -148,42 +148,23 @@ namespace Roster_Builder.Necrons
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Warscythe");
                         cmbOption1.Enabled = false;
-                    } else
-                    {
-                        cmbOption1.Enabled = true;
                     }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Solar Staff")
+                    else if (cmbRelic.SelectedItem.ToString() == "Solar Staff")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Staff of Light");
                         cmbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Orb of Eternity")
+                    else if (cmbRelic.SelectedItem.ToString() == "Orb of Eternity")
                     {
                         cbOption1.Checked = true;
                         cbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Voidreaper")
+                    else if (cmbRelic.SelectedItem.ToString() == "Voidreaper")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Warscythe");
                         cmbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Voltaic Staff")
+                    else if (cmbRelic.SelectedItem.ToString() == "Voltaic Staff")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Staff of Light");
                         cmbOption1.Enabled = false;
@@ -191,6 +172,7 @@ namespace Roster_Builder.Necrons
                     else
                     {
                         cmbOption1.Enabled = true;
+                        cbOption1.Enabled = true;
                     }
                     break;
                 case 21:
@@ -208,7 +190,7 @@ namespace Roster_Builder.Necrons
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -240,20 +222,15 @@ namespace Roster_Builder.Necrons
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Warscythe"))
+            if (Weapons.Contains("Resurrection Orb (+25 pts)"))
             {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Resurrection Orb"))
-            {
-                Points += 30;
+                Points += 25;
             }
         }
 
         public override string ToString()
         {
-            return "Lord - " + Points + "pts";
+            return "Necron Lord - " + Points + "pts";
         }
     }
 }

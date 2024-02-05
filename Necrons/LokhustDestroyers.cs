@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public LokhustDestroyers()
         {
-            DEFAULT_POINTS = 55;
+            DEFAULT_POINTS = 40;
             UnitSize = 1;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "N1kS(1m)";
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "FLY", "DESTROYER CULT", "LOKHUST DESTROYERS"
             });
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -48,7 +49,7 @@ namespace Roster_Builder.Necrons
             }
             nudUnitSize.Value = currentSize;
 
-            cbOption1.Text = "Include 1 Lokhust Heavy Destroyer";
+            cbOption1.Text = "Include 1 Lokhust Heavy Destroyer (+45 pts)";
             if (Weapons[0] == "")
             {
                 cbOption1.Checked = false;
@@ -105,9 +106,9 @@ namespace Roster_Builder.Necrons
                         gb_cmbOption1.SelectedIndex = -1;
                         if(UnitSize != 1)
                         {
-                            nudUnitSize.Value = UnitSize - 1;
-                            nudUnitSize.Maximum = 6;
                             nudUnitSize.Minimum = 1;
+                            nudUnitSize.Value = (Decimal)(UnitSize - 1);
+                            nudUnitSize.Maximum = 6;
                         }
                     }
                     break;
@@ -126,7 +127,7 @@ namespace Roster_Builder.Necrons
 
             if (cbOption1.Checked)
             {
-                Points += 15;
+                Points += 5;
             }
             
         }

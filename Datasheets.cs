@@ -164,6 +164,7 @@ namespace Roster_Builder
         public bool antiLoop { get; set; }
         public List<string> Stratagem { get; set; }
         public Faction repo { get; set; }
+        public string Role { get; set; }
         public Datasheets()
         {
             Weapons = new List<string>();

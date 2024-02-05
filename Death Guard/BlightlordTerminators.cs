@@ -29,6 +29,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "INFANTRY", "CORE", "BUBONIC ASTARTES", "TERMINATOR", "BLIGHTLORD TERMINATORS"
             });
+            Role = "Elites";
         }
         public override void LoadDatasheets(Panel panel, Faction f)
         {
@@ -212,17 +213,6 @@ namespace Roster_Builder.Death_Guard
             }
 
             Points = UnitSize * DEFAULT_POINTS;
-
-            for(int i = 0; i < Weapons.Count; i++)
-            {
-                if (Weapons[i] == "Blight Launcher" || Weapons[i] == "Combi-flamer" ||
-                    Weapons[i] == "Combi-melta" || Weapons[i] == "Combi-plasma" ||
-                    Weapons[i] == "Flail of Corruption" || Weapons[i] == "Plague Spewer" ||
-                    Weapons[i] == "Reaper Autocannon")
-                {
-                    Points += 5;
-                }
-            }
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }

@@ -9,9 +9,10 @@ namespace Roster_Builder.Space_Marines
 {
     public class AssaultSquad : Datasheets
     {
-        int currentIndex = 18;
+        int currentIndex = 0;
         bool isLoading = false;
         int[] restrictArray = new int[] { 0, 0 };
+
         public AssaultSquad()
         {
             DEFAULT_POINTS = 18;
@@ -31,6 +32,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "MELTA BOMBS", "ASSAULT SQUAD"
             });
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()
@@ -279,46 +281,6 @@ namespace Roster_Builder.Space_Marines
 
             restrictArray[0] = 0;
             restrictArray[1] = 0;
-            foreach(string weapon in Weapons)
-            {
-                if(weapon.Contains("Eviscerator"))
-                {
-                    restrictArray[1] += 1;
-                    Points += 10;
-                }
-
-                if(weapon == cbOption2.Text || weapon == "Grav-pistol" || weapon == "Hand Flamer"
-                    || weapon == "Inferno Pistol" || weapon == "Lightning Claw" || weapon.Contains("Plasma Pistol")
-                    || weapon == "Power Axe" || weapon == "Power Maul" || weapon == "Power Sword")
-                {
-                    Points += 5;
-                    if(weapon.Contains("Plasma Pistol") && !(weapon == "Plasma Pistol"))
-                    {
-                        restrictArray[0] += 1;
-                    }
-                }
-
-                if(weapon == "Flamer")
-                {
-                    restrictArray[0] += 1;
-                    Points += 5;
-                }
-
-                if(weapon == "Power Fist")
-                {
-                    Points += 10;
-                }
-
-                if(weapon == "Thunder Hammer")
-                {
-                    Points += 15;
-                }
-
-                if(weapon == cbOption1.Text)
-                {
-                    Points += UnitSize * 2;
-                }
-            }
         }
 
         public override string ToString()

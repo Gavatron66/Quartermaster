@@ -27,6 +27,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "BIKER", "CORE", "SCOUT", "SMOKESCREEN", "SCOUT BIKE SQUAD"
             });
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()
@@ -172,27 +173,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = UnitSize * DEFAULT_POINTS;
-
-            foreach (string weapon in Weapons)
-            {
-                if(weapon == "Grav-pistol" || weapon == "Hand Flamer" || weapon == "Inferno Pistol" || weapon == "Lightning Claw"
-                    || weapon == "Plasma Pistol" || weapon == "Power Axe" || weapon == "Power Maul" || weapon == "Power Sword"
-                    || weapon == "Storm Bolter")
-                {
-                    Points += 5;
-                }
-
-                if(weapon == "Combi-flamer" || weapon == "Combi-grav" || weapon == "Combi-melta" || weapon == "Combi-plasma"
-                    || weapon == "Power Fist")
-                {
-                    Points += 10;
-                }
-
-                if(weapon == "Thunder Hammer")
-                {
-                    Points += 15;
-                }
-            }
         }
 
         public override string ToString()

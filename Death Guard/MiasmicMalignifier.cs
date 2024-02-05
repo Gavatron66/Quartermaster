@@ -12,7 +12,7 @@ namespace Roster_Builder.Death_Guard
         public MiasmicMalignifier()
         {
             UnitSize = 2; //Miasmic Malignifier comes with a Pox Furnace
-            DEFAULT_POINTS = 75;
+            DEFAULT_POINTS = 65;
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
             {

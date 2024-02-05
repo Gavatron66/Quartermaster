@@ -22,6 +22,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "CORE", "SMOKESCREEN", "DREADNOUGHT"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -83,20 +84,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS;
-
-            for (int i = 0; i < Weapons.Count; i++)
-            {
-                if (Weapons[i].Contains("Heavy Flamer") || Weapons[i].Contains("Helfrost Cannon") || Weapons[i].Contains("Multi-melta"))
-                {
-                    Points += 5;
-                }
-
-                if (Weapons[i].Contains("Twin Lascannon"))
-                {
-                    Points += 20;
-                }
-            }
-
         }
 
         public override string ToString()

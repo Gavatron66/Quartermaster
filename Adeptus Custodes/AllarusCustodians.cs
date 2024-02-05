@@ -13,7 +13,7 @@ namespace Roster_Builder.Adeptus_Custodes
 
         public AllarusCustodians()
         {
-            DEFAULT_POINTS = 65;
+            DEFAULT_POINTS = 60;
             UnitSize = 1;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "NL1m1k";
@@ -27,6 +27,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "INFANTRY", "CORE", "TELEPORT HOMER", "TERMINATOR", "ALLARUS", "CUSTODIANS"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -168,14 +169,6 @@ namespace Roster_Builder.Adeptus_Custodes
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            foreach (var item in Weapons)
-            {
-                if (item == "Misericordia")
-                {
-                    Points += 3;
-                }
-            }
         }
 
         public override string ToString()

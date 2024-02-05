@@ -11,7 +11,7 @@ namespace Roster_Builder.Death_Guard
     {
         public ChaosLandRaider()
         {
-            DEFAULT_POINTS = 285;
+            DEFAULT_POINTS = 245;
             Points = DEFAULT_POINTS;
             UnitSize = 1;
             TemplateCode = "1m1k";
@@ -22,6 +22,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "VEHICLE", "BUBONIC ASTARTES", "TRANSPORT", "MACHINE SPIRIT", "SMOKESCREEN", "CHAOS LAND RAIDER"
             });
+            Role = "Heavy Support";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -69,21 +70,6 @@ namespace Roster_Builder.Death_Guard
             }
 
             Points = DEFAULT_POINTS;
-
-            if(Weapons.Contains("Combi-bolter"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Havoc Launcher"))
-            {
-                Points += 5;
-            }
-
-            if(Weapons.Contains("Combi-flamer") || Weapons.Contains("Combi-melta") || Weapons.Contains("Combi-plasma"))
-            {
-                Points += 10;
-            }
         }
 
         public override string ToString()

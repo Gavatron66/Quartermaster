@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public CompanyAncient()
         {
-            DEFAULT_POINTS = 75;
+            DEFAULT_POINTS = 65;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m_c";
             Weapons.Add("Bolt Pistol");
@@ -20,6 +20,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "ANCIENT", "COMMAND SQUAD", "COMPANY ANCIENT"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -156,14 +157,119 @@ namespace Roster_Builder.Space_Marines
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if (chosenRelic == "Primarch's Wrath")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Purgatorus")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Teeth of Terra")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Astartes Chainsword");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Burning Blade")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Soldier's Blade")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Vengeance of Ultramar")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Drake-smiter")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Thunder Hammer (+10 pts)");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Wrath of Prometheus")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Boltgun");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Nocturne's Vengeance")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-flamer");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Silentus Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Axe of Medusa")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Axe");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Betrayer's Bane")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-melta");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Teeth of Mars")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Astartes Chainsword");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Scimitar of the Great Khan")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Equis-pattern Bolt Pistol")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Spartean")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Vengeance")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Fist");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Terra")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Fist");
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 25:
                     if (cbWarlord.Checked)
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -195,44 +301,6 @@ namespace Roster_Builder.Space_Marines
 
             Points = DEFAULT_POINTS;
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
-
-            string[] fivepointers = new string[]
-            {
-                "Grav-pistol",
-                "Hand Flamer",
-                "Inferno Pistol",
-                "Lightning Claw",
-                "Plasma Pistol",
-                "Power Axe",
-                "Power Maul",
-                "Power Sword",
-                "Storm Bolter"
-            };
-
-            string[] tenpointers = new string[]
-            {
-                "Combi-flamer",
-                "Combi-grav",
-                "Combi-melta",
-                "Combi-plasma",
-                "Power Fist",
-            };
-
-            foreach (string weapon in Weapons)
-            {
-                if (fivepointers.Contains(weapon))
-                {
-                    Points += 5;
-                }
-                else if (tenpointers.Contains(weapon))
-                {
-                    Points += 10;
-                }
-                else if (weapon == "Thunder Hammer")
-                {
-                    Points += 20;
-                }
-            }
         }
 
         public override string ToString()

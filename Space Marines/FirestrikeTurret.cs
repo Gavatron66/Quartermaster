@@ -14,7 +14,7 @@ namespace Roster_Builder.Space_Marines
 
         public FirestrikeTurret()
         {
-            DEFAULT_POINTS = 90;
+            DEFAULT_POINTS = 80;
             UnitSize = 1;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "NL1m";
@@ -27,6 +27,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "ARTILLERY", "FIRESTRIKE SERVO-TURRETS",
             });
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -117,14 +118,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            foreach (string weapon in Weapons)
-            {
-                if (weapon == "Twin Las-talon")
-                {
-                    Points += 40;
-                }
-            }
         }
 
         public override string ToString()

@@ -11,7 +11,7 @@ namespace Roster_Builder.Death_Guard
     {
         public Helbrute()
         {
-            DEFAULT_POINTS = 115;
+            DEFAULT_POINTS = 105;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "2m";
@@ -22,6 +22,7 @@ namespace Roster_Builder.Death_Guard
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAGUE COMPANY>",
                 "VEHICLE", "CORE", "BUBONIC ASTARTES", "HELBRUTE"
             });
+            Role = "Elites";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -44,7 +45,7 @@ namespace Roster_Builder.Death_Guard
                 "Power Scourge",
                 "Reaper Autocannon",
                 "Twin Heavy Bolter",
-                "Twin Lascannon"
+                "Twin Lascannon (+10 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
@@ -129,19 +130,9 @@ namespace Roster_Builder.Death_Guard
 
             for (int i = 0; i < Weapons.Count; i++)
             {
-                if (Weapons[i].Contains("Helbrute Fist w/ Combi-bolter") || Weapons[i].Contains("Multi-melta"))
-                {
-                    Points += 5;
-                }
-
-                if (Weapons[i].Contains("Helbrute Fist w/ Heavy Flamer") || Weapons[i].Contains("Twin Heavy Bolter"))
+                if (Weapons[i].Contains("Twin Lascannon (+10 pts)"))
                 {
                     Points += 10;
-                }
-
-                if (Weapons[i].Contains("Twin Lascannon"))
-                {
-                    Points += 20;
                 }
             }
 

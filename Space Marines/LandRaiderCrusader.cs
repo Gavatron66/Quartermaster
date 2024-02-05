@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public LandRaiderCrusader()
         {
-            DEFAULT_POINTS = 285;
+            DEFAULT_POINTS = 245;
             UnitSize = 1;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "3k";
@@ -24,6 +24,7 @@ namespace Roster_Builder.Space_Marines
                 "VEHICLE", "LAND RAIDER", "TRANSPORT", "ASSAULT LAUNCHERS",  "SMOKESCREEN", "MACHINE SPIRIT", 
                 "LAND RAIDER CRUSADER"
             });
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -101,19 +102,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons[0] != string.Empty)
-            {
-                Points += 5;
-            }
-            if (Weapons[1] != string.Empty)
-            {
-                Points += 5;
-            }
-            if (Weapons[2] != string.Empty)
-            {
-                Points += 25;
-            }
         }
 
         public override string ToString()

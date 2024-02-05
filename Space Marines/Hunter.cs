@@ -22,6 +22,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "SMOKESCREEN", "HUNTER",
             });
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
@@ -35,7 +36,7 @@ namespace Roster_Builder.Space_Marines
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
 
-            cbOption1.Text = "Hunter-killer Missile";
+            cbOption1.Text = "Hunter-killer Missile (+5 pts)";
             if (Weapons[0] != string.Empty)
             {
                 cbOption1.Checked = true;
@@ -80,12 +81,7 @@ namespace Roster_Builder.Space_Marines
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Hunter-killer Missile"))
-            {
-                Points += 5;
-            }
-
-            if (Weapons.Contains("Storm Bolter"))
+            if (Weapons.Contains("Hunter-killer Missile (+5 pts)"))
             {
                 Points += 5;
             }

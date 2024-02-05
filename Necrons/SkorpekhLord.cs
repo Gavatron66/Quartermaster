@@ -20,6 +20,7 @@ namespace Roster_Builder.Necrons
                 "NECRONS", "DESTROYER CULT", "<DYNASTY>",
                 "INFANTRY", "CHARACTER", "SKORPEKH LORD"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -121,7 +122,7 @@ namespace Roster_Builder.Necrons
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)

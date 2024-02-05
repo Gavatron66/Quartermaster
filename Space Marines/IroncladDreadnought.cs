@@ -25,6 +25,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "CORE", "DREADNOUGHT", "SMOKESCREEN", "IRONCLAD DREADNOUGHT"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -122,28 +123,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons[2] == "Heavy Flamer")
-            {
-                Points += 5;
-            }
-
-            if (Weapons[1] == "Ironclad CW and Heavy Flamer")
-            {
-                Points += 5;
-            }
-
-            if (Weapons[1] == "Hurricane Bolter")
-            {
-                Points += 5;
-            }
-
-            if (Weapons[4] == "Ironclad Assault Launchers")
-            {
-                Points += 5;
-            }
-
-            Points += Convert.ToInt32(Weapons[3]) * 5;
         }
 
         public override string ToString()

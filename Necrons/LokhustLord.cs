@@ -11,16 +11,17 @@ namespace Roster_Builder.Necrons
     {
         public LokhustLord()
         {
-            DEFAULT_POINTS = 105;
+            DEFAULT_POINTS = 100;
             TemplateCode = "2m_c";
             Points = DEFAULT_POINTS;
             Weapons.Add("Staff of Light");
-            Weapons.Add("");
+            Weapons.Add("(None)");
             Keywords.AddRange(new string[]
             {
                 "NECRONS", "DESTROYER CULT", "<DYNASTY>",
                 "INFANTRY", "CHARACTER", "FLY", "LOKHUST LORD"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -61,8 +62,8 @@ namespace Roster_Builder.Necrons
             cmbOption2.Items.AddRange(new string[]
             {
                 "(None)",
-                "Phylactery",
-                "Resurrection Orb"
+                "Phylactery (+5 pts)",
+                "Resurrection Orb (+30 pts)"
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
@@ -145,49 +146,29 @@ namespace Roster_Builder.Necrons
                     }
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString(); 
-                    
+                    Relic = cmbRelic.SelectedItem.ToString();
+
                     if (cmbRelic.SelectedItem.ToString() == "Blood Scythe")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Warscythe");
                         cmbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Solar Staff")
+                    else if (cmbRelic.SelectedItem.ToString() == "Solar Staff")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Staff of Light");
                         cmbOption1.Enabled = false;
                     }
-                    else
+                    else if (cmbRelic.SelectedItem.ToString() == "Orb of Eternity")
                     {
-                        cmbOption1.Enabled = true;
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Resurrection Orb (+30 pts)");
+                        cmbOption2.Enabled = false;
                     }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Resurrection Orb")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Orb of Eternity");
-                        cmbOption1.Enabled = false;
-                    }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Voidreaper")
+                    else if (cmbRelic.SelectedItem.ToString() == "Voidreaper")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Warscythe");
                         cmbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Voltaic Staff")
+                    else if (cmbRelic.SelectedItem.ToString() == "Voltaic Staff")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Staff of Light");
                         cmbOption1.Enabled = false;
@@ -195,6 +176,7 @@ namespace Roster_Builder.Necrons
                     else
                     {
                         cmbOption1.Enabled = true;
+                        cmbOption2.Enabled = true;
                     }
                     break;
                 case 25:
@@ -202,7 +184,7 @@ namespace Roster_Builder.Necrons
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -234,17 +216,12 @@ namespace Roster_Builder.Necrons
 
             Points = DEFAULT_POINTS;
 
-            if(Weapons.Contains("Phylactery"))
+            if(Weapons.Contains("Phylactery (+5 pts)"))
             {
                 Points += 5;
             }
 
-            if(Weapons.Contains("Warscythe"))
-            {
-                Points += 5;
-            }
-
-            if(Weapons.Contains("Resurrection Orb"))
+            if(Weapons.Contains("Resurrection Orb (+30 pts)"))
             {
                 Points += 30;
             }

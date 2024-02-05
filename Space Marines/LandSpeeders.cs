@@ -27,6 +27,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "VEHICLE", "FLY", "LAND SPEEDERS"
             });
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()
@@ -117,14 +118,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            foreach (string weapon in Weapons)
-            {
-                if (weapon == "Multi-melta")
-                {
-                    Points += 10;
-                }
-            }
         }
 
         public override string ToString()

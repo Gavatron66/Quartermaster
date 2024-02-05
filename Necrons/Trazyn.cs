@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public Trazyn()
         {
-            DEFAULT_POINTS = 100;
+            DEFAULT_POINTS = 90;
             UnitSize = 1;
             TemplateCode = "nc";
             Points = DEFAULT_POINTS;
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "INFANTRY", "CHARACTER", "OVERLORD", "NOBLE", "DYNASTIC AGENT", "TRAZYN THE INFINITE"
             });
             WarlordTrait = "Enduring Will";
+            Role = "HQ";
         }
         public override Datasheets CreateUnit()
         {
@@ -61,7 +62,7 @@ namespace Roster_Builder.Necrons
                         cmbWarlord.Text = WarlordTrait;
                         cmbWarlord.Enabled = false;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 default: break;
             }

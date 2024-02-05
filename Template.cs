@@ -49,6 +49,10 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 149);
 
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 307);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 330);
+
                     panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(290, 266);
 
                     panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(294, 289);
@@ -199,6 +203,12 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 130);
 
+                    panel.Controls["lblPsykerList"].Visible = true;
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 288);
+
+                    panel.Controls["cmbDiscipline"].Visible = true;
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 311);
+
                     panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(290, 247);
 
                     panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(294, 270);
@@ -269,6 +279,10 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 52);
+
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 210);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 233);
                     break;
                 #endregion
                 #region case "nc"
@@ -412,6 +426,10 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 52);
 
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 210);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 233);
+
                     panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(290, 169);
 
                     panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(294, 192);
@@ -452,6 +470,10 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 149);
+
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 307);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 330);
 
                     panel.Controls["cbWarlord"].Visible = true;
                     panel.Controls["cbWarlord"].Location = new System.Drawing.Point(298, 130);
@@ -503,6 +525,10 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 95);
 
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 253);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 276);
+
                     panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(290, 212);
 
                     panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(294, 235);
@@ -536,6 +562,10 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 119);
+
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 277);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 300);
 
                     panel.Controls["cbWarlord"].Visible = true;
                     panel.Controls["cbWarlord"].Location = new System.Drawing.Point(298, 100);
@@ -611,6 +641,154 @@ namespace Roster_Builder.Death_Guard
 
                     break;
                 #endregion
+                #region case "2m3k_c"
+                case "2m3k_c":
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 25);
+
+                    panel.Controls["lblOption2"].Visible = true;
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 63);
+
+                    panel.Controls["cmbOption2"].Visible = true;
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 59);
+
+                    panel.Controls["cbOption1"].Visible = true;
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 93);
+
+                    panel.Controls["cbOption2"].Visible = true;
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(311, 123);
+
+                    panel.Controls["cbOption3"].Visible = true;
+                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(311, 153);
+
+                    panel.Controls["cbWarlord"].Visible = true;
+                    panel.Controls["cbWarlord"].Location = new System.Drawing.Point(87, 176);
+
+                    panel.Controls["lblWarlord"].Visible = true;
+                    panel.Controls["lblWarlord"].Location = new System.Drawing.Point(83, 203);
+
+                    panel.Controls["cmbWarlord"].Visible = true;
+                    panel.Controls["cmbWarlord"].Location = new System.Drawing.Point(85, 226);
+
+                    panel.Controls["lblRelic"].Visible = true;
+                    panel.Controls["lblRelic"].Location = new System.Drawing.Point(293, 180); //294, 67
+
+                    panel.Controls["cmbRelic"].Visible = true;
+                    panel.Controls["cmbRelic"].Location = new System.Drawing.Point(293, 202); //298,90
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(293, 234);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(293, 257);
+
+                    panel.Controls["cbStratagem1"].Visible = true;
+                    panel.Controls["cbStratagem1"].Location = new System.Drawing.Point(294, 291);
+
+                    panel.Controls["cbStratagem2"].Visible = true;
+                    panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(294, 321);
+
+                    break;
+                #endregion
+                #region case "2m2k_pc"
+                case "2m2k_pc":
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 25);
+
+                    panel.Controls["lblOption2"].Visible = true;
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 63);
+
+                    panel.Controls["cmbOption2"].Visible = true;
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 59);
+
+                    panel.Controls["cbOption1"].Visible = true;
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 93);
+
+                    panel.Controls["cbOption2"].Visible = true;
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(311, 122);
+
+                    panel.Controls["lblPsyker"].Visible = true;
+                    panel.Controls["lblPsyker"].Location = new System.Drawing.Point(86, 146);
+
+                    panel.Controls["clbPsyker"].Visible = true;
+                    panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 169);
+
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 327);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 350);
+
+                    panel.Controls["cbWarlord"].Visible = true;
+                    panel.Controls["cbWarlord"].Location = new System.Drawing.Point(298, 150);
+
+                    panel.Controls["lblWarlord"].Visible = true;
+                    panel.Controls["lblWarlord"].Location = new System.Drawing.Point(294, 177);
+
+                    panel.Controls["cmbWarlord"].Visible = true;
+                    panel.Controls["cmbWarlord"].Location = new System.Drawing.Point(296, 200);
+
+                    panel.Controls["lblRelic"].Visible = true;
+                    panel.Controls["lblRelic"].Location = new System.Drawing.Point(296, 231); //294, 67
+
+                    panel.Controls["cmbRelic"].Visible = true;
+                    panel.Controls["cmbRelic"].Location = new System.Drawing.Point(296, 255); //298,90
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(290, 266);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(294, 289);
+
+                    panel.Controls["cbStratagem1"].Visible = true;
+                    panel.Controls["cbStratagem1"].Location = new System.Drawing.Point(298, 343);
+
+                    panel.Controls["cbStratagem2"].Visible = true;
+                    panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(298, 373);
+
+                    break;
+                #endregion
+                #region case "1m2k_c"
+                case "1m2k_c":
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 25);
+
+                    panel.Controls["cbOption1"].Visible = true;
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 60);
+
+                    panel.Controls["cbOption2"].Visible = true;
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(311, 91);
+
+                    panel.Controls["cbWarlord"].Visible = true;
+                    panel.Controls["cbWarlord"].Location = new System.Drawing.Point(298, 130);
+
+                    panel.Controls["lblWarlord"].Visible = true;
+                    panel.Controls["lblWarlord"].Location = new System.Drawing.Point(294, 157);
+
+                    panel.Controls["cmbWarlord"].Visible = true;
+                    panel.Controls["cmbWarlord"].Location = new System.Drawing.Point(296, 180);
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(290, 266);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(294, 289);
+
+                    panel.Controls["lblRelic"].Visible = true;
+                    panel.Controls["lblRelic"].Location = new System.Drawing.Point(294, 211);
+
+                    panel.Controls["cmbRelic"].Visible = true;
+                    panel.Controls["cmbRelic"].Location = new System.Drawing.Point(294, 235);
+
+                    panel.Controls["cbStratagem1"].Visible = true;
+                    panel.Controls["cbStratagem1"].Location = new System.Drawing.Point(298, 323);
+
+                    panel.Controls["cbStratagem2"].Visible = true;
+                    panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(298, 353);
+
+                    break;
+                #endregion
 
                 //Normal Units
                 #region case "1m"
@@ -620,6 +798,10 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["cmbOption1"].Visible = true;
                     panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 25);
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(293, 59);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(293, 85);
                     break;
                 #endregion
                 #region case "2m"
@@ -872,6 +1054,115 @@ namespace Roster_Builder.Death_Guard
 
                     break;
                 #endregion
+                #region case "4m1k"
+                case "4m1k":
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 25);
+
+                    panel.Controls["lblOption2"].Visible = true;
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 63);
+
+                    panel.Controls["cmbOption2"].Visible = true;
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 59);
+
+                    panel.Controls["lblOption3"].Visible = true;
+                    panel.Controls["lblOption3"].Location = new System.Drawing.Point(86, 97);
+
+                    panel.Controls["cmbOption3"].Visible = true;
+                    panel.Controls["cmbOption3"].Location = new System.Drawing.Point(311, 93);
+
+                    panel.Controls["lblOption4"].Visible = true;
+                    panel.Controls["lblOption4"].Location = new System.Drawing.Point(86, 131);
+
+                    panel.Controls["cmbOption4"].Visible = true;
+                    panel.Controls["cmbOption4"].Location = new System.Drawing.Point(311, 127);
+
+                    panel.Controls["cbOption1"].Visible = true;
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 161);
+
+                    break;
+                #endregion
+                #region case "2m4k"
+                case "2m4k":
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 25);
+
+                    panel.Controls["lblOption2"].Visible = true;
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 63);
+
+                    panel.Controls["cmbOption2"].Visible = true;
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 59);
+
+                    panel.Controls["cbOption1"].Visible = true;
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 93);
+
+                    panel.Controls["cbOption2"].Visible = true;
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(311, 123);
+
+                    panel.Controls["cbOption3"].Visible = true;
+                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(311, 153);
+
+                    panel.Controls["cbOption4"].Visible = true;
+                    panel.Controls["cbOption4"].Location = new System.Drawing.Point(311, 183);
+
+                    break;
+                #endregion
+                #region case "1m4k"
+                case "1m4k":
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 25);
+
+                    panel.Controls["cbOption1"].Visible = true;
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 60);
+
+                    panel.Controls["cbOption2"].Visible = true;
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(311, 90);
+
+                    panel.Controls["cbOption3"].Visible = true;
+                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(311, 120);
+
+                    panel.Controls["cbOption4"].Visible = true;
+                    panel.Controls["cbOption4"].Location = new System.Drawing.Point(311, 150);
+
+                    break;
+                #endregion
+                #region case "4m"
+                case "4m":
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 25);
+
+                    panel.Controls["lblOption2"].Visible = true;
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 63);
+
+                    panel.Controls["cmbOption2"].Visible = true;
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 59);
+
+                    panel.Controls["lblOption3"].Visible = true;
+                    panel.Controls["lblOption3"].Location = new System.Drawing.Point(86, 97);
+
+                    panel.Controls["cmbOption3"].Visible = true;
+                    panel.Controls["cmbOption3"].Location = new System.Drawing.Point(311, 93);
+
+                    panel.Controls["lblOption4"].Visible = true;
+                    panel.Controls["lblOption4"].Location = new System.Drawing.Point(86, 131);
+
+                    panel.Controls["cmbOption4"].Visible = true;
+                    panel.Controls["cmbOption4"].Location = new System.Drawing.Point(311, 127);
+
+                    break;
+                #endregion
 
                 //Units with variable Unit Size
                 #region case "N"
@@ -946,6 +1237,10 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["cmbOption1"].Visible = true;
                     panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 59);
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(293, 93);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(293, 116);
                     break;
                 #endregion
                 #region case "4N"
@@ -1213,6 +1508,10 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["cbOption1"].Visible = true;
                     panel.Controls["cbOption1"].Location = new System.Drawing.Point(243, 59);
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(293, 93);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(293, 116);
                     break;
                 #endregion
                 #region case "N1m2k"
@@ -1252,6 +1551,268 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["cbOption1"].Visible = true;
                     panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 93);
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(293, 123);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(293, 146);
+                    break;
+                #endregion
+                #region case "N1mS(1m)"
+                case "N1mS(1m)":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 63);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 59);
+
+                    panel.Controls["gbUnitLeader"].Visible = true;
+                    panel.Controls["gbUnitLeader"].Location = new System.Drawing.Point(90, 96);
+                    panel.Controls["gbUnitLeader"].Size = new System.Drawing.Size(426, 77);
+
+                    groupbox = panel.Controls["gbUnitLeader"] as GroupBox;
+
+                    groupbox.Controls["gb_lblOption1"].Visible = true;
+                    groupbox.Controls["gb_lblOption1"].Location = new System.Drawing.Point(6, 34);
+
+                    groupbox.Controls["gb_cmbOption1"].Visible = true;
+                    groupbox.Controls["gb_cmbOption1"].Location = new System.Drawing.Point(231, 31);
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(86, 170);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(90, 193);
+                    break;
+                #endregion
+                #region case "2N2m"
+                case "2N2m":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lblnud1"].Visible = true;
+                    panel.Controls["lblnud1"].Location = new System.Drawing.Point(88, 63);
+
+                    panel.Controls["nudOption1"].Visible = true;
+                    panel.Controls["nudOption1"].Location = new System.Drawing.Point(313, 59);
+
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 95);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(313, 93);
+
+                    panel.Controls["lblOption2"].Visible = true;
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 128);
+
+                    panel.Controls["cmbOption2"].Visible = true;
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 125);
+                    break;
+                #endregion
+                #region case "3N_p"
+                case "3N_p":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lblnud1"].Visible = true;
+                    panel.Controls["lblnud1"].Location = new System.Drawing.Point(154, 55);
+
+                    panel.Controls["nudOption1"].Visible = true;
+                    panel.Controls["nudOption1"].Location = new System.Drawing.Point(311, 53);
+
+                    panel.Controls["lblnud2"].Visible = true;
+                    panel.Controls["lblnud2"].Location = new System.Drawing.Point(154, 85);
+
+                    panel.Controls["nudOption2"].Visible = true;
+                    panel.Controls["nudOption2"].Location = new System.Drawing.Point(311, 83);
+
+                    panel.Controls["lblPsyker"].Visible = true;
+                    panel.Controls["lblPsyker"].Location = new System.Drawing.Point(86, 112);
+
+                    panel.Controls["clbPsyker"].Visible = true;
+                    panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 135);
+
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 303);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 316);
+
+                    panel.Controls["cbWarlord"].Visible = true;
+                    panel.Controls["cbWarlord"].Location = new System.Drawing.Point(298, 116);
+
+                    panel.Controls["lblWarlord"].Visible = true;
+                    panel.Controls["lblWarlord"].Location = new System.Drawing.Point(294, 143);
+
+                    panel.Controls["cmbWarlord"].Visible = true;
+                    panel.Controls["cmbWarlord"].Location = new System.Drawing.Point(294, 166);
+
+                    panel.Controls["lblRelic"].Visible = true;
+                    panel.Controls["lblRelic"].Location = new System.Drawing.Point(294, 197);
+
+                    panel.Controls["cmbRelic"].Visible = true;
+                    panel.Controls["cmbRelic"].Location = new System.Drawing.Point(294, 221);
+                    break;
+                #endregion
+                #region case "N2m1k"
+                case "N2m1k":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 63);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 59);
+
+                    panel.Controls["lblOption2"].Visible = true;
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 93);
+
+                    panel.Controls["cmbOption2"].Visible = true;
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 89);
+
+                    panel.Controls["cbOption1"].Visible = true;
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 123);
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(293, 153);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(293, 176);
+                    break;
+                #endregion
+                #region case "N2k"
+                case "N2k":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["cbOption1"].Visible = true;
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(243, 59);
+
+                    panel.Controls["cbOption2"].Visible = true;
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(243, 89);
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(293, 93);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(293, 116);
+                    break;
+                #endregion
+                #region case "N_p"
+                case "N_p":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lblPsyker"].Visible = true;
+                    panel.Controls["lblPsyker"].Location = new System.Drawing.Point(86, 59);
+
+                    panel.Controls["clbPsyker"].Visible = true;
+                    panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 82);
+
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 260);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 273);
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(293, 59);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(293, 82);
+                    break;
+                #endregion
+                #region case "3N3k"
+                case "3N3k":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lblnud1"].Visible = true;
+                    panel.Controls["lblnud1"].Location = new System.Drawing.Point(126, 61);
+
+                    panel.Controls["nudOption1"].Visible = true;
+                    panel.Controls["nudOption1"].Location = new System.Drawing.Point(283, 59);
+
+                    panel.Controls["lblnud2"].Visible = true;
+                    panel.Controls["lblnud2"].Location = new System.Drawing.Point(126, 93);
+
+                    panel.Controls["nudOption2"].Visible = true;
+                    panel.Controls["nudOption2"].Location = new System.Drawing.Point(283, 91);
+
+                    panel.Controls["cbOption1"].Visible = true;
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 121);
+
+                    panel.Controls["cbOption2"].Visible = true;
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(311, 151);
+
+                    panel.Controls["cbOption3"].Visible = true;
+                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(311, 181);
+
+                    break;
+                #endregion
+                #region case "3NS(1m)"
+                case "3NS(1m)":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lblnud1"].Visible = true;
+                    panel.Controls["lblnud1"].Location = new System.Drawing.Point(106, 61);
+
+                    panel.Controls["nudOption1"].Visible = true;
+                    panel.Controls["nudOption1"].Location = new System.Drawing.Point(283, 59);
+
+                    panel.Controls["lblnud2"].Visible = true;
+                    panel.Controls["lblnud2"].Location = new System.Drawing.Point(106, 93);
+
+                    panel.Controls["nudOption2"].Visible = true;
+                    panel.Controls["nudOption2"].Location = new System.Drawing.Point(283, 91);
+
+                    groupbox = panel.Controls["gbUnitLeader"] as GroupBox;
+
+                    groupbox.Visible = true;
+                    groupbox.Location = new System.Drawing.Point(90, 126);
+                    groupbox.Size = new System.Drawing.Size(359, 92);
+
+                    groupbox.Controls["gb_lblOption1"].Visible = true;
+                    groupbox.Controls["gb_lblOption1"].Location = new System.Drawing.Point(6, 22);
+
+                    groupbox.Controls["gb_cmbOption1"].Visible = true;
+                    groupbox.Controls["gb_cmbOption1"].Location = new System.Drawing.Point(77, 45);
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(86, 293);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(90, 316);
+
+                    break;
+                #endregion
+                #region case "2N"
+                case "2N":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lblnud1"].Visible = true;
+                    panel.Controls["lblnud1"].Location = new System.Drawing.Point(88, 63);
+
+                    panel.Controls["nudOption1"].Visible = true;
+                    panel.Controls["nudOption1"].Location = new System.Drawing.Point(313, 59);
                     break;
                 #endregion
 
@@ -1462,6 +2023,122 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 291);
                     break;
                 #endregion
+                #region case "NL1m3k"
+                case "NL1m3k":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lbModelSelect"].Visible = true;
+                    panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
+                    panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
+
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(239, 97);
+
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(282, 120);
+
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(243, 153);
+
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(243, 183);
+
+                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(243, 208);
+
+                    panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(239, 235);
+
+                    panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 258);
+                    break;
+                #endregion
+                #region case "NL1m2k"
+                case "NL1m2k":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lbModelSelect"].Visible = true;
+                    panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
+                    panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
+
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(239, 97);
+
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(282, 120);
+
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(243, 153);
+
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(243, 183);
+
+                    panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(239, 208);
+
+                    panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 231);
+                    break;
+                #endregion
+                #region case "NL2m5k"
+                case "NL2m5k":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lbModelSelect"].Visible = true;
+                    panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
+                    panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
+
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(239, 97);
+
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(282, 120);
+
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(239, 151);
+
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(282, 174);
+
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(243, 204);
+
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(243, 234);
+
+                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(243, 264);
+
+                    panel.Controls["cbOption4"].Location = new System.Drawing.Point(243, 294);
+
+                    panel.Controls["cbOption5"].Location = new System.Drawing.Point(243, 324);
+
+                    panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(239, 347);
+
+                    panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 370);
+                    break;
+                #endregion
+                #region case "NL3m"
+                case "NL3m":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lbModelSelect"].Visible = true;
+                    panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
+                    panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
+
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(239, 127);
+
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(282, 150);
+
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(239, 184);
+
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(282, 207);
+
+                    panel.Controls["lblOption3"].Location = new System.Drawing.Point(239, 241);
+
+                    panel.Controls["cmbOption3"].Location = new System.Drawing.Point(282, 264); //207
+
+                    panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(239, 298);
+
+                    panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 321);
+                    break;
+                #endregion
 
                 //Special Cases
                 #region case "cultist"
@@ -1516,6 +2193,161 @@ namespace Roster_Builder.Death_Guard
                     groupbox.Controls["gb_cmbFactionupgrade"].Location = new System.Drawing.Point(20, 110);
                     break;
                 #endregion
+                #region case "corsairs"
+                case "corsairs":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(88, 63);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(313, 59);
+
+                    panel.Controls["lblExtra1"].Visible = true;
+                    panel.Controls["lblExtra1"].Location = new System.Drawing.Point(89, 91);
+
+                    panel.Controls["lblnud1"].Visible = true;
+                    panel.Controls["lblnud1"].Location = new System.Drawing.Point(91, 119);
+
+                    panel.Controls["nudOption1"].Visible = true;
+                    panel.Controls["nudOption1"].Location = new System.Drawing.Point(307, 117);
+
+                    panel.Controls["lblnud2"].Visible = true;
+                    panel.Controls["lblnud2"].Location = new System.Drawing.Point(91, 151);
+
+                    panel.Controls["nudOption2"].Visible = true;
+                    panel.Controls["nudOption2"].Location = new System.Drawing.Point(307, 149);
+
+                    panel.Controls["lblExtra2"].Visible = true;
+                    panel.Controls["lblExtra2"].Location = new System.Drawing.Point(91, 181);
+
+                    panel.Controls["lblOption2"].Visible = true;
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(91, 208);
+
+                    panel.Controls["cmbOption2"].Visible = true;
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(316, 204);
+
+                    panel.Controls["gbUnitLeader"].Visible = true;
+                    panel.Controls["gbUnitLeader"].Location = new System.Drawing.Point(90, 235);
+                    panel.Controls["gbUnitLeader"].Size = new System.Drawing.Size(426, 105);
+
+                    groupbox = panel.Controls["gbUnitLeader"] as GroupBox;
+                    
+                    groupbox.Controls["gb_lblOption1"].Visible = true;
+                    groupbox.Controls["gb_lblOption1"].Location = new System.Drawing.Point(6, 34);
+
+                    groupbox.Controls["gb_cmbOption1"].Visible = true;
+                    groupbox.Controls["gb_cmbOption1"].Location = new System.Drawing.Point(231, 31);
+
+                    groupbox.Controls["cbLeaderOption1"].Visible = true;
+                    groupbox.Controls["cbLeaderOption1"].Location = new System.Drawing.Point(231, 65);
+
+                    break;
+                #endregion
+                #region case "voidscarred"
+                case "voidscarred":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lbModelSelect"].Visible = true;
+                    panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
+                    panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
+
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(239, 97);
+
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(282, 120);
+
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(243, 333);
+
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(243, 363);
+
+                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(243, 393);
+
+                    panel.Controls["cbOption4"].Location = new System.Drawing.Point(248, 154);
+
+                    panel.Controls["lblPsyker"].Location = new System.Drawing.Point(239, 97);
+
+                    panel.Controls["clbPsyker"].Location = new System.Drawing.Point(243, 120);
+
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(244, 274);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(244, 298);
+                    break;
+                #endregion
+                #region case "p"
+                case "p":
+                    panel.Controls["lblPsyker"].Visible = true;
+                    panel.Controls["lblPsyker"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["clbPsyker"].Visible = true;
+                    panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 52);
+
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 210);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 233);
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(279, 29);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(283, 52);
+                    break;
+                    #endregion
+                #region case "f" For faction upgrade only
+                case "f":
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(293, 59);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(293, 85);
+                    break;
+                #endregion
+                #region case "carnifex"
+                case "carnifex":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lbModelSelect"].Visible = true;
+                    panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
+                    panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
+
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(239, 97);
+
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(282, 120);
+
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(239, 150);
+
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(282, 173);
+
+                    panel.Controls["lblOption3"].Location = new System.Drawing.Point(239, 203);
+
+                    panel.Controls["cmbOption3"].Location = new System.Drawing.Point(282, 226);
+
+                    panel.Controls["lblOption4"].Location = new System.Drawing.Point(239, 256);
+
+                    panel.Controls["cmbOption4"].Location = new System.Drawing.Point(282, 279);
+
+                    panel.Controls["lblOption5"].Location = new System.Drawing.Point(239, 309);
+
+                    panel.Controls["cmbOption5"].Location = new System.Drawing.Point(282, 332);
+
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(243, 362);
+
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(243, 392);
+
+                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(243, 422);
+
+                    panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(239, 449);
+
+                    panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 476);
+                    break;
+                    #endregion
             }
         }
     }

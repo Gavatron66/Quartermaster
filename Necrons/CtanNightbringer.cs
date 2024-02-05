@@ -11,7 +11,7 @@ namespace Roster_Builder.Necrons
     {
         public CtanNightbringer()
         {
-            DEFAULT_POINTS = 350;
+            DEFAULT_POINTS = 320;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "ncp";
@@ -21,6 +21,7 @@ namespace Roster_Builder.Necrons
                 "MONSTER", "CHARACTER", "FLY", "C'TAN SHARD", "C'TAN SHARD OF THE NIGHTBRINGER"
             });
             PsykerPowers = new string[1] { string.Empty };
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()

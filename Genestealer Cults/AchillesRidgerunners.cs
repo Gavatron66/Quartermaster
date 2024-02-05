@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Necrons
+namespace Roster_Builder.Genestealer_Cults
 {
     public class AchillesRidgerunners : Datasheets
     {
@@ -26,6 +26,7 @@ namespace Roster_Builder.Necrons
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "VEHICLE", "CROSSFIRE", "ACHILLES RIDGERUNNERS"
             });
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()

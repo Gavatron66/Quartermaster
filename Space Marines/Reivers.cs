@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Reivers()
         {
-            DEFAULT_POINTS = 18;
+            DEFAULT_POINTS = 16;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "N1m2k";
@@ -23,6 +23,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CORE", "PRIMARIS", "PHOBOS", "REIVER", "SHOCK GRENADES", "REIVER SQUAD"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -112,15 +113,6 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            if (Weapons[1] != "")
-            {
-                Points += 2 * UnitSize;
-            }
-            if (Weapons[2] != "")
-            {
-                Points += 2 * UnitSize;
-            }
         }
 
         public override string ToString()

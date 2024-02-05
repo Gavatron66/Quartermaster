@@ -11,7 +11,7 @@ namespace Roster_Builder.Death_Guard
     {
         public Mortarion()
         {
-            DEFAULT_POINTS = 490;
+            DEFAULT_POINTS = 450;
             UnitSize = 1;
             TemplateCode = "ncp";
             Points = DEFAULT_POINTS;
@@ -23,6 +23,7 @@ namespace Roster_Builder.Death_Guard
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
             WarlordTrait = "Revolting Resilient; Living Plague; Arch-Contaminator";
+            Role = "Lord of War";
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -39,7 +40,9 @@ namespace Roster_Builder.Death_Guard
             cbWarlord.Checked = true;
             cbWarlord.Enabled = false;
             cmbWarlord.Enabled = false;
-            cmbWarlord.Text = WarlordTrait;
+            cmbWarlord.Items.Clear();
+            cmbWarlord.Items.Add("Revolting Resilient; Living Plague; Arch-Contaminator");
+            cmbWarlord.SelectedIndex = 0;
 
             if (Factionupgrade != null)
             {

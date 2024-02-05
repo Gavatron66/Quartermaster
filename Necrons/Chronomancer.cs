@@ -11,14 +11,16 @@ namespace Roster_Builder.Necrons
     {
         public Chronomancer()
         {
-            DEFAULT_POINTS = 80;
+            DEFAULT_POINTS = 75;
             Points = DEFAULT_POINTS;
-            TemplateCode = "c";
+            TemplateCode = "1m_c";
+            Weapons.Add("Aeonstave");
             Keywords.AddRange(new string[]
             {
                 "NECRONS", "<DYNASTY>",
                 "INFANTRY", "CHARACTER", "FLY", "CRYPTEK", "CHRONOMANCER"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -31,10 +33,19 @@ namespace Roster_Builder.Necrons
             repo = f as Necrons;
             Template.LoadTemplate(TemplateCode, panel);
 
+            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+
+            cmbOption1.Items.Clear();
+            cmbOption1.Items.AddRange(new string[]
+            {
+                "Aeonstave",
+                "Entropic Lance (+10 pts)"
+            });
+            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
             cmbWarlord.Items.Clear();
             List<string> traits = repo.GetWarlordTraits("");
@@ -42,7 +53,6 @@ namespace Roster_Builder.Necrons
             {
                 cmbWarlord.Items.Add(item);
             }
-
 
             if (isWarlord)
             {
@@ -111,6 +121,7 @@ namespace Roster_Builder.Necrons
 
         public override void SaveDatasheets(int code, Panel panel)
         {
+            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
@@ -120,6 +131,9 @@ namespace Roster_Builder.Necrons
 
             switch (code)
             {
+                case 11:
+                    Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
                     {
@@ -141,7 +155,7 @@ namespace Roster_Builder.Necrons
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -172,6 +186,11 @@ namespace Roster_Builder.Necrons
             }
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
+
+            if(Weapons.Contains("Entropic Lance (+10 pts)"))
+            {
+                Points += 10;
+            }
         }
 
         public override string ToString()

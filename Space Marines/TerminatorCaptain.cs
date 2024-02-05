@@ -22,6 +22,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "INFANTRY", "CHARACTER", "TERMINATOR","CAPTAIN"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -56,7 +57,7 @@ namespace Roster_Builder.Space_Marines
                 "Power Fist",
                 "Storm Bolter",
                 "Storm Shield",
-                "Thunder Hammer"
+                "Thunder Hammer (+5 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
@@ -71,7 +72,7 @@ namespace Roster_Builder.Space_Marines
                 "Power Sword",
                 "Relic Blade",
                 "Storm Shield",
-                "Thunder Hammer"
+                "Thunder Hammer (+5 pts)"
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
@@ -229,7 +230,77 @@ namespace Roster_Builder.Space_Marines
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
+                    if (chosenRelic == "The Burning Blade")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Shield Eternal")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Storm Shield");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Soldier's Blade")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Vengeance of Ultramar")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Drake-smiter")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Thunder Hammer (+5 pts)");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Nocturne's Vengeance")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-flamer");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Ebonclaws")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Lightning Claw");
+                        cmbOption1.Enabled = false;
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Lightning Claw");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Axe of Medusa")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Betrayer's Bane")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-melta");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Scimitar of the Great Khan")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Vengeance")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Fist");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Terra")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Fist");
+                        cmbOption2.Enabled = false;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 21:
                     if (cbOption1.Checked)
@@ -246,7 +317,7 @@ namespace Roster_Builder.Space_Marines
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -281,28 +352,11 @@ namespace Roster_Builder.Space_Marines
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
-            string[] weaponpoints = new string[]
-            {
-                "Chainfist",
-                "Combi-flamer",
-                "Combi-grav",
-                "Combi-melta",
-                "Combi-plasma",
-                "Power Fist",
-                "Relic Blade",
-                "Storm Shield",
-                "Wrist-mounted Grenade Launcher"
-            };
-
             foreach (string weapon in Weapons)
             {
-                if (weaponpoints.Contains(weapon))
+                if (weapon == "Thunder Hammer (+5 pts)")
                 {
                     Points += 5;
-                }
-                else if (weapon == "Thunder Hammer")
-                {
-                    Points += 15;
                 }
             }
         }

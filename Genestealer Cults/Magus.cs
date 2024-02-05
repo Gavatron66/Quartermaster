@@ -23,6 +23,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "INFANTRY", "CHARACTER", "PSYKER", "MAGUS"
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -49,7 +50,6 @@ namespace Roster_Builder.Genestealer_Cults
             {
                 cmbWarlord.Items.Add(item);
             }
-
 
             cbOption1.Text = "Psychic Familiar";
             if (Weapons[0] != string.Empty)
@@ -167,7 +167,17 @@ namespace Roster_Builder.Genestealer_Cults
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if(chosenRelic == "The Crouchling")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cbOption1.Enabled = true;
+                    }
+                    Relic = chosenRelic;
                     break;
                 case 21:
                     if (cbOption1.Checked)
@@ -181,7 +191,7 @@ namespace Roster_Builder.Genestealer_Cults
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
                     if (clbPsyker.CheckedItems.Count < 2)
@@ -215,11 +225,6 @@ namespace Roster_Builder.Genestealer_Cults
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Psychic Familiar"))
-            {
-                Points += 10;
-            }
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }

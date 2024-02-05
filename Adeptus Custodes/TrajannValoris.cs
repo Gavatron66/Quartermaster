@@ -12,7 +12,7 @@ namespace Roster_Builder.Adeptus_Custodes
     {
         public TrajannValoris()
         {
-            DEFAULT_POINTS = 170;
+            DEFAULT_POINTS = 200;
             TemplateCode = "nc";
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
@@ -21,6 +21,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "INFANTRY", "CHARACTER", "CAPTAIN-GENERAL", "TRAJANN VALORIS"
             });
             WarlordTrait = "Champion of the Imperium; Master of Martial Strategy";
+            Role = "HQ";
         }
         public override Datasheets CreateUnit()
         {
@@ -37,7 +38,9 @@ namespace Roster_Builder.Adeptus_Custodes
             cbWarlord.Checked = true;
             cbWarlord.Enabled = false;
             cmbWarlord.Enabled = false;
-            cmbWarlord.Text = WarlordTrait;
+            cmbWarlord.Items.Clear();
+            cmbWarlord.Items.Add("Champion of the Imperium; Master of Martial Strategy");
+            cmbWarlord.SelectedIndex = 0;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -54,7 +57,7 @@ namespace Roster_Builder.Adeptus_Custodes
                         cmbWarlord.Text = WarlordTrait;
                         cmbWarlord.Enabled = false;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 default: break;
             }

@@ -16,10 +16,11 @@ namespace Roster_Builder.Adeptus_Custodes
             TemplateCode = "nc";
             Keywords.AddRange(new string[]
             {
-                "IMPERIUM", "ANATHEM PSYKANA",
+                "IMPERIUM", "ANATHEMA PSYKANA",
                 "INFANTRY", "CHARACTER", "KNIGHT-CENTURA", "ALEYA"
             });
             WarlordTrait = "Oblivion Knight";
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -69,7 +70,7 @@ namespace Roster_Builder.Adeptus_Custodes
                         cmbWarlord.Text = WarlordTrait;
                         cmbWarlord.Enabled = false;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 default: break;
             }

@@ -22,6 +22,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
                 "INFANTRY", "CHARACTER", "GUARDIAN", "VEXILUS PRAETOR"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -112,7 +113,6 @@ namespace Roster_Builder.Adeptus_Custodes
         public override void SaveDatasheets(int code, Panel panel)
         {
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            CheckBox cmbOption2 = panel.Controls["cmbOption2"] as CheckBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
@@ -145,6 +145,26 @@ namespace Roster_Builder.Adeptus_Custodes
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Guardian Spear");
                         cmbOption1.Enabled = false;
                     }
+                    else if (cmbRelic.SelectedItem.ToString() == "Paragon Spear")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Guardian Spear");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (cmbRelic.SelectedItem.ToString() == "Admonimortis")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Castellan Axe");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (cmbRelic.SelectedItem.ToString() == "Praesidius")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Sentinel Blade and Praesidium Shield (+10 pts)");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (cmbRelic.SelectedItem.ToString() == "Swiftsilver Talon")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Guardian Spear");
+                        cmbOption1.Enabled = false;
+                    }
                     else
                     {
                         cmbOption1.Enabled = true;
@@ -155,7 +175,7 @@ namespace Roster_Builder.Adeptus_Custodes
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)

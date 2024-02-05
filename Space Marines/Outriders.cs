@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         public Outriders()
         {
-            DEFAULT_POINTS = 45;
+            DEFAULT_POINTS = 35;
             UnitSize = 3;
             Points = DEFAULT_POINTS * UnitSize;
             Keywords.AddRange(new string[]
@@ -19,6 +19,7 @@ namespace Roster_Builder.Space_Marines
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
                 "BIKER", "CORE", "PRIMARIS", "OUTRIDER SQUAD"
             });
+            Role = "Fast Attack";
         }
 
         public override Datasheets CreateUnit()

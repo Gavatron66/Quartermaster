@@ -20,6 +20,7 @@ namespace Roster_Builder.Space_Marines
                 "VEHICLE", "ARTILLERY", "THUNDERFIRE CANNON",
                 "INFANTRY", "CHARACTER", "GUNNER"
             });
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()

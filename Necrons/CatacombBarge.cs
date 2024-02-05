@@ -14,7 +14,7 @@ namespace Roster_Builder.Necrons
             DEFAULT_POINTS = 145;
             Points = DEFAULT_POINTS;
             TemplateCode = "2m1k_c";
-            Weapons.Add("Gauss Cannon");
+            Weapons.Add("Gauss Cannon (+5 pts)");
             Weapons.Add("Staff of Light");
             Weapons.Add("");
             Keywords.AddRange(new string[]
@@ -23,6 +23,7 @@ namespace Roster_Builder.Necrons
                 "VEHICLE", "CHARACTER", "QUANTUM SHIELDING", "NOBLE", "OVERLORD", "FLY",
                 "CATACOMB COMMAND BARGE"
             });
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -53,7 +54,7 @@ namespace Roster_Builder.Necrons
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Gauss Cannon",
+                "Gauss Cannon (+5 pts)",
                 "Tesla Cannon"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
@@ -64,12 +65,12 @@ namespace Roster_Builder.Necrons
                 "Hyperphase Sword",
                 "Staff of Light",
                 "Voidblade",
-                "Warscythe"
+                "Warscythe (+5 pts)"
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
-            cbOption1.Text = "Resurrection Orb";
-            if (Weapons[2] == "Resurrection Orb")
+            cbOption1.Text = "Resurrection Orb (+30 pts)";
+            if (Weapons[2] == "Resurrection Orb (+30 pts)")
             {
                 cbOption1.Checked = true;
             }
@@ -130,9 +131,9 @@ namespace Roster_Builder.Necrons
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            //Gauss Cannon +5
-            //Resurrection Orb +30
-            //Warscythe +5
+            //Gauss Cannon (+5 pts) +5
+            //Resurrection Orb (+30 pts) +30
+            //Warscythe (+5 pts) +5
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
@@ -165,45 +166,25 @@ namespace Roster_Builder.Necrons
 
                     if (cmbRelic.SelectedItem.ToString() == "Blood Scythe")
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Warscythe");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Warscythe (+5 pts)");
                         cmbOption2.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption2.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Solar Staff")
+                    else if (cmbRelic.SelectedItem.ToString() == "Solar Staff")
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Staff of Light");
                         cmbOption2.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption2.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Orb of Eternity")
+                    else if(cmbRelic.SelectedItem.ToString() == "Orb of Eternity")
                     {
                         cbOption1.Checked = true;
                         cbOption1.Enabled = false;
                     }
-                    else
+                    else if(cmbRelic.SelectedItem.ToString() == "Voidreaper")
                     {
-                        cbOption1.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Voidreaper")
-                    {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Warscythe");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Warscythe (+5 pts)");
                         cmbOption2.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption2.Enabled = true;
-                    }
-
-                    if (cmbRelic.SelectedItem.ToString() == "Voltaic Staff")
+                    else if (cmbRelic.SelectedItem.ToString() == "Voltaic Staff")
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Staff of Light");
                         cmbOption2.Enabled = false;
@@ -228,7 +209,7 @@ namespace Roster_Builder.Necrons
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -260,17 +241,17 @@ namespace Roster_Builder.Necrons
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons.Contains("Gauss Cannon"))
+            if (Weapons.Contains("Gauss Cannon (+5 pts)"))
             {
                 Points += 5;
             }
 
-            if (Weapons.Contains("Warscythe"))
+            if (Weapons.Contains("Warscythe (+5 pts)"))
             {
                 Points += 5;
             }
 
-            if (Weapons.Contains("Resurrection Orb"))
+            if (Weapons.Contains("Resurrection Orb (+30 pts)"))
             {
                 Points += 30;
             }

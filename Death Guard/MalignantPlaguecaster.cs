@@ -11,7 +11,7 @@ namespace Roster_Builder.Death_Guard
     {
         public MalignantPlaguecaster()
         {
-            DEFAULT_POINTS = 95;
+            DEFAULT_POINTS = 90;
             Points = DEFAULT_POINTS;
             UnitSize = 1;
             TemplateCode = "1k_pc";
@@ -22,6 +22,7 @@ namespace Roster_Builder.Death_Guard
                 "INFANTRY", "CHARACTER", "PSYKER", "BUBONIC ASTARTES", "MALIGNANT PLAGUECASTER"
             });
             PsykerPowers = new string[2] { string.Empty, string.Empty };
+            Role = "HQ";
         }
 
         public override string ToString()
@@ -174,7 +175,7 @@ namespace Roster_Builder.Death_Guard
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; warlord.SelectedIndex = -1; }
                     break;
                 case 15:
                     if (warlord.SelectedIndex != -1)

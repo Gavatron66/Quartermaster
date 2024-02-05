@@ -11,7 +11,7 @@ namespace Roster_Builder.Adeptus_Custodes
     {
         public Valerian()
         {
-            DEFAULT_POINTS = 140;
+            DEFAULT_POINTS = 130;
             Points = DEFAULT_POINTS;
             TemplateCode = "nc";
             Keywords.AddRange(new string[]
@@ -20,6 +20,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 "INFANTRY", "CHARACTER", "GUARDIAN", "SHIELD-CAPTAIN", "VALERIAN"
             });
             WarlordTrait = "Peerless Warrior";
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
@@ -61,7 +62,7 @@ namespace Roster_Builder.Adeptus_Custodes
                         cmbWarlord.Text = WarlordTrait;
                         cmbWarlord.Enabled = false;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 default: break;
             }

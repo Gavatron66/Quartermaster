@@ -20,6 +20,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
                 "INFANTRY", "CHARACTER", "NEXOS"
             });
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
@@ -129,7 +130,7 @@ namespace Roster_Builder.Genestealer_Cults
                     {
                         this.isWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
