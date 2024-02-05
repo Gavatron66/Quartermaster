@@ -6,39 +6,39 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Tyranids
+namespace Roster_Builder.Adeptus_Mechanicus
 {
-    public class Raveners : Datasheets
+    public class KataphronBreachers : Datasheets
     {
         int currentIndex;
 
-        public Raveners()
+        public KataphronBreachers()
         {
-            DEFAULT_POINTS = 45;
+            DEFAULT_POINTS = 35;
             UnitSize = 3;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "NL2m";
             for (int i = 0; i < UnitSize; i++)
             {
-                Weapons.Add("Two Scything Talons");
-                Weapons.Add("(None)");
+                Weapons.Add("Heavy Arc Rifle");
+                Weapons.Add("Arc Claw");
             }
             Keywords.AddRange(new string[]
             {
-                "HIVE TENDRIL", "TYRANIDS", "<HIVE FLEET>",
-                "INFANTRY", "CORE", "BURROWERS", "RAVENERS"
+                "IMPERIUM", "ADEPTUS MECHANICUS", "CULT MECHANICUS", "<FORGE WORLD>",
+                "BIKER", "KATAPHRON SERVITORS", "KATAPHRON BREACHERS"
             });
-            Role = "Fast Attack";
+            Role = "Troops";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new Raveners();
+            return new KataphronBreachers();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as Tyranids;
+            repo = f as AdMech;
             Template.LoadTemplate(TemplateCode, panel);
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
@@ -49,36 +49,27 @@ namespace Roster_Builder.Tyranids
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 3;
             nudUnitSize.Value = nudUnitSize.Minimum;
-            nudUnitSize.Maximum = 9;
+            nudUnitSize.Maximum = 6;
             nudUnitSize.Value = currentSize;
 
             lbModelSelect.Items.Clear();
             for (int i = 0; i < UnitSize; i++)
             {
-                if (Weapons[(i*2)+1] == "(None)")
-                {
-                    lbModelSelect.Items.Add("Ravener w/ " + Weapons[(i * 2)]);
-                }
-                else
-                {
-                    lbModelSelect.Items.Add("Ravener w/ " + Weapons[(i * 2)] + " and " + Weapons[(i * 2) + 1]);
-                }
+                lbModelSelect.Items.Add("Kataphron Breacher w/ " + Weapons[(i * 2)] + " and " + Weapons[(i * 2) + 1]);
             }
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new object[]
             {
-                "Two Rending Claws",
-                "Two Scything Talons"
+                "Heavy Arc Rifle",
+                "Torsion Cannon (+10 pts)"
             });
 
             cmbOption2.Items.Clear();
             cmbOption2.Items.AddRange(new object[]
             {
-                "(None)",
-                "Deathspitter",
-                "Devourer",
-                "Thoracic Spinefists",
+                "Arc Claw",
+                "Hydraulic Claw"
             });
         }
 
@@ -93,25 +84,11 @@ namespace Roster_Builder.Tyranids
             {
                 case 11:
                     Weapons[(currentIndex * 2)] = cmbOption1.SelectedItem.ToString();
-                    if (Weapons[(currentIndex * 2) + 1] == "(None)")
-                    {
-                        lbModelSelect.Items[currentIndex] = "Ravener w/ " + Weapons[(currentIndex * 2)];
-                    }
-                    else
-                    {
-                        lbModelSelect.Items[currentIndex] = "Ravener w/ " + Weapons[(currentIndex * 2)] + " and " + Weapons[(currentIndex * 2) + 1];
-                    }
+                    lbModelSelect.Items[currentIndex] = "Kataphron Breacher w/ " + Weapons[(currentIndex * 2)] + " and " + Weapons[(currentIndex * 2) + 1];
                     break;
                 case 12:
                     Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
-                    if (Weapons[(currentIndex * 2) + 1] == "(None)")
-                    {
-                        lbModelSelect.Items[currentIndex] = "Ravener w/ " + Weapons[(currentIndex * 2)];
-                    }
-                    else
-                    {
-                        lbModelSelect.Items[currentIndex] = "Ravener w/ " + Weapons[(currentIndex * 2)] + " and " + Weapons[(currentIndex * 2) + 1];
-                    }
+                    lbModelSelect.Items[currentIndex] = "Kataphron Breacher w/ " + Weapons[(currentIndex * 2)] + " and " + Weapons[(currentIndex * 2) + 1];
                     break;
                 case 30:
                     int temp = UnitSize;
@@ -121,9 +98,9 @@ namespace Roster_Builder.Tyranids
                     {
                         for (int i = temp; i < UnitSize; i++)
                         {
-                            Weapons.Add("Two Scything Talons");
-                            Weapons.Add("(None)");
-                            lbModelSelect.Items.Add("Ravener w/ " + Weapons[(i * 2)]);
+                            Weapons.Add("Heavy Arc Rifle");
+                            Weapons.Add("Arc Claw");
+                            lbModelSelect.Items.Add("Kataphron Breacher w/ " + Weapons[(i * 2)] + " and " + Weapons[(temp * 2) + 1]);
                         }
                     }
 
@@ -161,11 +138,19 @@ namespace Roster_Builder.Tyranids
             }
 
             Points = DEFAULT_POINTS * UnitSize;
+
+            foreach (var weapon in Weapons)
+            {
+                if(weapon == "Torsion Cannon (+10 pts)")
+                {
+                    Points += 10;
+                }
+            }
         }
 
         public override string ToString()
         {
-            return "Raveners - " + Points + "pts";
+            return "Kataphron Breachers - " + Points + "pts";
         }
     }
 }

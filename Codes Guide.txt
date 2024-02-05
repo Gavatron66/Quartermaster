@@ -15,6 +15,7 @@
 	23 - cbOption3
 	24 - cbOption4
 	25 - cbWarlord
+	26 - cbOption5
 3X - NumericUpDowns
 	30 - nudUnitSize
 	31 - nudOption1

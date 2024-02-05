@@ -220,6 +220,40 @@ namespace Roster_Builder.Tyranids
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
+                    cbOption1.Enabled = true;
+                    cbOption2.Enabled = true;
+                    if(chosenRelic == "The Reaper of Obliterax")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Scythes of Tyran")
+                    {
+                        cmbOption2.SelectedIndex = 2;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Balethorn Cannon")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Shardgullet")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Passenger")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Searhive")
+                    {
+                        cbOption2.Checked = true;
+                        cbOption2.Enabled = false;
+                    }
                     Relic = chosenRelic;
                     break;
                 case 21:

@@ -19,6 +19,7 @@ using Roster_Builder.Space_Marines;
 using Roster_Builder.Aeldari;
 using Roster_Builder.Aeldari.Harlequins;
 using Roster_Builder.Tyranids;
+using Roster_Builder.Adeptus_Mechanicus;
 
 namespace Roster_Builder
 {
@@ -74,13 +75,14 @@ namespace Roster_Builder
             cmbSelectFaction.Items.AddRange(new Faction[]
             {
                 new AdeptusCustodes(),
+                new AdMech(),
                 new Aeldari.Aeldari(),
                 new DeathGuard(),
                 new GSC(),
                 new Harlequins(),
                 new Necrons.Necrons(),
                 new SpaceMarines(),
-                new Tyranids.Tyranids()
+                new Tyranids.Tyranids(),
             });
             cmbSelectFaction.Text = string.Empty;
 
@@ -94,13 +96,14 @@ namespace Roster_Builder
             cmbNDFaction.Items.AddRange(new Faction[]
             {
                 new AdeptusCustodes(),
+                new AdMech(),
                 new Aeldari.Aeldari(),
                 new DeathGuard(),
                 new GSC(),
                 new Harlequins(),
                 new Necrons.Necrons(),
                 new SpaceMarines(),
-                new Tyranids.Tyranids()
+                new Tyranids.Tyranids(),
             });
             #endregion
         }
@@ -756,6 +759,12 @@ namespace Roster_Builder
         private void cbOption4_CheckedChanged(object sender, EventArgs e)
         {
             currentDetachment.roster[currentIndex].SaveDatasheets(24, panel1);
+            updateLBRoster();
+        }
+
+        private void cbOption5_CheckedChanged(object sender, EventArgs e)
+        {
+            currentDetachment.roster[currentIndex].SaveDatasheets(26, panel1);
             updateLBRoster();
         }
     }

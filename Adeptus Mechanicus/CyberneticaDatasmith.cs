@@ -1,82 +1,46 @@
-﻿using Roster_Builder.Death_Guard;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Tyranids
+namespace Roster_Builder.Adeptus_Mechanicus
 {
-    public class TrygonPrime : Datasheets
+    public class CyberneticaDatasmith : Datasheets
     {
-        public TrygonPrime()
+        public CyberneticaDatasmith()
         {
-            DEFAULT_POINTS = 175;
+            DEFAULT_POINTS = 35;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
-            TemplateCode = "1m2k_c";
-            Weapons.Add("Toxinspike");
-            Weapons.Add("");
-            Weapons.Add("");
+            TemplateCode = "c";
             Keywords.AddRange(new string[]
             {
-                "HIVE TENDRIL", "TYRANIDS", "<HIVE FLEET>",
-                "MONSTER", "CHARACTER", "SYNAPSE", "BURROWER", "TRYGON PRIME"
+                "IMPERIUM", "ADEPTUS MECHANICUS", "SKITARII", "<FORGE WORLD>",
+                "INFANTRY", "CHARACTER", "DOCTRINA ASSEMBLER", "TECH-PRIEST", "CYBERNETICA DATASMITH"
             });
-            Role = "HQ";
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new TrygonPrime();
+            return new CyberneticaDatasmith();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as Tyranids;
+            repo = f as AdMech;
             Template.LoadTemplate(TemplateCode, panel);
 
-            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
-            CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
-            cmbOption1.Items.Clear();
-            cmbOption1.Items.AddRange(new string[]
-            {
-                "Biostatic Rattle",
-                "Prehensile Pincer Tail",
-                "Toxinspike"
-            });
-            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
-
-            cbOption1.Text = "Adrenal Glands (+15 pts)";
-            if (Weapons[1] != string.Empty)
-            {
-                cbOption1.Checked = true;
-            }
-            else
-            {
-                cbOption1.Checked = false;
-            }
-
-            cbOption2.Text = "Toxin Sacs (+10 pts)";
-            if (Weapons[2] != string.Empty)
-            {
-                cbOption2.Checked = true;
-            }
-            else
-            {
-                cbOption2.Checked = false;
-            }
-
             cmbWarlord.Items.Clear();
-            List<string> traits = repo.GetWarlordTraits("");
+            List<string> traits = repo.GetWarlordTraits("Priest");
             foreach (var item in traits)
             {
                 cmbWarlord.Items.Add(item);
@@ -131,9 +95,6 @@ namespace Roster_Builder.Tyranids
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
-            CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
@@ -142,9 +103,6 @@ namespace Roster_Builder.Tyranids
 
             switch (code)
             {
-                case 11:
-                    Weapons[0] = cmbOption1.SelectedItem.ToString();
-                    break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
                     {
@@ -154,36 +112,11 @@ namespace Roster_Builder.Tyranids
                     {
                         WarlordTrait = string.Empty;
                     }
+
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
-                        cbOption1.Enabled = true;
-                        cbOption2.Enabled = true;
-                    if (chosenRelic == "The Passenger")
-                    {
-                        cbOption1.Checked = true;
-                        cbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Searhive")
-                    {
-                        cbOption2.Checked = true;
-                        cbOption2.Enabled = false;
-                    }
                     Relic = chosenRelic;
-                    break;
-                case 21:
-                    if (cbOption1.Checked)
-                    {
-                        Weapons[1] = cbOption1.Text;
-                    }
-                    else { Weapons[1] = string.Empty; }
-                    break;
-                case 22:
-                    if (cbOption2.Checked)
-                    {
-                        Weapons[2] = cbOption2.Text;
-                    }
-                    else { Weapons[2] = string.Empty; }
                     break;
                 case 25:
                     if (cbWarlord.Checked)
@@ -221,22 +154,12 @@ namespace Roster_Builder.Tyranids
             }
 
             Points = DEFAULT_POINTS;
-
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
-
-            if (Weapons.Contains("Adrenal Glands (+15 pts)"))
-            {
-                Points += 15;
-            }
-            if (Weapons.Contains("Toxin Sacs (+10 pts)"))
-            {
-                Points += 10;
-            }
         }
 
         public override string ToString()
         {
-            return "Trygon Prime - " + Points + "pts";
+            return "Cybernetica Datasmith - " + Points + "pts";
         }
     }
 }

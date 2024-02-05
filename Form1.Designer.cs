@@ -48,6 +48,7 @@
             this.nudSelectPoints = new System.Windows.Forms.NumericUpDown();
             this.btnLoad = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbOption4 = new System.Windows.Forms.CheckBox();
             this.cmbDiscipline = new System.Windows.Forms.ComboBox();
             this.lblPsykerList = new System.Windows.Forms.Label();
             this.gbCustomSubfaction = new System.Windows.Forms.GroupBox();
@@ -131,7 +132,7 @@
             this.cmbNDFaction = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblErrors = new System.Windows.Forms.Label();
-            this.cbOption4 = new System.Windows.Forms.CheckBox();
+            this.cbOption5 = new System.Windows.Forms.CheckBox();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSelectPoints)).BeginInit();
             this.panel1.SuspendLayout();
@@ -352,6 +353,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbOption5);
             this.panel1.Controls.Add(this.cbOption4);
             this.panel1.Controls.Add(this.cmbDiscipline);
             this.panel1.Controls.Add(this.lblPsykerList);
@@ -403,10 +405,22 @@
             this.panel1.Controls.Add(this.lblOption2);
             this.panel1.Controls.Add(this.cmbOption1);
             this.panel1.Controls.Add(this.cmbOption2);
-            this.panel1.Location = new System.Drawing.Point(1110, 35);
+            this.panel1.Location = new System.Drawing.Point(859, 106);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1670, 680);
             this.panel1.TabIndex = 8;
+            // 
+            // cbOption4
+            // 
+            this.cbOption4.AutoSize = true;
+            this.cbOption4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbOption4.Location = new System.Drawing.Point(362, 156);
+            this.cbOption4.Name = "cbOption4";
+            this.cbOption4.Size = new System.Drawing.Size(113, 24);
+            this.cbOption4.TabIndex = 88;
+            this.cbOption4.Text = "checkBox1";
+            this.cbOption4.UseVisualStyleBackColor = true;
+            this.cbOption4.CheckedChanged += new System.EventHandler(this.cbOption4_CheckedChanged);
             // 
             // cmbDiscipline
             // 
@@ -1104,14 +1118,14 @@
             this.newRosterts});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 28);
             this.menuStrip1.TabIndex = 83;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // newRosterts
             // 
             this.newRosterts.Name = "newRosterts";
-            this.newRosterts.Size = new System.Drawing.Size(138, 26);
+            this.newRosterts.Size = new System.Drawing.Size(138, 24);
             this.newRosterts.Text = "New Detachment";
             this.newRosterts.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -1268,17 +1282,16 @@
             this.lblErrors.TabIndex = 82;
             this.lblErrors.Text = "Roster has _ errors";
             // 
-            // cbOption4
+            // cbOption5
             // 
-            this.cbOption4.AutoSize = true;
-            this.cbOption4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOption4.Location = new System.Drawing.Point(362, 156);
-            this.cbOption4.Name = "cbOption4";
-            this.cbOption4.Size = new System.Drawing.Size(113, 24);
-            this.cbOption4.TabIndex = 88;
-            this.cbOption4.Text = "checkBox1";
-            this.cbOption4.UseVisualStyleBackColor = true;
-            this.cbOption4.CheckedChanged += new System.EventHandler(this.cbOption4_CheckedChanged);
+            this.cbOption5.AutoSize = true;
+            this.cbOption5.Location = new System.Drawing.Point(480, 126);
+            this.cbOption5.Name = "cbOption5";
+            this.cbOption5.Size = new System.Drawing.Size(113, 24);
+            this.cbOption5.TabIndex = 89;
+            this.cbOption5.Text = "checkBox1";
+            this.cbOption5.UseVisualStyleBackColor = true;
+            this.cbOption5.CheckedChanged += new System.EventHandler(this.cbOption5_CheckedChanged);
             // 
             // Form1
             // 
@@ -1440,6 +1453,7 @@
         private System.Windows.Forms.ComboBox cmbDiscipline;
         private System.Windows.Forms.Label lblPsykerList;
         private System.Windows.Forms.CheckBox cbOption4;
+        private System.Windows.Forms.CheckBox cbOption5;
     }
 }
 

@@ -191,6 +191,24 @@ namespace Roster_Builder.Tyranids
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+                    cbOption1.Enabled = true;
+                    cbOption2.Enabled = true;
+                    if (chosenRelic == "The Reaper of Obliterax")
+                    {
+                        cmbOption1.SelectedIndex = 3;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Passenger")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Searhive")
+                    {
+                        cbOption2.Checked = true;
+                        cbOption2.Enabled = false;
+                    }
                     Relic = chosenRelic;
                     break;
                 case 21:

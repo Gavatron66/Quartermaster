@@ -135,15 +135,15 @@ namespace Roster_Builder.Tyranids
                 new Biovores(),
                 new Carnifexes(),
                 new ScreamerKillers(),
-                //new Thornbacks(),
-                //new HiveGuard(),
-                //new Tyrannofex(),
-                //new Tyrannocyte(),
+                new Thornbacks(),
+                new HiveGuard(),
+                new Tyrannofex(),
+                new Tyrannocyte(),
                 //---------- Flyers ----------
-                //new HiveCrone(),
-                //new Harpy(),
+                new HiveCrone(),
+                new Harpy(),
                 //---------- Fortification ----------
-                //new Sporocyst()
+                new Sporocyst()
             };
 
             return datasheets;
@@ -198,8 +198,8 @@ namespace Roster_Builder.Tyranids
                 "(None)",
                 "Dermic Symbiosis (+25 pts)",
                 "Enraged Reserves (+25 pts)",
-                "Hardened Biology (+15 pts)",
                 "Precognitive Sensoria (+20 pts)",
+                "Hardened Biology (+15 pts)",
                 "Predator Instincts (+15 pts)",
                 "Synaptic Enhancement (+15 pts)",
                 "Voracious Ammunition (+15 pts)",
@@ -267,17 +267,50 @@ namespace Roster_Builder.Tyranids
             relics.Add("(None)");
 
             relics.Add("The Ymgarl Factor");
-            relics.Add("The Reaper of Obliterax");
+
+            if(keywords.Contains("HIVE TYRANT") || keywords.Contains("TYRANID PRIME"))
+            {
+                relics.Add("The Reaper of Obliterax");
+            }
+
             relics.Add("The Maw-claws of Thyrax");
-            relics.Add("Resonance Barb");
+
+            if(keywords.Contains("PSYKER"))
+            {
+                relics.Add("Resonance Barb");
+            }
+
             relics.Add("Pathogenesis");
-            relics.Add("Scythes of Tyran");
-            relics.Add("Balethorn Cannon");
-            relics.Add("Shardgullet");
+
+            if(keywords.Contains("HIVE TYRANT"))
+            {
+                relics.Add("Scythes of Tyran");
+            }
+
+            if (keywords.Contains("HIVE TYRANT"))
+            {
+                relics.Add("Balethorn Cannon");
+            }
+
+            if (keywords.Contains("HIVE TYRANT"))
+            {
+                relics.Add("Shardgullet");
+            }
+
             relics.Add("Gestation Sac");
             relics.Add("The Dirgeheart of Kharis");
-            relics.Add("The Passenger");
-            relics.Add("Searhive");
+
+            if(keywords.Contains("HIVE TYRANT") || keywords.Contains("TERVIGON") || keywords.Contains("TRYGON PRIME")
+                || keywords.Contains("TYRANID PRIME"))
+            {
+                relics.Add("The Passenger");
+            }
+
+            if (keywords.Contains("HIVE TYRANT") || keywords.Contains("TERVIGON") || keywords.Contains("TRYGON PRIME")
+                || keywords.Contains("TYRANID PRIME"))
+            {
+                relics.Add("Searhive");
+            }
 
             if (currentSubFaction == "Behemoth")
             {
@@ -375,6 +408,7 @@ namespace Roster_Builder.Tyranids
         public override void SetPoints(int points)
         {
         }
+
         public override string ToString()
         {
             return "Tyranids";

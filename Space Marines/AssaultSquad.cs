@@ -9,9 +9,10 @@ namespace Roster_Builder.Space_Marines
 {
     public class AssaultSquad : Datasheets
     {
-        int currentIndex = 18;
+        int currentIndex = 0;
         bool isLoading = false;
         int[] restrictArray = new int[] { 0, 0 };
+
         public AssaultSquad()
         {
             DEFAULT_POINTS = 18;
