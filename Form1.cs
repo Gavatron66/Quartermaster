@@ -20,6 +20,7 @@ using Roster_Builder.Aeldari;
 using Roster_Builder.Aeldari.Harlequins;
 using Roster_Builder.Tyranids;
 using Roster_Builder.Adeptus_Mechanicus;
+using Roster_Builder.Tau_Empire;
 
 namespace Roster_Builder
 {
@@ -82,6 +83,7 @@ namespace Roster_Builder
                 new Harlequins(),
                 new Necrons.Necrons(),
                 new SpaceMarines(),
+                new T_au(),
                 new Tyranids.Tyranids(),
             });
             cmbSelectFaction.Text = string.Empty;
@@ -103,7 +105,8 @@ namespace Roster_Builder
                 new Harlequins(),
                 new Necrons.Necrons(),
                 new SpaceMarines(),
-                new Tyranids.Tyranids(),
+				new T_au(),
+				new Tyranids.Tyranids(),
             });
             #endregion
         }

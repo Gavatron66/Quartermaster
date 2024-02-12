@@ -434,6 +434,10 @@
     <Compile Include="Space Marines\Whirlwind.cs" />
     <Compile Include="Space Marines\White Scars\Khan.cs" />
     <Compile Include="Space Marines\White Scars\KorsarroKhan.cs" />
+    <Compile Include="Tau Empire\CommanderFarsight.cs" />
+    <Compile Include="Tau Empire\CommanderShadowsun.cs" />
+    <Compile Include="Tau Empire\CrisisCommander.cs" />
+    <Compile Include="Tau Empire\T%27au.cs" />
     <Compile Include="Template.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
