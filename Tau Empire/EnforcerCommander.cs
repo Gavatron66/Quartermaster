@@ -8,31 +8,30 @@ using System.Windows.Forms;
 
 namespace Roster_Builder.Tau_Empire
 {
-    public class CrisisCommander : Datasheets
+    public class EnforcerCommander : Datasheets
     {
-        public CrisisCommander()
+        public EnforcerCommander()
         {
-            DEFAULT_POINTS = 110;
+            DEFAULT_POINTS = 130;
             Points = DEFAULT_POINTS;
-            TemplateCode = "6m1k_c";
+            TemplateCode = "6m_c";
             Weapons.Add("Burst Cannon (+10/+15/+20 pts)");
             Weapons.Add("(None)");
             Weapons.Add("(None)");
             Weapons.Add("(None)");
             Weapons.Add("(None)"); //Two drones
             Weapons.Add("(None)");
-            Weapons.Add(""); //Iridium
             Keywords.AddRange(new string[]
             {
                 "T'AU EMPIRE", "<SEPT>",
-                "INFANTRY", "CHARACTER", "BATTLESUIT", "FLY", "JET PACK", "CRISIS", "COMMANDER"
+                "INFANTRY", "CHARACTER", "BATTLESUIT", "FLY", "JET PACK", "ENFORCER", "COMMANDER"
             });
             Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new CrisisCommander();
+            return new EnforcerCommander();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -48,7 +47,6 @@ namespace Roster_Builder.Tau_Empire
             ComboBox cmbOption4 = panel.Controls["cmbOption4"] as ComboBox;
             ComboBox cmbOption5 = panel.Controls["cmbOption5"] as ComboBox;
             ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox;
-            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
@@ -153,16 +151,6 @@ namespace Roster_Builder.Tau_Empire
             });
             cmbOption6.SelectedIndex = cmbOption6.Items.IndexOf(Weapons[5]);
 
-            cbOption1.Text = "Iridium Battlesuit (+10 pts)";
-            if (Weapons[6] == cbOption1.Text)
-            {
-                cbOption1.Checked = true;
-            }
-            else
-            {
-                cbOption1.Checked = false;
-            }
-
             cmbWarlord.Items.Clear();
             List<string> traits = repo.GetWarlordTraits("T'au");
             foreach (var item in traits)
@@ -240,7 +228,6 @@ namespace Roster_Builder.Tau_Empire
             ComboBox cmbOption4 = panel.Controls["cmbOption4"] as ComboBox;
             ComboBox cmbOption5 = panel.Controls["cmbOption5"] as ComboBox;
             ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox;
-            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
@@ -284,16 +271,6 @@ namespace Roster_Builder.Tau_Empire
                     break;
                 case 19:
                     Weapons[5] = cmbOption6.SelectedItem.ToString();
-                    break;
-                case 21:
-                    if (cbOption1.Checked)
-                    {
-                        Weapons[6] = cbOption1.Text;
-                    }
-                    else
-                    {
-                        Weapons[6] = "";
-                    }
                     break;
                 case 25:
                     if (cbWarlord.Checked)
@@ -339,7 +316,7 @@ namespace Roster_Builder.Tau_Empire
 
             foreach (string weapon in Weapons)
             {
-                if(weapon == "Airbursting Fragmentation Projector (+10/+15/+20 pts)")
+                if (weapon == "Airbursting Fragmentation Projector (+10/+15/+20 pts)")
                 {
                     weapons[0] += 1;
                     if (weapons[0] == 1)
@@ -355,7 +332,7 @@ namespace Roster_Builder.Tau_Empire
                         Points += 20;
                     }
                 }
-                else if(weapon == "Burst Cannon (+10/+15/+20 pts)")
+                else if (weapon == "Burst Cannon (+10/+15/+20 pts)")
                 {
                     weapons[1] += 1;
                     if (weapons[1] == 1)
@@ -455,10 +432,6 @@ namespace Roster_Builder.Tau_Empire
                 {
                     Points += 10;
                 }
-                else if (weapon == "Iridium Battlesuit (+10 pts)")
-                {
-                    Points += 10;
-                }
                 else if (weapon == "Marker Drone (+10 pts)")
                 {
                     Points += 10;
@@ -476,7 +449,7 @@ namespace Roster_Builder.Tau_Empire
 
         public override string ToString()
         {
-            return "Crisis Commander - " + Points + "pts";
+            return "Enforcer Commander - " + Points + "pts";
         }
     }
 }

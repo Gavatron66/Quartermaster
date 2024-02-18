@@ -5,6 +5,7 @@ Models to add checks for Numeric Up Down controls:
 	InvaderATVs
 	Sicarian Infiltrators
 	Sicarian Ruststalkers
+	Tactical Drones
 
 Genestealer Cults has weird custom factions
 	Add either more boxes or do a Checkbox system
@@ -21,6 +22,7 @@ Implement the remianing unique stratagems for the following:
 	Harlequins
 	Tyranids
 	Mechanicus
+	T'au
 	
 Space Marines has limits on what each unit can take depending on subchapter. Most of the time, this isn't a problem. The following have a codex supplement that adds/changes their rosters:
 	Black Templars
