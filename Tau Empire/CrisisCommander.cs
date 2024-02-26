@@ -274,7 +274,38 @@ namespace Roster_Builder.Tau_Empire
                     break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
-                    break;
+					cmbOption1.Enabled = true;
+					if (Factionupgrade == "Alternating Fusion Blaster (+25 pts)")
+					{
+						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Fusion Blaster (+15/+20/+25 pts)");
+						cmbOption1.Enabled = false;
+					}
+					else if (Factionupgrade == "Dominator Fragmentation Launcher (+25 pts)")
+					{
+						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Airbursting Fragmentation Projector (+10/+15/+20 pts)");
+						cmbOption1.Enabled = false;
+					}
+					else if (Factionupgrade == "DW-02 Advanced Burst Cannon (+15 pts)")
+					{
+						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Burst Cannon (+10/+15/+20 pts)");
+						cmbOption1.Enabled = false;
+					}
+					else if (Factionupgrade == "Novasurge Plasma Rifle (+20 pts)")
+					{
+						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Rifle (+10/+15/+25 pts)");
+						cmbOption1.Enabled = false;
+					}
+					else if (Factionupgrade == "Resonator Warheads (+30 pts)")
+					{
+						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Missile Pod (+10/+15/+25 pts)");
+						cmbOption1.Enabled = false;
+					}
+					else if (Factionupgrade == "Thermoneutronic Projector (+20 pts)")
+					{
+						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("T'au Flamer (+5/+10/+15 pts)");
+						cmbOption1.Enabled = false;
+					}
+					break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     Relic = chosenRelic;

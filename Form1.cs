@@ -21,6 +21,7 @@ using Roster_Builder.Aeldari.Harlequins;
 using Roster_Builder.Tyranids;
 using Roster_Builder.Adeptus_Mechanicus;
 using Roster_Builder.Tau_Empire;
+using Roster_Builder.Orks;
 
 namespace Roster_Builder
 {
@@ -82,6 +83,7 @@ namespace Roster_Builder
                 new GSC(),
                 new Harlequins(),
                 new Necrons.Necrons(),
+                new Orks.Orks(),
                 new SpaceMarines(),
                 new T_au(),
                 new Tyranids.Tyranids(),
@@ -104,7 +106,8 @@ namespace Roster_Builder
                 new GSC(),
                 new Harlequins(),
                 new Necrons.Necrons(),
-                new SpaceMarines(),
+				new Orks.Orks(),
+				new SpaceMarines(),
 				new T_au(),
 				new Tyranids.Tyranids(),
             });

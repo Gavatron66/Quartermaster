@@ -101,26 +101,27 @@ namespace Roster_Builder.Tau_Empire
                 new FiresightMarksman(),
                 //---------- Fast Attack ----------
                 new TacticalDrones(),
-                //new Pathfinders(),
-                //new Piranhas(),
-                //new VespidStingwings(),
-                //new KrootHounds(),
+                new Pathfinders(),
+                new Piranhas(),
+                new VespidStingwings(),
+                new KrootHounds(),
                 //---------- Heavy Support ----------
-                //new Broadsides(),
-                //new Riptide(),
-                //new HammerheadGunship(),
-                //new SkyRayGunship(),
+                new Broadsides(),
+                new Riptide(),
+                new HammerheadGunship(),
+                new SkyRayGunship(),
                 //---------- Transport ----------
-                //new Devilfish(),
+                new Devilfish(),
                 //---------- Flyer ----------
-                //new RazorsharkFighter(),
-                //new SunSharkBomber(),
+                new RazorsharkFighter(),
+                new SunSharkBomber(),
                 //---------- Fortification ----------
-                //new TidewallShieldline(),
-                //new TidewallDroneport(),
-                //new TidewallGunrig(),
+                new TidewallShieldline(),
+                new TidewallDefensePlatform(),
+                new TidewallDroneport(),
+                new TidewallGunrig(),
                 //---------- Lord of War ----------
-                //new Stormsurge()
+                new Stormsurge()
             };
 
             return datasheets;
@@ -159,7 +160,7 @@ namespace Roster_Builder.Tau_Empire
 
             string[] ten = new string[]
             {
-                "Stimm Injector (+10 pts)s",
+                "Stimm Injector (+10 pts)",
             };
 
             if(thirty.Contains(upgrade))
@@ -190,20 +191,65 @@ namespace Roster_Builder.Tau_Empire
         {
             List<string> upgrades = new List<string>()
             {
-                "(None)",
-                "Alternating Fusion Blaster (+25 pts)", //Commander/Crisis w/ Fusion Blasters
-                "Dominator Fragmentation Launcher (+25 pts)", //Commander/Crisis w/ Airbursting Frag Projectors
-                "DW-02 Advanced Burst Cannon (+15 pts)", //Commander/Crisis w/ Burst Cannons
-                "E-H Disruption Suite (+30 pts)", //Ghostkeel
-                "Internal Grenade Racks (+15 pts)",
-                "Novasurge Plasma Rifle (+20 pts)", //Commander/Crisis w/ Plasma Rifles
-                "Resonator Warheads (+30 pts)", //Commander/Crisis w/ Missile Pods
-                "Sensory Negation Coutermeasures (+15 pts)", //Commander/Crisis
-                "Starflare Ignition System (+20 pts)", //Coldstar only
-                "Stimm Injector (+10 pts)s", //Commander/Crisis
-                "Thermoneutronic Projector (+20 pts)", //Commander/Crisis with Flamers
-                "Wide Sprectrum Scanners (+20 pts)" //Early Warning Override only
+                "(None)"
             };
+
+            if(!keywords.Contains("GHOSTKEEL BATTLESUIT"))
+            {
+                upgrades.Add("Alternating Fusion Blaster (+25 pts)"); //Commander/Crisis w/ Fusion Blasters
+            };
+
+            if (!keywords.Contains("GHOSTKEEL BATTLESUIT"))
+            {
+                upgrades.Add("Dominator Fragmentation Launcher (+25 pts)"); //Commander/Crisis w/ Airbursting Frag Projectors
+            };
+
+            if (!keywords.Contains("GHOSTKEEL BATTLESUIT"))
+            {
+                upgrades.Add("DW-02 Advanced Burst Cannon (+15 pts)"); //Commander/Crisis w/ Burst Cannons
+			}
+
+            if (keywords.Contains("GHOSTKEEL BATTLESUIT"))
+            {
+                upgrades.Add("E-H Disruption Suite (+30 pts)"); //Ghostkeel
+            }
+
+            upgrades.Add("Internal Grenade Racks (+15 pts)");
+
+            if (!keywords.Contains("GHOSTKEEL BATTLESUIT"))
+            {
+                upgrades.Add("Novasurge Plasma Rifle (+20 pts)"); //Commander/Crisis w/ Plasma Rifles
+			}
+
+            if (!keywords.Contains("GHOSTKEEL BATTLESUIT"))
+            {
+                upgrades.Add("Resonator Warheads (+30 pts)"); //Commander/Crisis w/ Missile Pods
+			}
+
+            if (!keywords.Contains("GHOSTKEEL BATTLESUIT"))
+            {
+                upgrades.Add("Sensory Negation Coutermeasures (+15 pts)"); //Commander/Crisis
+            }
+
+            if (keywords.Contains("COLDSTAR"))
+            {
+                upgrades.Add("Starflare Ignition System (+20 pts)"); //Coldstar only
+            }
+
+            if (!keywords.Contains("GHOSTKEEL BATTLESUIT"))
+            {
+                upgrades.Add("Stimm Injector (+10 pts)"); //Commander/Crisis
+			}
+
+            if (!keywords.Contains("GHOSTKEEL BATTLESUIT"))
+            {
+                upgrades.Add("Thermoneutronic Projector (+20 pts)"); //Commander/Crisis with Flamers
+			}
+
+            if (keywords.Contains("CRISIS"))
+            {
+                upgrades.Add("Wide Sprectrum Scanners (+20 pts)"); //Early Warning Override only
+            }
 
 			return upgrades;
         }
@@ -232,23 +278,53 @@ namespace Roster_Builder.Tau_Empire
 
             relics.Add("(None)");
             relics.Add("Puretide Engram Neurochip");
-            relics.Add("Onager Gauntlet");      //Battlesuit
+
+            if(keywords.Contains("BATTLESUIT"))
+            {
+                relics.Add("Onager Gauntlet");      //Battlesuit
+            }
+
             relics.Add("Multi-sensory Discouragement Array");
             relics.Add("Solid-image Projection Unit");
             relics.Add("Advanced EM Scrambler");
-            relics.Add("Borthrod Gland");       //Kroot
-            relics.Add("Ohr'tu's Lantern");     //Markerlight
-            relics.Add("The Humble Stave");     //Ethereal
-            relics.Add("The Kindled Blade");    //Cadre Fireblade
-            relics.Add("Neuro-empathic Nullifier"); //Ethereal
+
+            if(keywords.Contains("KROOT"))
+            {
+                relics.Add("Borthrod Gland");       //Kroot
+            }
+
+            if(keywords.Contains("CADRE FIREBLADE") || keywords.Contains("FIRESIGHT MARKSMAN"))
+            {
+                relics.Add("Ohr'tu's Lantern");     //Markerlight
+            }
+
+            if(keywords.Contains("ETHEREAL"))
+            {
+                relics.Add("The Humble Stave");     //Ethereal
+			}
+
+            if (keywords.Contains("CADRE FIREBLADE"))
+            {
+                relics.Add("The Kindled Blade");    //Cadre Fireblade
+			}
+
+            if (keywords.Contains("ETHEREAL"))
+            {
+                relics.Add("Neuro-empathic Nullifier"); //Ethereal
+            }
+
             relics.Add("The Be'gel Hunter's Plate");
-            relics.Add("Ka'chak'tarr");         //Kroot Shaper
+
+            if (keywords.Contains("KROOT SHAPER"))
+            {
+                relics.Add("Ka'chak'tarr");         //Kroot Shaper
+            }
 
 			if (currentSubFaction == "T'au")
 			{
                 relics.Add("Vectored Manoeuvring Thursters");
 			}
-			else if (currentSubFaction == "Vior'la")
+			else if (currentSubFaction == "Vior'la" || keywords.Contains("COMMANDER"))
 			{
                 relics.Add("Automated Armour Defences"); //Commander
 			}
@@ -260,7 +336,7 @@ namespace Roster_Builder.Tau_Empire
 			{
                 relics.Add("Dynamic Mirror Field");
 			}
-			else if (currentSubFaction == "Bork'an")
+			else if (currentSubFaction == "Bork'an" || keywords.Contains("COMMANDER"))
 			{
                 relics.Add("Overdrive Power Systems"); //Commander
 			}

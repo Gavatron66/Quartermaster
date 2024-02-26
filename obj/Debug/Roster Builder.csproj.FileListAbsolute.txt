@@ -98,6 +98,6 @@ C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster_Builder.Properties.Resourc
 C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster_Builder.Testing_Form.resources
 C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster Builder.csproj.GenerateResource.cache
 C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster Builder.csproj.CoreCompileInputs.cache
-C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster Builder.csproj.CopyComplete
 C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster Builder.exe
 C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster Builder.pdb
+C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster B.2CB3B829.Up2Date

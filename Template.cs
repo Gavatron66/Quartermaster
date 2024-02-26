@@ -1299,11 +1299,73 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["cmbOption4"].Location = new System.Drawing.Point(311, 127);
 
                     break;
-                #endregion
+				#endregion
+				#region case "5m2k"
+				case "5m2k":
+					panel.Controls["lblOption1"].Visible = true;
+					panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
 
-                //Units with variable Unit Size
-                #region case "N"
-                case "N":
+					panel.Controls["cmbOption1"].Visible = true;
+					panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 25);
+
+					panel.Controls["lblOption2"].Visible = true;
+					panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 63);
+
+					panel.Controls["cmbOption2"].Visible = true;
+					panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 59);
+
+					panel.Controls["lblOption3"].Visible = true;
+					panel.Controls["lblOption3"].Location = new System.Drawing.Point(86, 97);
+
+					panel.Controls["cmbOption3"].Visible = true;
+					panel.Controls["cmbOption3"].Location = new System.Drawing.Point(311, 93);
+
+					panel.Controls["lblOption4"].Visible = true;
+					panel.Controls["lblOption4"].Location = new System.Drawing.Point(86, 131);
+
+					panel.Controls["cmbOption4"].Visible = true;
+					panel.Controls["cmbOption4"].Location = new System.Drawing.Point(311, 127);
+
+					panel.Controls["lblOption5"].Visible = true;
+					panel.Controls["lblOption5"].Location = new System.Drawing.Point(86, 165);
+
+					panel.Controls["cmbOption5"].Visible = true;
+					panel.Controls["cmbOption5"].Location = new System.Drawing.Point(311, 161);
+
+					panel.Controls["cbOption1"].Visible = true;
+					panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 195);
+
+					panel.Controls["cbOption2"].Visible = true;
+					panel.Controls["cbOption2"].Location = new System.Drawing.Point(311, 229);
+
+					break;
+				#endregion
+				#region case "2m2k"
+				case "2m2k":
+					panel.Controls["lblOption1"].Visible = true;
+					panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
+
+					panel.Controls["cmbOption1"].Visible = true;
+					panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 25);
+
+					panel.Controls["lblOption2"].Visible = true;
+					panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 63);
+
+					panel.Controls["cmbOption2"].Visible = true;
+					panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 59);
+
+					panel.Controls["cbOption1"].Visible = true;
+					panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 93);
+
+					panel.Controls["cbOption2"].Visible = true;
+					panel.Controls["cbOption2"].Location = new System.Drawing.Point(311, 123);
+
+					break;
+				#endregion
+
+				//Units with variable Unit Size
+				#region case "N"
+				case "N":
                     panel.Controls["lblNumModels"].Visible = true;
                     panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
 
@@ -2276,6 +2338,41 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 321);
                     break;
                 #endregion
+                #region case "NL3m3k"
+                case "NL3m3k":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lbModelSelect"].Visible = true;
+                    panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
+                    panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
+
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(239, 127);
+
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(282, 150);
+
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(239, 184);
+
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(282, 207);
+
+                    panel.Controls["lblOption3"].Location = new System.Drawing.Point(239, 241);
+
+                    panel.Controls["cmbOption3"].Location = new System.Drawing.Point(282, 264); //207
+
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(243, 294);
+
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(243, 324);
+
+                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(243, 354);
+
+                    panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(239, 388);
+
+                    panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 411);
+                    break;
+                #endregion
                 #region case "NL6m1k"
                 case "NL6m1k":
                     panel.Controls["lblNumModels"].Visible = true;
@@ -2390,11 +2487,51 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 333);
                     break;
+				#endregion                
+                #region case "NL5m"
+				case "NL5m":
+					panel.Controls["lblNumModels"].Visible = true;
+					panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+					panel.Controls["nudUnitSize"].Visible = true;
+					panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+					panel.Controls["lbModelSelect"].Visible = true;
+					panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
+					panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
+
+					panel.Controls["lblOption1"].Location = new System.Drawing.Point(239, 77);
+
+					panel.Controls["cmbOption1"].Location = new System.Drawing.Point(282, 100);
+
+					panel.Controls["lblOption2"].Location = new System.Drawing.Point(239, 134);
+
+					panel.Controls["cmbOption2"].Location = new System.Drawing.Point(282, 157); //34
+
+					panel.Controls["lblOption3"].Location = new System.Drawing.Point(239, 191); //23
+
+					panel.Controls["cmbOption3"].Location = new System.Drawing.Point(282, 214);
+
+					panel.Controls["lblOption4"].Location = new System.Drawing.Point(239, 248);
+
+					panel.Controls["cmbOption4"].Location = new System.Drawing.Point(282, 271);
+
+					panel.Controls["lblOption5"].Location = new System.Drawing.Point(239, 305);
+
+					panel.Controls["cmbOption5"].Location = new System.Drawing.Point(282, 328);
+
+					panel.Controls["cbOption1"].Location = new System.Drawing.Point(243, 352);
+
+					panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(239, 394);
+
+					panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 417);
+					break;
                 #endregion
 
-                //Special Cases
-                #region case "cultist"
-                case "cultist":
+
+				//Special Cases
+				#region case "cultist"
+				case "cultist":
                     panel.Controls["lblNumModels"].Visible = true;
                     panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
 

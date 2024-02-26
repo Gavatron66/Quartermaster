@@ -214,7 +214,39 @@ namespace Roster_Builder.Tau_Empire
                     break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
-                    break;
+					cmbOption1.Enabled = true;
+					if (Factionupgrade == "Alternating Fusion Blaster (+25 pts)")
+					{
+						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Fusion Blaster (+10/+15/+25 pts)");
+						cmbOption1.Enabled = false;
+					}
+					else if (Factionupgrade == "Dominator Fragmentation Launcher (+25 pts)")
+					{
+						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Airbursting Fragmentation Projector (+10/+15/+20 pts)");
+						cmbOption1.Enabled = false;
+					}
+					else if (Factionupgrade == "DW-02 Advanced Burst Cannon (+15 pts)")
+					{
+						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Burst Cannon (+5/+10/+20 pts)");
+						cmbOption1.Enabled = false;
+					}
+					else if (Factionupgrade == "Novasurge Plasma Rifle (+20 pts)")
+					{
+						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Rifle (+10/+15/+20 pts)");
+						cmbOption1.Enabled = false;
+					}
+					else if (Factionupgrade == "Resonator Warheads (+30 pts)")
+					{
+						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Missile Pod (+10/+15/+20 pts)");
+						cmbOption1.Enabled = false;
+					}
+					else if (Factionupgrade == "Thermoneutronic Projector (+20 pts)")
+					{
+						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("T'au Flamer (+5/+10/+15 pts)");
+						cmbOption1.Enabled = false;
+					}
+					lbModelSelect.Items[0] = ("Crisis Bodyguard Shas'vre - " + CalcPoints(0) + " pts");
+					break;
                 case 18:
                     Weapons[(currentIndex * 6) + 4] = cmbOption5.SelectedItem.ToString();
                     if (currentIndex == 0)
@@ -641,8 +673,13 @@ namespace Roster_Builder.Tau_Empire
                 else if (Weapons[i] == "Shield Generator (+5 pts)")
                 {
                     points += 5;
-                }
-            }
+				}
+
+				if (index == 0 && i == 0)
+				{
+					points += repo.GetFactionUpgradePoints(Factionupgrade);
+				}
+			}
 
             return 45 + points;
         }

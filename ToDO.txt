@@ -49,3 +49,11 @@ Compare Primaris Lieutenant and Primaris Captain
 Some Aeldari Vehicles show points cost in the select list.
 
 Tyranids need a look at custom Hive Fleets
+
+T'au Piranhas hide Seeker Missiles; may want to be looked at
+Broadsides have some weapons restrictions
+	Fix it
+	How to display it?
+
+Riptide template is adequate, but could be better. Take a look?
+	Maybe a ListBox control would help
