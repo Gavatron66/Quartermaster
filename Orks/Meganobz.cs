@@ -6,38 +6,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Genestealer_Cults
+namespace Roster_Builder.Orks
 {
-    public class AchillesRidgerunners : Datasheets
+    public class Meganobz : Datasheets
     {
         int currentIndex;
-        public AchillesRidgerunners()
+        public Meganobz()
         {
-            DEFAULT_POINTS = 80;
-            UnitSize = 1;
+            DEFAULT_POINTS = 30;
+            UnitSize = 3;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "NL2m";
 
-            Weapons.Add("Heavy Mining Laser");
-            Weapons.Add("Flare Launcher");
+            for(int i = 0; i < UnitSize; i++)
+            {
+                Weapons.Add("Kustom Shoota");
+                Weapons.Add("Power Klaw");
+            }
 
             Keywords.AddRange(new string[]
             {
-                "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
-                "VEHICLE", "CROSSFIRE", "ACHILLES RIDGERUNNERS"
+                "ORKS", "<CLAN>",
+                "INFANTRY", "MEGA ARMOUR", "NOBZ", "MOB", "CORE", "MEGANOBZ"
             });
-            Role = "Fast Attack";
+            Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new AchillesRidgerunners();
+            return new Meganobz();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
-            repo = f as GSC;
+            repo = f as Orks;
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
@@ -46,33 +49,34 @@ namespace Roster_Builder.Genestealer_Cults
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             int currentSize = UnitSize;
-            nudUnitSize.Minimum = 1;
+            nudUnitSize.Minimum = 3;
             antiLoop = true;
             nudUnitSize.Value = nudUnitSize.Minimum;
             antiLoop = false;
-            nudUnitSize.Maximum = 3;
+            nudUnitSize.Maximum = 10;
             nudUnitSize.Value = currentSize;
 
             lbModelSelect.Items.Clear();
-            for (int i = 0; i < UnitSize; i++)
+            lbModelSelect.Items.Add("Boss Meganob w/ " + Weapons[0] + " and " + Weapons[1]);
+            for (int i = 1; i < UnitSize; i++)
             {
-                lbModelSelect.Items.Add("Achilles Ridgerunner w/ " + Weapons[i*2] + " and " + Weapons[(i*2)+1]);
+                lbModelSelect.Items.Add("Meganob w/ " + Weapons[i * 2] + " and " + Weapons[(i * 2) + 1]);
             }
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Achilles Missile Launcher",
-                "Heavy Mining Laser",
-                "Heavy Mortar"
+                "Killsaw (+5 pts)",
+                "Kombi-rokkit (+5 pts)",
+                "Kombi-skorcha (+10 pts)",
+                "Kustom Shoota"
             });
 
             cmbOption2.Items.Clear();
             cmbOption2.Items.AddRange(new string[]
             {
-                "Flare Launcher",
-                "Spotter",
-                "Survey Augur"
+                "Killsaw (+5 pts)",
+                "Power Klaw"
             });
 
             cmbFaction.Visible = true;
@@ -108,11 +112,25 @@ namespace Roster_Builder.Genestealer_Cults
             {
                 case 11:
                     Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
-                    lbModelSelect.Items[currentIndex] = "Achilles Ridgerunner w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[((currentIndex) * 2) + 1];
+                    if(currentIndex == 0)
+                    {
+                        lbModelSelect.Items[currentIndex] = "Meganob w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[((currentIndex) * 2) + 1];
+                    }
+                    else
+                    {
+                        lbModelSelect.Items[currentIndex] = "Meganob w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[((currentIndex) * 2) + 1];
+                    }
                     break;
                 case 12:
                     Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
-                    lbModelSelect.Items[currentIndex] = "Achilles Ridgerunner w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[((currentIndex) * 2) + 1];
+                    if (currentIndex == 0)
+                    {
+                        lbModelSelect.Items[currentIndex] = "Meganob w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[((currentIndex) * 2) + 1];
+                    }
+                    else
+                    {
+                        lbModelSelect.Items[currentIndex] = "Meganob w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[((currentIndex) * 2) + 1];
+                    }
                     break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
@@ -123,9 +141,9 @@ namespace Roster_Builder.Genestealer_Cults
 
                     if (temp < UnitSize)
                     {
-                        Weapons.Add("Heavy Mining Laser");
-                        Weapons.Add("Flare Launcher");
-                        lbModelSelect.Items.Add("Achilles Ridgerunner w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[((currentIndex ) * 2) + 1]);
+                        Weapons.Add("Kustom Shoota");
+                        Weapons.Add("Power Klaw");
+                        lbModelSelect.Items.Add("Meganob w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[((currentIndex) * 2) + 1]);
                     }
 
                     if (temp > UnitSize)
@@ -160,11 +178,24 @@ namespace Roster_Builder.Genestealer_Cults
             Points = DEFAULT_POINTS * UnitSize;
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
+
+            foreach (var weapon in Weapons)
+            {
+                if(weapon == "Killsaw (+5 pts)" || weapon == "Kombi-rokkit (+5 pts)")
+                {
+                    Points += 5;
+                }
+
+                if(weapon == "Kombi-skorcha (+10 pts)")
+                {
+                    Points += 10;
+                }
+            }
         }
 
         public override string ToString()
         {
-            return "Achilles Ridgerunners - " + Points + "pts";
+            return "Meganobz - " + Points + "pts";
         }
     }
 }

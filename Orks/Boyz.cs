@@ -1,41 +1,43 @@
-﻿using System;
+﻿using Roster_Builder.Death_Guard;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Death_Guard
+namespace Roster_Builder.Orks
 {
-    public class DG_Cultists : Datasheets
+    public class Boyz : Datasheets
     {
-        public DG_Cultists()
+        public Boyz()
         {
-            DEFAULT_POINTS = 5;
+            DEFAULT_POINTS = 8;
             UnitSize = 10;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "cultist";
-            Weapons.Add("9"); //Autoguns
-            Weapons.Add("0"); //Autopistols and Brutal Assault Weapons
-            Weapons.Add("0"); //Flamers
-            Weapons.Add("0"); //Heavy Stubbers
-            Weapons.Add("Autogun"); //Champion Weapon
+            Weapons.Add("9"); //Sluggas and Choppas
+            Weapons.Add("0"); //Shootas
+            Weapons.Add("0"); //Big Shootas
+            Weapons.Add("0"); //Rokkit Launcha
+            Weapons.Add("Slugga"); //Champion Weapon
+            Weapons.Add("Choppa"); //Champion Weapon
             Keywords.AddRange(new string[]
             {
-                "CHAOS", "NURGLE", "DEATH GUARD",
-                "INFANTRY", "PLAGUE FOLLOWERS", "CULTISTS"
+                "ORKS", "<CLAN>",
+                "INFANTRY", "MOB", "CORE", "TANKBUSTA BOMBS", "BOYZ"
             });
             Role = "Troops";
         }
+
         public override Datasheets CreateUnit()
         {
-            return new DG_Cultists();
+            return new Boyz();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as DeathGuard;
+            repo = f as Orks;
             Template.LoadTemplate(TemplateCode, panel);
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
@@ -52,7 +54,12 @@ namespace Roster_Builder.Death_Guard
 
             GroupBox gbUnitLeader = panel.Controls["gbUnitLeader"] as GroupBox;
             ComboBox gb_cmbOption1 = gbUnitLeader.Controls["gb_cmbOption1"] as ComboBox;
-            ComboBox cmbFactionupgrade = gbUnitLeader.Controls["gb_cmbFactionupgrade"] as ComboBox;
+            ComboBox gb_cmbOption2 = gbUnitLeader.Controls["gb_cmbFactionupgrade"] as ComboBox;
+
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+
+            nudOption1.Location = new System.Drawing.Point(nudOption1.Location.X + 80, nudOption1.Location.Y);
+            nudOption4.Location = new System.Drawing.Point(nudOption4.Location.X + 10, nudOption4.Location.Y);
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 10;
@@ -67,7 +74,6 @@ namespace Roster_Builder.Death_Guard
             nudOption2.Minimum = 0;
             nudOption2.Maximum = nudUnitSize.Maximum;
             nudOption2.Value = 0;
-            nudOption2.Location = new System.Drawing.Point(328, 91);
 
             nudOption3.Minimum = 0;
             nudOption3.Maximum = nudUnitSize.Value / 10;
@@ -86,38 +92,61 @@ namespace Roster_Builder.Death_Guard
             temp = int.Parse(Weapons[3]);
             nudOption4.Value = temp;
 
-            lblnud1.Text = "Models with Autoguns:";
-            lblnud2.Text = "Models with Autopistols and BAWs:";
-            lblnud2.Location = new System.Drawing.Point(86, 91);
+            lblnud1.Text = "Models with Sluggas and Choppas:";
+            lblnud2.Text = "Models with Shootas:";
             lblExtra1.Text = "For every 10x models, one of the following may be taken:";
-            lblnud3.Text = "Flamer:";
-            lblnud4.Text = "Heavy Stubber:";
+            lblnud3.Text = "Big Shoota:";
+            lblnud4.Text = "Rokkit Launcha (+5 pts):";
 
-            gbUnitLeader.Text = "Cultist Champion";
+            gbUnitLeader.Text = "Boss Nob";
 
             gb_cmbOption1.Items.Clear();
             gb_cmbOption1.Items.AddRange(new string[]
             {
-                "Autogun",
-                "Shotgun",
-                "Autopistol and BAW"
+                "Big Choppa (+5 pts)",
+                "Choppa",
+                "Killsaw (+10 pts)",
+                "Kombi-rokkit (+5 pts)",
+                "Kombi-skorcha (+5 pts)",
+                "Power Klaw (+10 pts)",
+                "Power Stabba (+5 pts)",
+                "Slugga"
             });
-            gb_cmbOption1.SelectedIndex = gb_cmbOption1.Items.IndexOf(Weapons[4]);
 
-            cmbFactionupgrade.Items.Clear();
-            cmbFactionupgrade.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+            gb_cmbOption2.Items.Clear();
+            gb_cmbOption2.Items.AddRange(new string[]
+            {
+                "Big Choppa (+5 pts)",
+                "Choppa",
+                "Killsaw (+10 pts)",
+                "Power Klaw (+10 pts)",
+                "Power Stabba (+5 pts)",
+                "Slugga"
+            });
+
+            gb_cmbOption1.SelectedIndex = gb_cmbOption1.Items.IndexOf(Weapons[4]);
+            gb_cmbOption2.SelectedIndex = gb_cmbOption2.Items.IndexOf(Weapons[5]);
+
+            cmbFaction.Items.Clear();
+            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
 
             if (Factionupgrade != null)
             {
-                cmbFactionupgrade.SelectedIndex = cmbFactionupgrade.Items.IndexOf(Factionupgrade);
+                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
             }
             else
             {
-                cmbFactionupgrade.SelectedIndex = 0;
+                cmbFaction.SelectedIndex = 0;
             }
 
             gbUnitLeader.Controls["gb_lblFactionupgrade"].Visible = true;
+            gbUnitLeader.Controls["gb_lblFactionupgrade"].Text = "Select one of the following:";
             gbUnitLeader.Controls["gb_cmbFactionupgrade"].Visible = true;
+
+            cmbFaction.Visible = true;
+            panel.Controls["lblFactionupgrade"].Visible = true;
+            panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(gbUnitLeader.Location.X, 395);
+            cmbFaction.Location = new System.Drawing.Point(gbUnitLeader.Location.X + 20, 417);
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -130,10 +159,15 @@ namespace Roster_Builder.Death_Guard
 
             GroupBox gbUnitLeader = panel.Controls["gbUnitLeader"] as GroupBox;
             ComboBox gb_cmbOption1 = gbUnitLeader.Controls["gb_cmbOption1"] as ComboBox;
-            ComboBox cmbFactionupgrade = gbUnitLeader.Controls["gb_cmbFactionupgrade"] as ComboBox;
+            ComboBox gb_cmbOption2 = gbUnitLeader.Controls["gb_cmbFactionupgrade"] as ComboBox;
+
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
+                case 16:
+                    Factionupgrade = cmbFaction.Text;
+                    break;
                 case 30:
                     int oldSize = UnitSize;
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
@@ -155,18 +189,12 @@ namespace Roster_Builder.Death_Guard
                         }
                     }
                     break;
-                case 416:
-                    Factionupgrade = cmbFactionupgrade.Text;
-                    break;
-                case 411:
-                    Weapons[4] = gb_cmbOption1.SelectedItem.ToString();
-                    break;
                 case 31:
-                    if(nudOption1.Value == 0)
+                    if (nudOption1.Value == 0)
                     {
                         break;
                     }
-                    else if(nudOption1.Value + nudOption2.Value + nudOption3.Value + nudOption4.Value <= nudUnitSize.Value - 1)
+                    else if (nudOption1.Value + nudOption2.Value + nudOption3.Value + nudOption4.Value <= nudUnitSize.Value - 1)
                     {
                         Weapons[0] = Convert.ToString(nudOption1.Value);
                     }
@@ -195,7 +223,7 @@ namespace Roster_Builder.Death_Guard
                         break;
                     }
                     else if (nudOption1.Value + nudOption2.Value + nudOption3.Value + nudOption4.Value <= nudUnitSize.Value - 1
-                        && nudOption3.Value + nudOption4.Value <= nudUnitSize.Value/10)
+                        && nudOption3.Value + nudOption4.Value <= nudUnitSize.Value / 10)
                     {
                         Weapons[2] = Convert.ToString(nudOption3.Value);
                     }
@@ -219,6 +247,28 @@ namespace Roster_Builder.Death_Guard
                         nudOption4.Value -= 1;
                     }
                     break;
+                case 411:
+                    Weapons[4] = gb_cmbOption1.SelectedItem.ToString();
+                    if (Weapons[4] == "Kombi-rokkit (+5 pts)" || Weapons[4] == "Kombi-skorcha (+5 pts)")
+                    {
+                        gb_cmbOption2.Enabled = false;
+                        Weapons[5] = "";
+                        gb_cmbOption2.SelectedIndex = -1;
+                    }
+                    else
+                    {
+                        gb_cmbOption2.Enabled = true;
+                        gb_cmbOption2.SelectedIndex = 1;
+                    }
+                    break;
+                case 416:
+                    if(gb_cmbOption2.SelectedIndex == -1)
+                    {
+                        break;
+                    }
+
+                    Weapons[5] = gb_cmbOption2.SelectedItem.ToString();
+                    break;
             }
 
             nudOption3.Maximum = nudUnitSize.Value / 10;
@@ -226,11 +276,24 @@ namespace Roster_Builder.Death_Guard
 
             Points = DEFAULT_POINTS * UnitSize;
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
+
+            if(Weapons.Contains("Big Choppa (+5 pts)") || Weapons.Contains("Kombi-rokkit (+5 pts)")
+                 || Weapons.Contains("Kombi-skorcha (+5 pts)") || Weapons.Contains("Power Stabba (+5 pts)"))
+            {
+                Points += 5;
+            }
+
+            if (Weapons.Contains("Killsaw (+10 pts)") || Weapons.Contains("Power Klaw (+10 pts)"))
+            {
+                Points += 10;
+            }
+
+            Points += Convert.ToInt32(Weapons[3].ToString()) * 5;
         }
 
         public override string ToString()
         {
-            return "Death Guard Cultists - " + Points + "pts";
+            return "Ork Boyz - " + Points + "pts";
         }
     }
 }

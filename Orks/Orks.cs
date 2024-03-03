@@ -35,75 +35,75 @@ namespace Roster_Builder.Orks
 		{
 			return new List<Datasheets> {
 				//---------- HQ ----------
-				//new GhazghkullThraka(),
-				//new Makari(),
-				//new BigMekForceField(),
-				//new BigMekShokkGun(),
-				//new Warboss(),
-				//new MegaWarboss(),
-				//new Weirdboy(),
-				//new MegaMek(),
-				//new BossSnikrot(),
-				//new BossZagstruk(),
-				//new DeffkillaWartrike(),
-				//new KaptinBadrukk(),
-				//new ZodgrodWortsnagga(),
-				//new Beastboss(),
-				//new BeastbossSquigosaur(),
-				//new Painboss(),
-				//new Wurrboy(),
-				//new Mozrog Skragbad(),
+				new GhazghkullThraka(),
+				new Makari(),
+				new BigMekForceField(),
+				new BigMekShokkGun(),
+				new Warboss(),
+				new MegaWarboss(),
+				new Weirdboy(),
+				new MegaBigMek(),
+				new BossSnikrot(),
+				new BossZagstruk(),
+				new DeffkillaWartrike(),
+				new KaptinBadrukk(),
+				new ZodgrodWortsnagga(),
+				new Beastboss(),
+				new BeastbossSquigosaur(),
+				new Painboss(),
+				new Wurrboy(),
+				new MozrogSkragbad(),
 				//---------- Troops ----------
-				//new Gretchin(),
-				//new Boyz(),
-				//new BeastSnaggaBoyz(),
+				new Gretchin(),
+				new Boyz(),
+				new BeastSnaggaBoyz(),
 				//---------- Elites ----------
-				//new BannerNob(),
-				//new Painboy(),
-				//new MadDokGrotsnik(),
-				//new Runtherd(),
-				//new BurnaBoyz(),
-				//new Mek(),
-				//new Tankbustas(),
-				//new Kommandos(),
-				//new Meganobz(),
-				//new Nobz(),
+				new BannerNob(),
+				new Painboy(),
+				new MadDokGrotsnik(),
+				new Runtherd(),
+				new BurnaBoyz(),
+				new Mek(),
+				new Tankbustas(),
+				new Kommandos(),
+				new Meganobz(),
+				new Nobz(),
 				//---------- Fast Attack ----------
-				//new ShokkjumpDragstas(),
-				//new DoomdakkaSnazzwagons(),
-				//new Warbikers(),
-				//new KustomBoostaBlastas(),
-				//new SmashaSquigNob(),
-				//new RukkatrukkSquigbuggies(),
-				//new MegatrakkScrapjets(),
-				//new Stormboyz(),
-				//new SquighogBoyz(),
-				//new Deffkoptas(),
+				new ShokkjumpDragstas(),
+				new BoomdakkaSnazzwagons(),
+				new Warbikers(),
+				new KustomBoostaBlastas(),
+				new SmashaSquigNob(),
+				new RukkatrukkSquigbuggies(),
+				new MegatrakkScrapjets(),
+				new Stormboyz(),
+				new SquighogBoyz(),
+				new Deffkoptas(),
 				//---------- Heavy Support ----------
-				//new MekGunz(),
-				//new Battlewagon(),
-				//new Bonebreaka(),
-				//new Gunwagon(),
-				//new KillKans(),
-				//new Lootas(),
-				//new DeffDreads(),
-				//new KillRig(),
-				//new FlashGitz(),
-				//new HuntaRig(),
+				new MekGunz(),
+				new Battlewagon(),
+				new Bonebreaka(),
+				new Gunwagon(),
+				new KillaKans(),
+				new Lootas(),
+				new DeffDreads(),
+				new KillRig(),
+				new FlashGitz(),
+				new HuntaRig(),
 				//---------- Transport ----------
-				//new Trukk(),
+				new Trukk(),
 				//---------- Flyer ----------
-				//new BurnaBommer(),
-				//new Dakkajet(),
-				//new BlitzaBommer(),
-				//new WazbomBlastajet(),
+				new BurnaBommer(),
+				new Dakkajet(),
+				new BlitzaBommer(),
+				new WazbomBlastajet(),
 				//---------- Lord of War ----------
-				//new Morkanaut(),
-				//new Gorkanaut(),
-				//new Stompa(),
+				new Morkanaut(),
+				new Gorkanaut(),
+				new Stompa(),
 				//---------- Fortification ----------
-				//new MekboyWorkshop(),
-				//new BigEdBossbunka()
+				new MekboyWorkshop(),
+				new BigEdBossbunka()
 			};
 		}
 
@@ -121,34 +121,91 @@ namespace Roster_Builder.Orks
 
 			if(keywords.Contains("VEHICLE"))
 			{
-				upgrades.Add("Da Booma");
-				upgrades.Add("Fortress on Wheels");
-				upgrades.Add("Gyroscopic Whirligig");
+				if(keywords.Contains("WAGON"))
+				{
+					upgrades.Add("Da Booma");
+				}
+
+				if(keywords.Contains("TRUKK") || keywords.Contains("WAGON"))
+				{
+					upgrades.Add("Fortress on Wheels");
+				}
+
+                if (keywords.Contains("SHOKKJUMP DRAGSTA"))
+                {
+                    upgrades.Add("Gyroscopic Whirligig");
+                }
+
 				upgrades.Add("More Dakka");
-				upgrades.Add("Nitro Squigs");
-				upgrades.Add("Red Rolla");
+
+                if (keywords.Contains("RUKKATRUKK SQUIGBUGGIES"))
+                {
+                    upgrades.Add("Nitro Squigs");
+                }
+
+                if (keywords.Contains("BONEBREKA"))
+                {
+                    upgrades.Add("Red Rolla");
+                }
+
 				upgrades.Add("Shokka Hull");
-				upgrades.Add("Souped-up Speshul");
-				upgrades.Add("Squig-hide Tyres");
-				upgrades.Add("Stompamatic Pistons");
+
+                if (keywords.Contains("BOOMDAKKA SNAZZWAGONS"))
+                {
+                    upgrades.Add("Souped-up Speshul");
+                }
+
+                if (!(keywords.Contains("WALKERZ") || keywords.Contains("AIRCRAFT")))
+                {
+                    upgrades.Add("Squig-hide Tyres");
+                }
+
+                if (keywords.Contains("GORKANAUT") || keywords.Contains("MORKANAUT") || keywords.Contains("DEFF DREAD"))
+                {
+                    upgrades.Add("Stompamatic Pistons");
+                }
 			}
 			else
-			{
-				upgrades.Add("Bionik Oiler");
-				upgrades.Add("Enhanced Runt-Sucker");
-				upgrades.Add("Extra-Kustom Weapon");
-				upgrades.Add("Smoky Gubbinz");
-				upgrades.Add("Zzapkrumpaz");
-			}
+            {
+                if (keywords.Contains("BIG MEK") || keywords.Contains("MEK") && !keywords.Contains("WAZBOM BLASTAJET"))
+                {
+                    upgrades.Add("Bionik Oiler");
+                }
 
-			if(keywords.Contains("BURNA BOYZ") || keywords.Contains("BURNA-BOMMER") || keywords.Contains("BOOMDAKKA SNAZZWAGON")
-				|| keywords.Contains("DEFFKILLA WARTRIKE") || keywords.Contains("NOB") || keywords.Contains("WARBOSS") || keywords.Contains("NOBZ"))
+                if (keywords.Contains("SHOKK ATTACK GUN"))
+                {
+                    upgrades.Add("Enhanced Runt-Sucker");
+                }
+
+                if ((keywords.Contains("BIG MEK") && keywords.Contains("MEGA ARMOUR")) || keywords.Contains("MEK") && !keywords.Contains("WAZBOM BLASTAJET")
+					|| keywords.Contains("BURNA BOYZ") || keywords.Contains("DEFFKOPTAS") || keywords.Contains("DEFF DREADS")
+					|| keywords.Contains("LOOTAS") || keywords.Contains("MORKANAUT"))
+                {
+                    upgrades.Add("Extra-Kustom Weapon");
+                }
+
+                if (keywords.Contains("BURNA BOYZ") || keywords.Contains("LOOTAS"))
+                {
+                    upgrades.Add("Smoky Gubbinz");
+                }
+
+                if (keywords.Contains("BURNA BOYZ") || keywords.Contains("LOOTAS"))
+                {
+                    upgrades.Add("Zzapkrumpaz");
+                }
+            }
+
+            //----------------- Specialist Mobs -----------------
+
+            if (keywords.Contains("BURNA BOYZ") || keywords.Contains("BURNA-BOMMER") || keywords.Contains("BOOMDAKKA SNAZZWAGONS")
+				|| keywords.Contains("DEFFKILLA WARTRIKE") || keywords.Contains("NOB") || keywords.Contains("WARBOSS") || keywords.Contains("NOBZ")
+				|| keywords.Contains("KUSTOM BOOSTA-BLASTAS"))
 			{
 				upgrades.Add("Pyromaniacs Mob");
 			}
 
-			if(keywords.Contains("BIG MEK") || keywords.Contains("BLITZA-BOMMER") || keywords.Contains("DEFFKOPTAS")
-				|| keywords.Contains("MEK") || keywords.Contains("NOBZ") || keywords.Contains("NOB")
+			if(keywords.Contains("BIG MEK") || keywords.Contains("DEFFKOPTAS")
+				|| keywords.Contains("MEK") && !keywords.Contains("WAZBOM BLASTAJET") || keywords.Contains("NOBZ") || keywords.Contains("NOB")
 				|| keywords.Contains("TANKBUSTAS") || keywords.Contains("WAGON") || keywords.Contains("WARBOSS"))
 			{
 				upgrades.Add("Boom Boyz Mob");
@@ -229,41 +286,83 @@ namespace Roster_Builder.Orks
 
 		public override List<string> GetRelics(List<string> keywords)
 		{
-			List<string> relics = new List<string>();
+			List<string> relics = new List<string>()
+			{
+				"(None)"
+			};
 
-			relics.Add("Supa-Cybork Body");
-			relics.Add("Headwoppa's Killchoppa");
-			relics.Add("Da Krushin' Armour");
-			relics.Add("Da Killa Klaw");
-			relics.Add("Da Ded Shiny Shoota");
-			relics.Add("Scorched Gitbonez");
-			relics.Add("Beasthide Mantle");
+			if(keywords.Contains("INFANTRY"))
+            {
+                relics.Add("Supa-Cybork Body");
+            }
+
+            if (keywords.Contains("WARBOSS") || keywords.Contains("NOB ON SMASHA SQUIG") 
+				|| keywords.Contains("BIG MEK") && !(keywords.Contains("SHOKK ATTACK GUN") || keywords.Contains("MEGA ARMOUR")) 
+				|| keywords.Contains("MEK"))
+            {
+                relics.Add("Headwoppa's Killchoppa");
+            }
+
+            if (keywords.Contains("MEGA ARMOUR"))
+            {
+                relics.Add("Da Krushin' Armour");
+            }
+
+            if ((keywords.Contains("MEGA ARMOUR") && keywords.Contains("BIG MEK")) || keywords.Contains("PAINBOY")
+				|| (keywords.Contains("WARBOSS") && !(keywords.Contains("MEGA ARMOUR") || keywords.Contains("BEAST SNAGGA"))))
+            {
+                relics.Add("Da Killa Klaw");
+            }
+
+            if ((keywords.Contains("MEGA ARMOUR") && keywords.Contains("BIG MEK")) || (keywords.Contains("NOB") && !keywords.Contains("BEAST SNAGGA"))
+                || (keywords.Contains("WARBOSS") && !(keywords.Contains("MEGA ARMOUR") || keywords.Contains("BEAST SNAGGA"))))
+            {
+                relics.Add("Da Ded Shiny Shoota");
+            }
+
+            if (keywords.Contains("PSYKER"))
+            {
+                relics.Add("Scorched Gitbonez");
+            }
+
+            if (keywords.Contains("BEAST SNAGGA"))
+            {
+                relics.Add("Beasthide Mantle");
+            }
 
 			if (currentSubFaction == "Goffs")
 			{
 				relics.Add("Da Irongob");
 			}
-			else if (currentSubFaction == "Bad Moons")
+			
+			if (currentSubFaction == "Bad Moons" && ((keywords.Contains("MEGA ARMOUR") && keywords.Contains("BIG MEK")) 
+				|| (keywords.Contains("NOB") && !keywords.Contains("BEAST SNAGGA"))
+                || (keywords.Contains("WARBOSS") && !(keywords.Contains("MEGA ARMOUR") || keywords.Contains("BEAST SNAGGA")))))
 			{
 				relics.Add("Da Gobshot Thunderbuss");
 			}
-			else if (currentSubFaction == "Evil Sunz")
+			
+			if (currentSubFaction == "Evil Sunz")
 			{
 				relics.Add("Rezmekka's Redder Paint");
 			}
-			else if (currentSubFaction == "Snakebites")
+			
+			if (currentSubFaction == "Snakebites")
 			{
 				relics.Add("Brogg's Buzzbomb");
 			}
-			else if (currentSubFaction == "Deathskulls")
+			
+			if (currentSubFaction == "Deathskulls" && (keywords.Contains("MEK") || keywords.Contains("BIG MEK")))
 			{
 				relics.Add("Da Fixer Upperz");
 			}
-			else if (currentSubFaction == "Blood Axes")
+			
+			if (currentSubFaction == "Blood Axes")
 			{
 				relics.Add("Morgog's Finkin' Cap");
 			}
-			else if (currentSubFaction == "Freebooterz")
+			
+			if (currentSubFaction == "Freebooterz")
 			{
 				relics.Add("Da Badskull Banna");
 			}
@@ -313,9 +412,9 @@ namespace Roster_Builder.Orks
 				{
 					"Follow Me Ladz",
 					"Big Gob",
-					"'Ard As Nails",
-					"Brutal But Kunnin'",
-					"Kunnin' But Brutal",
+					"'Ard as Nails",
+					"Brutal but Kunnin'",
+					"Kunnin' but Brutal",
 					"Might is Right"
 				});
 			}
