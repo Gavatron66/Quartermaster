@@ -188,6 +188,14 @@ namespace Roster_Builder.Space_Marines
 
             Points = DEFAULT_POINTS * UnitSize;
             restriction = 0;
+
+            foreach (var weapon in Weapons)
+            {
+                if(weapon == "Assault Cannon" || weapon == "Cyclone Missile Launcher and Storm Bolter" || weapon == "Heavy Flamer")
+                {
+                    restriction++;
+                }
+            }
         }
 
         public override string ToString()

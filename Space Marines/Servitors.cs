@@ -13,7 +13,7 @@ namespace Roster_Builder.Space_Marines
         {
             DEFAULT_POINTS = 30;
             UnitSize = 4;
-            Points = DEFAULT_POINTS * UnitSize;
+            Points = DEFAULT_POINTS;
             TemplateCode = "2m";
             Weapons.Add("Servo-arm");
             Weapons.Add("Servo-arm");
@@ -73,7 +73,7 @@ namespace Roster_Builder.Space_Marines
                     break;
             }
 
-            Points = DEFAULT_POINTS * UnitSize;
+            Points = DEFAULT_POINTS;
 
             foreach (string weapon in Weapons)
             {

@@ -38,6 +38,8 @@ namespace Roster_Builder.Space_Marines
             Template.LoadTemplate(TemplateCode, panel);
             panel.Controls["cmbFactionUpgrade"].Visible = true;
             panel.Controls["lblFactionUpgrade"].Visible = true;
+            panel.Controls["lblPsykerList"].Visible = true;
+            panel.Controls["cmbDiscipline"].Visible = true;
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;

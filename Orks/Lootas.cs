@@ -145,6 +145,18 @@ namespace Roster_Builder.Orks
             }
 
             Points = DEFAULT_POINTS * UnitSize;
+            if (Factionupgrade == "Smoky Gubbinz (+1 pts/model)")
+            {
+                Points += repo.GetFactionUpgradePoints((UnitSize + Weapons.Count).ToString());
+            }
+            else if (Factionupgrade == "Zzapkrumpaz (+2 pts/model)")
+            {
+                Points += repo.GetFactionUpgradePoints(((UnitSize + Weapons.Count) * 2).ToString());
+            }
+            else
+            {
+                Points += repo.GetFactionUpgradePoints(Factionupgrade);
+            }
 
             Points += Weapons.Count * 14;
 

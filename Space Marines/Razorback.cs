@@ -21,7 +21,7 @@ namespace Roster_Builder.Space_Marines
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "VEHICLE", "TRANSPORT", "SMOKESCREEN", "RHINO",
+                "VEHICLE", "TRANSPORT", "SMOKESCREEN", "RAZORBACK",
             });
             Role = "Transport";
         }

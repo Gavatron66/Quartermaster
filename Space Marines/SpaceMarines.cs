@@ -14,6 +14,7 @@ using Roster_Builder.Space_Marines.Iron_Hands;
 using Roster_Builder.Space_Marines.White_Scars;
 using Roster_Builder.Space_Marines.Imperial_Fists;
 using Roster_Builder.Space_Marines.Crimson_Fists;
+using Roster_Builder.Space_Marines.Deathwatch;
 
 namespace Roster_Builder.Space_Marines
 {
@@ -114,7 +115,7 @@ namespace Roster_Builder.Space_Marines
                 new HeavyIntercessors(),
                 new Infiltrators(),
                 new Incursors(),
-                new TacticalSquad(),
+                new TacticalSquad(), //[27]
                 //---------- Elites ----------
                 new CompanyChampion(),
                 new ScoutSquad(),
@@ -141,8 +142,8 @@ namespace Roster_Builder.Space_Marines
                 new ContemptorDreadnought(),
                 new VenerableDreadnought(),
                 new IroncladDreadnought(),
-                new RedemptorDreadnought(), //[53]
-                new BrutalisDreadnought(),
+                new RedemptorDreadnought(),
+                new BrutalisDreadnought(), //[54]
                 //---------- Fast Attack ----------
                 new AssaultSquad(),
                 new Outriders(),
@@ -157,7 +158,7 @@ namespace Roster_Builder.Space_Marines
                 new StormSpeederHammerstrike(),
                 new LandSpeeders(),
                 new LandSpeederTornadoes(),
-                new LandSpeederTyphoons(),
+                new LandSpeederTyphoons(), //[68]
                 //---------- Heavy Support ----------
                 new Hellblasters(),
                 new Eliminators(),
@@ -180,17 +181,17 @@ namespace Roster_Builder.Space_Marines
                 new LandRaiderCrusader(),
                 new LandRaiderRedeemer(),
                 new Repulsor(),
-                new RepulsorExecutioner(),
+                new RepulsorExecutioner(), //[90]
                 //---------- Transport ----------
                 new Rhino(),
                 new Razorback(),
                 new Impulsor(),
                 new DropPod(),
-                new LandSpeederStorm(),
+                new LandSpeederStorm(), //[95]
                 //---------- Flyers ----------
                 new StormhawkInterceptor(),
                 new StormtalonGunship(),
-                new StormravenGunship(),
+                new StormravenGunship(), //[98]
                 //---------- Lords of War ----------
                 new RobouteGuilliman(),
                 new LionElJonson(),
@@ -239,6 +240,40 @@ namespace Roster_Builder.Space_Marines
             {
                 datasheets.Insert(22, new PedroKantor());
             }
+            else if(currentSubFaction == "Deathwatch")
+            {
+                StratagemList.Clear();
+                StratagemList.AddRange(new string[]
+                {
+                    "Stratagem: Hero of the Chapter",
+                    "Stratagem: Relic of the Chapter",
+                    "Stratagem: Sanction of the Black Vault",
+                    "Stratagem: A Vigil Unmatched"
+                });
+
+                //datasheets.Insert(28, new ProteusKillTeam());
+                //datasheets.Insert(29, new FortisKillTeam());
+                //datasheets.Insert(30, new IndomitorKillTeam());
+                //datasheets.Insert(31, new SpectrusKillTeam());
+                datasheets.Insert(22, new WatchMaster());
+                datasheets.Insert(23, new WatchCaptainArtemis());
+                datasheets.Insert(24, new DWChaplainCassius());
+                datasheets.Insert(25, new CodicierNatorian());
+                //datasheets.Insert(36, new DeathwatchVeterans());
+                datasheets.Insert(37, new KillTeamCassius());
+                //datasheets.Insert(57, new DeathwatchTerminators());
+                //datasheets.Insert(69, new VeteranBikeSquad());
+                //datasheets.Insert(111, new CorvusBlackstar());
+                datasheets.RemoveAt(66);
+                datasheets.RemoveAt(71);
+                datasheets.RemoveAt(69);
+                datasheets.RemoveAt(82);
+                datasheets.RemoveAt(50);
+                datasheets.RemoveAt(31);
+                datasheets.RemoveAt(38);
+                datasheets.RemoveAt(66);
+                //datasheets.RemoveAt(99);
+            }
 
             return datasheets;
         }
@@ -249,25 +284,39 @@ namespace Roster_Builder.Space_Marines
 
             string[] forty = new string[]
             {
+            };
+
+            string[] thirtyfive = new string[]
+            {
                 "Chapter Master (+35 pts)"
             };
 
-            string[] twentyfive = new string[]
+            string[] thirty = new string[]
             {
-                "Master of Sanctity (+20 pts)",
-                "Chief Librarian (+20 pts)"
+                "Chief Apothecary (+30 pts)",
+                "Malleus Kill Team (+30 pts)",
+                "Furor Kill Team (+30 pts)",
             };
 
             string[] twenty = new string[]
             {
-                "Master of the Forge (+15 pts)",
-                "Chapter Ancient (+15 pts)"
+                "Master of Sanctity (+20 pts)",
+                "Chief Librarian (+20 pts)",
+                "Venator Kill Team (+20 pts)",
+                "Dominatus Kill Team (+20 pts)",
+                "Purgatus Kill Team (+20 pts)"
             };
 
             string[] fifteen = new string[]
             {
-                "Chief Apothecary (+30 pts)",
-                "Chapter Champion (+10 pts)"
+                "Chapter Ancient (+15 pts)",
+                "Master of the Forge (+15 pts)",
+                "Aquila Kill Team (+15 pts)",
+            };
+
+            string[] ten = new string[]
+            {
+                "Chapter Champion (+10 pts)",
             };
 
             if (forty.Contains(upgrade))
@@ -275,19 +324,29 @@ namespace Roster_Builder.Space_Marines
                 points = 40;
             }
 
+            if (thirtyfive.Contains(upgrade))
+            {
+                points = 35;
+            }
+
+            if (thirty.Contains(upgrade))
+            {
+                points = 30;
+            }
+
             if (twenty.Contains(upgrade))
             {
                 points = 20;
             }
 
-            if (twentyfive.Contains(upgrade))
-            {
-                points = 25;
-            }
-
             if (fifteen.Contains(upgrade))
             {
                 points = 15;
+            }
+
+            if (ten.Contains(upgrade))
+            {
+                points = 10;
             }
 
             return points;
@@ -330,6 +389,19 @@ namespace Roster_Builder.Space_Marines
             if (keywords.Contains("COMPANY CHAMPION"))
             {
                 upgrades.Add("Chapter Champion (+10 pts)");
+            }
+
+            if(currentSubFaction == "Deathwatch" && keywords.Contains("KILL TEAM"))
+            {
+                upgrades.AddRange(new string[]
+                {
+                    "Aquila Kill Team (+15 pts)",
+                    "Venator Kill Team (+20 pts)",
+                    "Malleus Kill Team (+30 pts)",
+                    "Dominatus Kill Team (+20 pts)",
+                    "Furor Kill Team (+30 pts)",
+                    "Purgatus Kill Team (+20 pts)"
+                });
             }
 
             return upgrades;
@@ -466,6 +538,19 @@ namespace Roster_Builder.Space_Marines
                     "Fortify",
                     "Aspect of Stone",
                     "Chasm"
+                });
+            }
+
+            if (keywords == "Xenopurge")
+            {
+                PsychicPowers.AddRange(new string[]
+                {
+                    "Premorphic Resonance",
+                    "Fortified with Contempt",
+                    "Neural Void",
+                    "Psychic Cleanse",
+                    "Mantle of Shadow",
+                    "Severance"
                 });
             }
 
@@ -615,11 +700,30 @@ namespace Roster_Builder.Space_Marines
             #region Dark Angels Relics
             #endregion
             #region Deathwatch Relics
+            if (currentSubFaction == "Deathwatch")
+            {
+                relics.Add("The Beacon Angelis");
+                relics.Add("Dominus Aegis");
+                relics.Add("Osseus Key");
+                relics.Add("The Thief of Secrets");
+                relics.Add("The Tome of Ectoclades");
+                relics.Add("Adamantine Mantle");
+                relics.Add("Master-crafted Weapon");
+                relics.Add("Digital Weapons");
+                relics.Add("Artificer Armour");
+                relics.Add("The Blackweave Shroud");
+                relics.Add("Spear of the First Vigil");
+                relics.Add("The Soul Fortress");
+                relics.Add("Banebolts of Eryxia");
+                relics.Add("Vhorkan-pattern Auspicator");
+                relics.Add("Artificer Bolt Cache");
+                relics.Add("Eye of Abiding");
+            }
             #endregion
             #region Flesh Tearers Relics
             #endregion
             #region Imperial Fists Relics
-            if (currentSubFaction == "Imperial Fists")
+                if (currentSubFaction == "Imperial Fists")
             {
                 if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("MK X GRAVIS") || keywords.Contains("TERMINATOR"))) ||
                     (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS")) ||
@@ -1092,7 +1196,15 @@ namespace Roster_Builder.Space_Marines
                 traits.Add("Feigned Flight");
                 traits.Add("Echo of the Ravenspire");
             }
-            else if (currentSubFaction == "Deathwatch") { traits.Add("Vigilance Incarnate"); }
+            else if (currentSubFaction == "Deathwatch")
+            {
+                traits.Add("Vigilance Incarnate");
+                traits.Add("Paragon of Their Chapter");
+                traits.Add("Nowhere to Hide");
+                traits.Add("Optimised Priority");
+                traits.Add("Castellan of the Black Vault");
+                traits.Add("The Ties That Bind");
+            }
 
             return traits;
         }

@@ -9,8 +9,6 @@ namespace Roster_Builder.Space_Marines.Ultramarines
 {
     public class ChaplainCassius : Datasheets
     {
-        string disciplineSelected;
-
         public ChaplainCassius()
         {
             DEFAULT_POINTS = 85;
@@ -62,6 +60,10 @@ namespace Roster_Builder.Space_Marines.Ultramarines
             {
                 clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
             }
+            if (PsykerPowers[1] != string.Empty)
+            {
+                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
+            }
 
             cmbWarlord.Enabled = false;
             cmbWarlord.Items.Clear();
@@ -81,23 +83,11 @@ namespace Roster_Builder.Space_Marines.Ultramarines
         public override void SaveDatasheets(int code, Panel panel)
         {
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
-            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
 
             switch (code)
             {
-                case 111:
-                    if (cmbDiscipline.SelectedItem.ToString() == disciplineSelected)
-                    {
-                        break;
-                    }
-
-                    disciplineSelected = cmbDiscipline.SelectedItem.ToString();
-                    clbPsyker.Items.Clear();
-                    clbPsyker.Items.AddRange(repo.GetPsykerPowers(disciplineSelected).ToArray());
-                    PsykerPowers = new string[3] { string.Empty, string.Empty, string.Empty };
-                    break;
                 case 25:
                     if (cbWarlord.Checked)
                     {

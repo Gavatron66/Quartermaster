@@ -25,10 +25,12 @@ namespace Roster_Builder.Grey_Knights
 
         public override List<string> GetCustomSubfactionList1()
         {
+            return new List<string>();
         }
 
         public override List<string> GetCustomSubfactionList2()
         {
+            return new List<string>();
         }
 
         public override List<Datasheets> GetDatasheets()
@@ -36,49 +38,98 @@ namespace Roster_Builder.Grey_Knights
             return new List<Datasheets>
             {
                 //---------- HQ ----------
-                //new KaldorDraigo(),
-                //new GMVoldus(),
-                //new GrandMaster(),
-                //new GMDreadknight(),
-                //new CastellanCrowe(),
-                //new BrotherCaptainStern(),
-                //new BrotherCaptain(),
-                //new BrotherhoodChampion(),
-                //new BrotherhoodLibrarian(),
-                //new BrotherhoodTechmarine(),
-                //new BrotherhoodChaplain(),
+                new KaldorDraigo(),
+                new GMVoldus(),
+                new GrandMaster(),
+                new GMDreadknight(),
+                new CastellanCrowe(),
+                new BrotherCaptainStern(),
+                new BrotherCaptain(),
+                new BrotherhoodChampion(),
+                new BrotherhoodLibrarian(),
+                new BrotherhoodTechmarine(),
+                new BrotherhoodChaplain(),
                 //---------- Troops ----------
-                //new BrotherhoodTerminators(),
-                //new StrikeSquad(),
+                new BrotherhoodTerminators(),
+                new StrikeSquad(),
                 //---------- Elites ----------
-                //new BrotherhoodApothecary(),
-                //new BrotherhoodAncient(),
-                //new Paladins(),
-                //new Purifiers(),
-                //new PaladinAncient(),
-                //new GKServitors(),
-                //new GKVenerableDreadnought(),
-                //new GKDreadnought(),
+                new BrotherhoodApothecary(),
+                new BrotherhoodAncient(),
+                new Paladins(),
+                new Purifiers(),
+                new PaladinAncient(),
+                new GKServitors(),
+                new GKVenerableDreadnought(),
+                new GKDreadnought(),
                 //---------- Fast Attack ----------
-                //new Interceptors(),
+                new Interceptors(),
                 //---------- Heavy Support ----------
-                //new PurgationSquad(),
-                //new NemesisDreadknight(),
-                //new GKLandRaider(),
-                //new GKLandRaiderCrusader(),
-                //new GKLandRaiderRedeemer(),
+                new PurgationSquad(),
+                new NemesisDreadknight(),
+                new GKLandRaider(),
+                new GKLandRaiderCrusader(),
+                new GKLandRaiderRedeemer(),
                 //---------- Transport ----------
-                //new GKRazorback(),
-                //new GKRhino(),
+                new GKRazorback(),
+                new GKRhino(),
                 //---------- Flyer ----------
-                //new GKStormhawkInterceptor(),
-                //new GKStormtalonGunship(),
-                //new GKStormravenGunship()
+                new GKStormhawkInterceptor(),
+                new GKStormtalonGunship(),
+                new GKStormravenGunship()
             };
         }
 
         public override int GetFactionUpgradePoints(string upgrade)
         {
+
+            string[] twentyfive = new string[]
+            {
+                "Omen of Incursion (+25 pts)",
+                "Foretelling of Locus (+25 pts)",
+                "Severance Bolt (+25 pts)"
+            };
+
+            string[] fifteen = new string[]
+            {
+                "Augury of Aggression (+15 pts)",
+                "A Noble Death (+15 pts)",
+                "Servant of the Throne (+15 pts)"
+            };
+
+            string[] ten = new string[]
+            {
+                "Heroism's Favour (+10 pts)",
+                "Presaged Paralysis (+10 pts)",
+                "Temporal Bombs (+10 pts)",
+                "Deluminator of Majesty (+10 pts)",
+                "Gem of Inoktu (+10 pts)"
+            };
+
+            string[] five = new string[]
+            {
+                "True Name Shard (+5 pts)"
+            };
+
+            if(twentyfive.Contains(upgrade))
+            {
+                return 25;
+            }
+
+            if (fifteen.Contains(upgrade))
+            {
+                return 15;
+            }
+
+            if (ten.Contains(upgrade))
+            {
+                return 10;
+            }
+
+            if (five.Contains(upgrade))
+            {
+                return 5;
+            }
+
             return 0;
         }
 
@@ -91,18 +142,18 @@ namespace Roster_Builder.Grey_Knights
 
             upgrades.AddRange(new string[]
             {
-                "Augury of Aggression",
-                "Heroism's Favour",
-                "A Noble Death",
-                "Omen of Incursion",
-                "Presaged Paralysis",
-                "Foretelling of Locus",
-                "True Name Shard",
-                "Temporal Bombs",
-                "Servant of the Throne",
-                "Deluminator of Majesty",
-                "Gem of Inoktu",
-                "Severance Bolt"
+                "Augury of Aggression (+15 pts)",
+                "Heroism's Favour (+10 pts)",
+                "A Noble Death (+15 pts)",
+                "Omen of Incursion (+25 pts)",
+                "Presaged Paralysis (+10 pts)",
+                "Foretelling of Locus (+25 pts)",
+                "True Name Shard (+5 pts)",
+                "Temporal Bombs (+10 pts)",
+                "Servant of the Throne (+15 pts)",
+                "Deluminator of Majesty (+10 pts)",
+                "Gem of Inoktu (+10 pts)",
+                "Severance Bolt (+25 pts)"
             });
 
             return upgrades;
@@ -162,24 +213,78 @@ namespace Roster_Builder.Grey_Knights
                 "(None)"
             };
 
-            relics.AddRange(new string[]
+            if(keywords.Contains("BROTHER-CAPTAIN") || keywords.Contains("LIBRARIAN") ||
+                (keywords.Contains("GRAND MASTER") && !keywords.Contains("NEMESIS DREADKNIGHT")) ||
+                keywords.Contains("APOTHECARY"))
             {
-                "Soul Glaive",
-                "Destroyer of Crys'yllix",
-                "Fury of Deimos",
-                "Banner of Refining Flame",
-                "Domina Liber Daemonica",
-                "Cuirass of Sacrifice",
-                "Sanctic Shard",
-                "Gyrotemporal Vault",
-                "Blade of the Forsworn",
-                "Sigil of Exigence",
-                "Augurium Scrolls",
-                "Stave of Supremacy",
-                "Kantu Vambrace",
-                "Artisan Nullifier Matrix",
-                "Aetheric Conduit"
-            });
+                relics.Add("Soul Glaive");
+            }
+
+            if (keywords.Contains("BROTHER-CAPTAIN") || keywords.Contains("LIBRARIAN") ||
+                (keywords.Contains("GRAND MASTER") && !keywords.Contains("NEMESIS DREADKNIGHT")) ||
+                keywords.Contains("APOTHECARY"))
+            {
+                relics.Add("Destroyer of Crys'yllix");
+            }
+
+            if(!(keywords.Contains("TECHMARINE") || keywords.Contains("NEMESIS DREADKNIGHT")
+                || keywords.Contains("APOTHECARY")))
+            {
+                relics.Add("Fury of Deimos");
+            }
+
+            if(keywords.Contains("ANCIENT"))
+            {
+                relics.Add("Banner of Refining Flame");
+            }
+
+            relics.Add("Domina Liber Daemonica");
+
+            if(!keywords.Contains("NEMESIS DREADKNIGHT"))
+            {
+                relics.Add("Cuirass of Sacrifice");
+            }
+
+            relics.Add("Sanctic Shard");
+
+            relics.Add("Gyrotemporal Vault");
+
+            if(keywords.Contains("BROTHER-CAPTAIN") || keywords.Contains("CHAMPION")
+                || keywords.Contains("LIBRARIAN")
+                || (keywords.Contains("GRAND MASTER") && !keywords.Contains("NEMESIS DREADKNIGHT"))
+                || keywords.Contains("APOTHECARY")) 
+            {
+                relics.Add("Blade of the Forsworn");
+            }
+
+            relics.Add("Sigil of Exigence");
+
+            if(!(keywords.Contains("CHAPLAIN") || keywords.Contains("TECHMARINE")))
+            {
+                relics.Add("Augurium Scrolls");
+            }
+
+            if (keywords.Contains("BROTHER-CAPTAIN") || keywords.Contains("LIBRARIAN") ||
+                (keywords.Contains("GRAND MASTER") && !keywords.Contains("NEMESIS DREADKNIGHT")) ||
+                keywords.Contains("APOTHECARY"))
+            {
+                relics.Add("Stave of Supremacy");
+            }
+
+            if (!keywords.Contains("NEMESIS DREADKNIGHT"))
+            {
+                relics.Add("Kantu Vambrace");
+            }
+
+            if(keywords.Contains("LIBRARIAN"))
+            {
+                relics.Add("Artisan Nullifier Matrix");
+            }
+
+            if (keywords.Contains("TECHMARINE"))
+            {
+                relics.Add("Aetheric Conduit");
+            }
 
             return relics;
         }
@@ -201,7 +306,52 @@ namespace Roster_Builder.Grey_Knights
 
         public override List<string> GetWarlordTraits(string keyword)
         {
-            throw new NotImplementedException();
+            List<string> traits = new List<string>();
+
+            traits.AddRange(new string[]
+            {
+                "Daemon-slayer",
+                "Hammer of Righteous",
+                "Unyielding Anvil",
+                "First to the Fray",
+                "Nemesis Lord",
+                "Psychic Epitome"
+            });
+
+            if(currentSubFaction == "Swordbearers")
+            {
+                traits.Add("Rites of Protection");
+            }
+            if (currentSubFaction == "Blades of Victory")
+            {
+                traits.Add("Vanguard Aggression");
+            }
+            if (currentSubFaction == "Wardmakers")
+            {
+                traits.Add("Loremaster");
+            }
+            if (currentSubFaction == "Prescient Brethren")
+            {
+                traits.Add("Divination");
+            }
+            if (currentSubFaction == "Preservers")
+            {
+                traits.Add("Radiant Exemplar");
+            }
+            if (currentSubFaction == "Rapiers")
+            {
+                traits.Add("Inescapable Wrath");
+            }
+            if (currentSubFaction == "Exactors")
+            {
+                traits.Add("Oath of Witness");
+            }
+            if (currentSubFaction == "Silver Blades")
+            {
+                traits.Add("Martial Perfection");
+            }
+
+            return traits;
         }
 
         public override void SetPoints(int points)

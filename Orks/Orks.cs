@@ -109,7 +109,87 @@ namespace Roster_Builder.Orks
 
 		public override int GetFactionUpgradePoints(string upgrade)
 		{
-			return 0;
+			int points = 0;
+
+			if(upgrade == null)
+			{
+				return 0;
+			}
+
+			if (upgrade == "Da Booma (+15 pts)")
+			{
+				points += 15;
+			}
+			else if (upgrade == "Fortress on Wheels (+20 pts)")
+			{
+				points += 20;
+			}
+			else if (upgrade == "Gyroscopic Whirligig (+10 pts)")
+			{
+				points += 15;
+			}
+			else if (upgrade == "More Dakka (+15 pts)")
+			{
+				points += 15;
+			}
+			else if (upgrade == "More Dakka (+30 pts)")
+			{
+				points += 30;
+			}
+			else if (upgrade == "Nitro Squigs (+25 pts)")
+			{
+				points += 25;
+			}
+			else if (upgrade == "Red Rolla (+20 pts)")
+			{
+				points += 20;
+			}
+			else if (upgrade == "Shokka Hull (+15 pts)")
+			{
+				points += 15;
+			}
+			else if (upgrade == "Shokka Hull (+30 pts)")
+			{
+				points += 30;
+			}
+			else if (upgrade == "Souped-up Speshul (+10 pts)")
+			{
+				points += 10;
+			}
+			else if (upgrade == "Squig-hide Tyres (+15 pts)")
+			{
+				points += 15;
+			}
+			else if (upgrade == "Stompamatic Pistons (+15 pts)")
+			{
+				points += 15;
+			}
+			else if (upgrade == "Stompamatic Pistons (+30 pts)")
+			{
+				points += 30;
+			}
+			else if (upgrade == "Bionik Oiler (+10 pts)")
+			{
+				points += 10;
+			}
+			else if (upgrade == "Enhanced Runt-Sucker (+15 pts)")
+			{
+				points += 15;
+			}
+			else if (upgrade == "Extra-Kustom Weapon (+10 pts)")
+			{
+				points += 10;
+			}
+			else if (upgrade == "(None)" || upgrade.Contains("Mob"))
+			{
+
+			}
+			else if(upgrade != "")
+			{
+				points += Convert.ToInt32(upgrade);
+			}
+
+            return points;
 		}
 
 		public override List<string> GetFactionUpgrades(List<string> keywords)
@@ -123,75 +203,100 @@ namespace Roster_Builder.Orks
 			{
 				if(keywords.Contains("WAGON"))
 				{
-					upgrades.Add("Da Booma");
+					upgrades.Add("Da Booma (+15 pts)");
 				}
 
 				if(keywords.Contains("TRUKK") || keywords.Contains("WAGON"))
 				{
-					upgrades.Add("Fortress on Wheels");
+					upgrades.Add("Fortress on Wheels (+20 pts)");
 				}
 
                 if (keywords.Contains("SHOKKJUMP DRAGSTA"))
                 {
-                    upgrades.Add("Gyroscopic Whirligig");
+                    upgrades.Add("Gyroscopic Whirligig (+10 pts)");
                 }
 
-				upgrades.Add("More Dakka");
+				if(keywords.Contains("WAZBOM BLASTAJET") || keywords.Contains("BONEBREAKA")
+					|| keywords.Contains("GUNWAGON") || keywords.Contains("KILL RIG")
+					|| keywords.Contains("GORKANAUT") || keywords.Contains("MORKANAUT")
+                    || keywords.Contains("STOMPA"))
+				{
+					upgrades.Add("More Dakka (+30 pts)");
+				} 
+				else
+				{
+                    upgrades.Add("More Dakka (+15 pts)");
+                }
 
                 if (keywords.Contains("RUKKATRUKK SQUIGBUGGIES"))
                 {
-                    upgrades.Add("Nitro Squigs");
+                    upgrades.Add("Nitro Squigs (+25 pts)");
                 }
 
                 if (keywords.Contains("BONEBREKA"))
                 {
-                    upgrades.Add("Red Rolla");
+                    upgrades.Add("Red Rolla (+20 pts)");
                 }
 
-				upgrades.Add("Shokka Hull");
+                if (keywords.Contains("WAZBOM BLASTAJET") || keywords.Contains("BONEBREAKA")
+                    || keywords.Contains("GUNWAGON") || keywords.Contains("KILL RIG")
+                    || keywords.Contains("GORKANAUT") || keywords.Contains("MORKANAUT")
+                    || keywords.Contains("STOMPA"))
+                {
+                    upgrades.Add("Shokka Hull (+30 pts)");
+                }
+                else
+                {
+                    upgrades.Add("Shokka Hull (+15 pts)");
+                }
 
                 if (keywords.Contains("BOOMDAKKA SNAZZWAGONS"))
                 {
-                    upgrades.Add("Souped-up Speshul");
+                    upgrades.Add("Souped-up Speshul (+10 pts)");
                 }
 
                 if (!(keywords.Contains("WALKERZ") || keywords.Contains("AIRCRAFT")))
                 {
-                    upgrades.Add("Squig-hide Tyres");
+                    upgrades.Add("Squig-hide Tyres (+15 pts)");
                 }
 
-                if (keywords.Contains("GORKANAUT") || keywords.Contains("MORKANAUT") || keywords.Contains("DEFF DREAD"))
+                if (keywords.Contains("GORKANAUT") || keywords.Contains("MORKANAUT"))
                 {
-                    upgrades.Add("Stompamatic Pistons");
+                    upgrades.Add("Stompamatic Pistons (+30 pts)");
+                }
+
+				if(keywords.Contains("DEFF DREAD"))
+                {
+                    upgrades.Add("Stompamatic Pistons (+15 pts)");
                 }
 			}
 			else
             {
                 if (keywords.Contains("BIG MEK") || keywords.Contains("MEK") && !keywords.Contains("WAZBOM BLASTAJET"))
                 {
-                    upgrades.Add("Bionik Oiler");
+                    upgrades.Add("Bionik Oiler (+10 pts)");
                 }
 
                 if (keywords.Contains("SHOKK ATTACK GUN"))
                 {
-                    upgrades.Add("Enhanced Runt-Sucker");
+                    upgrades.Add("Enhanced Runt-Sucker (+15 pts)");
                 }
 
                 if ((keywords.Contains("BIG MEK") && keywords.Contains("MEGA ARMOUR")) || keywords.Contains("MEK") && !keywords.Contains("WAZBOM BLASTAJET")
 					|| keywords.Contains("BURNA BOYZ") || keywords.Contains("DEFFKOPTAS") || keywords.Contains("DEFF DREADS")
 					|| keywords.Contains("LOOTAS") || keywords.Contains("MORKANAUT"))
                 {
-                    upgrades.Add("Extra-Kustom Weapon");
+                    upgrades.Add("Extra-Kustom Weapon (+10 pts)");
                 }
 
                 if (keywords.Contains("BURNA BOYZ") || keywords.Contains("LOOTAS"))
                 {
-                    upgrades.Add("Smoky Gubbinz");
+                    upgrades.Add("Smoky Gubbinz (+1 pts/model)");
                 }
 
                 if (keywords.Contains("BURNA BOYZ") || keywords.Contains("LOOTAS"))
                 {
-                    upgrades.Add("Zzapkrumpaz");
+                    upgrades.Add("Zzapkrumpaz (+2 pts/model)");
                 }
             }
 

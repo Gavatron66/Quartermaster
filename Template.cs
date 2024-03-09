@@ -203,10 +203,8 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 130);
 
-                    panel.Controls["lblPsykerList"].Visible = true;
                     panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 288);
 
-                    panel.Controls["cmbDiscipline"].Visible = true;
                     panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 311);
 
                     panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(290, 247);
@@ -919,6 +917,66 @@ namespace Roster_Builder.Death_Guard
 
                     panel.Controls["cbStratagem2"].Visible = true;
                     panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(294, 368);
+
+                    break;
+                #endregion
+                #region case "3m1k_pc"
+                case "3m1k_pc":
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 25);
+
+                    panel.Controls["lblOption2"].Visible = true;
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 63);
+
+                    panel.Controls["cmbOption2"].Visible = true;
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 59);
+
+                    panel.Controls["lblOption3"].Visible = true;
+                    panel.Controls["lblOption3"].Location = new System.Drawing.Point(86, 97);
+
+                    panel.Controls["cmbOption3"].Visible = true;
+                    panel.Controls["cmbOption3"].Location = new System.Drawing.Point(311, 93);
+
+                    panel.Controls["cbOption1"].Visible = true;
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 127);
+
+                    panel.Controls["lblPsyker"].Visible = true;
+                    panel.Controls["lblPsyker"].Location = new System.Drawing.Point(86, 160);
+
+                    panel.Controls["clbPsyker"].Visible = true;
+                    panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 193);
+
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 341);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 364);
+
+                    panel.Controls["cbWarlord"].Visible = true;
+                    panel.Controls["cbWarlord"].Location = new System.Drawing.Point(298, 163);
+
+                    panel.Controls["lblWarlord"].Visible = true;
+                    panel.Controls["lblWarlord"].Location = new System.Drawing.Point(294, 190);
+
+                    panel.Controls["cmbWarlord"].Visible = true;
+                    panel.Controls["cmbWarlord"].Location = new System.Drawing.Point(296, 213);
+
+                    panel.Controls["lblRelic"].Visible = true;
+                    panel.Controls["lblRelic"].Location = new System.Drawing.Point(296, 242); //294, 67
+
+                    panel.Controls["cmbRelic"].Visible = true;
+                    panel.Controls["cmbRelic"].Location = new System.Drawing.Point(296, 266); //298,90
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(290, 297);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(294, 320);
+
+                    panel.Controls["cbStratagem1"].Visible = true;
+                    panel.Controls["cbStratagem1"].Location = new System.Drawing.Point(298, 364);
+
+                    panel.Controls["cbStratagem2"].Visible = true;
+                    panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(298, 394);
 
                     break;
                 #endregion

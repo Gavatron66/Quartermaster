@@ -22,6 +22,7 @@ using Roster_Builder.Tyranids;
 using Roster_Builder.Adeptus_Mechanicus;
 using Roster_Builder.Tau_Empire;
 using Roster_Builder.Orks;
+using Roster_Builder.Grey_Knights;
 
 namespace Roster_Builder
 {
@@ -81,6 +82,7 @@ namespace Roster_Builder
                 new Aeldari.Aeldari(),
                 new DeathGuard(),
                 new GSC(),
+                new GreyKnights(),
                 new Harlequins(),
                 new Necrons.Necrons(),
                 new Orks.Orks(),
@@ -104,6 +106,7 @@ namespace Roster_Builder
                 new Aeldari.Aeldari(),
                 new DeathGuard(),
                 new GSC(),
+                new GreyKnights(),
                 new Harlequins(),
                 new Necrons.Necrons(),
 				new Orks.Orks(),

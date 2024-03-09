@@ -57,3 +57,6 @@ Broadsides have some weapons restrictions
 
 Riptide template is adequate, but could be better. Take a look?
 	Maybe a ListBox control would help
+
+Not super happy with how Nemesis Dreadknights are, maybe a re-look at?
+	Also, Dreadknights can't take the same weapon twice, but haven't figured out how to do that yet

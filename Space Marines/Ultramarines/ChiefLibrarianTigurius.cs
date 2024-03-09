@@ -92,6 +92,10 @@ namespace Roster_Builder.Space_Marines.Ultramarines
             {
                 clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
             }
+            if (PsykerPowers[2] != string.Empty)
+            {
+                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[2]), true);
+            }
 
             cmbWarlord.Enabled = false;
             cmbWarlord.Items.Clear();
