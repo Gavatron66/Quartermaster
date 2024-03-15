@@ -21,7 +21,7 @@ namespace Roster_Builder.Tyranids
                 "HIVE TENDRIL", "TYRANIDS", "<HIVE FLEET>",
                 "MONSTER", "FLY", "TRANSPORT", "TYRANNOCYTE"
             });
-            Role = "Heavy Support";
+            Role = "Transport";
         }
 
         public override Datasheets CreateUnit()

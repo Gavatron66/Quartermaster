@@ -292,41 +292,29 @@ namespace Roster_Builder.Space_Marines
 
             foreach (var weapon in Weapons)
             {
-                if (weapon == "Lightning Claw (+3 pts)" || weapon == "Power Axe" ||
-                    weapon == "Power Maul" || weapon == "Power Sword")
+                if (weapon == "Lightning Claw (+3 pts)")
                 {
                     Points += 3;
                 }
 
                 if (weapon == "Storm Shield (+5 pts)")
                 {
-                    Points += 4;
-                }
-
-                if (weapon == "Grav-pistol" || weapon == "Hand Flamer" ||
-                    weapon == "Inferno Pistol" || weapon == "Plasma Pistol")
-                {
                     Points += 5;
                 }
 
                 if (weapon == "Power Fist (+5 pts)")
                 {
-                    Points += 8;
-                }
-
-                if (weapon == "Relic Blade")
-                {
-                    Points += 10;
+                    Points += 5;
                 }
 
                 if (weapon == "Thunder Hammer (+10 pts)")
                 {
-                    Points += 12;
+                    Points += 10;
                 }
 
                 if (weapon == "Heavy Thunder Hammer (+12 pts)")
                 {
-                    Points += 15;
+                    Points += 12;
                 }
             }
         }

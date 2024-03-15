@@ -1,67 +1,74 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Adeptus_Mechanicus
+namespace Roster_Builder.Space_Marines.Deathwatch
 {
-    public class OnagerDunecrawler : Datasheets
+    public class CorvusBlackstar : Datasheets
     {
-        public OnagerDunecrawler()
+        public CorvusBlackstar()
         {
-            DEFAULT_POINTS = 100;
-            UnitSize = 1;
+            DEFAULT_POINTS = 150;
             Points = DEFAULT_POINTS;
-            TemplateCode = "2m1k";
-            Weapons.Add("Eradication Beamer");
+            TemplateCode = "3m1k";
+            Weapons.Add("Twin Assault Cannon");
+            Weapons.Add("Two Blackstar Rocket Launchers");
             Weapons.Add("(None)");
             Weapons.Add("");
             Keywords.AddRange(new string[]
             {
-                "IMPERIUM", "ADEPTUS MECHANICUS", "SKITARII", "<FORGE WORLD>",
-                "VEHICLE", "DATA-TETHER", "ONAGER DUNECRAWLER"
+                "IMPERIUM", "ADEPTUS ASTARTES", "DEATHWATCH",
+                "VEHICLE", "TRANSPORT", "AIRCRAFT", "FLY", "CORVUS BLACKSTAR"
             });
-            Role = "Heavy Support";
+            Role = "Flyer";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new OnagerDunecrawler();
+            return new CorvusBlackstar();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
+            repo = f as SpaceMarines;
             Template.LoadTemplate(TemplateCode, panel);
-            repo = f as AdMech;
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            ComboBox cmbOption3 = panel.Controls["cmbOption3"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Daedalus Missile Launcher",
-                "Eradication Beamer",
-                "Gatling Rocket Launcher and Twin Icarus Autocannon",
-                "Neutron Laser and Cognis Heavy Subber",
-                "Twin Onager Heavy Phosphor Blaster"
+                "Twin Assault Cannon",
+                "Twin Lascannon"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
             cmbOption2.Items.Clear();
             cmbOption2.Items.AddRange(new string[]
             {
-                "(None)",
-                "Broad Spectrum Data-tether",
-                "Smoke Launchers"
+                "Two Blackstar Rocket Launchers",
+                "Two Stormstrike Missile Launchers"
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
-            cbOption1.Text = "Cognis Heavy Stubber";
-            if (Weapons[2] != string.Empty)
+            cmbOption3.Items.Clear();
+            cmbOption3.Items.AddRange(new string[]
+            {
+                "(None)",
+                "Auspex Array",
+                "Infernum Halo-launcher"
+            });
+            cmbOption3.SelectedIndex = cmbOption3.Items.IndexOf(Weapons[2]);
+
+            cbOption1.Text = "Hurricane Bolter";
+            if (Weapons[3] == cbOption1.Text)
             {
                 cbOption1.Checked = true;
             }
@@ -75,23 +82,31 @@ namespace Roster_Builder.Adeptus_Mechanicus
         {
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            ComboBox cmbOption3 = panel.Controls["cmbOption3"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
 
             switch (code)
             {
                 case 11:
-                    Weapons[0] = cmbOption1.SelectedItem as string;
+                    Weapons[0] = cmbOption1.SelectedItem.ToString();
                     break;
                 case 12:
-                    Weapons[1] = cmbOption2.SelectedItem as string;
+                    Weapons[1] = cmbOption2.SelectedItem.ToString();
+                    break;
+                case 13:
+                    Weapons[2] = cmbOption3.SelectedItem.ToString();
                     break;
                 case 21:
                     if (cbOption1.Checked)
                     {
-                        Weapons[2] = cbOption1.Text;
+                        Weapons[3] = cbOption1.Text;
                     }
-                    else { Weapons[2] = string.Empty; }
+                    else
+                    {
+                        Weapons[3] = "";
+                    }
                     break;
+                default: break;
             }
 
             Points = DEFAULT_POINTS;
@@ -99,7 +114,7 @@ namespace Roster_Builder.Adeptus_Mechanicus
 
         public override string ToString()
         {
-            return "Onager Dunecrawler - " + Points + "pts";
+            return "Corvus Blackstar - " + Points + "pts";
         }
     }
 }

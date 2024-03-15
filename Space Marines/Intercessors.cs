@@ -18,7 +18,7 @@ namespace Roster_Builder.Genestealer_Cults
             DEFAULT_POINTS = 18;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
-            TemplateCode = "2N1mS(2m)";
+            TemplateCode = "2N1mS(1m)";
             Weapons.Add("Bolt Rifle"); //Squad Option
             Weapons.Add("0"); //Astartes Grenade Launchers
             Weapons.Add("Bolt Rifle"); //Sergeant Weapons
@@ -48,7 +48,6 @@ namespace Roster_Builder.Genestealer_Cults
             NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
             GroupBox gb = panel.Controls["gbUnitLeader"] as GroupBox;
             ComboBox gb_cmbOption1 = gb.Controls["gb_cmbOption1"] as ComboBox;
-            ComboBox gb_cmbOption2 = gb.Controls["gb_cmbOption2"] as ComboBox;
 
             panel.Controls["lblnud1"].Text = "Number of Astartes Grenade Launchers:";
             panel.Controls["lblnud1"].Location = new System.Drawing.Point(88, 95);
@@ -88,20 +87,11 @@ namespace Roster_Builder.Genestealer_Cults
                 "Bolt Rifle",
                 "Hand Flamer",
                 "Plasma Pistol",
-                "Power Sword"
-            });
-            gb_cmbOption1.SelectedIndex = gb_cmbOption1.Items.IndexOf(Weapons[2]);
-
-            gb_cmbOption2.Items.Clear();
-            gb_cmbOption2.Items.AddRange(new object[]
-            {
-                "(None)",
-                "Astartes Chainsword",
                 "Power Fist",
                 "Power Sword",
                 "Thunder Hammer"
             });
-            gb_cmbOption2.SelectedIndex = gb_cmbOption2.Items.IndexOf(Weapons[3]);
+            gb_cmbOption1.SelectedIndex = gb_cmbOption1.Items.IndexOf(Weapons[2]);
             loading = false;
         }
 
@@ -118,7 +108,6 @@ namespace Roster_Builder.Genestealer_Cults
             NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
             GroupBox gb = panel.Controls["gbUnitLeader"] as GroupBox;
             ComboBox gb_cmbOption1 = gb.Controls["gb_cmbOption1"] as ComboBox;
-            ComboBox gb_cmbOption2 = gb.Controls["gb_cmbOption2"] as ComboBox;
 
             switch(code)
             {
@@ -131,7 +120,7 @@ namespace Roster_Builder.Genestealer_Cults
 
                     if (Weapons[0] == "Stalker Bolt Rifle")
                     {
-                        gb_cmbOption1.Items.Insert(4, Weapons[0]);
+                        gb_cmbOption1.Items.Insert(5, Weapons[0]);
                     }
                     else
                     {
@@ -164,9 +153,6 @@ namespace Roster_Builder.Genestealer_Cults
                     break;
                 case 411:
                     Weapons[2] = gb_cmbOption1.SelectedItem.ToString();
-                    break;
-                case 412:
-                    Weapons[3] = gb_cmbOption2.SelectedItem.ToString();
                     break;
             }
 

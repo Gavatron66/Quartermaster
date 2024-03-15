@@ -13,10 +13,11 @@ namespace Roster_Builder.Adeptus_Custodes
         public VexilusPraetor()
         {
             DEFAULT_POINTS = 105;
-            TemplateCode = "2m_c";
+            TemplateCode = "2m1k_c";
             Points = DEFAULT_POINTS;
             Weapons.Add("Guardian Spear");
             Weapons.Add("Vexilla Defensor");
+            Weapons.Add("");
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS CUSTODES", "<SHIELD HOST>",
@@ -40,6 +41,7 @@ namespace Roster_Builder.Adeptus_Custodes
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             cmbOption1.Items.Clear();
@@ -70,6 +72,16 @@ namespace Roster_Builder.Adeptus_Custodes
             {
                 cbWarlord.Checked = false;
                 cmbWarlord.Enabled = false;
+            }
+
+            cbOption1.Text = "Misericordia";
+            if (Weapons[1] == "Misericordia")
+            {
+                cbOption1.Checked = true;
+            }
+            else
+            {
+                cbOption1.Checked = false;
             }
 
             cmbRelic.Items.Clear();
@@ -118,6 +130,7 @@ namespace Roster_Builder.Adeptus_Custodes
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
 
             switch (code)
             {
@@ -168,6 +181,16 @@ namespace Roster_Builder.Adeptus_Custodes
                     else
                     {
                         cmbOption1.Enabled = true;
+                    }
+                    break;
+                case 21:
+                    if (cbOption1.Checked)
+                    {
+                        Weapons[2] = cbOption1.Text;
+                    }
+                    else
+                    {
+                        Weapons[2] = "";
                     }
                     break;
                 case 25:

@@ -60,3 +60,5 @@ Riptide template is adequate, but could be better. Take a look?
 
 Not super happy with how Nemesis Dreadknights are, maybe a re-look at?
 	Also, Dreadknights can't take the same weapon twice, but haven't figured out how to do that yet
+	
+Blood Angels Assault Squad adds Meltagun and Plasma Gun to the two Assault Marines option in the Wargear options

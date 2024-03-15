@@ -426,8 +426,16 @@
     <Compile Include="Space Marines\ContemptorDreadnought.cs" />
     <Compile Include="Space Marines\Crimson Fists\PedroKantor.cs" />
     <Compile Include="Space Marines\Deathwatch\CodicierNatorian.cs" />
+    <Compile Include="Space Marines\Deathwatch\CorvusBlackstar.cs" />
+    <Compile Include="Space Marines\Deathwatch\DeathwatchTerminators.cs" />
+    <Compile Include="Space Marines\Deathwatch\DeathwatchVeterans.cs" />
     <Compile Include="Space Marines\Deathwatch\DWChaplainCassius.cs" />
+    <Compile Include="Space Marines\Deathwatch\FortisKillTeam.cs" />
+    <Compile Include="Space Marines\Deathwatch\IndomitorKillTeam.cs" />
     <Compile Include="Space Marines\Deathwatch\KillTeamCassius.cs" />
+    <Compile Include="Space Marines\Deathwatch\ProteusKillTeam.cs" />
+    <Compile Include="Space Marines\Deathwatch\SpectrusKillTeam.cs" />
+    <Compile Include="Space Marines\Deathwatch\VeteranBikeSquad.cs" />
     <Compile Include="Space Marines\Deathwatch\WatchCaptainArtemis.cs" />
     <Compile Include="Space Marines\Deathwatch\WatchMaster.cs" />
     <Compile Include="Space Marines\DesolationSquad.cs" />

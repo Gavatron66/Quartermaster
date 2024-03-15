@@ -199,7 +199,7 @@ namespace Roster_Builder.Space_Marines
                 new HammerfallBunker()
             };
 
-            if(currentSubFaction == "Ultramarines")
+            if (currentSubFaction == "Ultramarines")
             {
                 datasheets.Insert(22, new MarneusCalgar()); //Marneus Calgar
                 datasheets.Insert(56, new VictrixGuard()); //Victrix Guard
@@ -213,34 +213,34 @@ namespace Roster_Builder.Space_Marines
                 datasheets.Insert(64, new HonourGuard()); //Honour Guard
                 datasheets.Insert(65, new TyrannicVeterans()); //Tyrannic War Veterans
             }
-            else if(currentSubFaction == "Salamanders")
+            else if (currentSubFaction == "Salamanders")
             {
                 datasheets.Insert(22, new VulkanHestan());
                 datasheets.Insert(23, new AdraxAgatone());
             }
-            else if(currentSubFaction == "Raven Guard")
+            else if (currentSubFaction == "Raven Guard")
             {
                 datasheets.Insert(22, new KayvaanShrike());
             }
-            else if(currentSubFaction == "Iron Hands")
+            else if (currentSubFaction == "Iron Hands")
             {
                 datasheets.Insert(22, new IronFatherFeirros());
             }
-            else if(currentSubFaction == "White Scars")
+            else if (currentSubFaction == "White Scars")
             {
                 datasheets.Insert(22, new KorsarroKhan());
                 datasheets.Insert(23, new Khan());
             }
-            else if(currentSubFaction == "Imperial Fists")
+            else if (currentSubFaction == "Imperial Fists")
             {
                 datasheets.Insert(22, new CaptainLysander());
                 datasheets.Insert(23, new TorGaradon());
             }
-            else if(currentSubFaction == "Crimson Fists")
+            else if (currentSubFaction == "Crimson Fists")
             {
                 datasheets.Insert(22, new PedroKantor());
             }
-            else if(currentSubFaction == "Deathwatch")
+            else if (currentSubFaction == "Deathwatch")
             {
                 StratagemList.Clear();
                 StratagemList.AddRange(new string[]
@@ -251,19 +251,19 @@ namespace Roster_Builder.Space_Marines
                     "Stratagem: A Vigil Unmatched"
                 });
 
-                //datasheets.Insert(28, new ProteusKillTeam());
-                //datasheets.Insert(29, new FortisKillTeam());
-                //datasheets.Insert(30, new IndomitorKillTeam());
-                //datasheets.Insert(31, new SpectrusKillTeam());
+                datasheets.Insert(28, new ProteusKillTeam());
+                datasheets.Insert(29, new FortisKillTeam());
+                datasheets.Insert(30, new IndomitorKillTeam());
+                datasheets.Insert(31, new SpectrusKillTeam());
                 datasheets.Insert(22, new WatchMaster());
                 datasheets.Insert(23, new WatchCaptainArtemis());
                 datasheets.Insert(24, new DWChaplainCassius());
                 datasheets.Insert(25, new CodicierNatorian());
-                //datasheets.Insert(36, new DeathwatchVeterans());
+                datasheets.Insert(36, new DeathwatchVeterans());
                 datasheets.Insert(37, new KillTeamCassius());
-                //datasheets.Insert(57, new DeathwatchTerminators());
-                //datasheets.Insert(69, new VeteranBikeSquad());
-                //datasheets.Insert(111, new CorvusBlackstar());
+                datasheets.Insert(57, new DeathwatchTerminators());
+                datasheets.Insert(69, new VeteranBikeSquad());
+                datasheets.Insert(111, new CorvusBlackstar()); //111
                 datasheets.RemoveAt(66);
                 datasheets.RemoveAt(71);
                 datasheets.RemoveAt(69);
@@ -272,7 +272,49 @@ namespace Roster_Builder.Space_Marines
                 datasheets.RemoveAt(31);
                 datasheets.RemoveAt(38);
                 datasheets.RemoveAt(66);
-                //datasheets.RemoveAt(99);
+                datasheets.RemoveAt(99);
+            }
+            else if (currentSubFaction == "Deathwatch")
+            {
+                StratagemList.Clear();
+                StratagemList.AddRange(new string[]
+                {
+                    "Stratagem: Hero of the Chapter",
+                    "Stratagem: Relic of the Chapter",
+                    "Stratagem: A Trophy Bestowed",
+                    "Stratagem: Thane of the Retinue",
+                    "Stratagem: Warrior of Legend"
+                });
+
+                //datasheets.Insert(28, new LoganGrimnar());
+                //datasheets.Insert(28, new NjalStormcaller());
+                //datasheets.Insert(28, new LoganGrimnarOnStormrider());
+                //datasheets.Insert(28, new BjornTheFellHanded());
+                //datasheets.Insert(28, new ArjacRockfist());
+                //datasheets.Insert(28, new UlrikTheSlayer());
+                //datasheets.Insert(28, new RagnarBlackmane());
+                //datasheets.Insert(28, new KromDragongaze());
+                //datasheets.Insert(28, new HaraldDeathwolf());
+                //datasheets.Insert(28, new CanisWolfborn());
+                //datasheets.Insert(28, new TerminatorWolfGuard());
+                //datasheets.Insert(28, new WolfLordThunderwolf());
+                //datasheets.Insert(28, new ThunderwolfWolfGuard());
+                //datasheets.Insert(28, new BloodClaws());
+                //datasheets.Insert(28, new GreyHunters());
+                //datasheets.Insert(28, new WolfGuard());
+                //datasheets.Insert(28, new LukasTheTrickster());
+                //datasheets.Insert(28, new WolfGuardTerminators());
+                //datasheets.Insert(28, new HoundsOfMorkai());
+                //datasheets.Insert(28, new Wulfen());
+                //datasheets.Insert(28, new WulfenDreadnought());
+                //datasheets.Insert(28, new Murderfang());
+                //datasheets.Insert(28, new Cyberwolves());
+                //datasheets.Insert(28, new ThunderwolfCavalry());
+                //datasheets.Insert(28, new FenrisianWolves());
+                //datasheets.Insert(28, new Skyclaws());
+                //datasheets.Insert(28, new LongFangs());
+                //datasheets.Insert(28, new StormfangGunship());
+                //datasheets.Insert(28, new Stormwolf());
             }
 
             return datasheets;
@@ -376,7 +418,7 @@ namespace Roster_Builder.Space_Marines
                 upgrades.Add("Chief Librarian (+20 pts)");
             }
 
-            if (keywords.Contains("APOTHECARY") || keywords.Contains("PRIMARIS APOTHECARY"))
+            if (keywords.Contains("APOTHECARY"))
             {
                 upgrades.Add("Chief Apothecary (+30 pts)");
             }
@@ -551,6 +593,19 @@ namespace Roster_Builder.Space_Marines
                     "Psychic Cleanse",
                     "Mantle of Shadow",
                     "Severance"
+                });
+            }
+
+            if(keywords == "Tempestas")
+            {
+                PsychicPowers.AddRange(new string[]
+                {
+                    "Living Lightning",
+                    "Murderous Hurricane",
+                    "Tempest's Wrath",
+                    "Instincts Awoken",
+                    "Storm Caller",
+                    "Jaws of the World Wolf"
                 });
             }
 
@@ -898,9 +953,27 @@ namespace Roster_Builder.Space_Marines
             }
             #endregion
             #region Space Wolves Relics
+            if (currentSubFaction == "Space Wolves")
+            {
+                relics.Add("The Armour of Russ");
+                relics.Add("The Wulfen Stone");
+                relics.Add("Fireheart");
+                relics.Add("Black Death");
+                relics.Add("Mountain-breaker Helm");
+                relics.Add("The Storm's Eye");
+                relics.Add("The Pelt of Balewolf");
+                relics.Add("Adamantine Mantle");
+                relics.Add("Artificer Armour");
+                relics.Add("Master-crafted Weapon");
+                relics.Add("Digital Weapons");
+                relics.Add("Morkai's Teeth Bolts");
+                relics.Add("Wolf Tail Talisman");
+                relics.Add("Frost Weapon");
+                relics.Add("Runic Weapon");
+            }
             #endregion
             #region Raven Guard Relics
-            if (currentSubFaction == "Raven Guard")
+                if (currentSubFaction == "Raven Guard")
             {
                 if((keywords.Contains("CAPTAIN") && !keywords.Contains("PRIMARIS")) ||
                     (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS"))
@@ -1141,7 +1214,15 @@ namespace Roster_Builder.Space_Marines
                 traits.Add("Hunter's Instincts");
                 traits.Add("Master of Snares");
             }
-            else if (currentSubFaction == "Space Wolves") { traits.Add("Beastslayer"); }
+            else if (currentSubFaction == "Space Wolves") 
+            { 
+                traits.Add("Beastslayer");
+                traits.Add("Wolfkin");
+                traits.Add("Warrior Born");
+                traits.Add("Hunter");
+                traits.Add("Aura of Majesty");
+                traits.Add("Resolve of the Bear");
+            }
             else if (currentSubFaction == "Imperial Fists") 
             {
                 traits.Add("Siege Master");

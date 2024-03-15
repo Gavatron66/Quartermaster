@@ -21,8 +21,7 @@ namespace Roster_Builder.Death_Guard
             Keywords.AddRange(new string[]
             {
                 "CHAOS", "NURGLE", "HERETIC ASTARTES", "DEATH GUARD", "<PLAUGE COMPANY>",
-                "MONSTER", "CHARACTER", "PSYKER", "DAEMON", "BUBONIC ASTARTES", "LORD OF THE DEATH GUARD",
-                    "DAEMON PRINCE"
+                "MONSTER", "CHARACTER", "PSYKER", "DAEMON", "BUBONIC ASTARTES", "DAEMON PRINCE"
             });
             PsykerPowers = new string[1] { string.Empty };
             Role = "HQ";

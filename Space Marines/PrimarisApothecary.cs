@@ -19,7 +19,7 @@ namespace Roster_Builder.Space_Marines
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "INFANTRY", "CHARACTER", "PRIMARIS", "PRIMARIS APOTHECARY"
+                "INFANTRY", "CHARACTER", "PRIMARIS", "APOTHECARY"
             });
             Role = "Elites";
         }

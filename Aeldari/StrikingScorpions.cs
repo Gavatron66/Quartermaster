@@ -15,7 +15,7 @@ namespace Roster_Builder.Aeldari
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "N1m";
-            Weapons.Add("Scorpion Chainsword");
+            Weapons.Add("Shuriken Pistol");
             Keywords.AddRange(new string[]
             {
                 "AELDARI", "ASURYANI", "<CRAFTWORLD>",
@@ -45,7 +45,7 @@ namespace Roster_Builder.Aeldari
             nudUnitSize.Maximum = 10;
             nudUnitSize.Value = currentSize;
 
-            panel.Controls["lblOption1"].Text = "Howling Banshee Exarch Weapons:";
+            panel.Controls["lblOption1"].Text = "Striking Scorpion Exarch Weapons:";
             panel.Controls["lblOption1"].Location = new System.Drawing.Point(panel.Controls["lblOption1"].Location.X - 15,
                 panel.Controls["lblOption1"].Location.Y);
 
@@ -53,7 +53,7 @@ namespace Roster_Builder.Aeldari
             cmbOption1.Items.AddRange(new string[]
             {
                 "Biting Blade (+5 pts)",
-                "Scorpion Chainsword",
+                "Shuriken Pistol",
                 "Scorpion's Claw (+10 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);

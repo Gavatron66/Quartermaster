@@ -320,7 +320,7 @@ namespace Roster_Builder.Tau_Empire
                 relics.Add("Ka'chak'tarr");         //Kroot Shaper
             }
 
-			if (currentSubFaction == "T'au")
+			if (currentSubFaction == "T'au" && keywords.Contains("BATTLESUIT"))
 			{
                 relics.Add("Vectored Manoeuvring Thursters");
 			}

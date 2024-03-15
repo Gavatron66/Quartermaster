@@ -20,7 +20,7 @@ namespace Roster_Builder.Tyranids
             Keywords.AddRange(new string[]
             {
                 "HIVE TENDRIL", "TYRANIDS", "<HIVE FLEET>",
-                "INFANTRY", "PSYKER", "FLY", "CORE", "ZOANTHROPES"
+                "INFANTRY", "SYNAPSE", "PSYKER", "FLY", "CORE", "ZOANTHROPES"
             });
             PsykerPowers = new string[1] { string.Empty };
             Role = "Elites";

@@ -25,7 +25,7 @@ namespace Roster_Builder.Aeldari.Harlequins
             Keywords.AddRange(new string[]
             {
                 "AELDARI", "HARLEQUINS", "<SAEDATH>",
-                "INFANTRY", "HAYWIRE GRENADES", "TROUPE"
+                "INFANTRY", "CORE", "HAYWIRE GRENADES", "TROUPE"
             });
             Role = "Troops";
         }

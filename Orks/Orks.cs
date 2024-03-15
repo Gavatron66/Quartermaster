@@ -283,8 +283,7 @@ namespace Roster_Builder.Orks
                 }
 
                 if ((keywords.Contains("BIG MEK") && keywords.Contains("MEGA ARMOUR")) || keywords.Contains("MEK") && !keywords.Contains("WAZBOM BLASTAJET")
-					|| keywords.Contains("BURNA BOYZ") || keywords.Contains("DEFFKOPTAS") || keywords.Contains("DEFF DREADS")
-					|| keywords.Contains("LOOTAS") || keywords.Contains("MORKANAUT"))
+					|| keywords.Contains("BURNA BOYZ")|| keywords.Contains("LOOTAS"))
                 {
                     upgrades.Add("Extra-Kustom Weapon (+10 pts)");
                 }

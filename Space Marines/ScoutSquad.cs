@@ -16,9 +16,9 @@ namespace Roster_Builder.Space_Marines
             UnitSize = 5;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "NL2m1k";
+            Weapons.Add("");
             Weapons.Add("Boltgun");
             Weapons.Add("Bolt Pistol");
-            Weapons.Add("");
             for (int i = 1; i < UnitSize; i++)
             {
                 Weapons.Add("Boltgun");
@@ -53,14 +53,14 @@ namespace Roster_Builder.Space_Marines
             nudUnitSize.Value = currentSize;
 
             lbModelSelect.Items.Clear();
-            if (Weapons[2] == "")
+            if (Weapons[0] == "")
             {
-                lbModelSelect.Items.Add("Scout Sergeant w/ " + Weapons[0] + " and " + Weapons[1]);
+                lbModelSelect.Items.Add("Scout Sergeant w/ " + Weapons[1] + " and " + Weapons[2]);
             }
             else
             {
-                lbModelSelect.Items.Add("Scout Sergeant w/ " + Weapons[0] + ", " + Weapons[1] +
-                    " and " + Weapons[2]);
+                lbModelSelect.Items.Add("Scout Sergeant w/ " + Weapons[1] + ", " + Weapons[2] +
+                    " and " + Weapons[0]);
             }
             for (int i = 1; i < UnitSize; i++)
             {
@@ -96,14 +96,14 @@ namespace Roster_Builder.Space_Marines
                     Weapons[(currentIndex * 2) + 1] = cmbOption1.SelectedItem.ToString();
                     if(currentIndex == 0)
                     {
-                        if (Weapons[2] == "")
+                        if (Weapons[0] == "")
                         {
-                            lbModelSelect.Items.Add("Scout Sergeant w/ " + Weapons[0] + " and " + Weapons[1]);
+                            lbModelSelect.Items[0] = ("Scout Sergeant w/ " + Weapons[1] + " and " + Weapons[2]);
                         }
                         else
                         {
-                            lbModelSelect.Items.Add("Scout Sergeant w/ " + Weapons[0] + ", " + Weapons[1] +
-                                " and " + Weapons[2]);
+                            lbModelSelect.Items[0] = ("Scout Sergeant w/ " + Weapons[1] + ", " + Weapons[2] +
+                                " and " + Weapons[0]);
                         }
                     }
                     else
@@ -120,25 +120,33 @@ namespace Roster_Builder.Space_Marines
                     }
                     break;
                 case 12:
-                    Weapons[1] = cmbOption2.SelectedItem.ToString();
-                    if (Weapons[2] == "")
+                    Weapons[2] = cmbOption2.SelectedItem.ToString();
+                    if (Weapons[0] == "")
                     {
-                        lbModelSelect.Items.Add("Scout Sergeant w/ " + Weapons[0] + " and " + Weapons[1]);
+                        lbModelSelect.Items[0] = ("Scout Sergeant w/ " + Weapons[1] + " and " + Weapons[2]);
                     }
                     else
                     {
-                        lbModelSelect.Items.Add("Scout Sergeant w/ " + Weapons[0] + ", " + Weapons[1] +
-                            " and " + Weapons[2]);
+                        lbModelSelect.Items[0] = ("Scout Sergeant w/ " + Weapons[1] + ", " + Weapons[2] +
+                            " and " + Weapons[0]);
                     }
                     break;
                 case 21:
                     if(cbOption1.Checked)
                     {
-                        Weapons[(currentIndex * 2) + 2] = cbOption1.Text;
                         if(currentIndex == 0)
                         {
-                            lbModelSelect.Items[0] = "Scout Sergeant w/ " + Weapons[0] + ", " + Weapons[1] +
-                            " and " + Weapons[2];
+                            Weapons[0] = cbOption1.Text;
+                        }
+                        else
+                        {
+                            Weapons[(currentIndex * 2) + 2] = cbOption1.Text;
+                        }
+
+                        if(currentIndex == 0)
+                        {
+                            lbModelSelect.Items[0] = "Scout Sergeant w/ " + Weapons[1] + ", " + Weapons[2] +
+                            " and " + Weapons[0];
                         }
                         else
                         {
@@ -148,10 +156,18 @@ namespace Roster_Builder.Space_Marines
                     }
                     else
                     {
-                        Weapons[(currentIndex * 2) + 2] = "";
-                        if(currentIndex == 0)
+                        if (currentIndex == 0)
                         {
-                            lbModelSelect.Items[0] = "Scout Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
+                            Weapons[0] = cbOption1.Text;
+                        }
+                        else
+                        {
+                            Weapons[(currentIndex * 2) + 2] = cbOption1.Text;
+                        }
+
+                        if (currentIndex == 0)
+                        {
+                            lbModelSelect.Items[0] = "Scout Sergeant w/ " + Weapons[1] + " and " + Weapons[2];
                         }
                         else
                         {
@@ -231,7 +247,7 @@ namespace Roster_Builder.Space_Marines
                             cmbOption1.Items.Insert(8, "Hand Flamer");
                             cmbOption1.Items.Insert(9, "Inferno Pistol");
                         }
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[1]);
 
                         cmbOption2.Items.Clear();
                         cmbOption2.Items.AddRange(new string[]
@@ -252,7 +268,7 @@ namespace Roster_Builder.Space_Marines
                             cmbOption2.Items.Insert(3, "Hand Flamer");
                             cmbOption2.Items.Insert(4, "Inferno Pistol");
                         }
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[2]);
                     }
                     else
                     {
@@ -266,7 +282,7 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
                     }
 
-                    if (Weapons[(currentIndex * 2) + 2] == "")
+                    if (Weapons[(currentIndex * 2) + 2] == "" || (currentIndex == 0 && Weapons[0] == ""))
                     {
                         cbOption1.Checked = false;
                     }

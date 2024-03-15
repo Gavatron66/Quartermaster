@@ -48,6 +48,7 @@
             this.nudSelectPoints = new System.Windows.Forms.NumericUpDown();
             this.btnLoad = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbOption5 = new System.Windows.Forms.CheckBox();
             this.cbOption4 = new System.Windows.Forms.CheckBox();
             this.cmbDiscipline = new System.Windows.Forms.ComboBox();
             this.lblPsykerList = new System.Windows.Forms.Label();
@@ -132,7 +133,6 @@
             this.cmbNDFaction = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblErrors = new System.Windows.Forms.Label();
-            this.cbOption5 = new System.Windows.Forms.CheckBox();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSelectPoints)).BeginInit();
             this.panel1.SuspendLayout();
@@ -409,6 +409,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1670, 680);
             this.panel1.TabIndex = 8;
+            // 
+            // cbOption5
+            // 
+            this.cbOption5.AutoSize = true;
+            this.cbOption5.Location = new System.Drawing.Point(480, 126);
+            this.cbOption5.Name = "cbOption5";
+            this.cbOption5.Size = new System.Drawing.Size(113, 24);
+            this.cbOption5.TabIndex = 89;
+            this.cbOption5.Text = "checkBox1";
+            this.cbOption5.UseVisualStyleBackColor = true;
+            this.cbOption5.CheckedChanged += new System.EventHandler(this.cbOption5_CheckedChanged);
             // 
             // cbOption4
             // 
@@ -1111,6 +1122,10 @@
             this.cmbSubFaction.TabIndex = 28;
             this.cmbSubFaction.SelectedIndexChanged += new System.EventHandler(this.cmbSubFaction_SelectedIndexChanged);
             // 
+            // toolTip1
+            // 
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -1281,17 +1296,6 @@
             this.lblErrors.Size = new System.Drawing.Size(155, 20);
             this.lblErrors.TabIndex = 82;
             this.lblErrors.Text = "Roster has _ errors";
-            // 
-            // cbOption5
-            // 
-            this.cbOption5.AutoSize = true;
-            this.cbOption5.Location = new System.Drawing.Point(480, 126);
-            this.cbOption5.Name = "cbOption5";
-            this.cbOption5.Size = new System.Drawing.Size(113, 24);
-            this.cbOption5.TabIndex = 89;
-            this.cbOption5.Text = "checkBox1";
-            this.cbOption5.UseVisualStyleBackColor = true;
-            this.cbOption5.CheckedChanged += new System.EventHandler(this.cbOption5_CheckedChanged);
             // 
             // Form1
             // 
