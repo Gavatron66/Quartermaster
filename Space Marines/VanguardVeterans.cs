@@ -143,7 +143,7 @@ namespace Roster_Builder.Space_Marines
                     }
                     break;
                 case 12:
-                    Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
+                    Weapons[(currentIndex * 2) + 2] = cmbOption2.SelectedItem.ToString();
                     if (currentIndex == 0)
                     {
                         lbModelSelect.Items[currentIndex] = "Vanguard Veteran Sergeant w/ " + Weapons[(currentIndex * 2) + 1] + " and " + Weapons[(currentIndex * 2) + 2];
@@ -287,7 +287,7 @@ namespace Roster_Builder.Space_Marines
             Points = DEFAULT_POINTS * UnitSize;
             if (Weapons[0] != "")
             {
-                Points += UnitSize * 2;
+                Points += UnitSize * 3;
             }
 
             foreach (var weapon in Weapons)

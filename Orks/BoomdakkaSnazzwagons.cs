@@ -20,7 +20,7 @@ namespace Roster_Builder.Orks
             TemplateCode = "N";
             Keywords.AddRange(new string[]
             {
-                "ORKS", "<CLAN",
+                "ORKS", "<CLAN>",
                 "VEHICLE", "SPEED FREEKS", "BOOMDAKKA SNAZZWAGONS"
             });
             Role = "Fast Attack";

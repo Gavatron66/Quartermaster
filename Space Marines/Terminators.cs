@@ -11,6 +11,7 @@ namespace Roster_Builder.Space_Marines
     {
         int currentIndex;
         int restriction = 1;
+
         public Terminators()
         {
             DEFAULT_POINTS = 33;

@@ -27,8 +27,6 @@ Implement the remianing unique stratagems for the following:
 Space Marines has limits on what each unit can take depending on subchapter. Most of the time, this isn't a problem. The following have a codex supplement that adds/changes their rosters:
 	Black Templars
 	Dark Angels
-	Deathwatch
-	Space Wolves
 	Blood Angels
 	
 Prohibit selecting the same custom faction trait
@@ -46,9 +44,8 @@ Fix Named Characters? Some named Characters belong to specific subfactions, and 
 
 Compare Primaris Lieutenant and Primaris Captain
 	They have annoyingly complicated options, so going to need some testing for it
-Some Aeldari Vehicles show points cost in the select list.
-
-Tyranids need a look at custom Hive Fleets
+	
+Select Lists show the additional point values of wargear (where/when applicable)
 
 T'au Piranhas hide Seeker Missiles; may want to be looked at
 Broadsides have some weapons restrictions
