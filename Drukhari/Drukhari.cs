@@ -61,19 +61,19 @@ namespace Roster_Builder.Drukhari
 				new ClawedFiends(),
 				new RazorwingFlock(),
 				new Khymerae(),
-				//new Reavers(),
-				//new Hellions(),
-				//new Scoourges(),
+				new Reavers(),
+				new Hellions(),
+				new Scourges(),
 				//---------- Heavy Support ----------
-				//new Talos(),
-				//new Cronos(),
-				//new Ravager(),
+				new Talos(),
+				new Cronos(),
+				new Ravager(),
 				//---------- Transport ----------
-				//new Raider(),
-				//new Venom(),
+				new Raider(),
+				new Venom(),
 				//---------- Flyer ----------
-				//new RazorwingJetfighter(),
-				//new VoidravenBomber()
+				new RazorwingJetfighter(),
+				new VoidravenBomber()
 			};
 
 			return datasheets;
@@ -151,12 +151,30 @@ namespace Roster_Builder.Drukhari
 			List<string> relics = new List<string>();
 
 			relics.Add("(None)");
-			relics.Add("Parasite's Kiss");
+
+			if(keywords.Contains("ARCHON") || keywords.Contains("SUCCUBUS"))
+            {
+                relics.Add("Parasite's Kiss");
+            }
+
 			relics.Add("The Helm of Spite");
-			relics.Add("The Nightmare Doll");
-			relics.Add("The Djin Blade");
+
+			if(keywords.Contains("HAEMONCULUS"))
+            {
+                relics.Add("The Nightmare Doll");
+            }
+
+            if (keywords.Contains("ARCHON"))
+            {
+                relics.Add("The Djin Blade");
+            }
+
 			relics.Add("The Animus Vitae");
-			relics.Add("The Triptych Whip");
+
+            if (keywords.Contains("SUCCUBUS"))
+            {
+                relics.Add("The Triptych Whip");
+            }
 
 			return relics;
 		}

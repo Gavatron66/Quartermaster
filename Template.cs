@@ -2859,6 +2859,27 @@ namespace Roster_Builder.Death_Guard
                     panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 301);
                     break;
                 #endregion
+                #region case "NL2k"
+                case "NL2k":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lbModelSelect"].Visible = true;
+                    panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
+                    panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
+
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(243, 126);
+
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(243, 156);
+
+                    panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(239, 183);
+
+                    panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 206);
+                    break;
+                #endregion
 
                 //Special Cases
                 #region case "cultist" <For DG_Cultists and Ork Boyz>

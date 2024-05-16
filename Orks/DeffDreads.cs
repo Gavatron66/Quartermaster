@@ -159,8 +159,8 @@ namespace Roster_Builder.Orks
 
                     if (temp < UnitSize)
                     {
-                        Weapons.Add("Big Shoot");
-                        Weapons.Add("Big Shoot");
+                        Weapons.Add("Big Shoota");
+                        Weapons.Add("Big Shoota");
                         Weapons.Add("Dread Klaw");
                         Weapons.Add("Dread Klaw");
                         lbModelSelect.Items.Add("Deff Dread - " + CalcPoints(UnitSize - 1) + " pts");

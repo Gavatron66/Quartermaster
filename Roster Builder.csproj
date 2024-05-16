@@ -89,6 +89,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adepta Sororitas\AdeptaSororitas.cs" />
     <Compile Include="Adeptus Custodes\AdeptusCustodes.cs" />
     <Compile Include="Adeptus Custodes\Aleya.cs" />
     <Compile Include="Adeptus Custodes\AllarusCustodians.cs" />
@@ -236,18 +237,28 @@
     <Compile Include="Drukhari\Beastmaster.cs" />
     <Compile Include="Drukhari\ClawedFiends.cs" />
     <Compile Include="Drukhari\CourtOfTheArchon.cs" />
+    <Compile Include="Drukhari\Cronos.cs" />
     <Compile Include="Drukhari\Drazhar.cs" />
     <Compile Include="Drukhari\Drukhari.cs" />
     <Compile Include="Drukhari\Grotesques.cs" />
     <Compile Include="Drukhari\Haemonculus.cs" />
+    <Compile Include="Drukhari\Hellions.cs" />
     <Compile Include="Drukhari\Incubi.cs" />
     <Compile Include="Drukhari\KabaliteWarriors.cs" />
     <Compile Include="Drukhari\Khymerae.cs" />
     <Compile Include="Drukhari\LelithHesperax.cs" />
     <Compile Include="Drukhari\Mandrakes.cs" />
+    <Compile Include="Drukhari\Raider.cs" />
+    <Compile Include="Drukhari\Ravager.cs" />
     <Compile Include="Drukhari\RazorwingFlock.cs" />
+    <Compile Include="Drukhari\RazorwingJetfighter.cs" />
+    <Compile Include="Drukhari\Reavers.cs" />
+    <Compile Include="Drukhari\Scourges.cs" />
     <Compile Include="Drukhari\Succubus.cs" />
+    <Compile Include="Drukhari\Talos.cs" />
     <Compile Include="Drukhari\UrienRakarth.cs" />
+    <Compile Include="Drukhari\Venom.cs" />
+    <Compile Include="Drukhari\VoidravenBomber.cs" />
     <Compile Include="Drukhari\Wracks.cs" />
     <Compile Include="Drukhari\Wyches.cs" />
     <Compile Include="Faction.cs" />
