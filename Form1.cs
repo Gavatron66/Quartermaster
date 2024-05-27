@@ -23,6 +23,7 @@ using Roster_Builder.Adeptus_Mechanicus;
 using Roster_Builder.Tau_Empire;
 using Roster_Builder.Orks;
 using Roster_Builder.Grey_Knights;
+using Roster_Builder.Adepta_Sororitas;
 
 namespace Roster_Builder
 {
@@ -77,6 +78,7 @@ namespace Roster_Builder
             cmbSelectFaction.Items.Clear();
             cmbSelectFaction.Items.AddRange(new Faction[]
             {
+                new AdeptaSororitas(),
                 new AdeptusCustodes(),
                 new AdMech(),
                 new Aeldari.Aeldari(),
@@ -102,6 +104,7 @@ namespace Roster_Builder
             cmbNDFaction.Items.Clear();
             cmbNDFaction.Items.AddRange(new Faction[]
             {
+                new AdeptaSororitas(),
                 new AdeptusCustodes(),
                 new AdMech(),
                 new Aeldari.Aeldari(),

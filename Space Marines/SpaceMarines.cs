@@ -322,14 +322,51 @@ namespace Roster_Builder.Space_Marines
 				datasheets.Insert(92, new LongFangs());
 				datasheets.Insert(118, new StormfangGunship());
 				datasheets.Insert(119, new Stormwolf());
-			}
+            }
+            else if (currentSubFaction == "Dark Angels")
+            {
+                //datasheets.Insert(0, new Azrael());
+                //datasheets.Insert(0, new Belial());
+                //datasheets.Insert(0, new Sammael());
+                //datasheets.Insert(0, new Ezekiel());
+                //datasheets.Insert(0, new Asmodai());
+                //datasheets.Insert(0, new InterrogatorChaplain());
+                //datasheets.Insert(0, new RavenwingTalonmaster());
+                //datasheets.Insert(0, new Lazarus());
+                //datasheets.Insert(0, new DeathwingStrikemaster());
+                //datasheets.Insert(0, new TerminatorInterrogator());
+                //datasheets.Insert(0, new DeathwingApothecary());
+                //datasheets.Insert(0, new DeathwingChampion());
+                //datasheets.Insert(0, new DeathwingTerminators());
+                //datasheets.Insert(0, new DeathwingKnights());
+                //datasheets.Insert(0, new DeathwingCommand());
+                //datasheets.Insert(0, new RavenwingApothecary());
+                //datasheets.Insert(0, new RavenwingChampion());
+                //datasheets.Insert(0, new RavenwingAncient());
+                //datasheets.Insert(0, new RavenwingBlackKnights());
+                //datasheets.Insert(0, new RavenwingDarkshroud());
+                //datasheets.Insert(0, new RavenwingVengeance());
+                //datasheets.Insert(0, new RavenwingDarkTalon());
+                //datasheets.Insert(0, new NephlilimJetfighter());
+            }
+            else if (currentSubFaction == "Black Templars")
+            {
+            }
+            else if (currentSubFaction == "Blood Angels")
+            {
+            }
 
-			return datasheets;
+            return datasheets;
         }
 
         public override int GetFactionUpgradePoints(string upgrade)
         {
             int points = 0;
+
+            string[] fifty = new string[]
+            {
+                   "Deathwing Chapter Master (+50 pts)"
+            };
 
             string[] forty = new string[]
             {
@@ -361,12 +398,24 @@ namespace Roster_Builder.Space_Marines
                 "Chapter Ancient (+15 pts)",
                 "Master of the Forge (+15 pts)",
                 "Aquila Kill Team (+15 pts)",
-            };
+                "Promote to Deathwing (+15 pts)"
+        };
 
             string[] ten = new string[]
             {
                 "Chapter Champion (+10 pts)",
+                "Promote to Deathwing (+10 pts)"
             };
+
+            string[] five = new string[]
+            {
+                "Promote to Deathwing (+5 pts)"
+            };
+
+            if (fifty.Contains(upgrade))
+            {
+                points = 50;
+            }
 
             if (forty.Contains(upgrade))
             {
@@ -396,6 +445,11 @@ namespace Roster_Builder.Space_Marines
             if (ten.Contains(upgrade))
             {
                 points = 10;
+            }
+
+            if(five.Contains(upgrade))
+            {
+                points = 5;
             }
 
             return points;
@@ -451,6 +505,51 @@ namespace Roster_Builder.Space_Marines
                     "Furor Kill Team (+30 pts)",
                     "Purgatus Kill Team (+20 pts)"
                 });
+            }
+
+            if(currentSubFaction == "Dark Angels")
+            {
+                if(keywords.Contains("CAPTAIN"))
+                {
+                    upgrades.Add("Promote to Deathwing (+15 pts)");
+                    upgrades.Add("Deathwing Chapter Master (+50 pts)");
+                }
+
+                if(keywords.Contains("PRIMARIS LIEUTENANT") && !(keywords.Contains("PHOBOS")))
+                {
+                    // Only if it's equipped with a Storm Shield
+                    upgrades.Add("Promote to Deathwing (+10 pts)");
+                }
+
+                if(keywords.Contains("DREADNOUGHT"))
+                {
+                    upgrades.Add("Promote to Deathwing (+10 pts)");
+                }
+
+                if (keywords.Contains("LAND RAIDER"))
+                {
+                    upgrades.Add("Promote to Deathwing (+5 pts)");
+                }
+
+                if (keywords.Contains("REPULSOR"))
+                {
+                    upgrades.Add("Promote to Deathwing (+5 pts)");
+                }
+
+                if (keywords.Contains("STORMRAVEN GUNSHIP"))
+                {
+                    upgrades.Add("Promote to Deathwing (+5 pts)");
+                }
+
+                if (keywords.Contains("REPULSOR"))
+                {
+                    upgrades.Add("Promote to Deathwing (+5 pts)");
+                }
+
+                if (keywords.Contains("STORMRAVEN GUNSHIP"))
+                {
+                    upgrades.Add("Promote to Deathwing (+5 pts)");
+                }
             }
 
             return upgrades;
@@ -616,6 +715,19 @@ namespace Roster_Builder.Space_Marines
                 });
             }
 
+            if (keywords == "Interromancy")
+            {
+                PsychicPowers.AddRange(new string[]
+                {
+                    "Mind Worm",
+                    "Aversion",
+                    "Righteous Repugnance",
+                    "Trephination",
+                    "Engulfing Fear",
+                    "Mind Wipe"
+                });
+            }
+
             return PsychicPowers;
         }
 
@@ -716,8 +828,14 @@ namespace Roster_Builder.Space_Marines
             }
 
             #region Black Templars Relics
+            if (currentSubFaction == "Black Templars")
+            {
+            }
             #endregion
             #region Blood Angels Relics
+            if (currentSubFaction == "Blood Angels")
+            {
+            }
             #endregion
             #region Crimson Fists Relics
             if (currentSubFaction == "Crimson Fists")
@@ -760,6 +878,24 @@ namespace Roster_Builder.Space_Marines
             }
             #endregion
             #region Dark Angels Relics
+            if (currentSubFaction == "Dark Angels")
+            {
+                relics.Add("Mace of Redemption");
+                relics.Add("Pennant of Remembrance");
+                relics.Add("Shroud of Heroes");
+                relics.Add("Reliquary of the Repentant");
+                relics.Add("Foe-Smiter");
+                relics.Add("Eye of the Unseen");
+                relics.Add("Cup of Retribution");
+                relics.Add("Adamantine Mantle");
+                relics.Add("Artificer Armour");
+                relics.Add("Master-crafted Weapon");
+                relics.Add("Digital Weapons");
+                relics.Add("Heavenfall Blade");
+                relics.Add("Arbiter's Gaze");
+                relics.Add("Atonement");
+                relics.Add("Bolts of Judgement");
+            }
             #endregion
             #region Deathwatch Relics
             if (currentSubFaction == "Deathwatch")
@@ -1270,7 +1406,28 @@ namespace Roster_Builder.Space_Marines
                 });
             }
 
-            if (currentSubFaction == "Dark Angels") { traits.Add("Brilliant Strategist"); }
+            if (currentSubFaction == "Dark Angels") {
+
+                if(keyword == "Ravenwing")
+                {
+                    traits.Add("Lightning-Fast Reactions");
+                    traits.Add("Master of Manoeuvre");
+                }
+                else if (keyword == "Deathwing")
+                {
+                    traits.Add("Watched");
+                    traits.Add("Inexorable");
+                }
+                else
+                {
+                    traits.Add("Brilliant Strategist");
+                    traits.Add("Fury of the Lion");
+                    traits.Add("Calibanite Knight");
+                    traits.Add("Stubborn Tenacity");
+                    traits.Add("Decisive Tactician");
+                    traits.Add("Honour of the First Legion");
+                }
+            }
             else if (currentSubFaction == "White Scars") 
             { 
                 traits.Add("Deadly Hunter");

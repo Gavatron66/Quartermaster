@@ -90,6 +90,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adepta Sororitas\AdeptaSororitas.cs" />
+    <Compile Include="Adepta Sororitas\AestredThurgaAgathaeDolan.cs" />
+    <Compile Include="Adepta Sororitas\ArcoFlagellants.cs" />
+    <Compile Include="Adepta Sororitas\BattleSanctum.cs" />
+    <Compile Include="Adepta Sororitas\BattleSisters.cs" />
+    <Compile Include="Adepta Sororitas\Canoness.cs" />
+    <Compile Include="Adepta Sororitas\Castigator.cs" />
+    <Compile Include="Adepta Sororitas\Celestian.cs" />
+    <Compile Include="Adepta Sororitas\CelestianSacresants.cs" />
+    <Compile Include="Adepta Sororitas\Celestine.cs" />
+    <Compile Include="Adepta Sororitas\Crusaders.cs" />
+    <Compile Include="Adepta Sororitas\DeathCultAssassins.cs" />
+    <Compile Include="Adepta Sororitas\Dialogus.cs" />
+    <Compile Include="Adepta Sororitas\Dogmata.cs" />
+    <Compile Include="Adepta Sororitas\DominionSquad.cs" />
+    <Compile Include="Adepta Sororitas\EphraelSternKyganil.cs" />
+    <Compile Include="Adepta Sororitas\Exorcist.cs" />
+    <Compile Include="Adepta Sororitas\Hospitaller.cs" />
+    <Compile Include="Adepta Sororitas\Imagifier.cs" />
+    <Compile Include="Adepta Sororitas\Immolator.cs" />
+    <Compile Include="Adepta Sororitas\JunithEruita.cs" />
+    <Compile Include="Adepta Sororitas\Missionary.cs" />
+    <Compile Include="Adepta Sororitas\Mortifiers.cs" />
+    <Compile Include="Adepta Sororitas\MorvennVahl.cs" />
+    <Compile Include="Adepta Sororitas\Palatine.cs" />
+    <Compile Include="Adepta Sororitas\ParagonWarsuits.cs" />
+    <Compile Include="Adepta Sororitas\PenitentEngines.cs" />
+    <Compile Include="Adepta Sororitas\Preacher.cs" />
+    <Compile Include="Adepta Sororitas\RepentiaSuperior.cs" />
+    <Compile Include="Adepta Sororitas\Retributors.cs" />
+    <Compile Include="Adepta Sororitas\Seraphim.cs" />
+    <Compile Include="Adepta Sororitas\SistersRepentia.cs" />
+    <Compile Include="Adepta Sororitas\SororitasRhino.cs" />
+    <Compile Include="Adepta Sororitas\TriumphOfStKatherine.cs" />
+    <Compile Include="Adepta Sororitas\Zephyrim.cs" />
     <Compile Include="Adeptus Custodes\AdeptusCustodes.cs" />
     <Compile Include="Adeptus Custodes\Aleya.cs" />
     <Compile Include="Adeptus Custodes\AllarusCustodians.cs" />
@@ -736,6 +770,10 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Space Marines\Black Templars\" />
+    <Folder Include="Space Marines\Blood Angels\" />
+    <Folder Include="Space Marines\Dark Angels\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

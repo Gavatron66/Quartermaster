@@ -71,46 +71,46 @@ namespace Roster_Builder.Adepta_Sororitas
             var datasheets = new List<Datasheets>()
             {
                 //---------- HQ ----------
-                //new MorvennVahl(),
-                //new Canoness(),
-                //new Palatine(),
-                //new JunithEruita(),
-                //new Missionary(),
-                //new Celestine(),
-                //new TriumphOfStKatherine(),
-                //new EphraelSternKyganil(),
+                new MorvennVahl(),
+                new Canoness(),
+                new Palatine(),
+                new JunithEruita(),
+                new Missionary(),
+                new Celestine(),
+                new TriumphOfStKatherine(),
+                new EphraelSternKyganil(),
                 //---------- Troops ----------
-                //new BattleSisters(),
+                new BattleSisters(),
                 //---------- Elites ----------
-                //new AestredThurgaAgathaeDolan(),
-                //new Imagifier(),
-                //new Dialogus(),
-                //new Preacher(),
-                //new Celestian(),
-                //new CelestianSacresants(),
-                //new Hospitaller(),
-                //new Dogmata(),
-                //new ParagonWarsuits(),
-                //new RepentiaSuperior(),
-                //new SistersRepentia(),
-                //new Crusaders(),
-                //new ArcoFlagellants(),
-                //new DeathCultAssassins(),
+                new AestredThurgaAgathaeDolan(),
+                new Imagifier(),
+                new Dialogus(),
+                new Preacher(),
+                new Celestian(),
+                new CelestianSacresants(),
+                new Hospitaller(),
+                new Dogmata(),
+                new ParagonWarsuits(),
+                new RepentiaSuperior(),
+                new SistersRepentia(),
+                new Crusaders(),
+                new ArcoFlagellants(),
+                new DeathCultAssassins(),
                 //---------- Fast Attack ----------
-                //new DominionSquad(),
-                //new Seraphim(),
-                //new Zephyrim(),
+                new DominionSquad(),
+                new Seraphim(),
+                new Zephyrim(),
                 //---------- Heavy Support ----------
-                //new Retributors(),
-                //new Mortifiers(),
-                //new PenitentEngines(),
-                //new Exorcist(),
-                //new Castigator(),
+                new Retributors(),
+                new Mortifiers(),
+                new PenitentEngines(),
+                new Exorcist(),
+                new Castigator(),
                 //---------- Transport ----------
-                //new SororitasRhino(),
-                //new Immolator()
+                new SororitasRhino(),
+                new Immolator(),
                 //---------- Fortification ----------
-                //new BattleSanctum()
+                new BattleSanctum()
             };
 
             return datasheets;

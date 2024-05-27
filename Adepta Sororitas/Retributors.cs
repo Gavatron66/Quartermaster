@@ -5,45 +5,47 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Space_Marines
+namespace Roster_Builder.Adepta_Sororitas
 {
-    public class AssaultSquad : Datasheets
+    public class Retributors : Datasheets
     {
         int currentIndex = 0;
+        int stdIndex = -1;
         bool isLoading = false;
-        int[] restrictArray = new int[] { 0, 0 };
+        int restrictArray = 0;
 
-        public AssaultSquad()
+        public Retributors()
         {
-            DEFAULT_POINTS = 18;
+            DEFAULT_POINTS = 12;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
-            TemplateCode = "NL2m2k";
-            Weapons.Add("Bolt Pistol");
-            Weapons.Add("Astartes Chainsword");
-            Weapons.Add(""); //Combat Shield
-            Weapons.Add(""); //Jump Packs
-            for(int i = 1; i < UnitSize; i++)
+            TemplateCode = "NL2m3k";
+            Weapons.Add("Boltgun and Bolt Pistol");
+            Weapons.Add("(None)");
+            Weapons.Add(""); //Armorium Cherub (+5 pts)
+            Weapons.Add(""); //Armorium Cherub (+5 pts)
+            Weapons.Add(""); //Simulacrum Imperialis (+5 pts)
+            for (int i = 1; i < UnitSize; i++)
             {
-                Weapons.Add("Bolt Pistol and Astartes Chainsword");
+                Weapons.Add("Boltgun");
             }
             Keywords.AddRange(new string[]
             {
-                "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "INFANTRY", "CORE", "MELTA BOMBS", "ASSAULT SQUAD"
+                "IMPERIUM", "ADEPTUS MINISTORUM", "ADEPTA SORORITAS", "<ORDER>",
+                "INFANTRY", "CORE", "RETRIBUTOR SQUAD"
             });
-            Role = "Fast Attack";
+            Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new AssaultSquad();
+            return new Retributors();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
-            repo = f as SpaceMarines;
+            repo = f as AdeptaSororitas;
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
@@ -51,8 +53,9 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
+            CheckBox cbOption3 = panel.Controls["cbOption3"] as CheckBox;
 
-            cbOption1.Location = new System.Drawing.Point (cbOption1.Location.X, cbOption1.Location.Y + 60);
+            cbOption1.Location = new System.Drawing.Point(cbOption1.Location.X, cbOption1.Location.Y + 60);
             cbOption2.Location = new System.Drawing.Point(cbOption2.Location.X, cbOption2.Location.Y + 60);
 
             int currentSize = UnitSize;
@@ -64,24 +67,25 @@ namespace Roster_Builder.Space_Marines
             nudUnitSize.Value = currentSize;
 
             lbModelSelect.Items.Clear();
-            if (Weapons[2] == "")
+            if (Weapons[1] == "(None)")
             {
-                lbModelSelect.Items.Add("Assault Marine Sergeant with " + Weapons[0] + " and " + Weapons[1]);
+                lbModelSelect.Items.Add("Retributor Superior with " + Weapons[0]);
             }
             else
             {
-                lbModelSelect.Items.Add("Assault Marine Sergeant with " + Weapons[0] + ", " + Weapons[1] + " and a " + Weapons[2]);
+                lbModelSelect.Items.Add("Retributor Superior with " + Weapons[0] + " and " + Weapons[1]);
             }
-            for(int i = 1; i < UnitSize; i++)
+            for (int i = 1; i < UnitSize; i++)
             {
-                lbModelSelect.Items.Add("Assault Marine with " + Weapons[i + 3]);
+                lbModelSelect.Items.Add("Retributor with " + Weapons[i + 3]);
             }
 
             cmbOption1.Items.Clear();
             cmbOption2.Items.Clear();
 
-            cbOption1.Text = "Jump Packs (All Models)";
-            cbOption2.Text = "Combat Shield";
+            cbOption1.Text = "Incensor Cherub (+5 pts)";
+            cbOption2.Text = "Incensor Cherub (+5 pts)";
+            cbOption3.Text = "Simulacrum Imperialis (+5 pts)";
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -104,38 +108,30 @@ namespace Roster_Builder.Space_Marines
                     if (currentIndex == 0)
                     {
                         Weapons[0] = cmbOption1.SelectedItem.ToString();
-                        if (Weapons[2] == "")
+                        if (Weapons[1] == "(None)")
                         {
-                            lbModelSelect.Items[0] = "Assault Marine Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
+                            lbModelSelect.Items[0] = "Retributor Superior w/ " + Weapons[0];
                         }
                         else
                         {
-                            lbModelSelect.Items[0] = "Assault Marine Sergeant w/ " + Weapons[0] + ", " + Weapons[1] + " and a " + Weapons[2];
+                            lbModelSelect.Items[0] = "Retributor Superior w/ " + Weapons[0] + " and " + Weapons[1];
                         }
                     }
                     else
                     {
                         Weapons[currentIndex + 3] = cmbOption1.SelectedItem.ToString();
-                        lbModelSelect.Items[currentIndex] = "Assault Marine with " + Weapons[currentIndex + 3];
+                        lbModelSelect.Items[currentIndex] = "Retributor with " + Weapons[currentIndex + 3];
                     }
                     break;
                 case 12:
-                    if (currentIndex == 0)
+                    Weapons[1] = cmbOption2.SelectedItem.ToString();
+                    if (Weapons[1] == "(None)")
                     {
-                        Weapons[1] = cmbOption2.SelectedItem.ToString();
-                        if (Weapons[2] == "")
-                        {
-                            lbModelSelect.Items[0] = "Assault Marine Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
-                        }
-                        else
-                        {
-                            lbModelSelect.Items[0] = "Assault Marine Sergeant w/ " + Weapons[0] + ", " + Weapons[1] + " and a " + Weapons[2];
-                        }
+                        lbModelSelect.Items[0] = "Retributor Superior w/ " + Weapons[0];
                     }
                     else
                     {
-                        Weapons[currentIndex + 4] = cmbOption2.SelectedItem.ToString();
-                        lbModelSelect.Items[currentIndex] = "Assault Marine with " + Weapons[currentIndex + 4];
+                        lbModelSelect.Items[0] = "Retributor Superior w/ " + Weapons[0] + " and " + Weapons[1];
                     }
                     break;
                 case 21:
@@ -152,10 +148,14 @@ namespace Roster_Builder.Space_Marines
                     if (cbOption2.Checked)
                     {
                         Weapons[2] = cbOption2.Text;
+                        stdIndex = currentIndex;
+                        cmbOption1.Enabled = false;
                     }
                     else
                     {
                         Weapons[2] = "";
+                        stdIndex = -1;
+                        cmbOption1.Enabled = true;
                     }
                     break;
                 case 30:
@@ -164,8 +164,8 @@ namespace Roster_Builder.Space_Marines
 
                     if (temp < UnitSize)
                     {
-                        Weapons.Add("Bolt Pistol and Astartes Chainsword");
-                        lbModelSelect.Items.Add("Assault Marine with " + Weapons[temp + 3]);
+                        Weapons.Add("Boltgun");
+                        lbModelSelect.Items.Add("Retributor with " + Weapons[temp + 3]);
                     }
 
                     if (temp > UnitSize)
@@ -193,45 +193,34 @@ namespace Roster_Builder.Space_Marines
                     if (currentIndex == 0)
                     {
                         cmbOption1.Visible = true;
+                        cmbOption1.Enabled = true;
                         cmbOption2.Visible = true;
                         panel.Controls["lblOption1"].Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
                         cbOption1.Visible = true;
-                        cbOption2.Visible = true;
+                        cbOption2.Visible = false;
 
                         cmbOption1.Items.Clear();
                         cmbOption1.Items.AddRange(new string[]
                         {
-                            "Astartes Chainsword",
-                            "Bolt Pistol",
-                            //Hand Flamer
-                            "Grav-pistol",
-                            //Inferno Pistol
-                            "Lightning Claw",
-                            "Plasma Pistol",
-                            "Power Axe",
-                            "Power Fist",
-                            "Power Maul",
-                            "Power Sword",
-                            "Thunder Hammer"
+                            "Boltgun and Bolt Pistol",
+                            "Combi-melta and Bolt Pistol (+10 pts)",
+                            "Combi-plasma and Bolt Pistol (+10 pts)",
+                            "Condemnor Boltgun and Bolt Pistol (+10 pts)",
+                            "Inferno Pistol (+5 pts)",
+                            "Ministorum Combi-flamer and Bolt Pistol (+10 pts)",
+                            "Ministorum Hand Flamer (+5 pts)",
+                            "Plasma Pistol (+5 pts)"
                         });
-                        if (repo.currentSubFaction == "Blood Angels" || repo.currentSubFaction == "Deathwatch")
-                        {
-                            cmbOption1.Items.Insert(2, "Hand Flamer");
-                            cmbOption1.Items.Insert(4, "Inferno Pistol");
-                        }
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
                         cmbOption2.Items.Clear();
                         cmbOption2.Items.AddRange(new string[]
                         {
-                            "Astartes Chainsword",
-                            "Lightning Claw",
-                            "Power Axe",
-                            "Power Fist",
-                            "Power Maul",
-                            "Power Sword",
-                            "Thunder Hammer"
+                            "(None)",
+                            "Chainsword",
+                            "Power Maul (+5 pts)",
+                            "Power Sword (+5 pts)"
                         });
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
                         isLoading = false;
@@ -239,38 +228,42 @@ namespace Roster_Builder.Space_Marines
                     }
 
                     cmbOption1.Visible = true;
+                    cmbOption1.Enabled = true;
                     cmbOption2.Visible = false;
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption2"].Visible = false;
                     cbOption1.Visible = true;
-                    cbOption2.Visible = false;
+                    cbOption2.Visible = true;
 
                     cmbOption1.Items.Clear();
                     cmbOption1.Items.AddRange(new string[]
                     {
-                        "Bolt Pistol and Astartes Chainsword",
-                        "Bolt Pistol and Eviscerator",
-                        "Flamer",
-                        "Plasma Pistol and Astartes Chainsword",
-                        "Plasma Pistol and Eviscerator"
+                        "Artificer-crafted Storm Bolter (+5 pts)", //s
+                        "Boltgun",
+                        "Meltagun (+10 pts)", //s
+                        "Ministorum Flamer (+5 pts)", //s
                     });
                     cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 3]);
 
-                    if (restrictArray[1] == UnitSize / 5 && !(Weapons[currentIndex + 3].Contains("Eviscerator")))
+                    if (restrictArray == 4 && Weapons[currentIndex + 3] == "Boltgun")
                     {
-                        cmbOption1.Items.Remove("Bolt Pistol and Eviscerator");
-                        cmbOption1.Items.Remove("Plasma Pistol and Eviscerator");
+                        cmbOption1.Items.Remove("Artificer-crafted Storm Bolter (+5 pts)");
+                        cmbOption1.Items.Remove("Meltagun (+10 pts)");
+                        cmbOption1.Items.Remove("Ministorum Flamer (+5 pts)");
                     }
 
-                    if (restrictArray[0] == 2 &&
-                        !((Weapons[currentIndex + 3].Contains("Plasma Pistol")) || Weapons[currentIndex + 3] == ("Flamer")))
+                    if (Weapons[currentIndex + 3] == "Boltgun" && (stdIndex == -1 || stdIndex == currentIndex))
                     {
-                        cmbOption1.Items.Remove("Plasma Pistol and Astartes Chainsword");
-                        cmbOption1.Items.Remove("Flamer");
-                        if (cmbOption1.Items.Contains("Plasma Pistol and Eviscerator"))
-                        {
-                            cmbOption1.Items.Remove("Plasma Pistol and Eviscerator");
-                        }
+                        cbOption2.Enabled = true;
+                    }
+                    else
+                    {
+                        cbOption2.Enabled = false;
+                    }
+
+                    if (stdIndex == currentIndex)
+                    {
+                        cmbOption1.Enabled = false;
                     }
 
                     isLoading = false;
@@ -279,26 +272,33 @@ namespace Roster_Builder.Space_Marines
 
             Points = DEFAULT_POINTS * UnitSize;
 
-            restrictArray[0] = 0;
-            restrictArray[1] = 0;
+            restrictArray = 0; //Special
 
             foreach (var weapon in Weapons)
             {
-                if(weapon.Contains("Plasma Pistol") || weapon == "Flamer")
+                if (weapon == "Artificer-crafted Storm Bolter (+5 pts)" || weapon == "Meltagun (+10 pts)" || weapon == "Ministorum Flamer (+5 pts)")
                 {
-                    restrictArray[0]++;
+                    restrictArray++;
                 }
 
-                if(weapon.Contains("Eviscerator"))
+                if (weapon == "Artificer-crafted Storm Bolter (+5 pts)" || weapon == "Incensor Cherub (+5 pts)" || weapon == "Inferno Pistol (+5 pts)"
+                    || weapon == "Ministorum Flamer (+5 pts)" || weapon == "Ministorum Hand Flamer (+5 pts)" || weapon == "Plasma Pistol (+5 pts)"
+                    || weapon == "Power Maul (+5 pts)" || weapon == "Power Sword (+5 pts)" || weapon == "Simulacrum Imperialis (+5 pts)")
                 {
-                    restrictArray[1]++;
+                    Points += 5;
+                }
+
+                if (weapon.Contains("Combi-melta") || weapon.Contains("Combi-plasma") || weapon.Contains("Condemnor Boltgun")
+                    || weapon == "Meltagun (+10 pts)" || weapon.Contains("Ministorum Combi-flamer"))
+                {
+                    Points += 10;
                 }
             }
         }
 
         public override string ToString()
         {
-            return "Assault Squad - " + Points + "pts";
+            return "Retributor Squad - " + Points + "pts";
         }
     }
 }

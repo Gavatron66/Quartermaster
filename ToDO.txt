@@ -64,3 +64,7 @@ Lords of Commorragh has relics and warlord traits that only they can have
 
 Need to come back to Drukhari once I figure out how to implement the 
 variety of subfactions since Drukhari are just special like that
+
+Adepta Sororitas has the Sacred Rites ability. Do I want to implement that as well?
+
+Need to implement the relics for Drukhari, Deathwatch, Space Wolves
