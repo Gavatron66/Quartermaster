@@ -1,3 +1,21 @@
+---------------------
+-	OVERHAUL LIST	-
+---------------------
+1.) UI Overhaul
+	Make everything look nicer and more readable
+2.) Save/Load Features
+	Self-explanatory
+3.) Stratagems and Misc. Fixes
+	Implement Stratagems properly
+	Ensure Faction upgrades work the way they're supposed to
+	The fixes on the rest of this list
+4.) Custom Subfactions
+	Add a new template setup to allow for custom factions
+5.) More Game Systems
+	The Biggest and Baddest
+	Want to provide support for 10th and maybe 8th edition
+	along with Horus Heresy and potentially Age of Sigmar (we'll see how the next edition handles list building when the time comes)
+
 Models to add checks for Numeric Up Down controls:
 	Death Guard Cultists
 	Necron Warriors

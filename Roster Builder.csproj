@@ -488,6 +488,29 @@
     <Compile Include="Space Marines\CompanyChampion.cs" />
     <Compile Include="Space Marines\ContemptorDreadnought.cs" />
     <Compile Include="Space Marines\Crimson Fists\PedroKantor.cs" />
+    <Compile Include="Space Marines\Dark Angels\Asmodai.cs" />
+    <Compile Include="Space Marines\Dark Angels\Azrael.cs" />
+    <Compile Include="Space Marines\Dark Angels\Belial.cs" />
+    <Compile Include="Space Marines\Dark Angels\DeathwingApothecary.cs" />
+    <Compile Include="Space Marines\Dark Angels\DeathwingChampion.cs" />
+    <Compile Include="Space Marines\Dark Angels\DeathwingCommand.cs" />
+    <Compile Include="Space Marines\Dark Angels\DeathwingKnights.cs" />
+    <Compile Include="Space Marines\Dark Angels\DeathwingStrikemaster.cs" />
+    <Compile Include="Space Marines\Dark Angels\DeathwingTerminators.cs" />
+    <Compile Include="Space Marines\Dark Angels\Ezekiel.cs" />
+    <Compile Include="Space Marines\Dark Angels\InterrogatorChaplain.cs" />
+    <Compile Include="Space Marines\Dark Angels\Lazarus.cs" />
+    <Compile Include="Space Marines\Dark Angels\NephlilimJetfighter.cs" />
+    <Compile Include="Space Marines\Dark Angels\RavenwingAncient.cs" />
+    <Compile Include="Space Marines\Dark Angels\RavenwingApothecary.cs" />
+    <Compile Include="Space Marines\Dark Angels\RavenwingBlackKnights.cs" />
+    <Compile Include="Space Marines\Dark Angels\RavenwingChampion.cs" />
+    <Compile Include="Space Marines\Dark Angels\RavenwingDarkshroud.cs" />
+    <Compile Include="Space Marines\Dark Angels\RavenwingDarkTalon.cs" />
+    <Compile Include="Space Marines\Dark Angels\RavenwingTalonmaster.cs" />
+    <Compile Include="Space Marines\Dark Angels\RavenwingVengeance.cs" />
+    <Compile Include="Space Marines\Dark Angels\Sammael.cs" />
+    <Compile Include="Space Marines\Dark Angels\TerminatorInterrogator.cs" />
     <Compile Include="Space Marines\Deathwatch\CodicierNatorian.cs" />
     <Compile Include="Space Marines\Deathwatch\CorvusBlackstar.cs" />
     <Compile Include="Space Marines\Deathwatch\DeathwatchTerminators.cs" />
@@ -773,7 +796,6 @@
   <ItemGroup>
     <Folder Include="Space Marines\Black Templars\" />
     <Folder Include="Space Marines\Blood Angels\" />
-    <Folder Include="Space Marines\Dark Angels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

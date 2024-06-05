@@ -16,6 +16,7 @@ using Roster_Builder.Space_Marines.Imperial_Fists;
 using Roster_Builder.Space_Marines.Crimson_Fists;
 using Roster_Builder.Space_Marines.Deathwatch;
 using Roster_Builder.Space_Marines.Space_Wolves;
+using Roster_Builder.Space_Marines.Dark_Angels;
 
 namespace Roster_Builder.Space_Marines
 {
@@ -325,29 +326,55 @@ namespace Roster_Builder.Space_Marines
             }
             else if (currentSubFaction == "Dark Angels")
             {
-                //datasheets.Insert(0, new Azrael());
-                //datasheets.Insert(0, new Belial());
-                //datasheets.Insert(0, new Sammael());
-                //datasheets.Insert(0, new Ezekiel());
-                //datasheets.Insert(0, new Asmodai());
-                //datasheets.Insert(0, new InterrogatorChaplain());
-                //datasheets.Insert(0, new RavenwingTalonmaster());
-                //datasheets.Insert(0, new Lazarus());
-                //datasheets.Insert(0, new DeathwingStrikemaster());
-                //datasheets.Insert(0, new TerminatorInterrogator());
-                //datasheets.Insert(0, new DeathwingApothecary());
-                //datasheets.Insert(0, new DeathwingChampion());
-                //datasheets.Insert(0, new DeathwingTerminators());
-                //datasheets.Insert(0, new DeathwingKnights());
-                //datasheets.Insert(0, new DeathwingCommand());
-                //datasheets.Insert(0, new RavenwingApothecary());
-                //datasheets.Insert(0, new RavenwingChampion());
-                //datasheets.Insert(0, new RavenwingAncient());
-                //datasheets.Insert(0, new RavenwingBlackKnights());
-                //datasheets.Insert(0, new RavenwingDarkshroud());
-                //datasheets.Insert(0, new RavenwingVengeance());
-                //datasheets.Insert(0, new RavenwingDarkTalon());
-                //datasheets.Insert(0, new NephlilimJetfighter());
+                datasheets.RemoveRange(39, 2);
+                datasheets.Insert(11, new RavenwingTalonmaster());
+                datasheets.Insert(12, new DeathwingStrikemaster());
+                datasheets.Insert(21, new InterrogatorChaplain());
+                datasheets.Insert(22, new TerminatorInterrogator());
+                datasheets.Insert(26, new Azrael());
+                datasheets.Insert(27, new Belial());
+                datasheets.Insert(28, new Sammael());
+                datasheets.Insert(29, new Ezekiel());
+                datasheets.Insert(30, new Asmodai());
+                datasheets.Insert(31, new Lazarus());
+                datasheets.Insert(39, new DeathwingChampion());
+                datasheets.Insert(40, new RavenwingChampion());
+                datasheets.Insert(44, new DeathwingApothecary());
+                datasheets.Insert(45, new RavenwingApothecary());
+                datasheets.Insert(50, new RavenwingAncient());
+                datasheets.Insert(60, new DeathwingTerminators());
+                datasheets.Insert(61, new DeathwingKnights());
+                datasheets.Insert(62, new DeathwingCommand());
+                datasheets.Insert(63, new RavenwingBlackKnights());
+                datasheets.Insert(86, new RavenwingDarkshroud());
+                datasheets.Insert(87, new RavenwingVengeance());
+                datasheets.Insert(118, new RavenwingDarkTalon());
+                datasheets.Insert(119, new NephlilimJetfighter());
+
+                // The Book Order:
+                //Azrael
+                //Belial
+                //Sammael
+                //Ezekiel
+                //Asmodai
+                //Interrogator-Chaplain
+                //Ravenwing Talonmaster
+                //Lazarus
+                //Deathwing Strikemaster
+                //Interrogator-Chaplain in Terminator Armour
+                //Deathwing Apothecary
+                //Deathwing Champion
+                //Deathwing Terminator Squad
+                //Deathwing Knights
+                //Deathwing Command Squad
+                //Ravenwing Apothecary
+                //Ravenwing Champion
+                //Ravenwing Ancient
+                //Ravenwing Black Knights
+                //Ravenwing Darkshroud
+                //Ravenwing Land Speeder Vengeance
+                //Ravenwing Dark Talon
+                //Nephilim Jetfighter
             }
             else if (currentSubFaction == "Black Templars")
             {
