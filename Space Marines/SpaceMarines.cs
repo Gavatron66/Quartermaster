@@ -17,6 +17,7 @@ using Roster_Builder.Space_Marines.Crimson_Fists;
 using Roster_Builder.Space_Marines.Deathwatch;
 using Roster_Builder.Space_Marines.Space_Wolves;
 using Roster_Builder.Space_Marines.Dark_Angels;
+using System.Windows.Forms;
 
 namespace Roster_Builder.Space_Marines
 {
@@ -1550,6 +1551,14 @@ namespace Roster_Builder.Space_Marines
                 StratagemLimit[0] = 1;
                 StratagemLimit[1] = 1;
             }
+        }
+
+        public override void SetSubFactionPanel(Panel panel)
+        {
+            Template template = new Template();
+            template.LoadFactionTemplate(50, panel);
+
+
         }
 
         public override string ToString()

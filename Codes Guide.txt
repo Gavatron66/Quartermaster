@@ -118,5 +118,5 @@ NL2m2k  - Plague Marines
 
 
 
-298, 323
-298, 353
+lblSubfaction 83, 11
+cmbSubFaction 248, 8

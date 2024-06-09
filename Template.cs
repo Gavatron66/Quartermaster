@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Death_Guard
+namespace Roster_Builder
 {
     public class Template
     {
@@ -14,7 +14,6 @@ namespace Roster_Builder.Death_Guard
 
         public void LoadTemplate(string code, Panel panel)
         {
-            Form templateForm = new Testing_Form();
             GroupBox groupbox = new GroupBox();
 
             switch (code)
@@ -3183,6 +3182,20 @@ namespace Roster_Builder.Death_Guard
                     break;
                     #endregion
             }
+        }
+
+        public void LoadFactionTemplate(int code, Panel panel)
+        {
+            foreach (Control item in panel.Controls)
+            {
+                item.Visible = false;
+            }
+
+            panel.Controls["lblSubfaction"].Visible = true;
+            panel.Controls["lblSubfaction"].Location = new System.Drawing.Point(83, 11);
+
+            panel.Controls["cmbSubFaction"].Visible = true;
+            panel.Controls["cmbSubFaction"].Location = new System.Drawing.Point(248, 8);
         }
     }
 }

@@ -8,22 +8,10 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Roster_Builder.Death_Guard;
 using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Roster_Builder.Necrons;
-using Roster_Builder.Adeptus_Custodes;
-using Roster_Builder.Genestealer_Cults;
 using Roster_Builder.Space_Marines;
-using Roster_Builder.Aeldari;
-using Roster_Builder.Aeldari.Harlequins;
-using Roster_Builder.Tyranids;
-using Roster_Builder.Adeptus_Mechanicus;
-using Roster_Builder.Tau_Empire;
-using Roster_Builder.Orks;
-using Roster_Builder.Grey_Knights;
-using Roster_Builder.Adepta_Sororitas;
 
 namespace Roster_Builder
 {
@@ -78,20 +66,7 @@ namespace Roster_Builder
             cmbSelectFaction.Items.Clear();
             cmbSelectFaction.Items.AddRange(new Faction[]
             {
-                new AdeptaSororitas(),
-                new AdeptusCustodes(),
-                new AdMech(),
-                new Aeldari.Aeldari(),
-                new DeathGuard(),
-                new Drukhari.Drukhari(),
-                new GSC(),
-                new GreyKnights(),
-                new Harlequins(),
-                new Necrons.Necrons(),
-                new Orks.Orks(),
                 new SpaceMarines(),
-                new T_au(),
-                new Tyranids.Tyranids(),
             });
             cmbSelectFaction.Text = string.Empty;
 
@@ -104,20 +79,7 @@ namespace Roster_Builder
             cmbNDFaction.Items.Clear();
             cmbNDFaction.Items.AddRange(new Faction[]
             {
-                new AdeptaSororitas(),
-                new AdeptusCustodes(),
-                new AdMech(),
-                new Aeldari.Aeldari(),
-                new DeathGuard(),
-				new Drukhari.Drukhari(),
-				new GSC(),
-                new GreyKnights(),
-                new Harlequins(),
-                new Necrons.Necrons(),
-				new Orks.Orks(),
 				new SpaceMarines(),
-				new T_au(),
-				new Tyranids.Tyranids(),
             });
             #endregion
         }
@@ -145,21 +107,17 @@ namespace Roster_Builder
             lblCurrentPoints.Visible = true;
             btnSave.Visible = true;
             btnSave.BringToFront();
-            gbCustomSubfaction.Visible = false;
             lblErrors.Visible = true;
             lblErrors.BringToFront();
             lblEditingUnit.BringToFront(); 
             panelSubFaction.BringToFront();
+            panelSubFaction.Visible = false;
 
             units = cmbSelectFaction.SelectedItem as Faction;
             roster.CreateNewDetachment(cmbDetachment.SelectedItem.ToString(), units, txtName.Text);
             currentDetachment = roster.Detachments[0];
 
             List<Datasheets> datasheets = units.GetDatasheets();
-
-            lblSubfaction.Text = "Select a " + units.subFactionName + " :";
-
-            panel1.Controls["lblFactionUpgrade"].Text = units.factionUpgradeName;
 
             List<string> subFactions = units.GetSubFactions();
             foreach (var subfaction in subFactions)
@@ -177,34 +135,6 @@ namespace Roster_Builder
                 lbRoster.Items.Add(units.subFactionName);
                 updateLBRoster();
             }
-
-            if (!isLoading)
-            {
-                cmbCustomSub1.Items.Clear();
-                cmbCustomSub2.Items.Clear();
-            }
-
-            if (cmbSubFaction.Items.Contains("<Custom>"))
-            {
-                List<string> customList1 = units.GetCustomSubfactionList1();
-                List<string> customList2 = units.GetCustomSubfactionList2();
-
-                foreach (var custom1 in customList1)
-                {
-                    cmbCustomSub1.Items.Add(custom1);
-                }
-                foreach (var custom2 in customList2)
-                {
-                    cmbCustomSub2.Items.Add(custom2);
-                }
-            }
-
-            cbStratagem1.Text = units.StratagemList[0];
-            cbStratagem2.Text = units.StratagemList[1];
-
-            cmbCurrentDetachment.Items.Clear();
-            cmbCurrentDetachment.Items.Add(roster.Detachments[0]);
-            cmbCurrentDetachment.SelectedIndex = 0;
 
             if(txtName.Text == "<Optional>")
             {
@@ -346,8 +276,7 @@ namespace Roster_Builder
             if (lbRoster.SelectedIndex == 0)
             {
                 panelSubFaction.Visible = true;
-                lblEditingUnit.Text = string.Empty;
-                currentIndex = -10;
+                units.SetSubFactionPanel(panelSubFaction);
                 return;
             }
             else
@@ -431,15 +360,6 @@ namespace Roster_Builder
             units.currentSubFaction = cmbSubFaction.SelectedItem.ToString();
             lbRoster.Items.RemoveAt(0);
             lbRoster.Items.Insert(0, units.subFactionName + ": " + units.currentSubFaction);
-
-            if (cmbSubFaction.SelectedItem as string == "<Custom>")
-            {
-                gbCustomSubfaction.Visible = true;
-            }
-            else
-            {
-                gbCustomSubfaction.Visible = false;
-            }
 
             if(currentDetachment.currentFaction.ToString() == "Space Marines")
             {
