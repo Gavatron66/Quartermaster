@@ -31,6 +31,9 @@
 	421 - cbLeaderOption1
 	422 - cbLeaderOption2
 5X - Subfaction Panel
+	50 - cmbSubFaction
+	51 - cmbSubCustom1
+	52 - cmbSubCustom2
 6X - Misc. Controls
 	60 - clbPsyker
 	61 - lbModelSelect

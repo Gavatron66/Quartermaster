@@ -3196,6 +3196,14 @@ namespace Roster_Builder
 
             panel.Controls["cmbSubFaction"].Visible = true;
             panel.Controls["cmbSubFaction"].Location = new System.Drawing.Point(248, 8);
+
+            panel.Controls["lblSubCustom1"].Location = new System.Drawing.Point(83, 41);
+
+            panel.Controls["cmbSubCustom1"].Location = new System.Drawing.Point(248, 38);
+
+            panel.Controls["lblSubCustom2"].Location = new System.Drawing.Point(83, 71);
+
+            panel.Controls["cmbSubCustom2"].Location = new System.Drawing.Point(248, 68);
         }
     }
 }

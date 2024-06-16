@@ -108,6 +108,14 @@
             this.cmbOption1 = new System.Windows.Forms.ComboBox();
             this.cmbOption2 = new System.Windows.Forms.ComboBox();
             this.panelSubFaction = new System.Windows.Forms.Panel();
+            this.lblSubCustom3 = new System.Windows.Forms.Label();
+            this.cmbSubCustom3 = new System.Windows.Forms.ComboBox();
+            this.lblSubCustomCLB = new System.Windows.Forms.Label();
+            this.clbSubCustom = new System.Windows.Forms.CheckedListBox();
+            this.lblSubCustom2 = new System.Windows.Forms.Label();
+            this.cmbSubCustom2 = new System.Windows.Forms.ComboBox();
+            this.lblSubCustom1 = new System.Windows.Forms.Label();
+            this.cmbSubCustom1 = new System.Windows.Forms.ComboBox();
             this.lblSubfaction = new System.Windows.Forms.Label();
             this.cmbSubFaction = new System.Windows.Forms.ComboBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -128,14 +136,6 @@
             this.cmbNDFaction = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblErrors = new System.Windows.Forms.Label();
-            this.lblSubCustom1 = new System.Windows.Forms.Label();
-            this.cmbSubCustom1 = new System.Windows.Forms.ComboBox();
-            this.lblSubCustom2 = new System.Windows.Forms.Label();
-            this.cmbSubCustom2 = new System.Windows.Forms.ComboBox();
-            this.clbSubCustom = new System.Windows.Forms.CheckedListBox();
-            this.lblSubCustomCLB = new System.Windows.Forms.Label();
-            this.lblSubCustom3 = new System.Windows.Forms.Label();
-            this.cmbSubCustom3 = new System.Windows.Forms.ComboBox();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSelectPoints)).BeginInit();
             this.panel1.SuspendLayout();
@@ -282,7 +282,7 @@
             this.MenuPanel.Controls.Add(this.lblFaction);
             this.MenuPanel.Controls.Add(this.lblSelectPoints);
             this.MenuPanel.Controls.Add(this.cmbSelectFaction);
-            this.MenuPanel.Location = new System.Drawing.Point(12, 605);
+            this.MenuPanel.Location = new System.Drawing.Point(0, 319);
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(632, 562);
             this.MenuPanel.TabIndex = 15;
@@ -1057,6 +1057,88 @@
             this.panelSubFaction.Size = new System.Drawing.Size(632, 289);
             this.panelSubFaction.TabIndex = 16;
             // 
+            // lblSubCustom3
+            // 
+            this.lblSubCustom3.AutoSize = true;
+            this.lblSubCustom3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubCustom3.Location = new System.Drawing.Point(276, 123);
+            this.lblSubCustom3.Name = "lblSubCustom3";
+            this.lblSubCustom3.Size = new System.Drawing.Size(159, 20);
+            this.lblSubCustom3.TabIndex = 35;
+            this.lblSubCustom3.Text = "Select a Subfaction:";
+            // 
+            // cmbSubCustom3
+            // 
+            this.cmbSubCustom3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSubCustom3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubCustom3.FormattingEnabled = true;
+            this.cmbSubCustom3.Location = new System.Drawing.Point(441, 120);
+            this.cmbSubCustom3.Name = "cmbSubCustom3";
+            this.cmbSubCustom3.Size = new System.Drawing.Size(176, 28);
+            this.cmbSubCustom3.TabIndex = 36;
+            // 
+            // lblSubCustomCLB
+            // 
+            this.lblSubCustomCLB.AutoSize = true;
+            this.lblSubCustomCLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubCustomCLB.Location = new System.Drawing.Point(83, 107);
+            this.lblSubCustomCLB.Name = "lblSubCustomCLB";
+            this.lblSubCustomCLB.Size = new System.Drawing.Size(159, 20);
+            this.lblSubCustomCLB.TabIndex = 34;
+            this.lblSubCustomCLB.Text = "Select a Subfaction:";
+            // 
+            // clbSubCustom
+            // 
+            this.clbSubCustom.CheckOnClick = true;
+            this.clbSubCustom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clbSubCustom.FormattingEnabled = true;
+            this.clbSubCustom.Location = new System.Drawing.Point(87, 130);
+            this.clbSubCustom.Name = "clbSubCustom";
+            this.clbSubCustom.Size = new System.Drawing.Size(189, 151);
+            this.clbSubCustom.TabIndex = 33;
+            // 
+            // lblSubCustom2
+            // 
+            this.lblSubCustom2.AutoSize = true;
+            this.lblSubCustom2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubCustom2.Location = new System.Drawing.Point(83, 79);
+            this.lblSubCustom2.Name = "lblSubCustom2";
+            this.lblSubCustom2.Size = new System.Drawing.Size(159, 20);
+            this.lblSubCustom2.TabIndex = 31;
+            this.lblSubCustom2.Text = "Select a Subfaction:";
+            // 
+            // cmbSubCustom2
+            // 
+            this.cmbSubCustom2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSubCustom2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubCustom2.FormattingEnabled = true;
+            this.cmbSubCustom2.Location = new System.Drawing.Point(248, 76);
+            this.cmbSubCustom2.Name = "cmbSubCustom2";
+            this.cmbSubCustom2.Size = new System.Drawing.Size(176, 28);
+            this.cmbSubCustom2.TabIndex = 32;
+            this.cmbSubCustom2.SelectedIndexChanged += new System.EventHandler(this.cmbSubCustom2_SelectedIndexChanged);
+            // 
+            // lblSubCustom1
+            // 
+            this.lblSubCustom1.AutoSize = true;
+            this.lblSubCustom1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubCustom1.Location = new System.Drawing.Point(83, 45);
+            this.lblSubCustom1.Name = "lblSubCustom1";
+            this.lblSubCustom1.Size = new System.Drawing.Size(159, 20);
+            this.lblSubCustom1.TabIndex = 29;
+            this.lblSubCustom1.Text = "Select a Subfaction:";
+            // 
+            // cmbSubCustom1
+            // 
+            this.cmbSubCustom1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSubCustom1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubCustom1.FormattingEnabled = true;
+            this.cmbSubCustom1.Location = new System.Drawing.Point(248, 42);
+            this.cmbSubCustom1.Name = "cmbSubCustom1";
+            this.cmbSubCustom1.Size = new System.Drawing.Size(176, 28);
+            this.cmbSubCustom1.TabIndex = 30;
+            this.cmbSubCustom1.SelectedIndexChanged += new System.EventHandler(this.cmbSubCustom1_SelectedIndexChanged);
+            // 
             // lblSubfaction
             // 
             this.lblSubfaction.AutoSize = true;
@@ -1231,6 +1313,7 @@
             this.cmbNDFaction.Name = "cmbNDFaction";
             this.cmbNDFaction.Size = new System.Drawing.Size(196, 28);
             this.cmbNDFaction.TabIndex = 5;
+            this.cmbNDFaction.SelectedIndexChanged += new System.EventHandler(this.cmbNDFaction_SelectedIndexChanged);
             // 
             // btnSave
             // 
@@ -1253,91 +1336,12 @@
             this.lblErrors.TabIndex = 82;
             this.lblErrors.Text = "Roster has _ errors";
             // 
-            // lblSubCustom1
-            // 
-            this.lblSubCustom1.AutoSize = true;
-            this.lblSubCustom1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubCustom1.Location = new System.Drawing.Point(83, 45);
-            this.lblSubCustom1.Name = "lblSubCustom1";
-            this.lblSubCustom1.Size = new System.Drawing.Size(159, 20);
-            this.lblSubCustom1.TabIndex = 29;
-            this.lblSubCustom1.Text = "Select a Subfaction:";
-            // 
-            // cmbSubCustom1
-            // 
-            this.cmbSubCustom1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSubCustom1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSubCustom1.FormattingEnabled = true;
-            this.cmbSubCustom1.Location = new System.Drawing.Point(248, 42);
-            this.cmbSubCustom1.Name = "cmbSubCustom1";
-            this.cmbSubCustom1.Size = new System.Drawing.Size(176, 28);
-            this.cmbSubCustom1.TabIndex = 30;
-            // 
-            // lblSubCustom2
-            // 
-            this.lblSubCustom2.AutoSize = true;
-            this.lblSubCustom2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubCustom2.Location = new System.Drawing.Point(83, 79);
-            this.lblSubCustom2.Name = "lblSubCustom2";
-            this.lblSubCustom2.Size = new System.Drawing.Size(159, 20);
-            this.lblSubCustom2.TabIndex = 31;
-            this.lblSubCustom2.Text = "Select a Subfaction:";
-            // 
-            // cmbSubCustom2
-            // 
-            this.cmbSubCustom2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSubCustom2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSubCustom2.FormattingEnabled = true;
-            this.cmbSubCustom2.Location = new System.Drawing.Point(248, 76);
-            this.cmbSubCustom2.Name = "cmbSubCustom2";
-            this.cmbSubCustom2.Size = new System.Drawing.Size(176, 28);
-            this.cmbSubCustom2.TabIndex = 32;
-            // 
-            // clbSubCustom
-            // 
-            this.clbSubCustom.CheckOnClick = true;
-            this.clbSubCustom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clbSubCustom.FormattingEnabled = true;
-            this.clbSubCustom.Location = new System.Drawing.Point(87, 130);
-            this.clbSubCustom.Name = "clbSubCustom";
-            this.clbSubCustom.Size = new System.Drawing.Size(189, 151);
-            this.clbSubCustom.TabIndex = 33;
-            // 
-            // lblSubCustomCLB
-            // 
-            this.lblSubCustomCLB.AutoSize = true;
-            this.lblSubCustomCLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubCustomCLB.Location = new System.Drawing.Point(83, 107);
-            this.lblSubCustomCLB.Name = "lblSubCustomCLB";
-            this.lblSubCustomCLB.Size = new System.Drawing.Size(159, 20);
-            this.lblSubCustomCLB.TabIndex = 34;
-            this.lblSubCustomCLB.Text = "Select a Subfaction:";
-            // 
-            // lblSubCustom3
-            // 
-            this.lblSubCustom3.AutoSize = true;
-            this.lblSubCustom3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubCustom3.Location = new System.Drawing.Point(276, 123);
-            this.lblSubCustom3.Name = "lblSubCustom3";
-            this.lblSubCustom3.Size = new System.Drawing.Size(159, 20);
-            this.lblSubCustom3.TabIndex = 35;
-            this.lblSubCustom3.Text = "Select a Subfaction:";
-            // 
-            // cmbSubCustom3
-            // 
-            this.cmbSubCustom3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSubCustom3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSubCustom3.FormattingEnabled = true;
-            this.cmbSubCustom3.Location = new System.Drawing.Point(441, 120);
-            this.cmbSubCustom3.Name = "cmbSubCustom3";
-            this.cmbSubCustom3.Size = new System.Drawing.Size(176, 28);
-            this.cmbSubCustom3.TabIndex = 36;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 917);
+            this.Controls.Add(this.panelSubFaction);
             this.Controls.Add(this.panelNewDetach);
             this.Controls.Add(this.btnAddToRoster);
             this.Controls.Add(this.btnRemove);
@@ -1355,7 +1359,6 @@
             this.Controls.Add(this.lblPoints);
             this.Controls.Add(this.lblErrors);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.panelSubFaction);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";

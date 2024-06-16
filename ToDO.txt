@@ -86,3 +86,21 @@ variety of subfactions since Drukhari are just special like that
 Adepta Sororitas has the Sacred Rites ability. Do I want to implement that as well?
 
 Need to implement the relics for Drukhari, Deathwatch, Space Wolves
+
+
+Factions that need custom subfaction work:
+	Death Guard
+	Necrons
+	Adeptus Custodes
+	Genestealer Cults
+	Aeldari
+	Tyranids
+	Adeptus Mechanicus
+	T’au Empire
+	Orks
+	Grey Knights
+	Deathwatch
+	Space Wolves
+	Drukhari
+	Adepta Sororitas
+	Dark Angels

@@ -47,7 +47,7 @@ namespace Roster_Builder
             btnRemove.Visible = false;
             btnSave.Visible = false;
             MenuPanel.Visible = true;
-            MenuPanel.Location = new System.Drawing.Point(242, 35);
+            MenuPanel.Location = new System.Drawing.Point(242, 25);
             MenuPanel.BringToFront();
             lblErrors.Visible = false;
             panelSubFaction.Location = new System.Drawing.Point(242, 96);
@@ -116,6 +116,8 @@ namespace Roster_Builder
             units = cmbSelectFaction.SelectedItem as Faction;
             roster.CreateNewDetachment(cmbDetachment.SelectedItem.ToString(), units, txtName.Text);
             currentDetachment = roster.Detachments[0];
+            cmbCurrentDetachment.Items.Add(currentDetachment);
+            cmbCurrentDetachment.SelectedIndex = 0;
 
             List<Datasheets> datasheets = units.GetDatasheets();
 
@@ -357,15 +359,11 @@ namespace Roster_Builder
 
         private void cmbSubFaction_SelectedIndexChanged(object sender, EventArgs e)
         {
-            units.currentSubFaction = cmbSubFaction.SelectedItem.ToString();
-            lbRoster.Items.RemoveAt(0);
-            lbRoster.Items.Insert(0, units.subFactionName + ": " + units.currentSubFaction);
+            units.SaveSubFaction(50, panelSubFaction);
+            lbRoster.Items[0] = units.subFactionName + ": " + cmbSubFaction.SelectedItem.ToString();
 
-            if(currentDetachment.currentFaction.ToString() == "Space Marines")
-            {
-                lbUnits.Items.Clear();
-                lbUnits.Items.AddRange(currentDetachment.currentFaction.GetDatasheets().ToArray());
-            }
+            lbUnits.Items.Clear();
+            lbUnits.Items.AddRange(currentDetachment.currentFaction.GetDatasheets().ToArray());
         }
 
         private void cmbOption3_SelectedIndexChanged(object sender, EventArgs e)
@@ -644,19 +642,25 @@ namespace Roster_Builder
             panelNewDetach.Visible = false;
             cmbCurrentDetachment.Items.Clear();
             cmbCurrentDetachment.Items.AddRange(roster.Detachments.ToArray());
+            cmbCurrentDetachment.SelectedIndex = roster.Detachments.Count - 1;
+
+            panelSubFaction.Visible = false;
         }
 
         private void cmbCurrentDetachment_SelectedIndexChanged(object sender, EventArgs e)
         {
             currentDetachment = roster.Detachments[cmbCurrentDetachment.SelectedIndex];
+            units = currentDetachment.currentFaction;
 
             lbUnits.Items.Clear();
             lbUnits.Items.AddRange(currentDetachment.currentFaction.GetDatasheets().ToArray());
+
             lbRoster.Items.Clear();
-            lbRoster.Items.Add(currentDetachment.currentFaction.subFactionName);
+            lbRoster.Items.Add(currentDetachment.currentFaction.subFactionName + ": " + currentDetachment.currentFaction.currentSubFaction);
             lbRoster.Items.AddRange(currentDetachment.roster.ToArray());
 
             currentIndex = -1;
+            panelSubFaction.Visible = false;
         }
 
         private void btnDetachRemove_Click(object sender, EventArgs e)
@@ -705,6 +709,21 @@ namespace Roster_Builder
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {
 
+        }
+
+        private void cmbNDFaction_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbSubCustom1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            units.SaveSubFaction(51, panelSubFaction);
+        }
+
+        private void cmbSubCustom2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            units.SaveSubFaction(52, panelSubFaction);
         }
     }
 }

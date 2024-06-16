@@ -20,6 +20,7 @@ namespace Roster_Builder
         public int[] StratagemCount { get; set; }
         public int[] StratagemLimit { get; set; }
         public string[] customSubFactionTraits { get; set; }
+        public bool antiLoop { get; set; }
 
         public Faction() { StratagemList = new List<string>(); }
 
@@ -35,5 +36,6 @@ namespace Roster_Builder
         public abstract void SetPoints(int points);
         public abstract bool GetIfEnabled(int index);
         public abstract void SetSubFactionPanel(Panel panel);
+        public abstract void SaveSubFaction(int code, Panel panel);
     }
 }
