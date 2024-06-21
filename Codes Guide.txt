@@ -34,6 +34,11 @@
 	50 - cmbSubFaction
 	51 - cmbSubCustom1
 	52 - cmbSubCustom2
+	53 - cmbSubCustom3
+	54 - cmbSubCustom4
+	55 - cmbSubCustom5
+	56 - cmbSubCustom6
+	57 - clbSubCustom
 6X - Misc. Controls
 	60 - clbPsyker
 	61 - lbModelSelect

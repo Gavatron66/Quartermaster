@@ -12,6 +12,15 @@ using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Roster_Builder.Space_Marines;
+using Roster_Builder.Death_Guard;
+using Roster_Builder.Adeptus_Custodes;
+using Roster_Builder.Genestealer_Cults;
+using Roster_Builder.Aeldari.Harlequins;
+using Roster_Builder.Adeptus_Mechanicus;
+using Roster_Builder.Tau_Empire;
+using Roster_Builder.Orks;
+using Roster_Builder.Grey_Knights;
+using Roster_Builder.Adepta_Sororitas;
 
 namespace Roster_Builder
 {
@@ -66,7 +75,20 @@ namespace Roster_Builder
             cmbSelectFaction.Items.Clear();
             cmbSelectFaction.Items.AddRange(new Faction[]
             {
+                new AdeptaSororitas(),
+                new AdeptusCustodes(),
+                new AdMech(),
+                new Aeldari.Aeldari(),
+                new DeathGuard(),
+                new Drukhari.Drukhari(),
+                new GreyKnights(),
+                new GSC(),
+                new Harlequins(),
+                new Necrons.Necrons(),
+                new Orks.Orks(),
                 new SpaceMarines(),
+                new T_au(),
+                new Tyranids.Tyranids(),
             });
             cmbSelectFaction.Text = string.Empty;
 
@@ -79,7 +101,20 @@ namespace Roster_Builder
             cmbNDFaction.Items.Clear();
             cmbNDFaction.Items.AddRange(new Faction[]
             {
-				new SpaceMarines(),
+                new AdeptaSororitas(),
+                new AdeptusCustodes(),
+                new AdMech(),
+                new Aeldari.Aeldari(),
+                new DeathGuard(),
+                new Drukhari.Drukhari(),
+                new GreyKnights(),
+                new GSC(),
+                new Harlequins(),
+                new Necrons.Necrons(),
+                new Orks.Orks(),
+                new SpaceMarines(),
+                new T_au(),
+                new Tyranids.Tyranids(),
             });
             #endregion
         }
@@ -125,11 +160,6 @@ namespace Roster_Builder
             foreach (var subfaction in subFactions)
             {
                 cmbSubFaction.Items.Add(subfaction);
-            }
-
-            foreach (Datasheets item in datasheets)
-            {
-                lbUnits.Items.Add(item);
             }
 
             if (!isLoading)
@@ -724,6 +754,31 @@ namespace Roster_Builder
         private void cmbSubCustom2_SelectedIndexChanged(object sender, EventArgs e)
         {
             units.SaveSubFaction(52, panelSubFaction);
+        }
+
+        private void clbSubCustom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            units.SaveSubFaction(57, panelSubFaction);
+        }
+
+        private void cmbSubCustom3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            units.SaveSubFaction(53, panelSubFaction);
+        }
+
+        private void cmbSubCustom4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            units.SaveSubFaction(54, panelSubFaction);
+        }
+
+        private void cmbSubCustom5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            units.SaveSubFaction(55, panelSubFaction);
+        }
+
+        private void cmbSubCustom6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            units.SaveSubFaction(56, panelSubFaction);
         }
     }
 }

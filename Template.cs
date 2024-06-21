@@ -3197,13 +3197,50 @@ namespace Roster_Builder
             panel.Controls["cmbSubFaction"].Visible = true;
             panel.Controls["cmbSubFaction"].Location = new System.Drawing.Point(248, 8);
 
-            panel.Controls["lblSubCustom1"].Location = new System.Drawing.Point(83, 41);
+            switch (code)
+            {
+                case 6:
+                    panel.Controls["lblSubCustom1"].Location = new System.Drawing.Point(83, 41);
 
-            panel.Controls["cmbSubCustom1"].Location = new System.Drawing.Point(248, 38);
+                    panel.Controls["cmbSubCustom1"].Location = new System.Drawing.Point(248, 38);
 
-            panel.Controls["lblSubCustom2"].Location = new System.Drawing.Point(83, 71);
+                    panel.Controls["lblSubCustom2"].Location = new System.Drawing.Point(83, 71);
 
-            panel.Controls["cmbSubCustom2"].Location = new System.Drawing.Point(248, 68);
+                    panel.Controls["cmbSubCustom2"].Location = new System.Drawing.Point(248, 68);
+
+                    panel.Controls["lblSubCustom3"].Location = new System.Drawing.Point(83, 101);
+
+                    panel.Controls["cmbSubCustom3"].Location = new System.Drawing.Point(248, 98);
+
+                    panel.Controls["lblSubCustom4"].Location = new System.Drawing.Point(83, 131);
+
+                    panel.Controls["cmbSubCustom4"].Location = new System.Drawing.Point(248, 128);
+
+                    panel.Controls["lblSubCustom5"].Location = new System.Drawing.Point(103, 161);
+
+                    panel.Controls["cmbSubCustom5"].Location = new System.Drawing.Point(268, 158);
+
+                    panel.Controls["lblSubCustom6"].Location = new System.Drawing.Point(103, 191);
+
+                    panel.Controls["cmbSubCustom6"].Location = new System.Drawing.Point(268, 188);
+                    break;
+                case 3:
+                    panel.Controls["lblSubCustom1"].Location = new System.Drawing.Point(103, 41);
+
+                    panel.Controls["cmbSubCustom1"].Location = new System.Drawing.Point(268, 38);
+
+                    panel.Controls["lblSubCustom2"].Location = new System.Drawing.Point(103, 71);
+
+                    panel.Controls["cmbSubCustom2"].Location = new System.Drawing.Point(268, 68);
+                    break;
+                case 0:
+                    panel.Controls["lblSubCustomCLB"].Location = new System.Drawing.Point(103, 41);
+
+                    panel.Controls["clbSubCustom"].Location = new System.Drawing.Point(103, 71);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

@@ -108,6 +108,12 @@
             this.cmbOption1 = new System.Windows.Forms.ComboBox();
             this.cmbOption2 = new System.Windows.Forms.ComboBox();
             this.panelSubFaction = new System.Windows.Forms.Panel();
+            this.lblSubCustom6 = new System.Windows.Forms.Label();
+            this.cmbSubCustom6 = new System.Windows.Forms.ComboBox();
+            this.lblSubCustom5 = new System.Windows.Forms.Label();
+            this.cmbSubCustom5 = new System.Windows.Forms.ComboBox();
+            this.lblSubCustom4 = new System.Windows.Forms.Label();
+            this.cmbSubCustom4 = new System.Windows.Forms.ComboBox();
             this.lblSubCustom3 = new System.Windows.Forms.Label();
             this.cmbSubCustom3 = new System.Windows.Forms.ComboBox();
             this.lblSubCustomCLB = new System.Windows.Forms.Label();
@@ -1042,6 +1048,12 @@
             // 
             // panelSubFaction
             // 
+            this.panelSubFaction.Controls.Add(this.lblSubCustom6);
+            this.panelSubFaction.Controls.Add(this.cmbSubCustom6);
+            this.panelSubFaction.Controls.Add(this.lblSubCustom5);
+            this.panelSubFaction.Controls.Add(this.cmbSubCustom5);
+            this.panelSubFaction.Controls.Add(this.lblSubCustom4);
+            this.panelSubFaction.Controls.Add(this.cmbSubCustom4);
             this.panelSubFaction.Controls.Add(this.lblSubCustom3);
             this.panelSubFaction.Controls.Add(this.cmbSubCustom3);
             this.panelSubFaction.Controls.Add(this.lblSubCustomCLB);
@@ -1056,6 +1068,69 @@
             this.panelSubFaction.Name = "panelSubFaction";
             this.panelSubFaction.Size = new System.Drawing.Size(632, 289);
             this.panelSubFaction.TabIndex = 16;
+            // 
+            // lblSubCustom6
+            // 
+            this.lblSubCustom6.AutoSize = true;
+            this.lblSubCustom6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubCustom6.Location = new System.Drawing.Point(276, 225);
+            this.lblSubCustom6.Name = "lblSubCustom6";
+            this.lblSubCustom6.Size = new System.Drawing.Size(159, 20);
+            this.lblSubCustom6.TabIndex = 41;
+            this.lblSubCustom6.Text = "Select a Subfaction:";
+            // 
+            // cmbSubCustom6
+            // 
+            this.cmbSubCustom6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSubCustom6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubCustom6.FormattingEnabled = true;
+            this.cmbSubCustom6.Location = new System.Drawing.Point(441, 222);
+            this.cmbSubCustom6.Name = "cmbSubCustom6";
+            this.cmbSubCustom6.Size = new System.Drawing.Size(176, 28);
+            this.cmbSubCustom6.TabIndex = 42;
+            this.cmbSubCustom6.SelectedIndexChanged += new System.EventHandler(this.cmbSubCustom6_SelectedIndexChanged);
+            // 
+            // lblSubCustom5
+            // 
+            this.lblSubCustom5.AutoSize = true;
+            this.lblSubCustom5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubCustom5.Location = new System.Drawing.Point(276, 191);
+            this.lblSubCustom5.Name = "lblSubCustom5";
+            this.lblSubCustom5.Size = new System.Drawing.Size(159, 20);
+            this.lblSubCustom5.TabIndex = 39;
+            this.lblSubCustom5.Text = "Select a Subfaction:";
+            // 
+            // cmbSubCustom5
+            // 
+            this.cmbSubCustom5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSubCustom5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubCustom5.FormattingEnabled = true;
+            this.cmbSubCustom5.Location = new System.Drawing.Point(441, 188);
+            this.cmbSubCustom5.Name = "cmbSubCustom5";
+            this.cmbSubCustom5.Size = new System.Drawing.Size(176, 28);
+            this.cmbSubCustom5.TabIndex = 40;
+            this.cmbSubCustom5.SelectedIndexChanged += new System.EventHandler(this.cmbSubCustom5_SelectedIndexChanged);
+            // 
+            // lblSubCustom4
+            // 
+            this.lblSubCustom4.AutoSize = true;
+            this.lblSubCustom4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubCustom4.Location = new System.Drawing.Point(276, 157);
+            this.lblSubCustom4.Name = "lblSubCustom4";
+            this.lblSubCustom4.Size = new System.Drawing.Size(159, 20);
+            this.lblSubCustom4.TabIndex = 37;
+            this.lblSubCustom4.Text = "Select a Subfaction:";
+            // 
+            // cmbSubCustom4
+            // 
+            this.cmbSubCustom4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSubCustom4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubCustom4.FormattingEnabled = true;
+            this.cmbSubCustom4.Location = new System.Drawing.Point(441, 154);
+            this.cmbSubCustom4.Name = "cmbSubCustom4";
+            this.cmbSubCustom4.Size = new System.Drawing.Size(176, 28);
+            this.cmbSubCustom4.TabIndex = 38;
+            this.cmbSubCustom4.SelectedIndexChanged += new System.EventHandler(this.cmbSubCustom4_SelectedIndexChanged);
             // 
             // lblSubCustom3
             // 
@@ -1076,6 +1151,7 @@
             this.cmbSubCustom3.Name = "cmbSubCustom3";
             this.cmbSubCustom3.Size = new System.Drawing.Size(176, 28);
             this.cmbSubCustom3.TabIndex = 36;
+            this.cmbSubCustom3.SelectedIndexChanged += new System.EventHandler(this.cmbSubCustom3_SelectedIndexChanged);
             // 
             // lblSubCustomCLB
             // 
@@ -1096,6 +1172,7 @@
             this.clbSubCustom.Name = "clbSubCustom";
             this.clbSubCustom.Size = new System.Drawing.Size(189, 151);
             this.clbSubCustom.TabIndex = 33;
+            this.clbSubCustom.SelectedIndexChanged += new System.EventHandler(this.clbSubCustom_SelectedIndexChanged);
             // 
             // lblSubCustom2
             // 
@@ -1171,14 +1248,14 @@
             this.newRosterts});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 28);
             this.menuStrip1.TabIndex = 83;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // newRosterts
             // 
             this.newRosterts.Name = "newRosterts";
-            this.newRosterts.Size = new System.Drawing.Size(138, 26);
+            this.newRosterts.Size = new System.Drawing.Size(138, 24);
             this.newRosterts.Text = "New Detachment";
             this.newRosterts.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -1498,6 +1575,12 @@
         private System.Windows.Forms.ComboBox cmbSubCustom1;
         private System.Windows.Forms.Label lblSubCustom3;
         private System.Windows.Forms.ComboBox cmbSubCustom3;
+        private System.Windows.Forms.Label lblSubCustom4;
+        private System.Windows.Forms.ComboBox cmbSubCustom4;
+        private System.Windows.Forms.Label lblSubCustom5;
+        private System.Windows.Forms.ComboBox cmbSubCustom5;
+        private System.Windows.Forms.Label lblSubCustom6;
+        private System.Windows.Forms.ComboBox cmbSubCustom6;
     }
 }
 

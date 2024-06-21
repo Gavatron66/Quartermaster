@@ -1564,7 +1564,7 @@ namespace Roster_Builder.Space_Marines
 
             antiLoop = true;
             Template template = new Template();
-            template.LoadFactionTemplate(50, panel);
+            template.LoadFactionTemplate(3, panel);
 
             ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
             ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
