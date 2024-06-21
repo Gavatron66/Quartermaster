@@ -1,22 +1,15 @@
-﻿using Roster_Builder.Adeptus_Custodes;
-using Roster_Builder.Death_Guard;
-using Roster_Builder.Genestealer_Cults;
-using Roster_Builder.Necrons;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Roster_Builder
 {
     [JsonPolymorphic(TypeDiscriminatorPropertyName = "$faction")]
     #region JSON Factions
-    [JsonDerivedType(typeof(AdeptusCustodes), "Custodes")]
-    [JsonDerivedType(typeof(DeathGuard), "DG")]
-    [JsonDerivedType(typeof(GSC), "GSC")]
-    [JsonDerivedType(typeof(Necrons.Necrons), "Necrons")]
     #endregion
     public abstract class Faction
     {
@@ -26,6 +19,8 @@ namespace Roster_Builder
         public List<string> StratagemList { get; set; }
         public int[] StratagemCount { get; set; }
         public int[] StratagemLimit { get; set; }
+        public string[] customSubFactionTraits { get; set; }
+        public bool antiLoop { get; set; }
 
         public Faction() { StratagemList = new List<string>(); }
 
@@ -40,5 +35,7 @@ namespace Roster_Builder
         public abstract List<string> GetCustomSubfactionList2();
         public abstract void SetPoints(int points);
         public abstract bool GetIfEnabled(int index);
+        public abstract void SetSubFactionPanel(Panel panel);
+        public abstract void SaveSubFaction(int code, Panel panel);
     }
 }

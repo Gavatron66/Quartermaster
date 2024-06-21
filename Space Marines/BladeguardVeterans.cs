@@ -1,10 +1,4 @@
-﻿using Roster_Builder.Death_Guard;
-using Roster_Builder.Necrons;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Roster_Builder.Space_Marines

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Roster_Builder.Necrons
 {
@@ -13,6 +14,7 @@ namespace Roster_Builder.Necrons
             subFactionName = "<Dynasty>";
             currentSubFaction = string.Empty;
             factionUpgradeName = "Cryptek Arkana";
+            customSubFactionTraits = new string[2];
             StratagemList.AddRange(new string[]
             {
                 "Stratagem: Rarefied Nobility",
@@ -318,6 +320,7 @@ namespace Roster_Builder.Necrons
         {
             return new List<string>()
             {
+                string.Empty,
                 "Mephrit",
                 "Novokh",
                 "Szarekhan",
@@ -350,6 +353,43 @@ namespace Roster_Builder.Necrons
             return traits;
         }
 
+        public override void SaveSubFaction(int code, Panel panel)
+        {
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+            ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
+            ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
+            Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
+            Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
+
+            switch (code)
+            {
+                case 50:
+                    currentSubFaction = cmbSubFaction.SelectedItem.ToString();
+                    if (currentSubFaction == "<Custom>")
+                    {
+                        cmbSubCustom1.Visible = true;
+                        cmbSubCustom2.Visible = true;
+                        lblSubCustom1.Visible = true;
+                        lblSubCustom2.Visible = true;
+                    }
+                    else
+                    {
+                        cmbSubCustom1.Visible = false;
+                        cmbSubCustom2.Visible = false;
+                        lblSubCustom1.Visible = false;
+                        lblSubCustom2.Visible = false;
+                        customSubFactionTraits = new string[2];
+                    }
+                    break;
+                case 51:
+                    customSubFactionTraits[0] = cmbSubCustom1.SelectedItem.ToString();
+                    break;
+                case 52:
+                    customSubFactionTraits[1] = cmbSubCustom2.SelectedItem.ToString();
+                    break;
+            }
+        }
+
         public override void SetPoints(int points)
         {
             StratagemCount = new int[] { 0, 0, 0 };
@@ -360,6 +400,78 @@ namespace Roster_Builder.Necrons
                 StratagemLimit[0] = 1;
                 StratagemLimit[1] = 1;
             }
+        }
+
+        public override void SetSubFactionPanel(Panel panel)
+        {
+            if (antiLoop)
+            {
+                return;
+            }
+
+            antiLoop = true;
+            Template template = new Template();
+            template.LoadFactionTemplate(3, panel);
+
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+            ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
+            ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
+            Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
+            Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
+
+            if (currentSubFaction != "<Custom>")
+            {
+                cmbSubCustom1.Visible = false;
+                cmbSubCustom2.Visible = false;
+                lblSubCustom1.Visible = false;
+                lblSubCustom2.Visible = false;
+            }
+            else
+            {
+                cmbSubCustom1.Visible = true;
+                cmbSubCustom2.Visible = true;
+                lblSubCustom1.Visible = true;
+                lblSubCustom2.Visible = true;
+            }
+
+            cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
+            panel.BringToFront();
+
+            cmbSubCustom1.Items.Clear();
+            cmbSubCustom2.Items.Clear();
+
+            cmbSubCustom1.Items.AddRange(new string[]
+            {
+                "Eternal Conquerors",
+                "Pitiless Hunters",
+                "Superior Artisans",
+                "Rad-wreathed",
+                "Immovable Phalanx",
+                "Unyielding",
+                "Contemptuous of the Codes",
+                "The Unmerciful Horde",
+                "Masters of the Martial",
+                "Butchers",
+                "Severed",
+            });
+
+            cmbSubCustom2.Items.AddRange(new string[]
+            {
+                "The Ancients Stir",
+                "Arise Against the Interlopers",
+                "Healthy Paranoia",
+                "Relentlessly Expansionist",
+                "Isolationists",
+                "Warrior Nobles",
+                "Interplanetary Invaders"
+            });
+
+            if (customSubFactionTraits[0] != null)
+            {
+                cmbSubCustom1.SelectedIndex = cmbSubCustom1.Items.IndexOf(customSubFactionTraits[0]);
+                cmbSubCustom2.SelectedIndex = cmbSubCustom2.Items.IndexOf(customSubFactionTraits[1]);
+            }
+            antiLoop = false;
         }
 
         public override string ToString()

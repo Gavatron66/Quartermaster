@@ -8,17 +8,14 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Roster_Builder.Death_Guard;
 using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Roster_Builder.Necrons;
+using Roster_Builder.Space_Marines;
+using Roster_Builder.Death_Guard;
 using Roster_Builder.Adeptus_Custodes;
 using Roster_Builder.Genestealer_Cults;
-using Roster_Builder.Space_Marines;
-using Roster_Builder.Aeldari;
 using Roster_Builder.Aeldari.Harlequins;
-using Roster_Builder.Tyranids;
 using Roster_Builder.Adeptus_Mechanicus;
 using Roster_Builder.Tau_Empire;
 using Roster_Builder.Orks;
@@ -59,7 +56,7 @@ namespace Roster_Builder
             btnRemove.Visible = false;
             btnSave.Visible = false;
             MenuPanel.Visible = true;
-            MenuPanel.Location = new System.Drawing.Point(242, 35);
+            MenuPanel.Location = new System.Drawing.Point(242, 25);
             MenuPanel.BringToFront();
             lblErrors.Visible = false;
             panelSubFaction.Location = new System.Drawing.Point(242, 96);
@@ -84,8 +81,8 @@ namespace Roster_Builder
                 new Aeldari.Aeldari(),
                 new DeathGuard(),
                 new Drukhari.Drukhari(),
-                new GSC(),
                 new GreyKnights(),
+                new GSC(),
                 new Harlequins(),
                 new Necrons.Necrons(),
                 new Orks.Orks(),
@@ -109,15 +106,15 @@ namespace Roster_Builder
                 new AdMech(),
                 new Aeldari.Aeldari(),
                 new DeathGuard(),
-				new Drukhari.Drukhari(),
-				new GSC(),
+                new Drukhari.Drukhari(),
                 new GreyKnights(),
+                new GSC(),
                 new Harlequins(),
                 new Necrons.Necrons(),
-				new Orks.Orks(),
-				new SpaceMarines(),
-				new T_au(),
-				new Tyranids.Tyranids(),
+                new Orks.Orks(),
+                new SpaceMarines(),
+                new T_au(),
+                new Tyranids.Tyranids(),
             });
             #endregion
         }
@@ -145,21 +142,19 @@ namespace Roster_Builder
             lblCurrentPoints.Visible = true;
             btnSave.Visible = true;
             btnSave.BringToFront();
-            gbCustomSubfaction.Visible = false;
             lblErrors.Visible = true;
             lblErrors.BringToFront();
             lblEditingUnit.BringToFront(); 
             panelSubFaction.BringToFront();
+            panelSubFaction.Visible = false;
 
             units = cmbSelectFaction.SelectedItem as Faction;
             roster.CreateNewDetachment(cmbDetachment.SelectedItem.ToString(), units, txtName.Text);
             currentDetachment = roster.Detachments[0];
+            cmbCurrentDetachment.Items.Add(currentDetachment);
+            cmbCurrentDetachment.SelectedIndex = 0;
 
             List<Datasheets> datasheets = units.GetDatasheets();
-
-            lblSubfaction.Text = "Select a " + units.subFactionName + " :";
-
-            panel1.Controls["lblFactionUpgrade"].Text = units.factionUpgradeName;
 
             List<string> subFactions = units.GetSubFactions();
             foreach (var subfaction in subFactions)
@@ -167,44 +162,11 @@ namespace Roster_Builder
                 cmbSubFaction.Items.Add(subfaction);
             }
 
-            foreach (Datasheets item in datasheets)
-            {
-                lbUnits.Items.Add(item);
-            }
-
             if (!isLoading)
             {
                 lbRoster.Items.Add(units.subFactionName);
                 updateLBRoster();
             }
-
-            if (!isLoading)
-            {
-                cmbCustomSub1.Items.Clear();
-                cmbCustomSub2.Items.Clear();
-            }
-
-            if (cmbSubFaction.Items.Contains("<Custom>"))
-            {
-                List<string> customList1 = units.GetCustomSubfactionList1();
-                List<string> customList2 = units.GetCustomSubfactionList2();
-
-                foreach (var custom1 in customList1)
-                {
-                    cmbCustomSub1.Items.Add(custom1);
-                }
-                foreach (var custom2 in customList2)
-                {
-                    cmbCustomSub2.Items.Add(custom2);
-                }
-            }
-
-            cbStratagem1.Text = units.StratagemList[0];
-            cbStratagem2.Text = units.StratagemList[1];
-
-            cmbCurrentDetachment.Items.Clear();
-            cmbCurrentDetachment.Items.Add(roster.Detachments[0]);
-            cmbCurrentDetachment.SelectedIndex = 0;
 
             if(txtName.Text == "<Optional>")
             {
@@ -346,8 +308,7 @@ namespace Roster_Builder
             if (lbRoster.SelectedIndex == 0)
             {
                 panelSubFaction.Visible = true;
-                lblEditingUnit.Text = string.Empty;
-                currentIndex = -10;
+                units.SetSubFactionPanel(panelSubFaction);
                 return;
             }
             else
@@ -428,24 +389,11 @@ namespace Roster_Builder
 
         private void cmbSubFaction_SelectedIndexChanged(object sender, EventArgs e)
         {
-            units.currentSubFaction = cmbSubFaction.SelectedItem.ToString();
-            lbRoster.Items.RemoveAt(0);
-            lbRoster.Items.Insert(0, units.subFactionName + ": " + units.currentSubFaction);
+            units.SaveSubFaction(50, panelSubFaction);
+            lbRoster.Items[0] = units.subFactionName + ": " + cmbSubFaction.SelectedItem.ToString();
 
-            if (cmbSubFaction.SelectedItem as string == "<Custom>")
-            {
-                gbCustomSubfaction.Visible = true;
-            }
-            else
-            {
-                gbCustomSubfaction.Visible = false;
-            }
-
-            if(currentDetachment.currentFaction.ToString() == "Space Marines")
-            {
-                lbUnits.Items.Clear();
-                lbUnits.Items.AddRange(currentDetachment.currentFaction.GetDatasheets().ToArray());
-            }
+            lbUnits.Items.Clear();
+            lbUnits.Items.AddRange(currentDetachment.currentFaction.GetDatasheets().ToArray());
         }
 
         private void cmbOption3_SelectedIndexChanged(object sender, EventArgs e)
@@ -724,19 +672,25 @@ namespace Roster_Builder
             panelNewDetach.Visible = false;
             cmbCurrentDetachment.Items.Clear();
             cmbCurrentDetachment.Items.AddRange(roster.Detachments.ToArray());
+            cmbCurrentDetachment.SelectedIndex = roster.Detachments.Count - 1;
+
+            panelSubFaction.Visible = false;
         }
 
         private void cmbCurrentDetachment_SelectedIndexChanged(object sender, EventArgs e)
         {
             currentDetachment = roster.Detachments[cmbCurrentDetachment.SelectedIndex];
+            units = currentDetachment.currentFaction;
 
             lbUnits.Items.Clear();
             lbUnits.Items.AddRange(currentDetachment.currentFaction.GetDatasheets().ToArray());
+
             lbRoster.Items.Clear();
-            lbRoster.Items.Add(currentDetachment.currentFaction.subFactionName);
+            lbRoster.Items.Add(currentDetachment.currentFaction.subFactionName + ": " + currentDetachment.currentFaction.currentSubFaction);
             lbRoster.Items.AddRange(currentDetachment.roster.ToArray());
 
             currentIndex = -1;
+            panelSubFaction.Visible = false;
         }
 
         private void btnDetachRemove_Click(object sender, EventArgs e)
@@ -785,6 +739,46 @@ namespace Roster_Builder
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {
 
+        }
+
+        private void cmbNDFaction_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbSubCustom1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            units.SaveSubFaction(51, panelSubFaction);
+        }
+
+        private void cmbSubCustom2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            units.SaveSubFaction(52, panelSubFaction);
+        }
+
+        private void clbSubCustom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            units.SaveSubFaction(57, panelSubFaction);
+        }
+
+        private void cmbSubCustom3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            units.SaveSubFaction(53, panelSubFaction);
+        }
+
+        private void cmbSubCustom4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            units.SaveSubFaction(54, panelSubFaction);
+        }
+
+        private void cmbSubCustom5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            units.SaveSubFaction(55, panelSubFaction);
+        }
+
+        private void cmbSubCustom6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            units.SaveSubFaction(56, panelSubFaction);
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Roster_Builder.Orks
 {
@@ -478,6 +479,7 @@ namespace Roster_Builder.Orks
 		{
 			return new List<string>()
 			{
+				string.Empty,
 				"Bad Moons",
 				"Blood Axes",
 				"Deathskulls",
@@ -555,11 +557,33 @@ namespace Roster_Builder.Orks
 			return traits;
 		}
 
-		public override void SetPoints(int points)
+        public override void SaveSubFaction(int code, Panel panel)
+        {
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+
+            switch (code)
+            {
+                case 50:
+                    currentSubFaction = cmbSubFaction.SelectedItem.ToString();
+                    break;
+            }
+        }
+
+        public override void SetPoints(int points)
 		{
 		}
 
-		public override string ToString()
+        public override void SetSubFactionPanel(Panel panel)
+        {
+            Template template = new Template();
+            template.LoadFactionTemplate(1, panel);
+
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+
+            cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
+        }
+
+        public override string ToString()
 		{
 			return "Orks";
 		}

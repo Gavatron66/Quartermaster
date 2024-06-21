@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Roster_Builder.Adeptus_Custodes
 {
@@ -256,6 +257,7 @@ namespace Roster_Builder.Adeptus_Custodes
         {
             return new List<string>()
             {
+                string.Empty,
                 "Emperor's Chosen",
                 "Shadowkeepers",
                 "Dread Host",
@@ -304,6 +306,18 @@ namespace Roster_Builder.Adeptus_Custodes
             return traits;
         }
 
+        public override void SaveSubFaction(int code, Panel panel)
+        {
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+
+            switch (code)
+            {
+                case 50:
+                    currentSubFaction = cmbSubFaction.SelectedItem.ToString();
+                    break;
+            }
+        }
+
         public override void SetPoints(int points)
         {
             StratagemCount = new int[] { 0, 0, 0, 0 };
@@ -314,6 +328,16 @@ namespace Roster_Builder.Adeptus_Custodes
                 StratagemLimit[0] = 1;
                 StratagemLimit[1] = 1;
             }
+        }
+
+        public override void SetSubFactionPanel(Panel panel)
+        {
+            Template template = new Template();
+            template.LoadFactionTemplate(1, panel);
+
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+
+            cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
         }
 
         public override string ToString()

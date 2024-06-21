@@ -172,6 +172,7 @@ namespace Roster_Builder.Death_Guard
         {
             return new List<string>()
             {
+                "",
                 "Harbingers",
                 "The Inexorable",
                 "Mortarion's Anvil",
@@ -281,6 +282,28 @@ namespace Roster_Builder.Death_Guard
             {
                 StratagemLimit[0] = 1;
                 StratagemLimit[1] = 1;
+            }
+        }
+
+        public override void SetSubFactionPanel(Panel panel)
+        {
+            Template template = new Template();
+            template.LoadFactionTemplate(1, panel);
+
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+
+            cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
+        }
+
+        public override void SaveSubFaction(int code, Panel panel)
+        {
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+
+            switch (code)
+            {
+                case 50:
+                    currentSubFaction = cmbSubFaction.SelectedItem.ToString();
+                    break;
             }
         }
     }

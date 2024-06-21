@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
 namespace Roster_Builder.Aeldari.Harlequins
@@ -243,6 +244,7 @@ namespace Roster_Builder.Aeldari.Harlequins
         {
             return new List<string>
             {
+                string.Empty,
                 "Light",
                 "Dark",
                 "Twilight"
@@ -274,8 +276,30 @@ namespace Roster_Builder.Aeldari.Harlequins
             return traits;
         }
 
+        public override void SaveSubFaction(int code, Panel panel)
+        {
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+
+            switch (code)
+            {
+                case 50:
+                    currentSubFaction = cmbSubFaction.SelectedItem.ToString();
+                    break;
+            }
+        }
+
         public override void SetPoints(int points)
         {
+        }
+
+        public override void SetSubFactionPanel(Panel panel)
+        {
+            Template template = new Template();
+            template.LoadFactionTemplate(1, panel);
+
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+
+            cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
         }
 
         public override string ToString()

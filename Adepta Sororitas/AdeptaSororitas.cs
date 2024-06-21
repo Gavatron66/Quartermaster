@@ -1,9 +1,9 @@
-﻿using Roster_Builder.Drukhari;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Roster_Builder.Adepta_Sororitas
 {
@@ -14,6 +14,7 @@ namespace Roster_Builder.Adepta_Sororitas
             subFactionName = "<Order>";
             currentSubFaction = string.Empty;
             factionUpgradeName = "Blessings of the Faithful";
+            customSubFactionTraits = new string[2];
             StratagemList.AddRange(new string[]
             {
                 "Stratagem: Saint in the Making",
@@ -248,12 +249,14 @@ namespace Roster_Builder.Adepta_Sororitas
         {
             return new List<string>()
             {
+                string.Empty,
                 "Order of Our Martyred Lady",
                 "Order of the Valorous Heart",
                 "Order of the Bloody Rose",
                 "Order of the Ebon Chalice",
                 "Order of the Argent Shroud",
-                "Order of the Sacred Rose"
+                "Order of the Sacred Rose",
+                "<Custom>"
             };
         }
 
@@ -304,8 +307,129 @@ namespace Roster_Builder.Adepta_Sororitas
             return traits;
         }
 
+        public override void SaveSubFaction(int code, Panel panel)
+        {
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+            ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
+            ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
+            Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
+            Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
+
+            switch (code)
+            {
+                case 50:
+                    currentSubFaction = cmbSubFaction.SelectedItem.ToString();
+                    if (currentSubFaction == "<Custom>")
+                    {
+                        cmbSubCustom1.Visible = true;
+                        cmbSubCustom2.Visible = true;
+                        lblSubCustom1.Visible = true;
+                        lblSubCustom2.Visible = true;
+                    }
+                    else
+                    {
+                        cmbSubCustom1.Visible = false;
+                        cmbSubCustom2.Visible = false;
+                        lblSubCustom1.Visible = false;
+                        lblSubCustom2.Visible = false;
+                        customSubFactionTraits = new string[2];
+                    }
+                    break;
+                case 51:
+                    customSubFactionTraits[0] = cmbSubCustom1.SelectedItem.ToString();
+                    break;
+                case 52:
+                    customSubFactionTraits[1] = cmbSubCustom2.SelectedItem.ToString();
+                    break;
+            }
+        }
+
         public override void SetPoints(int points)
         {
+        }
+
+        public override void SetSubFactionPanel(Panel panel)
+        {
+            if (antiLoop)
+            {
+                return;
+            }
+
+            antiLoop = true;
+            Template template = new Template();
+            template.LoadFactionTemplate(3, panel);
+
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+            ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
+            ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
+            Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
+            Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
+
+            if (currentSubFaction != "<Custom>")
+            {
+                cmbSubCustom1.Visible = false;
+                cmbSubCustom2.Visible = false;
+                lblSubCustom1.Visible = false;
+                lblSubCustom2.Visible = false;
+            }
+            else
+            {
+                cmbSubCustom1.Visible = true;
+                cmbSubCustom2.Visible = true;
+                lblSubCustom1.Visible = true;
+                lblSubCustom2.Visible = true;
+            }
+
+            cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
+            panel.BringToFront();
+
+            cmbSubCustom1.Items.Clear();
+            cmbSubCustom2.Items.Clear();
+
+            cmbSubCustom1.Items.AddRange(new string[]
+            {
+                "Shield of Aversion",
+                "Hallowed Martyrs",
+                "Conviction of Faith",
+                "Devout Fanaticism",
+                "Guided By the Emperor's Will",
+                "Holy Wrath",
+                "Perfervid Belief",
+                "Purifying Recitations",
+                "Raging Fervour",
+                "Rites of Fire",
+                "Righteous Suffering",
+                "Slayers of Heretics",
+                "Unbridled Valour",
+                "Unshakable Vengeance",
+                "Witch Hunters"
+            });
+
+            cmbSubCustom2.Items.AddRange(new string[]
+            {
+                "Shield of Aversion",
+                "Hallowed Martyrs",
+                "Conviction of Faith",
+                "Devout Fanaticism",
+                "Guided By the Emperor's Will",
+                "Holy Wrath",
+                "Perfervid Belief",
+                "Purifying Recitations",
+                "Raging Fervour",
+                "Rites of Fire",
+                "Righteous Suffering",
+                "Slayers of Heretics",
+                "Unbridled Valour",
+                "Unshakable Vengeance",
+                "Witch Hunters"
+            });
+
+            if (customSubFactionTraits[0] != null)
+            {
+                cmbSubCustom1.SelectedIndex = cmbSubCustom1.Items.IndexOf(customSubFactionTraits[0]);
+                cmbSubCustom2.SelectedIndex = cmbSubCustom2.Items.IndexOf(customSubFactionTraits[1]);
+            }
+            antiLoop = false;
         }
 
         public override string ToString()

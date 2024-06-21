@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Roster_Builder.Tyranids
 {
@@ -13,6 +14,7 @@ namespace Roster_Builder.Tyranids
             subFactionName = "<Hive Fleet>";
             currentSubFaction = string.Empty;
             factionUpgradeName = "Adaptive Physiologies";
+            customSubFactionTraits = new string[2];
             StratagemList.AddRange(new string[]
             {
                 "Stratagem: Hive Predator",
@@ -348,6 +350,7 @@ namespace Roster_Builder.Tyranids
         {
             return new List<string>()
             {
+                string.Empty,
                 "Behemoth",
                 "Kraken",
                 "Leviathan",
@@ -405,8 +408,160 @@ namespace Roster_Builder.Tyranids
             return traits;
         }
 
+        public override void SaveSubFaction(int code, Panel panel)
+        {
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+            ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
+            ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
+            Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
+            Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
+
+            string[] hunt = new string[]
+            {
+                "Adrenalised Onslaught",
+                "Heightened Reflexes",
+                "Augmented Ferocity",
+                "Synaptic Goading",
+                "Ambush Predators"
+            };
+
+            string[] lurk = new string[]
+            {
+                "Exoskeletal Reinforcement",
+                "Naturalised Camouflage",
+                "Territorial Insticts",
+                "Unfeeling Resilience",
+                "Synaptic Ganglia"
+            };
+
+            string[] feed = new string[]
+            {
+                "Stabilising Membranes",
+                "Exoskeletal Stabilisation",
+                "Wreathed in Shadow",
+                "Relentless Hunger",
+                "Unstoppable Swarm"
+            };
+
+            switch (code)
+            {
+                case 50:
+                    currentSubFaction = cmbSubFaction.SelectedItem.ToString();
+                    if (currentSubFaction == "<Custom>")
+                    {
+                        cmbSubCustom1.Visible = true;
+                        cmbSubCustom2.Visible = true;
+                        lblSubCustom1.Visible = true;
+                        lblSubCustom2.Visible = true;
+                    }
+                    else
+                    {
+                        cmbSubCustom1.Visible = false;
+                        cmbSubCustom2.Visible = false;
+                        lblSubCustom1.Visible = false;
+                        lblSubCustom2.Visible = false;
+                        customSubFactionTraits = new string[2];
+                    }
+                    break;
+                case 51:
+                    customSubFactionTraits[0] = cmbSubCustom1.SelectedItem.ToString();
+                    cmbSubCustom2.Items.Clear();
+
+                    if (hunt.Contains(customSubFactionTraits[0]))
+                    {
+                        cmbSubCustom2.Items.AddRange(lurk);
+                        cmbSubCustom2.Items.AddRange(feed);
+                    }
+                    else if (lurk.Contains(customSubFactionTraits[0]))
+                    {
+                        cmbSubCustom2.Items.AddRange(hunt);
+                        cmbSubCustom2.Items.AddRange(feed);
+                    }
+                    else if (feed.Contains(customSubFactionTraits[0]))
+                    {
+                        cmbSubCustom2.Items.AddRange(hunt);
+                        cmbSubCustom2.Items.AddRange(lurk);
+                    }
+                    else
+                    {
+                        cmbSubCustom2.Items.AddRange(hunt);
+                        cmbSubCustom2.Items.AddRange(lurk);
+                        cmbSubCustom2.Items.AddRange(feed);
+                    }
+                    break;
+                case 52:
+                    customSubFactionTraits[1] = cmbSubCustom2.SelectedItem.ToString();
+                    break;
+            }
+        }
+
         public override void SetPoints(int points)
         {
+        }
+
+        public override void SetSubFactionPanel(Panel panel)
+        {
+            if (antiLoop)
+            {
+                return;
+            }
+
+            antiLoop = true;
+            Template template = new Template();
+            template.LoadFactionTemplate(3, panel);
+
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+            ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
+            ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
+            Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
+            Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
+
+            if (currentSubFaction != "<Custom>")
+            {
+                cmbSubCustom1.Visible = false;
+                cmbSubCustom2.Visible = false;
+                lblSubCustom1.Visible = false;
+                lblSubCustom2.Visible = false;
+            }
+            else
+            {
+                cmbSubCustom1.Visible = true;
+                cmbSubCustom2.Visible = true;
+                lblSubCustom1.Visible = true;
+                lblSubCustom2.Visible = true;
+            }
+
+            cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
+            panel.BringToFront();
+
+            cmbSubCustom1.Items.Clear();
+            cmbSubCustom2.Items.Clear();
+
+            cmbSubCustom1.Items.AddRange(new string[]
+            {
+                "Adrenalised Onslaught",
+                "Heightened Reflexes",
+                "Augmented Ferocity",
+                "Synaptic Goading",
+                "Ambush Predators",
+                "Exoskeletal Reinforcement",
+                "Naturalised Camouflage",
+                "Territorial Insticts",
+                "Unfeeling Resilience",
+                "Synaptic Ganglia",
+                "Stabilising Membranes",
+                "Exoskeletal Stabilisation",
+                "Wreathed in Shadow",
+                "Relentless Hunger",
+                "Unstoppable Swarm"
+            });
+
+            if (customSubFactionTraits[0] != null)
+            {
+                cmbSubCustom1.SelectedIndex = cmbSubCustom1.Items.IndexOf(customSubFactionTraits[0]);
+                cmbSubCustom2.SelectedIndex = cmbSubCustom2.Items.IndexOf(customSubFactionTraits[1]);
+            }
+            antiLoop = false;
         }
 
         public override string ToString()

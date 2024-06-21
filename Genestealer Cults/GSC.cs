@@ -5,16 +5,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Roster_Builder.Genestealer_Cults
 {
     public class GSC : Faction
     {
+        int customSubPoints;
+
         public GSC()
         {
             subFactionName = "<Cult>";
             currentSubFaction = string.Empty;
             factionUpgradeName = "Proficient Planning";
+            customSubFactionTraits = new string[4];
+            customSubPoints = 0;
             StratagemList.AddRange(new string[]
             {
                 "Gene-sire's Gifts",
@@ -257,6 +262,7 @@ namespace Roster_Builder.Genestealer_Cults
         {
             return new List<string>()
             {
+                string.Empty,
                 "Cult of the Four-armed Emperor",
                 "The Hivecult",
                 "The Bladed Cog",
@@ -289,6 +295,60 @@ namespace Roster_Builder.Genestealer_Cults
             return traits;
         }
 
+        public override void SaveSubFaction(int code, Panel panel)
+        {
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+            CheckedListBox clbSubCustom = panel.Controls["clbSubCustom"] as CheckedListBox;
+
+            switch (code)
+            {
+                case 50:
+                    currentSubFaction = cmbSubFaction.SelectedItem.ToString();
+                    if (currentSubFaction == "<Custom>")
+                    {
+                        panel.Controls["lblSubCustomCLB"].Visible = true;
+                        clbSubCustom.Visible = true;
+                    }
+                    else
+                    {
+                        panel.Controls["lblSubCustomCLB"].Visible = false;
+                        clbSubCustom.Visible = false;
+                    }
+                    break;
+                case 57:
+
+                    customSubPoints = 0;
+                    foreach (string item in clbSubCustom.CheckedItems)
+                    {
+                        if(item.Contains("(1)")) {
+                            customSubPoints += 1;
+                        }
+                        else if (item.Contains("(2)"))
+                        {
+                            customSubPoints += 2;
+                        }
+                        else if (item.Contains("(3)"))
+                        {
+                            customSubPoints += 3;
+                        }
+                    }
+
+                    if(customSubPoints == 4)
+                    {
+                        customSubFactionTraits = new string[clbSubCustom.CheckedItems.Count];
+                        for(int i = 0; i < clbSubCustom.CheckedItems.Count; i++)
+                        {
+                            customSubFactionTraits[i] = clbSubCustom.CheckedItems[i].ToString();
+                        }
+                    }
+                    else if (customSubPoints > 4)
+                    {
+                        clbSubCustom.SetItemChecked(clbSubCustom.SelectedIndex, false);
+                    }
+                    break;
+            }
+        }
+
         public override void SetPoints(int points)
         {
             StratagemCount = new int[] { 0, 0, 0 };
@@ -298,6 +358,57 @@ namespace Roster_Builder.Genestealer_Cults
             {
                 StratagemLimit[0] = 1;
                 StratagemLimit[1] = 1;
+            }
+        }
+
+        public override void SetSubFactionPanel(Panel panel)
+        {
+            Template template = new Template();
+            template.LoadFactionTemplate(1, panel);
+
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+            CheckedListBox clbSubCustom = panel.Controls["clbSubCustom"] as CheckedListBox;
+
+            cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
+            panel.Controls["lblSubCustomCLB"].Text = "May take up to 4 points of the following:";
+
+            if (currentSubFaction != "<Custom>")
+            {
+                panel.Controls["lblSubCustomCLB"].Visible = false;
+                clbSubCustom.Visible = false;
+            }
+            else
+            {
+            panel.Controls["lblSubCustomCLB"].Visible = true;
+                clbSubCustom.Visible = true;
+            }
+
+
+            clbSubCustom.Items.Clear();
+            clbSubCustom.Items.AddRange(new string[]
+            {
+                "(3) Hunter's Instincts",
+                "(3) Impassioned",
+                "(3) Symbiotic Broodmind",
+                "(2) Deep Supplies",
+                "(2) Agile Guerrillas",
+                "(2) Thralls of the Patriarch",
+                "(2) Toxin Agents",
+                "(2) Martial",
+                "(1) Accustomed to Toil",
+                "(1) Industrial Affinity",
+                "(1) Alien Fury",
+                "(1) War Convoy",
+                "(1) Synaptic Resonance",
+                "(1) Cold-Eyed Killers"
+            });
+
+            for(int i = 0; i < clbSubCustom.Items.Count; i++)
+            {
+                if (customSubFactionTraits.Contains(clbSubCustom.Items[i]))
+                {
+                    clbSubCustom.SetItemChecked(i, true);
+                }
             }
         }
 

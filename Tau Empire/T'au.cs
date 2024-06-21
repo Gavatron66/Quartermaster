@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Roster_Builder.Tau_Empire
 {
@@ -13,6 +14,7 @@ namespace Roster_Builder.Tau_Empire
             subFactionName = "<Sept>";
             currentSubFaction = string.Empty;
             factionUpgradeName = "Prototype Systems";
+            customSubFactionTraits = new string[2];
             StratagemList.AddRange(new string[]
             {
                 "Stratagem: Promising Pupil",
@@ -352,6 +354,7 @@ namespace Roster_Builder.Tau_Empire
 		{
             return new List<string>() 
             {
+                string.Empty,
                 "T'au",
                 "Vior'la",
                 "Sa'cea",
@@ -416,8 +419,185 @@ namespace Roster_Builder.Tau_Empire
 			return traits;
         }
 
+        public override void SaveSubFaction(int code, Panel panel)
+        {
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+            ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
+            ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
+            Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
+            Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
+
+            string[] sectorA = new string[]
+            {
+                "Strike Swiftly",
+                "Play Their Part",
+                "Adherents to the Teachings",
+                "Calm Under Pressure"
+            };
+
+            string[] sectorB = new string[]
+            {
+                "Camoflauge Experts",
+                "Defensive Doctrines",
+                "Blocking Tactics",
+                "Fire Caste Marksmen"
+            };
+
+            string[] sectorC = new string[]
+            {
+                "Evasion Manoeuvres",
+                "Pinpoint Targeting",
+                "Disengagement Protocols",
+                "Fire Saturation"
+            };
+
+            string[] sectorD = new string[]
+            {
+                "Reliable Weaponry",
+                "Defenders of the Cause",
+                "Reinforced Armour",
+                "Hardened Warheads"
+            };
+
+            string[] sectorE = new string[]
+            {
+                "Turbo-Jets",
+                "Loyal to the End",
+                "Rapid Retreat",
+                "Enriched Reactors"
+            }; 
+            
+            switch (code)
+            {
+                case 50:
+                    currentSubFaction = cmbSubFaction.SelectedItem.ToString();
+                    if (currentSubFaction == "<Custom>")
+                    {
+                        cmbSubCustom1.Visible = true;
+                        cmbSubCustom2.Visible = true;
+                        lblSubCustom1.Visible = true;
+                        lblSubCustom2.Visible = true;
+                    }
+                    else
+                    {
+                        cmbSubCustom1.Visible = false;
+                        cmbSubCustom2.Visible = false;
+                        lblSubCustom1.Visible = false;
+                        lblSubCustom2.Visible = false;
+                        customSubFactionTraits = new string[2];
+                    }
+                    break;
+                case 51:
+                    customSubFactionTraits[0] = cmbSubCustom1.SelectedItem.ToString();
+                    cmbSubCustom2.Items.Clear();
+
+                    if (sectorA.Contains(customSubFactionTraits[0]))
+                    {
+                        cmbSubCustom2.Items.AddRange(sectorB);
+                        cmbSubCustom2.Items.AddRange(sectorC);
+                        cmbSubCustom2.Items.AddRange(sectorD);
+                        cmbSubCustom2.Items.AddRange(sectorE);
+                    }
+                    else if (sectorB.Contains(customSubFactionTraits[0]))
+                    {
+                        cmbSubCustom2.Items.AddRange(sectorA);
+                        cmbSubCustom2.Items.AddRange(sectorC);
+                    }
+                    else if (sectorC.Contains(customSubFactionTraits[0]))
+                    {
+                        cmbSubCustom2.Items.AddRange(sectorA);
+                        cmbSubCustom2.Items.AddRange(sectorB);
+                    }
+                    else if (sectorD.Contains(customSubFactionTraits[0]))
+                    {
+                        cmbSubCustom2.Items.AddRange(sectorA);
+                        cmbSubCustom2.Items.AddRange(sectorE);
+                    }
+                    else if (sectorE.Contains(customSubFactionTraits[0]))
+                    {
+                        cmbSubCustom2.Items.AddRange(sectorA);
+                        cmbSubCustom2.Items.AddRange(sectorD);
+                    }
+
+                    break;
+                case 52:
+                    customSubFactionTraits[1] = cmbSubCustom2.SelectedItem.ToString();
+                    break;
+            }
+        }
+
         public override void SetPoints(int points)
         {
+        }
+
+        public override void SetSubFactionPanel(Panel panel)
+        {
+            if (antiLoop)
+            {
+                return;
+            }
+
+            antiLoop = true;
+            Template template = new Template();
+            template.LoadFactionTemplate(3, panel);
+
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+            ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
+            ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
+            Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
+            Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
+
+            if (currentSubFaction != "<Custom>")
+            {
+                cmbSubCustom1.Visible = false;
+                cmbSubCustom2.Visible = false;
+                lblSubCustom1.Visible = false;
+                lblSubCustom2.Visible = false;
+            }
+            else
+            {
+                cmbSubCustom1.Visible = true;
+                cmbSubCustom2.Visible = true;
+                lblSubCustom1.Visible = true;
+                lblSubCustom2.Visible = true;
+            }
+
+            cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
+            panel.BringToFront();
+
+            cmbSubCustom1.Items.Clear();
+            cmbSubCustom2.Items.Clear();
+
+            cmbSubCustom1.Items.AddRange(new string[]
+            {
+                "Strike Swiftly",
+                "Play Their Part",
+                "Adherents to the Teachings",
+                "Calm Under Pressure",
+                "Camoflauge Experts",
+                "Defensive Doctrines",
+                "Blocking Tactics",
+                "Fire Caste Marksmen",
+                "Evasion Manoeuvres",
+                "Pinpoint Targeting",
+                "Disengagement Protocols",
+                "Fire Saturation",
+                "Reliable Weaponry",
+                "Defenders of the Cause",
+                "Reinforced Armour",
+                "Hardened Warheads",
+                "Turbo-Jets",
+                "Loyal to the End",
+                "Rapid Retreat",
+                "Enriched Reactors"
+            });
+
+            if (customSubFactionTraits[0] != null)
+            {
+                cmbSubCustom1.SelectedIndex = cmbSubCustom1.Items.IndexOf(customSubFactionTraits[0]);
+                cmbSubCustom2.SelectedIndex = cmbSubCustom2.Items.IndexOf(customSubFactionTraits[1]);
+            }
+            antiLoop = false;
         }
 
         public override string ToString()

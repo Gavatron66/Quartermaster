@@ -195,6 +195,7 @@
     <Compile Include="Aeldari\Fuegan.cs" />
     <Compile Include="Aeldari\GuardianDefenders.cs" />
     <Compile Include="Aeldari\Harlequins\DeathJester.cs" />
+    <Compile Include="Aeldari\Harlequins\Harlequins.cs" />
     <Compile Include="Aeldari\Harlequins\Shadowseer.cs" />
     <Compile Include="Aeldari\Harlequins\Skyweavers.cs" />
     <Compile Include="Aeldari\Harlequins\Solitaire.cs" />
@@ -296,6 +297,7 @@
     <Compile Include="Drukhari\Wracks.cs" />
     <Compile Include="Drukhari\Wyches.cs" />
     <Compile Include="Faction.cs" />
+    <Compile Include="Detachment.cs" />
     <Compile Include="Genestealer Cults\Aberrants.cs" />
     <Compile Include="Genestealer Cults\Abominant.cs" />
     <Compile Include="Genestealer Cults\AchillesRidgerunners.cs" />
@@ -319,7 +321,6 @@
     <Compile Include="Genestealer Cults\PurestrainGenestealers.cs" />
     <Compile Include="Genestealer Cults\ReductusSaboteur.cs" />
     <Compile Include="Genestealer Cults\Sanctus.cs" />
-    <Compile Include="Aeldari\Harlequins\Harlequins.cs" />
     <Compile Include="Grey Knights\BrotherCaptain.cs" />
     <Compile Include="Grey Knights\BrotherCaptainStern.cs" />
     <Compile Include="Grey Knights\BrotherhoodAncient.cs" />
@@ -375,24 +376,24 @@
     <Compile Include="Necrons\GhostArk.cs" />
     <Compile Include="Necrons\HexmarkDestroyer.cs" />
     <Compile Include="Necrons\Immortals.cs" />
+    <Compile Include="Necrons\Imotekh.cs" />
     <Compile Include="Necrons\LokhustDestroyers.cs" />
     <Compile Include="Necrons\LokhustHeavyDestroyers.cs" />
     <Compile Include="Necrons\LokhustLord.cs" />
     <Compile Include="Necrons\Lychguard.cs" />
     <Compile Include="Necrons\Monolith.cs" />
     <Compile Include="Necrons\NecronLord.cs" />
+    <Compile Include="Necrons\Necrons.cs" />
     <Compile Include="Necrons\NecronWarriors.cs" />
     <Compile Include="Necrons\NightScythe.cs" />
     <Compile Include="Necrons\Obelisk.cs" />
+    <Compile Include="Necrons\Obyron.cs" />
     <Compile Include="Necrons\OphydianDestroyers.cs" />
+    <Compile Include="Necrons\Orikan.cs" />
     <Compile Include="Necrons\Overlord.cs" />
     <Compile Include="Necrons\Plasmancer.cs" />
     <Compile Include="Necrons\Psychomancer.cs" />
     <Compile Include="Necrons\RoyalWarden.cs" />
-    <Compile Include="Necrons\Imotekh.cs" />
-    <Compile Include="Necrons\Necrons.cs" />
-    <Compile Include="Necrons\Obyron.cs" />
-    <Compile Include="Necrons\Orikan.cs" />
     <Compile Include="Necrons\SilentKing.cs" />
     <Compile Include="Necrons\SkorpekhDestroyers.cs" />
     <Compile Include="Necrons\SkorpekhLord.cs" />
@@ -405,7 +406,6 @@
     <Compile Include="Necrons\TriarchPraetorians.cs" />
     <Compile Include="Necrons\TriarchStalker.cs" />
     <Compile Include="Necrons\Zahndrekh.cs" />
-    <Compile Include="Detachment.cs" />
     <Compile Include="Orks\BannerNob.cs" />
     <Compile Include="Orks\Battlewagon.cs" />
     <Compile Include="Orks\Beastboss.cs" />
@@ -416,6 +416,7 @@
     <Compile Include="Orks\BigMekShokkGun.cs" />
     <Compile Include="Orks\BlitzaBommer.cs" />
     <Compile Include="Orks\Bonebreaka.cs" />
+    <Compile Include="Orks\BoomdakkaSnazzwagons.cs" />
     <Compile Include="Orks\BossSnikrot.cs" />
     <Compile Include="Orks\BossZagstruk.cs" />
     <Compile Include="Orks\Boyz.cs" />
@@ -424,7 +425,6 @@
     <Compile Include="Orks\Dakkajet.cs" />
     <Compile Include="Orks\DeffDreads.cs" />
     <Compile Include="Orks\DeffkillaWartrike.cs" />
-    <Compile Include="Orks\BoomdakkaSnazzwagons.cs" />
     <Compile Include="Orks\Deffkoptas.cs" />
     <Compile Include="Orks\FlashGitz.cs" />
     <Compile Include="Orks\GhazghkullThraka.cs" />
@@ -711,6 +711,7 @@
       <DependentUpon>Testing Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Tyranids\Biovores.cs" />
+    <Compile Include="Tyranids\Broodlord.cs" />
     <Compile Include="Tyranids\Carnifexes.cs" />
     <Compile Include="Tyranids\Deathleaper.cs" />
     <Compile Include="Tyranids\Exocrine.cs" />
@@ -720,14 +721,13 @@
     <Compile Include="Tyranids\Haruspex.cs" />
     <Compile Include="Tyranids\HiveCrone.cs" />
     <Compile Include="Tyranids\HiveGuard.cs" />
+    <Compile Include="Tyranids\HiveTyrant.cs" />
     <Compile Include="Tyranids\Hormagaunts.cs" />
     <Compile Include="Tyranids\Lictor.cs" />
     <Compile Include="Tyranids\Maleceptor.cs" />
     <Compile Include="Tyranids\Mawloc.cs" />
     <Compile Include="Tyranids\MucolidSpores.cs" />
     <Compile Include="Tyranids\Neurothrope.cs" />
-    <Compile Include="Tyranids\Broodlord.cs" />
-    <Compile Include="Tyranids\HiveTyrant.cs" />
     <Compile Include="Tyranids\OldOneEye.cs" />
     <Compile Include="Tyranids\ParasiteofMortrex.cs" />
     <Compile Include="Tyranids\Pyrovores.cs" />
@@ -738,13 +738,13 @@
     <Compile Include="Tyranids\Sporocyst.cs" />
     <Compile Include="Tyranids\Swarmlord.cs" />
     <Compile Include="Tyranids\Termagants.cs" />
+    <Compile Include="Tyranids\Tervigon.cs" />
     <Compile Include="Tyranids\Thornbacks.cs" />
     <Compile Include="Tyranids\Toxicrene.cs" />
     <Compile Include="Tyranids\Trygon.cs" />
     <Compile Include="Tyranids\TrygonPrime.cs" />
     <Compile Include="Tyranids\TyranidPrime.cs" />
     <Compile Include="Tyranids\Tyranids.cs" />
-    <Compile Include="Tyranids\Tervigon.cs" />
     <Compile Include="Tyranids\TyranidWarriors.cs" />
     <Compile Include="Tyranids\Tyrannocyte.cs" />
     <Compile Include="Tyranids\Tyrannofex.cs" />

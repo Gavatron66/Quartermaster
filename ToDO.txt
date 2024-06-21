@@ -44,7 +44,6 @@ Implement the remianing unique stratagems for the following:
 	
 Space Marines has limits on what each unit can take depending on subchapter. Most of the time, this isn't a problem. The following have a codex supplement that adds/changes their rosters:
 	Black Templars
-	Dark Angels
 	Blood Angels
 	
 Prohibit selecting the same custom faction trait
@@ -54,8 +53,6 @@ Space Marines
 	
 Hybrid Metamorphs needs to be visited when the location and sizing rework is ready
 	Atalan Jackals
-
-Need to Fix the custom faction stuff, it doesn't seem to working
 
 Fix Named Characters? Some named Characters belong to specific subfactions, and technically if they contain a different subfaction keyword than they invalidate the detachment.
 	Finish fixing Warlord traits for Necrons
