@@ -21,6 +21,7 @@ using Roster_Builder.Tau_Empire;
 using Roster_Builder.Orks;
 using Roster_Builder.Grey_Knights;
 using Roster_Builder.Adepta_Sororitas;
+using Roster_Builder.Astra_Militarum;
 
 namespace Roster_Builder
 {
@@ -79,6 +80,7 @@ namespace Roster_Builder
                 new AdeptusCustodes(),
                 new AdMech(),
                 new Aeldari.Aeldari(),
+                new AstraMilitarum(),
                 new DeathGuard(),
                 new Drukhari.Drukhari(),
                 new GreyKnights(),
@@ -105,6 +107,7 @@ namespace Roster_Builder
                 new AdeptusCustodes(),
                 new AdMech(),
                 new Aeldari.Aeldari(),
+                new AstraMilitarum(),
                 new DeathGuard(),
                 new Drukhari.Drukhari(),
                 new GreyKnights(),

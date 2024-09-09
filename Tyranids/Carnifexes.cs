@@ -56,11 +56,13 @@ namespace Roster_Builder.Tyranids
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
 
+            antiLoop = true;
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;
             nudUnitSize.Value = nudUnitSize.Minimum;
             nudUnitSize.Maximum = 3;
             nudUnitSize.Value = currentSize;
+            antiLoop = false;
 
             lbModelSelect.Items.Clear();
             for (int i = 0; i < UnitSize; i++)
@@ -115,34 +117,8 @@ namespace Roster_Builder.Tyranids
             });
 
             cbOption1.Text = "Adrenal Glands (+10 pts)";
-            if (Weapons[0] == cbOption1.Text)
-            {
-                cbOption1.Checked = true;
-            }
-            else
-            {
-                cbOption1.Checked = false;
-            }
-
             cbOption2.Text = "Chitin Thorns (+5 pts)";
-            if (Weapons[0] == cbOption2.Text)
-            {
-                cbOption2.Checked = true;
-            }
-            else
-            {
-                cbOption2.Checked = false;
-            }
-
             cbOption3.Text = "Toxin Sacs (+5 pts)";
-            if (Weapons[0] == cbOption3.Text)
-            {
-                cbOption3.Checked = true;
-            }
-            else
-            {
-                cbOption3.Checked = false;
-            }
 
             cmbFaction.Items.Clear();
             cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
@@ -150,6 +126,11 @@ namespace Roster_Builder.Tyranids
 
         public override void SaveDatasheets(int code, Panel panel)
         {
+            if(antiLoop)
+            {
+                return;
+            }
+
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             CheckBox cbOption3 = panel.Controls["cbOption3"] as CheckBox;

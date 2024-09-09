@@ -125,7 +125,7 @@ namespace Roster_Builder.Genestealer_Cults
                     {
                         Weapons.Add("Heavy Mining Laser");
                         Weapons.Add("Flare Launcher");
-                        lbModelSelect.Items.Add("Achilles Ridgerunner w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[((currentIndex ) * 2) + 1]);
+                        lbModelSelect.Items.Add("Achilles Ridgerunner w/ " + Weapons[(temp) * 2] + " and " + Weapons[(temp * 2) + 1]);
                     }
 
                     if (temp > UnitSize)
