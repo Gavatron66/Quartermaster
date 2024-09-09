@@ -7,16 +7,32 @@
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\cadiancommandsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\datasheets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:datasheets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\imperial knights\\imperialknights.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\imperial knights\\imperialknights.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:imperial knights\\imperialknights.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\astramilitarum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\adeptasororitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\adeptasororitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\Testing Form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -42,17 +54,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAAJQCAAAAAAAAAAASwKwCAAAMAAAA",
+              "ViewState": "AQIAABADAAAAAAAAAAAuwBIDAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-03T22:43:17.811Z",
               "IsPinned": true,
@@ -60,20 +72,21 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Template.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeDocumentMoniker": "Template.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeToolTip": "Template.cs",
-              "ViewState": "AQIAABYIAAAAAAAAAAAYwEYKAAAjAAAA",
+              "ViewState": "AQIAACwFAAAAAAAAAAAswEYKAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-05T03:46:42.246Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -86,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Testing Form.cs [Design]",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Testing Form.cs",
               "RelativeDocumentMoniker": "Testing Form.cs",
@@ -98,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "AstraMilitarum.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\AstraMilitarum.cs",
               "RelativeDocumentMoniker": "Astra Militarum\\AstraMilitarum.cs",
@@ -111,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ImperialKnights.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\ImperialKnights.cs",
               "RelativeDocumentMoniker": "Imperial Knights\\ImperialKnights.cs",
@@ -125,20 +138,59 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Datasheets.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Datasheets.cs",
+              "RelativeDocumentMoniker": "Datasheets.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Datasheets.cs",
+              "RelativeToolTip": "Datasheets.cs",
+              "ViewState": "AQIAAKgAAAAAAAAAAAASwLIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T01:17:53.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Faction.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Faction.cs",
+              "RelativeDocumentMoniker": "Faction.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Faction.cs",
+              "RelativeToolTip": "Faction.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAA1wDwAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T01:16:25.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AQIAAIkBAAAAAAAAAAAcwGkBAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T01:09:01.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "CadianCommandSquad.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\CadianCommandSquad.cs",
               "RelativeDocumentMoniker": "Astra Militarum\\CadianCommandSquad.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\CadianCommandSquad.cs",
               "RelativeToolTip": "Astra Militarum\\CadianCommandSquad.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAgwDQAAAAAAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAAQwDMAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-08T01:57:48.919Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "AdeptaSororitas.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\AdeptaSororitas.cs",
               "RelativeDocumentMoniker": "Adepta Sororitas\\AdeptaSororitas.cs",

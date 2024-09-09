@@ -59,30 +59,44 @@ namespace Roster_Builder.Astra_Militarum
             lbModelSelect.Items.Add("Cadian Veteran Guardsman w/ Laspistol and " + Weapons[5]);
 
             cmbOption2.DrawMode = DrawMode.OwnerDrawFixed;
-            cmbOption2.DrawItem += new DrawItemEventHandler(TestDraw);
+            this.DrawItemWithRestrictions(new List<int> { 0, 2 }, cmbOption2 );
+
+            //cmbOption2.DrawItem += new DrawItemEventHandler(TestDraw);
         }
 
         private void TestDraw(object sender, DrawItemEventArgs e)
         {
             // Draw the background of the ListBox control for each item.
-            e.DrawBackground();
+            Brush brush = new SolidBrush(Color.LightSlateGray);
+            Brush defbrush = new SolidBrush(Color.White);
+            if(e.Index == 1)
+            {
+                e.Graphics.FillRectangle(brush, e.Bounds);
+            }
+            else
+            {
+                e.Graphics.FillRectangle(defbrush, e.Bounds);
+            }
+
+            brush.Dispose();
+            defbrush.Dispose();
             // Define the default color of the brush as black.
             Brush myBrush = Brushes.Black;
 
             // Determine the color of the brush to draw each item based 
             // on the index of the item to draw.
-            switch (e.Index)
-            {
-                case 0:
-                    myBrush = Brushes.Red;
-                    break;
-                case 1:
-                    myBrush = Brushes.Orange;
-                    break;
-                case 2:
-                    myBrush = Brushes.Purple;
-                    break;
-            }
+            //switch (e.Index)
+            //{
+            //    case 0:
+            //        myBrush = Brushes.Red;
+            //        break;
+            //    case 1:
+            //        myBrush = Brushes.Orange;
+            //        break;
+            //    case 2:
+            //        myBrush = Brushes.Purple;
+            //        break;
+            //}
 
             // Draw the current item text based on the current Font 
             // and the custom brush settings.
