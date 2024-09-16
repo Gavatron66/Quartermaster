@@ -23,6 +23,10 @@ namespace Roster_Builder.Death_Guard
                 "Stratagem: Champion of Disease", //Stratagem Code 2
                 "Stratagem: Grandfatherly Influence"
             });
+            restrictedItems.AddRange(new string[]
+            {
+                "Plague Skull of Glothila"
+            });
         }
 
         public override List<Datasheets> GetDatasheets()
@@ -67,7 +71,7 @@ namespace Roster_Builder.Death_Guard
             new Mortarion(), 
             //---------- Fortification ----------
             new MiasmicMalignifier(),
-        };
+            };
         }
 
         public override bool GetIfEnabled(int index)

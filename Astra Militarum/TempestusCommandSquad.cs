@@ -11,9 +11,6 @@ namespace Roster_Builder.Astra_Militarum
     {
         int currentIndex;
         bool isLoading = false;
-        int specialW;
-        bool vox;
-        List<string> specialWeapons;
 
         public TempestusCommandSquad()
         {

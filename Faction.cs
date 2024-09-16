@@ -22,8 +22,13 @@ namespace Roster_Builder
         public int[] StratagemLimit { get; set; }
         public string[] customSubFactionTraits { get; set; }
         public bool antiLoop { get; set; }
+        public List<string> restrictedItems { get; set; }
 
-        public Faction() { StratagemList = new List<string>(); }
+        public Faction() 
+        { 
+            StratagemList = new List<string>(); 
+            restrictedItems = new List<string>();
+        }
 
         public abstract List<string> GetPsykerPowers(string keywords);
         public abstract List<string> GetFactionUpgrades(List<string> keywords);
@@ -40,6 +45,7 @@ namespace Roster_Builder
         public abstract void SaveSubFaction(int code, Panel panel); 
         public void DrawItemWithRestrictions(List<int> restrictedIndexes, ComboBox control)
         {
+            control.DrawMode = DrawMode.OwnerDrawFixed;
             control.DrawItem += new DrawItemEventHandler(TestDraw);
 
             void TestDraw(object sender, DrawItemEventArgs e)

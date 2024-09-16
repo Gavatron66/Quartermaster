@@ -784,51 +784,28 @@ namespace Roster_Builder
             units.SaveSubFaction(56, panelSubFaction);
         }
 
-        public void DrawItemWithRestrictions(List<int> restrictedIndexes, ListBox control)
+        private void AdjustComboBoxWidth_DropDown(object sender, System.EventArgs e)
         {
-            control.DrawItem += new DrawItemEventHandler(TestDraw);
+            ComboBox senderComboBox = (ComboBox)sender;
+            int width = senderComboBox.Width;
+            Graphics g = senderComboBox.CreateGraphics();
+            Font font = senderComboBox.Font;
+            int vertScrollBarWidth =
+                (senderComboBox.Items.Count > senderComboBox.MaxDropDownItems)
+                ? SystemInformation.VerticalScrollBarWidth : 0;
 
-            void TestDraw(object sender, DrawItemEventArgs e)
+            int newWidth;
+            foreach (var s in ((ComboBox)sender).Items)
             {
-                // Draw the background of the ListBox control for each item.
-                Brush brush = new SolidBrush(Color.LightSlateGray);
-                Brush defbrush = new SolidBrush(Color.White);
-                if (e.Index == 1)
+                newWidth = (int)g.MeasureString(s.ToString(), font).Width
+                    + vertScrollBarWidth;
+                if (width < newWidth)
                 {
-                    e.Graphics.FillRectangle(brush, e.Bounds);
+                    width = newWidth;
                 }
-                else
-                {
-                    e.Graphics.FillRectangle(defbrush, e.Bounds);
-                }
-
-                brush.Dispose();
-                defbrush.Dispose();
-                // Define the default color of the brush as black.
-                Brush myBrush = Brushes.Black;
-
-                // Determine the color of the brush to draw each item based 
-                // on the index of the item to draw.
-                //switch (e.Index)
-                //{
-                //    case 0:
-                //        myBrush = Brushes.Red;
-                //        break;
-                //    case 1:
-                //        myBrush = Brushes.Orange;
-                //        break;
-                //    case 2:
-                //        myBrush = Brushes.Purple;
-                //        break;
-                //}
-
-                // Draw the current item text based on the current Font 
-                // and the custom brush settings.
-                e.Graphics.DrawString(control.Items[e.Index].ToString(),
-                    e.Font, myBrush, e.Bounds, StringFormat.GenericDefault);
-                // If the ListBox has focus, draw a focus rectangle around the selected item.
-                e.DrawFocusRectangle();
             }
+
+            senderComboBox.DropDownWidth = width;
         }
     }
 }

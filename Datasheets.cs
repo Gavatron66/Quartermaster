@@ -163,6 +163,8 @@ namespace Roster_Builder
         public List<string> Stratagem { get; set; }
         public Faction repo { get; set; }
         public string Role { get; set; }
+        public List<int> restrictedIndexes { get; set; }
+        public List<string> factionsRestrictions { get; set; }
         public Datasheets()
         {
             Weapons = new List<string>();
@@ -171,13 +173,16 @@ namespace Roster_Builder
             Template = new Template();
             Relic = "(None)";
             Stratagem = new List<string>();
+            restrictedIndexes = new List<int>();
         }
 
         public abstract void LoadDatasheets(Panel panel, Faction f);
         public abstract void SaveDatasheets(int code, Panel panel);
         public abstract Datasheets CreateUnit(); 
+
         public void DrawItemWithRestrictions(List<int> restrictedIndexes, ComboBox control)
         {
+            control.DrawMode = DrawMode.OwnerDrawFixed;
             control.DrawItem += new DrawItemEventHandler(TestDraw);
 
             void TestDraw(object sender, DrawItemEventArgs e)

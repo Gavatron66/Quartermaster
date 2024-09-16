@@ -30,6 +30,7 @@ namespace Roster_Builder.Death_Guard
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             repo = f as DeathGuard;
+            factionsRestrictions = repo.restrictedItems;
             Template.LoadTemplate(TemplateCode, panel);
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
@@ -48,7 +49,6 @@ namespace Roster_Builder.Death_Guard
             {
                 cmbWarlord.Items.Add(item);
             }
-
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -125,6 +125,14 @@ namespace Roster_Builder.Death_Guard
 
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+            for(int i = 0; i < cmbRelic.Items.Count; i++)
+            {
+                if (repo.restrictedItems.Contains(cmbRelic.Items[i]))
+                {
+                    restrictedIndexes.Add(i);
+                }
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbRelic);
 
             if (Relic != null)
             {
@@ -181,13 +189,28 @@ namespace Roster_Builder.Death_Guard
             {
                 case 11:
                     Weapons[0] = cmb.SelectedItem.ToString();
+                    if (Weapons[0] != "Hellforged Sword (+10 pts)")
+                    {
+                        cb.Enabled = false;
+                        cb.Checked = false;
+                    }
+                    else
+                    {
+                        cb.Enabled = true;
+                    }
                     break;
                 case 21:
                     if (cb.Checked)
                     {
                         Weapons[1] = cb.Text;
+                        cb2.Enabled = false;
+                        cb2.Checked = false;
                     }
-                    else { Weapons[1] = string.Empty; }
+                    else 
+                    { 
+                        Weapons[1] = string.Empty;
+                        cb2.Enabled = true;
+                    }
                     break;
                 case 22:
                     if (cb2.Checked)
@@ -261,21 +284,6 @@ namespace Roster_Builder.Death_Guard
 
             Points = DEFAULT_POINTS;
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
-
-            if (cb.Checked && (code == 21 || code == -1))
-            {
-                cmb.Enabled = false;
-                cb2.Enabled = false;
-                cb2.Checked = false;
-                Weapons[2] = string.Empty;
-                cmb.SelectedItem = "Hellforged Sword (+10 pts)";
-            }
-            else if (code == 21)
-            {
-                cmb.Enabled = true;
-                cb2.Enabled = true;
-                Weapons[1] = string.Empty;
-            }
 
             if (Weapons.Contains("Daemonic Axe (+10 pts)") || Weapons.Contains("Hellforged Sword (+10 pts)"))
             {
