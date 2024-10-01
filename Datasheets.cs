@@ -178,7 +178,25 @@ namespace Roster_Builder
 
         public abstract void LoadDatasheets(Panel panel, Faction f);
         public abstract void SaveDatasheets(int code, Panel panel);
-        public abstract Datasheets CreateUnit(); 
+        public abstract Datasheets CreateUnit();
+
+        public virtual void RemoveFromFaction()
+        {
+            if (repo.restrictedItems.Contains(Relic))
+            {
+                repo.restrictedItems.Remove(Relic);
+            }
+
+            if (repo.restrictedItems.Contains(WarlordTrait))
+            {
+                repo.restrictedItems.Remove(WarlordTrait);
+            }
+
+            if (repo.restrictedItems.Contains(Factionupgrade))
+            {
+                repo.restrictedItems.Remove(Factionupgrade);
+            }
+        }
 
         public void DrawItemWithRestrictions(List<int> restrictedIndexes, ComboBox control)
         {

@@ -22,6 +22,20 @@ namespace Roster_Builder.Necrons
                 "Stratagem: Hand of the Phaeron"
             });
         }
+        public override void SetUpForm(Form form)
+        {
+            base.SetUpForm(form);
+
+            Panel panel = form.Controls["panel1"] as Panel;
+
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            Label lblFactionupgrade = panel.Controls["lblFactionupgrade"] as Label;
+
+            cbStratagem1.Text = StratagemList[0];
+            cbStratagem2.Text = StratagemList[1];
+            lblFactionupgrade.Text = factionUpgradeName;
+        }
 
         public override List<string> GetCustomSubfactionList1()
         {

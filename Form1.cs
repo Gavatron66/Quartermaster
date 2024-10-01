@@ -152,12 +152,11 @@ namespace Roster_Builder
             panelSubFaction.Visible = false;
 
             units = cmbSelectFaction.SelectedItem as Faction;
+            units.SetUpForm(this);
             roster.CreateNewDetachment(cmbDetachment.SelectedItem.ToString(), units, txtName.Text);
             currentDetachment = roster.Detachments[0];
             cmbCurrentDetachment.Items.Add(currentDetachment);
             cmbCurrentDetachment.SelectedIndex = 0;
-
-            List<Datasheets> datasheets = units.GetDatasheets();
 
             List<string> subFactions = units.GetSubFactions();
             foreach (var subfaction in subFactions)
@@ -251,6 +250,7 @@ namespace Roster_Builder
         private void btnRemove_Click(object sender, EventArgs e)
         {
             if (currentIndex < 0) return;
+            currentDetachment.roster[currentIndex].RemoveFromFaction();
             currentDetachment.roster.RemoveAt(currentIndex);
             currentIndex = -1;
 

@@ -43,11 +43,13 @@ namespace Roster_Builder.Death_Guard
         {
             Template.LoadTemplate(TemplateCode, panel);
             repo = f as DeathGuard;
+            factionsRestrictions = repo.restrictedItems;
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
+            ComboBox cmbFactionUpgrade = panel.Controls["cmbFactionUpgrade"] as ComboBox;
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -60,19 +62,29 @@ namespace Roster_Builder.Death_Guard
             lbModelSelect.Items.Clear();
             if (Weapons[2] == "")
             {
-                lbModelSelect.Items.Add("Plague Champion - " + Weapons[0] + "/" + Weapons[1]);
+                lbModelSelect.Items.Add("Plague Champion w/ " + Weapons[0] + " and " + Weapons[1]);
             } else
             {
-                lbModelSelect.Items.Add("Plague Champion - " + Weapons[0] + "/" + Weapons[1] + "with " + Weapons[2]);
+                lbModelSelect.Items.Add("Plague Champion w/ " + Weapons[0] + ", " + Weapons[1] + " and " + Weapons[2]);
             }
 
             for (int i = 3; i < Weapons.Count; i++)
             {
-                lbModelSelect.Items.Add("Plague Marine - " + Weapons[i]);
+                lbModelSelect.Items.Add("Plague Marine w/ " + Weapons[i]);
             }
 
             cbOption1.Text = "Icon of Despair";
             cbOption2.Text = "Sigil of Decay";
+
+            restrictedIndexes = new List<int>();
+            for (int i = 0; i < cmbFactionUpgrade.Items.Count; i++)
+            {
+                if (repo.restrictedItems.Contains(cmbFactionUpgrade.Items[i]) && Factionupgrade != cmbFactionUpgrade.Items[i].ToString())
+                {
+                    restrictedIndexes.Add(i);
+                }
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbFactionUpgrade);
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -102,7 +114,7 @@ namespace Roster_Builder.Death_Guard
                         for (int i = temp; i < UnitSize; i++)
                         {
                             Weapons.Add("Boltgun");
-                            lbModelSelect.Items.Add("Plague Marine - " + Weapons[i]);
+                            lbModelSelect.Items.Add("Plague Marine w/ " + Weapons[i + 2]);
                         }
                     }
 
@@ -121,17 +133,24 @@ namespace Roster_Builder.Death_Guard
                         Weapons[0] = cmbOption1.SelectedItem.ToString();
                         if (Weapons[2] == "")
                         {
-                            lbModelSelect.Items[currentIndex] = ("Plague Champion - " + Weapons[0] + "/" + Weapons[1]);
+                            lbModelSelect.Items[currentIndex] = ("Plague Champion w/ " + Weapons[0] + " and " + Weapons[1]);
                         }
                         else
                         {
-                            lbModelSelect.Items[currentIndex] = ("Plague Champion - " + Weapons[0] + "/" + Weapons[1] + "with " + Weapons[2]);
+                            lbModelSelect.Items[currentIndex] = ("Plague Champion w/ " + Weapons[0] + ", " + Weapons[1] + " and " + Weapons[2]);
                         }
                         break;
                     }
 
-                    Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
-                    lbModelSelect.Items[currentIndex] = "Plague Marine - " + Weapons[currentIndex + 2];
+                    if(!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    {
+                        Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
+                        lbModelSelect.Items[currentIndex] = "Plague Marine w/ " + Weapons[currentIndex + 2];
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 2]);
+                    }
                     break;
                 case 12:
                     if (currentIndex == 0)
@@ -139,11 +158,11 @@ namespace Roster_Builder.Death_Guard
                         Weapons[1] = cmbOption2.SelectedItem.ToString();
                         if (Weapons[2] == "")
                         {
-                            lbModelSelect.Items[currentIndex] = ("Plague Champion - " + Weapons[0] + "/" + Weapons[1]);
+                            lbModelSelect.Items[currentIndex] = ("Plague Champion w/ " + Weapons[0] + " and " + Weapons[1]);
                         }
                         else
                         {
-                            lbModelSelect.Items[currentIndex] = ("Plague Champion - " + Weapons[0] + "/" + Weapons[1] + "with " + Weapons[2]);
+                            lbModelSelect.Items[currentIndex] = ("Plague Champion w/ " + Weapons[0] + ", " + Weapons[1] + " and " + Weapons[2]);
                         }
                         break;
                     }
@@ -161,7 +180,7 @@ namespace Roster_Builder.Death_Guard
                         cbOption2.Enabled = true;
                         cmbOption1.Enabled = true;
                     }
-                    lbModelSelect.Items[currentIndex] = "Plague Marine - " + Weapons[currentIndex + 2];
+                    lbModelSelect.Items[currentIndex] = "Plague Marine w/ " + Weapons[currentIndex + 2];
                     break;
                 case 22:
                     if (cbOption2.Checked)
@@ -176,10 +195,36 @@ namespace Roster_Builder.Death_Guard
                         cbOption1.Enabled = true;
                         cmbOption1.Enabled = true;
                     }
-                    lbModelSelect.Items[currentIndex] = "Plague Marine - " + Weapons[currentIndex + 2];
+                    lbModelSelect.Items[currentIndex] = "Plague Marine w/ " + Weapons[currentIndex + 2];
                     break;
                 case 16:
-                    Factionupgrade = cmbFactionUpgrade.SelectedItem.ToString();
+                    if (!factionsRestrictions.Contains(cmbFactionUpgrade.Text))
+                    {
+                        if (Factionupgrade == "(None)")
+                        {
+                            Factionupgrade = cmbFactionUpgrade.Text;
+                            if (Factionupgrade != "(None)")
+                            {
+                                repo.restrictedItems.Add(Factionupgrade);
+                            }
+                        }
+                        else
+                        {
+                            repo.restrictedItems.Remove(Factionupgrade);
+                            Factionupgrade = cmbFactionUpgrade.Text;
+                            if (Factionupgrade != "(None)")
+                            {
+                                repo.restrictedItems.Add(Factionupgrade);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (Factionupgrade == "(None)")
+                        {
+                            cmbFactionUpgrade.SelectedIndex = 0;
+                        }
+                    }
                     break;
                 case 61:
                     currentIndex = lbModelSelect.SelectedIndex;
@@ -210,11 +255,11 @@ namespace Roster_Builder.Death_Guard
 
                         if (Weapons[2] == "")
                         {
-                            lbModelSelect.Items[currentIndex] = ("Plague Champion - " + Weapons[0] + "/" + Weapons[1]);
+                            lbModelSelect.Items[currentIndex] = ("Plague Champion w/ " + Weapons[0] + " and " + Weapons[1]);
                         }
                         else
                         {
-                            lbModelSelect.Items[currentIndex] = ("Plague Champion - " + Weapons[0] + "/" + Weapons[1] + " with " + Weapons[2]);
+                            lbModelSelect.Items[currentIndex] = ("Plague Champion w/ " + Weapons[0] + ", " + Weapons[1] + " and " + Weapons[2]);
                         }
                         break;
                     }
@@ -242,6 +287,7 @@ namespace Roster_Builder.Death_Guard
 
             panel.Controls["lblOption1"].Visible = true;
             cmbOption1.Visible = true;
+            restrictedIndexes = new List<int>();
 
             if (isChampion)
             {
@@ -375,8 +421,8 @@ namespace Roster_Builder.Death_Guard
                 antiLoop = false;
 
                 int[] constraintArray = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
-                //Blight Launcher, Plague Spewer, Meltagun/Plague Belcher/Plasma Gun, Plague Knife, Bubotic Axe, Mace of Contagion,
-                //      Flail of Corruption, Great Plague Cleaver
+                //Blight Launcher [0], Plague Spewer [9], Meltagun/Plague Belcher/Plasma Gun [6, 7, 10], Plague Knife [8],
+                //Bubotic Axe [2], Mace of Contagion [5], Flail of Corruption [3], Great Plague Cleaver [4]
                 
                 foreach(string Weapon in Weapons)
                 {
@@ -421,50 +467,80 @@ namespace Roster_Builder.Death_Guard
                     }
                 }
 
+                if (Weapons[0] == "Plasma Gun")
+                {
+                    constraintArray[2] -= 1;
+                }
+                if (Weapons[1] == "Plague Knife")
+                {
+                    constraintArray[3] -= 1;
+                }
+
                 if ((UnitSize == 10 && constraintArray[0] + constraintArray[1] == 3) || (UnitSize < 10 && constraintArray[0] == 1) ||
                     (UnitSize == 10 && constraintArray[0] == 2))
                 {
-                    cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Blight Launcher"));
+                    restrictedIndexes.Add(0);
                 }
 
                 if ((UnitSize == 10 && constraintArray[0] + constraintArray[1] == 3) || (UnitSize < 10 && constraintArray[1] == 1) ||
                     (UnitSize == 10 && constraintArray[1] == 2))
                 {
-                    cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Plague Spewer"));
+                    restrictedIndexes.Add(9);
                 }
 
                 if (constraintArray[2] == UnitSize / 5)
                 {
-                    cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Meltagun"));
-                    cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Plague Belcher"));
-                    cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Plasma Gun"));
+                    restrictedIndexes.AddRange(new int[] {6, 7, 10});
                 }
 
                 if (constraintArray[3] == UnitSize / 5)
                 {
-                    cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Plague Knife"));
+                    restrictedIndexes.Add(8);
                 }
 
                 if (constraintArray[4] == UnitSize / 5)
                 {
-                    cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Bubotic Axe"));
+                    restrictedIndexes.Add(2);
                 }
 
                 if (constraintArray[5] == UnitSize / 5)
                 {
-                    cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Mace of Contagion and Bubotic Axe"));
+                    restrictedIndexes.Add(5);
                 }
 
                 if (constraintArray[6] == UnitSize / 5)
                 {
-                    cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Flail of Corruption"));
+                    restrictedIndexes.Add(3);
                 }
 
                 if (constraintArray[7] == UnitSize / 5)
                 {
-                    cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Great Plague Cleaver"));
+                    restrictedIndexes.Add(4);
                 }
             }
+
+            if (restrictedIndexes.Contains(cmbOption1.Items.IndexOf(Weapons[currentIndex + 2])))
+            {
+                if (Weapons[currentIndex + 2] == "Meltagun" || Weapons[currentIndex + 2] == "Plague Belcher"
+                    || Weapons[currentIndex + 2] == "Plasma Gun")
+                {
+                    restrictedIndexes.Remove(cmbOption1.Items.IndexOf("Meltagun"));
+                    restrictedIndexes.Remove(cmbOption1.Items.IndexOf("Plague Belcher"));
+                    restrictedIndexes.Remove(cmbOption1.Items.IndexOf("Plasma Gun"));
+                }
+                else if ((Weapons[currentIndex + 2] == "Blight Launcher" || Weapons[currentIndex + 2] == "Plague Spewer")
+                    && UnitSize == 10)
+                {
+                    restrictedIndexes.Remove(cmbOption1.Items.IndexOf("Blight Launcher"));
+                    restrictedIndexes.Remove(cmbOption1.Items.IndexOf("Plague Spewer"));
+                }
+                else
+                {
+                    restrictedIndexes.Remove(cmbOption1.Items.IndexOf(Weapons[currentIndex + 2]));
+                }
+            }
+
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
         }
     }
 }

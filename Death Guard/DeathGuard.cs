@@ -25,8 +25,25 @@ namespace Roster_Builder.Death_Guard
             });
             restrictedItems.AddRange(new string[]
             {
-                "Plague Skull of Glothila"
+                "Plague Skull of Glothila",
+                "Explosive Outbreak (+15 pts)",
+                "Rotten Constitution"
             });
+        }
+
+        public override void SetUpForm(Form form)
+        {
+            base.SetUpForm(form);
+
+            Panel panel = form.Controls["panel1"] as Panel;
+
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            Label lblFactionupgrade = panel.Controls["lblFactionupgrade"] as Label;
+
+            cbStratagem1.Text = StratagemList[0];
+            cbStratagem2.Text = StratagemList[1];
+            lblFactionupgrade.Text = factionUpgradeName;
         }
 
         public override List<Datasheets> GetDatasheets()

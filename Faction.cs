@@ -23,11 +23,18 @@ namespace Roster_Builder
         public string[] customSubFactionTraits { get; set; }
         public bool antiLoop { get; set; }
         public List<string> restrictedItems { get; set; }
+        public Form1 baseForm { get; set; }
+        public ListBox lbUnits { get; set; }
 
         public Faction() 
         { 
             StratagemList = new List<string>(); 
             restrictedItems = new List<string>();
+        }
+
+        public virtual void SetUpForm(Form form)
+        {
+            lbUnits = form.Controls["lbUnits"] as ListBox;
         }
 
         public abstract List<string> GetPsykerPowers(string keywords);
@@ -43,6 +50,7 @@ namespace Roster_Builder
         public abstract bool GetIfEnabled(int index);
         public abstract void SetSubFactionPanel(Panel panel);
         public abstract void SaveSubFaction(int code, Panel panel); 
+
         public void DrawItemWithRestrictions(List<int> restrictedIndexes, ComboBox control)
         {
             control.DrawMode = DrawMode.OwnerDrawFixed;

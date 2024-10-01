@@ -27,6 +27,7 @@ namespace Roster_Builder.Death_Guard
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             repo = f as DeathGuard;
+            factionsRestrictions = repo.restrictedItems;
             Template.LoadTemplate(TemplateCode, panel);
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
@@ -63,6 +64,16 @@ namespace Roster_Builder.Death_Guard
                 cmbWarlord.Enabled = false;
             }
 
+            restrictedIndexes = new List<int>();
+            for (int i = 0; i < cmbWarlord.Items.Count; i++)
+            {
+                if (repo.restrictedItems.Contains(cmbWarlord.Items[i]) && WarlordTrait != cmbWarlord.Items[i].ToString())
+                {
+                    restrictedIndexes.Add(i);
+                }
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbWarlord);
+
             cmbFaction.Items.Clear();
             cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
 
@@ -75,6 +86,16 @@ namespace Roster_Builder.Death_Guard
                 cmbFaction.SelectedIndex = 0;
             }
 
+            restrictedIndexes = new List<int>();
+            for (int i = 0; i < cmbFaction.Items.Count; i++)
+            {
+                if (repo.restrictedItems.Contains(cmbFaction.Items[i]) && Factionupgrade != cmbFaction.Items[i].ToString())
+                {
+                    restrictedIndexes.Add(i);
+                }
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbFaction);
+
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
@@ -86,6 +107,16 @@ namespace Roster_Builder.Death_Guard
             {
                 cmbRelic.SelectedIndex = -1;
             }
+
+            restrictedIndexes = new List<int>();
+            for (int i = 0; i < cmbRelic.Items.Count; i++)
+            {
+                if (repo.restrictedItems.Contains(cmbRelic.Items[i]) && Relic != cmbRelic.Items[i].ToString())
+                {
+                    restrictedIndexes.Add(i);
+                }
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbRelic);
 
             panel.Controls["lblFactionupgrade"].Visible = true;
             panel.Controls["cmbFactionupgrade"].Visible = true;
@@ -139,22 +170,94 @@ namespace Roster_Builder.Death_Guard
                     else { this.isWarlord = false; warlord.SelectedIndex = -1; }
                     break;
                 case 15:
-                    if (warlord.SelectedIndex != -1)
+                    if (!factionsRestrictions.Contains(warlord.Text))
                     {
-                        WarlordTrait = warlord.SelectedItem.ToString();
+                        if (WarlordTrait == "")
+                        {
+                            WarlordTrait = warlord.Text;
+                            if (WarlordTrait != "")
+                            {
+                                repo.restrictedItems.Add(WarlordTrait);
+                            }
+                        }
+                        else
+                        {
+                            repo.restrictedItems.Remove(WarlordTrait);
+                            WarlordTrait = warlord.Text;
+                            if (WarlordTrait != "")
+                            {
+                                repo.restrictedItems.Add(WarlordTrait);
+                            }
+                        }
                     }
                     else
                     {
-                        WarlordTrait = string.Empty;
+                        if (WarlordTrait == "")
+                        {
+                            warlord.SelectedIndex = -1;
+                        }
                     }
-
                     break;
                 case 16:
-                    Factionupgrade = factionud.Text;
+                    if (!factionsRestrictions.Contains(factionud.Text))
+                    {
+                        if (Factionupgrade == "(None)")
+                        {
+                            Factionupgrade = factionud.Text;
+                            if (Factionupgrade != "(None)")
+                            {
+                                repo.restrictedItems.Add(Factionupgrade);
+                            }
+                        }
+                        else
+                        {
+                            repo.restrictedItems.Remove(Factionupgrade);
+                            Factionupgrade = factionud.Text;
+                            if (Factionupgrade != "(None)")
+                            {
+                                repo.restrictedItems.Add(Factionupgrade);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (Factionupgrade == "(None)")
+                        {
+                            factionud.SelectedIndex = 0;
+                        }
+                    }
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
-                    if(chosenRelic == "Ferryman's Scythe")
+                    if (!factionsRestrictions.Contains(cmbRelic.Text))
+                    {
+                        if (Relic == "(None)")
+                        {
+                            Relic = cmbRelic.Text;
+                            if (Relic != "(None)")
+                            {
+                                repo.restrictedItems.Add(Relic);
+                            }
+                        }
+                        else
+                        {
+                            repo.restrictedItems.Remove(Relic);
+                            Relic = cmbRelic.Text;
+                            if (Relic != "(None)")
+                            {
+                                repo.restrictedItems.Add(Relic);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (Relic == "(None)")
+                        {
+                            cmbRelic.SelectedIndex = 0;
+                        }
+                    }
+
+                    if (chosenRelic == "Ferryman's Scythe")
                     {
                         cmb1.SelectedIndex = 1;
                         cmb1.Enabled = false;
@@ -163,7 +266,6 @@ namespace Roster_Builder.Death_Guard
                     {
                         cmb1.Enabled = true;
                     }
-                    Relic = chosenRelic;
                     break;
                 case 71:
                     if (cbStratagem1.Checked)

@@ -37,6 +37,7 @@ namespace Roster_Builder.Death_Guard
         {
             repo = f as DeathGuard;
             Template.LoadTemplate(TemplateCode, panel);
+            factionsRestrictions = repo.restrictedItems;
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
@@ -116,6 +117,16 @@ namespace Roster_Builder.Death_Guard
                 cmbFactionupgrade.SelectedIndex = 0;
             }
 
+            restrictedIndexes = new List<int>();
+            for (int i = 0; i < cmbFactionupgrade.Items.Count; i++)
+            {
+                if (repo.restrictedItems.Contains(cmbFactionupgrade.Items[i]) && Factionupgrade != cmbFactionupgrade.Items[i].ToString())
+                {
+                    restrictedIndexes.Add(i);
+                }
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbFactionupgrade);
+
             gbUnitLeader.Controls["gb_lblFactionupgrade"].Visible = true;
             gbUnitLeader.Controls["gb_cmbFactionupgrade"].Visible = true;
         }
@@ -156,7 +167,33 @@ namespace Roster_Builder.Death_Guard
                     }
                     break;
                 case 416:
-                    Factionupgrade = cmbFactionupgrade.Text;
+                    if (!factionsRestrictions.Contains(cmbFactionupgrade.Text))
+                    {
+                        if (Factionupgrade == "(None)")
+                        {
+                            Factionupgrade = cmbFactionupgrade.Text;
+                            if (Factionupgrade != "(None)")
+                            {
+                                repo.restrictedItems.Add(Factionupgrade);
+                            }
+                        }
+                        else
+                        {
+                            repo.restrictedItems.Remove(Factionupgrade);
+                            Factionupgrade = cmbFactionupgrade.Text;
+                            if (Factionupgrade != "(None)")
+                            {
+                                repo.restrictedItems.Add(Factionupgrade);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (Factionupgrade == "(None)")
+                        {
+                            cmbFactionupgrade.SelectedIndex = 0;
+                        }
+                    }
                     break;
                 case 411:
                     Weapons[4] = gb_cmbOption1.SelectedItem.ToString();
