@@ -141,19 +141,16 @@ Last unit finished: Plague Surgeon
                     }
                     else
                     {
-                        if (WarlordTrait == "")
-                        {
-                            warlord.SelectedIndex = -1;
-                        }
+                        warlord.SelectedIndex = warlord.Items.IndexOf(WarlordTrait);
                     }
                     break;
 			
                 case 16:
-                    if(!factionsRestrictions.Contains(factionud.Text))
+                    if (!factionsRestrictions.Contains(cmbFactionUpgrade.Text))
                     {
-                        if(Factionupgrade == "(None)")
+                        if (Factionupgrade == "(None)")
                         {
-                            Factionupgrade = factionud.Text;
+                            Factionupgrade = cmbFactionUpgrade.Text;
                             if (Factionupgrade != "(None)")
                             {
                                 repo.restrictedItems.Add(Factionupgrade);
@@ -162,7 +159,7 @@ Last unit finished: Plague Surgeon
                         else
                         {
                             repo.restrictedItems.Remove(Factionupgrade);
-                            Factionupgrade = factionud.Text;
+                            Factionupgrade = cmbFactionUpgrade.Text;
                             if (Factionupgrade != "(None)")
                             {
                                 repo.restrictedItems.Add(Factionupgrade);
@@ -171,10 +168,7 @@ Last unit finished: Plague Surgeon
                     }
                     else
                     {
-                        if(Factionupgrade == "(None)")
-                        {
-                            factionud.SelectedIndex = 0;
-                        }
+                        factionud.SelectedIndex = factionud.Items.IndexOf(Factionupgrade);
                     }
                     break;
 					
@@ -202,9 +196,6 @@ Last unit finished: Plague Surgeon
                     }
                     else
                     {
-                        if (Relic == "(None)")
-                        {
-                            cmbRelic.SelectedIndex = 0;
-                        }
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
                     }
                     break;

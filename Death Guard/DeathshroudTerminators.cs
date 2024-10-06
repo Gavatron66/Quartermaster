@@ -28,6 +28,7 @@ namespace Roster_Builder.Death_Guard
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             repo = f as DeathGuard;
+            factionsRestrictions = repo.restrictedItems;
             Template.LoadTemplate(TemplateCode, panel);
 
             NumericUpDown nud = panel.Controls["nudUnitSize"] as NumericUpDown;
@@ -75,6 +76,16 @@ namespace Roster_Builder.Death_Guard
                 factionud.SelectedIndex = 0;
             }
 
+            restrictedIndexes = new List<int>();
+            for (int i = 0; i < factionud.Items.Count; i++)
+            {
+                if (repo.restrictedItems.Contains(factionud.Items[i]) && Factionupgrade != factionud.Items[i].ToString())
+                {
+                    restrictedIndexes.Add(i);
+                }
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, factionud);
+
             panel.Controls["lblFactionupgrade"].Visible = true;
             panel.Controls["cmbFactionupgrade"].Visible = true;
         }
@@ -93,7 +104,30 @@ namespace Roster_Builder.Death_Guard
                     UnitSize = int.Parse(nud.Value.ToString());
                     break;
                 case 16:
-                    Factionupgrade = factionud.Text;
+                    if (!factionsRestrictions.Contains(factionud.Text))
+                    {
+                        if (Factionupgrade == "(None)")
+                        {
+                            Factionupgrade = factionud.Text;
+                            if (Factionupgrade != "(None)")
+                            {
+                                repo.restrictedItems.Add(Factionupgrade);
+                            }
+                        }
+                        else
+                        {
+                            repo.restrictedItems.Remove(Factionupgrade);
+                            Factionupgrade = factionud.Text;
+                            if (Factionupgrade != "(None)")
+                            {
+                                repo.restrictedItems.Add(Factionupgrade);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        factionud.SelectedIndex = factionud.Items.IndexOf(Factionupgrade);
+                    }
                     break;
                 case 421:
                     if (cb.Checked)
