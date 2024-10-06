@@ -573,6 +573,11 @@ namespace Roster_Builder.Drukhari
         public override string ToString()
 		{
 			return "Drukhari";
-		}
-	}
+        }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+
+        }
+    }
 }

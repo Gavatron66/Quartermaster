@@ -416,5 +416,10 @@ namespace Roster_Builder.Genestealer_Cults
         {
             return "Genestealer Cults";
         }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+
+        }
     }
 }

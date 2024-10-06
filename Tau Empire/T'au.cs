@@ -604,5 +604,10 @@ namespace Roster_Builder.Tau_Empire
         {
             return "T'au Empire";
         }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+
+        }
     }
 }

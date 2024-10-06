@@ -51,6 +51,7 @@ namespace Roster_Builder.Death_Guard
                 cbWarlord.Checked = false;
                 cmbWarlord.Enabled = false;
             }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbWarlord);
 
             lblPsyker.Text = "Select two of the following:";
             List<string> psykerpowers = new List<string>();

@@ -492,5 +492,10 @@ namespace Roster_Builder.Necrons
         {
             return "Necrons";
         }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+
+        }
     }
 }

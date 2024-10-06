@@ -22,6 +22,7 @@ using Roster_Builder.Orks;
 using Roster_Builder.Grey_Knights;
 using Roster_Builder.Adepta_Sororitas;
 using Roster_Builder.Astra_Militarum;
+using System.Drawing.Imaging;
 
 namespace Roster_Builder
 {
@@ -32,6 +33,7 @@ namespace Roster_Builder
         int currentIndex = -1;
         Faction units;
         bool isLoading = false;
+        List<int> restrictedIndexes = new List<int>();
 
         public Form1()
         {
@@ -119,6 +121,8 @@ namespace Roster_Builder
                 new T_au(),
                 new Tyranids.Tyranids(),
             });
+
+            lbUnits.DrawItem += new DrawItemEventHandler(DrawUnitsWithRestrictions);
             #endregion
         }
 
@@ -155,6 +159,7 @@ namespace Roster_Builder
             units.SetUpForm(this);
             roster.CreateNewDetachment(cmbDetachment.SelectedItem.ToString(), units, txtName.Text);
             currentDetachment = roster.Detachments[0];
+            units.roster = currentDetachment.roster;
             cmbCurrentDetachment.Items.Add(currentDetachment);
             cmbCurrentDetachment.SelectedIndex = 0;
 
@@ -178,17 +183,20 @@ namespace Roster_Builder
             {
                 currentDetachment.name = txtName.Text;
             }
-            
+
+            units.UpdateSubFaction(true, null);
+            updateLBRoster();
         }
 
         private void btnAddToRoster_Click(object sender, EventArgs e)
         {
-            if (lbUnits.SelectedIndex >= 0)
+            if (lbUnits.SelectedIndex >= 0 && !restrictedIndexes.Contains(lbUnits.SelectedIndex))
             {
                 if (lbUnits.SelectedItem is Datasheets)
                 {
                     Datasheets newUnit = lbUnits.SelectedItem as Datasheets;
                     newUnit.repo = units;
+                    units.UpdateSubFaction(true, newUnit);
                     currentDetachment.roster.Add(newUnit.CreateUnit());
                 }
 
@@ -245,12 +253,15 @@ namespace Roster_Builder
             }
 
             toolTip1.SetToolTip(lblErrors, roster.getErrorTooltip()); */
+
+            restrictedIndexes = units.restrictedDatasheets;
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
             if (currentIndex < 0) return;
             currentDetachment.roster[currentIndex].RemoveFromFaction();
+            units.UpdateSubFaction(false, currentDetachment.roster[currentIndex]);
             currentDetachment.roster.RemoveAt(currentIndex);
             currentIndex = -1;
 
@@ -294,6 +305,7 @@ namespace Roster_Builder
 
         private void lbRoster_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lbUnits.SelectedIndex = -1;
             foreach (Control control in panel1.Controls)
             {
                 control.Visible = false;
@@ -806,6 +818,84 @@ namespace Roster_Builder
             }
 
             senderComboBox.DropDownWidth = width;
+        }
+
+        private void DrawUnitsWithRestrictions(object sender, DrawItemEventArgs e)
+        {
+            //if (e.Index < 0)
+            //{
+            //    return;
+            //}
+
+            //// Draw the background of the ListBox control for each item.
+            //Brush brush = Brushes.LightSlateGray;
+            //Brush defbrush = Brushes.White;
+            //Brush currentbrush = Brushes.LightBlue;
+
+            //if (restrictedIndexes.Contains(e.Index))
+            //{
+            //    e = new DrawItemEventArgs(e.Graphics,
+            //                      e.Font,
+            //                      e.Bounds,
+            //                      e.Index,
+            //                      e.State ^ DrawItemState.Selected,
+            //                      e.ForeColor,
+            //                      Color.Yellow); // Choose the color.
+            //}
+            //else if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+            //{
+            //    e = new DrawItemEventArgs(e.Graphics,
+            //                      e.Font,
+            //                      e.Bounds,
+            //                      e.Index,
+            //                      e.State ^ DrawItemState.Selected,
+            //                      e.ForeColor,
+            //                      Color.Yellow); // Choose the color.
+            //}
+
+            //brush.Dispose();
+            //defbrush.Dispose();
+            //currentbrush.Dispose();
+            //// Define the default color of the brush as black.
+            //Brush myBrush = Brushes.Black;
+
+            //// Draw the current item text based on the current Font 
+            //// and the custom brush settings.
+            //e.Graphics.DrawString(lbUnits.Items[e.Index].ToString(),
+            //    e.Font, myBrush, e.Bounds, StringFormat.GenericDefault);
+            //// If the ListBox has focus, draw a focus rectangle around the selected item.
+            //e.DrawFocusRectangle();
+
+            if (e.Index < 0) return;
+
+            // If the item is selected them change the back color.
+            if(restrictedIndexes.Contains(e.Index))
+            {
+                e = new DrawItemEventArgs(e.Graphics,
+                                          e.Font,
+                                          e.Bounds,
+                                          e.Index,
+                                          e.State ^ DrawItemState.Grayed,
+                                          e.ForeColor,
+                                          Color.LightSlateGray); // Choose the color.
+            }
+            else if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+                e = new DrawItemEventArgs(e.Graphics,
+                                          e.Font,
+                                          e.Bounds,
+                                          e.Index,
+                                          e.State ^ DrawItemState.Selected,
+                                          e.ForeColor,
+                                          Color.SlateBlue); // Choose the color.
+
+            // Draw the background of the ListBox control for each item.
+            e.DrawBackground();
+
+            // Draw the current item text
+            e.Graphics.DrawString(lbUnits.Items[e.Index].ToString(), e.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
+
+            // If the ListBox has focus, draw a focus rectangle around the selected item.
+            e.DrawFocusRectangle();
         }
     }
 }

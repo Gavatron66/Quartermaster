@@ -1,3 +1,6 @@
+0X - SaveSubFaction Codes
+	0 - Datasheet Added
+	1 - Datasheet Removed
 1X - Comboboxes
 	11 - cmbOption1
 	12 - cmbOption2

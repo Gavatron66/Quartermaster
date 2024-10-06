@@ -1686,5 +1686,10 @@ namespace Roster_Builder.Space_Marines
         {
             return "Space Marines";
         }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+
+        }
     }
 }

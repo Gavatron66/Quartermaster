@@ -422,5 +422,10 @@ namespace Roster_Builder.Astra_Militarum
         {
             return "Astra Militarum";
         }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+
+        }
     }
 }

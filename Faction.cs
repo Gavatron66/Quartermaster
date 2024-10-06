@@ -23,13 +23,16 @@ namespace Roster_Builder
         public string[] customSubFactionTraits { get; set; }
         public bool antiLoop { get; set; }
         public List<string> restrictedItems { get; set; }
+        public List<int> restrictedDatasheets { get; set; }
         public Form1 baseForm { get; set; }
         public ListBox lbUnits { get; set; }
+        public List<Datasheets> roster {  get; set; }
 
         public Faction() 
         { 
             StratagemList = new List<string>(); 
             restrictedItems = new List<string>();
+            restrictedDatasheets = new List<int>();
         }
 
         public virtual void SetUpForm(Form form)
@@ -50,8 +53,9 @@ namespace Roster_Builder
         public abstract bool GetIfEnabled(int index);
         public abstract void SetSubFactionPanel(Panel panel);
         public abstract void SaveSubFaction(int code, Panel panel); 
+        public abstract void UpdateSubFaction(bool code, Datasheets datasheet);
 
-        public void DrawItemWithRestrictions(List<int> restrictedIndexes, ComboBox control)
+        public void DrawItemWithRestrictions(List<int> restrictedIndexes, ListBox control)
         {
             control.DrawMode = DrawMode.OwnerDrawFixed;
             control.DrawItem += new DrawItemEventHandler(TestDraw);

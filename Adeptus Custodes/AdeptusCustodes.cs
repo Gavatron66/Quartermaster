@@ -344,5 +344,10 @@ namespace Roster_Builder.Adeptus_Custodes
         {
             return "Adeptus Custodes";
         }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+
+        }
     }
 }

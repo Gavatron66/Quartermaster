@@ -715,5 +715,10 @@ namespace Roster_Builder.Aeldari
         {
             return "Aeldari";
         }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+
+        }
     }
 }

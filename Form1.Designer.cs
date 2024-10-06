@@ -161,6 +161,7 @@
             // 
             // lbUnits
             // 
+            this.lbUnits.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.lbUnits.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUnits.FormattingEnabled = true;
             this.lbUnits.HorizontalScrollbar = true;
@@ -481,7 +482,7 @@
             this.cmbOption5.FormattingEnabled = true;
             this.cmbOption5.Location = new System.Drawing.Point(844, 399);
             this.cmbOption5.Name = "cmbOption5";
-            this.cmbOption5.Size = new System.Drawing.Size(176, 27);
+            this.cmbOption5.Size = new System.Drawing.Size(176, 28);
             this.cmbOption5.TabIndex = 85;
             this.cmbOption5.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbOption5.SelectedIndexChanged += new System.EventHandler(this.cmbOption5_SelectedIndexChanged);
@@ -503,7 +504,7 @@
             this.cmbOption6.FormattingEnabled = true;
             this.cmbOption6.Location = new System.Drawing.Point(844, 469);
             this.cmbOption6.Name = "cmbOption6";
-            this.cmbOption6.Size = new System.Drawing.Size(176, 27);
+            this.cmbOption6.Size = new System.Drawing.Size(176, 28);
             this.cmbOption6.TabIndex = 83;
             this.cmbOption6.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbOption6.SelectedIndexChanged += new System.EventHandler(this.cmbOption6_SelectedIndexChanged);
@@ -628,7 +629,7 @@
             this.gb_cmbOption2.FormattingEnabled = true;
             this.gb_cmbOption2.Location = new System.Drawing.Point(232, 141);
             this.gb_cmbOption2.Name = "gb_cmbOption2";
-            this.gb_cmbOption2.Size = new System.Drawing.Size(176, 27);
+            this.gb_cmbOption2.Size = new System.Drawing.Size(176, 28);
             this.gb_cmbOption2.TabIndex = 68;
             this.gb_cmbOption2.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.gb_cmbOption2.SelectedIndexChanged += new System.EventHandler(this.gb_cmbOption2_SelectedIndexChanged);
@@ -640,7 +641,7 @@
             this.gb_cmbFactionupgrade.FormattingEnabled = true;
             this.gb_cmbFactionupgrade.Location = new System.Drawing.Point(43, 187);
             this.gb_cmbFactionupgrade.Name = "gb_cmbFactionupgrade";
-            this.gb_cmbFactionupgrade.Size = new System.Drawing.Size(176, 27);
+            this.gb_cmbFactionupgrade.Size = new System.Drawing.Size(176, 28);
             this.gb_cmbFactionupgrade.TabIndex = 66;
             this.gb_cmbFactionupgrade.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.gb_cmbFactionupgrade.SelectedIndexChanged += new System.EventHandler(this.gb_cmbFactionupgrade_SelectedIndexChanged);
@@ -684,7 +685,7 @@
             this.gb_cmbOption1.FormattingEnabled = true;
             this.gb_cmbOption1.Location = new System.Drawing.Point(232, 107);
             this.gb_cmbOption1.Name = "gb_cmbOption1";
-            this.gb_cmbOption1.Size = new System.Drawing.Size(176, 27);
+            this.gb_cmbOption1.Size = new System.Drawing.Size(176, 28);
             this.gb_cmbOption1.TabIndex = 66;
             this.gb_cmbOption1.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.gb_cmbOption1.SelectedIndexChanged += new System.EventHandler(this.gb_cmbOption1_SelectedIndexChanged);
@@ -846,7 +847,7 @@
             this.cmbOption4.FormattingEnabled = true;
             this.cmbOption4.Location = new System.Drawing.Point(396, 258);
             this.cmbOption4.Name = "cmbOption4";
-            this.cmbOption4.Size = new System.Drawing.Size(176, 27);
+            this.cmbOption4.Size = new System.Drawing.Size(176, 28);
             this.cmbOption4.TabIndex = 59;
             this.cmbOption4.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbOption4.SelectedIndexChanged += new System.EventHandler(this.cmbOption4_SelectedIndexChanged);
@@ -868,7 +869,7 @@
             this.cmbOption3.FormattingEnabled = true;
             this.cmbOption3.Location = new System.Drawing.Point(245, 187);
             this.cmbOption3.Name = "cmbOption3";
-            this.cmbOption3.Size = new System.Drawing.Size(176, 27);
+            this.cmbOption3.Size = new System.Drawing.Size(176, 28);
             this.cmbOption3.TabIndex = 57;
             this.cmbOption3.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbOption3.SelectedIndexChanged += new System.EventHandler(this.cmbOption3_SelectedIndexChanged);
@@ -881,7 +882,7 @@
             this.cmbRelic.FormattingEnabled = true;
             this.cmbRelic.Location = new System.Drawing.Point(214, 397);
             this.cmbRelic.Name = "cmbRelic";
-            this.cmbRelic.Size = new System.Drawing.Size(176, 27);
+            this.cmbRelic.Size = new System.Drawing.Size(176, 28);
             this.cmbRelic.TabIndex = 29;
             this.cmbRelic.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbRelic.SelectedIndexChanged += new System.EventHandler(this.cmbRelic_SelectedIndexChanged);
@@ -903,7 +904,7 @@
             this.cmbFactionupgrade.FormattingEnabled = true;
             this.cmbFactionupgrade.Location = new System.Drawing.Point(214, 338);
             this.cmbFactionupgrade.Name = "cmbFactionupgrade";
-            this.cmbFactionupgrade.Size = new System.Drawing.Size(176, 27);
+            this.cmbFactionupgrade.Size = new System.Drawing.Size(176, 28);
             this.cmbFactionupgrade.TabIndex = 27;
             this.cmbFactionupgrade.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbFactionupgrade.SelectedIndexChanged += new System.EventHandler(this.cmbFactionupgrade_SelectedIndexChanged);
@@ -947,7 +948,7 @@
             this.cmbWarlord.FormattingEnabled = true;
             this.cmbWarlord.Location = new System.Drawing.Point(214, 284);
             this.cmbWarlord.Name = "cmbWarlord";
-            this.cmbWarlord.Size = new System.Drawing.Size(176, 27);
+            this.cmbWarlord.Size = new System.Drawing.Size(176, 28);
             this.cmbWarlord.TabIndex = 24;
             this.cmbWarlord.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbWarlord.SelectedIndexChanged += new System.EventHandler(this.cmbWarlord_SelectedIndexChanged);
@@ -1044,7 +1045,7 @@
             this.cmbOption1.FormattingEnabled = true;
             this.cmbOption1.Location = new System.Drawing.Point(245, 49);
             this.cmbOption1.Name = "cmbOption1";
-            this.cmbOption1.Size = new System.Drawing.Size(176, 27);
+            this.cmbOption1.Size = new System.Drawing.Size(176, 28);
             this.cmbOption1.TabIndex = 16;
             this.cmbOption1.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbOption1.SelectedIndexChanged += new System.EventHandler(this.cmbOption1_SelectedIndexChanged);
@@ -1056,7 +1057,7 @@
             this.cmbOption2.FormattingEnabled = true;
             this.cmbOption2.Location = new System.Drawing.Point(245, 83);
             this.cmbOption2.Name = "cmbOption2";
-            this.cmbOption2.Size = new System.Drawing.Size(176, 27);
+            this.cmbOption2.Size = new System.Drawing.Size(176, 28);
             this.cmbOption2.TabIndex = 18;
             this.cmbOption2.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbOption2.SelectedIndexChanged += new System.EventHandler(this.cmbOption2_SelectedIndexChanged);
@@ -1101,7 +1102,7 @@
             this.cmbSubCustom6.FormattingEnabled = true;
             this.cmbSubCustom6.Location = new System.Drawing.Point(441, 222);
             this.cmbSubCustom6.Name = "cmbSubCustom6";
-            this.cmbSubCustom6.Size = new System.Drawing.Size(176, 27);
+            this.cmbSubCustom6.Size = new System.Drawing.Size(176, 28);
             this.cmbSubCustom6.TabIndex = 42;
             this.cmbSubCustom6.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbSubCustom6.SelectedIndexChanged += new System.EventHandler(this.cmbSubCustom6_SelectedIndexChanged);
@@ -1123,7 +1124,7 @@
             this.cmbSubCustom5.FormattingEnabled = true;
             this.cmbSubCustom5.Location = new System.Drawing.Point(441, 188);
             this.cmbSubCustom5.Name = "cmbSubCustom5";
-            this.cmbSubCustom5.Size = new System.Drawing.Size(176, 27);
+            this.cmbSubCustom5.Size = new System.Drawing.Size(176, 28);
             this.cmbSubCustom5.TabIndex = 40;
             this.cmbSubCustom5.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbSubCustom5.SelectedIndexChanged += new System.EventHandler(this.cmbSubCustom5_SelectedIndexChanged);
@@ -1145,7 +1146,7 @@
             this.cmbSubCustom4.FormattingEnabled = true;
             this.cmbSubCustom4.Location = new System.Drawing.Point(441, 154);
             this.cmbSubCustom4.Name = "cmbSubCustom4";
-            this.cmbSubCustom4.Size = new System.Drawing.Size(176, 27);
+            this.cmbSubCustom4.Size = new System.Drawing.Size(176, 28);
             this.cmbSubCustom4.TabIndex = 38;
             this.cmbSubCustom4.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbSubCustom4.SelectedIndexChanged += new System.EventHandler(this.cmbSubCustom4_SelectedIndexChanged);
@@ -1167,7 +1168,7 @@
             this.cmbSubCustom3.FormattingEnabled = true;
             this.cmbSubCustom3.Location = new System.Drawing.Point(441, 120);
             this.cmbSubCustom3.Name = "cmbSubCustom3";
-            this.cmbSubCustom3.Size = new System.Drawing.Size(176, 27);
+            this.cmbSubCustom3.Size = new System.Drawing.Size(176, 28);
             this.cmbSubCustom3.TabIndex = 36;
             this.cmbSubCustom3.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbSubCustom3.SelectedIndexChanged += new System.EventHandler(this.cmbSubCustom3_SelectedIndexChanged);
@@ -1210,7 +1211,7 @@
             this.cmbSubCustom2.FormattingEnabled = true;
             this.cmbSubCustom2.Location = new System.Drawing.Point(248, 76);
             this.cmbSubCustom2.Name = "cmbSubCustom2";
-            this.cmbSubCustom2.Size = new System.Drawing.Size(176, 27);
+            this.cmbSubCustom2.Size = new System.Drawing.Size(176, 28);
             this.cmbSubCustom2.TabIndex = 32;
             this.cmbSubCustom2.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbSubCustom2.SelectedIndexChanged += new System.EventHandler(this.cmbSubCustom2_SelectedIndexChanged);
@@ -1232,7 +1233,7 @@
             this.cmbSubCustom1.FormattingEnabled = true;
             this.cmbSubCustom1.Location = new System.Drawing.Point(248, 42);
             this.cmbSubCustom1.Name = "cmbSubCustom1";
-            this.cmbSubCustom1.Size = new System.Drawing.Size(176, 27);
+            this.cmbSubCustom1.Size = new System.Drawing.Size(176, 28);
             this.cmbSubCustom1.TabIndex = 30;
             this.cmbSubCustom1.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbSubCustom1.SelectedIndexChanged += new System.EventHandler(this.cmbSubCustom1_SelectedIndexChanged);
@@ -1254,7 +1255,7 @@
             this.cmbSubFaction.FormattingEnabled = true;
             this.cmbSubFaction.Location = new System.Drawing.Point(248, 8);
             this.cmbSubFaction.Name = "cmbSubFaction";
-            this.cmbSubFaction.Size = new System.Drawing.Size(176, 27);
+            this.cmbSubFaction.Size = new System.Drawing.Size(176, 28);
             this.cmbSubFaction.TabIndex = 28;
             this.cmbSubFaction.DropDown += new System.EventHandler(this.AdjustComboBoxWidth_DropDown);
             this.cmbSubFaction.SelectedIndexChanged += new System.EventHandler(this.cmbSubFaction_SelectedIndexChanged);
@@ -1270,14 +1271,14 @@
             this.newRosterts});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 28);
             this.menuStrip1.TabIndex = 83;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // newRosterts
             // 
             this.newRosterts.Name = "newRosterts";
-            this.newRosterts.Size = new System.Drawing.Size(138, 26);
+            this.newRosterts.Size = new System.Drawing.Size(138, 24);
             this.newRosterts.Text = "New Detachment";
             this.newRosterts.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 

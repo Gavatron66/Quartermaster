@@ -436,5 +436,10 @@ namespace Roster_Builder.Adepta_Sororitas
         {
             return "Adepta Sororitas";
         }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+
+        }
     }
 }
