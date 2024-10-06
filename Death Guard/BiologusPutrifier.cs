@@ -178,10 +178,7 @@ namespace Roster_Builder.Death_Guard
                     }
                     else
                     {
-                        if (WarlordTrait == "")
-                        {
-                            warlord.SelectedIndex = -1;
-                        }
+                        warlord.SelectedIndex = warlord.Items.IndexOf(WarlordTrait);
                     }
                     break;
                 case 16:
@@ -207,10 +204,7 @@ namespace Roster_Builder.Death_Guard
                     }
                     else
                     {
-                        if (Factionupgrade == "(None)")
-                        {
-                            factionud.SelectedIndex = 0;
-                        }
+                        factionud.SelectedIndex = factionud.Items.IndexOf(Factionupgrade);
                     }
                     break;
                 case 17:
@@ -236,10 +230,7 @@ namespace Roster_Builder.Death_Guard
                     }
                     else
                     {
-                        if (Relic == "(None)")
-                        {
-                            cmbRelic.SelectedIndex = 0;
-                        }
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
                     }
                     break;
                 case 71:
