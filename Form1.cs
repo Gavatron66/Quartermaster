@@ -157,6 +157,7 @@ namespace Roster_Builder
 
             units = cmbSelectFaction.SelectedItem as Faction;
             units.SetUpForm(this);
+            units.SetPoints((int)nudSelectPoints.Value);
             roster.CreateNewDetachment(cmbDetachment.SelectedItem.ToString(), units, txtName.Text);
             currentDetachment = roster.Detachments[0];
             units.roster = currentDetachment.roster;

@@ -24,9 +24,9 @@ namespace Roster_Builder.Death_Guard
             {
                 "Stratagem: Plague-Chosen", //Warlord Stratagem
                 "Stratagem: Gifts of Decay", //Relic Stratagem
-                "Stratagem: Sevenfold Blessings", //Stratagem Code 1
-                "Stratagem: Champion of Disease", //Stratagem Code 2
-                "Stratagem: Grandfatherly Influence"
+                "Stratagem: Champion of Disease", //Stratagem Code 1
+                "Stratagem: Grandfatherly Influence", //Stratagem Code 2
+                "Stratagem: Sevenfold Blessings" // The Wretched Unique Stratagem
             });
             restrictedItems.AddRange(new string[]
             {
@@ -34,7 +34,11 @@ namespace Roster_Builder.Death_Guard
                 "Explosive Outbreak (+15 pts)",
                 "Rotten Constitution"
             });
-
+            restrictedDatasheets.AddRange(new int[]
+            {
+                9, 10
+            });
+            StratagemCount = new int[] { 0, 0, 0, 0, 0 };
         }
 
         public override void SetUpForm(Form form)
@@ -97,17 +101,26 @@ namespace Roster_Builder.Death_Guard
             };
         }
 
-        public override bool GetIfEnabled(int index)
+        public override bool GetIfEnabled(int code)
         {
-
-            /*
-            if (StratagemCount[index] < StratagemLimit[index])
+            switch(code)
             {
-                return true;
+                case 80:
+                    return !hasWarlord;
+                case 81:
+                    return !hasRelic;
+                case 82:
+                    return StratagemCount[0] == StratagemLimit[0];
+                case 83:
+                    return StratagemCount[1] == StratagemLimit[1];
+                case 84:
+                    return StratagemCount[2] == StratagemLimit[2];
+                case 85:
+                    return StratagemCount[3] == StratagemLimit[3];
+                case 86:
+                    return StratagemCount[4] == StratagemLimit[4];
             }
 
-            return false;
-            */
             return true;
         }
 
@@ -303,12 +316,13 @@ namespace Roster_Builder.Death_Guard
         public override void SetPoints(int points)
         {
             StratagemCount = new int[] { 0, 0, 0, 0, 0 };
-            StratagemLimit = new int[] { points / 1000, points / 1000, 1, points / 1000, 99 };
+            StratagemLimit = new int[] { points / 1000, points / 1000, points / 1000, 3, 1 };
 
             if (points < 1000)
             {
                 StratagemLimit[0] = 1;
                 StratagemLimit[1] = 1;
+                StratagemLimit[2] = 1;
             }
         }
 
@@ -379,7 +393,7 @@ namespace Roster_Builder.Death_Guard
                     if(datasheet.Keywords.Contains("LORD OF THE DEATH GUARD"))
                     {
                         restrictedDatasheets.Add(1);
-                        restrictedDatasheets.Add(2);
+                        //restrictedDatasheets.Add(2);
                         restrictedDatasheets.Add(3);
                         restrictedDatasheets.Add(4);
                         restrictedDatasheets.Add(5);
@@ -456,10 +470,6 @@ namespace Roster_Builder.Death_Guard
                 plagueFollower--;
                 restrictedDatasheets.Add(9);
             }
-            else
-            {
-                restrictedDatasheets.Add(9);
-            }
 
             if (poxwalkers < coreInfantry)
             {
@@ -469,10 +479,6 @@ namespace Roster_Builder.Death_Guard
             {
                 roster.RemoveAt(roster.FindIndex(d => d.ToString().Contains("Poxwalkers")));
                 poxwalkers--;
-                restrictedDatasheets.Add(10);
-            }
-            else
-            {
                 restrictedDatasheets.Add(10);
             }
         }

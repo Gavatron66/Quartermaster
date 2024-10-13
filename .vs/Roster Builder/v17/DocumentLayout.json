@@ -3,40 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\evans\\Desktop\\Quartermaster\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\death guard\\dg_chaoslord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\dg_chaoslord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\death guard\\deathguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\death guard\\deathguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\deathguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\death guard\\typhus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\typhus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\death guard\\poxwalkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\poxwalkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\detachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\datasheets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:datasheets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\death guard\\typhus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\typhus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\death guard\\poxwalkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\poxwalkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\detachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:detachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\death guard\\mortarion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\death guard\\mortarion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\mortarion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\datasheets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:datasheets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,17 +54,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAAF4DAAAAAAAAAAAAAHkDAAAAAAAA",
+              "ViewState": "AQIAAF4DAAAAAAAAAAAAAHYDAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-03T22:43:17.811Z",
               "IsPinned": true,
@@ -68,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Template.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeDocumentMoniker": "Template.cs",
@@ -81,7 +85,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -100,7 +104,7 @@
               "RelativeDocumentMoniker": "Death Guard\\DeathGuard.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DeathGuard.cs",
               "RelativeToolTip": "Death Guard\\DeathGuard.cs",
-              "ViewState": "AQIAAH4BAAAAAAAAAAAswKkBAAA3AAAA",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAIwG4AAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-16T00:35:03.146Z",
               "IsPinned": true,
@@ -108,13 +112,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Faction.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Faction.cs",
               "RelativeDocumentMoniker": "Faction.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Faction.cs",
               "RelativeToolTip": "Faction.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAwwBwAAAA1AAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAA0wBwAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T01:02:04.415Z",
               "IsPinned": true,
@@ -122,13 +126,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "Datasheets.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Datasheets.cs",
               "RelativeDocumentMoniker": "Datasheets.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Datasheets.cs",
               "RelativeToolTip": "Datasheets.cs",
-              "ViewState": "AQIAALQAAAAAAAAAAIAxwKsAAAAoAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T01:02:03.421Z",
               "IsPinned": true,
@@ -136,7 +140,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "DG_ChaosLord.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DG_ChaosLord.cs",
+              "RelativeDocumentMoniker": "Death Guard\\DG_ChaosLord.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DG_ChaosLord.cs",
+              "RelativeToolTip": "Death Guard\\DG_ChaosLord.cs",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAswIMAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T21:39:35.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Typhus.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\Typhus.cs",
               "RelativeDocumentMoniker": "Death Guard\\Typhus.cs",
@@ -144,12 +161,11 @@
               "RelativeToolTip": "Death Guard\\Typhus.cs",
               "ViewState": "AQIAAB4AAAAAAAAAAAAYwC0AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T22:07:48.24Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-06T22:07:48.24Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Poxwalkers.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\Poxwalkers.cs",
               "RelativeDocumentMoniker": "Death Guard\\Poxwalkers.cs",
@@ -157,12 +173,11 @@
               "RelativeToolTip": "Death Guard\\Poxwalkers.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T21:49:56.552Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-06T21:49:56.552Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Detachment.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Detachment.cs",
               "RelativeDocumentMoniker": "Detachment.cs",
@@ -170,12 +185,11 @@
               "RelativeToolTip": "Detachment.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T20:39:50.219Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-06T20:39:50.219Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Mortarion.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\Mortarion.cs",
               "RelativeDocumentMoniker": "Death Guard\\Mortarion.cs",
@@ -183,8 +197,7 @@
               "RelativeToolTip": "Death Guard\\Mortarion.cs",
               "ViewState": "AQIAAGkAAAAAAAAAAAAWwHoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T17:31:54.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-06T17:31:54.477Z"
             }
           ]
         }

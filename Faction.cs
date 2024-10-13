@@ -26,7 +26,9 @@ namespace Roster_Builder
         public List<int> restrictedDatasheets { get; set; }
         public Form1 baseForm { get; set; }
         public ListBox lbUnits { get; set; }
-        public List<Datasheets> roster {  get; set; }
+        public List<Datasheets> roster { get; set; }
+        public bool hasWarlord { get; set; }
+        public bool hasRelic { get; set; }
 
         public Faction() 
         { 

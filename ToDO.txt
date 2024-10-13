@@ -5,7 +5,7 @@
 	Make everything look nicer and more readable
 2.) Save/Load Features
 	Self-explanatory
-3.) Stratagems and Misc. Fixes
+3.) Stratagems and Misc. Fixes ---IN PROGRESS---
 	Implement Stratagems properly
 	Ensure Faction upgrades work the way they're supposed to
 	The fixes on the rest of this list
@@ -15,15 +15,6 @@
 	The Biggest and Baddest
 	Want to provide support for 10th and maybe 8th edition
 	along with Horus Heresy and potentially Age of Sigmar (we'll see how the next edition handles list building when the time comes)
-
-Models to add checks for Numeric Up Down controls:
-	Death Guard Cultists
-	Necron Warriors
-	Hybrid Metamorphs
-	InvaderATVs
-	Sicarian Infiltrators
-	Sicarian Ruststalkers
-	Tactical Drones
 		
 Provide an error if a datasheet has not selected enough Psychic Powers
 
@@ -79,9 +70,7 @@ Need to implement the relics for Drukhari, Deathwatch, Space Wolves
 
 Switching between detachments appears to broken, need to look in on that
 
-Last unit finished: Plague Surgeon
-	Add the points increase for adding more models to a unit of variable size
-	My switch-case statement is flawed, should be an easy fix but I'll have to go through everything once more
+Last unit finished: Death Guard
 	
 
 			
