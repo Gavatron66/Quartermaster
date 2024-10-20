@@ -393,7 +393,7 @@ namespace Roster_Builder.Death_Guard
                     if(datasheet.Keywords.Contains("LORD OF THE DEATH GUARD"))
                     {
                         restrictedDatasheets.Add(1);
-                        //restrictedDatasheets.Add(2);
+                        restrictedDatasheets.Add(2);
                         restrictedDatasheets.Add(3);
                         restrictedDatasheets.Add(4);
                         restrictedDatasheets.Add(5);

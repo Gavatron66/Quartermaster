@@ -44,11 +44,18 @@ namespace Roster_Builder.Death_Guard
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
-            cmbWarlord.Items.Clear();
-            List<string> traits = repo.GetWarlordTraits("");
-            foreach (var item in traits)
+            if(repo.hasWarlord)
             {
-                cmbWarlord.Items.Add(item);
+                cbWarlord.Enabled = false;
+            }
+            else
+            {
+                cmbWarlord.Items.Clear();
+                List<string> traits = repo.GetWarlordTraits("");
+                foreach (var item in traits)
+                {
+                    cmbWarlord.Items.Add(item);
+                }
             }
 
             cbOption1.Text = "Bolt Pistol";
@@ -129,6 +136,14 @@ namespace Roster_Builder.Death_Guard
                 clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
             }
 
+            if (repo.hasRelic)
+            {
+                cmbRelic.Enabled = false;
+            }
+            else
+            {
+                cmbRelic.Enabled = true;
+            }
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
@@ -204,8 +219,9 @@ namespace Roster_Builder.Death_Guard
                     if (isWarlord.Checked)
                     {
                         this.isWarlord = true;
+                        repo.hasWarlord = true;
                     }
-                    else { this.isWarlord = false; warlord.SelectedIndex = -1; }
+                    else { this.isWarlord = false; repo.hasWarlord = false; warlord.SelectedIndex = -1; }
                     break;
                 case 15:
                     if (!factionsRestrictions.Contains(warlord.Text))
@@ -265,6 +281,12 @@ namespace Roster_Builder.Death_Guard
                         if (Relic == "(None)")
                         {
                             Relic = cmbRelic.Text;
+                            if(!repo.hasRelic && Relic != "(None)")
+                            {
+                                hasFreeRelic = true;
+                                repo.hasRelic = true;
+                            }
+
                             if (Relic != "(None)")
                             {
                                 repo.restrictedItems.Add(Relic);
@@ -278,11 +300,20 @@ namespace Roster_Builder.Death_Guard
                             {
                                 repo.restrictedItems.Add(Relic);
                             }
+                            else
+                            {
+                                if(repo.hasRelic && hasFreeRelic)
+                                {
+                                    hasFreeRelic = false;
+                                    repo.hasRelic = false;
+                                }
+                            }
                         }
                     }
                     else
                     {
                         cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                        cmbRelic.Enabled = true;
                     }
                     break;
                 case 60:

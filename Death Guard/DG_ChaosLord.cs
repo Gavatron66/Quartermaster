@@ -45,7 +45,6 @@ namespace Roster_Builder.Death_Guard
                 cmb.Items.Add(item);
             }
 
-
             if (isWarlord)
             {
                 cb.Checked = true;

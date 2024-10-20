@@ -71,6 +71,20 @@ Need to implement the relics for Drukhari, Deathwatch, Space Wolves
 Switching between detachments appears to broken, need to look in on that
 
 Last unit finished: Death Guard
+Characters:
+	DG Chaos Lord
+	DG Terminator Lord
+	DG Daemon Prince
+	DG Terminator Sorcerer
+	Lord of Contagion
+	Lord of Virulence
+	**Malignant Plaguecaster
+	Typhus
+	Biologus Putrifier
+	Foul Blightspawn
+	Noxious Blightbringer
+	Plague Surgeon
+	Tallyman
 	
 
 			
