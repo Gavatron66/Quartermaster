@@ -78,13 +78,23 @@ Characters:
 	DG Terminator Sorcerer
 	Lord of Contagion
 	Lord of Virulence
-	**Malignant Plaguecaster
+	Malignant Plaguecaster
 	Typhus
 	Biologus Putrifier
 	Foul Blightspawn
 	Noxious Blightbringer
 	Plague Surgeon
 	Tallyman
+Sevenfold Blessings:
+	DG Daemon Prince
+	DG Terminator Sorcerer
+	Malignant Plaguecaster
+Champion of Disease:
+	Plague Marines
+	Blightlord Terminators
+	Deathshroud Terminators
+Grandfatherly Influence:
+	Chaos Spawn
 	
 
 			
@@ -181,7 +191,13 @@ Characters:
                     {
                         if (Relic == "(None)")
                         {
-                            Relic = cmbRelic.Text;
+                            Relic = cmbRelic.Text == "" ? "(None)" : cmbRelic.Text;
+                            if(!repo.hasRelic && Relic != "(None)")
+                            {
+                                hasFreeRelic = true;
+                                repo.hasRelic = true;
+                            }
+
                             if (Relic != "(None)")
                             {
                                 repo.restrictedItems.Add(Relic);
@@ -195,10 +211,77 @@ Characters:
                             {
                                 repo.restrictedItems.Add(Relic);
                             }
+                            else
+                            {
+                                if(repo.hasRelic && hasFreeRelic)
+                                {
+                                    hasFreeRelic = false;
+                                    repo.hasRelic = false;
+                                }
+                            }
                         }
                     }
                     else
                     {
                         cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                        cmbRelic.Enabled = true;
                     }
                     break;
+					
+                case 25:
+                    if (cbWarlord.Checked)
+                    {
+                        this.isWarlord = true;
+                        repo.hasWarlord = true;
+                    }
+                    else { this.isWarlord = false; repo.hasWarlord = false; warlord.SelectedIndex = -1; }
+                    break;
+					
+					
+	
+            if (repo.hasWarlord && !isWarlord)
+            {
+                cbWarlord.Enabled = false;
+            }
+            else
+            {
+                cmbWarlord.Items.Clear();
+                List<string> traits = repo.GetWarlordTraits("");
+                foreach (var item in traits)
+                {
+                    cmbWarlord.Items.Add(item);
+                }
+            }
+			
+            if (isWarlord)
+            {
+                cbWarlord.Checked = true;
+                cmbWarlord.Enabled = true;
+                cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
+            }
+            else
+            {
+                cbWarlord.Checked = false;
+                cmbWarlord.Enabled = false;
+            }
+			
+            if (repo.hasRelic && Relic == "(None)")
+            {
+                cmbRelic.Enabled = false;
+                cmbRelic.SelectedIndex = -1;
+            }
+            else
+            {
+                cmbRelic.Enabled = true;
+                cmbRelic.Items.Clear();
+                cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
+                if (Relic != null)
+                {
+                    cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                }
+                else
+                {
+                    cmbRelic.SelectedIndex = -1;
+                }
+            }

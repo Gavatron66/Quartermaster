@@ -44,7 +44,7 @@ namespace Roster_Builder.Death_Guard
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
-            if(repo.hasWarlord)
+            if(repo.hasWarlord && !isWarlord)
             {
                 cbWarlord.Enabled = false;
             }
@@ -136,24 +136,25 @@ namespace Roster_Builder.Death_Guard
                 clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
             }
 
-            if (repo.hasRelic)
+            if (repo.hasRelic && Relic == "(None)")
             {
                 cmbRelic.Enabled = false;
+                cmbRelic.SelectedIndex = -1;
             }
             else
             {
                 cmbRelic.Enabled = true;
-            }
-            cmbRelic.Items.Clear();
-            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+                cmbRelic.Items.Clear();
+                cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null)
-            {
-                cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
-            }
-            else
-            {
-                cmbRelic.SelectedIndex = -1;
+                if (Relic != null)
+                {
+                    cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                }
+                else
+                {
+                    cmbRelic.SelectedIndex = -1;
+                }
             }
 
             restrictedIndexes = new List<int>();
@@ -280,7 +281,7 @@ namespace Roster_Builder.Death_Guard
                     {
                         if (Relic == "(None)")
                         {
-                            Relic = cmbRelic.Text;
+                            Relic = cmbRelic.Text == "" ? "(None)" : cmbRelic.Text;
                             if(!repo.hasRelic && Relic != "(None)")
                             {
                                 hasFreeRelic = true;

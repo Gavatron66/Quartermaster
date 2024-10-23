@@ -357,7 +357,7 @@ namespace Roster_Builder.Death_Guard
 
                     if (datasheet is Mortarion)
                     {
-                        for (int i = 1; i < roster.Count; i++)
+                        for (int i = 0; i < roster.Count; i++)
                         {
                             Datasheets unit = roster[i] as Datasheets;
 
@@ -367,12 +367,12 @@ namespace Roster_Builder.Death_Guard
                             {
                                 restrictedItems.Remove(unit.WarlordTrait);
                                 unit.WarlordTrait = string.Empty;
-
                             }
 
                             if (unit.isWarlord)
                             {
                                 unit.isWarlord = false;
+                                unit.WarlordTrait = string.Empty;
                             }
                         }
 
