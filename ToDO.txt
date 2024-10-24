@@ -70,7 +70,7 @@ Need to implement the relics for Drukhari, Deathwatch, Space Wolves
 
 Switching between detachments appears to broken, need to look in on that
 
-Last unit finished: Death Guard
+Last unit finished: DG Daemon Prince
 Characters:
 	DG Chaos Lord
 	DG Terminator Lord

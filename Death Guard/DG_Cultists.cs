@@ -189,10 +189,7 @@ namespace Roster_Builder.Death_Guard
                     }
                     else
                     {
-                        if (Factionupgrade == "(None)")
-                        {
-                            cmbFactionupgrade.SelectedIndex = 0;
-                        }
+                        cmbFactionupgrade.SelectedIndex = cmbFactionupgrade.Items.IndexOf(Factionupgrade);
                     }
                     break;
                 case 411:
