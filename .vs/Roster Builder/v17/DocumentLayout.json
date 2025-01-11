@@ -3,52 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\evans\\Desktop\\Quartermaster\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\death guard\\dg_daemonprince.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\dg_daemonprince.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\imperial knights\\imperialknights.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:imperial knights\\imperialknights.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\datasheets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:datasheets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\imperial knights\\armigerhelverin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:imperial knights\\armigerhelverin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\death guard\\plaguemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\plaguemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\death guard\\dg_cultists.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\dg_cultists.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\death guard\\dg_chaoslord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\dg_chaoslord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\death guard\\deathshroudterminators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\deathshroudterminators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\space marines\\space wolves\\bjornthefellhanded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\space wolves\\bjornthefellhanded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\detachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:detachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\death guard\\deathguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\deathguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\necrons\\chronomancer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:necrons\\chronomancer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\aeldari\\autarchskyrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\autarchskyrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adepta sororitas\\adeptasororitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\adeptasororitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\astra militarum\\astramilitarum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\astramilitarum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\death guard\\deathguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\deathguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\datasheets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:datasheets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
@@ -68,27 +76,29 @@
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAAEgBAAAAAAAAAAAewGABAAAIAAAA",
+              "ViewState": "AQIAAB0BAAAAAAAAAAAAwCsBAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-03T22:43:17.811Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
               "Title": "Template.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeDocumentMoniker": "Template.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeToolTip": "Template.cs",
-              "ViewState": "AQIAAB8FAAAAAAAAAAAAwEYKAAAjAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAAAAKQAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-05T03:46:42.246Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -96,17 +106,18 @@
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-09T02:26:45.093Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "DeathGuard.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DeathGuard.cs",
               "RelativeDocumentMoniker": "Death Guard\\DeathGuard.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DeathGuard.cs",
               "RelativeToolTip": "Death Guard\\DeathGuard.cs",
-              "ViewState": "AQIAAF4BAAAAAAAAAAAkwGUBAAAvAAAA",
+              "ViewState": "AQIAAKgAAAAAAAAAAAAQwGUBAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-16T00:35:03.146Z",
               "IsPinned": true,
@@ -114,26 +125,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "Faction.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Faction.cs",
               "RelativeDocumentMoniker": "Faction.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Faction.cs",
               "RelativeToolTip": "Faction.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB4AAAAqAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAIBJwB4AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T01:02:04.415Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 12,
               "Title": "Datasheets.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Datasheets.cs",
               "RelativeDocumentMoniker": "Datasheets.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Datasheets.cs",
               "RelativeToolTip": "Datasheets.cs",
-              "ViewState": "AQIAAJsAAAAAAAAAAAA9wKYAAAA4AAAA",
+              "ViewState": "AQIAAL4AAAAAAAAAAAAowKYAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T01:02:03.421Z",
               "IsPinned": true,
@@ -141,72 +153,99 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PlagueMarines.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\PlagueMarines.cs",
-              "RelativeDocumentMoniker": "Death Guard\\PlagueMarines.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\PlagueMarines.cs",
-              "RelativeToolTip": "Death Guard\\PlagueMarines.cs",
-              "ViewState": "AQIAAPEBAAAAAAAAAAAswA4CAABTAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T01:52:10.299Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DG_DaemonPrince.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DG_DaemonPrince.cs",
-              "RelativeDocumentMoniker": "Death Guard\\DG_DaemonPrince.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DG_DaemonPrince.cs",
-              "RelativeToolTip": "Death Guard\\DG_DaemonPrince.cs",
-              "ViewState": "AQIAAN0AAAAAAAAAAAAUwOkAAAAZAAAA",
+              "Title": "ImperialKnights.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\ImperialKnights.cs",
+              "RelativeDocumentMoniker": "Imperial Knights\\ImperialKnights.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\ImperialKnights.cs",
+              "RelativeToolTip": "Imperial Knights\\ImperialKnights.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T01:43:44.704Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DG_Cultists.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DG_Cultists.cs",
-              "RelativeDocumentMoniker": "Death Guard\\DG_Cultists.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DG_Cultists.cs",
-              "RelativeToolTip": "Death Guard\\DG_Cultists.cs",
-              "ViewState": "AQIAAKkAAAAAAAAAAAAkwLYAAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T01:39:09.099Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DG_ChaosLord.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DG_ChaosLord.cs",
-              "RelativeDocumentMoniker": "Death Guard\\DG_ChaosLord.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DG_ChaosLord.cs",
-              "RelativeToolTip": "Death Guard\\DG_ChaosLord.cs",
-              "ViewState": "AQIAAC0BAAAAAAAAAAAewD0BAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T01:14:40.787Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DeathshroudTerminators.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DeathshroudTerminators.cs",
-              "RelativeDocumentMoniker": "Death Guard\\DeathshroudTerminators.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DeathshroudTerminators.cs",
-              "RelativeToolTip": "Death Guard\\DeathshroudTerminators.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T01:34:12.489Z",
+              "WhenOpened": "2025-01-11T03:29:34.509Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "Chronomancer.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Necrons\\Chronomancer.cs",
+              "RelativeDocumentMoniker": "Necrons\\Chronomancer.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Necrons\\Chronomancer.cs",
+              "RelativeToolTip": "Necrons\\Chronomancer.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAAwCUAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T04:13:23.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BjornTheFellHanded.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Space Wolves\\BjornTheFellHanded.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Space Wolves\\BjornTheFellHanded.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Space Wolves\\BjornTheFellHanded.cs",
+              "RelativeToolTip": "Space Marines\\Space Wolves\\BjornTheFellHanded.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAxwBAAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T04:13:17.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ArmigerHelverin.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\ArmigerHelverin.cs",
+              "RelativeDocumentMoniker": "Imperial Knights\\ArmigerHelverin.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\ArmigerHelverin.cs",
+              "RelativeToolTip": "Imperial Knights\\ArmigerHelverin.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAiwCoAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T04:06:37.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AutarchSkyrunner.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\AutarchSkyrunner.cs",
+              "RelativeDocumentMoniker": "Aeldari\\AutarchSkyrunner.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\AutarchSkyrunner.cs",
+              "RelativeToolTip": "Aeldari\\AutarchSkyrunner.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T04:05:49.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdeptaSororitas.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\AdeptaSororitas.cs",
+              "RelativeDocumentMoniker": "Adepta Sororitas\\AdeptaSororitas.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\AdeptaSororitas.cs",
+              "RelativeToolTip": "Adepta Sororitas\\AdeptaSororitas.cs",
+              "ViewState": "AQIAAJMBAAAAAAAAAAAqwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T03:53:39.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AstraMilitarum.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\AstraMilitarum.cs",
+              "RelativeDocumentMoniker": "Astra Militarum\\AstraMilitarum.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\AstraMilitarum.cs",
+              "RelativeToolTip": "Astra Militarum\\AstraMilitarum.cs",
+              "ViewState": "AQIAAPMAAAAAAAAAAAAIwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T03:48:16.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Detachment.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Detachment.cs",
               "RelativeDocumentMoniker": "Detachment.cs",
@@ -214,7 +253,8 @@
               "RelativeToolTip": "Detachment.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T20:39:50.219Z"
+              "WhenOpened": "2024-10-06T20:39:50.219Z",
+              "EditorCaption": ""
             }
           ]
         }

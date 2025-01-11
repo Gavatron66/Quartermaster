@@ -68,7 +68,7 @@ namespace Roster_Builder.Imperial_Knights
             var datasheets = new List<Datasheets>()
             {
                 //---------- Lord of War ----------
-                //new ArmigerHelverin(),
+                new ArmigerHelverin(),
                 //new ArmigerWarglaive(),
                 //new KnightErrant(),
                 //new KnightWarden(),
@@ -86,7 +86,24 @@ namespace Roster_Builder.Imperial_Knights
 
         public override int GetFactionUpgradePoints(string upgrade)
         {
-            throw new NotImplementedException();
+            if (upgrade.Contains("45 pts"))
+            {
+                return 45;
+            }
+            else if (upgrade.Contains("35 pts"))
+            {
+                return 35;
+            }
+            else if (upgrade.Contains("30 pts"))
+            {
+                return 30;
+            }
+            else if (upgrade.Contains("20 pts"))
+            {
+                return 20;
+            }
+
+            return 0;
         }
 
         public override List<string> GetFactionUpgrades(List<string> keywords)
@@ -94,16 +111,16 @@ namespace Roster_Builder.Imperial_Knights
             List<string> upgrades = new List<string>()
             {
                 "(None)",
-                "Master of Justice",
-                "High Monarch",
-                "Monarchsward",
-                "Gatekeeper",
-                "Herald",
-                "Princeps",
-                "Forge Master",
-                "Master Tactician",
-                "Master of Lore",
-                "Master of Vox"
+                "Master of Justice (+30 pts)",
+                "High Monarch (+45 pts)",
+                "Monarchsward (+35 pts)",
+                "Gatekeeper (+35 pts)",
+                "Herald (+20 pts)",
+                "Princeps (+35 pts)",
+                "Forge Master (+30 pts)",
+                "Master Tactician (+30 pts)",
+                "Master of Lore (+35 pts)",
+                "Master of Vox (+20 pts)"
             };
 
             return upgrades;
@@ -111,12 +128,20 @@ namespace Roster_Builder.Imperial_Knights
 
         public override bool GetIfEnabled(int index)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public override List<string> GetPsykerPowers(string keywords)
         {
-            throw new NotImplementedException();
+            return new List<string>
+            {
+                "The Virtue of Courage",
+                "The Oath of Justice",
+                "The Folly of Mercy",
+                "The Knight's Faith",
+                "The Warrior's Hope",
+                "The Wisdom of Nobility"
+            };
         }
 
         public override List<string> GetRelics(List<string> keywords)
@@ -144,27 +169,49 @@ namespace Roster_Builder.Imperial_Knights
 
         public override List<string> GetSubFactions()
         {
-            throw new NotImplementedException();
+            return new List<string>()
+            {
+                string.Empty,
+                "House Terryn",
+                "House Griffith",
+                "House Cadmus",
+                "House Hawkshroud",
+                "House Mortan",
+                "House Raven",
+                "House Taranis",
+                "House Krast",
+                "House Vulker",
+                "<Custom>"
+            };
         }
 
         public override List<string> GetWarlordTraits(string keyword)
         {
-            throw new NotImplementedException();
+            return new List<string>()
+            {
+                string.Empty,
+                "Cunning Commander",
+                "Blessed by the Sacristans",
+                "Ion Bulwark",
+                "Knight Seneschal",
+                "Landstrider",
+                "Revered Knight"
+            };
         }
 
         public override void SaveSubFaction(int code, Panel panel)
         {
-            throw new NotImplementedException();
+
         }
 
         public override void SetPoints(int points)
         {
-            throw new NotImplementedException();
+
         }
 
         public override void SetSubFactionPanel(Panel panel)
         {
-            throw new NotImplementedException();
+
         }
 
         public override string ToString()

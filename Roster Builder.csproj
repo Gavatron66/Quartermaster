@@ -411,6 +411,7 @@
     <Compile Include="Grey Knights\PurgationSquad.cs" />
     <Compile Include="Grey Knights\Purifiers.cs" />
     <Compile Include="Grey Knights\StrikeSquad.cs" />
+    <Compile Include="Imperial Knights\ArmigerHelverin.cs" />
     <Compile Include="Imperial Knights\ImperialKnights.cs" />
     <Compile Include="Necrons\AnnihilationBarge.cs" />
     <Compile Include="Necrons\Anrakyr.cs" />

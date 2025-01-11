@@ -23,6 +23,7 @@ using Roster_Builder.Grey_Knights;
 using Roster_Builder.Adepta_Sororitas;
 using Roster_Builder.Astra_Militarum;
 using System.Drawing.Imaging;
+using Roster_Builder.Imperial_Knights;
 
 namespace Roster_Builder
 {
@@ -88,6 +89,7 @@ namespace Roster_Builder
                 new GreyKnights(),
                 new GSC(),
                 new Harlequins(),
+                new ImperialKnights(),
                 new Necrons.Necrons(),
                 new Orks.Orks(),
                 new SpaceMarines(),
@@ -115,6 +117,7 @@ namespace Roster_Builder
                 new GreyKnights(),
                 new GSC(),
                 new Harlequins(),
+                new ImperialKnights(),
                 new Necrons.Necrons(),
                 new Orks.Orks(),
                 new SpaceMarines(),
