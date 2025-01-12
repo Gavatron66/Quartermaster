@@ -14,7 +14,7 @@ namespace Roster_Builder.Imperial_Knights
             DEFAULT_POINTS = 155;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m_c";
-            Weapons.Add("Meltagun");
+            Weapons.Add("Meltagun (+5 pts)");
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "IMPERIAL KNIGHTS", "<QUESTOR ALLEGIANCE>", "<NOBLE HOUSEHOLD>",
@@ -58,12 +58,12 @@ namespace Roster_Builder.Imperial_Knights
             cmbOption1.Items.AddRange(new string[]
             {
                 "Heavy Stubber",
-                "Meltagun"
+                "Meltagun (+5 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
             cmbWarlord.Items.Clear();
-            List<string> traits = repo.GetWarlordTraits("");
+            List<string> traits = repo.GetWarlordTraits("Armiger");
             foreach (var item in traits)
             {
                 cmbWarlord.Items.Add(item);
@@ -192,6 +192,10 @@ namespace Roster_Builder.Imperial_Knights
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
+            if (Weapons[0] == "Meltagun (+5 pts)")
+            {
+                Points += 5;
+            }
         }
 
         public override string ToString()

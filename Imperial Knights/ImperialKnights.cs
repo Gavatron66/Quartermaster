@@ -69,16 +69,16 @@ namespace Roster_Builder.Imperial_Knights
             {
                 //---------- Lord of War ----------
                 new ArmigerHelverin(),
-                //new ArmigerWarglaive(),
-                //new KnightErrant(),
-                //new KnightWarden(),
-                //new KnightCrusader(),
-                //new KnightGallant(),
-                //new KnightPaladin(),
-                //new KnightCastellan(),
-                //new KnightValiant(),
-                //new KnightPreceptor(),
-                //new CanisRex(),
+                new ArmigerWarglaive(),
+                new KnightErrant(),
+                new KnightWarden(),
+                new KnightCrusader(),
+                new KnightGallant(),
+                new KnightPaladin(),
+                new KnightCastellan(),
+                new KnightValiant(),
+                new KnightPreceptor(),
+                new CanisRex(),
             };
 
             return datasheets;
@@ -86,6 +86,11 @@ namespace Roster_Builder.Imperial_Knights
 
         public override int GetFactionUpgradePoints(string upgrade)
         {
+            if(upgrade == null)
+            {
+                return 0;
+            }
+
             if (upgrade.Contains("45 pts"))
             {
                 return 45;
@@ -187,6 +192,17 @@ namespace Roster_Builder.Imperial_Knights
 
         public override List<string> GetWarlordTraits(string keyword)
         {
+            if(keyword == "Armiger")
+            {
+                return new List<string>()
+                {
+                    string.Empty,
+                    "Cunning Commander",
+                    "Blessed by the Sacristans",
+                    "Ion Bulwark"
+                };
+            }
+
             return new List<string>()
             {
                 string.Empty,
@@ -201,7 +217,30 @@ namespace Roster_Builder.Imperial_Knights
 
         public override void SaveSubFaction(int code, Panel panel)
         {
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+            ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
+            Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
 
+            switch (code)
+            {
+                case 50:
+                    currentSubFaction = cmbSubFaction.SelectedItem.ToString();
+                    if (currentSubFaction == "<Custom>")
+                    {
+                        cmbSubCustom1.Visible = true;
+                        lblSubCustom1.Visible = true;
+                    }
+                    else
+                    {
+                        cmbSubCustom1.Visible = false;
+                        lblSubCustom1.Visible = false;
+                        customSubFactionTraits = new string[1];
+                    }
+                    break;
+                case 51:
+                    customSubFactionTraits[0] = cmbSubCustom1.SelectedItem.ToString();
+                    break;
+            }
         }
 
         public override void SetPoints(int points)
@@ -211,7 +250,42 @@ namespace Roster_Builder.Imperial_Knights
 
         public override void SetSubFactionPanel(Panel panel)
         {
+            if (antiLoop)
+            {
+                return;
+            }
 
+            antiLoop = true;
+            Template template = new Template();
+            template.LoadFactionTemplate(2, panel);
+
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+            ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
+            Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
+
+            if (currentSubFaction != "<Custom>")
+            {
+                cmbSubCustom1.Visible = false;
+                lblSubCustom1.Visible = false;
+            }
+            else
+            {
+                cmbSubCustom1.Visible = true;
+                lblSubCustom1.Visible = true;
+            }
+
+            cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
+            panel.BringToFront();
+
+            cmbSubCustom1.Items.Clear();
+
+            cmbSubCustom1.Items.AddRange(this.GetCustomSubfactionList1().ToArray());
+
+            if (customSubFactionTraits[0] != null)
+            {
+                cmbSubCustom1.SelectedIndex = cmbSubCustom1.Items.IndexOf(customSubFactionTraits[0]);
+            }
+            antiLoop = false;
         }
 
         public override string ToString()

@@ -943,7 +943,7 @@ namespace Roster_Builder
                     panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 127);
 
                     panel.Controls["lblPsyker"].Visible = true;
-                    panel.Controls["lblPsyker"].Location = new System.Drawing.Point(86, 160);
+                    panel.Controls["lblPsyker"].Location = new System.Drawing.Point(86, 165);
 
                     panel.Controls["clbPsyker"].Visible = true;
                     panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 193);
@@ -1085,6 +1085,63 @@ namespace Roster_Builder
 
                     panel.Controls["cbStratagem2"].Visible = true;
                     panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(294, 389);
+
+                    break;
+                #endregion
+                #region case "3m_pc"
+                case "3m_pc":
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 25);
+
+                    panel.Controls["lblOption2"].Visible = true;
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 63);
+
+                    panel.Controls["cmbOption2"].Visible = true;
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 59);
+
+                    panel.Controls["lblOption3"].Visible = true;
+                    panel.Controls["lblOption3"].Location = new System.Drawing.Point(86, 97);
+
+                    panel.Controls["cmbOption3"].Visible = true;
+                    panel.Controls["cmbOption3"].Location = new System.Drawing.Point(311, 93);
+
+                    panel.Controls["lblPsyker"].Visible = true;
+                    panel.Controls["lblPsyker"].Location = new System.Drawing.Point(86, 127);
+
+                    panel.Controls["clbPsyker"].Visible = true;
+                    panel.Controls["clbPsyker"].Location = new System.Drawing.Point(85, 160);
+
+                    panel.Controls["lblPsykerList"].Location = new System.Drawing.Point(83, 308);
+
+                    panel.Controls["cmbDiscipline"].Location = new System.Drawing.Point(85, 331);
+
+                    panel.Controls["cbWarlord"].Visible = true;
+                    panel.Controls["cbWarlord"].Location = new System.Drawing.Point(298, 130);
+
+                    panel.Controls["lblWarlord"].Visible = true;
+                    panel.Controls["lblWarlord"].Location = new System.Drawing.Point(294, 157);
+
+                    panel.Controls["cmbWarlord"].Visible = true;
+                    panel.Controls["cmbWarlord"].Location = new System.Drawing.Point(296, 180);
+
+                    panel.Controls["lblRelic"].Visible = true;
+                    panel.Controls["lblRelic"].Location = new System.Drawing.Point(296, 209); //294, 67
+
+                    panel.Controls["cmbRelic"].Visible = true;
+                    panel.Controls["cmbRelic"].Location = new System.Drawing.Point(296, 233); //298,90
+
+                    panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(290, 264);
+
+                    panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(294, 287);
+
+                    panel.Controls["cbStratagem1"].Visible = true;
+                    panel.Controls["cbStratagem1"].Location = new System.Drawing.Point(298, 331);
+
+                    panel.Controls["cbStratagem2"].Visible = true;
+                    panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(298, 361);
 
                     break;
                 #endregion
@@ -3381,6 +3438,11 @@ namespace Roster_Builder
                     panel.Controls["lblSubCustomCLB"].Location = new System.Drawing.Point(103, 41);
 
                     panel.Controls["clbSubCustom"].Location = new System.Drawing.Point(103, 71);
+                    break;
+                case 2:
+                    panel.Controls["lblSubCustom1"].Location = new System.Drawing.Point(103, 41);
+
+                    panel.Controls["cmbSubCustom1"].Location = new System.Drawing.Point(268, 38);
                     break;
                 default:
                     break;
