@@ -9,6 +9,8 @@ namespace Roster_Builder.Imperial_Knights
 {
     public class ImperialKnights : Faction
     {
+        string allegiance = string.Empty;
+
         public ImperialKnights()
         {
             subFactionName = "Noble Household";
@@ -21,25 +23,39 @@ namespace Roster_Builder.Imperial_Knights
                 "Stratagem: Heirlooms of the Household",
                 "Stratagem: Revered Paragon",
             });
+
         }
 
         public override List<string> GetCustomSubfactionList1()
         {   //For Custom Households
-            return new List<string>
+            if(allegiance == "Questor Imperialis")
             {
-                "Front-line Fighters",
-                "Glorified History",
-                "Hunters of Beasts",
-                "Noble Combatants",
-                "Paragons of Honour",
-                "Strike and Shield",
-                "Blessed Arms",
-                "Fealty to the Cog",
-                "Honoured Sacristans",
-                "Machine Focus",
-                "Steel-Sinewed Aim",
-                "Unremitting"
-            };
+                return new List<string>
+                {
+                    "Front-line Fighters",
+                    "Glorified History",
+                    "Hunters of Beasts",
+                    "Noble Combatants",
+                    "Paragons of Honour",
+                    "Strike and Shield",
+                };
+            }
+            else if (allegiance == "Questor Mechanicus")
+            {
+                return new List<string>
+                {
+                    "Blessed Arms",
+                    "Fealty to the Cog",
+                    "Honoured Sacristans",
+                    "Machine Focus",
+                    "Steel-Sinewed Aim",
+                    "Unremitting"
+                };
+            }
+            else
+            {
+                return new List<string> { "Something went wrong, you shouldn't see this" };
+            }
         }
 
         public override List<string> GetCustomSubfactionList2()
@@ -154,20 +170,76 @@ namespace Roster_Builder.Imperial_Knights
             List<string> relics = new List<string>();
 
             relics.Add("(None)");
-            relics.Add("Sanctuary"); //Questoris/Armiger Class
-            relics.Add("Ravager"); //Reaper Chainsword
-            relics.Add("Helm of the Nameless Warrior"); //Questor Imperialis Questoris/Armiger Class
-            relics.Add("The Helm Dominatus"); //Questoris Class w/ Bondsman ability
-            relics.Add("Endless Fury"); //Avenger Gatling Cannon
-            relics.Add("The Bastard's Helm"); //Armiger-class
-            relics.Add("Mark of the Omnissiah"); //Questor Mechanicus Questoris/Armiger Class
-            relics.Add("Banner of Macharius Triumphant"); //Questor Imperialis Questoris Class
-            relics.Add("Mentor's Seal"); //Knight Preceptor
-            relics.Add("The Heart of Ion"); //Questor Mechanicus Questoris/Armiger Class
-            relics.Add("The Paragon Gauntlet"); //Thunderstrike Gauntlet
-            relics.Add("Traitor's Pyre"); //Questor Imperialis Knight Valiant
-            relics.Add("Cawl's Wrath"); //Questor Mechanicus Knight Castellan
-            relics.Add("Judgement"); //Stormspear Rocket Pod
+
+            if(!keywords.Contains("DOMINUS-CLASS"))
+            {
+                relics.Add("Sanctuary"); //Questoris/Armiger Class
+            }
+
+            if(keywords.Contains("QUESTORIS-CLASS") && !keywords.Contains("KNIGHT CRUSADER"))
+            {
+                relics.Add("Ravager"); //Reaper Chainsword
+            }
+
+            if(allegiance == "Questor Imperialis" && !keywords.Contains("DOMINUS-CLASS"))
+            {
+                relics.Add("Helm of the Nameless Warrior"); //Questor Imperialis Questoris/Armiger Class
+            }
+
+            if (keywords.Contains("QUESTORIS-CLASS") && !keywords.Contains("KNIGHT PRECEPTOR"))
+            {
+                relics.Add("The Helm Dominatus"); //Questoris Class w/ Bondsman ability
+            }
+
+            if(keywords.Contains("KNIGHT CRUSADER") || keywords.Contains("KNIGHT WARDEN"))
+            {
+                relics.Add("Endless Fury"); //Avenger Gatling Cannon
+            }
+
+            if(keywords.Contains("ARMIGER-CLASS"))
+            {
+                relics.Add("The Bastard's Helm"); //Armiger-class
+            }
+
+            if (allegiance == "Questor Mechanicus" && !keywords.Contains("DOMINUS-CLASS"))
+            {
+                relics.Add("Mark of the Omnissiah"); //Questor Mechanicus Questoris/Armiger Class
+            }
+
+            if (allegiance == "Questor Imperialis" && !keywords.Contains("DOMINUS-CLASS"))
+            {
+                relics.Add("Banner of Macharius Triumphant"); //Questor Imperialis Questoris Class
+            }
+
+            if(keywords.Contains("KNIGHT PRECEPTOR"))
+            {
+                relics.Add("Mentor's Seal"); //Knight Preceptor
+            }
+
+            if (allegiance == "Questor Mechanicus" && !keywords.Contains("DOMINUS-CLASS"))
+            {
+                relics.Add("The Heart of Ion"); //Questor Mechanicus Questoris/Armiger Class
+            }
+
+            if (keywords.Contains("QUESTORIS-CLASS") && !keywords.Contains("KNIGHT CRUSADER"))
+            {
+                relics.Add("The Paragon Gauntlet"); //Thunderstrike Gauntlet
+            }
+
+            if (allegiance == "Questor Imperialis" && keywords.Contains("KNIGHT VALIANT"))
+            {
+                relics.Add("Traitor's Pyre"); //Questor Imperialis Knight Valiant
+            }
+
+            if (allegiance == "Questor Mechanicus" && keywords.Contains("KNIGHT CASTELLAN"))
+            {
+                relics.Add("Cawl's Wrath"); //Questor Mechanicus Knight Castellan
+            }
+
+            if(keywords.Contains("QUESTORIS-CLASS"))
+            {
+                relics.Add("Judgement"); //Stormspear Rocket Pod
+            }
 
             return relics;
         }
@@ -219,7 +291,9 @@ namespace Roster_Builder.Imperial_Knights
         {
             ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
             ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
+            ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
             Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
+            Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
 
             switch (code)
             {
@@ -228,17 +302,47 @@ namespace Roster_Builder.Imperial_Knights
                     if (currentSubFaction == "<Custom>")
                     {
                         cmbSubCustom1.Visible = true;
+                        cmbSubCustom2.Visible = true;
                         lblSubCustom1.Visible = true;
+                        lblSubCustom2.Visible = true;
                     }
                     else
                     {
                         cmbSubCustom1.Visible = false;
+                        cmbSubCustom2.Visible = false;
                         lblSubCustom1.Visible = false;
-                        customSubFactionTraits = new string[1];
+                        lblSubCustom2.Visible = false;
+                        customSubFactionTraits = new string[2];
                     }
+
+                    if(cmbSubFaction.SelectedIndex > 0 && cmbSubFaction.SelectedIndex <= 5)
+                    {
+                        allegiance = "Questor Imperialis";
+                    }
+                    else if(cmbSubFaction.SelectedIndex > 6 && cmbSubFaction.SelectedIndex != 10)
+                    {
+                        allegiance = "Questor Mechanicus";
+                    }
+
                     break;
                 case 51:
                     customSubFactionTraits[0] = cmbSubCustom1.SelectedItem.ToString();
+                    allegiance = cmbSubCustom1.SelectedItem.ToString();
+
+                    if(cmbSubCustom1.SelectedIndex == 0)
+                    {
+                        cmbSubCustom2.Items.Clear();
+                        cmbSubCustom2.Items.AddRange(this.GetCustomSubfactionList1().ToArray());
+                    }
+                    else if (cmbSubCustom1.SelectedIndex == 1)
+                    {
+                        cmbSubCustom2.Items.Clear();
+                        cmbSubCustom2.Items.AddRange(this.GetCustomSubfactionList1().ToArray());
+                    }
+
+                    break;
+                case 52:
+                    customSubFactionTraits[1] = cmbSubCustom2.SelectedItem.ToString();
                     break;
             }
         }
@@ -257,29 +361,40 @@ namespace Roster_Builder.Imperial_Knights
 
             antiLoop = true;
             Template template = new Template();
-            template.LoadFactionTemplate(2, panel);
+            template.LoadFactionTemplate(3, panel);
 
             ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
             ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
+            ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
             Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
+            Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
 
             if (currentSubFaction != "<Custom>")
             {
                 cmbSubCustom1.Visible = false;
+                cmbSubCustom2.Visible = false;
                 lblSubCustom1.Visible = false;
+                lblSubCustom2.Visible = false;
             }
             else
             {
                 cmbSubCustom1.Visible = true;
+                cmbSubCustom2.Visible = true;
                 lblSubCustom1.Visible = true;
+                lblSubCustom2.Visible = true;
             }
 
             cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
             panel.BringToFront();
 
             cmbSubCustom1.Items.Clear();
+            cmbSubCustom2.Items.Clear();
 
-            cmbSubCustom1.Items.AddRange(this.GetCustomSubfactionList1().ToArray());
+            cmbSubCustom1.Items.AddRange(new string[]
+            {
+                "Questor Imperialis",
+                "Questor Mechanicus"
+            });
 
             if (customSubFactionTraits[0] != null)
             {
