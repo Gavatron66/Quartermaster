@@ -225,16 +225,22 @@ namespace Roster_Builder.Necrons
             return upgrades;
         }
 
-        public override bool GetIfEnabled(int index)
+        public override bool GetIfEnabled(int code)
         {
-            /*
-            if (StratagemCount[index] < StratagemLimit[index])
+            switch (code)
             {
-                return true;
+                case 80:
+                    return !hasWarlord;
+                case 81:
+                    return !hasRelic;
+                case 82:
+                    return StratagemCount[0] == StratagemLimit[0];
+                case 83:
+                    return StratagemCount[1] == StratagemLimit[1];
+                case 84:
+                    return StratagemCount[2] == StratagemLimit[2];
             }
 
-            return false;
-            */
             return true;
         }
 
@@ -357,12 +363,15 @@ namespace Roster_Builder.Necrons
                 "Honourable Combatant"
             };
 
-            if(currentSubFaction == "Mephrit") { traits.Add("Merciless Tyrant"); }
-            else if (currentSubFaction == "Nephrekh") { traits.Add("Skin of Living Gold"); }
-            else if (currentSubFaction == "Nihilakh") { traits.Add("Precognitive Strike"); }
-            else if (currentSubFaction == "Novokh") { traits.Add("Blood-fuelled Fury"); }
-            else if (currentSubFaction == "Sautekh") { traits.Add("Hyperlogical Strategist"); }
-            else if (currentSubFaction == "Szarekhan") { traits.Add("The Triarch's Will"); }
+            if (currentSubFaction != string.Empty)
+            {
+                if (currentSubFaction == "Mephrit") { traits.Add("Merciless Tyrant"); }
+                else if (currentSubFaction == "Nephrekh") { traits.Add("Skin of Living Gold"); }
+                else if (currentSubFaction == "Nihilakh") { traits.Add("Precognitive Strike"); }
+                else if (currentSubFaction == "Novokh") { traits.Add("Blood-fuelled Fury"); }
+                else if (currentSubFaction == "Sautekh") { traits.Add("Hyperlogical Strategist"); }
+                else if (currentSubFaction == "Szarekhan") { traits.Add("The Triarch's Will"); }
+            }
 
             return traits;
         }

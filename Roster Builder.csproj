@@ -423,6 +423,7 @@
     <Compile Include="Imperial Knights\KnightValiant.cs" />
     <Compile Include="Imperial Knights\KnightWarden.cs" />
     <Compile Include="Imperial Knights\KnightErrant.cs" />
+    <Compile Include="Leagues of Votann\LeaguesOfVotann.cs" />
     <Compile Include="Necrons\AnnihilationBarge.cs" />
     <Compile Include="Necrons\Anrakyr.cs" />
     <Compile Include="Necrons\CanoptekDoomstalker.cs" />

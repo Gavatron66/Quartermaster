@@ -464,22 +464,36 @@ namespace Roster_Builder.Death_Guard
             {
                 restrictedDatasheets.Remove(9);
             }
-            else if (plagueFollower > coreInfantry)
+            else if (plagueFollower >= coreInfantry)
             {
-                roster.RemoveAt(roster.FindIndex(d => d.ToString().Contains("Cultists")));
-                plagueFollower--;
-                restrictedDatasheets.Add(9);
+                if(plagueFollower != coreInfantry)
+                {
+                    roster.RemoveAt(roster.FindIndex(d => d.ToString().Contains("Cultists")));
+                    plagueFollower--;
+                }
+
+                if(!restrictedDatasheets.Contains(9))
+                {
+                    restrictedDatasheets.Add(9);
+                }
             }
 
             if (poxwalkers < coreInfantry)
             {
                 restrictedDatasheets.Remove(10);
             }
-            else if (poxwalkers > coreInfantry)
+            else if (poxwalkers >= coreInfantry)
             {
-                roster.RemoveAt(roster.FindIndex(d => d.ToString().Contains("Poxwalkers")));
-                poxwalkers--;
-                restrictedDatasheets.Add(10);
+                if(poxwalkers != coreInfantry)
+                {
+                    roster.RemoveAt(roster.FindIndex(d => d.ToString().Contains("Poxwalkers")));
+                    poxwalkers--;
+                }
+
+                if (!restrictedDatasheets.Contains(10))
+                {
+                    restrictedDatasheets.Add(10);
+                }
             }
         }
     }
