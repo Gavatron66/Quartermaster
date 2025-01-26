@@ -57,7 +57,14 @@ namespace Roster_Builder.Necrons
             lbModelSelect.Items.Clear();
             for (int i = 0; i < UnitSize; i++)
             {
-                lbModelSelect.Items.Add("Canoptek Wraith");
+                if (Weapons[(i * 2) + 1] == "(None)")
+                {
+                    lbModelSelect.Items.Add("Canoptek Wraith w/ " + Weapons[i * 2]);
+                }
+                else
+                {
+                    lbModelSelect.Items.Add("Canoptek Wraith w/ " + Weapons[i * 2] + " and " + Weapons[(i * 2) + 1]);
+                }
             }
 
             cmbOption1.Items.Clear();
@@ -92,9 +99,27 @@ namespace Roster_Builder.Necrons
             {
                 case 11:
                     Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
+
+                    if (Weapons[(currentIndex * 2) + 1] == "(None)")
+                    {
+                        lbModelSelect.Items[currentIndex] = "Canoptek Wraith w/ " + Weapons[currentIndex * 2];
+                    }
+                    else
+                    {
+                        lbModelSelect.Items[currentIndex] = "Canoptek Wraith w/ " + Weapons[currentIndex * 2] + " and " + Weapons[(currentIndex * 2) + 1];
+                    }
                     break;
                 case 12:
                     Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
+
+                    if (Weapons[(currentIndex * 2) + 1] == "(None)")
+                    {
+                        lbModelSelect.Items[currentIndex] = "Canoptek Wraith w/ " + Weapons[currentIndex * 2];
+                    }
+                    else
+                    {
+                        lbModelSelect.Items[currentIndex] = "Canoptek Wraith w/ " + Weapons[currentIndex * 2] + " and " + Weapons[(currentIndex * 2) + 1];
+                    }
                     break;
                 case 30:
                     int temp = UnitSize;
@@ -102,9 +127,9 @@ namespace Roster_Builder.Necrons
 
                     if (temp < UnitSize)
                     {
-                        lbModelSelect.Items.Add("Canoptek Wraith");
                         Weapons.Add("Vicious Claws");
                         Weapons.Add("(None)");
+                        lbModelSelect.Items.Add("Canoptek Wraith w/ " + Weapons[temp]);
                     }
 
                     if (temp > UnitSize)

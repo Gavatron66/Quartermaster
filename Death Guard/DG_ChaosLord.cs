@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Roster_Builder.Tyranids;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -217,7 +218,15 @@ namespace Roster_Builder.Death_Guard
                         this.isWarlord = true;
                         repo.hasWarlord = true;
                     }
-                    else { this.isWarlord = false; repo.hasWarlord = false; cmbWarlord.SelectedIndex = -1; }
+                    else
+                    {
+                        if (this.isWarlord)
+                        {
+                            repo.hasWarlord = false;
+                        }
+                        this.isWarlord = false;
+                        cmbWarlord.SelectedIndex = -1;
+                    }
                     break;
                 case 15:
                     if (!factionsRestrictions.Contains(cmbWarlord.Text))

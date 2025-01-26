@@ -44,7 +44,7 @@ namespace Roster_Builder.Death_Guard
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
-            if(repo.hasWarlord && !isWarlord)
+            if (repo.hasWarlord && !isWarlord)
             {
                 cbWarlord.Enabled = false;
             }
@@ -58,16 +58,6 @@ namespace Roster_Builder.Death_Guard
                 }
             }
 
-            cbOption1.Text = "Bolt Pistol";
-            if (Weapons[0] != string.Empty)
-            {
-                cbOption1.Checked = true;
-            }
-            else
-            {
-                cbOption1.Checked = false;
-            }
-
             if (isWarlord)
             {
                 cbWarlord.Checked = true;
@@ -78,6 +68,16 @@ namespace Roster_Builder.Death_Guard
             {
                 cbWarlord.Checked = false;
                 cmbWarlord.Enabled = false;
+            }
+
+            cbOption1.Text = "Bolt Pistol";
+            if (Weapons[0] != string.Empty)
+            {
+                cbOption1.Checked = true;
+            }
+            else
+            {
+                cbOption1.Checked = false;
             }
 
             restrictedIndexes = new List<int>();
@@ -222,7 +222,15 @@ namespace Roster_Builder.Death_Guard
                         this.isWarlord = true;
                         repo.hasWarlord = true;
                     }
-                    else { this.isWarlord = false; repo.hasWarlord = false; warlord.SelectedIndex = -1; }
+                    else
+                    {
+                        if (this.isWarlord)
+                        {
+                            repo.hasWarlord = false;
+                        }
+                        this.isWarlord = false;
+                        warlord.SelectedIndex = -1;
+                    }
                     break;
                 case 15:
                     if (!factionsRestrictions.Contains(warlord.Text))
@@ -282,7 +290,7 @@ namespace Roster_Builder.Death_Guard
                         if (Relic == "(None)")
                         {
                             Relic = cmbRelic.Text == "" ? "(None)" : cmbRelic.Text;
-                            if(!repo.hasRelic && Relic != "(None)")
+                            if (!repo.hasRelic && Relic != "(None)")
                             {
                                 hasFreeRelic = true;
                                 repo.hasRelic = true;
@@ -303,7 +311,7 @@ namespace Roster_Builder.Death_Guard
                             }
                             else
                             {
-                                if(repo.hasRelic && hasFreeRelic)
+                                if (repo.hasRelic && hasFreeRelic)
                                 {
                                     hasFreeRelic = false;
                                     repo.hasRelic = false;

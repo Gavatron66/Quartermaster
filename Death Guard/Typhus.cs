@@ -38,13 +38,23 @@ namespace Roster_Builder.Death_Guard
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
 
             cmbWarlord.Items.Clear();
-            cmbWarlord.Items.Add("Shamblerot (Contagion)");
-            cmbWarlord.SelectedIndex = 0;
+
+            if (repo.hasWarlord && !isWarlord)
+            {
+                cbWarlord.Enabled = false;
+            }
+            else
+            {
+                cmbWarlord.Items.Clear();
+                cmbWarlord.Items.Add("Shamblerot (Contagion)");
+                cmbWarlord.SelectedIndex = 0;
+            }
 
             if (isWarlord)
             {
                 cbWarlord.Checked = true;
                 cmbWarlord.Enabled = true;
+                cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
             }
             else
             {
@@ -90,11 +100,17 @@ namespace Roster_Builder.Death_Guard
                     if (isWarlord.Checked)
                     {
                         this.isWarlord = true;
-                        warlord.Text = WarlordTrait;
-                        warlord.Enabled = false;
-                        repo.restrictedItems.Add(WarlordTrait);
+                        repo.hasWarlord = true;
                     }
-                    else { this.isWarlord = false; }
+                    else
+                    {
+                        if (this.isWarlord)
+                        {
+                            repo.hasWarlord = false;
+                        }
+                        this.isWarlord = false;
+                        warlord.SelectedIndex = -1;
+                    }
                     break;
                 case 60:
                     if (clb.CheckedItems.Count < 2)

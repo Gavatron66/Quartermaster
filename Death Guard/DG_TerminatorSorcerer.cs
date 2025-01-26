@@ -233,7 +233,15 @@ namespace Roster_Builder.Death_Guard
                         this.isWarlord = true;
                         repo.hasWarlord = true;
                     }
-                    else { this.isWarlord = false; repo.hasWarlord = false; warlord.SelectedIndex = -1; }
+                    else
+                    {
+                        if (this.isWarlord)
+                        {
+                            repo.hasWarlord = false;
+                        }
+                        this.isWarlord = false;
+                        warlord.SelectedIndex = -1;
+                    }
                     break;
                 case 15:
                     if (!factionsRestrictions.Contains(warlord.Text))

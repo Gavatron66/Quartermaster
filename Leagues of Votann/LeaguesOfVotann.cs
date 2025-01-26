@@ -54,16 +54,35 @@ namespace Roster_Builder.Leagues_of_Votann
 
         public override List<Datasheets> GetDatasheets()
         {
-            throw new NotImplementedException();
+            return new List<Datasheets>()
+            {
+                //---------- HQ ----------
+                //new ÛtharTheDestined(),
+                //new Kâhl(),
+                //new EinhyrChampion(),
+                //new Grimnyr(),
+                //new BrôkhyrIronMaster(),
+                //---------- Troops ----------
+                //new HearthkynWarriors(),
+                //---------- Elites ----------
+                //new EinhyrHearthguard(),
+                //new CthonianBeserks(),
+                //---------- Fast Attack ----------
+                //new HernkynPioneers(),
+                //new Sagitaur(),
+                //---------- Heavy Support ----------
+                //new BrôkhyrThunderkyn(),
+                //new HekatonLandFortress()
+            };
         }
 
         public override int GetFactionUpgradePoints(string upgrade)
         {
-            if(upgrade == "High Kahl (+40 pts)")
+            if(upgrade == "High Kâhl (+40 pts)")
             {
                 return 40;
             }
-            else if (upgrade != "High Kahl (+40 pts)")
+            else if (upgrade != "High Kâhl (+40 pts)")
             {
                 return 20;
             }
@@ -78,41 +97,55 @@ namespace Roster_Builder.Leagues_of_Votann
             return new List<string>()
             {
                 "(None)",
-                "High Kahl (+40 pts)",
+                "High Kâhl (+40 pts)",
                 "Lord Grimnyr (+25 pts)",
-                "Brokhyr Forge-master (+25 pts)"
+                "Brôkhyr Forge-master (+25 pts)"
             };
         }
 
         public override bool GetIfEnabled(int index)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public override List<string> GetPsykerPowers(string keywords)
         {
-            throw new NotImplementedException();
+            return new List<string>()
+            {
+                "Interface Echo",
+                "Fortify",
+                "Ancestral Wrath",
+                "Grudgepyre",
+                "Null Vortex",
+                "Crushing Contempt"
+            };
         }
 
         public override List<string> GetRelics(List<string> keywords)
         {
             List<string> relics = new List<string>();
-
+            
             relics.Add("(None)");
-            relics.Add("Aktol's Fortress");
+            relics.Add("Aktôl's Fortress");
             relics.Add("Ancestral Crest");
             relics.Add("Exactor");
             relics.Add("The First Knife");
-            relics.Add("Flayre");
+            relics.Add("Flâyre");
             relics.Add("Wayfarer's Grace");
             relics.Add("The Grey Crest");
             relics.Add("Grudge's End");
-            relics.Add("Warpestryk");
+            relics.Add("Wârpestryk");
             relics.Add("The Hearthfist");
             relics.Add("The Murmuring Stave");
             relics.Add("Thyrikite Plate");
-            relics.Add("Volumm's Master Artifice");
-            relics.Add("Ymma's Shield");
+            relics.Add("Vôlumm's Master Artifice");
+            relics.Add("Ymmâ's Shield");
+
+            if (currentSubFaction == "Greater Thurian Legaue") { relics.Add("Kôrvyk's Cuirass"); }
+            else if (currentSubFaction == "Trans-Hyperian Alliance") { relics.Add("The CORV Duas"); }
+            else if (currentSubFaction == "Kronus Hegemony") { relics.Add("The Just Blade"); }
+            else if (currentSubFaction == "Ymyr Conglomerate") { relics.Add("The Last Crest of Jâluk"); }
+            else if (currentSubFaction == "Urani-Surtr Regulates") { relics.Add("The Abiding Mantle"); }
 
             return relics;
         }
@@ -133,27 +166,45 @@ namespace Roster_Builder.Leagues_of_Votann
 
         public override List<string> GetWarlordTraits(string keyword)
         {
-            throw new NotImplementedException();
+            List<string> traits = new List<string>();
+
+            traits.AddRange(new string[]
+            {
+                "Ancestral Bearing",
+                "Warrior Lord",
+                "A Long List",
+                "Guild Affiliate",
+                "Unrelenting Toil",
+                "Grim Demeanour"
+            });
+
+            if (currentSubFaction == "Greater Thurian League") { traits.Add("Pragmatic Wisdom"); }
+            else if (currentSubFaction == "Trans-Hyperian Alliance") { traits.Add("Nomad Strategist"); }
+            else if (currentSubFaction == "Kronus Hegemony") { traits.Add("Exemplary Hero"); }
+            else if (currentSubFaction == "Ymyr Conglomerate") { traits.Add("Guild Connections"); }
+            else if (currentSubFaction == "Urani-Surtr Regulates") { traits.Add("Grim Pragmatism"); }
+
+            return traits;
         }
 
         public override void SaveSubFaction(int code, Panel panel)
         {
-            throw new NotImplementedException();
+
         }
 
         public override void SetPoints(int points)
         {
-            throw new NotImplementedException();
+
         }
 
         public override void SetSubFactionPanel(Panel panel)
         {
-            throw new NotImplementedException();
+
         }
 
         public override void UpdateSubFaction(bool code, Datasheets datasheet)
         {
-            throw new NotImplementedException();
+
         }
     }
 }

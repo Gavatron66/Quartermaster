@@ -73,7 +73,7 @@ Switching between detachments appears to broken, need to look in on that
 Rule of 3?
 	Applies to all non-Troops or non-Dedicated Transports
 
-Last unit finished: DG Daemon Prince
+Last unit finished: Mortarion
 
 UPDATE (01/10/2025) - I was working on Warlord and Relic restrictions! Following the list alphabetically
 

@@ -164,19 +164,19 @@ namespace Roster_Builder.Necrons
 
             if(thirty.Contains(upgrade))
             {
-                points += 30;
+                points += 25;
             }
             else if (twentyFive.Contains(upgrade))
             {
-                points += 25;
+                points += 20;
             }
             else if (twenty.Contains(upgrade))
             {
-                points += 20;
+                points += 15;
             }
             else if (fifteen.Contains(upgrade))
             {
-                points += 15;
+                points += 10;
             }
 
             return points;

@@ -14,6 +14,7 @@ namespace Roster_Builder.Death_Guard
         int coreInfantry = 0;
         int plagueFollower = 0;
         int poxwalkers = 0;
+        bool mortarion = false;
 
         public DeathGuard()
         {
@@ -354,7 +355,6 @@ namespace Roster_Builder.Death_Guard
             {
                 if (code)
                 {
-
                     if (datasheet is Mortarion)
                     {
                         for (int i = 0; i < roster.Count; i++)
@@ -381,6 +381,8 @@ namespace Roster_Builder.Death_Guard
                         restrictedItems.Add("Arch-Contaminator");
 
                         restrictedDatasheets.Add(29);
+                        hasWarlord = true;
+                        mortarion = true;
                     }
                     if(datasheet is Typhus)
                     {
@@ -425,7 +427,11 @@ namespace Roster_Builder.Death_Guard
                 {
                     if (datasheet is Mortarion)
                     {
+                        restrictedItems.Remove("Revoltingly Resilient");
+                        restrictedItems.Remove("Living Plague");
+                        restrictedItems.Remove("Arch-Contaminator");
                         restrictedDatasheets.Remove(29);
+                        mortarion = false;
                     }
                     if (datasheet is Typhus)
                     {
@@ -457,7 +463,20 @@ namespace Roster_Builder.Death_Guard
                         poxwalkers--;
 
                     }
+                    if (datasheet.hasFreeRelic)
+                    {
+                        this.hasRelic = false;
+                    }
+                    if (datasheet.isWarlord)
+                    {
+                        this.hasWarlord = false;
+                    }
                 }
+            }
+
+            if(mortarion)
+            {
+                hasWarlord = true;
             }
 
             if (plagueFollower < coreInfantry)

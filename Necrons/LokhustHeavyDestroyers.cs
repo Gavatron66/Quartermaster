@@ -70,7 +70,25 @@ namespace Roster_Builder.Necrons
             switch (code)
             {
                 case 30:
+                    int oldSize = UnitSize;
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
+
+                    if (UnitSize > oldSize)
+                    {
+                        nudOption1.Value += UnitSize - oldSize;
+                    }
+
+                    if (UnitSize < oldSize)
+                    {
+                        if (nudOption1.Value >= oldSize - UnitSize)
+                        {
+                            nudOption1.Value -= oldSize - UnitSize;
+                        }
+                        else
+                        {
+                            nudOption2.Value -= oldSize - UnitSize;
+                        }
+                    }
                     break;
                 case 31:
                     if (nudOption1.Value == 0)
