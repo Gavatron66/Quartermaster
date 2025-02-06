@@ -24,6 +24,7 @@ using Roster_Builder.Adepta_Sororitas;
 using Roster_Builder.Astra_Militarum;
 using System.Drawing.Imaging;
 using Roster_Builder.Imperial_Knights;
+using Roster_Builder.Leagues_of_Votann;
 
 namespace Roster_Builder
 {
@@ -90,6 +91,7 @@ namespace Roster_Builder
                 new GSC(),
                 new Harlequins(),
                 new ImperialKnights(),
+                new LeaguesOfVotann(),
                 new Necrons.Necrons(),
                 new Orks.Orks(),
                 new SpaceMarines(),
@@ -118,6 +120,7 @@ namespace Roster_Builder
                 new GSC(),
                 new Harlequins(),
                 new ImperialKnights(),
+                new LeaguesOfVotann(),
                 new Necrons.Necrons(),
                 new Orks.Orks(),
                 new SpaceMarines(),

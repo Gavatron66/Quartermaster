@@ -59,46 +59,47 @@ namespace Roster_Builder.Death_Guard
 
         public override List<Datasheets> GetDatasheets()
         {
-            return new List<Datasheets>() { 
-            //---------- HQ ----------
-            new DG_DaemonPrince(),
-            new Typhus(),
-            new DG_ChaosLord(),
-            new DG_TerminatorChaosLord(),
-            new LordOfVirulence(),
-            new LordOfContagion(),
-            new DG_TerminatorSorcerer(),
-            new MalignantPlaguecaster(),
-            //---------- Troops ----------
-            new PlagueMarines(),
-            new DG_Cultists(),
-            new Poxwalkers(),
-            //---------- Elite ----------
-            new NoxiousBlightbringer(),
-            new FoulBlightspawn(),
-            new BiologusPutrifier(),
-            new Tallyman(),
-            new PlagueSurgeon(),
-            new BlightlordTerminators(),
-            new DeathshroudTerminators(),
-            new Helbrute(),
-            new DG_Possessed(), 
-            //---------- Fast Attack ----------
-            new ChaosSpawn(),
-            new MyphiticBlightHauler(),
-            new FoetidBloatDrone(),
-            //---------- Heavy Support ----------
-            new PlagueburstCrawler(),
-            new ChaosLandRaider(),
-            new ChaosPredatorAnnihilator(),
-            new ChaosPredatorDestructor(),
-            new Defiler(), 
-            //---------- Transport ----------
-            new ChaosRhino(),
-            //---------- Lord of War ----------
-            new Mortarion(), 
-            //---------- Fortification ----------
-            new MiasmicMalignifier(),
+            return new List<Datasheets>() 
+            { 
+                //---------- HQ ----------
+                new DG_DaemonPrince(),
+                new Typhus(),
+                new DG_ChaosLord(),
+                new DG_TerminatorChaosLord(),
+                new LordOfVirulence(),
+                new LordOfContagion(),
+                new DG_TerminatorSorcerer(),
+                new MalignantPlaguecaster(),
+                //---------- Troops ----------
+                new PlagueMarines(),
+                new DG_Cultists(),
+                new Poxwalkers(),
+                //---------- Elite ----------
+                new NoxiousBlightbringer(),
+                new FoulBlightspawn(),
+                new BiologusPutrifier(),
+                new Tallyman(),
+                new PlagueSurgeon(),
+                new BlightlordTerminators(),
+                new DeathshroudTerminators(),
+                new Helbrute(),
+                new DG_Possessed(), 
+                //---------- Fast Attack ----------
+                new ChaosSpawn(),
+                new MyphiticBlightHauler(),
+                new FoetidBloatDrone(),
+                //---------- Heavy Support ----------
+                new PlagueburstCrawler(),
+                new ChaosLandRaider(),
+                new ChaosPredatorAnnihilator(),
+                new ChaosPredatorDestructor(),
+                new Defiler(), 
+                //---------- Transport ----------
+                new ChaosRhino(),
+                //---------- Lord of War ----------
+                new Mortarion(), 
+                //---------- Fortification ----------
+                new MiasmicMalignifier(),
             };
         }
 

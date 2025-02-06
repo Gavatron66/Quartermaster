@@ -291,6 +291,7 @@
     <Compile Include="Astra Militarum\UrsulaCreed.cs" />
     <Compile Include="Astra Militarum\Valkyrie.cs" />
     <Compile Include="Astra Militarum\Wyvern.cs" />
+    <Compile Include="Chaos Space Marines\ChaosSpaceMarines.cs" />
     <Compile Include="Datasheets.cs" />
     <Compile Include="Death Guard\BiologusPutrifier.cs" />
     <Compile Include="Death Guard\BlightlordTerminators.cs" />
@@ -423,7 +424,19 @@
     <Compile Include="Imperial Knights\KnightValiant.cs" />
     <Compile Include="Imperial Knights\KnightWarden.cs" />
     <Compile Include="Imperial Knights\KnightErrant.cs" />
+    <Compile Include="Leagues of Votann\BrôkhyrIronMaster.cs" />
+    <Compile Include="Leagues of Votann\BrôkhyrThunderkyn.cs" />
+    <Compile Include="Leagues of Votann\CthonianBeserks.cs" />
+    <Compile Include="Leagues of Votann\EinhyrChampion.cs" />
+    <Compile Include="Leagues of Votann\EinhyrHearthguard.cs" />
+    <Compile Include="Leagues of Votann\Grimnyr.cs" />
+    <Compile Include="Leagues of Votann\HearthkynWarriors.cs" />
+    <Compile Include="Leagues of Votann\HekatonLandFortress.cs" />
+    <Compile Include="Leagues of Votann\HernkynPioneers.cs" />
+    <Compile Include="Leagues of Votann\Kâhl.cs" />
     <Compile Include="Leagues of Votann\LeaguesOfVotann.cs" />
+    <Compile Include="Leagues of Votann\Sagitaur.cs" />
+    <Compile Include="Leagues of Votann\ÛtharTheDestined.cs" />
     <Compile Include="Necrons\AnnihilationBarge.cs" />
     <Compile Include="Necrons\Anrakyr.cs" />
     <Compile Include="Necrons\CanoptekDoomstalker.cs" />

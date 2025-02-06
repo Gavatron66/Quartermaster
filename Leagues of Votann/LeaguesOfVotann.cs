@@ -57,22 +57,22 @@ namespace Roster_Builder.Leagues_of_Votann
             return new List<Datasheets>()
             {
                 //---------- HQ ----------
-                //new ÛtharTheDestined(),
-                //new Kâhl(),
-                //new EinhyrChampion(),
-                //new Grimnyr(),
-                //new BrôkhyrIronMaster(),
+                new ÛtharTheDestined(),
+                new Kâhl(),
+                new EinhyrChampion(),
+                new Grimnyr(),
+                new BrôkhyrIronMaster(),
                 //---------- Troops ----------
-                //new HearthkynWarriors(),
+                new HearthkynWarriors(),
                 //---------- Elites ----------
-                //new EinhyrHearthguard(),
-                //new CthonianBeserks(),
+                new EinhyrHearthguard(),
+                new CthonianBeserks(),
                 //---------- Fast Attack ----------
-                //new HernkynPioneers(),
-                //new Sagitaur(),
+                new HernkynPioneers(),
+                new Sagitaur(),
                 //---------- Heavy Support ----------
-                //new BrôkhyrThunderkyn(),
-                //new HekatonLandFortress()
+                new BrôkhyrThunderkyn(),
+                new HekatonLandFortress()
             };
         }
 
@@ -82,9 +82,9 @@ namespace Roster_Builder.Leagues_of_Votann
             {
                 return 40;
             }
-            else if (upgrade != "High Kâhl (+40 pts)")
+            else if (upgrade == "Lord Grimnyr (+25 pts)" || upgrade == "Brôkhyr Forge-master (+25 pts)")
             {
-                return 20;
+                return 25;
             }
             else
             {
@@ -94,13 +94,26 @@ namespace Roster_Builder.Leagues_of_Votann
 
         public override List<string> GetFactionUpgrades(List<string> keywords)
         {
-            return new List<string>()
+            List<string> upgrade = new List<string>();
+
+            upgrade.Add("(None)");
+
+            if(keywords.Contains("KÂHL"))
             {
-                "(None)",
-                "High Kâhl (+40 pts)",
-                "Lord Grimnyr (+25 pts)",
-                "Brôkhyr Forge-master (+25 pts)"
-            };
+                upgrade.Add("High Kâhl (+40 pts)");
+            }
+
+            if (keywords.Contains("GRIMNYR"))
+            {
+                upgrade.Add("Lord Grimnyr (+25 pts)");
+            }
+
+            if (keywords.Contains("BRÔKHYR IRON-MASTER"))
+            {
+                upgrade.Add("Brôkhyr Forge-master (+25 pts)");
+            }
+
+            return upgrade;
         }
 
         public override bool GetIfEnabled(int index)
@@ -126,26 +139,88 @@ namespace Roster_Builder.Leagues_of_Votann
             List<string> relics = new List<string>();
             
             relics.Add("(None)");
-            relics.Add("Aktôl's Fortress");
-            relics.Add("Ancestral Crest");
-            relics.Add("Exactor");
-            relics.Add("The First Knife");
-            relics.Add("Flâyre");
-            relics.Add("Wayfarer's Grace");
-            relics.Add("The Grey Crest");
-            relics.Add("Grudge's End");
-            relics.Add("Wârpestryk");
-            relics.Add("The Hearthfist");
-            relics.Add("The Murmuring Stave");
-            relics.Add("Thyrikite Plate");
-            relics.Add("Vôlumm's Master Artifice");
-            relics.Add("Ymmâ's Shield");
 
-            if (currentSubFaction == "Greater Thurian Legaue") { relics.Add("Kôrvyk's Cuirass"); }
-            else if (currentSubFaction == "Trans-Hyperian Alliance") { relics.Add("The CORV Duas"); }
-            else if (currentSubFaction == "Kronus Hegemony") { relics.Add("The Just Blade"); }
-            else if (currentSubFaction == "Ymyr Conglomerate") { relics.Add("The Last Crest of Jâluk"); }
-            else if (currentSubFaction == "Urani-Surtr Regulates") { relics.Add("The Abiding Mantle"); }
+            if(!keywords.Contains("BRÔKHYR"))
+            {
+                relics.Add("Aktôl's Fortress");
+            }
+
+            relics.Add("Ancestral Crest");
+
+            if(keywords.Contains("EINHYR"))
+            {
+                relics.Add("Exactor");
+            }
+            
+            if(keywords.Contains("GRIMNYR") || keywords.Contains("KÂHL"))
+            {
+                relics.Add("The First Knife");
+            }
+
+            if(keywords.Contains("KÂHL"))
+            {
+                relics.Add("Flâyre");
+            }
+
+            relics.Add("Wayfarer's Grace");
+
+            if (!keywords.Contains("BRÔKHYR"))
+            {
+                relics.Add("The Grey Crest");
+            }
+
+            relics.Add("Grudge's End");
+
+            if(keywords.Contains("EINHYR") || keywords.Contains("KÂHL"))
+            {
+                relics.Add("Wârpestryk");
+            }
+
+            if (keywords.Contains("KÂHL"))
+            {
+                relics.Add("The Hearthfist");
+            }
+            
+            if(keywords.Contains("GRIMNYR"))
+            {
+                relics.Add("The Murmuring Stave");
+            }
+            
+            if(!keywords.Contains("EINHYR"))
+            {
+                relics.Add("Thyrikite Plate");
+            }
+
+            if (keywords.Contains("BRÔKHYR"))
+            {
+                relics.Add("Vôlumm's Master Artifice");
+            }
+
+            if (keywords.Contains("EINHYR"))
+            {
+                relics.Add("Ymmâ's Shield");
+            }
+
+            if (currentSubFaction == "Greater Thurian Legaue") 
+            { 
+                relics.Add("Kôrvyk's Cuirass"); 
+            }
+            else if (currentSubFaction == "Trans-Hyperian Alliance") 
+            { 
+                relics.Add("The CORV Duas"); 
+            }
+            else if (currentSubFaction == "Kronus Hegemony" && (keywords.Contains("EINHYR") || keywords.Contains("KÂHL"))) 
+            { 
+                relics.Add("The Just Blade"); 
+            }
+            else if (currentSubFaction == "Ymyr Conglomerate" && !keywords.Contains("BRÔKHYR")) 
+            { 
+                relics.Add("The Last Crest of Jâluk"); 
+            }
+            else if (currentSubFaction == "Urani-Surtr Regulates") 
+            { 
+                relics.Add("The Abiding Mantle"); 
+            }
 
             return relics;
         }
@@ -189,7 +264,48 @@ namespace Roster_Builder.Leagues_of_Votann
 
         public override void SaveSubFaction(int code, Panel panel)
         {
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+            ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
+            ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
+            ComboBox cmbSubCustom3 = panel.Controls["cmbSubCustom3"] as ComboBox;
+            Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
+            Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
+            Label lblSubCustom3 = panel.Controls["lblSubCustom3"] as Label;
 
+            switch (code)
+            {
+                case 50:
+                    currentSubFaction = cmbSubFaction.SelectedItem.ToString();
+                    if (currentSubFaction != "<Custom>")
+                    {
+                        cmbSubCustom1.Visible = false;
+                        cmbSubCustom2.Visible = false;
+                        cmbSubCustom3.Visible = false;
+                        lblSubCustom1.Visible = false;
+                        lblSubCustom2.Visible = false;
+                        lblSubCustom3.Visible = false;
+                    }
+                    else
+                    {
+                        cmbSubCustom1.Visible = true;
+                        cmbSubCustom2.Visible = true;
+                        cmbSubCustom3.Visible = true;
+                        lblSubCustom1.Visible = true;
+                        lblSubCustom2.Visible = true;
+                        lblSubCustom3.Visible = true;
+                        customSubFactionTraits = new string[3];
+                    }
+                    break;
+                case 51:
+                    customSubFactionTraits[0] = cmbSubCustom1.SelectedItem.ToString();
+                    break;
+                case 52:
+                    customSubFactionTraits[1] = cmbSubCustom2.SelectedItem.ToString();
+                    break;
+                case 53:
+                    customSubFactionTraits[2] = cmbSubCustom3.SelectedItem.ToString();
+                    break;
+            }
         }
 
         public override void SetPoints(int points)
@@ -199,12 +315,72 @@ namespace Roster_Builder.Leagues_of_Votann
 
         public override void SetSubFactionPanel(Panel panel)
         {
+            if (antiLoop)
+            {
+                return;
+            }
 
+            antiLoop = true;
+            Template template = new Template();
+            template.LoadFactionTemplate(4, panel);
+
+            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
+            ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
+            ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
+            ComboBox cmbSubCustom3 = panel.Controls["cmbSubCustom3"] as ComboBox;
+            Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
+            Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
+            Label lblSubCustom3 = panel.Controls["lblSubCustom3"] as Label;
+
+            if (currentSubFaction != "<Custom>")
+            {
+                cmbSubCustom1.Visible = false;
+                cmbSubCustom2.Visible = false;
+                cmbSubCustom3.Visible = false;
+                lblSubCustom1.Visible = false;
+                lblSubCustom2.Visible = false;
+                lblSubCustom3.Visible = false;
+            }
+            else
+            {
+                cmbSubCustom1.Visible = true;
+                cmbSubCustom2.Visible = true;
+                cmbSubCustom3.Visible = true;
+                lblSubCustom1.Visible = true;
+                lblSubCustom2.Visible = true;
+                lblSubCustom3.Visible = true;
+            }
+
+            cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
+            panel.BringToFront();
+
+            cmbSubCustom1.Items.Clear();
+            cmbSubCustom2.Items.Clear();
+            cmbSubCustom3.Items.Clear();
+
+            cmbSubCustom1.Items.AddRange(this.GetCustomSubfactionList1().ToArray());
+
+            cmbSubCustom2.Items.AddRange(this.GetCustomSubfactionList2().ToArray());
+
+            cmbSubCustom3.Items.AddRange(this.GetCustomSubfactionList2().ToArray());
+
+            if (customSubFactionTraits[0] != null)
+            {
+                cmbSubCustom1.SelectedIndex = cmbSubCustom1.Items.IndexOf(customSubFactionTraits[0]);
+                cmbSubCustom2.SelectedIndex = cmbSubCustom2.Items.IndexOf(customSubFactionTraits[1]);
+                cmbSubCustom3.SelectedIndex = cmbSubCustom3.Items.IndexOf(customSubFactionTraits[2]);
+            }
+            antiLoop = false;
         }
 
         public override void UpdateSubFaction(bool code, Datasheets datasheet)
         {
 
+        }
+
+        public override string ToString()
+        {
+            return "Leagues of Votann";
         }
     }
 }
