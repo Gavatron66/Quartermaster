@@ -77,6 +77,8 @@ Last unit finished: Mortarion
 
 UPDATE (01/10/2025) - I was working on Warlord and Relic restrictions! Following the list alphabetically
 
+Lucius the Eternal - Faultless Duellist
+
 Characters:
 	DG Chaos Lord
 	DG Terminator Lord
@@ -235,12 +237,20 @@ Grandfatherly Influence:
                     break;
 					
                 case 25:
-                    if (cbWarlord.Checked)
+                    if (isWarlord.Checked)
                     {
                         this.isWarlord = true;
                         repo.hasWarlord = true;
                     }
-                    else { this.isWarlord = false; repo.hasWarlord = false; warlord.SelectedIndex = -1; }
+                    else 
+                    {
+                        if(this.isWarlord)
+                        {
+                            repo.hasWarlord = false;
+                        }
+                        this.isWarlord = false; 
+                        warlord.SelectedIndex = -1; 
+                    }
                     break;
 					
 					

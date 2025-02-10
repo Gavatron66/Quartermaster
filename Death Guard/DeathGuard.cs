@@ -82,20 +82,20 @@ namespace Roster_Builder.Death_Guard
                 new PlagueSurgeon(),
                 new BlightlordTerminators(),
                 new DeathshroudTerminators(),
-                new Helbrute(),
+                new DG_Helbrute(),
                 new DG_Possessed(), 
                 //---------- Fast Attack ----------
-                new ChaosSpawn(),
+                new DG_ChaosSpawn(),
                 new MyphiticBlightHauler(),
                 new FoetidBloatDrone(),
                 //---------- Heavy Support ----------
                 new PlagueburstCrawler(),
-                new ChaosLandRaider(),
-                new ChaosPredatorAnnihilator(),
-                new ChaosPredatorDestructor(),
-                new Defiler(), 
+                new DG_ChaosLandRaider(),
+                new DG_ChaosPredatorAnnihilator(),
+                new DG_ChaosPredatorDestructor(),
+                new DG_Defiler(), 
                 //---------- Transport ----------
-                new ChaosRhino(),
+                new DG_ChaosRhino(),
                 //---------- Lord of War ----------
                 new Mortarion(), 
                 //---------- Fortification ----------
