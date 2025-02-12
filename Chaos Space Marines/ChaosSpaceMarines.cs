@@ -45,17 +45,17 @@ namespace Roster_Builder.Chaos_Space_Marines
                 new DaemonPrince(),
                 new FabiusBile(),
                 new Cypher(),
-                //new MasterOfPossession(),
-                //new ChaosLord(),
-                //new TerminatorChaosLord(),
-                //new Sorcerer(),
-                //new TerminatorSorcerer(),
-                //new LuciusTheEternal(),
-                //new LordDiscordant(),
-                //new Warpsmith(),
-                //new DarkApostle(),
-                //new ExaltedChampion(),
-                //new DarkCommune(),
+                new MasterOfPossession(),
+                new ChaosLord(),
+                new TerminatorChaosLord(),
+                new Sorcerer(),
+                new TerminatorSorcerer(),
+                new LuciusTheEternal(),
+                new LordDiscordant(),
+                new Warpsmith(),
+                new DarkApostle(),
+                new ExaltedChampion(),
+                new DarkCommune(),
                 //---------- Troops ----------
                 //new Legionaries(),
                 //new CulistsMob(),
@@ -112,13 +112,27 @@ namespace Roster_Builder.Chaos_Space_Marines
 
         public override List<string> GetFactionUpgrades(List<string> keywords)
         {
-            return new List<string>
+            if(keywords.Contains("PSYKER"))
             {
-                "Mark of Khorne (+15 pts)",
-                "Mark of Tzeentch (+15 pts)",
-                "Mark of Nurgle (+15 pts)",
-                "Mark of Slaanesh (+20 pts)"
-            };
+                return new List<string>
+                {
+                    "(None)",
+                    "Mark of Tzeentch (+15 pts)",
+                    "Mark of Nurgle (+15 pts)",
+                    "Mark of Slaanesh (+20 pts)"
+                };
+            }
+            else
+            {
+                return new List<string>
+                {
+                    "(None)",
+                    "Mark of Khorne (+15 pts)",
+                    "Mark of Tzeentch (+15 pts)",
+                    "Mark of Nurgle (+15 pts)",
+                    "Mark of Slaanesh (+20 pts)"
+                };
+            }
         }
 
         public override bool GetIfEnabled(int index)

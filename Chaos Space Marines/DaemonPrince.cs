@@ -19,7 +19,7 @@ namespace Roster_Builder.Chaos_Space_Marines
             Keywords.AddRange(new string[]
             {
                 "CHAOS", "HERETIC ASTARTES", "TRAITORIS ASTARTES", "<LEGION>",
-                "CHARACTER", "MONSTER", "DAEMON", "DAEMON PRINCE"
+                "CHARACTER", "MONSTER", "DAEMON", "DAEMON PRINCE", "MARK OF CHAOS"
             });
             PsykerPowers = new string[1] { string.Empty };
             Role = "HQ";
@@ -99,6 +99,7 @@ namespace Roster_Builder.Chaos_Space_Marines
             cmbFaction.Items.Clear();
             cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
             Factionupgrade = "Mark of Nurgle (+15 pts)";
+            cmbFaction.Items.Remove("(None)");
 
             if (Factionupgrade != null)
             {

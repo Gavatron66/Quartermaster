@@ -3,44 +3,76 @@
   "WorkspaceRootPath": "C:\\Users\\evans\\Desktop\\Quartermaster\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos space marines\\chaosspacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\chaosspacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\chaosspacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\death guard\\deathguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\deathguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\darkcommune.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\darkcommune.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\cypher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\cypher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\grey knights\\brotherhoodchaplain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:grey knights\\brotherhoodchaplain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\fabiusbile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\fabiusbile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\exaltedchampion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\exaltedchampion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\haarkenworldclaimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\haarkenworldclaimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\darkapostle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\darkapostle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\daemonprince.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\daemonprince.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\sorcerer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\sorcerer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\abaddonthedespoiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\abaddonthedespoiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\warpsmith.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\warpsmith.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\space marines\\chaplain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\chaplain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\lorddiscordant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\lorddiscordant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\huronblackheart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\huronblackheart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\terminatorchaoslord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\terminatorchaoslord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\luciustheeternal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\luciustheeternal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\cypher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\cypher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\terminatorsorcerer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\terminatorsorcerer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\tau empire\\ethereal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\ethereal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\masterofpossession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\masterofpossession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\chaoslord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\chaoslord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\space marines\\bikecaptain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\bikecaptain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\death guard\\deathguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\deathguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,11 +98,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 18,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -84,21 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Template.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
-              "RelativeDocumentMoniker": "Template.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
-              "RelativeToolTip": "Template.cs",
-              "ViewState": "AQIAAL8BAAAAAAAAAAAYwCwCAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-05T03:46:42.246Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 21,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -111,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 20,
               "Title": "Faction.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Faction.cs",
               "RelativeDocumentMoniker": "Faction.cs",
@@ -125,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 19,
               "Title": "Datasheets.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Datasheets.cs",
               "RelativeDocumentMoniker": "Datasheets.cs",
@@ -139,7 +157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 17,
               "Title": "DeathGuard.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DeathGuard.cs",
               "RelativeDocumentMoniker": "Death Guard\\DeathGuard.cs",
@@ -159,7 +177,7 @@
               "RelativeDocumentMoniker": "Chaos Space Marines\\ChaosSpaceMarines.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\ChaosSpaceMarines.cs",
               "RelativeToolTip": "Chaos Space Marines\\ChaosSpaceMarines.cs",
-              "ViewState": "AQIAAJIBAAAAAAAAAAAAAJwBAAANAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAIwDoAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-08T01:45:57.48Z",
               "IsPinned": true,
@@ -168,92 +186,209 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Cypher.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\Cypher.cs",
-              "RelativeDocumentMoniker": "Chaos Space Marines\\Cypher.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\Cypher.cs",
-              "RelativeToolTip": "Chaos Space Marines\\Cypher.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAqAAAA",
+              "Title": "BrotherhoodChaplain.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Grey Knights\\BrotherhoodChaplain.cs",
+              "RelativeDocumentMoniker": "Grey Knights\\BrotherhoodChaplain.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Grey Knights\\BrotherhoodChaplain.cs",
+              "RelativeToolTip": "Grey Knights\\BrotherhoodChaplain.cs",
+              "ViewState": "AQIAAMUAAAAAAAAAAAAkwPQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T00:37:22.22Z",
+              "WhenOpened": "2025-02-12T02:56:27.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DarkCommune.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\DarkCommune.cs",
+              "RelativeDocumentMoniker": "Chaos Space Marines\\DarkCommune.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\DarkCommune.cs",
+              "RelativeToolTip": "Chaos Space Marines\\DarkCommune.cs",
+              "ViewState": "AQIAANwAAAAAAAAAAAAkwPUAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T02:56:21.274Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "FabiusBile.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\FabiusBile.cs",
-              "RelativeDocumentMoniker": "Chaos Space Marines\\FabiusBile.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\FabiusBile.cs",
-              "RelativeToolTip": "Chaos Space Marines\\FabiusBile.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAkwFoAAAAAAAAA",
+              "Title": "ExaltedChampion.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\ExaltedChampion.cs",
+              "RelativeDocumentMoniker": "Chaos Space Marines\\ExaltedChampion.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\ExaltedChampion.cs",
+              "RelativeToolTip": "Chaos Space Marines\\ExaltedChampion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T00:34:59.915Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DaemonPrince.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\DaemonPrince.cs",
-              "RelativeDocumentMoniker": "Chaos Space Marines\\DaemonPrince.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\DaemonPrince.cs",
-              "RelativeToolTip": "Chaos Space Marines\\DaemonPrince.cs",
-              "ViewState": "AQIAAAYBAAAAAAAAAAAAABEBAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T23:48:03.869Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Chaplain.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Chaplain.cs",
-              "RelativeDocumentMoniker": "Space Marines\\Chaplain.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Chaplain.cs",
-              "RelativeToolTip": "Space Marines\\Chaplain.cs",
-              "ViewState": "AQIAACcBAAAAAAAAAAAowFgBAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T23:47:36.61Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "HuronBlackheart.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\HuronBlackheart.cs",
-              "RelativeDocumentMoniker": "Chaos Space Marines\\HuronBlackheart.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\HuronBlackheart.cs",
-              "RelativeToolTip": "Chaos Space Marines\\HuronBlackheart.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T23:44:01.45Z",
+              "WhenOpened": "2025-02-12T02:54:20.601Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "HaarkenWorldclaimer.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\HaarkenWorldclaimer.cs",
-              "RelativeDocumentMoniker": "Chaos Space Marines\\HaarkenWorldclaimer.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\HaarkenWorldclaimer.cs",
-              "RelativeToolTip": "Chaos Space Marines\\HaarkenWorldclaimer.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAkwFkAAAAAAAAA",
+              "Title": "DarkApostle.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\DarkApostle.cs",
+              "RelativeDocumentMoniker": "Chaos Space Marines\\DarkApostle.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\DarkApostle.cs",
+              "RelativeToolTip": "Chaos Space Marines\\DarkApostle.cs",
+              "ViewState": "AQIAALIAAAAAAAAAAAAkwOEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T23:40:14.031Z",
+              "WhenOpened": "2025-02-12T02:51:32.501Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "AbaddonTheDespoiler.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\AbaddonTheDespoiler.cs",
-              "RelativeDocumentMoniker": "Chaos Space Marines\\AbaddonTheDespoiler.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\AbaddonTheDespoiler.cs",
-              "RelativeToolTip": "Chaos Space Marines\\AbaddonTheDespoiler.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAkwFkAAAAAAAAA",
+              "Title": "Warpsmith.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\Warpsmith.cs",
+              "RelativeDocumentMoniker": "Chaos Space Marines\\Warpsmith.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\Warpsmith.cs",
+              "RelativeToolTip": "Chaos Space Marines\\Warpsmith.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T22:07:23.267Z",
+              "WhenOpened": "2025-02-12T02:46:15.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LordDiscordant.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\LordDiscordant.cs",
+              "RelativeDocumentMoniker": "Chaos Space Marines\\LordDiscordant.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\LordDiscordant.cs",
+              "RelativeToolTip": "Chaos Space Marines\\LordDiscordant.cs",
+              "ViewState": "AQIAAKYAAAAAAAAAAAAkwNUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T02:42:54.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LuciusTheEternal.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\LuciusTheEternal.cs",
+              "RelativeDocumentMoniker": "Chaos Space Marines\\LuciusTheEternal.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\LuciusTheEternal.cs",
+              "RelativeToolTip": "Chaos Space Marines\\LuciusTheEternal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T02:36:28.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Cypher.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\Cypher.cs",
+              "RelativeDocumentMoniker": "Chaos Space Marines\\Cypher.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\Cypher.cs",
+              "RelativeToolTip": "Chaos Space Marines\\Cypher.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T02:36:20.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TerminatorSorcerer.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\TerminatorSorcerer.cs",
+              "RelativeDocumentMoniker": "Chaos Space Marines\\TerminatorSorcerer.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\TerminatorSorcerer.cs",
+              "RelativeToolTip": "Chaos Space Marines\\TerminatorSorcerer.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAgwFMAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T02:28:31.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Ethereal.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\Ethereal.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\Ethereal.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\Ethereal.cs",
+              "RelativeToolTip": "Tau Empire\\Ethereal.cs",
+              "ViewState": "AQIAAKgAAAAAAAAAAAAuwBUBAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T02:27:20.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Sorcerer.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\Sorcerer.cs",
+              "RelativeDocumentMoniker": "Chaos Space Marines\\Sorcerer.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\Sorcerer.cs",
+              "RelativeToolTip": "Chaos Space Marines\\Sorcerer.cs",
+              "ViewState": "AQIAALYAAAAAAAAAAAAkwOUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T02:20:30.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Template.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
+              "RelativeDocumentMoniker": "Template.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
+              "RelativeToolTip": "Template.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJgBAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-05T03:46:42.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TerminatorChaosLord.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\TerminatorChaosLord.cs",
+              "RelativeDocumentMoniker": "Chaos Space Marines\\TerminatorChaosLord.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\TerminatorChaosLord.cs",
+              "RelativeToolTip": "Chaos Space Marines\\TerminatorChaosLord.cs",
+              "ViewState": "AQIAAK0AAAAAAAAAAAAowN4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T02:07:39.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MasterOfPossession.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\MasterOfPossession.cs",
+              "RelativeDocumentMoniker": "Chaos Space Marines\\MasterOfPossession.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\MasterOfPossession.cs",
+              "RelativeToolTip": "Chaos Space Marines\\MasterOfPossession.cs",
+              "ViewState": "AQIAAIgAAAAAAAAAAAAuwKAAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T01:55:08.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ChaosLord.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\ChaosLord.cs",
+              "RelativeDocumentMoniker": "Chaos Space Marines\\ChaosLord.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\ChaosLord.cs",
+              "RelativeToolTip": "Chaos Space Marines\\ChaosLord.cs",
+              "ViewState": "AQIAALQAAAAAAAAAAAAowOUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T01:53:17.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BikeCaptain.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\BikeCaptain.cs",
+              "RelativeDocumentMoniker": "Space Marines\\BikeCaptain.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\BikeCaptain.cs",
+              "RelativeToolTip": "Space Marines\\BikeCaptain.cs",
+              "ViewState": "AQIAADYBAAAAAAAAAAAuwGkBAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T01:53:00.361Z",
               "EditorCaption": ""
             }
           ]
