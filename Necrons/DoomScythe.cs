@@ -28,6 +28,7 @@ namespace Roster_Builder.Necrons
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
+            repo = f as Necrons;
         }
 
         public override void SaveDatasheets(int code, Panel panel)

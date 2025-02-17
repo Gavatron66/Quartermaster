@@ -57,7 +57,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 new ExaltedChampion(),
                 new DarkCommune(),
                 //---------- Troops ----------
-                //new Legionaries(),
+                new Legionaries(),
                 //new CulistsMob(),
                 //new AccursedCultists(),
                 //---------- Elites ----------

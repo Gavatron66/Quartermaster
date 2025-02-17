@@ -31,6 +31,7 @@ namespace Roster_Builder.Necrons
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
+            repo = f as Necrons;
             Template.LoadTemplate(TemplateCode, panel);
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;

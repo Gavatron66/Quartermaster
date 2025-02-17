@@ -129,7 +129,7 @@ namespace Roster_Builder.Necrons
                     {
                         Weapons.Add("Vicious Claws");
                         Weapons.Add("(None)");
-                        lbModelSelect.Items.Add("Canoptek Wraith w/ " + Weapons[temp]);
+                        lbModelSelect.Items.Add("Canoptek Wraith w/ " + Weapons[temp * 2]);
                     }
 
                     if (temp > UnitSize)

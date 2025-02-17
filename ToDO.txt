@@ -43,7 +43,6 @@ Hybrid Metamorphs needs to be visited when the location and sizing rework is rea
 	Atalan Jackals
 
 Fix Named Characters? Some named Characters belong to specific subfactions, and technically if they contain a different subfaction keyword than they invalidate the detachment.
-	Finish fixing Warlord traits for Necrons
 
 Compare Primaris Lieutenant and Primaris Captain
 	They have annoyingly complicated options, so going to need some testing for it
@@ -77,7 +76,36 @@ Last unit finished: Mortarion
 
 UPDATE (01/10/2025) - I was working on Warlord and Relic restrictions! Following the list alphabetically
 
-Lucius the Eternal - Faultless Duellist
+Go back and double check Death Guard
+There is a potential error in Necrons that I wasn't able to duplicate
+Maybe figured out the NUD control scenarios! Further testing is required
+
+datasheets to add repo to:
+	Trajann Valoris
+	Valerian
+	Aleya
+	Prosecutors
+	Venerable Contemptor Dreadnought
+	Vigilators
+	Witchseekers
+	Venerable Land Raider
+	Anathema Psykana Rhino
+
+Following need to fix cmbWarlord:
+	Valerian
+	Aleya
+	
+Changes have been made, double check
+	Changed from 'and a Misericordia' to 'and Misericordia'
+	
+	Custodian Guard
+	CUstodian Wardens
+	Allarus Custodians
+	Vertus Praetors
+	
+Vexilus Praetor displays the wrong warlord traits
+	Also doesn't save Vexilla selection
+
 
 Characters:
 	DG Chaos Lord

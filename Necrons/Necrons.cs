@@ -75,13 +75,13 @@ namespace Roster_Builder.Necrons
             return new List<Datasheets>()
             {
                 //---------- HQ ----------
-                new Imotekh(),
-                new Orikan(),
-                new Anrakyr(),
-                new Obyron(),
-                new Szeras(),
-                new Zahndrekh(),
-                new Trazyn(),
+                new ImotekhTheStormlord(),
+                new OrikanTheDiviner(),
+                new AnrakyrTheTraveller(),
+                new VargardObyron(),
+                new IlluminorSzeras(),
+                new NemesorZahndrekh(),
+                new TrazynTheInfinite(),
                 new RoyalWarden(),
                 new SkorpekhLord(),
                 new LokhustLord(),
@@ -131,7 +131,7 @@ namespace Roster_Builder.Necrons
                 new Obelisk(),
                 new TesseractVault(),
                 new Monolith(),
-                new SilentKing(),
+                new TheSilentKing(),
                 //---------- Fortification ----------
                 new ConvergenceOfDominion(),
             };
@@ -359,7 +359,7 @@ namespace Roster_Builder.Necrons
                 "Eternal Madness",
                 "Immortal Pride",
                 "Thrall of the Silent King",
-                "Implacable Conqueror (Aura)",
+                "Implacable Conqueror",
                 "Honourable Combatant"
             };
 

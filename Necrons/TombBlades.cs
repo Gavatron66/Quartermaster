@@ -123,7 +123,7 @@ namespace Roster_Builder.Necrons
                         Weapons.Add("Twin Gauss Blaster (+5 pts)");
                         Weapons.Add("");
                         Weapons.Add("(None)");
-                        lbModelSelect.Items.Add("Tomb Blade w/" + Weapons[temp * 3]);
+                        lbModelSelect.Items.Add("Tomb Blade w/ " + Weapons[temp * 3]);
                     }
 
                     if (temp > UnitSize)
