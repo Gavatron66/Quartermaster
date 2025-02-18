@@ -54,7 +54,6 @@ namespace Roster_Builder.Chaos_Space_Marines
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
 
-            cbOption1.Location = new System.Drawing.Point(282, 184);
             lblPsyker.Location = new System.Drawing.Point(panel.Controls["lblFactionUpgrade"].Location.X, panel.Controls["lblFactionUpgrade"].Location.Y + 52);
             clbPsyker.Location = new System.Drawing.Point(cmbFaction.Location.X, cmbFaction.Location.Y + 52);
 
@@ -87,6 +86,7 @@ namespace Roster_Builder.Chaos_Space_Marines
             });
 
             cbOption1.Text = "Chaos Icon";
+            cbOption1.Visible = true;
 
             cmbFaction.Visible = true;
             panel.Controls["lblFactionupgrade"].Visible = true;
@@ -297,7 +297,6 @@ namespace Roster_Builder.Chaos_Space_Marines
                         antiLoop = true;
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
-                        break;
                     }
                     else
                     {
