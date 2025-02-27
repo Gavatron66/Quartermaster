@@ -66,34 +66,34 @@ namespace Roster_Builder.Chaos_Space_Marines
                 new Possessed(),
                 new Chosen(),
                 new Helbrute(),
-                //new KhorneBerzerkersCSM(),
-                //new RubricMarinesCSM(),
-                //new PlagueMarinesCSM(),
-                //new NoiseMarines(),
+                new KhorneBerzerkersCSM(),
+                new RubricMarinesCSM(),
+                new PlagueMarinesCSM(),
+                new NoiseMarines(),
                 //---------- Fast Attack ----------
                 new Venomcrawler(),
-                //new ChaosSpawn(),
-                //new ChaosBikers(),
-                //new Raptors(),
-                //new WarpTalons(),
+                new ChaosSpawn(),
+                new ChaosBikers(),
+                new Raptors(),
+                new WarpTalons(),
                 //---------- Heavy Support ----------
-                //new Havocs(),
-                //new Obliterators(),
-                //new ChaosLandRaider(),
-                //new ChaosVindicator(),
-                //new ChaosPredatorDestructor(),
-                //new ChaosPredatorAnnihilator(),
-                //new Defiler(),
-                //new Forgefiend(),
-                //new Maulerfiend(),
+                new Havocs(),
+                new Obliterators(),
+                new ChaosLandRaider(),
+                new ChaosVindicator(),
+                new ChaosPredatorDestructor(),
+                new ChaosPredatorAnnihilator(),
+                new Defiler(),
+                new Forgefiend(),
+                new Maulerfiend(),
                 //---------- Transport ----------
-                //new ChaosRhino(),
+                new ChaosRhino(),
                 //---------- Flyer ----------
-                //new Heldrake(),
+                new Heldrake(),
                 //---------- Lord of War ----------
-                //new KhorneLordOfSkulls(),
+                new KhorneLordOfSkulls(),
                 //---------- Fortification ----------
-                //new NoctilithCrown()
+                new NoctilithCrown()
             };
         }
 
@@ -191,101 +191,303 @@ namespace Roster_Builder.Chaos_Space_Marines
 
             relics.Add("(None)");
 
-            relics.Add("Ul'o'cca, the Black");
-            relics.Add("Zaall, the Wrathful");
-            relics.Add("G'holl'ax, the Decayed");
-            relics.Add("Q'o'ak, the Boundless");
-            relics.Add("Thaa'ris and Rhi-ol, the Rapacious");
-            relics.Add("Inferno Tome");
-            relics.Add("Gorget of Eternal Hate");
+            if(!keywords.Contains("DARK COMMUNE"))
+            {
+                relics.Add("Ul'o'cca, the Black");
+                relics.Add("Zaall, the Wrathful");
+                relics.Add("G'holl'ax, the Decayed");
+                relics.Add("Q'o'ak, the Boundless");
+                relics.Add("Thaa'ris and Rhi-ol, the Rapacious");
+            }
+            
+            if(keywords.Contains("PRIEST"))
+            {
+                relics.Add("Inferno Tome");
+            }
+
+            if (!keywords.Contains("DARK COMMUNE"))
+            {
+                relics.Add("Gorget of Eternal Hate");
+            }
+
             relics.Add("Black Rune of Damnation");
-            relics.Add("Mantle of Traitors");
-            relics.Add("Blade of the Relentless");
-            relics.Add("The Black Mace");
-            relics.Add("The Warp's Malice");
-            relics.Add("Talisman of Burning Blood");
-            relics.Add("Eye of Tzeentch");
-            relics.Add("Orb of Unlife");
-            relics.Add("Intoxicating Elixir");
-            relics.Add("Liber Hereticus");
+
+            if (!keywords.Contains("DARK COMMUNE"))
+            {
+                relics.Add("Mantle of Traitors");
+            }
+
+            if(keywords.Contains("CHAOS LORD"))
+            {
+                relics.Add("Blade of the Relentless");
+            }
+
+            if (keywords.Contains("CHAOS LORD") || keywords.Contains("DARK APOSTLE"))
+            {
+                relics.Add("The Black Mace");
+            }
+
+            if((keywords.Contains("CHAOS LORD") && !keywords.Contains("TERMINATOR")) || keywords.Contains("DARK APOSTLE") ||
+                keywords.Contains("EXALTED CHAMPION") || keywords.Contains("LORD DISCORDANT") || keywords.Contains("MASTER OF POSSESSION") ||
+                (keywords.Contains("SORCERER") && !keywords.Contains("TERMINATOR")) || keywords.Contains("MASTER OF EXECUTIONS"))
+            {
+                relics.Add("The Warp's Malice");
+            }
+
+            if (!keywords.Contains("DARK COMMUNE"))
+            {
+                relics.Add("Talisman of Burning Blood");
+            }
+
+            if (keywords.Contains("PSYKER") && !keywords.Contains("DARK COMMUNE"))
+            {
+                relics.Add("Eye of Tzeentch");
+            }
+
+            if (!keywords.Contains("DARK COMMUNE"))
+            {
+                relics.Add("Orb of Unlife");
+                relics.Add("Intoxicating Elixir");
+            }
+
+            if (keywords.Contains("PSYKER") && !keywords.Contains("DARK COMMUNE"))
+            {
+                relics.Add("Liber Hereticus");
+            }
 
             if (currentSubFaction == "Black Legion")
             {
-                relics.Add("Ghorisvex's Teeth");
-                relics.Add("Loyalty's Reward");
-                relics.Add("Veilbreaker Plate");
-                relics.Add("Cloak of Conquest");
+                if (keywords.Contains("CHAOS LORD"))
+                {
+                    relics.Add("Ghorisvex's Teeth");
+                }
+
+                if (!keywords.Contains("DARK COMMUNE") && !keywords.Contains("DAEMON PRINCE") && !keywords.Contains("WARPSMITH"))
+                {
+                    relics.Add("Loyalty's Reward");
+                }
+
+                if (keywords.Contains("TERMINATOR"))
+                {
+                    relics.Add("Veilbreaker Plate");
+                }
+
+                if (!keywords.Contains("DARK COMMUNE"))
+                {
+                    relics.Add("Cloak of Conquest");
+                }
+
                 relics.Add("Sightless Helm");
-                relics.Add("Trophies of Slaughter");
-                relics.Add("Wrath of the Abyss");
+
+                if (!keywords.Contains("DARK COMMUNE"))
+                {
+                    relics.Add("Trophies of Slaughter");
+                }
+
+                if ((keywords.Contains("CHAOS LORD") && !keywords.Contains("TERMINATOR")) || keywords.Contains("WARPSMITH"))
+                {
+                    relics.Add("Wrath of the Abyss");
+                }
             }
 
             if (currentSubFaction == "Word Bearers")
             {
-                relics.Add("Eightfold-cursed Crozius");
+                if (keywords.Contains("CHAOS LORD") || keywords.Contains("DARK APOSTLE"))
+                {
+                    relics.Add("Eightfold-cursed Crozius");
+                }
+
                 relics.Add("Crown of the Blasphemer");
-                relics.Add("Malefic Tome");
-                relics.Add("Epistle of Lorgar");
-                relics.Add("Ashen Axe");
-                relics.Add("The Armour Diabolus");
-                relics.Add("Baleful Icon");
+
+                if (keywords.Contains("PSYKER") && !keywords.Contains("DARK COMMUNE"))
+                {
+                    relics.Add("Malefic Tome");
+                }
+
+                if (keywords.Contains("DARK APOSTLE"))
+                {
+                    relics.Add("Epistle of Lorgar");
+                }
+
+                if (keywords.Contains("CHAOS LORD") || keywords.Contains("EXALTED CHAMPION") || keywords.Contains("DAEMON PRINCE") ||
+                    keywords.Contains("WARPSMITH") || keywords.Contains("MASTER OF EXECUTIONS"))
+                {
+                    relics.Add("Ashen Axe");
+                }
+
+                if (!keywords.Contains("DARK COMMUNE"))
+                {
+                    relics.Add("The Armour Diabolus");
+                    relics.Add("Baleful Icon");
+                }
             }
 
             if (currentSubFaction == "Night Lords")
             {
-                relics.Add("Claw of the Stygian Count");
+                if ((keywords.Contains("CHAOS LORD") && keywords.Contains("TERMINATOR")) || keywords.Contains("DAEMON PRINCE"))
+                {
+                    relics.Add("Claw of the Stygian Count");
+                }
+
                 relics.Add("Vox Daemonicus");
-                relics.Add("Talons of the Night Terror");
-                relics.Add("Scourging Chains");
-                relics.Add("Misery of the Meek");
-                relics.Add("Stormbolt Plate");
-                relics.Add("Flayer");
+
+                if (keywords.Contains("DAEMON PRINCE"))
+                {
+                    relics.Add("Talons of the Night Terror");
+                }
+
+                if (!keywords.Contains("DARK COMMUNE")) {
+                    relics.Add("Scourging Chains");
+                    relics.Add("Misery of the Meek");
+                }
+
+                if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
+                {
+                    relics.Add("Stormbolt Plate");
+                }
+
+                if (keywords.Contains("CHAOS LORD") || (keywords.Contains("SORCERER") && keywords.Contains("TERMINATOR"))) {
+                    relics.Add("Flayer");
+                }
             }
 
             if (currentSubFaction == "Iron Warriors")
             {
-                relics.Add("Axe of the Forgemaster");
-                relics.Add("Siegebreaker Mace");
-                relics.Add("Fleshmetal Exoskeleton");
+                if (keywords.Contains("CHAOS LORD") || keywords.Contains("EXALTED CHAMPION") || keywords.Contains("DAEMON PRINCE") ||
+                    keywords.Contains("WARPSMITH") || keywords.Contains("MASTER OF EXECUTIONS"))
+                {
+                    relics.Add("Axe of the Forgemaster");
+                }
+
+                if (keywords.Contains("CHAOS LORD") || keywords.Contains("DARK APOSTLE") || keywords.Contains("WARPSMITH"))
+                {
+                    relics.Add("Siegebreaker Mace");
+                }
+
+                if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
+                {
+                    relics.Add("Fleshmetal Exoskeleton");
+                }
+
                 relics.Add("Cranium Malevolus");
-                relics.Add("Insidium");
-                relics.Add("Spitespitter");
-                relics.Add("Techno-venomous Mechatendrils");
+
+                if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
+                {
+                    relics.Add("Insidium");
+                }
+
+                if ((keywords.Contains("CHAOS LORD") && keywords.Contains("TERMINATOR")) || keywords.Contains("EXALTED CHAMPION") ||
+                    (keywords.Contains("SORCERER") && keywords.Contains("TERMINATOR")))
+                {
+                    relics.Add("Spitespitter");
+                }
+
+                if (keywords.Contains("WARPSMITH"))
+                {
+                    relics.Add("Techno-venomous Mechatendrils");
+                }
             }
 
             if (currentSubFaction == "Alpha Legion")
             {
-                relics.Add("Blade of the Hydra");
-                relics.Add("Drakescale Plate");
-                relics.Add("Hydra's Wail");
-                relics.Add("Viper's Spite");
-                relics.Add("Hydra's Teeth");
+                if (keywords.Contains("CHAOS LORD"))
+                {
+                    relics.Add("Blade of the Hydra");
+                }
+
+                if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
+                {
+                    relics.Add("Drakescale Plate");
+                }
+
+                if (!keywords.Contains("DARK COMMUNE"))
+                {
+                    relics.Add("Hydra's Wail");
+                }
+
+                if ((keywords.Contains("CHAOS LORD") && !keywords.Contains("TERMINATOR")) || keywords.Contains("DARK APOSTLE") ||
+                    keywords.Contains("EXALTED CHAMPION") || keywords.Contains("LORD DISCORDANT") || keywords.Contains("MASTER OF POSSESSION") ||
+                    (keywords.Contains("SORCERER") && !keywords.Contains("TERMINATOR")) || keywords.Contains("MASTER OF EXECUTIONS"))
+                {
+                    relics.Add("Viper's Spite");
+                }
+
+                if (!keywords.Contains("DARK COMMUNE") && !keywords.Contains("DAEMON PRINCE") && !keywords.Contains("WARPSMITH"))
+                {
+                    relics.Add("Hydra's Teeth");
+                }
+
                 relics.Add("Icon of the Hydra Cult");
-                relics.Add("Mindveil");
+
+                if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
+                {
+                    relics.Add("Mindveil");
+                }
             }
 
             if (currentSubFaction == "Emperor's Children")
             {
-                relics.Add("The Endless Grin");
-                relics.Add("Fatal Sonacy");
-                relics.Add("Armour of Abhorrence");
-                relics.Add("Remnant of the Maraviglia");
-                relics.Add("Distortion");
+
+                if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
+                {
+                    relics.Add("The Endless Grin");
+                }
+
+                if (!keywords.Contains("DARK COMMUNE"))
+                {
+                    relics.Add("Fatal Sonacy");
+                    relics.Add("Armour of Abhorrence");
+                }
+
+                if (keywords.Contains("DARK APOSTLE"))
+                {
+                    relics.Add("Remnant of the Maraviglia");
+                }
+
+                if (keywords.Contains("CHAOS LORD") || (keywords.Contains("SORCERER") && keywords.Contains("TERMINATOR"))) 
+                {
+                    relics.Add("Distortion");
+                }
+
                 relics.Add("Raiment Revulsive");
             }
 
             if (currentSubFaction == "Red Corsairs")
             {
-                relics.Add("Maelstrom's Bite");
-                relics.Add("Armour of Badab");
-                relics.Add("Traitor's Laurels");
+
+                if ((keywords.Contains("CHAOS LORD") && keywords.Contains("TERMINATOR")) || keywords.Contains("EXALTED CHAMPION") ||
+                    (keywords.Contains("SORCERER") && keywords.Contains("TERMINATOR")))
+                {
+                    relics.Add("Maelstrom's Bite");
+                }
+
+                if (keywords.Contains("TERMINATOR"))
+                {
+                    relics.Add("Armour of Badab");
+                }
+
+                if (!keywords.Contains("DARK COMMUNE"))
+                {
+                    relics.Add("Traitor's Laurels");
+                }
             }
 
             if (currentSubFaction == "Creations of Bile")
             {
-                relics.Add("Helm of All-Seeing");
-                relics.Add("Living Carapace");
-                relics.Add("Hyper-Growth Bolts");
+                if (!keywords.Contains("DARK COMMUNE"))
+                {
+                    relics.Add("Helm of All-Seeing");
+                }
+
+                if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
+                {
+                    relics.Add("Living Carapace");
+                }
+
+                if (!keywords.Contains("DARK COMMUNE") && !keywords.Contains("DAEMON PRINCE") && !keywords.Contains("WARPSMITH"))
+                {
+                    relics.Add("Hyper-Growth Bolts");
+                }
             }
 
             return relics;

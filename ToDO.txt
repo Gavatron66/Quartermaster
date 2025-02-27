@@ -81,8 +81,9 @@ There is a potential error in Necrons that I wasn't able to duplicate
 Maybe figured out the NUD control scenarios! Further testing is required
 	Examples found in Necron Warriors and Lokhust Heavy Destroyers
 	
-Finish Chaos Terminators with a pair of Accursed Weapons, since they have different logic
+Double check plasma Pistol logic for chaos space marines, since some have restrictions
 
+When going back through, check if category weapons have points values for taking them
 
 Characters:
 	DG Chaos Lord
