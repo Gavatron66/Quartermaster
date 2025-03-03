@@ -49,7 +49,6 @@ namespace Roster_Builder.Adeptus_Custodes
                 cmbWarlord.Items.Add(item);
             }
 
-
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {

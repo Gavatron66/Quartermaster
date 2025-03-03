@@ -75,13 +75,13 @@ namespace Roster_Builder.Necrons
             return new List<Datasheets>()
             {
                 //---------- HQ ----------
-                new Imotekh(),
-                new Orikan(),
-                new Anrakyr(),
-                new Obyron(),
-                new Szeras(),
-                new Zahndrekh(),
-                new Trazyn(),
+                new ImotekhTheStormlord(),
+                new OrikanTheDiviner(),
+                new AnrakyrTheTraveller(),
+                new VargardObyron(),
+                new IlluminorSzeras(),
+                new NemesorZahndrekh(),
+                new TrazynTheInfinite(),
                 new RoyalWarden(),
                 new SkorpekhLord(),
                 new LokhustLord(),
@@ -131,7 +131,7 @@ namespace Roster_Builder.Necrons
                 new Obelisk(),
                 new TesseractVault(),
                 new Monolith(),
-                new SilentKing(),
+                new TheSilentKing(),
                 //---------- Fortification ----------
                 new ConvergenceOfDominion(),
             };
@@ -164,19 +164,19 @@ namespace Roster_Builder.Necrons
 
             if(thirty.Contains(upgrade))
             {
-                points += 30;
+                points += 25;
             }
             else if (twentyFive.Contains(upgrade))
             {
-                points += 25;
+                points += 20;
             }
             else if (twenty.Contains(upgrade))
             {
-                points += 20;
+                points += 15;
             }
             else if (fifteen.Contains(upgrade))
             {
-                points += 15;
+                points += 10;
             }
 
             return points;
@@ -225,16 +225,22 @@ namespace Roster_Builder.Necrons
             return upgrades;
         }
 
-        public override bool GetIfEnabled(int index)
+        public override bool GetIfEnabled(int code)
         {
-            /*
-            if (StratagemCount[index] < StratagemLimit[index])
+            switch (code)
             {
-                return true;
+                case 80:
+                    return !hasWarlord;
+                case 81:
+                    return !hasRelic;
+                case 82:
+                    return StratagemCount[0] == StratagemLimit[0];
+                case 83:
+                    return StratagemCount[1] == StratagemLimit[1];
+                case 84:
+                    return StratagemCount[2] == StratagemLimit[2];
             }
 
-            return false;
-            */
             return true;
         }
 
@@ -353,16 +359,19 @@ namespace Roster_Builder.Necrons
                 "Eternal Madness",
                 "Immortal Pride",
                 "Thrall of the Silent King",
-                "Implacable Conqueror (Aura)",
+                "Implacable Conqueror",
                 "Honourable Combatant"
             };
 
-            if(currentSubFaction == "Mephrit") { traits.Add("Merciless Tyrant"); }
-            else if (currentSubFaction == "Nephrekh") { traits.Add("Skin of Living Gold"); }
-            else if (currentSubFaction == "Nihilakh") { traits.Add("Precognitive Strike"); }
-            else if (currentSubFaction == "Novokh") { traits.Add("Blood-fuelled Fury"); }
-            else if (currentSubFaction == "Sautekh") { traits.Add("Hyperlogical Strategist"); }
-            else if (currentSubFaction == "Szarekhan") { traits.Add("The Triarch's Will"); }
+            if (currentSubFaction != string.Empty)
+            {
+                if (currentSubFaction == "Mephrit") { traits.Add("Merciless Tyrant"); }
+                else if (currentSubFaction == "Nephrekh") { traits.Add("Skin of Living Gold"); }
+                else if (currentSubFaction == "Nihilakh") { traits.Add("Precognitive Strike"); }
+                else if (currentSubFaction == "Novokh") { traits.Add("Blood-fuelled Fury"); }
+                else if (currentSubFaction == "Sautekh") { traits.Add("Hyperlogical Strategist"); }
+                else if (currentSubFaction == "Szarekhan") { traits.Add("The Triarch's Will"); }
+            }
 
             return traits;
         }

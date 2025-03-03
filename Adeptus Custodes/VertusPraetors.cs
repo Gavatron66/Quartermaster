@@ -59,7 +59,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 if (Weapons[(i * 2) + 1] != "")
                 {
                     lbModelSelect.Items.Add("Vertus Praetors w/ " + Weapons[i * 2]
-                        + " and a " + Weapons[(i * 2) + 1]);
+                        + " and " + Weapons[(i * 2) + 1]);
                 }
                 else
                 {
@@ -92,7 +92,7 @@ namespace Roster_Builder.Adeptus_Custodes
                     if (Weapons[(currentIndex * 2) + 1] != "")
                     {
                         lbModelSelect.Items[currentIndex] = ("Vertus Praetors w/ " + Weapons[currentIndex * 2]
-                            + " and a " + Weapons[(currentIndex * 2) + 1]);
+                            + " and " + Weapons[(currentIndex * 2) + 1]);
                     }
                     else
                     {
@@ -112,7 +112,7 @@ namespace Roster_Builder.Adeptus_Custodes
                     if (Weapons[(currentIndex * 2) + 1] != "")
                     {
                         lbModelSelect.Items[currentIndex] = ("Vertus Praetors w/ " + Weapons[currentIndex * 2]
-                            + " and a " + Weapons[(currentIndex * 2) + 1]);
+                            + " and " + Weapons[(currentIndex * 2) + 1]);
                     }
                     else
                     {

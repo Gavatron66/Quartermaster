@@ -36,21 +36,19 @@ namespace Roster_Builder.Death_Guard
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
-            cmbWarlord.Items.Clear();
-            List<string> traits = repo.GetWarlordTraits("");
-            foreach (var item in traits)
+            if (repo.hasWarlord && !isWarlord)
             {
-                cmbWarlord.Items.Add(item);
+                cbWarlord.Enabled = false;
             }
-
-
-            cmbOption1.Items.Clear();
-            cmbOption1.Items.AddRange(new string[]
+            else
             {
-                "Plaguereaper",
-                "Manreaper and Orb of Desiccation"
-            });
-            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+                cmbWarlord.Items.Clear();
+                List<string> traits = repo.GetWarlordTraits("");
+                foreach (var item in traits)
+                {
+                    cmbWarlord.Items.Add(item);
+                }
+            }
 
             if (isWarlord)
             {
@@ -63,6 +61,14 @@ namespace Roster_Builder.Death_Guard
                 cbWarlord.Checked = false;
                 cmbWarlord.Enabled = false;
             }
+
+            cmbOption1.Items.Clear();
+            cmbOption1.Items.AddRange(new string[]
+            {
+                "Plaguereaper",
+                "Manreaper and Orb of Desiccation"
+            });
+            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
             restrictedIndexes = new List<int>();
             for (int i = 0; i < cmbWarlord.Items.Count; i++)
@@ -96,16 +102,25 @@ namespace Roster_Builder.Death_Guard
             }
             this.DrawItemWithRestrictions(restrictedIndexes, cmbFaction);
 
-            cmbRelic.Items.Clear();
-            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
-
-            if (Relic != null)
+            if (repo.hasRelic && Relic == "(None)")
             {
-                cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                cmbRelic.Enabled = false;
+                cmbRelic.SelectedIndex = -1;
             }
             else
             {
-                cmbRelic.SelectedIndex = -1;
+                cmbRelic.Enabled = true;
+                cmbRelic.Items.Clear();
+                cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
+                if (Relic != null)
+                {
+                    cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                }
+                else
+                {
+                    cmbRelic.SelectedIndex = -1;
+                }
             }
 
             restrictedIndexes = new List<int>();
@@ -162,12 +177,21 @@ namespace Roster_Builder.Death_Guard
                 case 11:
                     Weapons[0] = cmb1.SelectedItem as string;
                     break;
-                case 35:
+                case 25:
                     if (isWarlord.Checked)
                     {
                         this.isWarlord = true;
+                        repo.hasWarlord = true;
                     }
-                    else { this.isWarlord = false; warlord.SelectedIndex = -1; }
+                    else
+                    {
+                        if (this.isWarlord)
+                        {
+                            repo.hasWarlord = false;
+                        }
+                        this.isWarlord = false;
+                        warlord.SelectedIndex = -1;
+                    }
                     break;
                 case 15:
                     if (!factionsRestrictions.Contains(warlord.Text))
@@ -222,12 +246,17 @@ namespace Roster_Builder.Death_Guard
                     }
                     break;
                 case 17:
-                    string chosenRelic = cmbRelic.SelectedItem.ToString();
                     if (!factionsRestrictions.Contains(cmbRelic.Text))
                     {
                         if (Relic == "(None)")
                         {
-                            Relic = cmbRelic.Text;
+                            Relic = cmbRelic.Text == "" ? "(None)" : cmbRelic.Text;
+                            if (!repo.hasRelic && Relic != "(None)")
+                            {
+                                hasFreeRelic = true;
+                                repo.hasRelic = true;
+                            }
+
                             if (Relic != "(None)")
                             {
                                 repo.restrictedItems.Add(Relic);
@@ -241,21 +270,20 @@ namespace Roster_Builder.Death_Guard
                             {
                                 repo.restrictedItems.Add(Relic);
                             }
+                            else
+                            {
+                                if (repo.hasRelic && hasFreeRelic)
+                                {
+                                    hasFreeRelic = false;
+                                    repo.hasRelic = false;
+                                }
+                            }
                         }
                     }
                     else
                     {
                         cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
-                    }
-
-                    if (chosenRelic == "Ferryman's Scythe")
-                    {
-                        cmb1.SelectedIndex = 1;
-                        cmb1.Enabled = false;
-                    }
-                    else
-                    {
-                        cmb1.Enabled = true;
+                        cmbRelic.Enabled = true;
                     }
                     break;
                 case 71:

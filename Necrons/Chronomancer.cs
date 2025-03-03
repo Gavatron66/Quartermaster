@@ -185,6 +185,7 @@ namespace Roster_Builder.Necrons
                     break;
             }
 
+            Points = DEFAULT_POINTS;
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
             if(Weapons.Contains("Entropic Lance (+10 pts)"))

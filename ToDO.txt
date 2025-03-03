@@ -43,7 +43,6 @@ Hybrid Metamorphs needs to be visited when the location and sizing rework is rea
 	Atalan Jackals
 
 Fix Named Characters? Some named Characters belong to specific subfactions, and technically if they contain a different subfaction keyword than they invalidate the detachment.
-	Finish fixing Warlord traits for Necrons
 
 Compare Primaris Lieutenant and Primaris Captain
 	They have annoyingly complicated options, so going to need some testing for it
@@ -70,7 +69,46 @@ Need to implement the relics for Drukhari, Deathwatch, Space Wolves
 
 Switching between detachments appears to broken, need to look in on that
 
-Last unit finished: Death Guard
+Rule of 3?
+	Applies to all non-Troops or non-Dedicated Transports
+
+Last unit finished: Mortarion
+
+UPDATE (01/10/2025) - I was working on Warlord and Relic restrictions! Following the list alphabetically
+
+Go back and double check Death Guard
+There is a potential error in Necrons that I wasn't able to duplicate
+Maybe figured out the NUD control scenarios! Further testing is required
+	Examples found in Necron Warriors and Lokhust Heavy Destroyers
+	
+Double check plasma Pistol logic for chaos space marines, since some have restrictions
+
+When going back through, check if category weapons have points values for taking them
+
+Characters:
+	DG Chaos Lord
+	DG Terminator Lord
+	DG Daemon Prince
+	DG Terminator Sorcerer
+	Lord of Contagion
+	Lord of Virulence
+	Malignant Plaguecaster
+	Typhus
+	Biologus Putrifier
+	Foul Blightspawn
+	Noxious Blightbringer
+	Plague Surgeon
+	Tallyman
+Sevenfold Blessings:
+	DG Daemon Prince
+	DG Terminator Sorcerer
+	Malignant Plaguecaster
+Champion of Disease:
+	Plague Marines
+	Blightlord Terminators
+	Deathshroud Terminators
+Grandfatherly Influence:
+	Chaos Spawn
 	
 
 			
@@ -167,7 +205,13 @@ Last unit finished: Death Guard
                     {
                         if (Relic == "(None)")
                         {
-                            Relic = cmbRelic.Text;
+                            Relic = cmbRelic.Text == "" ? "(None)" : cmbRelic.Text;
+                            if(!repo.hasRelic && Relic != "(None)")
+                            {
+                                hasFreeRelic = true;
+                                repo.hasRelic = true;
+                            }
+
                             if (Relic != "(None)")
                             {
                                 repo.restrictedItems.Add(Relic);
@@ -181,10 +225,85 @@ Last unit finished: Death Guard
                             {
                                 repo.restrictedItems.Add(Relic);
                             }
+                            else
+                            {
+                                if(repo.hasRelic && hasFreeRelic)
+                                {
+                                    hasFreeRelic = false;
+                                    repo.hasRelic = false;
+                                }
+                            }
                         }
                     }
                     else
                     {
                         cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                        cmbRelic.Enabled = true;
                     }
                     break;
+					
+                case 25:
+                    if (isWarlord.Checked)
+                    {
+                        this.isWarlord = true;
+                        repo.hasWarlord = true;
+                    }
+                    else 
+                    {
+                        if(this.isWarlord)
+                        {
+                            repo.hasWarlord = false;
+                        }
+                        this.isWarlord = false; 
+                        warlord.SelectedIndex = -1; 
+                    }
+                    break;
+					
+					
+	
+            if (repo.hasWarlord && !isWarlord)
+            {
+                cbWarlord.Enabled = false;
+            }
+            else
+            {
+                cmbWarlord.Items.Clear();
+                List<string> traits = repo.GetWarlordTraits("");
+                foreach (var item in traits)
+                {
+                    cmbWarlord.Items.Add(item);
+                }
+            }
+			
+            if (isWarlord)
+            {
+                cbWarlord.Checked = true;
+                cmbWarlord.Enabled = true;
+                cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
+            }
+            else
+            {
+                cbWarlord.Checked = false;
+                cmbWarlord.Enabled = false;
+            }
+			
+            if (repo.hasRelic && Relic == "(None)")
+            {
+                cmbRelic.Enabled = false;
+                cmbRelic.SelectedIndex = -1;
+            }
+            else
+            {
+                cmbRelic.Enabled = true;
+                cmbRelic.Items.Clear();
+                cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
+                if (Relic != null)
+                {
+                    cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                }
+                else
+                {
+                    cmbRelic.SelectedIndex = -1;
+                }
+            }

@@ -77,7 +77,7 @@ namespace Roster_Builder.Adepta_Sororitas
             }
             for (int i = 1; i < UnitSize; i++)
             {
-                lbModelSelect.Items.Add("Retributor with " + Weapons[i + 3]);
+                lbModelSelect.Items.Add("Retributor with " + Weapons[i + 4]);
             }
 
             cmbOption1.Items.Clear();
@@ -119,8 +119,8 @@ namespace Roster_Builder.Adepta_Sororitas
                     }
                     else
                     {
-                        Weapons[currentIndex + 3] = cmbOption1.SelectedItem.ToString();
-                        lbModelSelect.Items[currentIndex] = "Retributor with " + Weapons[currentIndex + 3];
+                        Weapons[currentIndex + 4] = cmbOption1.SelectedItem.ToString();
+                        lbModelSelect.Items[currentIndex] = "Retributor with " + Weapons[currentIndex + 4];
                     }
                     break;
                 case 12:
@@ -165,13 +165,13 @@ namespace Roster_Builder.Adepta_Sororitas
                     if (temp < UnitSize)
                     {
                         Weapons.Add("Boltgun");
-                        lbModelSelect.Items.Add("Retributor with " + Weapons[temp + 3]);
+                        lbModelSelect.Items.Add("Retributor with " + Weapons[temp + 4]);
                     }
 
                     if (temp > UnitSize)
                     {
                         lbModelSelect.Items.RemoveAt(temp - 1);
-                        Weapons.RemoveRange(UnitSize + 3, 1);
+                        Weapons.RemoveRange(UnitSize + 4, 1);
                     }
 
                     break;
@@ -198,7 +198,7 @@ namespace Roster_Builder.Adepta_Sororitas
                         panel.Controls["lblOption1"].Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
                         cbOption1.Visible = true;
-                        cbOption2.Visible = false;
+                        cbOption2.Visible = true;
 
                         cmbOption1.Items.Clear();
                         cmbOption1.Items.AddRange(new string[]
@@ -243,16 +243,16 @@ namespace Roster_Builder.Adepta_Sororitas
                         "Meltagun (+10 pts)", //s
                         "Ministorum Flamer (+5 pts)", //s
                     });
-                    cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 3]);
+                    cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 4]);
 
-                    if (restrictArray == 4 && Weapons[currentIndex + 3] == "Boltgun")
+                    if (restrictArray == 4 && Weapons[currentIndex + 4] == "Boltgun")
                     {
                         cmbOption1.Items.Remove("Artificer-crafted Storm Bolter (+5 pts)");
                         cmbOption1.Items.Remove("Meltagun (+10 pts)");
                         cmbOption1.Items.Remove("Ministorum Flamer (+5 pts)");
                     }
 
-                    if (Weapons[currentIndex + 3] == "Boltgun" && (stdIndex == -1 || stdIndex == currentIndex))
+                    if (Weapons[currentIndex + 4] == "Boltgun" && (stdIndex == -1 || stdIndex == currentIndex))
                     {
                         cbOption2.Enabled = true;
                     }

@@ -59,7 +59,7 @@ namespace Roster_Builder.Adeptus_Custodes
                 if (Weapons[(i * 2) + 1] != "")
                 {
                     lbModelSelect.Items.Add("Custodian Guard w/ " + Weapons[i * 2]
-                        + " and a " + Weapons[(i * 2) + 1]);
+                        + " and " + Weapons[(i * 2) + 1]);
                 } 
                 else
                 {
@@ -100,7 +100,7 @@ namespace Roster_Builder.Adeptus_Custodes
                     if (Weapons[(currentIndex * 2) + 1] != "")
                     {
                         lbModelSelect.Items[currentIndex] = ("Custodian Guard w/ " + Weapons[currentIndex * 2]
-                            + " and a " + Weapons[(currentIndex * 2) + 1]);
+                            + " and " + Weapons[(currentIndex * 2) + 1]);
                     }
                     else
                     {
@@ -120,7 +120,7 @@ namespace Roster_Builder.Adeptus_Custodes
                     if (Weapons[(currentIndex * 2) + 1] != "")
                     {
                         lbModelSelect.Items[currentIndex] = ("Custodian Guard w/ " + Weapons[currentIndex * 2]
-                            + " and a " + Weapons[(currentIndex * 2) + 1]);
+                            + " and " + Weapons[(currentIndex * 2) + 1]);
                     }
                     else
                     {

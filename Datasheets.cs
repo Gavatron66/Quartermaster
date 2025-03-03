@@ -154,6 +154,7 @@ namespace Roster_Builder
         public List<string> Keywords { get; set; }
         protected int DEFAULT_POINTS { get; set; }
         public bool isWarlord { get; set; }
+        public bool hasFreeRelic { get; set; }
         public string WarlordTrait { get; set; }
         public string[] PsykerPowers { get; set; }
         public string Factionupgrade { get; set; }

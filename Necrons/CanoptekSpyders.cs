@@ -55,7 +55,7 @@ namespace Roster_Builder.Necrons
             lbModelSelect.Items.Clear();
             for(int i = 0; i < UnitSize; i++)
             {
-                lbModelSelect.Items.Add("Canoptek Spyder");
+                lbModelSelect.Items.Add("Canoptek Spyder - " + CalcPoints(i) + " pts");
             }
 
             cbOption1.Text = "Two Particle Beamers (+5 pts)";
@@ -87,6 +87,7 @@ namespace Roster_Builder.Necrons
                     {
                         Weapons[currentIndex * 3] = "";
                     }
+                    lbModelSelect.Items[currentIndex] = "Canoptek Spyder - " + CalcPoints(currentIndex) + " pts";
                     break;
                 case 22:
                     if (cbOption2.Checked)
@@ -97,6 +98,7 @@ namespace Roster_Builder.Necrons
                     {
                         Weapons[(currentIndex * 3) + 1] = "";
                     }
+                    lbModelSelect.Items[currentIndex] = "Canoptek Spyder - " + CalcPoints(currentIndex) + " pts";
                     break;
                 case 23:
                     if (cbOption3.Checked)
@@ -107,6 +109,7 @@ namespace Roster_Builder.Necrons
                     {
                         Weapons[(currentIndex * 3) + 2] = "";
                     }
+                    lbModelSelect.Items[currentIndex] = "Canoptek Spyder - " + CalcPoints(currentIndex) + " pts";
                     break;
                 case 30:
                     int temp = UnitSize;
@@ -114,10 +117,10 @@ namespace Roster_Builder.Necrons
 
                     if(temp < UnitSize)
                     {
-                        lbModelSelect.Items.Add("Canoptek Spyder");
                         Weapons.Add(""); 
                         Weapons.Add("");
                         Weapons.Add("");
+                        lbModelSelect.Items.Add("Canoptek Spyder - " + CalcPoints(temp) + " pts");
                     }
 
                     if (temp > UnitSize)
@@ -185,6 +188,21 @@ namespace Roster_Builder.Necrons
         public override string ToString()
         {
             return "Canoptek Spyders - " + Points + "pts";
+        }
+
+        private int CalcPoints(int index)
+        {
+            int val = DEFAULT_POINTS;
+
+            for(int i = index * 3; i < (index + 1) * 3; i++)
+            {
+                if (Weapons[i] != "")
+                {
+                    val += 5;
+                }
+            }
+
+            return val;
         }
     }
 }

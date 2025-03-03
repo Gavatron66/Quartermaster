@@ -17,10 +17,10 @@ namespace Roster_Builder.Adeptus_Custodes
             factionUpgradeName = "Captain-Commander";
             StratagemList.AddRange(new string[]
             {
-                "The Emperor's Heroes",
-                "Open the Vaults",
-                "Victor of the Blood Games",
-                "Eternal Penitent"
+                "Stratagem: The Emperor's Heroes",
+                "Stratagem: Open the Vaults",
+                "Stratagem: Victor of the Blood Games",
+                "Stratagem: Eternal Penitent"
             });
         }
 
@@ -348,6 +348,20 @@ namespace Roster_Builder.Adeptus_Custodes
         public override void UpdateSubFaction(bool code, Datasheets datasheet)
         {
 
+        }
+        public override void SetUpForm(Form form)
+        {
+            base.SetUpForm(form);
+
+            Panel panel = form.Controls["panel1"] as Panel;
+
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            Label lblFactionupgrade = panel.Controls["lblFactionupgrade"] as Label;
+
+            cbStratagem1.Text = StratagemList[0];
+            cbStratagem2.Text = StratagemList[1];
+            lblFactionupgrade.Text = factionUpgradeName;
         }
     }
 }

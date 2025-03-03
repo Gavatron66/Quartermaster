@@ -34,6 +34,7 @@ namespace Roster_Builder.Adeptus_Custodes
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
+            repo = f as AdeptusCustodes;
 
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;

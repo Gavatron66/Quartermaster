@@ -42,7 +42,13 @@ namespace Roster_Builder.Adeptus_Custodes
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
-            ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
+
+            cmbWarlord.Items.Clear();
+            List<string> traits = repo.GetWarlordTraits("");
+            foreach (var item in traits)
+            {
+                cmbWarlord.Items.Add(item);
+            }
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -75,7 +81,7 @@ namespace Roster_Builder.Adeptus_Custodes
             }
 
             cbOption1.Text = "Misericordia";
-            if (Weapons[1] == "Misericordia")
+            if (Weapons[2] == "Misericordia")
             {
                 cbOption1.Checked = true;
             }
@@ -125,6 +131,7 @@ namespace Roster_Builder.Adeptus_Custodes
         public override void SaveDatasheets(int code, Panel panel)
         {
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
@@ -138,7 +145,7 @@ namespace Roster_Builder.Adeptus_Custodes
                     Weapons[0] = cmbOption1.SelectedItem.ToString();
                     break;
                 case 12:
-                    Weapons[1] = cmbOption1.SelectedItem.ToString();
+                    Weapons[1] = cmbOption2.SelectedItem.ToString();
                     break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)

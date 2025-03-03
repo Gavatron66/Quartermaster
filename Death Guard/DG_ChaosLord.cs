@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Roster_Builder.Tyranids;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,42 +32,48 @@ namespace Roster_Builder.Death_Guard
             factionsRestrictions = repo.restrictedItems;
             Template.LoadTemplate(TemplateCode, panel);
 
-            ComboBox cmb = panel.Controls["cmbWarlord"] as ComboBox;
-            CheckBox cb = panel.Controls["cbWarlord"] as CheckBox;
+            ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
+            CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
-            ComboBox cmb2 = panel.Controls["cmbOption1"] as ComboBox;
-            ComboBox cmb3 = panel.Controls["cmbOption2"] as ComboBox;
+            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
-            cmb.Items.Clear();
-            List<string> traits = repo.GetWarlordTraits("");
-            foreach (var item in traits)
+            if (repo.hasWarlord && !isWarlord)
             {
-                cmb.Items.Add(item);
-            }
-
-
-            if (isWarlord)
-            {
-                cb.Checked = true;
-                cmb.Enabled = true;
-                cmb.SelectedIndex = cmb.Items.IndexOf(WarlordTrait);
+                cbWarlord.Enabled = false;
             }
             else
             {
-                cb.Checked = false;
-                cmb.Enabled = false;
+                cmbWarlord.Items.Clear();
+                List<string> traits = repo.GetWarlordTraits("");
+                foreach (var item in traits)
+                {
+                    cmbWarlord.Items.Add(item);
+                }
+            }
+
+            if (isWarlord)
+            {
+                cbWarlord.Checked = true;
+                cmbWarlord.Enabled = true;
+                cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
+            }
+            else
+            {
+                cbWarlord.Checked = false;
+                cmbWarlord.Enabled = false;
             }
 
             restrictedIndexes = new List<int>();
-            for (int i = 0; i < cmb.Items.Count; i++)
+            for (int i = 0; i < cmbWarlord.Items.Count; i++)
             {
-                if (repo.restrictedItems.Contains(cmb.Items[i]) && WarlordTrait != cmb.Items[i].ToString())
+                if (repo.restrictedItems.Contains(cmbWarlord.Items[i]) && WarlordTrait != cmbWarlord.Items[i].ToString())
                 {
                     restrictedIndexes.Add(i);
                 }
             }
-            this.DrawItemWithRestrictions(restrictedIndexes, cmb);
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbWarlord);
 
             cmbFaction.Items.Clear();
             cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
@@ -90,8 +97,8 @@ namespace Roster_Builder.Death_Guard
             }
             this.DrawItemWithRestrictions(restrictedIndexes, cmbFaction);
 
-            cmb2.Items.Clear();
-            cmb2.Items.AddRange(new string[] {
+            cmbOption1.Items.Clear();
+            cmbOption1.Items.AddRange(new string[] {
                 "Balesword",
                 "Bolt Pistol",
                 "Chainaxe",
@@ -106,10 +113,10 @@ namespace Roster_Builder.Death_Guard
                 "Power Maul",
                 "Power Sword"
             });
-            cmb2.SelectedIndex = cmb2.Items.IndexOf(Weapons[0]);
+            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            cmb3.Items.Clear();
-            cmb3.Items.AddRange(new string[] {
+            cmbOption2.Items.Clear();
+            cmbOption2.Items.AddRange(new string[] {
                 "Astartes Chainsword",
                 "Balesword",
                 "Chainaxe",
@@ -119,18 +126,27 @@ namespace Roster_Builder.Death_Guard
                 "Power Maul",
                 "Power Sword"
             });
-            cmb3.SelectedIndex = cmb3.Items.IndexOf(Weapons[1]);
+            cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
-            cmbRelic.Items.Clear();
-            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
-
-            if (Relic != null)
+            if (repo.hasRelic && Relic == "(None)")
             {
-                cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                cmbRelic.Enabled = false;
+                cmbRelic.SelectedIndex = -1;
             }
             else
             {
-                cmbRelic.SelectedIndex = -1;
+                cmbRelic.Enabled = true;
+                cmbRelic.Items.Clear();
+                cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
+                if (Relic != null)
+                {
+                    cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                }
+                else
+                {
+                    cmbRelic.SelectedIndex = -1;
+                }
             }
 
             restrictedIndexes = new List<int>();
@@ -179,36 +195,45 @@ namespace Roster_Builder.Death_Guard
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            ComboBox factionud = panel.Controls["cmbFactionupgrade"] as ComboBox;
-            CheckBox isWarlord = panel.Controls["cbWarlord"] as CheckBox;
-            ComboBox warlord = panel.Controls["cmbWarlord"] as ComboBox;
+            ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
+            ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            ComboBox cmb1 = panel.Controls["cmbOption1"] as ComboBox;
-            ComboBox cmb2 = panel.Controls["cmbOption2"] as ComboBox;
+            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
             switch (code)
             {
                 case 11:
-                    Weapons[0] = cmb1.SelectedItem as string;
+                    Weapons[0] = cmbOption1.SelectedItem as string;
                     break;
                 case 12:
-                    Weapons[1] = cmb2.SelectedItem as string;
+                    Weapons[1] = cmbOption1.SelectedItem as string;
                     break;
                 case 25:
-                    if (isWarlord.Checked)
+                    if (cbWarlord.Checked)
                     {
                         this.isWarlord = true;
+                        repo.hasWarlord = true;
                     }
-                    else { this.isWarlord = false; warlord.SelectedIndex = -1; }
+                    else
+                    {
+                        if (this.isWarlord)
+                        {
+                            repo.hasWarlord = false;
+                        }
+                        this.isWarlord = false;
+                        cmbWarlord.SelectedIndex = -1;
+                    }
                     break;
                 case 15:
-                    if (!factionsRestrictions.Contains(warlord.Text))
+                    if (!factionsRestrictions.Contains(cmbWarlord.Text))
                     {
                         if (WarlordTrait == "")
                         {
-                            WarlordTrait = warlord.Text;
+                            WarlordTrait = cmbWarlord.Text;
                             if (WarlordTrait != "")
                             {
                                 repo.restrictedItems.Add(WarlordTrait);
@@ -217,7 +242,7 @@ namespace Roster_Builder.Death_Guard
                         else
                         {
                             repo.restrictedItems.Remove(WarlordTrait);
-                            WarlordTrait = warlord.Text;
+                            WarlordTrait = cmbWarlord.Text;
                             if (WarlordTrait != "")
                             {
                                 repo.restrictedItems.Add(WarlordTrait);
@@ -226,15 +251,15 @@ namespace Roster_Builder.Death_Guard
                     }
                     else
                     {
-                        warlord.SelectedIndex = warlord.Items.IndexOf(WarlordTrait);
+                        cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
                     }
                     break;
                 case 16:
-                    if (!factionsRestrictions.Contains(factionud.Text))
+                    if (!factionsRestrictions.Contains(cmbFactionupgrade.Text))
                     {
                         if (Factionupgrade == "(None)")
                         {
-                            Factionupgrade = factionud.Text;
+                            Factionupgrade = cmbFactionupgrade.Text;
                             if (Factionupgrade != "(None)")
                             {
                                 repo.restrictedItems.Add(Factionupgrade);
@@ -243,7 +268,7 @@ namespace Roster_Builder.Death_Guard
                         else
                         {
                             repo.restrictedItems.Remove(Factionupgrade);
-                            Factionupgrade = factionud.Text;
+                            Factionupgrade = cmbFactionupgrade.Text;
                             if (Factionupgrade != "(None)")
                             {
                                 repo.restrictedItems.Add(Factionupgrade);
@@ -252,7 +277,7 @@ namespace Roster_Builder.Death_Guard
                     }
                     else
                     {
-                        factionud.SelectedIndex = factionud.Items.IndexOf(Factionupgrade);
+                        cmbFactionupgrade.SelectedIndex = cmbFactionupgrade.Items.IndexOf(Factionupgrade);
                     }
                     break;
                 case 17:
@@ -260,7 +285,13 @@ namespace Roster_Builder.Death_Guard
                     {
                         if (Relic == "(None)")
                         {
-                            Relic = cmbRelic.Text;
+                            Relic = cmbRelic.Text == "" ? "(None)" : cmbRelic.Text;
+                            if (!repo.hasRelic && Relic != "(None)")
+                            {
+                                hasFreeRelic = true;
+                                repo.hasRelic = true;
+                            }
+
                             if (Relic != "(None)")
                             {
                                 repo.restrictedItems.Add(Relic);
@@ -274,21 +305,32 @@ namespace Roster_Builder.Death_Guard
                             {
                                 repo.restrictedItems.Add(Relic);
                             }
+                            else
+                            {
+                                if (repo.hasRelic && hasFreeRelic)
+                                {
+                                    hasFreeRelic = false;
+                                    repo.hasRelic = false;
+                                }
+                            }
                         }
                     }
                     else
                     {
                         cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                        cmbRelic.Enabled = true;
                     }
+
+                    if(cmbRelic.SelectedIndex == -1) { break; }
 
                     if (cmbRelic.SelectedItem.ToString() == "Plaguebringer")
                     {
-                        cmb2.SelectedIndex = cmb2.Items.IndexOf("Power Sword");
-                        cmb2.Enabled = false;
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
+                        cmbOption1.Enabled = false;
                     }
                     else
                     {
-                        cmb2.Enabled = true;
+                        cmbOption1.Enabled = true;
                     }
                     break;
                 case 71:

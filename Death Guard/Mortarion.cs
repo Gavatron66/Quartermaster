@@ -44,6 +44,7 @@ namespace Roster_Builder.Death_Guard
             cmbWarlord.Items.Clear();
             cmbWarlord.Items.Add("Revolting Resilient; Living Plague; Arch-Contaminator");
             cmbWarlord.SelectedIndex = 0;
+            isWarlord = true;
 
             if (Factionupgrade != null)
             {
@@ -87,6 +88,13 @@ namespace Roster_Builder.Death_Guard
 
             switch (code)
             {
+                case 25:
+                    if (isWarlord.Checked)
+                    {
+                        this.isWarlord = true;
+                        repo.hasWarlord = true;
+                    }
+                    break;
                 case 60:
                     if (clb.CheckedItems.Count < 2)
                     {

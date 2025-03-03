@@ -59,7 +59,7 @@ namespace Roster_Builder.Necrons
             lbModelSelect.Items.Clear();
             for (int i = 0; i < UnitSize; i++)
             {
-                lbModelSelect.Items.Add("Tomb Blade");
+                lbModelSelect.Items.Add("Tomb Blade w/ " + Weapons[i * 3]);
             }
 
             cmbOption1.Items.Clear();
@@ -98,6 +98,8 @@ namespace Roster_Builder.Necrons
             {
                 case 11:
                     Weapons[currentIndex * 3] = cmbOption1.SelectedItem.ToString();
+
+                    lbModelSelect.Items[currentIndex] = "Tomb Blade w/ " + Weapons[currentIndex * 3];
                     break;
                 case 12:
                     Weapons[(currentIndex * 3) + 2] = cmbOption2.SelectedItem.ToString();
@@ -118,10 +120,10 @@ namespace Roster_Builder.Necrons
 
                     if (temp < UnitSize)
                     {
-                        lbModelSelect.Items.Add("Tomb Blade");
                         Weapons.Add("Twin Gauss Blaster (+5 pts)");
                         Weapons.Add("");
                         Weapons.Add("(None)");
+                        lbModelSelect.Items.Add("Tomb Blade w/ " + Weapons[temp * 3]);
                     }
 
                     if (temp > UnitSize)

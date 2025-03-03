@@ -32,6 +32,7 @@ namespace Roster_Builder.Necrons
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
+            repo = f as Necrons;
             Template.LoadTemplate(TemplateCode, panel);
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
@@ -47,6 +48,7 @@ namespace Roster_Builder.Necrons
             nudUnitSize.Maximum = 20;
             nudUnitSize.Value = currentSize;
 
+            antiLoop = true;
             nudOption1.Minimum = 0;
             nudOption1.Maximum = nudUnitSize.Maximum;
             nudOption1.Value = 0;
@@ -59,10 +61,16 @@ namespace Roster_Builder.Necrons
 
             nudOption1.Value = int.Parse(Weapons[0]);
             nudOption2.Value = int.Parse(Weapons[1]);
+            antiLoop = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
+            if(antiLoop)
+            {
+                return;
+            }
+
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
             NumericUpDown nudOption2 = panel.Controls["nudOption2"] as NumericUpDown;
@@ -73,6 +81,7 @@ namespace Roster_Builder.Necrons
                     int oldSize = UnitSize;
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
 
+                    antiLoop = true;
                     if(UnitSize > oldSize)
                     {
                         nudOption1.Value += UnitSize - oldSize;
@@ -89,34 +98,57 @@ namespace Roster_Builder.Necrons
                             nudOption2.Value -= oldSize - UnitSize;
                         }
                     }
+                    antiLoop = false;
                     break;
                 case 31:
-                    if (nudOption1.Value == 0)
+                    int temp = Convert.ToInt32(Weapons[0]);
+                    antiLoop = true;
+
+                    if(nudOption1.Value < 0)
                     {
-                        break;
+                        nudOption1.Value++;
                     }
-                    else if (nudOption1.Value + nudOption2.Value <= nudUnitSize.Value)
+                    else if (nudOption1.Value > UnitSize)
                     {
-                        Weapons[0] = Convert.ToString(nudOption1.Value);
+                        nudOption1.Value--;
                     }
-                    else
+                    else if(temp < nudOption1.Value)
                     {
-                        nudOption1.Value -= 1;
+                        nudOption2.Value--;
                     }
+                    else if (temp > nudOption1.Value)
+                    {
+                        nudOption2.Value++;
+                    }
+                    antiLoop = false;
+
+                    Weapons[0] = Convert.ToString(nudOption1.Value);
+                    Weapons[1] = Convert.ToString(nudOption2.Value);
                     break;
                 case 32:
-                    if (nudOption2.Value == 0)
+                    int temp2 = Convert.ToInt32(Weapons[1]);
+                    antiLoop = true;
+
+                    if (nudOption2.Value < 0)
                     {
-                        break;
+                        nudOption2.Value++;
                     }
-                    else if (nudOption1.Value + nudOption2.Value <= nudUnitSize.Value)
+                    else if (nudOption2.Value > UnitSize)
                     {
-                        Weapons[1] = Convert.ToString(nudOption2.Value);
+                        nudOption2.Value--;
                     }
-                    else
+                    else if (temp2 < nudOption2.Value)
                     {
-                        nudOption2.Value -= 1;
+                        nudOption1.Value--;
                     }
+                    else if (temp2 > nudOption2.Value)
+                    {
+                        nudOption1.Value++;
+                    }
+                    antiLoop = false;
+
+                    Weapons[0] = Convert.ToString(nudOption1.Value);
+                    Weapons[1] = Convert.ToString(nudOption2.Value);
                     break;
             }
 

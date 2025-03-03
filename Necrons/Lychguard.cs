@@ -32,6 +32,7 @@ namespace Roster_Builder.Necrons
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
+            repo = f as Necrons;
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;

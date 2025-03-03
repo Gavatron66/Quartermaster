@@ -14,6 +14,7 @@ namespace Roster_Builder.Death_Guard
         int coreInfantry = 0;
         int plagueFollower = 0;
         int poxwalkers = 0;
+        bool mortarion = false;
 
         public DeathGuard()
         {
@@ -58,46 +59,47 @@ namespace Roster_Builder.Death_Guard
 
         public override List<Datasheets> GetDatasheets()
         {
-            return new List<Datasheets>() { 
-            //---------- HQ ----------
-            new DG_DaemonPrince(),
-            new Typhus(),
-            new DG_ChaosLord(),
-            new DG_TerminatorChaosLord(),
-            new LordOfVirulence(),
-            new LordOfContagion(),
-            new DG_TerminatorSorcerer(),
-            new MalignantPlaguecaster(),
-            //---------- Troops ----------
-            new PlagueMarines(),
-            new DG_Cultists(),
-            new Poxwalkers(),
-            //---------- Elite ----------
-            new NoxiousBlightbringer(),
-            new FoulBlightspawn(),
-            new BiologusPutrifier(),
-            new Tallyman(),
-            new PlagueSurgeon(),
-            new BlightlordTerminators(),
-            new DeathshroudTerminators(),
-            new Helbrute(),
-            new DG_Possessed(), 
-            //---------- Fast Attack ----------
-            new ChaosSpawn(),
-            new MyphiticBlightHauler(),
-            new FoetidBloatDrone(),
-            //---------- Heavy Support ----------
-            new PlagueburstCrawler(),
-            new ChaosLandRaider(),
-            new ChaosPredatorAnnihilator(),
-            new ChaosPredatorDestructor(),
-            new Defiler(), 
-            //---------- Transport ----------
-            new ChaosRhino(),
-            //---------- Lord of War ----------
-            new Mortarion(), 
-            //---------- Fortification ----------
-            new MiasmicMalignifier(),
+            return new List<Datasheets>() 
+            { 
+                //---------- HQ ----------
+                new DG_DaemonPrince(),
+                new Typhus(),
+                new DG_ChaosLord(),
+                new DG_TerminatorChaosLord(),
+                new LordOfVirulence(),
+                new LordOfContagion(),
+                new DG_TerminatorSorcerer(),
+                new MalignantPlaguecaster(),
+                //---------- Troops ----------
+                new PlagueMarines(),
+                new DG_Cultists(),
+                new Poxwalkers(),
+                //---------- Elite ----------
+                new NoxiousBlightbringer(),
+                new FoulBlightspawn(),
+                new BiologusPutrifier(),
+                new Tallyman(),
+                new PlagueSurgeon(),
+                new BlightlordTerminators(),
+                new DeathshroudTerminators(),
+                new DG_Helbrute(),
+                new DG_Possessed(), 
+                //---------- Fast Attack ----------
+                new DG_ChaosSpawn(),
+                new MyphiticBlightHauler(),
+                new FoetidBloatDrone(),
+                //---------- Heavy Support ----------
+                new PlagueburstCrawler(),
+                new DG_ChaosLandRaider(),
+                new DG_ChaosPredatorAnnihilator(),
+                new DG_ChaosPredatorDestructor(),
+                new DG_Defiler(), 
+                //---------- Transport ----------
+                new DG_ChaosRhino(),
+                //---------- Lord of War ----------
+                new Mortarion(), 
+                //---------- Fortification ----------
+                new MiasmicMalignifier(),
             };
         }
 
@@ -354,10 +356,9 @@ namespace Roster_Builder.Death_Guard
             {
                 if (code)
                 {
-
                     if (datasheet is Mortarion)
                     {
-                        for (int i = 1; i < roster.Count; i++)
+                        for (int i = 0; i < roster.Count; i++)
                         {
                             Datasheets unit = roster[i] as Datasheets;
 
@@ -367,12 +368,12 @@ namespace Roster_Builder.Death_Guard
                             {
                                 restrictedItems.Remove(unit.WarlordTrait);
                                 unit.WarlordTrait = string.Empty;
-
                             }
 
                             if (unit.isWarlord)
                             {
                                 unit.isWarlord = false;
+                                unit.WarlordTrait = string.Empty;
                             }
                         }
 
@@ -381,6 +382,8 @@ namespace Roster_Builder.Death_Guard
                         restrictedItems.Add("Arch-Contaminator");
 
                         restrictedDatasheets.Add(29);
+                        hasWarlord = true;
+                        mortarion = true;
                     }
                     if(datasheet is Typhus)
                     {
@@ -393,7 +396,7 @@ namespace Roster_Builder.Death_Guard
                     if(datasheet.Keywords.Contains("LORD OF THE DEATH GUARD"))
                     {
                         restrictedDatasheets.Add(1);
-                        //restrictedDatasheets.Add(2);
+                        restrictedDatasheets.Add(2);
                         restrictedDatasheets.Add(3);
                         restrictedDatasheets.Add(4);
                         restrictedDatasheets.Add(5);
@@ -425,7 +428,11 @@ namespace Roster_Builder.Death_Guard
                 {
                     if (datasheet is Mortarion)
                     {
+                        restrictedItems.Remove("Revoltingly Resilient");
+                        restrictedItems.Remove("Living Plague");
+                        restrictedItems.Remove("Arch-Contaminator");
                         restrictedDatasheets.Remove(29);
+                        mortarion = false;
                     }
                     if (datasheet is Typhus)
                     {
@@ -457,29 +464,56 @@ namespace Roster_Builder.Death_Guard
                         poxwalkers--;
 
                     }
+                    if (datasheet.hasFreeRelic)
+                    {
+                        this.hasRelic = false;
+                    }
+                    if (datasheet.isWarlord)
+                    {
+                        this.hasWarlord = false;
+                    }
                 }
+            }
+
+            if(mortarion)
+            {
+                hasWarlord = true;
             }
 
             if (plagueFollower < coreInfantry)
             {
                 restrictedDatasheets.Remove(9);
             }
-            else if (plagueFollower > coreInfantry)
+            else if (plagueFollower >= coreInfantry)
             {
-                roster.RemoveAt(roster.FindIndex(d => d.ToString().Contains("Cultists")));
-                plagueFollower--;
-                restrictedDatasheets.Add(9);
+                if(plagueFollower != coreInfantry)
+                {
+                    roster.RemoveAt(roster.FindIndex(d => d.ToString().Contains("Cultists")));
+                    plagueFollower--;
+                }
+
+                if(!restrictedDatasheets.Contains(9))
+                {
+                    restrictedDatasheets.Add(9);
+                }
             }
 
             if (poxwalkers < coreInfantry)
             {
                 restrictedDatasheets.Remove(10);
             }
-            else if (poxwalkers > coreInfantry)
+            else if (poxwalkers >= coreInfantry)
             {
-                roster.RemoveAt(roster.FindIndex(d => d.ToString().Contains("Poxwalkers")));
-                poxwalkers--;
-                restrictedDatasheets.Add(10);
+                if(poxwalkers != coreInfantry)
+                {
+                    roster.RemoveAt(roster.FindIndex(d => d.ToString().Contains("Poxwalkers")));
+                    poxwalkers--;
+                }
+
+                if (!restrictedDatasheets.Contains(10))
+                {
+                    restrictedDatasheets.Add(10);
+                }
             }
         }
     }

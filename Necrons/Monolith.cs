@@ -31,6 +31,7 @@ namespace Roster_Builder.Necrons
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
+            repo = f as Necrons;
             Template.LoadTemplate(TemplateCode, panel);
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
@@ -56,11 +57,6 @@ namespace Roster_Builder.Necrons
             }
 
             Points = DEFAULT_POINTS;
-
-            if (Weapons.Contains("Four Death Rays"))
-            {
-                Points += 20;
-            }
         }
 
         public override string ToString()

@@ -34,8 +34,8 @@ namespace Roster_Builder.Death_Guard
             Template.LoadTemplate(TemplateCode, panel);
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            CheckBox check1 = panel.Controls["cbOption1"] as CheckBox;
-            CheckBox check2 = panel.Controls["cbOption2"] as CheckBox;
+            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
@@ -43,11 +43,18 @@ namespace Roster_Builder.Death_Guard
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
-            cmbWarlord.Items.Clear();
-            List<string> traits = repo.GetWarlordTraits("");
-            foreach (var item in traits)
+            if (repo.hasWarlord && !isWarlord)
             {
-                cmbWarlord.Items.Add(item);
+                cbWarlord.Enabled = false;
+            }
+            else
+            {
+                cmbWarlord.Items.Clear();
+                List<string> traits = repo.GetWarlordTraits("");
+                foreach (var item in traits)
+                {
+                    cmbWarlord.Items.Add(item);
+                }
             }
 
             cmbOption1.Items.Clear();
@@ -59,24 +66,24 @@ namespace Roster_Builder.Death_Guard
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            check1.Text = "Plague Spewer (+5 pts)";
+            cbOption1.Text = "Plague Spewer (+5 pts)";
             if (Weapons[1] != string.Empty)
             {
-                check1.Checked = true;
+                cbOption1.Checked = true;
             }
             else
             {
-                check1.Checked = false;
+                cbOption1.Checked = false;
             }
 
-            check2.Text = "Foetid Wings (+35 pts)";
+            cbOption2.Text = "Foetid Wings (+35 pts)";
             if (Weapons[2] != string.Empty)
             {
-                check2.Checked = true;
+                cbOption2.Checked = true;
             }
             else
             {
-                check2.Checked = false;
+                cbOption2.Checked = false;
             }
 
             if (isWarlord)
@@ -143,16 +150,25 @@ namespace Roster_Builder.Death_Guard
                 clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
             }
 
-            cmbRelic.Items.Clear();
-            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
-
-            if (Relic != null)
+            if (repo.hasRelic && Relic == "(None)")
             {
-                cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                cmbRelic.Enabled = false;
+                cmbRelic.SelectedIndex = -1;
             }
             else
             {
-                cmbRelic.SelectedIndex = -1;
+                cmbRelic.Enabled = true;
+                cmbRelic.Items.Clear();
+                cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
+                if (Relic != null)
+                {
+                    cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                }
+                else
+                {
+                    cmbRelic.SelectedIndex = -1;
+                }
             }
 
             restrictedIndexes = new List<int>();
@@ -192,6 +208,8 @@ namespace Roster_Builder.Death_Guard
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
+
+            restrictedIndexes = new List<int>();
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -210,16 +228,20 @@ namespace Roster_Builder.Death_Guard
             switch (code)
             {
                 case 11:
-                    Weapons[0] = cmb.SelectedItem.ToString();
-                    if (Weapons[0] != "Hellforged Sword (+10 pts)")
+                    if (cmb.SelectedIndex != 0)
                     {
+                        if(restrictedIndexes.Contains(cmb.SelectedIndex)) 
+                        {
+                            cmb.SelectedIndex = 0;
+                            break;
+                        }
+
+                        Weapons[0] = cmb.SelectedItem.ToString();
                         cb.Enabled = false;
                         cb.Checked = false;
                     }
-                    else
-                    {
-                        cb.Enabled = true;
-                    }
+
+                    Weapons[0] = cmb.SelectedItem.ToString();
                     break;
                 case 21:
                     if (cb.Checked)
@@ -227,12 +249,15 @@ namespace Roster_Builder.Death_Guard
                         Weapons[1] = cb.Text;
                         cb2.Enabled = false;
                         cb2.Checked = false;
+                        restrictedIndexes.AddRange(new int[2] {1, 2});
                     }
                     else 
                     { 
                         Weapons[1] = string.Empty;
                         cb2.Enabled = true;
+                        restrictedIndexes.RemoveRange(0, 2);
                     }
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmb);
                     break;
                 case 22:
                     if (cb2.Checked)
@@ -251,8 +276,17 @@ namespace Roster_Builder.Death_Guard
                     if (isWarlord.Checked)
                     {
                         this.isWarlord = true;
+                        repo.hasWarlord = true;
                     }
-                    else { this.isWarlord = false; warlord.SelectedIndex = -1; }
+                    else
+                    {
+                        if (this.isWarlord)
+                        {
+                            repo.hasWarlord = false;
+                        }
+                        this.isWarlord = false;
+                        warlord.SelectedIndex = -1;
+                    }
                     break;
                 case 15:
                     if (!factionsRestrictions.Contains(warlord.Text))
@@ -321,7 +355,13 @@ namespace Roster_Builder.Death_Guard
                     {
                         if (Relic == "(None)")
                         {
-                            Relic = cmbRelic.Text;
+                            Relic = cmbRelic.Text == "" ? "(None)" : cmbRelic.Text;
+                            if (!repo.hasRelic && Relic != "(None)")
+                            {
+                                hasFreeRelic = true;
+                                repo.hasRelic = true;
+                            }
+
                             if (Relic != "(None)")
                             {
                                 repo.restrictedItems.Add(Relic);
@@ -335,11 +375,20 @@ namespace Roster_Builder.Death_Guard
                             {
                                 repo.restrictedItems.Add(Relic);
                             }
+                            else
+                            {
+                                if (repo.hasRelic && hasFreeRelic)
+                                {
+                                    hasFreeRelic = false;
+                                    repo.hasRelic = false;
+                                }
+                            }
                         }
                     }
                     else
                     {
                         cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                        cmbRelic.Enabled = true;
                     }
                     break;
                 case 71:
