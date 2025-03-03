@@ -386,5 +386,10 @@ namespace Roster_Builder.Grey_Knights
         {
             return "Grey Knights";
         }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+
+        }
     }
 }

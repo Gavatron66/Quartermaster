@@ -568,5 +568,10 @@ namespace Roster_Builder.Tyranids
         {
             return "Tyranids";
         }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+
+        }
     }
 }

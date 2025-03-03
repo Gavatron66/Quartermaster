@@ -1,3 +1,6 @@
+0X - SaveSubFaction Codes
+	0 - Datasheet Added
+	1 - Datasheet Removed
 1X - Comboboxes
 	11 - cmbOption1
 	12 - cmbOption2
@@ -47,6 +50,13 @@
 	71 - cbStratagem1 (For Warlord Requisition only)
 	72 - cbStratagem2 (For Relic Requisition only)
 	73 - cbStratagem3
+8X - GetIfEnabled codes
+	80 - Warlord
+	81 - Relic
+	82 - Stratagem1
+	83 - Stratagem2
+	...
+	86 - Stratagem5
 	
 Roles: HQ
 	   Troops

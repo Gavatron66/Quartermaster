@@ -51,7 +51,7 @@ namespace Roster_Builder.Death_Guard
 
         public override string ToString()
         {
-            return "Myphitic Blight-hauler - " + Points + "pts";
+            return "Myphitic Blight-haulers - " + Points + "pts";
         }
 
         public override Datasheets CreateUnit()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -162,6 +163,8 @@ namespace Roster_Builder
         public List<string> Stratagem { get; set; }
         public Faction repo { get; set; }
         public string Role { get; set; }
+        public List<int> restrictedIndexes { get; set; }
+        public List<string> factionsRestrictions { get; set; }
         public Datasheets()
         {
             Weapons = new List<string>();
@@ -170,10 +173,83 @@ namespace Roster_Builder
             Template = new Template();
             Relic = "(None)";
             Stratagem = new List<string>();
+            restrictedIndexes = new List<int>();
         }
 
         public abstract void LoadDatasheets(Panel panel, Faction f);
         public abstract void SaveDatasheets(int code, Panel panel);
         public abstract Datasheets CreateUnit();
+
+        public virtual void RemoveFromFaction()
+        {
+            if (repo.restrictedItems.Contains(Relic))
+            {
+                repo.restrictedItems.Remove(Relic);
+            }
+
+            if (repo.restrictedItems.Contains(WarlordTrait))
+            {
+                repo.restrictedItems.Remove(WarlordTrait);
+            }
+
+            if (repo.restrictedItems.Contains(Factionupgrade))
+            {
+                repo.restrictedItems.Remove(Factionupgrade);
+            }
+        }
+
+        public void DrawItemWithRestrictions(List<int> restrictedIndexes, ComboBox control)
+        {
+            control.DrawMode = DrawMode.OwnerDrawFixed;
+            control.DrawItem += new DrawItemEventHandler(TestDraw);
+
+            void TestDraw(object sender, DrawItemEventArgs e)
+            {
+                if(e.Index < 0)
+                {
+                    return;
+                }
+
+                // Draw the background of the ListBox control for each item.
+                Brush brush = new SolidBrush(Color.LightSlateGray);
+                Brush defbrush = new SolidBrush(Color.White);
+
+                if(restrictedIndexes.Contains(e.Index))
+                {
+                    e.Graphics.FillRectangle(brush, e.Bounds);
+                }
+                else
+                {
+                    e.Graphics.FillRectangle(defbrush, e.Bounds);
+                }
+
+                brush.Dispose();
+                defbrush.Dispose();
+                // Define the default color of the brush as black.
+                Brush myBrush = Brushes.Black;
+
+                // Determine the color of the brush to draw each item based 
+                // on the index of the item to draw.
+                //switch (e.Index)
+                //{
+                //    case 0:
+                //        myBrush = Brushes.Red;
+                //        break;
+                //    case 1:
+                //        myBrush = Brushes.Orange;
+                //        break;
+                //    case 2:
+                //        myBrush = Brushes.Purple;
+                //        break;
+                //}
+
+                // Draw the current item text based on the current Font 
+                // and the custom brush settings.
+                e.Graphics.DrawString(control.Items[e.Index].ToString(),
+                    e.Font, myBrush, e.Bounds, StringFormat.GenericDefault);
+                // If the ListBox has focus, draw a focus rectangle around the selected item.
+                e.DrawFocusRectangle();
+            }
+        }
     }
 }

@@ -46,6 +46,7 @@ namespace Roster_Builder.Astra_Militarum
 
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             CMBO2 = cmbOption2;
 
             panel.Controls["nudUnitSize"].Visible = false;
@@ -58,38 +59,7 @@ namespace Roster_Builder.Astra_Militarum
             lbModelSelect.Items.Add("Cadian Veteran Guardsman w/ " + Weapons[4] + " and Master Vox");
             lbModelSelect.Items.Add("Cadian Veteran Guardsman w/ Laspistol and " + Weapons[5]);
 
-            cmbOption2.DrawMode = DrawMode.OwnerDrawFixed;
-            cmbOption2.DrawItem += new DrawItemEventHandler(TestDraw);
-        }
-
-        private void TestDraw(object sender, DrawItemEventArgs e)
-        {
-            // Draw the background of the ListBox control for each item.
-            e.DrawBackground();
-            // Define the default color of the brush as black.
-            Brush myBrush = Brushes.Black;
-
-            // Determine the color of the brush to draw each item based 
-            // on the index of the item to draw.
-            switch (e.Index)
-            {
-                case 0:
-                    myBrush = Brushes.Red;
-                    break;
-                case 1:
-                    myBrush = Brushes.Orange;
-                    break;
-                case 2:
-                    myBrush = Brushes.Purple;
-                    break;
-            }
-
-            // Draw the current item text based on the current Font 
-            // and the custom brush settings.
-            e.Graphics.DrawString(CMBO2.Items[e.Index].ToString(),
-                e.Font, myBrush, e.Bounds, StringFormat.GenericDefault);
-            // If the ListBox has focus, draw a focus rectangle around the selected item.
-            e.DrawFocusRectangle();
+            this.DrawItemWithRestrictions(new List<int> { 0, 2 }, cmbOption2 );
         }
 
         public override void SaveDatasheets(int code, Panel panel)

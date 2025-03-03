@@ -10,6 +10,11 @@ namespace Roster_Builder.Death_Guard
 {
     public class DeathGuard : Faction
     {
+        //Detachment Ability Variables
+        int coreInfantry = 0;
+        int plagueFollower = 0;
+        int poxwalkers = 0;
+
         public DeathGuard()
         {
             subFactionName = "<Plague Company>";
@@ -19,10 +24,36 @@ namespace Roster_Builder.Death_Guard
             {
                 "Stratagem: Plague-Chosen", //Warlord Stratagem
                 "Stratagem: Gifts of Decay", //Relic Stratagem
-                "Stratagem: Sevenfold Blessings", //Stratagem Code 1
-                "Stratagem: Champion of Disease", //Stratagem Code 2
-                "Stratagem: Grandfatherly Influence"
+                "Stratagem: Champion of Disease", //Stratagem Code 1
+                "Stratagem: Grandfatherly Influence", //Stratagem Code 2
+                "Stratagem: Sevenfold Blessings" // The Wretched Unique Stratagem
             });
+            restrictedItems.AddRange(new string[]
+            {
+                "Plague Skull of Glothila",
+                "Explosive Outbreak (+15 pts)",
+                "Rotten Constitution"
+            });
+            restrictedDatasheets.AddRange(new int[]
+            {
+                9, 10
+            });
+            StratagemCount = new int[] { 0, 0, 0, 0, 0 };
+        }
+
+        public override void SetUpForm(Form form)
+        {
+            base.SetUpForm(form);
+
+            Panel panel = form.Controls["panel1"] as Panel;
+
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            Label lblFactionupgrade = panel.Controls["lblFactionupgrade"] as Label;
+
+            cbStratagem1.Text = StratagemList[0];
+            cbStratagem2.Text = StratagemList[1];
+            lblFactionupgrade.Text = factionUpgradeName;
         }
 
         public override List<Datasheets> GetDatasheets()
@@ -67,20 +98,29 @@ namespace Roster_Builder.Death_Guard
             new Mortarion(), 
             //---------- Fortification ----------
             new MiasmicMalignifier(),
-        };
+            };
         }
 
-        public override bool GetIfEnabled(int index)
+        public override bool GetIfEnabled(int code)
         {
-
-            /*
-            if (StratagemCount[index] < StratagemLimit[index])
+            switch(code)
             {
-                return true;
+                case 80:
+                    return !hasWarlord;
+                case 81:
+                    return !hasRelic;
+                case 82:
+                    return StratagemCount[0] == StratagemLimit[0];
+                case 83:
+                    return StratagemCount[1] == StratagemLimit[1];
+                case 84:
+                    return StratagemCount[2] == StratagemLimit[2];
+                case 85:
+                    return StratagemCount[3] == StratagemLimit[3];
+                case 86:
+                    return StratagemCount[4] == StratagemLimit[4];
             }
 
-            return false;
-            */
             return true;
         }
 
@@ -102,11 +142,11 @@ namespace Roster_Builder.Death_Guard
             List<string> traits = new List<string>()
             {
                 "Revoltingly Resilient",
-                "Living Plague [Aura]",
+                "Living Plague",
                 "Hulking Physique",
-                "Arch-Contaminator [Aura]",
+                "Arch-Contaminator",
                 "Rotten Constitution",
-                "Foul Effluents [Aura]"
+                "Foul Effluents"
             };
 
             if (currentSubFaction != string.Empty)
@@ -276,12 +316,13 @@ namespace Roster_Builder.Death_Guard
         public override void SetPoints(int points)
         {
             StratagemCount = new int[] { 0, 0, 0, 0, 0 };
-            StratagemLimit = new int[] { points / 1000, points / 1000, 1, points / 1000, 99 };
+            StratagemLimit = new int[] { points / 1000, points / 1000, points / 1000, 3, 1 };
 
             if (points < 1000)
             {
                 StratagemLimit[0] = 1;
                 StratagemLimit[1] = 1;
+                StratagemLimit[2] = 1;
             }
         }
 
@@ -304,6 +345,141 @@ namespace Roster_Builder.Death_Guard
                 case 50:
                     currentSubFaction = cmbSubFaction.SelectedItem.ToString();
                     break;
+            }
+        }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+            if (datasheet != null)
+            {
+                if (code)
+                {
+
+                    if (datasheet is Mortarion)
+                    {
+                        for (int i = 1; i < roster.Count; i++)
+                        {
+                            Datasheets unit = roster[i] as Datasheets;
+
+                            if (unit.WarlordTrait == "Revoltingly Resilient" ||
+                                unit.WarlordTrait == "Living Plague" ||
+                                unit.WarlordTrait == "Arch-Contaminator")
+                            {
+                                restrictedItems.Remove(unit.WarlordTrait);
+                                unit.WarlordTrait = string.Empty;
+
+                            }
+
+                            if (unit.isWarlord)
+                            {
+                                unit.isWarlord = false;
+                            }
+                        }
+
+                        restrictedItems.Add("Revoltingly Resilient");
+                        restrictedItems.Add("Living Plague");
+                        restrictedItems.Add("Arch-Contaminator");
+
+                        restrictedDatasheets.Add(29);
+                    }
+                    if(datasheet is Typhus)
+                    {
+                        restrictedDatasheets.Add(1);
+                    }
+                    if (datasheet is DG_DaemonPrince)
+                    {
+                        restrictedDatasheets.Add(0);
+                    }
+                    if(datasheet.Keywords.Contains("LORD OF THE DEATH GUARD"))
+                    {
+                        restrictedDatasheets.Add(1);
+                        //restrictedDatasheets.Add(2);
+                        restrictedDatasheets.Add(3);
+                        restrictedDatasheets.Add(4);
+                        restrictedDatasheets.Add(5);
+                    }
+                    if (datasheet.Keywords.Contains("CORE") && datasheet.Keywords.Contains("INFANTRY"))
+                    {
+                        coreInfantry++;
+                    }
+                    if (datasheet.Keywords.Contains("PLAGUE FOLLOWERS"))
+                    {
+                        plagueFollower++;
+
+                        if (plagueFollower == coreInfantry)
+                        {
+                            restrictedDatasheets.Add(9);
+                        }
+                    }
+                    if (datasheet.Keywords.Contains("POXWALKERS"))
+                    {
+                        poxwalkers++;
+
+                        if (poxwalkers == coreInfantry)
+                        {
+                            restrictedDatasheets.Add(10);
+                        }
+                    }
+                }
+                else
+                {
+                    if (datasheet is Mortarion)
+                    {
+                        restrictedDatasheets.Remove(29);
+                    }
+                    if (datasheet is Typhus)
+                    {
+                        restrictedDatasheets.Remove(1);
+                    }
+                    if (datasheet is DG_DaemonPrince)
+                    {
+                        restrictedDatasheets.Remove(0);
+                    }
+                    if (datasheet.Keywords.Contains("LORD OF THE DEATH GUARD"))
+                    {
+                        restrictedDatasheets.Remove(1);
+                        restrictedDatasheets.Remove(2);
+                        restrictedDatasheets.Remove(3);
+                        restrictedDatasheets.Remove(4);
+                        restrictedDatasheets.Remove(5);
+                    }
+                    if (datasheet.Keywords.Contains("CORE") && datasheet.Keywords.Contains("INFANTRY"))
+                    {
+                        coreInfantry--;
+                    }
+                    if (datasheet.Keywords.Contains("PLAGUE FOLLOWERS"))
+                    {
+                        plagueFollower--;
+
+                    }
+                    if (datasheet.Keywords.Contains("POXWALKERS"))
+                    {
+                        poxwalkers--;
+
+                    }
+                }
+            }
+
+            if (plagueFollower < coreInfantry)
+            {
+                restrictedDatasheets.Remove(9);
+            }
+            else if (plagueFollower > coreInfantry)
+            {
+                roster.RemoveAt(roster.FindIndex(d => d.ToString().Contains("Cultists")));
+                plagueFollower--;
+                restrictedDatasheets.Add(9);
+            }
+
+            if (poxwalkers < coreInfantry)
+            {
+                restrictedDatasheets.Remove(10);
+            }
+            else if (poxwalkers > coreInfantry)
+            {
+                roster.RemoveAt(roster.FindIndex(d => d.ToString().Contains("Poxwalkers")));
+                poxwalkers--;
+                restrictedDatasheets.Add(10);
             }
         }
     }

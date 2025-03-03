@@ -306,5 +306,10 @@ namespace Roster_Builder.Aeldari.Harlequins
         {
             return "Harlequins";
         }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+
+        }
     }
 }

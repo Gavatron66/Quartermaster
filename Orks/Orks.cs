@@ -586,6 +586,11 @@ namespace Roster_Builder.Orks
         public override string ToString()
 		{
 			return "Orks";
-		}
-	}
+        }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+
+        }
+    }
 }

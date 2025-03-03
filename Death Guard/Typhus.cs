@@ -29,6 +29,7 @@ namespace Roster_Builder.Death_Guard
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             repo = f as DeathGuard;
+            factionsRestrictions = repo.restrictedItems;
             Template.LoadTemplate(TemplateCode, panel);
 
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
@@ -50,6 +51,7 @@ namespace Roster_Builder.Death_Guard
                 cbWarlord.Checked = false;
                 cmbWarlord.Enabled = false;
             }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbWarlord);
 
             lblPsyker.Text = "Select two of the following:";
             List<string> psykerpowers = new List<string>();
@@ -90,6 +92,7 @@ namespace Roster_Builder.Death_Guard
                         this.isWarlord = true;
                         warlord.Text = WarlordTrait;
                         warlord.Enabled = false;
+                        repo.restrictedItems.Add(WarlordTrait);
                     }
                     else { this.isWarlord = false; }
                     break;

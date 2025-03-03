@@ -30,6 +30,7 @@ namespace Roster_Builder.Death_Guard
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             repo = f as DeathGuard;
+            factionsRestrictions = repo.restrictedItems;
             Template.LoadTemplate(TemplateCode, panel);
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
@@ -48,7 +49,6 @@ namespace Roster_Builder.Death_Guard
             {
                 cmbWarlord.Items.Add(item);
             }
-
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -91,6 +91,16 @@ namespace Roster_Builder.Death_Guard
                 cmbWarlord.Enabled = false;
             }
 
+            restrictedIndexes = new List<int>();
+            for (int i = 0; i < cmbWarlord.Items.Count; i++)
+            {
+                if (repo.restrictedItems.Contains(cmbWarlord.Items[i]) && WarlordTrait != cmbWarlord.Items[i].ToString())
+                {
+                    restrictedIndexes.Add(i);
+                }
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbWarlord);
+
             cmbFaction.Items.Clear();
             cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
 
@@ -102,6 +112,16 @@ namespace Roster_Builder.Death_Guard
             {
                 cmbFaction.SelectedIndex = 0;
             }
+
+            restrictedIndexes = new List<int>();
+            for (int i = 0; i < cmbFaction.Items.Count; i++)
+            {
+                if (repo.restrictedItems.Contains(cmbFaction.Items[i]) && Factionupgrade != cmbFaction.Items[i].ToString())
+                {
+                    restrictedIndexes.Add(i);
+                }
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbFaction);
 
             List<string> psykerpowers = new List<string>();
             psykerpowers = repo.GetPsykerPowers("");
@@ -134,6 +154,16 @@ namespace Roster_Builder.Death_Guard
             {
                 cmbRelic.SelectedIndex = -1;
             }
+
+            restrictedIndexes = new List<int>();
+            for (int i = 0; i < cmbRelic.Items.Count; i++)
+            {
+                if (repo.restrictedItems.Contains(cmbRelic.Items[i]) && Relic != cmbRelic.Items[i].ToString())
+                {
+                    restrictedIndexes.Add(i);
+                }
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbRelic);
 
             panel.Controls["lblFactionupgrade"].Visible = true;
             panel.Controls["cmbFactionupgrade"].Visible = true;
@@ -181,20 +211,41 @@ namespace Roster_Builder.Death_Guard
             {
                 case 11:
                     Weapons[0] = cmb.SelectedItem.ToString();
+                    if (Weapons[0] != "Hellforged Sword (+10 pts)")
+                    {
+                        cb.Enabled = false;
+                        cb.Checked = false;
+                    }
+                    else
+                    {
+                        cb.Enabled = true;
+                    }
                     break;
                 case 21:
                     if (cb.Checked)
                     {
                         Weapons[1] = cb.Text;
+                        cb2.Enabled = false;
+                        cb2.Checked = false;
                     }
-                    else { Weapons[1] = string.Empty; }
+                    else 
+                    { 
+                        Weapons[1] = string.Empty;
+                        cb2.Enabled = true;
+                    }
                     break;
                 case 22:
                     if (cb2.Checked)
                     {
                         Weapons[2] = cb2.Text;
+                        cb.Enabled = false;
+                        cb.Checked = false;
                     }
-                    else { Weapons[2] = string.Empty; }
+                    else 
+                    { 
+                        Weapons[2] = string.Empty;
+                        cb.Enabled = true;
+                    }
                     break;
                 case 25:
                     if (isWarlord.Checked)
@@ -204,18 +255,56 @@ namespace Roster_Builder.Death_Guard
                     else { this.isWarlord = false; warlord.SelectedIndex = -1; }
                     break;
                 case 15:
-                    if (warlord.SelectedIndex != -1)
+                    if (!factionsRestrictions.Contains(warlord.Text))
                     {
-                        WarlordTrait = warlord.SelectedItem.ToString();
+                        if (WarlordTrait == "")
+                        {
+                            WarlordTrait = warlord.Text;
+                            if (WarlordTrait != "")
+                            {
+                                repo.restrictedItems.Add(WarlordTrait);
+                            }
+                        }
+                        else
+                        {
+                            repo.restrictedItems.Remove(WarlordTrait);
+                            WarlordTrait = warlord.Text;
+                            if (WarlordTrait != "")
+                            {
+                                repo.restrictedItems.Add(WarlordTrait);
+                            }
+                        }
                     }
                     else
                     {
-                        WarlordTrait = string.Empty;
+                        warlord.SelectedIndex = warlord.Items.IndexOf(WarlordTrait);
                     }
-
                     break;
                 case 16:
-                    Factionupgrade = factionud.Text;
+                    if(!factionsRestrictions.Contains(factionud.Text))
+                    {
+                        if(Factionupgrade == "(None)")
+                        {
+                            Factionupgrade = factionud.Text;
+                            if (Factionupgrade != "(None)")
+                            {
+                                repo.restrictedItems.Add(Factionupgrade);
+                            }
+                        }
+                        else
+                        {
+                            repo.restrictedItems.Remove(Factionupgrade);
+                            Factionupgrade = factionud.Text;
+                            if (Factionupgrade != "(None)")
+                            {
+                                repo.restrictedItems.Add(Factionupgrade);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        factionud.SelectedIndex = factionud.Items.IndexOf(Factionupgrade);
+                    }
                     break;
                 case 60:
                     if (clb.CheckedItems.Count == 1)
@@ -228,7 +317,30 @@ namespace Roster_Builder.Death_Guard
                     }
                     break;
                 case 17:
-                    Relic = cmbRelic.SelectedItem.ToString();
+                    if (!factionsRestrictions.Contains(cmbRelic.Text))
+                    {
+                        if (Relic == "(None)")
+                        {
+                            Relic = cmbRelic.Text;
+                            if (Relic != "(None)")
+                            {
+                                repo.restrictedItems.Add(Relic);
+                            }
+                        }
+                        else
+                        {
+                            repo.restrictedItems.Remove(Relic);
+                            Relic = cmbRelic.Text;
+                            if (Relic != "(None)")
+                            {
+                                repo.restrictedItems.Add(Relic);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -262,21 +374,6 @@ namespace Roster_Builder.Death_Guard
             Points = DEFAULT_POINTS;
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
-            if (cb.Checked && (code == 21 || code == -1))
-            {
-                cmb.Enabled = false;
-                cb2.Enabled = false;
-                cb2.Checked = false;
-                Weapons[2] = string.Empty;
-                cmb.SelectedItem = "Hellforged Sword (+10 pts)";
-            }
-            else if (code == 21)
-            {
-                cmb.Enabled = true;
-                cb2.Enabled = true;
-                Weapons[1] = string.Empty;
-            }
-
             if (Weapons.Contains("Daemonic Axe (+10 pts)") || Weapons.Contains("Hellforged Sword (+10 pts)"))
             {
                 Points += 10;
@@ -291,8 +388,6 @@ namespace Roster_Builder.Death_Guard
             {
                 Points += 35;
             }
-
-            Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }
 
         public override string ToString()

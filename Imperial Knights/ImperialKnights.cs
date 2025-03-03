@@ -171,5 +171,10 @@ namespace Roster_Builder.Imperial_Knights
         {
             return "Imperial Knights";
         }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+
+        }
     }
 }

@@ -1,32 +1,20 @@
 ---------------------
 -	OVERHAUL LIST	-
 ---------------------
-1.) UI Overhaul
+1.) UI Overhaul ---PARTIALLY COMPLETE---
 	Make everything look nicer and more readable
 2.) Save/Load Features
 	Self-explanatory
-3.) Stratagems and Misc. Fixes
+3.) Stratagems and Misc. Fixes ---IN PROGRESS---
 	Implement Stratagems properly
 	Ensure Faction upgrades work the way they're supposed to
 	The fixes on the rest of this list
-4.) Custom Subfactions
+4.) Custom Subfactions ---COMPLETE---
 	Add a new template setup to allow for custom factions
 5.) More Game Systems
 	The Biggest and Baddest
 	Want to provide support for 10th and maybe 8th edition
 	along with Horus Heresy and potentially Age of Sigmar (we'll see how the next edition handles list building when the time comes)
-
-Models to add checks for Numeric Up Down controls:
-	Death Guard Cultists
-	Necron Warriors
-	Hybrid Metamorphs
-	InvaderATVs
-	Sicarian Infiltrators
-	Sicarian Ruststalkers
-	Tactical Drones
-
-Genestealer Cults has weird custom factions
-	Add either more boxes or do a Checkbox system
 		
 Provide an error if a datasheet has not selected enough Psychic Powers
 
@@ -59,8 +47,6 @@ Fix Named Characters? Some named Characters belong to specific subfactions, and 
 
 Compare Primaris Lieutenant and Primaris Captain
 	They have annoyingly complicated options, so going to need some testing for it
-	
-Select Lists show the additional point values of wargear (where/when applicable)
 
 T'au Piranhas hide Seeker Missiles; may want to be looked at
 Broadsides have some weapons restrictions
@@ -83,3 +69,122 @@ variety of subfactions since Drukhari are just special like that
 Need to implement the relics for Drukhari, Deathwatch, Space Wolves
 
 Switching between detachments appears to broken, need to look in on that
+
+Last unit finished: Death Guard
+	
+
+			
+            factionsRestrictions = repo.restrictedItems;
+			
+            restrictedIndexes = new List<int>();
+            for (int i = 0; i < cmbWarlord.Items.Count; i++)
+            {
+                if (repo.restrictedItems.Contains(cmbWarlord.Items[i]) && WarlordTrait != cmbWarlord.Items[i].ToString())
+                {
+                    restrictedIndexes.Add(i);
+                }
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbWarlord);
+
+            restrictedIndexes = new List<int>();
+            for (int i = 0; i < cmbFaction.Items.Count; i++)
+            {
+                if (repo.restrictedItems.Contains(cmbFaction.Items[i]) && Factionupgrade != cmbFaction.Items[i].ToString())
+                {
+                    restrictedIndexes.Add(i);
+                }
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbFaction);
+			
+			
+            restrictedIndexes = new List<int>();
+            for (int i = 0; i < cmbRelic.Items.Count; i++)
+            {
+                if (repo.restrictedItems.Contains(cmbRelic.Items[i]) && Relic != cmbRelic.Items[i].ToString())
+                {
+                    restrictedIndexes.Add(i);
+                }
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbRelic);
+			
+                case 15:
+                    if (!factionsRestrictions.Contains(warlord.Text))
+                    {
+                        if (WarlordTrait == "")
+                        {
+                            WarlordTrait = warlord.Text;
+                            if (WarlordTrait != "")
+                            {
+                                repo.restrictedItems.Add(WarlordTrait);
+                            }
+                        }
+                        else
+                        {
+                            repo.restrictedItems.Remove(WarlordTrait);
+                            WarlordTrait = warlord.Text;
+                            if (WarlordTrait != "")
+                            {
+                                repo.restrictedItems.Add(WarlordTrait);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        warlord.SelectedIndex = warlord.Items.IndexOf(WarlordTrait);
+                    }
+                    break;
+			
+                case 16:
+                    if (!factionsRestrictions.Contains(cmbFactionUpgrade.Text))
+                    {
+                        if (Factionupgrade == "(None)")
+                        {
+                            Factionupgrade = cmbFactionUpgrade.Text;
+                            if (Factionupgrade != "(None)")
+                            {
+                                repo.restrictedItems.Add(Factionupgrade);
+                            }
+                        }
+                        else
+                        {
+                            repo.restrictedItems.Remove(Factionupgrade);
+                            Factionupgrade = cmbFactionUpgrade.Text;
+                            if (Factionupgrade != "(None)")
+                            {
+                                repo.restrictedItems.Add(Factionupgrade);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        factionud.SelectedIndex = factionud.Items.IndexOf(Factionupgrade);
+                    }
+                    break;
+					
+					
+                case 17:
+                    if (!factionsRestrictions.Contains(cmbRelic.Text))
+                    {
+                        if (Relic == "(None)")
+                        {
+                            Relic = cmbRelic.Text;
+                            if (Relic != "(None)")
+                            {
+                                repo.restrictedItems.Add(Relic);
+                            }
+                        }
+                        else
+                        {
+                            repo.restrictedItems.Remove(Relic);
+                            Relic = cmbRelic.Text;
+                            if (Relic != "(None)")
+                            {
+                                repo.restrictedItems.Add(Relic);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    break;

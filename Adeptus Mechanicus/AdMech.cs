@@ -463,5 +463,10 @@ namespace Roster_Builder.Adeptus_Mechanicus
         {
             return "Adeptus Mechanicus";
         }
+
+        public override void UpdateSubFaction(bool code, Datasheets datasheet)
+        {
+
+        }
     }
 }

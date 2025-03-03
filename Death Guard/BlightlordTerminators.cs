@@ -34,6 +34,7 @@ namespace Roster_Builder.Death_Guard
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             repo = f as DeathGuard;
+            factionsRestrictions = repo.restrictedItems;
             Template.LoadTemplate(TemplateCode, panel);
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
@@ -52,11 +53,11 @@ namespace Roster_Builder.Death_Guard
             nudUnitSize.Value = currentSize;
 
             lbModelSelect.Items.Clear();
-            lbModelSelect.Items.Add("Blightlord Champion - " + Weapons[0] + "/" + Weapons[1]);
+            lbModelSelect.Items.Add("Blightlord Champion w/ " + Weapons[0] + " and " + Weapons[1]);
             int j = 2;
             for (int i = 0; i < UnitSize - 1; i++)
             {
-                lbModelSelect.Items.Add("Blightlord Terminator - " + Weapons[j] + "/" + Weapons[j+1]);
+                lbModelSelect.Items.Add("Blightlord Terminator w/ " + Weapons[j] + " and " + Weapons[j+1]);
                 j += 2;
             }
 
@@ -86,6 +87,16 @@ namespace Roster_Builder.Death_Guard
             {
                 cmbFactionUpgrade.SelectedIndex = 0;
             }
+
+            restrictedIndexes = new List<int>();
+            for (int i = 0; i < cmbFactionUpgrade.Items.Count; i++)
+            {
+                if (repo.restrictedItems.Contains(cmbFactionUpgrade.Items[i]) && Factionupgrade != cmbFactionUpgrade.Items[i].ToString())
+                {
+                    restrictedIndexes.Add(i);
+                }
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbFactionUpgrade);
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -114,8 +125,8 @@ namespace Roster_Builder.Death_Guard
                         {
                             Weapons.Add("Combi-bolter");
                             Weapons.Add("Balesword");
-                            lbModelSelect.Items.Add("Blightlord Terminator - " +
-                            Weapons[temp] + "/" + Weapons[temp + 1]);
+                            lbModelSelect.Items.Add("Blightlord Terminator w/ " +
+                            Weapons[temp] + " and " + Weapons[temp + 1]);
                             temp += 2;
                         }
                     }
@@ -134,34 +145,48 @@ namespace Roster_Builder.Death_Guard
                 case 11:
                     if(currentIndex == 0)
                     {
-                        Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
-                        lbModelSelect.Items[currentIndex] = "Blightlord Champion - " +
-                            Weapons[currentIndex * 2] + "/" + Weapons[(currentIndex * 2) + 1];
+                        if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                        {
+                            Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
+                            lbModelSelect.Items[currentIndex] = "Blightlord Champion w/ " +
+                                Weapons[currentIndex * 2] + " and " + Weapons[(currentIndex * 2) + 1];
+                        }
+                        else
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex * 2]);
+                        }
                         break;
                     }
 
-                    Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
-                    lbModelSelect.Items[currentIndex] = "Blightlord Terminator - " + 
-                        Weapons[currentIndex * 2] + "/" + Weapons[(currentIndex * 2) + 1];
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    {
+                        Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
+                        lbModelSelect.Items[currentIndex] = "Blightlord Terminator w/ " +
+                            Weapons[currentIndex * 2] + " and " + Weapons[(currentIndex * 2) + 1];
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex * 2]);
+                    }
                     break;
                 case 12:
                     if (currentIndex == 0)
                     {
                         Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
-                        lbModelSelect.Items[currentIndex] = "Blightlord Champion - " +
-                            Weapons[currentIndex * 2] + "/" + Weapons[(currentIndex * 2) + 1];
+                        lbModelSelect.Items[currentIndex] = "Blightlord Champion w/ " +
+                            Weapons[currentIndex * 2] + " and " + Weapons[(currentIndex * 2) + 1];
                         break;
                     }
 
                     Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
-                    lbModelSelect.Items[currentIndex] = "Blightlord Terminator - " +
-                        Weapons[currentIndex * 2] + "/" + Weapons[(currentIndex * 2) + 1];
+                    lbModelSelect.Items[currentIndex] = "Blightlord Terminator w/ " +
+                        Weapons[currentIndex * 2] + " and " + Weapons[(currentIndex * 2) + 1];
                     break;
                 case 21:
                     if(cbOption1.Checked)
                     {
                         Weapons[currentIndex * 2] = cbOption1.Text;
-                        lbModelSelect.Items[currentIndex] = "Blightlord Terminator - Flail of Corruption";
+                        lbModelSelect.Items[currentIndex] = "Blightlord Terminator w/ Flail of Corruption";
                         cmbOption1.Enabled = false;
                         cmbOption2.Enabled = false;
                     } else
@@ -170,13 +195,36 @@ namespace Roster_Builder.Death_Guard
                         cmbOption2.Enabled = true;
                         Weapons[currentIndex * 2] = "Combi-bolter";
                         Weapons[(currentIndex * 2) + 1] = "Balesword";
-                        lbModelSelect.Items[currentIndex] = "Blightlord Terminator - " +
-                            Weapons[currentIndex * 2] + "/" + Weapons[(currentIndex * 2) + 1];
+                        lbModelSelect.Items[currentIndex] = "Blightlord Terminator w/ " +
+                            Weapons[currentIndex * 2] + " and " + Weapons[(currentIndex * 2) + 1];
                     }
 
                     break;
                 case 16:
-                    Factionupgrade = cmbFactionUpgrade.SelectedItem.ToString();
+                    if (!factionsRestrictions.Contains(cmbFactionUpgrade.Text))
+                    {
+                        if (Factionupgrade == "(None)")
+                        {
+                            Factionupgrade = cmbFactionUpgrade.Text;
+                            if (Factionupgrade != "(None)")
+                            {
+                                repo.restrictedItems.Add(Factionupgrade);
+                            }
+                        }
+                        else
+                        {
+                            repo.restrictedItems.Remove(Factionupgrade);
+                            Factionupgrade = cmbFactionUpgrade.Text;
+                            if (Factionupgrade != "(None)")
+                            {
+                                repo.restrictedItems.Add(Factionupgrade);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        cmbFactionUpgrade.SelectedIndex = cmbFactionUpgrade.Items.IndexOf(Factionupgrade);
+                    }
                     break;
                 case 61:
                     currentIndex = lbModelSelect.SelectedIndex;
@@ -238,6 +286,39 @@ namespace Roster_Builder.Death_Guard
             panel.Controls["lblOption1"].Visible = true;
             panel.Controls["lblOption2"].Visible = true;
 
+            restrictedIndexes = new List<int>();
+            int[] ConstraintArray = new int[6] { 0, 0, 0, 0, 0, 0 };
+            //Combi-flamer, Combi-melta, Combi-plasma
+            //Blight Launcher/Reaper Autocanonn, Plague Spewer, Flail of Corruption
+
+            foreach (string Weapon in Weapons)
+            {
+                if(Weapon == "Combi-flamer")
+                {
+                    ConstraintArray[0] += 1;
+                }
+                else if (Weapon == "Combi-melta")
+                {
+                    ConstraintArray[1] += 1;
+                }
+                else if (Weapon == "Combi-plasma")
+                {
+                    ConstraintArray[2] += 1;
+                }
+                else if(Weapon == "Blight Launcher" || Weapon == "Reaper Autocannon")
+                {
+                    ConstraintArray[3] += 1;
+                }
+                else if(Weapon == "Plague Spewer")
+                {
+                    ConstraintArray[4] += 1;
+                }
+                else if(Weapon == "Flail of Corruption")
+                {
+                    ConstraintArray[5] += 1;
+                }
+            }
+
             if (isChampion)
             {
                 cmbOption1.Items.Clear();
@@ -248,6 +329,35 @@ namespace Roster_Builder.Death_Guard
                     "Combi-melta",
                     "Combi-plasma"
                 });
+
+                if (ConstraintArray[0] == UnitSize / 5)
+                {
+                    restrictedIndexes.Add(1);
+                }
+                if (ConstraintArray[1] == UnitSize / 5)
+                {
+                    restrictedIndexes.Add(2);
+                }
+                if (ConstraintArray[2] == UnitSize / 5)
+                {
+                    restrictedIndexes.Add(3);
+                }
+
+                if (restrictedIndexes.Contains(cmbOption1.Items.IndexOf(Weapons[currentIndex * 2])))
+                {
+                    if (Weapons[currentIndex * 2] == "Combi-flamer")
+                    {
+                        restrictedIndexes.Remove(cmbOption1.Items.IndexOf("Combi-flamer"));
+                    }
+                    else if (Weapons[currentIndex * 2] == "Combi-melta")
+                    {
+                        restrictedIndexes.Remove(cmbOption1.Items.IndexOf("Combi-melta"));
+                    }
+                    else if (Weapons[currentIndex * 2] == "Combi-plasma")
+                    {
+                        restrictedIndexes.Remove(cmbOption1.Items.IndexOf("Combi-plasma"));
+                    }
+                }
 
                 cbOption1.Visible = false;
                 panel.Controls["lblFactionUpgrade"].Visible = true;
@@ -262,49 +372,42 @@ namespace Roster_Builder.Death_Guard
                 cmbOption1.Items.Clear();
                 cmbOption1.Items.AddRange(new string[]
                 {
-                "Blight Launcher",
-                "Combi-bolter",
-                "Combi-flamer",
-                "Combi-melta",
-                "Combi-plasma",
-                "Plague Spewer",
-                "Reaper Autocannon"
+                    "Blight Launcher",
+                    "Combi-bolter",
+                    "Combi-flamer",
+                    "Combi-melta",
+                    "Combi-plasma",
+                    "Plague Spewer",
+                    "Reaper Autocannon"
                 });
 
                 cbOption1.Visible = true;
 
-                int[] ConstraintArray = new int[3] { 0, 0, 0 };
-                //Blight Launcher/Reaper Autocanonn, Plague Spewer, Flail of Corruption
-                foreach (string Weapon in Weapons)
-                {
-                    if(Weapon == "Blight Launcher" || Weapon == "Reaper Autocannon")
-                    {
-                        ConstraintArray[0] += 1;
-                    }
-                    
-                    if(Weapon == "Plague Spewer")
-                    {
-                        ConstraintArray[1] += 1;
-                    }
-
-                    if(Weapon == "Flail of Corruption")
-                    {
-                        ConstraintArray[2] += 1;
-                    }
-                }
-
                 if (ConstraintArray[0] == UnitSize / 5)
                 {
-                    cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Blight Launcher"));
-                    cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Reaper Autocannon"));
+                    restrictedIndexes.Add(2);
                 }
-
                 if (ConstraintArray[1] == UnitSize / 5)
                 {
-                    cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Plague Spewer"));
+                    restrictedIndexes.Add(3);
+                }
+                if (ConstraintArray[2] == UnitSize / 5)
+                {
+                    restrictedIndexes.Add(4);
                 }
 
-                if (ConstraintArray[2] == UnitSize / 5)
+                if (ConstraintArray[3] == UnitSize / 5)
+                {
+                    restrictedIndexes.Add(0);
+                    restrictedIndexes.Add(6);
+                }
+
+                if (ConstraintArray[4] == UnitSize / 5)
+                {
+                    restrictedIndexes.Add(5);
+                }
+
+                if (ConstraintArray[5] == UnitSize / 5)
                 {
                     cbOption1.Enabled = false;
                     if (Weapons[currentIndex * 2] == "Flail of Corruption" ||
@@ -312,11 +415,40 @@ namespace Roster_Builder.Death_Guard
                     {
                         cbOption1.Enabled = true;
                     }
-                } else
+                } 
+                else
                 {
                     cbOption1.Enabled = true;
                 }
+
+                if (restrictedIndexes.Contains(cmbOption1.Items.IndexOf(Weapons[currentIndex * 2])))
+                {
+                    if (Weapons[currentIndex * 2] == "Combi-flamer")
+                    {
+                        restrictedIndexes.Remove(cmbOption1.Items.IndexOf("Combi-flamer"));
+                    }
+                    else if (Weapons[currentIndex * 2] == "Combi-melta")
+                    {
+                        restrictedIndexes.Remove(cmbOption1.Items.IndexOf("Combi-melta"));
+                    }
+                    else if (Weapons[currentIndex * 2] == "Combi-plasma")
+                    {
+                        restrictedIndexes.Remove(cmbOption1.Items.IndexOf("Combi-plasma"));
+                    }
+                    else if (Weapons[currentIndex * 2] == "Blight Launcher" || Weapons[currentIndex * 2] == "Reaper Autocannon")
+                    {
+                        restrictedIndexes.Remove(cmbOption1.Items.IndexOf("Blight Launcher"));
+                        restrictedIndexes.Remove(cmbOption1.Items.IndexOf("Reaper Autocannon"));
+                    }
+                    else if (Weapons[currentIndex * 2] == "Plague Spewer")
+                    {
+                        restrictedIndexes.Remove(cmbOption1.Items.IndexOf("Plague Spewer"));
+                    }
+                }
+
             }
+            
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
         }
     }
 }
