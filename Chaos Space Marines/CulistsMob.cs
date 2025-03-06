@@ -94,7 +94,7 @@ namespace Roster_Builder.Chaos_Space_Marines
 
                     if (temp < UnitSize)
                     {
-                        Weapons.Add("Autogun");
+                        Weapons.Add("Autopistol and BAW");
                         lbModelSelect.Items.Add("Chaos Cultist w/ Autopistol and BAW");
                     }
 
@@ -165,7 +165,7 @@ namespace Roster_Builder.Chaos_Space_Marines
 
         public override string ToString()
         {
-            return "Culists Mob - " + Points + "pts";
+            return "Cultists Mob - " + Points + "pts";
         }
 
         private void LoadOptions(ComboBox cmbOption1)

@@ -142,6 +142,7 @@
             this.cmbNDFaction = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblErrors = new System.Windows.Forms.Label();
+            this.lblModelPoints = new System.Windows.Forms.Label();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSelectPoints)).BeginInit();
             this.panel1.SuspendLayout();
@@ -364,6 +365,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblModelPoints);
             this.panel1.Controls.Add(this.cbOption5);
             this.panel1.Controls.Add(this.cbOption4);
             this.panel1.Controls.Add(this.cmbDiscipline);
@@ -1439,6 +1441,15 @@
             this.lblErrors.TabIndex = 82;
             this.lblErrors.Text = "Roster has _ errors";
             // 
+            // lblModelPoints
+            // 
+            this.lblModelPoints.AutoSize = true;
+            this.lblModelPoints.Location = new System.Drawing.Point(304, 20);
+            this.lblModelPoints.Name = "lblModelPoints";
+            this.lblModelPoints.Size = new System.Drawing.Size(118, 20);
+            this.lblModelPoints.TabIndex = 90;
+            this.lblModelPoints.Text = "lblModelPoints";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -1463,6 +1474,7 @@
             this.Controls.Add(this.lblErrors);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -1607,6 +1619,7 @@
         private System.Windows.Forms.ComboBox cmbSubCustom5;
         private System.Windows.Forms.Label lblSubCustom6;
         private System.Windows.Forms.ComboBox cmbSubCustom6;
+        private System.Windows.Forms.Label lblModelPoints;
     }
 }
 

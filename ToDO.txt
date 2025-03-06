@@ -85,6 +85,8 @@ Double check plasma Pistol logic for chaos space marines, since some have restri
 
 When going back through, check if category weapons have points values for taking them
 
+Figured out 3 DG Stratagem implementations, refer to those going forward for characters
+
 Characters:
 	DG Chaos Lord
 	DG Terminator Lord
@@ -99,7 +101,7 @@ Characters:
 	Noxious Blightbringer
 	Plague Surgeon
 	Tallyman
-Sevenfold Blessings:
+Sevenfold Blessings (The Wretched only):
 	DG Daemon Prince
 	DG Terminator Sorcerer
 	Malignant Plaguecaster
@@ -110,7 +112,43 @@ Champion of Disease:
 Grandfatherly Influence:
 	Chaos Spawn
 	
+Champion of Disease relics:
+	Reaper of Glorious Entropy
+	Plague Skull of Glothila
+	Plaguebringer
+	Suppurating Plate
 
+Progress Remaining (Death Guard):
+	//---------- Troops ----------
+	new PlagueMarines(),
+	new DG_Cultists(),
+	new Poxwalkers(),
+	//---------- Elite ----------
+	new NoxiousBlightbringer(),
+	new FoulBlightspawn(),
+	new BiologusPutrifier(),
+	new Tallyman(),
+	new PlagueSurgeon(),
+	new BlightlordTerminators(),
+	new DeathshroudTerminators(),
+	new DG_Helbrute(),
+	new DG_Possessed(), 
+	//---------- Fast Attack ----------
+	new DG_ChaosSpawn(),
+	new MyphiticBlightHauler(),
+	new FoetidBloatDrone(),
+	//---------- Heavy Support ----------
+	new PlagueburstCrawler(),
+	new DG_ChaosLandRaider(),
+	new DG_ChaosPredatorAnnihilator(),
+	new DG_ChaosPredatorDestructor(),
+	new DG_Defiler(), 
+	//---------- Transport ----------
+	new DG_ChaosRhino(),
+	//---------- Lord of War ----------
+	new Mortarion(), 
+	//---------- Fortification ----------
+	new MiasmicMalignifier(),
 			
             factionsRestrictions = repo.restrictedItems;
 			

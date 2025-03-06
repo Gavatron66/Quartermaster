@@ -27,7 +27,7 @@ namespace Roster_Builder.Death_Guard
                 "Stratagem: Gifts of Decay", //Relic Stratagem
                 "Stratagem: Champion of Disease", //Stratagem Code 1
                 "Stratagem: Grandfatherly Influence", //Stratagem Code 2
-                "Stratagem: Sevenfold Blessings" // The Wretched Unique Stratagem
+                "Stratagem: Sevenfold Blessings (The Wretched only)" // The Wretched Unique Stratagem
             });
             restrictedItems.AddRange(new string[]
             {
@@ -230,6 +230,19 @@ namespace Roster_Builder.Death_Guard
             List<string> relicsList = new List<string>();
 
             relicsList.Add("(None)");
+
+            if(Keywords.Contains("CORE")) //For Stratagem: Champion of Disease
+            {
+                relicsList.AddRange(new string[]
+                {
+                    "Reaper of Glorious Entropy",
+                    "Plague Skull of Glothila",
+                    "Plaguebringer",
+                    "Suppurating Plate"
+                });
+
+                return relicsList;
+            }
 
             if(Keywords.Contains("LORD OF CONTAGION"))
             {

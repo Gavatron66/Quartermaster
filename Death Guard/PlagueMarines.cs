@@ -50,6 +50,10 @@ namespace Roster_Builder.Death_Guard
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             ComboBox cmbFactionUpgrade = panel.Controls["cmbFactionUpgrade"] as ComboBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -85,6 +89,52 @@ namespace Roster_Builder.Death_Guard
                 }
             }
             this.DrawItemWithRestrictions(restrictedIndexes, cmbFactionUpgrade);
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
+            cbStratagem3.Text = repo.StratagemList[2];
+            cbStratagem3.Location = new System.Drawing.Point(panel.Controls["lblFactionUpgrade"].Location.X, cmbFactionUpgrade.Location.Y + 30);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem3.Location.X, cbStratagem3.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cmbFactionUpgrade.Location.X, cbStratagem3.Location.Y + 50);
+
+            if (Stratagem.Contains(cbStratagem3.Text))
+            {
+                cbStratagem3.Checked = true;
+                cbStratagem3.Enabled = true;
+
+                if(Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null)
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = -1;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem3.Checked = false;
+                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+                cmbRelic.SelectedIndex = 0;
+            }
+
+            restrictedIndexes = new List<int>();
+            for (int i = 0; i < cmbRelic.Items.Count; i++)
+            {
+                if (repo.restrictedItems.Contains(cmbRelic.Items[i]) && Relic != cmbRelic.Items[i].ToString())
+                {
+                    restrictedIndexes.Add(i);
+                }
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbRelic);
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -102,6 +152,8 @@ namespace Roster_Builder.Death_Guard
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             CheckBox cbOption3 = panel.Controls["cbOption3"] as CheckBox;
             ComboBox cmbFactionUpgrade = panel.Controls["cmbFactionUpgrade"] as ComboBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -226,6 +278,34 @@ namespace Roster_Builder.Death_Guard
                         }
                     }
                     break;
+                case 17:
+                    if (!factionsRestrictions.Contains(cmbRelic.Text))
+                    {
+                        if (Relic == "(None)")
+                        {
+                            Relic = cmbRelic.Text == "" ? "(None)" : cmbRelic.Text;
+
+                            if (Relic != "(None)")
+                            {
+                                repo.restrictedItems.Add(Relic);
+                            }
+                        }
+                        else
+                        {
+                            repo.restrictedItems.Remove(Relic);
+                            Relic = cmbRelic.Text;
+                            if (Relic != "(None)")
+                            {
+                                repo.restrictedItems.Add(Relic);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                        cmbRelic.Enabled = true;
+                    }
+                    break;
                 case 61:
                     currentIndex = lbModelSelect.SelectedIndex;
                     if (currentIndex == -1)
@@ -264,6 +344,27 @@ namespace Roster_Builder.Death_Guard
                         break;
                     }
                     break;
+                case 73:
+                    if (cbStratagem3.Checked)
+                    {
+                        if (!Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Add(cbStratagem3.Text);
+                        }
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                    break;
             }
 
             Points = UnitSize * DEFAULT_POINTS;
@@ -284,10 +385,15 @@ namespace Roster_Builder.Death_Guard
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             CheckBox cbOption3 = panel.Controls["cbOption3"] as CheckBox;
             ComboBox cmbFactionUpgrade = panel.Controls["cmbFactionUpgrade"] as ComboBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             panel.Controls["lblOption1"].Visible = true;
             cmbOption1.Visible = true;
             restrictedIndexes = new List<int>();
+
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
 
             if (isChampion)
             {
@@ -299,6 +405,13 @@ namespace Roster_Builder.Death_Guard
                 panel.Controls["lblFactionUpgrade"].Visible = true;
                 cmbFactionUpgrade.Visible = true;
                 cmbOption1.Enabled = true;
+                cbStratagem3.Visible = true;
+
+                if(Stratagem.Contains(cbStratagem3.Text))
+                {
+                    panel.Controls["lblRelic"].Visible = true;
+                    cmbRelic.Visible = true;
+                }
 
                 cmbOption1.Items.Clear();
                 cmbOption1.Items.AddRange(new string[]
@@ -350,6 +463,7 @@ namespace Roster_Builder.Death_Guard
                 cbOption3.Visible = false;
                 panel.Controls["lblFactionUpgrade"].Visible = false;
                 cmbFactionUpgrade.Visible = false;
+                cbStratagem3.Visible = false;
 
                 if (Weapons[currentIndex + 2] == "Icon of Despair")
                 {

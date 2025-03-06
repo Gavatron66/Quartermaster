@@ -38,16 +38,12 @@ namespace Roster_Builder.Death_Guard
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
 
             cmbWarlord.Items.Clear();
+            cmbWarlord.Items.Add("Shamblerot (Contagion)");
+            cmbWarlord.SelectedIndex = 0;
 
             if (repo.hasWarlord && !isWarlord)
             {
                 cbWarlord.Enabled = false;
-            }
-            else
-            {
-                cmbWarlord.Items.Clear();
-                cmbWarlord.Items.Add("Shamblerot (Contagion)");
-                cmbWarlord.SelectedIndex = 0;
             }
 
             if (isWarlord)

@@ -380,6 +380,23 @@ namespace Roster_Builder.Space_Marines
             }
             else if (currentSubFaction == "Black Templars")
             {
+                datasheets.InsertRange(22, new List<Datasheets>()
+                {
+                    //new HighMarshalHelbrecht(),
+                    //new ChaplainGrimaldus(),
+                    //new TheEmperorsChampion()
+                    new StormhawkInterceptor(),
+                    new StormhawkInterceptor(),
+                    new StormhawkInterceptor()
+                });
+                datasheets.InsertRange(31, new List<Datasheets>()
+                {
+                    //new PrimarisCrusaders(),
+                    //new CrusaderSquad()
+                    new StormhawkInterceptor(),
+                    new StormhawkInterceptor()
+                });
+                datasheets.Insert(47, /*new PrimarisSwordBrethren() */ new StormhawkInterceptor());
             }
             else if (currentSubFaction == "Blood Angels")
             {

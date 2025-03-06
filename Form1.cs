@@ -199,7 +199,7 @@ namespace Roster_Builder
         }
 
         private void btnAddToRoster_Click(object sender, EventArgs e)
-        {
+        { /*
             if (lbUnits.SelectedIndex >= 0 && !restrictedIndexes.Contains(lbUnits.SelectedIndex))
             {
                 if (lbUnits.SelectedItem is Datasheets)
@@ -211,7 +211,14 @@ namespace Roster_Builder
                 }
 
                 updateLBRoster();
+            } */
+
+            var list = currentDetachment.currentFaction.GetDatasheets();
+            foreach(var item in list)
+            {
+                currentDetachment.roster.Add(item.CreateUnit());
             }
+            updateLBRoster();
         }
 
         private void updateLBRoster()

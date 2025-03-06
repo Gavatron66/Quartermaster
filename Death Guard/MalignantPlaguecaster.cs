@@ -43,24 +43,30 @@ namespace Roster_Builder.Death_Guard
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             if (repo.hasWarlord && !isWarlord)
             {
                 cbWarlord.Enabled = false;
             }
-            else
+
+            cmbWarlord.Items.Clear();
+            List<string> traits = repo.GetWarlordTraits("");
+            foreach (var item in traits)
             {
-                cmbWarlord.Items.Clear();
-                List<string> traits = repo.GetWarlordTraits("");
-                foreach (var item in traits)
-                {
-                    cmbWarlord.Items.Add(item);
-                }
+                cmbWarlord.Items.Add(item);
             }
 
             if (isWarlord)
             {
                 cbWarlord.Checked = true;
+                cmbWarlord.Enabled = true;
+                cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
+            }
+            else if (Stratagem.Contains(cbStratagem1.Text))
+            {
                 cmbWarlord.Enabled = true;
                 cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
             }
@@ -136,6 +142,9 @@ namespace Roster_Builder.Death_Guard
                 clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
             }
 
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
             if (repo.hasRelic && Relic == "(None)")
             {
                 cmbRelic.Enabled = false;
@@ -144,8 +153,6 @@ namespace Roster_Builder.Death_Guard
             else
             {
                 cmbRelic.Enabled = true;
-                cmbRelic.Items.Clear();
-                cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
                 if (Relic != null)
                 {
@@ -170,9 +177,6 @@ namespace Roster_Builder.Death_Guard
             panel.Controls["lblFactionupgrade"].Visible = true;
             panel.Controls["cmbFactionupgrade"].Visible = true;
 
-            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
-            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-
             if (Stratagem.Contains(cbStratagem1.Text))
             {
                 cbStratagem1.Checked = true;
@@ -194,6 +198,39 @@ namespace Roster_Builder.Death_Guard
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
+
+            cbStratagem3.Text = repo.StratagemList[4].ToString();
+            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X - 25, cbStratagem2.Location.Y + 32);
+            cbStratagem3.Visible = true;
+
+            if (repo.currentSubFaction == "The Wretched")
+            {
+                if (Stratagem.Contains(cbStratagem3.Text))
+                {
+                    cbStratagem3.Checked = true;
+                    cbStratagem3.Enabled = true;
+
+                    if (PsykerPowers[2] != string.Empty)
+                    {
+                        clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[2]), true);
+                    }
+                }
+                else
+                {
+                    cbStratagem3.Checked = false;
+                    cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+                }
+            }
+            else
+            {
+                cbStratagem3.Checked = false;
+                cbStratagem3.Enabled = false;
+
+                if (Stratagem.Contains(cbStratagem3.Text))
+                {
+                    Stratagem.Remove(cbStratagem3.Text);
+                }
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -206,6 +243,7 @@ namespace Roster_Builder.Death_Guard
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -326,44 +364,108 @@ namespace Roster_Builder.Death_Guard
                     }
                     break;
                 case 60:
-                    if (clb.CheckedItems.Count < 2)
+                    if (Stratagem.Contains(cbStratagem3.Text))
                     {
-                        break;
-                    }
-                    else if (clb.CheckedItems.Count == 2)
-                    {
-                        PsykerPowers[0] = clb.CheckedItems[0] as string;
-                        PsykerPowers[1] = clb.CheckedItems[1] as string;
+                        if (clb.CheckedItems.Count < 3)
+                        {
+                            break;
+                        }
+                        else if (clb.CheckedItems.Count == 3)
+                        {
+                            PsykerPowers[0] = clb.CheckedItems[0] as string;
+                            PsykerPowers[1] = clb.CheckedItems[1] as string;
+                            PsykerPowers[2] = clb.CheckedItems[2] as string;
+                        }
+                        else
+                        {
+                            clb.SetItemChecked(clb.SelectedIndex, false);
+                        }
                     }
                     else
                     {
-                        clb.SetItemChecked(clb.SelectedIndex, false);
+                        if (clb.CheckedItems.Count < 2)
+                        {
+                            break;
+                        }
+                        else if (clb.CheckedItems.Count == 2)
+                        {
+                            PsykerPowers[0] = clb.CheckedItems[0].ToString();
+                            PsykerPowers[1] = clb.CheckedItems[1].ToString();
+                        }
+                        else
+                        {
+                            clb.SetItemChecked(clb.SelectedIndex, false);
+                        }
                     }
-
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
                     {
-                        Stratagem.Add(cbStratagem1.Text);
+                        if (!Stratagem.Contains(cbStratagem1.Text))
+                        {
+                            Stratagem.Add(cbStratagem1.Text);
+                        }
+                        warlord.Enabled = true;
                     }
                     else
                     {
                         if (Stratagem.Contains(cbStratagem1.Text))
                         {
                             Stratagem.Remove(cbStratagem1.Text);
+                            if (repo.hasWarlord)
+                            {
+                                warlord.Enabled = false;
+                                warlord.SelectedIndex = -1;
+                            }
                         }
                     }
                     break;
                 case 72:
                     if (cbStratagem2.Checked)
                     {
-                        Stratagem.Add(cbStratagem2.Text);
+                        if (!Stratagem.Contains(cbStratagem2.Text))
+                        {
+                            Stratagem.Add(cbStratagem2.Text);
+                        }
+                        cmbRelic.Enabled = true;
                     }
                     else
                     {
                         if (Stratagem.Contains(cbStratagem2.Text))
                         {
                             Stratagem.Remove(cbStratagem2.Text);
+                            if (repo.hasRelic)
+                            {
+                                cmbRelic.Enabled = false;
+                                cmbRelic.SelectedIndex = 0;
+                            }
+                        }
+                    }
+                    break;
+                case 73:
+                    if (cbStratagem3.Checked)
+                    {
+                        if (!Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Add(cbStratagem3.Text);
+                        }
+
+                        panel.Controls["lblPsyker"].Text = "Select three of the following:";
+                        PsykerPowers = new string[3] { PsykerPowers[0], PsykerPowers[1], string.Empty };
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
+                        }
+
+                        panel.Controls["lblPsyker"].Text = "Select two of the following:";
+                        PsykerPowers = new string[2] { string.Empty, string.Empty };
+                        clb.ClearSelected();
+                        for (int i = 0; i < clb.Items.Count; i++)
+                        {
+                            clb.SetItemChecked(i, false);
                         }
                     }
                     break;

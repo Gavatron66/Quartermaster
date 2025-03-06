@@ -42,19 +42,20 @@ namespace Roster_Builder.Death_Guard
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             if (repo.hasWarlord && !isWarlord)
             {
                 cbWarlord.Enabled = false;
             }
-            else
+
+            cmbWarlord.Items.Clear();
+            List<string> traits = repo.GetWarlordTraits("");
+            foreach (var item in traits)
             {
-                cmbWarlord.Items.Clear();
-                List<string> traits = repo.GetWarlordTraits("");
-                foreach (var item in traits)
-                {
-                    cmbWarlord.Items.Add(item);
-                }
+                cmbWarlord.Items.Add(item);
             }
 
             cmbOption1.Items.Clear();
@@ -67,7 +68,7 @@ namespace Roster_Builder.Death_Guard
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
             cbOption1.Text = "Plague Spewer (+5 pts)";
-            if (Weapons[1] != string.Empty)
+            if (Weapons[1] == cbOption1.Text)
             {
                 cbOption1.Checked = true;
             }
@@ -77,7 +78,7 @@ namespace Roster_Builder.Death_Guard
             }
 
             cbOption2.Text = "Foetid Wings (+35 pts)";
-            if (Weapons[2] != string.Empty)
+            if (Weapons[2] == cbOption2.Text)
             {
                 cbOption2.Checked = true;
             }
@@ -89,6 +90,11 @@ namespace Roster_Builder.Death_Guard
             if (isWarlord)
             {
                 cbWarlord.Checked = true;
+                cmbWarlord.Enabled = true;
+                cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
+            }
+            else if (Stratagem.Contains(cbStratagem1.Text))
+            {
                 cmbWarlord.Enabled = true;
                 cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
             }
@@ -150,6 +156,9 @@ namespace Roster_Builder.Death_Guard
                 clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
             }
 
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
             if (repo.hasRelic && Relic == "(None)")
             {
                 cmbRelic.Enabled = false;
@@ -158,8 +167,6 @@ namespace Roster_Builder.Death_Guard
             else
             {
                 cmbRelic.Enabled = true;
-                cmbRelic.Items.Clear();
-                cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
                 if (Relic != null)
                 {
@@ -184,9 +191,6 @@ namespace Roster_Builder.Death_Guard
             panel.Controls["lblFactionupgrade"].Visible = true;
             panel.Controls["cmbFactionupgrade"].Visible = true;
 
-            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
-            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-
             if (Stratagem.Contains(cbStratagem1.Text))
             {
                 cbStratagem1.Checked = true;
@@ -209,6 +213,39 @@ namespace Roster_Builder.Death_Guard
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
 
+            cbStratagem3.Text = repo.StratagemList[4].ToString();
+            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X - 25, cbStratagem2.Location.Y + 32);
+            cbStratagem3.Visible = true;
+
+            if(repo.currentSubFaction == "The Wretched")
+            {
+                if (Stratagem.Contains(cbStratagem3.Text))
+                {
+                    cbStratagem3.Checked = true;
+                    cbStratagem3.Enabled = true;
+
+                    if (PsykerPowers[1] != string.Empty)
+                    {
+                        clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
+                    }
+                }
+                else
+                {
+                    cbStratagem3.Checked = false;
+                    cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+                }
+            }
+            else
+            {
+                cbStratagem3.Checked = false;
+                cbStratagem3.Enabled = false;
+
+                if(Stratagem.Contains(cbStratagem3.Text))
+                {
+                    Stratagem.Remove(cbStratagem3.Text);
+                }
+            }
+
             restrictedIndexes = new List<int>();
         }
 
@@ -224,6 +261,7 @@ namespace Roster_Builder.Death_Guard
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -255,7 +293,10 @@ namespace Roster_Builder.Death_Guard
                     { 
                         Weapons[1] = string.Empty;
                         cb2.Enabled = true;
-                        restrictedIndexes.RemoveRange(0, 2);
+                        if(restrictedIndexes.Count > 0)
+                        {
+                            restrictedIndexes.RemoveRange(0, 2);
+                        }
                     }
                     this.DrawItemWithRestrictions(restrictedIndexes, cmb);
                     break;
@@ -269,7 +310,10 @@ namespace Roster_Builder.Death_Guard
                     else 
                     { 
                         Weapons[2] = string.Empty;
-                        cb.Enabled = true;
+                        if (Weapons[0] == "Hellforged Sword (+10 pts)")
+                        {
+                            cb.Enabled = true;
+                        }
                     }
                     break;
                 case 25:
@@ -341,13 +385,32 @@ namespace Roster_Builder.Death_Guard
                     }
                     break;
                 case 60:
-                    if (clb.CheckedItems.Count == 1)
+                    if(Stratagem.Contains(cbStratagem3.Text))
                     {
-                        PsykerPowers[0] = clb.SelectedItem.ToString();
+                        if (clb.CheckedItems.Count < 2)
+                        {
+                            break;
+                        }
+                        else if (clb.CheckedItems.Count == 2)
+                        {
+                            PsykerPowers[0] = clb.CheckedItems[0] as string;
+                            PsykerPowers[1] = clb.CheckedItems[1] as string;
+                        }
+                        else
+                        {
+                            clb.SetItemChecked(clb.SelectedIndex, false);
+                        }
                     }
                     else
                     {
-                        clb.SetItemChecked(clb.SelectedIndex, false);
+                        if (clb.CheckedItems.Count == 1)
+                        {
+                            PsykerPowers[0] = clb.SelectedItem.ToString();
+                        }
+                        else
+                        {
+                            clb.SetItemChecked(clb.SelectedIndex, false);
+                        }
                     }
                     break;
                 case 17:
@@ -394,26 +457,71 @@ namespace Roster_Builder.Death_Guard
                 case 71:
                     if (cbStratagem1.Checked)
                     {
-                        Stratagem.Add(cbStratagem1.Text);
+                        if (!Stratagem.Contains(cbStratagem1.Text))
+                        {
+                            Stratagem.Add(cbStratagem1.Text);
+                        }
+                        warlord.Enabled = true;
                     }
                     else
                     {
                         if(Stratagem.Contains(cbStratagem1.Text))
                         {
                             Stratagem.Remove(cbStratagem1.Text);
+                            if(repo.hasWarlord)
+                            {
+                                warlord.Enabled = false;
+                                warlord.SelectedIndex = -1;
+                            }
                         }
                     }
                     break;
                 case 72:
                     if (cbStratagem2.Checked)
                     {
-                        Stratagem.Add(cbStratagem2.Text);
+                        if(!Stratagem.Contains(cbStratagem2.Text))
+                        {
+                            Stratagem.Add(cbStratagem2.Text);
+                        }
+                        cmbRelic.Enabled = true;
                     }
                     else
                     {
                         if (Stratagem.Contains(cbStratagem2.Text))
                         {
                             Stratagem.Remove(cbStratagem2.Text);
+                            if (repo.hasRelic)
+                            {
+                                cmbRelic.Enabled = false;
+                                cmbRelic.SelectedIndex = 0;
+                            }
+                        }
+                    }
+                    break;
+                case 73:
+                    if (cbStratagem3.Checked)
+                    {
+                        if (!Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Add(cbStratagem3.Text);
+                        }
+
+                        panel.Controls["lblPsyker"].Text = "Select two of the following:";
+                        PsykerPowers = new string[2] { PsykerPowers[0], string.Empty };
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
+                        }
+
+                        panel.Controls["lblPsyker"].Text = "Select one of the following:";
+                        PsykerPowers = new string[1] { string.Empty };
+                        clb.ClearSelected();
+                        for (int i = 0; i < clb.Items.Count; i++)
+                        {
+                            clb.SetItemChecked(i, false);
                         }
                     }
                     break;
