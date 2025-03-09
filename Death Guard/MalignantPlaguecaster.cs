@@ -67,6 +67,7 @@ namespace Roster_Builder.Death_Guard
             }
             else if (Stratagem.Contains(cbStratagem1.Text))
             {
+                cbWarlord.Checked = false;
                 cmbWarlord.Enabled = true;
                 cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
             }

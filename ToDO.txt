@@ -119,18 +119,7 @@ Champion of Disease relics:
 	Suppurating Plate
 
 Progress Remaining (Death Guard):
-	//---------- Troops ----------
-	new PlagueMarines(),
-	new DG_Cultists(),
-	new Poxwalkers(),
 	//---------- Elite ----------
-	new NoxiousBlightbringer(),
-	new FoulBlightspawn(),
-	new BiologusPutrifier(),
-	new Tallyman(),
-	new PlagueSurgeon(),
-	new BlightlordTerminators(),
-	new DeathshroudTerminators(),
 	new DG_Helbrute(),
 	new DG_Possessed(), 
 	//---------- Fast Attack ----------

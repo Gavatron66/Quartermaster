@@ -233,13 +233,18 @@ namespace Roster_Builder.Death_Guard
 
             if(Keywords.Contains("CORE")) //For Stratagem: Champion of Disease
             {
-                relicsList.AddRange(new string[]
+                if(Keywords.Contains("DEATHSHROUD TERMINATORS")) {
+                    relicsList.Add("Reaper of Glorious Entropy");
+                }
+
+                relicsList.Add("Plague Skull of Glothila");
+
+                if (!Keywords.Contains("DEATHSHROUD TERMINATORS"))
                 {
-                    "Reaper of Glorious Entropy",
-                    "Plague Skull of Glothila",
-                    "Plaguebringer",
-                    "Suppurating Plate"
-                });
+                    relicsList.Add("Plaguebringer");
+                }
+
+                relicsList.Add("Suppurating Plate");
 
                 return relicsList;
             }
