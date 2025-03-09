@@ -19,7 +19,6 @@
 Provide an error if a datasheet has not selected enough Psychic Powers
 
 Implement the remianing unique stratagems for the following:
-	Death Guard
 	Necrons
 	Adeptus Custodes
 	GSC
@@ -69,75 +68,16 @@ Need to implement the relics for Drukhari, Deathwatch, Space Wolves
 
 Switching between detachments appears to broken, need to look in on that
 
-Rule of 3?
-	Applies to all non-Troops or non-Dedicated Transports
-
-Last unit finished: Mortarion
-
-UPDATE (01/10/2025) - I was working on Warlord and Relic restrictions! Following the list alphabetically
-
-Go back and double check Death Guard
 There is a potential error in Necrons that I wasn't able to duplicate
 Maybe figured out the NUD control scenarios! Further testing is required
 	Examples found in Necron Warriors and Lokhust Heavy Destroyers
 	
 Double check plasma Pistol logic for chaos space marines, since some have restrictions
 
-When going back through, check if category weapons have points values for taking them
-
 Figured out 3 DG Stratagem implementations, refer to those going forward for characters
 
-Characters:
-	DG Chaos Lord
-	DG Terminator Lord
-	DG Daemon Prince
-	DG Terminator Sorcerer
-	Lord of Contagion
-	Lord of Virulence
-	Malignant Plaguecaster
-	Typhus
-	Biologus Putrifier
-	Foul Blightspawn
-	Noxious Blightbringer
-	Plague Surgeon
-	Tallyman
-Sevenfold Blessings (The Wretched only):
-	DG Daemon Prince
-	DG Terminator Sorcerer
-	Malignant Plaguecaster
-Champion of Disease:
-	Plague Marines
-	Blightlord Terminators
-	Deathshroud Terminators
-Grandfatherly Influence:
-	Chaos Spawn
-	
-Champion of Disease relics:
-	Reaper of Glorious Entropy
-	Plague Skull of Glothila
-	Plaguebringer
-	Suppurating Plate
 
-Progress Remaining (Death Guard):
-	//---------- Elite ----------
-	new DG_Helbrute(),
-	new DG_Possessed(), 
-	//---------- Fast Attack ----------
-	new DG_ChaosSpawn(),
-	new MyphiticBlightHauler(),
-	new FoetidBloatDrone(),
-	//---------- Heavy Support ----------
-	new PlagueburstCrawler(),
-	new DG_ChaosLandRaider(),
-	new DG_ChaosPredatorAnnihilator(),
-	new DG_ChaosPredatorDestructor(),
-	new DG_Defiler(), 
-	//---------- Transport ----------
-	new DG_ChaosRhino(),
-	//---------- Lord of War ----------
-	new Mortarion(), 
-	//---------- Fortification ----------
-	new MiasmicMalignifier(),
+Progress Remaining:
 			
             factionsRestrictions = repo.restrictedItems;
 			
