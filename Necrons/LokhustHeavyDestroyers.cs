@@ -33,6 +33,7 @@ namespace Roster_Builder.Necrons
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
+            repo = f as Necrons;
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
@@ -40,6 +41,7 @@ namespace Roster_Builder.Necrons
 
             panel.Controls["lblnud1"].Text = "Models with Enmitic Exterminators:";
             panel.Controls["lblnud2"].Text = "Models with Gauss Destructors:";
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;

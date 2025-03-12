@@ -80,13 +80,13 @@ namespace Roster_Builder.Leagues_of_Votann
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null)
+            if (Relic != null && cmbRelic.Items.Contains(Relic))
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = -1;
+                cmbRelic.SelectedIndex = 0;
             }
 
             cmbFaction.Items.Clear();

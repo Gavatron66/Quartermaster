@@ -77,7 +77,51 @@ Double check plasma Pistol logic for chaos space marines, since some have restri
 Figured out 3 DG Stratagem implementations, refer to those going forward for characters
 
 
-Progress Remaining:
+Progress Remaining (Necrons):
+	//---------- Troops ----------
+	new NecronWarriors(),
+	new Immortals(),
+	//---------- Elites ----------
+	new CanoptekReanimator(),
+	new Lychguard(),
+	new Deathmarks(),
+	new FlayedOnes(),
+	new Cryptothralls(),
+	new SkorpekhDestroyers(),
+	new CanoptekPlasmacyte(),
+	new TriarchStalker(),
+	new CtanDeceiver(),
+	new CtanNightbringer(),
+	new CtanVoidDragon(),
+	new TranscendentCtan(),
+	new CanoptekSpyders(),
+	//---------- Fast Attack ----------
+	new CanoptekScarabs(),
+	new OphydianDestroyers(),
+	new TombBlades(),
+	new TriarchPraetorians(),
+	new CanoptekWraiths(),
+	//---------- Heavy Support ----------
+	new AnnihilationBarge(),
+	new DoomsdayArk(),
+	new LokhustDestroyers(),
+	new LokhustHeavyDestroyers(),
+	new CanoptekDoomstalker(),
+	//---------- Transport ----------
+	new GhostArk(),
+	//---------- Flyers ----------
+	new DoomScythe(),
+	new NightScythe(),
+	//---------- Lords of War ----------
+	new Obelisk(),
+	new TesseractVault(),
+	new Monolith(),
+	new TheSilentKing(),
+	//---------- Fortification ----------
+	new ConvergenceOfDominion(),
+			
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 			
             factionsRestrictions = repo.restrictedItems;
 			

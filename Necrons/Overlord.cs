@@ -60,6 +60,12 @@ namespace Roster_Builder.Necrons
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
+            if(cmbOption1.SelectedIndex == 2)
+            {
+                cbOption1.Enabled = false;
+                cbOption1.Checked = false;
+            }
+
             cbOption1.Text = "Resurrection Orb (+25 pts)";
             if (Weapons[1] == "Resurrection Orb (+25 pts)")
             {
@@ -85,13 +91,13 @@ namespace Roster_Builder.Necrons
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null)
+            if (Relic != null && cmbRelic.Items.Contains(Relic))
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = -1;
+                cmbRelic.SelectedIndex = 0;
             }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
@@ -119,7 +125,22 @@ namespace Roster_Builder.Necrons
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
 
-            cbOption1.Enabled = false;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+
+            cbStratagem3.Text = repo.StratagemList[2].ToString();
+            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 30);
+            cbStratagem3.Visible = true;
+
+            if (Stratagem.Contains(cbStratagem3.Text))
+            {
+                cbStratagem3.Checked = true;
+                cbStratagem3.Enabled = true;
+            }
+            else
+            {
+                cbStratagem3.Checked = false;
+                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -131,6 +152,7 @@ namespace Roster_Builder.Necrons
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -159,6 +181,8 @@ namespace Roster_Builder.Necrons
                     break;
                 case 17:
                     Relic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+                    cbOption1.Enabled = true;
 
                     if(cmbRelic.SelectedItem.ToString() == "Blood Scythe")
                     {
@@ -180,6 +204,7 @@ namespace Roster_Builder.Necrons
                         cbOption1.Checked = true;
                         cbOption1.Enabled = false;
                         cmbOption1.Items.Remove("Tachyon Arrow and Hyperphaise Glaive");
+                        cmbOption1.SelectedIndex = 1;
                     }
                     else if(cmbRelic.SelectedItem.ToString() == "Voidreaper")
                     {
@@ -190,11 +215,6 @@ namespace Roster_Builder.Necrons
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Staff of Light");
                         cmbOption1.Enabled = false;
-                    }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                        cbOption1.Enabled = true;
                     }
                     break;
                 case 21:
@@ -239,6 +259,19 @@ namespace Roster_Builder.Necrons
                         if (Stratagem.Contains(cbStratagem2.Text))
                         {
                             Stratagem.Remove(cbStratagem2.Text);
+                        }
+                    }
+                    break;
+                case 73:
+                    if (cbStratagem3.Checked)
+                    {
+                        Stratagem.Add(cbStratagem3.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
                         }
                     }
                     break;

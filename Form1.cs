@@ -179,11 +179,11 @@ namespace Roster_Builder
                 cmbSubFaction.Items.Add(subfaction);
             }
 
-            if (!isLoading)
-            {
-                lbRoster.Items.Add(units.subFactionName);
-                updateLBRoster();
-            }
+            //if (!isLoading)
+            //{
+            //    lbRoster.Items.Add(units.subFactionName);
+            //    updateLBRoster();
+            //}
 
             if(txtName.Text == "<Optional>")
             {
@@ -199,7 +199,8 @@ namespace Roster_Builder
         }
 
         private void btnAddToRoster_Click(object sender, EventArgs e)
-        { /*
+        {
+            /*
             if (lbUnits.SelectedIndex >= 0 && !restrictedIndexes.Contains(lbUnits.SelectedIndex))
             {
                 if (lbUnits.SelectedItem is Datasheets)
@@ -210,26 +211,41 @@ namespace Roster_Builder
                     currentDetachment.roster.Add(newUnit.CreateUnit());
                 }
 
-                updateLBRoster();
-            } */
-
+                //updateLBRoster();
+            }
+            */
             var list = currentDetachment.currentFaction.GetDatasheets();
             foreach(var item in list)
             {
                 currentDetachment.roster.Add(item.CreateUnit());
+            }
+
+            object zeroItem = lbRoster.Items[0];
+            lbRoster.Items.Clear();
+            lbRoster.Items.Add(zeroItem);
+            for (int i = 0; i < currentDetachment.roster.Count; i++)
+            {
+                lbRoster.Items.Add(currentDetachment.roster[i].ToString());
             }
             updateLBRoster();
         }
 
         private void updateLBRoster()
         {
-            object zeroItem = lbRoster.Items[0];
-            lbRoster.Items.Clear();
+            //object zeroItem = lbRoster.Items[0];
+            //lbRoster.Items.Clear();
 
-            lbRoster.Items.Add(zeroItem);
-            for (int i = 0; i < currentDetachment.roster.Count; i++)
+            //lbRoster.Items.Add(zeroItem);
+            //for (int i = 0; i < currentDetachment.roster.Count; i++)
+            //{
+            //    lbRoster.Items.Add(currentDetachment.roster[i].ToString());
+            //}
+
+            if(currentIndex != -1 && !isLoading)
             {
-                lbRoster.Items.Add(currentDetachment.roster[i].ToString());
+                isLoading = true;
+                lbRoster.Items[currentIndex + 1] = currentDetachment.roster[currentIndex].ToString();
+                isLoading = false;
             }
 
             int pts = 0;
@@ -282,7 +298,16 @@ namespace Roster_Builder
             currentDetachment.roster.RemoveAt(currentIndex);
             currentIndex = -1;
 
-            updateLBRoster();
+            object zeroItem = lbRoster.Items[0];
+            lbRoster.Items.Clear();
+
+            lbRoster.Items.Add(zeroItem);
+            for (int i = 0; i < currentDetachment.roster.Count; i++)
+            {
+                lbRoster.Items.Add(currentDetachment.roster[i].ToString());
+            }
+
+            //updateLBRoster();
             lblEditingUnit.Text = string.Empty;
 
             foreach (Control control in panel1.Controls)
@@ -322,6 +347,11 @@ namespace Roster_Builder
 
         private void lbRoster_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(isLoading)
+            {
+                return;
+            }
+
             lbUnits.SelectedIndex = -1;
             foreach (Control control in panel1.Controls)
             {

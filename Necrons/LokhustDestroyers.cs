@@ -38,6 +38,7 @@ namespace Roster_Builder.Necrons
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             GroupBox gbUnitLeader = panel.Controls["gbUnitLeader"] as GroupBox;
             ComboBox cmbOption1 = gbUnitLeader.Controls["gb_cmbOption1"] as ComboBox;
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;

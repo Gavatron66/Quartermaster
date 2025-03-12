@@ -142,19 +142,19 @@ namespace Roster_Builder.Death_Guard
             if (repo.hasRelic && Relic == "(None)")
             {
                 cmbRelic.Enabled = false;
-                cmbRelic.SelectedIndex = -1;
+                cmbRelic.SelectedIndex = 0;
             }
             else
             {
                 cmbRelic.Enabled = true;
 
-                if (Relic != null)
+                if (Relic != null && cmbRelic.Items.Contains(Relic))
                 {
                     cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
                 }
                 else
                 {
-                    cmbRelic.SelectedIndex = -1;
+                    cmbRelic.SelectedIndex = 0;
                 }
             }
 

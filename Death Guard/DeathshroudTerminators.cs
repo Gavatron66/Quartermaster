@@ -114,13 +114,13 @@ namespace Roster_Builder.Death_Guard
                 }
                 else
                 {
-                    if (Relic != null)
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
                     {
                         cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
                     }
                     else
                     {
-                        cmbRelic.SelectedIndex = -1;
+                        cmbRelic.SelectedIndex = 0;
                     }
                 }
             }
