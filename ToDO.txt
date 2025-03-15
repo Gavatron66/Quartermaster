@@ -76,50 +76,30 @@ Double check plasma Pistol logic for chaos space marines, since some have restri
 
 Figured out 3 DG Stratagem implementations, refer to those going forward for characters
 
+Just fixed (3/11) some of the main form's listboxes to not flicker as often; try and figure that out for the model version
 
-Progress Remaining (Necrons):
-	//---------- Troops ----------
-	new NecronWarriors(),
-	new Immortals(),
-	//---------- Elites ----------
-	new CanoptekReanimator(),
-	new Lychguard(),
-	new Deathmarks(),
-	new FlayedOnes(),
-	new Cryptothralls(),
-	new SkorpekhDestroyers(),
-	new CanoptekPlasmacyte(),
-	new TriarchStalker(),
-	new CtanDeceiver(),
-	new CtanNightbringer(),
-	new CtanVoidDragon(),
-	new TranscendentCtan(),
-	new CanoptekSpyders(),
+Victor of the Blood Games gives an extra Warlord Trait
+Eternal Penitent applies to a Dreadnought
+Characters:
+	Shield-Captain
+	Allarus Shield-Captain
+	Vertus Shield-Captain
+	Blade Champion
+	Knight Centura
+	Vexilus Praetor
+	Allarus Praetor
+	
+	new VexilusPraetor(),
+	new AllarusVexilusPraetor(),
+	new VCDreadnought(),
+	new Vigilators(),
 	//---------- Fast Attack ----------
-	new CanoptekScarabs(),
-	new OphydianDestroyers(),
-	new TombBlades(),
-	new TriarchPraetorians(),
-	new CanoptekWraiths(),
+	new VertusPraetors(),
+	new Witchseekers(),
 	//---------- Heavy Support ----------
-	new AnnihilationBarge(),
-	new DoomsdayArk(),
-	new LokhustDestroyers(),
-	new LokhustHeavyDestroyers(),
-	new CanoptekDoomstalker(),
-	//---------- Transport ----------
-	new GhostArk(),
-	//---------- Flyers ----------
-	new DoomScythe(),
-	new NightScythe(),
-	//---------- Lords of War ----------
-	new Obelisk(),
-	new TesseractVault(),
-	new Monolith(),
-	new TheSilentKing(),
-	//---------- Fortification ----------
-	new ConvergenceOfDominion(),
-			
+	new VenerableLandRaider(),
+	//---------- Dedicated Transport ----------
+	new AnathemaPsykanaRhino()
 
             panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 			
