@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net.Cache;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ namespace Roster_Builder.Genestealer_Cults
     public class NeophyteHybrids : Datasheets
     {
         int currentIndex;
+        int iconIndex = -1;
+
         public NeophyteHybrids()
         {
             DEFAULT_POINTS = 6;
@@ -44,10 +47,12 @@ namespace Roster_Builder.Genestealer_Cults
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
-            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 10;
@@ -61,21 +66,15 @@ namespace Roster_Builder.Genestealer_Cults
             lbModelSelect.Items.Add("Neophyte Leader w/ " + Weapons[0] + " and " + Weapons[1]);
             for (int i = 1; i < UnitSize; i++)
             {
-                lbModelSelect.Items.Add("Neophyte Hybrid w/ " + Weapons[i + 1]);
+                if(i != iconIndex)
+                {
+                    lbModelSelect.Items.Add("Neophyte Hybrid w/ " + Weapons[i + 1]);
+                }
+                else
+                {
+                    lbModelSelect.Items.Add("Neophyte Hybrid w/ " + Weapons[currentIndex + 1] + " and Cult Icon");
+                }
             }
-
-            cmbOption1.Items.Clear();
-            cmbOption1.Items.AddRange(new string[]
-            {
-                "Autogun",
-                "Cult Shotgun",
-                "Flamer",
-                "Grenade Lancher",
-                "Heavy Stubber",
-                "Mining Laser (+15 pts)",
-                "Seismic Cannon (+15 pts)",
-                "Webber"
-            });
 
             cmbOption2.Items.Clear();
             cmbOption2.Items.AddRange(new string[]
@@ -86,6 +85,18 @@ namespace Roster_Builder.Genestealer_Cults
             });
 
             cbOption1.Text = "Cult Icon (+10 pts)";
+            if(iconIndex < 0)
+            {
+                cbOption1.Enabled = true;
+                cbOption1.Checked = false;
+            }
+            else
+            {
+                cbOption1.Enabled = false;
+                int temp = iconIndex;
+                cbOption1.Checked = true;
+                iconIndex = temp;
+            }
 
             cmbFactionupgrade.Visible = true;
             panel.Controls["lblFactionupgrade"].Visible = true;
@@ -100,6 +111,29 @@ namespace Roster_Builder.Genestealer_Cults
             else
             {
                 cmbFactionupgrade.SelectedIndex = 0;
+            }
+
+            cbStratagem3.Text = repo.StratagemList[2].ToString();
+            cbStratagem3.Location = new System.Drawing.Point(cmbFactionupgrade.Location.X, cmbFactionupgrade.Location.Y + 32);
+            cbStratagem3.Visible = true;
+
+            if (repo.currentSubFaction == "The Bladed Cog")
+            {
+                if (Stratagem.Contains(cbStratagem3.Text))
+                {
+                    cbStratagem3.Checked = true;
+                    cbStratagem3.Enabled = true;
+                }
+                else
+                {
+                    cbStratagem3.Checked = false;
+                    cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+                }
+            }
+            else
+            {
+                cbStratagem3.Enabled = false;
+                cbStratagem3.Checked = false;
             }
         }
 
@@ -117,6 +151,7 @@ namespace Roster_Builder.Genestealer_Cults
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -128,9 +163,22 @@ namespace Roster_Builder.Genestealer_Cults
                         break;
                     }
 
-                    Weapons[currentIndex + 1] = cmbOption1.SelectedItem.ToString();
-                    lbModelSelect.Items[currentIndex] = "Neophyte Hybrid w/ " + Weapons[currentIndex + 1];
-
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    {
+                        Weapons[currentIndex + 1] = cmbOption1.SelectedItem.ToString();
+                        if(currentIndex != iconIndex)
+                        {
+                            lbModelSelect.Items[currentIndex] = "Neophyte Hybrid w/ " + Weapons[currentIndex + 1];
+                        }
+                        else
+                        {
+                            lbModelSelect.Items[currentIndex] = "Neophyte Hybrid w/ " + Weapons[currentIndex + 1] + " and Cult Icon";
+                        }
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
+                    }
                     break;
                 case 12:
                     Weapons[1] = cmbOption2.SelectedItem.ToString();
@@ -142,15 +190,16 @@ namespace Roster_Builder.Genestealer_Cults
                 case 21:
                     if (cbOption1.Checked)
                     {
-                        Weapons[currentIndex + 1] = cbOption1.Text;
-                        cmbOption1.Enabled = false;
+                        iconIndex = currentIndex;
                     }
                     else
                     {
-                        Weapons[currentIndex + 1] = "Autogun";
-                        cmbOption1.Enabled = true;
+                        iconIndex = -1;
                     }
-                    lbModelSelect.Items[currentIndex] = "Neophyte Hybrid w/ " + Weapons[currentIndex + 1];
+                    lbModelSelect.Items[currentIndex] = "Neophyte Hybrid w/ " + Weapons[currentIndex + 1] + " and Cult Icon";
+                    restrictedIndexes.Clear();
+                    restrictedIndexes.AddRange(new int[] { 2, 3, 4, 5, 6, 7 });
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     break;
                 case 30:
                     int temp = UnitSize;
@@ -170,18 +219,6 @@ namespace Roster_Builder.Genestealer_Cults
                     break;
                 case 61:
                     currentIndex = lbModelSelect.SelectedIndex;
-
-                    string[] tempcoll = new string[8]
-                    {
-                        "Autogun",
-                        "Cult Shotgun",
-                        "Flamer",
-                        "Grenade Launcher",
-                        "Heavy Stubber",
-                        "Mining Laser (+15 pts)",
-                        "Seismic Cannon (+15 pts)",
-                        "Webber"
-                    };
 
                     if (currentIndex < 0)
                     {
@@ -218,11 +255,19 @@ namespace Roster_Builder.Genestealer_Cults
                         break;
                     }
 
+                    restrictedIndexes.Clear();
                     cmbOption1.Items.Clear();
-                    for (int i = 0; i < tempcoll.Length; i++)
+                    cmbOption1.Items.AddRange(new string[]
                     {
-                        cmbOption1.Items.Add(tempcoll[i]);
-                    }
+                        "Autogun",
+                        "Cult Shotgun",
+                        "Flamer",
+                        "Grenade Lancher",
+                        "Heavy Stubber",
+                        "Mining Laser (+15 pts)",
+                        "Seismic Cannon (+15 pts)",
+                        "Webber"
+                    });
 
                     int[] weaponsCheck = new int[2] { 0, 0 };
                     for (int i = 0; i < Weapons.Count; i++)
@@ -253,18 +298,36 @@ namespace Roster_Builder.Genestealer_Cults
                         }
                     }
 
-                    if (weaponsCheck[0] == (UnitSize / 10) * 2)
+                    if ((weaponsCheck[0] == (UnitSize / 10) * 2) &&
+                        !(Weapons[currentIndex + 1] == "Heavy Stubber" || Weapons[currentIndex + 1] == "Mining Laser (+15 pts)" || Weapons[currentIndex + 1] == "Seismic Cannon (+15 pts)"))
                     {
-                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Heavy Stubber"));
-                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Mining Laser (+15 pts)"));
-                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Seismic Cannon (+15 pts)"));
+                        restrictedIndexes.AddRange(new int[] { 4, 5, 6 });
                     }
-                    if (weaponsCheck[1] == (UnitSize / 10) * 2)
+
+                    if ((weaponsCheck[1] == (UnitSize / 10) * 2) &&
+                        !(Weapons[currentIndex + 1] == "Flamer" || Weapons[currentIndex + 1] == "Grenade Launcher" || Weapons[currentIndex + 1] == "Webber"))
                     {
-                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Flamer"));
-                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Grenade Launcher"));
-                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Webber"));
+                        restrictedIndexes.AddRange(new int[] { 2, 3, 7 });
                     }
+
+                    if(currentIndex == iconIndex)
+                    {
+                        restrictedIndexes.AddRange(new int[] { 2, 3, 4, 5, 6, 7 });
+                        cbOption1.Enabled = true;
+                    }
+                    else
+                    {
+                        if(iconIndex < 0)
+                        {
+                            cbOption1.Enabled = true;
+                        }
+                        else
+                        {
+                            cbOption1.Enabled = false;
+                        }
+                    }
+
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
 
                     cmbOption1.Visible = true;
                     cmbOption1.Enabled = true;
@@ -274,55 +337,25 @@ namespace Roster_Builder.Genestealer_Cults
                     cmbOption2.Visible = false;
                     panel.Controls["lblOption2"].Visible = false;
 
-                    if (Weapons.Contains("Cult Icon (+10 pts)"))
-                    {
-                        cbOption1.Enabled = false;
-                    }
-                    else
-                    {
-                        cbOption1.Enabled = true;
-                    }
-
                     antiLoop = true;
-                    if (Weapons[currentIndex + 1] == "Cult Icon (+10 pts)")
-                    {
-                        cbOption1.Enabled = true;
-                        cbOption1.Checked = true;
-                        cmbOption1.Enabled = false;
-                    }
-                    else
-                    {
-                        cbOption1.Checked = false;
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
-                    }
-
-                    if ((Weapons[currentIndex + 1] == "Heavy Stubber"
-                        || Weapons[currentIndex + 1] == "Mining Laser (+15 pts)"
-                        || Weapons[currentIndex + 1] == "Seismic Cannon (+15 pts)")
-                        && !cmbOption1.Items.Contains("Heavy Stubber"))
-                    {
-                        cmbOption1.Items.Add("Heavy Stubber");
-                        cmbOption1.Items.Add("Mining Laser (+15 pts)");
-                        cmbOption1.Items.Add("Seismic Cannon (+15 pts)");
-
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
-                    }
-
-                    if ((Weapons[currentIndex + 1] == "Flamer"
-                        || Weapons[currentIndex + 1] == "Grenade Launcher"
-                        || Weapons[currentIndex + 1] == "Webber")
-                        && !cmbOption1.Items.Contains("Flamer"))
-                    {
-                        cmbOption1.Items.Add("Flamer");
-                        cmbOption1.Items.Add("Grenade Launcher");
-                        cmbOption1.Items.Add("Webber");
-
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
-                    }
+                    cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
                     antiLoop = false;
 
                     Points = UnitSize * DEFAULT_POINTS;
 
+                    break;
+                case 73:
+                    if (cbStratagem3.Checked)
+                    {
+                        Stratagem.Add(cbStratagem3.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
+                        }
+                    }
                     break;
             }
 

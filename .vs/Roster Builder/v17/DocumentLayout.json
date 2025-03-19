@@ -3,68 +3,124 @@
   "WorkspaceRootPath": "C:\\Users\\evans\\Desktop\\Quartermaster\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus custodes\\witchseekers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\witchseekers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\genestealer cults\\goliathtruck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\goliathtruck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus custodes\\vertuspraetors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\vertuspraetors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\genestealer cults\\goliathrockgrinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\goliathrockgrinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus custodes\\vigilators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\vigilators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\genestealer cults\\achillesridgerunners.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\achillesridgerunners.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adeptus custodes\\prosecutors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\prosecutors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus custodes\\allarusvexiluspraetor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\allarusvexiluspraetor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus custodes\\vexiluspraetor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\vexiluspraetor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adeptus custodes\\vertusshieldcaptain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\vertusshieldcaptain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus custodes\\allaruscustodians.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\allaruscustodians.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adeptus custodes\\custodianwardens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\custodianwardens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adeptus custodes\\custodianguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\custodianguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adeptus custodes\\knightcentura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\knightcentura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adeptus custodes\\bladechampion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\bladechampion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adeptus custodes\\allarusshieldcaptain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\allarusshieldcaptain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adeptus custodes\\shieldcaptain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\shieldcaptain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\genestealer cults\\atalanjackals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\atalanjackals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\hybridmetamorphs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\hybridmetamorphs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\biophagus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\biophagus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\reductussaboteur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\reductussaboteur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\purestraingenestealers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\purestraingenestealers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\gsc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\gsc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\kelermorph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\kelermorph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\sanctus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\sanctus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\locus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\locus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\clamavus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\clamavus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\nexos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\nexos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\abominant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\abominant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\aberrants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\aberrants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\acolyteiconward.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\acolyteiconward.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\magus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\magus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\acolytehybrids.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\acolytehybrids.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\neophytehybrids.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\neophytehybrids.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\jackalalphus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\jackalalphus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\primus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\primus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\genestealer cults\\patriarch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:genestealer cults\\patriarch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adeptus custodes\\adeptuscustodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\adeptuscustodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\death guard\\deathguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\deathguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\death guard\\malignantplaguecaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:death guard\\malignantplaguecaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\datasheets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:datasheets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\necrons\\necrons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:necrons\\necrons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -73,14 +129,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\datasheets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:datasheets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,7 +142,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 31,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -107,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 30,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -119,235 +167,372 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 27,
               "Title": "Faction.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Faction.cs",
               "RelativeDocumentMoniker": "Faction.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Faction.cs",
               "RelativeToolTip": "Faction.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAwB4AAAAqAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAIwC0AAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T01:02:04.415Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 28,
               "Title": "Datasheets.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Datasheets.cs",
               "RelativeDocumentMoniker": "Datasheets.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Datasheets.cs",
               "RelativeToolTip": "Datasheets.cs",
-              "ViewState": "AQIAAK8AAAAAAAAAAAApwLkAAAAMAAAA",
+              "ViewState": "AQIAAKYAAAAAAAAAAAAAwLkAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T01:02:03.421Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 4,
               "Title": "Template.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeDocumentMoniker": "Template.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeToolTip": "Template.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAPUEAAAQAAAA",
+              "ViewState": "AQIAACgGAAAAAAAAAAAYwHAAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-05T03:46:42.246Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AdeptusCustodes.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\AdeptusCustodes.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\AdeptusCustodes.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\AdeptusCustodes.cs",
-              "RelativeToolTip": "Adeptus Custodes\\AdeptusCustodes.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T02:35:00.939Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Witchseekers.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\Witchseekers.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\Witchseekers.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\Witchseekers.cs",
-              "RelativeToolTip": "Adeptus Custodes\\Witchseekers.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwCUAAABaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T00:52:16.001Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "VertusPraetors.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\VertusPraetors.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\VertusPraetors.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\VertusPraetors.cs",
-              "RelativeToolTip": "Adeptus Custodes\\VertusPraetors.cs",
-              "ViewState": "AQIAAJQAAAAAAAAAAAAkwKAAAABCAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T00:51:27.042Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Vigilators.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\Vigilators.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\Vigilators.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\Vigilators.cs",
-              "RelativeToolTip": "Adeptus Custodes\\Vigilators.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABcAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T00:50:14.628Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AllarusVexilusPraetor.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\AllarusVexilusPraetor.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\AllarusVexilusPraetor.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\AllarusVexilusPraetor.cs",
-              "RelativeToolTip": "Adeptus Custodes\\AllarusVexilusPraetor.cs",
-              "ViewState": "AQIAANwAAAAAAAAAAAAowOsAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T00:46:48.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "VexilusPraetor.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\VexilusPraetor.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\VexilusPraetor.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\VexilusPraetor.cs",
-              "RelativeToolTip": "Adeptus Custodes\\VexilusPraetor.cs",
-              "ViewState": "AQIAAAYBAAAAAAAAAAAkwBwBAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T00:42:48.466Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AllarusCustodians.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\AllarusCustodians.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\AllarusCustodians.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\AllarusCustodians.cs",
-              "RelativeToolTip": "Adeptus Custodes\\AllarusCustodians.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAuwBAAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T03:03:43.332Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CustodianWardens.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\CustodianWardens.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\CustodianWardens.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\CustodianWardens.cs",
-              "RelativeToolTip": "Adeptus Custodes\\CustodianWardens.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAzwC8AAABaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T03:03:05.401Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Prosecutors.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\Prosecutors.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\Prosecutors.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\Prosecutors.cs",
-              "RelativeToolTip": "Adeptus Custodes\\Prosecutors.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwCQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T03:02:36.657Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "CustodianGuard.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\CustodianGuard.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\CustodianGuard.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\CustodianGuard.cs",
-              "RelativeToolTip": "Adeptus Custodes\\CustodianGuard.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwC4AAAAAAAAA",
+              "Title": "GSC.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\GSC.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\GSC.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\GSC.cs",
+              "RelativeToolTip": "Genestealer Cults\\GSC.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAmwD8AAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T03:01:21.76Z"
+              "WhenOpened": "2025-03-15T00:58:01.573Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "KnightCentura.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\KnightCentura.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\KnightCentura.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\KnightCentura.cs",
-              "RelativeToolTip": "Adeptus Custodes\\KnightCentura.cs",
-              "ViewState": "AQIAAMoAAAAAAAAAAAAswNIAAAAVAAAA",
+              "DocumentIndex": 0,
+              "Title": "GoliathTruck.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\GoliathTruck.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\GoliathTruck.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\GoliathTruck.cs",
+              "RelativeToolTip": "Genestealer Cults\\GoliathTruck.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABcAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T02:58:51.056Z",
+              "WhenOpened": "2025-03-19T01:09:28.738Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "BladeChampion.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\BladeChampion.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\BladeChampion.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\BladeChampion.cs",
-              "RelativeToolTip": "Adeptus Custodes\\BladeChampion.cs",
-              "ViewState": "AQIAAKQAAAAAAAAAAAAswLcAAAAaAAAA",
+              "DocumentIndex": 1,
+              "Title": "GoliathRockgrinder.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\GoliathRockgrinder.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\GoliathRockgrinder.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\GoliathRockgrinder.cs",
+              "RelativeToolTip": "Genestealer Cults\\GoliathRockgrinder.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAwwCIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T02:56:51.695Z",
+              "WhenOpened": "2025-03-19T01:08:28.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AchillesRidgerunners.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\AchillesRidgerunners.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\AchillesRidgerunners.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\AchillesRidgerunners.cs",
+              "RelativeToolTip": "Genestealer Cults\\AchillesRidgerunners.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAYwC8AAABaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T01:05:59.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AtalanJackals.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\AtalanJackals.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\AtalanJackals.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\AtalanJackals.cs",
+              "RelativeToolTip": "Genestealer Cults\\AtalanJackals.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAAAEkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T02:14:33.244Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "VertusShieldCaptain.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\VertusShieldCaptain.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\VertusShieldCaptain.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\VertusShieldCaptain.cs",
-              "RelativeToolTip": "Adeptus Custodes\\VertusShieldCaptain.cs",
-              "ViewState": "AQIAAOIAAAAAAAAAAAAkwOoAAAAVAAAA",
+              "Title": "Biophagus.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Biophagus.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\Biophagus.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Biophagus.cs",
+              "RelativeToolTip": "Genestealer Cults\\Biophagus.cs",
+              "ViewState": "AQIAANkAAAAAAAAAAAAiwOwAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T02:55:26.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T02:11:58.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReductusSaboteur.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\ReductusSaboteur.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\ReductusSaboteur.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\ReductusSaboteur.cs",
+              "RelativeToolTip": "Genestealer Cults\\ReductusSaboteur.cs",
+              "ViewState": "AQIAAKYAAAAAAAAAAAAkwKkAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T02:07:38.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Sanctus.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Sanctus.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\Sanctus.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Sanctus.cs",
+              "RelativeToolTip": "Genestealer Cults\\Sanctus.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwOgAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T02:03:16.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Kelermorph.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Kelermorph.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\Kelermorph.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Kelermorph.cs",
+              "RelativeToolTip": "Genestealer Cults\\Kelermorph.cs",
+              "ViewState": "AQIAALAAAAAAAAAAAAAkwN8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T01:45:56.519Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "AllarusShieldCaptain.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\AllarusShieldCaptain.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\AllarusShieldCaptain.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\AllarusShieldCaptain.cs",
-              "RelativeToolTip": "Adeptus Custodes\\AllarusShieldCaptain.cs",
-              "ViewState": "AQIAAPEAAAAAAAAAAAAkwAgBAAAaAAAA",
+              "Title": "Locus.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Locus.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\Locus.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Locus.cs",
+              "RelativeToolTip": "Genestealer Cults\\Locus.cs",
+              "ViewState": "AQIAALAAAAAAAAAAAAAkwN8AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T02:52:29.214Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T01:43:42.297Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "ShieldCaptain.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\ShieldCaptain.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\ShieldCaptain.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\ShieldCaptain.cs",
-              "RelativeToolTip": "Adeptus Custodes\\ShieldCaptain.cs",
-              "ViewState": "AQIAABEBAAAAAAAAAAAAwBwBAAAaAAAA",
+              "Title": "Clamavus.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Clamavus.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\Clamavus.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Clamavus.cs",
+              "RelativeToolTip": "Genestealer Cults\\Clamavus.cs",
+              "ViewState": "AQIAALAAAAAAAAAAAAAkwN8AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T02:37:30.314Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T01:40:18.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Nexos.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Nexos.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\Nexos.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Nexos.cs",
+              "RelativeToolTip": "Genestealer Cults\\Nexos.cs",
+              "ViewState": "AQIAALAAAAAAAAAAAAAkwN8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T01:37:30.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Abominant.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Abominant.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\Abominant.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Abominant.cs",
+              "RelativeToolTip": "Genestealer Cults\\Abominant.cs",
+              "ViewState": "AQIAALAAAAAAAAAAAAAkwN8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T01:27:09.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Aberrants.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Aberrants.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\Aberrants.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Aberrants.cs",
+              "RelativeToolTip": "Genestealer Cults\\Aberrants.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T01:18:40.343Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HybridMetamorphs.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\HybridMetamorphs.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\HybridMetamorphs.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\HybridMetamorphs.cs",
+              "RelativeToolTip": "Genestealer Cults\\HybridMetamorphs.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAAADUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T01:06:52.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PurestrainGenestealers.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\PurestrainGenestealers.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\PurestrainGenestealers.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\PurestrainGenestealers.cs",
+              "RelativeToolTip": "Genestealer Cults\\PurestrainGenestealers.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAwwG4AAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T01:04:35.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "NeophyteHybrids.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\NeophyteHybrids.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\NeophyteHybrids.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\NeophyteHybrids.cs",
+              "RelativeToolTip": "Genestealer Cults\\NeophyteHybrids.cs",
+              "ViewState": "AQIAAE0BAAAAAAAAAAAAwFkBAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T00:36:06.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AcolyteHybrids.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\AcolyteHybrids.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\AcolyteHybrids.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\AcolyteHybrids.cs",
+              "RelativeToolTip": "Genestealer Cults\\AcolyteHybrids.cs",
+              "ViewState": "AQIAAEMBAAAAAAAAAAAkwHIBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T21:00:31.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "JackalAlphus.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\JackalAlphus.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\JackalAlphus.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\JackalAlphus.cs",
+              "RelativeToolTip": "Genestealer Cults\\JackalAlphus.cs",
+              "ViewState": "AQIAAJ8AAAAAAAAAAAAswK8AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T20:41:45.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AcolyteIconward.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\AcolyteIconward.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\AcolyteIconward.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\AcolyteIconward.cs",
+              "RelativeToolTip": "Genestealer Cults\\AcolyteIconward.cs",
+              "ViewState": "AQIAALAAAAAAAAAAAAAkwN8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T20:36:32.632Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Magus.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Magus.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\Magus.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Magus.cs",
+              "RelativeToolTip": "Genestealer Cults\\Magus.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAYwGsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T20:34:13.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Primus.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Primus.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\Primus.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Primus.cs",
+              "RelativeToolTip": "Genestealer Cults\\Primus.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAgwHEAAABYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T20:30:11.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "DeathGuard.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DeathGuard.cs",
+              "RelativeDocumentMoniker": "Death Guard\\DeathGuard.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\DeathGuard.cs",
+              "RelativeToolTip": "Death Guard\\DeathGuard.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T20:25:13.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MalignantPlaguecaster.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\MalignantPlaguecaster.cs",
+              "RelativeDocumentMoniker": "Death Guard\\MalignantPlaguecaster.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Death Guard\\MalignantPlaguecaster.cs",
+              "RelativeToolTip": "Death Guard\\MalignantPlaguecaster.cs",
+              "ViewState": "AQIAALAAAAAAAAAAAAAgwMkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T20:23:45.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Patriarch.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Patriarch.cs",
+              "RelativeDocumentMoniker": "Genestealer Cults\\Patriarch.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Genestealer Cults\\Patriarch.cs",
+              "RelativeToolTip": "Genestealer Cults\\Patriarch.cs",
+              "ViewState": "AQIAAIMAAAAAAAAAAAAgwI0AAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T20:23:23.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Necrons.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Necrons\\Necrons.cs",
+              "RelativeDocumentMoniker": "Necrons\\Necrons.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Necrons\\Necrons.cs",
+              "RelativeToolTip": "Necrons\\Necrons.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T20:12:57.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AdeptusCustodes.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\AdeptusCustodes.cs",
+              "RelativeDocumentMoniker": "Adeptus Custodes\\AdeptusCustodes.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\AdeptusCustodes.cs",
+              "RelativeToolTip": "Adeptus Custodes\\AdeptusCustodes.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T01:21:55.007Z"
             }
           ]
         }

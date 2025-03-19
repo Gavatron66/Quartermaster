@@ -78,28 +78,89 @@ Figured out 3 DG Stratagem implementations, refer to those going forward for cha
 
 Just fixed (3/11) some of the main form's listboxes to not flicker as often; try and figure that out for the model version
 
-Victor of the Blood Games gives an extra Warlord Trait
-Eternal Penitent applies to a Dreadnought
-Characters:
-	Shield-Captain
-	Allarus Shield-Captain
-	Vertus Shield-Captain
-	Blade Champion
-	Knight Centura
-	Vexilus Praetor
-	Allarus Praetor
+
+Gene-sire's Gifts
+		Gives a relic for a Character
+	Patriarch
+	Primus
+	Magus
+	AcolyteIconward
+	JackalAlphus
+	Abominant
+	Nexos
+	Clamavus
+	Locus
+	Kelermorph
+	Sanctus
+	ReductusSaboteur
+	Biophagus
+Leaders of the Cult
+		Gives Warlord Traits to 2 other HQs if the Patriarch is a Warlord
+	Patriarch
+	Primus
+	Magus
+	AcolyteIconward
+	JackalAlphus
+	Abominant
+	Nexos
+	Clamavus
+	Locus
+	Kelermorph
+	Sanctus
+	ReductusSaboteur
+	Biophagus
+Xenoform Bionics
+		Infantry/Biker, Bladed Cog only
+	Patriarch
+	Primus
+	Magus
+	AcolyteIconward
+	JackalAlphus
+	AcolyteHybrids
+	NeophyteHybrids
+	PurestrainGenestealers
+	HybridMetamorphs
+	Aberrants
+	Abominant
+	Nexos
+	Clamavus
+	Locus
+	Kelermorph
+	Sanctus
+	ReductusSaboteur
+	Biophagus
+	AtalanJackals
 	
-	new VexilusPraetor(),
-	new AllarusVexilusPraetor(),
-	new VCDreadnought(),
-	new Vigilators(),
+Proficient Planning
+	Lying in Wait
+		Exacting Planner (Primus)
+			Alchemist Supreme (Biophagus)
+	A Trap Sprung
+		A Perfect Ambush (CROSSFIRE keyword)
+	From Every Angle
+		Mediations in Shadows (Psyker)
+	Excavate
+		The Came From Below (non-VEHICLE)
+	Our Time is Nigh
+
+
+	//---------- Elites ----------
+	new Abominant(),
+	new Nexos(),
+	new Clamavus(),
+	new Locus(),
+	new Kelermorph(),
+	new Sanctus(),
+	new ReductusSaboteur(),
+	new Biophagus(),
 	//---------- Fast Attack ----------
-	new VertusPraetors(),
-	new Witchseekers(),
+	new AtalanJackals(),
+	new AchillesRidgerunners(),
 	//---------- Heavy Support ----------
-	new VenerableLandRaider(),
-	//---------- Dedicated Transport ----------
-	new AnathemaPsykanaRhino()
+	new GoliathRockgrinder(),
+	//---------- Transport ----------
+	new GoliathTruck(),
+	
 
             panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 			

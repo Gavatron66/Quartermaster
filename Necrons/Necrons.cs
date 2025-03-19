@@ -22,6 +22,7 @@ namespace Roster_Builder.Necrons
                 "Stratagem: Hand of the Phaeron"
             });
         }
+
         public override void SetUpForm(Form form)
         {
             base.SetUpForm(form);
