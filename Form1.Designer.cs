@@ -48,6 +48,7 @@
             this.nudSelectPoints = new System.Windows.Forms.NumericUpDown();
             this.btnLoad = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblModelPoints = new System.Windows.Forms.Label();
             this.cbOption5 = new System.Windows.Forms.CheckBox();
             this.cbOption4 = new System.Windows.Forms.CheckBox();
             this.cmbDiscipline = new System.Windows.Forms.ComboBox();
@@ -142,7 +143,8 @@
             this.cmbNDFaction = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblErrors = new System.Windows.Forms.Label();
-            this.lblModelPoints = new System.Windows.Forms.Label();
+            this.cbStratagem4 = new System.Windows.Forms.CheckBox();
+            this.cbStratagem5 = new System.Windows.Forms.CheckBox();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSelectPoints)).BeginInit();
             this.panel1.SuspendLayout();
@@ -365,6 +367,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbStratagem5);
+            this.panel1.Controls.Add(this.cbStratagem4);
             this.panel1.Controls.Add(this.lblModelPoints);
             this.panel1.Controls.Add(this.cbOption5);
             this.panel1.Controls.Add(this.cbOption4);
@@ -421,6 +425,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1670, 680);
             this.panel1.TabIndex = 8;
+            // 
+            // lblModelPoints
+            // 
+            this.lblModelPoints.AutoSize = true;
+            this.lblModelPoints.Location = new System.Drawing.Point(304, 20);
+            this.lblModelPoints.Name = "lblModelPoints";
+            this.lblModelPoints.Size = new System.Drawing.Size(118, 20);
+            this.lblModelPoints.TabIndex = 90;
+            this.lblModelPoints.Text = "lblModelPoints";
             // 
             // cbOption5
             // 
@@ -1441,14 +1454,27 @@
             this.lblErrors.TabIndex = 82;
             this.lblErrors.Text = "Roster has _ errors";
             // 
-            // lblModelPoints
+            // cbStratagem4
             // 
-            this.lblModelPoints.AutoSize = true;
-            this.lblModelPoints.Location = new System.Drawing.Point(304, 20);
-            this.lblModelPoints.Name = "lblModelPoints";
-            this.lblModelPoints.Size = new System.Drawing.Size(118, 20);
-            this.lblModelPoints.TabIndex = 90;
-            this.lblModelPoints.Text = "lblModelPoints";
+            this.cbStratagem4.AutoSize = true;
+            this.cbStratagem4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStratagem4.Location = new System.Drawing.Point(629, 138);
+            this.cbStratagem4.Name = "cbStratagem4";
+            this.cbStratagem4.Size = new System.Drawing.Size(122, 24);
+            this.cbStratagem4.TabIndex = 91;
+            this.cbStratagem4.Text = "Stratagem 4";
+            this.cbStratagem4.UseVisualStyleBackColor = true;
+            // 
+            // cbStratagem5
+            // 
+            this.cbStratagem5.AutoSize = true;
+            this.cbStratagem5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStratagem5.Location = new System.Drawing.Point(629, 162);
+            this.cbStratagem5.Name = "cbStratagem5";
+            this.cbStratagem5.Size = new System.Drawing.Size(122, 24);
+            this.cbStratagem5.TabIndex = 92;
+            this.cbStratagem5.Text = "Stratagem 5";
+            this.cbStratagem5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1620,6 +1646,8 @@
         private System.Windows.Forms.Label lblSubCustom6;
         private System.Windows.Forms.ComboBox cmbSubCustom6;
         private System.Windows.Forms.Label lblModelPoints;
+        private System.Windows.Forms.CheckBox cbStratagem5;
+        private System.Windows.Forms.CheckBox cbStratagem4;
     }
 }
 

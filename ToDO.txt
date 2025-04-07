@@ -17,17 +17,6 @@
 	along with Horus Heresy and potentially Age of Sigmar (we'll see how the next edition handles list building when the time comes)
 		
 Provide an error if a datasheet has not selected enough Psychic Powers
-
-Implement the remianing unique stratagems for the following:
-	Necrons
-	Adeptus Custodes
-	GSC
-	Space Marines
-	Aeldari
-	Harlequins
-	Tyranids
-	Mechanicus
-	T'au
 	
 Space Marines has limits on what each unit can take depending on subchapter. Most of the time, this isn't a problem. The following have a codex supplement that adds/changes their rosters:
 	Black Templars
@@ -78,89 +67,136 @@ Figured out 3 DG Stratagem implementations, refer to those going forward for cha
 
 Just fixed (3/11) some of the main form's listboxes to not flicker as often; try and figure that out for the model version
 
+Chapter Command
+	Chapter Master
+		Master of the Codex
+		Angel Artifice
+		CAPTAIN
+	Master of Sanctity
+		Wise Orator
+		The Emperor's Judgement
+		CHAPLAIN
+	Master of the Forge
+		Warden of the Ancients
+		Mortis Machina (Omnissian Axe)
+		TECHMARINE
+	Chief Librarian
+		Psychic Mastery
+		Neural Shroud
+		LIBRARIAN
+	Chief Apothecary
+		Selfless Healer
+		Acquittal (Bolt Pistol or Absolver Bolt Pistol)
+		APOTHECARY
+	Chapter Ancient
+		Steadfast Example
+		Pennant of the Fallen
+		ANCIENT
+	Chapter Champion
+		Martial Exemplar
+		Blade of Triumph (MC Power Sword)
+		COMPANY CHAMPION
 
-Gene-sire's Gifts
-		Gives a relic for a Character
-	Patriarch
-	Primus
-	Magus
-	AcolyteIconward
-	JackalAlphus
-	Abominant
-	Nexos
-	Clamavus
-	Locus
-	Kelermorph
-	Sanctus
-	ReductusSaboteur
-	Biophagus
-Leaders of the Cult
-		Gives Warlord Traits to 2 other HQs if the Patriarch is a Warlord
-	Patriarch
-	Primus
-	Magus
-	AcolyteIconward
-	JackalAlphus
-	Abominant
-	Nexos
-	Clamavus
-	Locus
-	Kelermorph
-	Sanctus
-	ReductusSaboteur
-	Biophagus
-Xenoform Bionics
-		Infantry/Biker, Bladed Cog only
-	Patriarch
-	Primus
-	Magus
-	AcolyteIconward
-	JackalAlphus
-	AcolyteHybrids
-	NeophyteHybrids
-	PurestrainGenestealers
-	HybridMetamorphs
-	Aberrants
-	Abominant
-	Nexos
-	Clamavus
-	Locus
-	Kelermorph
-	Sanctus
-	ReductusSaboteur
-	Biophagus
-	AtalanJackals
-	
-Proficient Planning
-	Lying in Wait
-		Exacting Planner (Primus)
-			Alchemist Supreme (Biophagus)
-	A Trap Sprung
-		A Perfect Ambush (CROSSFIRE keyword)
-	From Every Angle
-		Mediations in Shadows (Psyker)
-	Excavate
-		The Came From Below (non-VEHICLE)
-	Our Time is Nigh
-
-
-	//---------- Elites ----------
-	new Abominant(),
-	new Nexos(),
-	new Clamavus(),
-	new Locus(),
-	new Kelermorph(),
-	new Sanctus(),
-	new ReductusSaboteur(),
-	new Biophagus(),
-	//---------- Fast Attack ----------
-	new AtalanJackals(),
-	new AchillesRidgerunners(),
-	//---------- Heavy Support ----------
-	new GoliathRockgrinder(),
-	//---------- Transport ----------
-	new GoliathTruck(),
-	
+	new PhobosCaptain(),
+	new GravisCaptain(),
+	new TerminatorCaptain(),
+	new Captain(),
+	new BikeCaptain(),
+	new PrimarisLieutenant(),
+	new ReiverLieutenant(),
+	new Lieutenant(),
+	new PhobosLieutenant(),
+	new PrimarisLibrarian(),
+	new Librarian(),
+	new PhobosLibrarian(),
+	new TerminatorLibrarian(),
+	new PrimarisChaplain(),
+	new PrimarisBikeChaplain(),
+	new TerminatorChaplain(),
+	new Chaplain(),
+	new PrimarisTechmarine(),
+	new Servitors(),
+	new Techmarine(),   //[21]
+	new Intercessors(),
+	new AssaultIntercessors(),
+	new HeavyIntercessors(),
+	new Infiltrators(),
+	new Incursors(),
+	new TacticalSquad(), //[27]
+	new CompanyChampion(),
+	new ScoutSquad(),
+	new PrimarisApothecary(),
+	new Apothecary(),
+	new CompanyAncient(),
+	new PrimarisAncient(),
+	new BladeguardAncient(),
+	new TerminatorAncient(),
+	new VeteranIntercessors(),
+	new BladeguardVeterans(),
+	new Veterans(),
+	new VanguardVeterans(),
+	new SternguardVeterans(),
+	new Judiciar(),
+	new Reivers(),
+	new Aggressors(),
+	new AssaultTerminators(),
+	new Terminators(),
+	new RelicTerminators(),
+	new CenturionAssault(),
+	new Invictor(),
+	new Dreadnought(),
+	new ContemptorDreadnought(),
+	new VenerableDreadnought(),
+	new IroncladDreadnought(),
+	new RedemptorDreadnought(),
+	new BrutalisDreadnought(), //[54]
+	new AssaultSquad(),
+	new Outriders(),
+	new InvaderATVs(),
+	new BikeSquad(),
+	new ScoutBikeSquad(),
+	new AttackBikeSquad(),
+	new Suppressors(),
+	new Inceptors(),
+	new StormSpeederHailstrike(),
+	new StormSpeederThunderstrike(),
+	new StormSpeederHammerstrike(),
+	new LandSpeeders(),
+	new LandSpeederTornadoes(),
+	new LandSpeederTyphoons(), //[68]
+	new Hellblasters(),
+	new Eliminators(),
+	new CenturionDevastators(),
+	new Eradicators(),
+	new Devastators(),
+	new DesolationSquad(),
+	new Thunderfire(),
+	new FirestrikeTurret(),
+	new Hunter(),
+	new Stalker(),
+	new Whirlwind(),
+	new PredatorDestructor(),
+	new PredatorAnnihilator(),
+	new GladiatorLancer(),
+	new GladiatorReaper(),
+	new GladiatorValiant(),
+	new Vindicator(),
+	new LandRaider(),
+	new LandRaiderCrusader(),
+	new LandRaiderRedeemer(),
+	new Repulsor(),
+	new RepulsorExecutioner(), //[90]
+	new Rhino(),
+	new Razorback(),
+	new Impulsor(),
+	new DropPod(),
+	new LandSpeederStorm(), //[95]
+	new StormhawkInterceptor(),
+	new StormtalonGunship(),
+	new StormravenGunship(), //[98]
+	new RobouteGuilliman(),
+	new LionElJonson(),
+	new HammerfallBunker()
 
             panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 			

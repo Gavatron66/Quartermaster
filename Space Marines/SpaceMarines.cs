@@ -380,23 +380,19 @@ namespace Roster_Builder.Space_Marines
             }
             else if (currentSubFaction == "Black Templars")
             {
+                datasheets.RemoveRange(11, 4);
                 datasheets.InsertRange(22, new List<Datasheets>()
                 {
                     //new HighMarshalHelbrecht(),
                     //new ChaplainGrimaldus(),
                     //new TheEmperorsChampion()
-                    new StormhawkInterceptor(),
-                    new StormhawkInterceptor(),
-                    new StormhawkInterceptor()
                 });
                 datasheets.InsertRange(31, new List<Datasheets>()
                 {
                     //new PrimarisCrusaders(),
                     //new CrusaderSquad()
-                    new StormhawkInterceptor(),
-                    new StormhawkInterceptor()
                 });
-                datasheets.Insert(47, /*new PrimarisSwordBrethren() */ new StormhawkInterceptor());
+                //datasheets.Insert(47, new PrimarisSwordBrethren());
             }
             else if (currentSubFaction == "Blood Angels")
             {
@@ -411,11 +407,7 @@ namespace Roster_Builder.Space_Marines
 
             string[] fifty = new string[]
             {
-                   "Deathwing Chapter Master (+50 pts)"
-            };
-
-            string[] forty = new string[]
-            {
+                "Deathwing Chapter Master (+50 pts)"
             };
 
             string[] thirtyfive = new string[]
@@ -445,7 +437,7 @@ namespace Roster_Builder.Space_Marines
                 "Master of the Forge (+15 pts)",
                 "Aquila Kill Team (+15 pts)",
                 "Promote to Deathwing (+15 pts)"
-        };
+            };
 
             string[] ten = new string[]
             {
@@ -461,11 +453,6 @@ namespace Roster_Builder.Space_Marines
             if (fifty.Contains(upgrade))
             {
                 points = 50;
-            }
-
-            if (forty.Contains(upgrade))
-            {
-                points = 40;
             }
 
             if (thirtyfive.Contains(upgrade))
