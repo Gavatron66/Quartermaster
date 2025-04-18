@@ -63,6 +63,8 @@ Maybe figured out the NUD control scenarios! Further testing is required
 	
 Double check plasma Pistol logic for chaos space marines, since some have restrictions
 
+The Space Marine Terminator Captain has a bug that I haven't figured out yet. The restrictions look weird but works as intended
+
 Figured out 3 DG Stratagem implementations, refer to those going forward for characters
 
 Just fixed (3/11) some of the main form's listboxes to not flicker as often; try and figure that out for the model version
@@ -97,9 +99,6 @@ Chapter Command
 		Blade of Triumph (MC Power Sword)
 		COMPANY CHAMPION
 
-	new PhobosCaptain(),
-	new GravisCaptain(),
-	new TerminatorCaptain(),
 	new Captain(),
 	new BikeCaptain(),
 	new PrimarisLieutenant(),

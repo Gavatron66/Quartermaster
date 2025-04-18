@@ -9,6 +9,9 @@ namespace Roster_Builder.Space_Marines
 {
     public class TerminatorCaptain : Datasheets
     {
+        int stormShield;
+        List<int> restrictedIndexes2 = new List<int>();
+
         public TerminatorCaptain()
         {
             DEFAULT_POINTS = 100;
@@ -95,6 +98,27 @@ namespace Roster_Builder.Space_Marines
                 cmbWarlord.Items.Add(item);
             }
 
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
+
+            cmbFaction.Items.Clear();
+            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+
+            if (Factionupgrade != null)
+            {
+                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+            }
+            else
+            {
+                cmbFaction.SelectedIndex = 0;
+                if (Factionupgrade != "(None)")
+                {
+                    cmbWarlord.Items.Add("Master of the Codex");
+                    cmbRelic.Items.Add("Angel Artifice");
+                }
+            }
+
             if (isWarlord)
             {
                 cbWarlord.Checked = true;
@@ -107,9 +131,6 @@ namespace Roster_Builder.Space_Marines
                 cmbWarlord.Enabled = false;
             }
 
-            cmbRelic.Items.Clear();
-            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
-
             if (Relic != null && cmbRelic.Items.Contains(Relic))
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
@@ -119,20 +140,20 @@ namespace Roster_Builder.Space_Marines
                 cmbRelic.SelectedIndex = 0;
             }
 
-            cmbFaction.Items.Clear();
-            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-
-            if (Factionupgrade != null)
-            {
-                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-            }
-            else
-            {
-                cmbFaction.SelectedIndex = 0;
-            }
-
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+
+            cbStratagem3.Visible = true;
+            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
+
+            cbStratagem4.Visible = true;
+            cbStratagem4.Location = new System.Drawing.Point(cbStratagem3.Location.X, cbStratagem3.Location.Y + 32);
+
+            cbStratagem5.Visible = true;
+            cbStratagem5.Location = new System.Drawing.Point(cbStratagem4.Location.X, cbStratagem4.Location.Y + 32);
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -155,6 +176,39 @@ namespace Roster_Builder.Space_Marines
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
+
+            if (Stratagem.Contains(cbStratagem3.Text))
+            {
+                cbStratagem3.Checked = true;
+                cbStratagem3.Enabled = true;
+            }
+            else
+            {
+                cbStratagem3.Checked = false;
+                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+            }
+
+            if (Stratagem.Contains(cbStratagem4.Text))
+            {
+                cbStratagem4.Checked = true;
+                cbStratagem4.Enabled = true;
+            }
+            else
+            {
+                cbStratagem4.Checked = false;
+                cbStratagem4.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem4.Text));
+            }
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cbStratagem5.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem5.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -168,22 +222,28 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
 
             switch (code)
             {
                 case 11:
-                    Weapons[0] = cmbOption1.SelectedItem.ToString();
-
-                    if (Weapons[0] == "Storm Shield")
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
                     {
-                        cmbOption2.Items.Remove(cmbOption2.Items.IndexOf("Storm Shield"));
-                    }
-                    else if (!Weapons.Contains("Storm Shield") && !cmbOption2.Items.Contains("Storm Shield"))
-                    {
-                        if(cmbOption2.Items.Contains("Chainfist"))
+                        Weapons[0] = cmbOption1.SelectedItem.ToString();
+                        if (Weapons[0] == "Storm Shield" && stormShield != 1)
                         {
-                            cmbOption2.Items.Insert(7, "Storm Shield");
+                            stormShield = 0;
                         }
+                        else if (stormShield != 1)
+                        {
+                            stormShield = -1;
+                        }
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
                     }
 
                     if (Weapons[0] == "Power Fist")
@@ -194,17 +254,24 @@ namespace Roster_Builder.Space_Marines
                     {
                         cbOption1.Visible = false;
                     }
+
                     break;
                 case 12:
-                    Weapons[1] = cmbOption2.SelectedItem.ToString();
-
-                    if (Weapons[1] == "Storm Shield")
+                    if (!restrictedIndexes2.Contains(cmbOption2.SelectedIndex))
                     {
-                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Storm Shield"));
+                        Weapons[1] = cmbOption2.SelectedItem.ToString();
+                        if (Weapons[1] == "Storm Shield" && stormShield != 0)
+                        {
+                            stormShield = 1;
+                        }
+                        else if (stormShield != 0)
+                        {
+                            stormShield = -1;
+                        }
                     }
-                    else if (!Weapons.Contains("Storm Shield") && !cmbOption1.Items.Contains("Storm Shield"))
+                    else
                     {
-                        cmbOption1.Items.Insert(8, "Storm Shield");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
                     }
 
                     if (Weapons[1] == "Power Fist")
@@ -228,21 +295,34 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
+                    if (Factionupgrade != "(None)" && Factionupgrade != null)
+                    {
+                        cmbWarlord.Items.Add("Master of the Codex");
+                        cmbRelic.Items.Add("Angel Artifice");
+                    }
+                    else
+                    {
+                        cmbWarlord.Items.Remove("Master of the Codex");
+                        cmbRelic.Items.Remove("Angel Artifice");
+                    }
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     cmbOption1.Enabled = true;
                     cmbOption2.Enabled = true;
-                    if (chosenRelic == "The Burning Blade")
-                    {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
-                        cmbOption2.Enabled = false;
-                    }
-                    else if (chosenRelic == "The Shield Eternal")
-                    {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Storm Shield");
-                        cmbOption2.Enabled = false;
-                    }
+
+                    #region Codex: Space Marines
+                        if (chosenRelic == "The Burning Blade")
+                        {
+                            cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                            cmbOption2.Enabled = false;
+                        }
+                        else if (chosenRelic == "The Shield Eternal")
+                        {
+                            cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Storm Shield");
+                            cmbOption2.Enabled = false;
+                        }
+                    #endregion
                     else if (chosenRelic == "Soldier's Blade")
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
@@ -345,6 +425,45 @@ namespace Roster_Builder.Space_Marines
                         }
                     }
                     break;
+                case 73:
+                    if (cbStratagem3.Checked)
+                    {
+                        Stratagem.Add(cbStratagem3.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
+                        }
+                    }
+                    break;
+                case 74:
+                    if (cbStratagem4.Checked)
+                    {
+                        Stratagem.Add(cbStratagem4.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem4.Text))
+                        {
+                            Stratagem.Remove(cbStratagem4.Text);
+                        }
+                    }
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                    }
+                    break;
                 default: break;
             }
 
@@ -352,13 +471,33 @@ namespace Roster_Builder.Space_Marines
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
-            foreach (string weapon in Weapons)
+            if (Weapons[0] == "Thunder Hammer (+5 pts)")
             {
-                if (weapon == "Thunder Hammer (+5 pts)")
+                Points += 5;
+            }
+
+            if (Weapons[1] == "Thunder Hammer (+5 pts)")
+            {
+                Points += 5;
+            }
+
+            restrictedIndexes.Clear();
+            restrictedIndexes2.Clear();
+
+            if(stormShield > -1)
+            {
+                if(stormShield == 0)
                 {
-                    Points += 5;
+                    restrictedIndexes2.Add(cmbOption2.Items.IndexOf("Storm Shield"));
+                }
+                else if (stormShield == 1)
+                {
+                    restrictedIndexes.Add(cmbOption1.Items.IndexOf("Storm Shield"));
                 }
             }
+
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+            this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
         }
 
         public override string ToString()

@@ -14,7 +14,7 @@ namespace Roster_Builder.Space_Marines
             DEFAULT_POINTS = 65;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m_c";
-            Weapons.Add("Master-crafted Auto Bolt Rifle and Bolt Pistol");
+            Weapons.Add("Master-crafted Bolt Rifle and Bolt Pistol");
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
@@ -50,17 +50,48 @@ namespace Roster_Builder.Space_Marines
             cmbOption1.Items.AddRange(new string[]
             {
                 "Master-crafted Auto Bolt Rifle and Bolt Pistol",
-                "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+                "Master-crafted Auto Bolt Rifle, Bolt Pistol, and Master-crafted Power Sword",
+                "Master-crafted Auto Bolt Rifle, Bolt Pistol, and Power Fist",
+                "Master-crafted Auto Bolt Rifle and Heavy Bolt Pistol",
+                "Master-crafted Auto Bolt Rifle, Heavy Bolt Pistol, and Master-crafted Power Sword",
+                "Master-crafted Auto Bolt Rifle, Heavy Bolt Pistol, and Power Fist",
+                "Master-crafted Bolt Rifle and Bolt Pistol",
+                "Master-crafted Bolt Rifle, Bolt Pistol, and Master-crafted Power Sword",
+                "Master-crafted Bolt Rifle, Bolt Pistol, and Power Fist",
+                "Master-crafted Bolt Rifle and Heavy Bolt Pistol",
+                "Master-crafted Bolt Rifle, Heavy Bolt Pistol, and Master-crafted Power Sword",
+                "Master-crafted Bolt Rifle, Heavy Bolt Pistol, and Power Fist",
+                "Master-crafted Power Sword and Bolt Pistol",
+                "Master-crafted Power Sword and Heavy Bolt Pistol",
                 "Master-crafted Power Sword, Neo-volkite Pistol and Storm Shield",
+                "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+                "Master-crafted Stalker Bolt Rifle, Bolt Pistol, and Master-crafted Power Sword",
+                "Master-crafted Stalker Bolt Rifle, Bolt Pistol, and Power Fist",
+                "Master-crafted Stalker Bolt Rifle and Heavy Bolt Pistol",
+                "Master-crafted Stalker Bolt Rifle, Heavy Bolt Pistol, and Master-crafted Power Sword",
+                "Master-crafted Stalker Bolt Rifle, Heavy Bolt Pistol, and Power Fist",
+                "Plasma Pistol and Bolt Pistol",
+                "Plasma Pistol, Bolt Pistol, and Master-crafted Power Sword",
+                "Plasma Pistol, Bolt Pistol, and Power Fist",
+                "Plasma Pistol and Heavy Bolt Pistol",
+                "Plasma Pistol, Heavy Bolt Pistol, and Master-crafted Power Sword",
+                "Plasma Pistol, Heavy Bolt Pistol, and Power Fist",
+                "Power Fist and Bolt Pistol",
+                "Power Fist and Heavy Bolt Pistol",
             });
-            if (f.currentSubFaction == "Dark Angels")
-            {
-                cmbOption1.Items.Add("Master-crafted Auto Bolt Rifle and Plasma Pistol");
-                cmbOption1.Items.Add("Master-crafted Stalker Bolt Rifle and Plasma Pistol");
-            }
             if (f.currentSubFaction == "Space Wolves")
             {
-                cmbOption1.Items.Add("Special Issue Bolt Carbine, Master-crafted Power Axe and Bolt Pistol");
+                cmbOption1.Items.Add("Special Issue Bolt Carbine, Master-crafted Power Axe, and Bolt Pistol");
+                cmbOption1.Items.Add("Special Issue Bolt Carbine, Master-crafted Power Axe, and Heavy Bolt Pistol");
+            }
+            else if (f.currentSubFaction == "Black Templars")
+            {
+                cmbOption1.Items.Insert(0, "Heavy Bolt Pistol and Master-crafted Power Sword");
+                cmbOption1.Items.Insert(0, "Heavy Bolt Pistol and Astartes Chainsword");
+                cmbOption1.Items.Insert(0, "Combi-flamer, Heavy Bolt Pistol, and Master-crafted Power Axe");
+                cmbOption1.Items.Insert(0, "Combi-flamer, Bolt Pistol, and Master-crafted Power Axe");
+                cmbOption1.Items.Insert(0, "Auto-plasma and Master-crafted Power Sword");
+                cmbOption1.Items.Insert(0, "Auto-plasma and Astartes Chainsword");
             }
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
@@ -90,6 +121,18 @@ namespace Roster_Builder.Space_Marines
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+
+            cbStratagem3.Visible = true;
+            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
+
+            cbStratagem4.Visible = true;
+            cbStratagem4.Location = new System.Drawing.Point(cbStratagem3.Location.X, cbStratagem3.Location.Y + 32);
+
+            cbStratagem5.Visible = true;
+            cbStratagem5.Location = new System.Drawing.Point(cbStratagem4.Location.X, cbStratagem4.Location.Y + 32);
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -112,6 +155,39 @@ namespace Roster_Builder.Space_Marines
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
+
+            if (Stratagem.Contains(cbStratagem3.Text))
+            {
+                cbStratagem3.Checked = true;
+                cbStratagem3.Enabled = true;
+            }
+            else
+            {
+                cbStratagem3.Checked = false;
+                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+            }
+
+            if (Stratagem.Contains(cbStratagem4.Text))
+            {
+                cbStratagem4.Checked = true;
+                cbStratagem4.Enabled = true;
+            }
+            else
+            {
+                cbStratagem4.Checked = false;
+                cbStratagem4.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem4.Text));
+            }
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cbStratagem5.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem5.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -122,11 +198,21 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
 
             switch (code)
             {
                 case 11:
-                    Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    {
+                        Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+                    }
                     break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
@@ -140,126 +226,126 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
-                    if (chosenRelic == "Bellicos Bolt Rifle")
-                    {
-                        cmbOption1.SelectedIndex = 0;
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Lament")
-                    {
-                        cmbOption1.SelectedIndex = 1;
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Primarch's Wrath")
-                    {
-                        cmbOption1.SelectedIndex = 3;
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Purgatorus")
-                    {
-                        cmbOption1.Items.Clear();
-                        cmbOption1.Items.AddRange(new string[]
-                        {
-                            "Master-crafted Auto Bolt Rifle and Bolt Pistol",
-                            "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
-                        });
-                        cmbOption1.Enabled = true;
-                    }
-                    else if (chosenRelic == "The Burning Blade")
-                    {
-                        cmbOption1.SelectedIndex = 2;
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "The Shield Eternal")
-                    {
-                        cmbOption1.SelectedIndex = 2;
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Soldier's Blade")
-                    {
-                        cmbOption1.SelectedIndex = 2;
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Drakeblade")
-                    {
-                        cmbOption1.SelectedIndex = 2;
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Ex Tenebris")
-                    {
-                        cmbOption1.SelectedIndex = 1;
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Silentus Pistol")
-                    {
-                        cmbOption1.Items.Clear();
-                        cmbOption1.Items.AddRange(new string[]
-                        {
-                            "Master-crafted Auto Bolt Rifle and Bolt Pistol",
-                            "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
-                        });
-                        cmbOption1.Enabled = true;
-                    }
-                    else if (chosenRelic == "Scimitar of the Great Khan")
-                    {
-                        cmbOption1.SelectedIndex = 2;
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Equis-pattern Bolt Pistol")
-                    {
-                        cmbOption1.Items.Clear();
-                        cmbOption1.Items.AddRange(new string[]
-                        {
-                            "Master-crafted Auto Bolt Rifle and Bolt Pistol",
-                            "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
-                        });
-                        cmbOption1.Enabled = true;
-                    }
-                    else if (chosenRelic == "The Spartean")
-                    {
-                        cmbOption1.Items.Clear();
-                        cmbOption1.Items.AddRange(new string[]
-                        {
-                            "Master-crafted Auto Bolt Rifle and Bolt Pistol",
-                            "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
-                        });
-                        cmbOption1.Enabled = true;
-                    }
-                    else if (chosenRelic == "Duty's Burden")
-                    {
-                        cmbOption1.Items.Clear();
-                        cmbOption1.Items.AddRange(new string[]
-                        {
-                            "Master-crafted Auto Bolt Rifle and Bolt Pistol",
-                            "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
-                        });
-                        cmbOption1.Enabled = true;
-                    }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                        if (!cmbOption1.Items.Contains("Master-crafted Power Sword, Neo-volkite Pistol and Storm Shield"))
-                        {
 
-                            cmbOption1.Items.Clear();
-                            cmbOption1.Items.AddRange(new string[]
+                    restrictedIndexes.Clear();
+                    for(int i = 0; i < cmbOption1.Items.Count; i++)
+                    {
+                        restrictedIndexes.Add(i);
+                    }
+
+                    #region Codex: Space Marines
+                        if(chosenRelic == "The Shield Eternal")
+                        {
+                            if(repo.currentSubFaction == "Black Templars")
                             {
-                                "Master-crafted Auto Bolt Rifle and Bolt Pistol",
-                                "Master-crafted Stalker Bolt Rifle and Bolt Pistol",
-                                "Master-crafted Power Sword, Neo-volkite Pistol and Storm Shield",
-                            });
-                            if (repo.currentSubFaction == "Dark Angels")
-                            {
-                                cmbOption1.Items.Add("Master-crafted Auto Bolt Rifle and Plasma Pistol");
-                                cmbOption1.Items.Add("Master-crafted Stalker Bolt Rifle and Plasma Pistol");
+                                restrictedIndexes.Remove(20);
+                                cmbOption1.SelectedIndex = 20;
                             }
-                            if (repo.currentSubFaction == "Space Wolves")
+                            else
                             {
-                                cmbOption1.Items.Add("Special Issue Bolt Carbine, Master-crafted Power Axe and Bolt Pistol");
+                                restrictedIndexes.Remove(14);
+                                cmbOption1.SelectedIndex = 14;
                             }
                         }
+                        else if (chosenRelic == "The Teeth of Terra")
+                        {
+                            restrictedIndexes.Remove(0);
+                            restrictedIndexes.Remove(4);
+                            cmbOption1.SelectedIndex = 0;
+                        }
+                        else if (chosenRelic == "Primarch's Wrath")
+                        {
+                            //Space Wolves only
+                            restrictedIndexes.Remove(29);
+                            restrictedIndexes.Remove(30);
+                            cmbOption1.SelectedIndex = 29;
+                        }
+                        else if (chosenRelic == "The Burning Blade")
+                        {
+                            if (repo.currentSubFaction == "Black Templars")
+                            {
+                                restrictedIndexes.Remove(1);
+                                restrictedIndexes.Remove(6);
+                                restrictedIndexes.Remove(7);
+                                restrictedIndexes.Remove(11);
+                                restrictedIndexes.Remove(13);
+                                restrictedIndexes.Remove(16);
+                                restrictedIndexes.Remove(18);
+                                restrictedIndexes.Remove(19);
+                                restrictedIndexes.Remove(20);
+                                restrictedIndexes.Remove(22);
+                                restrictedIndexes.Remove(25);
+                                restrictedIndexes.Remove(28);
+                                restrictedIndexes.Remove(31);
+                                cmbOption1.SelectedIndex = 1;
+                            }
+                            else
+                            {
+                                restrictedIndexes.Remove(1);
+                                restrictedIndexes.Remove(4);
+                                restrictedIndexes.Remove(7);
+                                restrictedIndexes.Remove(10);
+                                restrictedIndexes.Remove(12);
+                                restrictedIndexes.Remove(13);
+                                restrictedIndexes.Remove(14);
+                                restrictedIndexes.Remove(16);
+                                restrictedIndexes.Remove(19);
+                                restrictedIndexes.Remove(22);
+                                restrictedIndexes.Remove(25);
+                                cmbOption1.SelectedIndex = 1;
+                            }
+                        }
+                        else if (chosenRelic == "Purgatorus")
+                        {
+                            if(repo.currentSubFaction == "Black Templars")
+                            {
+                                restrictedIndexes.Clear();
+                                restrictedIndexes.Add(20);
+                                restrictedIndexes.Add(0);
+                                restrictedIndexes.Add(1);
+                                cmbOption1.SelectedIndex = 2;
+                            }
+                            else
+                            {
+                                restrictedIndexes.Clear();
+                                restrictedIndexes.Add(14);
+                                cmbOption1.SelectedIndex = 0;
+                            }
+                        }
+                        else if (chosenRelic == "Bellicos Bolt Rifle")
+                        {
+                            if(repo.currentSubFaction == "Black Templars")
+                            {
+                                restrictedIndexes.RemoveRange(6, 6);
+                                cmbOption1.SelectedIndex = 6;
+                            }
+                            else
+                            {
+                                restrictedIndexes.RemoveRange(0,6);
+                                cmbOption1.SelectedIndex = 0;
+                            }
+                        }
+                        else if (chosenRelic == "Lament")
+                        {
+                            if (repo.currentSubFaction == "Black Templars")
+                            {
+                                restrictedIndexes.RemoveRange(21, 6);
+                                cmbOption1.SelectedIndex = 21;
+                            }
+                            else
+                            {
+                                restrictedIndexes.RemoveRange(15, 6);
+                                cmbOption1.SelectedIndex = 15;
+                            }
+                        }
+                    #endregion
+                    else
+                    {
+                        restrictedIndexes.Clear();
                     }
+
                     Relic = chosenRelic;
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     break;
                 case 25:
                     if (cbWarlord.Checked)
@@ -291,6 +377,45 @@ namespace Roster_Builder.Space_Marines
                         if (Stratagem.Contains(cbStratagem2.Text))
                         {
                             Stratagem.Remove(cbStratagem2.Text);
+                        }
+                    }
+                    break;
+                case 73:
+                    if (cbStratagem3.Checked)
+                    {
+                        Stratagem.Add(cbStratagem3.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
+                        }
+                    }
+                    break;
+                case 74:
+                    if (cbStratagem4.Checked)
+                    {
+                        Stratagem.Add(cbStratagem4.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem4.Text))
+                        {
+                            Stratagem.Remove(cbStratagem4.Text);
+                        }
+                    }
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
                         }
                     }
                     break;

@@ -787,7 +787,7 @@ namespace Roster_Builder.Space_Marines
 
             if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
                 (keywords.Contains("PRIMARIS") && keywords.Contains("MK X GRAVIS") && !keywords.Contains("HBR")) ||
-                (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS")) ||
+                (keywords.Contains("LIEUTENANT") && (!keywords.Contains("PHOBOS") && currentSubFaction == "Black Templars")) ||
                 (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
                 (keywords.Contains("APOTHECARY") && !keywords.Contains("PRIMARIS")) ||
                 keywords.Contains("ANCIENT") && keywords.Contains("COMMAND SQUAD"))
@@ -795,8 +795,8 @@ namespace Roster_Builder.Space_Marines
                 relics.Add("The Teeth of Terra");
             }
 
-            if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS") || keywords.Contains("TERMINATOR") || currentSubFaction != "Dark Angels")) ||
-                (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS")) || 
+            if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS") || keywords.Contains("TERMINATOR") || currentSubFaction == "Dark Angels")) ||
+                (keywords.Contains("LIEUTENANT") && (!keywords.Contains("PRIMARIS"))) || 
                 (keywords.Contains("PRIMARIS") && keywords.Contains("LIEUTENANT") && currentSubFaction == "Space Wolves") ||
                 (keywords.Contains("LIBRARIAN") && !(keywords.Contains("TERMINATOR") || keywords.Contains("PRIMARIS"))) ||
                 (keywords.Contains("CHAPLAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||

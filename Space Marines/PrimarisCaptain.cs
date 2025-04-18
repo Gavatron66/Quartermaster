@@ -225,7 +225,6 @@ namespace Roster_Builder.Space_Marines
             switch (code)
             {
                 case 11:
-
                     if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
                     {
                         Weapons[0] = cmbOption1.SelectedItem.ToString();
@@ -284,33 +283,39 @@ namespace Roster_Builder.Space_Marines
                         cbOption1.Enabled = false;
                     }
 
-                    if (chosenRelic == "Bellicos Bolt Rifle")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Auto Bolt Rifle");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Lament")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Stalker Bolt Rifle");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Primarch's Wrath")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Special Issue Bolt Carbine");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "The Burning Blade")
-                    {
-                        cbOption1.Checked = true;
-                        cbOption1.Enabled = false;
+                    #region Codex: Space Marines
+                        if (chosenRelic == "Bellicos Bolt Rifle")
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Auto Bolt Rifle");
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (chosenRelic == "Lament")
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Stalker Bolt Rifle");
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (chosenRelic == "Primarch's Wrath") //
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Special Issue Bolt Carbine");
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (chosenRelic == "The Burning Blade") //
+                        {
+                            cbOption1.Checked = true;
+                            cbOption1.Enabled = false;
 
-                        restrictedIndexes.Add(3);
-                    }
-                    else if (chosenRelic == "The Shield Eternal")
-                    {
-                        cmbOption1.SelectedIndex = 0;
-                        cmbOption1.Enabled = false;
-                    }
+                            restrictedIndexes.Add(3);
+                        }
+                        else if (chosenRelic == "The Shield Eternal") //
+                        { 
+                            cmbOption1.SelectedIndex = 0;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (chosenRelic == "Purgatorus") //
+                        {
+                            restrictedIndexes.Add(3);
+                        }
+                    #endregion
                     else if (chosenRelic == "Soldier's Blade")
                     {
                         cbOption1.Checked = true;
@@ -320,10 +325,6 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption1.SelectedIndex = 3;
                         cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Purgatorus")
-                    {
-                        restrictedIndexes.Add(3);
                     }
                     else if (chosenRelic == "Drakeblade")
                     {
