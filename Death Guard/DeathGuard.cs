@@ -354,6 +354,9 @@ namespace Roster_Builder.Death_Guard
             ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
 
             cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
+
+            panel.Controls["lblSubfaction"].Text = "Select a Plague Company:";
+            cmbSubFaction.Location = new System.Drawing.Point(cmbSubFaction.Location.X + 10, cmbSubFaction.Location.Y);
         }
 
         public override void SaveSubFaction(int code, Panel panel)

@@ -23,21 +23,6 @@ namespace Roster_Builder.Necrons
             });
         }
 
-        public override void SetUpForm(Form form)
-        {
-            base.SetUpForm(form);
-
-            Panel panel = form.Controls["panel1"] as Panel;
-
-            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
-            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            Label lblFactionupgrade = panel.Controls["lblFactionupgrade"] as Label;
-
-            cbStratagem1.Text = StratagemList[0];
-            cbStratagem2.Text = StratagemList[1];
-            lblFactionupgrade.Text = factionUpgradeName;
-        }
-
         public override List<string> GetCustomSubfactionList1()
         {
             return new List<string>()
@@ -442,6 +427,7 @@ namespace Roster_Builder.Necrons
             ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
             Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
             Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
+            Label lblSubfaction = panel.Controls["lblSubfaction"] as Label;
 
             if (currentSubFaction != "<Custom>")
             {
@@ -457,6 +443,12 @@ namespace Roster_Builder.Necrons
                 lblSubCustom1.Visible = true;
                 lblSubCustom2.Visible = true;
             }
+
+            lblSubfaction.Text = "Select a Dynasty:";
+            lblSubCustom1.Text = "Select a Dynastic Tradition:";
+            lblSubCustom2.Text = "Select a Circumstance of Awakening:";
+            cmbSubCustom1.Location = new System.Drawing.Point(cmbSubCustom1.Location.X + 80, cmbSubCustom1.Location.Y);
+            cmbSubCustom2.Location = new System.Drawing.Point(cmbSubCustom2.Location.X + 80, cmbSubCustom2.Location.Y);
 
             cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
             panel.BringToFront();

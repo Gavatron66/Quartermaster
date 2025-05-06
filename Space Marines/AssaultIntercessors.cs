@@ -40,8 +40,12 @@ namespace Roster_Builder.Space_Marines
             GroupBox gb = panel.Controls["gbUnitLeader"] as GroupBox;
             ComboBox cmbOption1 = gb.Controls["gb_cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = gb.Controls["gb_cmbOption2"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             panel.Controls["gbUnitLeader"].Text = "Assault Intercessor Sergeant";
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -69,6 +73,45 @@ namespace Roster_Builder.Space_Marines
                 "Thunder Hammer"
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
+
+            cbStratagem5.Text = repo.StratagemList[4];
+            cbStratagem5.Location = new System.Drawing.Point(gb.Location.X, gb.Location.Y + 10 + gb.Height);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+            cbStratagem5.Visible = true;
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                panel.Controls["lblRelic"].Visible = true;
+                cmbRelic.Visible = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -77,9 +120,15 @@ namespace Roster_Builder.Space_Marines
             GroupBox gb = panel.Controls["gbUnitLeader"] as GroupBox;
             ComboBox gb_cmbOption1 = gb.Controls["gb_cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = gb.Controls["gb_cmbOption2"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    Relic = chosenRelic;
+                    break;
                 case 30:
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
                     break;
@@ -88,6 +137,24 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 412:
                     Weapons[1] = cmbOption2.SelectedItem.ToString();
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
+                    }
                     break;
             }
 

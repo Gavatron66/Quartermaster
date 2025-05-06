@@ -88,10 +88,15 @@ namespace Roster_Builder.Genestealer_Cults
 
             nudUnitSize2.Minimum = 0;
             antiLoop = true;
-            nudUnitSize2.Value = nudUnitSize.Minimum;
+            nudUnitSize2.Value = nudUnitSize2.Minimum;
             nudUnitSize2.Maximum = 2;
             nudUnitSize2.Value = wolfquads;
             antiLoop = false;
+
+            if(nudUnitSize.Value != 8)
+            {
+                nudUnitSize2.Maximum = 1;
+            }
 
             lbModelSelect.Items.Clear();
             lbModelSelect.Items.Add("Atalan Leader");
@@ -227,6 +232,19 @@ namespace Roster_Builder.Genestealer_Cults
                         lbModelSelect.Items.RemoveAt(temp - 1);
                         Weapons.RemoveRange((UnitSize * 3) - 1, 3);
                     }
+
+                    if (UnitSize == 8)
+                    {
+                        nudUnitSize2.Maximum = 2;
+                    }
+                    else
+                    {
+                        if(wolfquads == 2)
+                        {
+                            nudUnitSize2.Value--;
+                        }
+                        nudUnitSize2.Maximum = 1;
+                    }
                     break;
                 case 61:
                     currentIndex = lbModelSelect.SelectedIndex;
@@ -322,7 +340,7 @@ namespace Roster_Builder.Genestealer_Cults
 
                     if (temp2 > wolfquads)
                     {
-                        lbModelSelect.Items.Remove("Atalan Wolfquad");
+                        lbModelSelect.Items.RemoveAt(Convert.ToInt32(nudUnitSize.Value));
                         wolfquadWeapons.RemoveAt(temp2 - 1);
                     }
                     break;

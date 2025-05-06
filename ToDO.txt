@@ -63,29 +63,29 @@ Maybe figured out the NUD control scenarios! Further testing is required
 	
 Double check plasma Pistol logic for chaos space marines, since some have restrictions
 
-The Space Marine Terminator Captain has a bug that I haven't figured out yet. The restrictions look weird but works as intended
+The Space Marine Terminator Captain has a bug that I haven't figured out yet. 
 
 Figured out 3 DG Stratagem implementations, refer to those going forward for characters
 
 Just fixed (3/11) some of the main form's listboxes to not flicker as often; try and figure that out for the model version
 
 Chapter Command
-	Chapter Master
-		Master of the Codex
-		Angel Artifice
-		CAPTAIN
-	Master of Sanctity
-		Wise Orator
-		The Emperor's Judgement
-		CHAPLAIN
-	Master of the Forge
-		Warden of the Ancients
-		Mortis Machina (Omnissian Axe)
-		TECHMARINE
-	Chief Librarian
-		Psychic Mastery
-		Neural Shroud
-		LIBRARIAN
+				Chapter Master
+					Master of the Codex
+					Angel Artifice
+					CAPTAIN
+				Master of Sanctity
+					Wise Orator
+					The Emperor's Judgement
+					CHAPLAIN
+				Master of the Forge
+					Warden of the Ancients
+					Mortis Machina (Omnissian Axe)
+					TECHMARINE
+				Chief Librarian
+					Psychic Mastery
+					Neural Shroud
+					LIBRARIAN
 	Chief Apothecary
 		Selfless Healer
 		Acquittal (Bolt Pistol or Absolver Bolt Pistol)
@@ -99,30 +99,6 @@ Chapter Command
 		Blade of Triumph (MC Power Sword)
 		COMPANY CHAMPION
 
-	new Captain(),
-	new BikeCaptain(),
-	new PrimarisLieutenant(),
-	new ReiverLieutenant(),
-	new Lieutenant(),
-	new PhobosLieutenant(),
-	new PrimarisLibrarian(),
-	new Librarian(),
-	new PhobosLibrarian(),
-	new TerminatorLibrarian(),
-	new PrimarisChaplain(),
-	new PrimarisBikeChaplain(),
-	new TerminatorChaplain(),
-	new Chaplain(),
-	new PrimarisTechmarine(),
-	new Servitors(),
-	new Techmarine(),   //[21]
-	new Intercessors(),
-	new AssaultIntercessors(),
-	new HeavyIntercessors(),
-	new Infiltrators(),
-	new Incursors(),
-	new TacticalSquad(), //[27]
-	new CompanyChampion(),
 	new ScoutSquad(),
 	new PrimarisApothecary(),
 	new Apothecary(),
@@ -394,3 +370,37 @@ Chapter Command
                     cmbRelic.SelectedIndex = -1;
                 }
             }
+			
+			
+
+
+
+"Master-crafted Auto Bolt Rifle and Bolt Pistol",
+"Master-crafted Auto Bolt Rifle, Bolt Pistol, and Master-crafted Power Sword",
+"Master-crafted Auto Bolt Rifle, Bolt Pistol, and Power Fist",
+"Master-crafted Auto Bolt Rifle and Heavy Bolt Pistol",
+"Master-crafted Auto Bolt Rifle, Heavy Bolt Pistol, and Master-crafted Power Sword",
+"Master-crafted Auto Bolt Rifle, Heavy Bolt Pistol, and Power Fist",
+"Master-crafted Bolt Rifle and Bolt Pistol",
+"Master-crafted Bolt Rifle, Bolt Pistol, and Master-crafted Power Sword",
+"Master-crafted Bolt Rifle, Bolt Pistol, and Power Fist",
+"Master-crafted Bolt Rifle and Heavy Bolt Pistol",
+"Master-crafted Bolt Rifle, Heavy Bolt Pistol, and Master-crafted Power Sword",
+"Master-crafted Bolt Rifle, Heavy Bolt Pistol, and Power Fist",
+"Master-crafted Power Sword and Bolt Pistol",
+"Master-crafted Power Sword and Heavy Bolt Pistol",
+"Master-crafted Power Sword, Neo-volkite Pistol and Storm Shield",
+"Master-crafted Stalker Bolt Rifle and Bolt Pistol",
+"Master-crafted Stalker Bolt Rifle, Bolt Pistol, and Master-crafted Power Sword",
+"Master-crafted Stalker Bolt Rifle, Bolt Pistol, and Power Fist",
+"Master-crafted Stalker Bolt Rifle and Heavy Bolt Pistol",
+"Master-crafted Stalker Bolt Rifle, Heavy Bolt Pistol, and Master-crafted Power Sword",
+"Master-crafted Stalker Bolt Rifle, Heavy Bolt Pistol, and Power Fist",
+"Plasma Pistol and Bolt Pistol",
+"Plasma Pistol, Bolt Pistol, and Master-crafted Power Sword",
+"Plasma Pistol, Bolt Pistol, and Power Fist",
+"Plasma Pistol and Heavy Bolt Pistol",
+"Plasma Pistol, Heavy Bolt Pistol, and Master-crafted Power Sword",
+"Plasma Pistol, Heavy Bolt Pistol, and Power Fist",
+"Power Fist and Bolt Pistol",
+"Power Fist and Heavy Bolt Pistol",

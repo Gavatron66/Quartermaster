@@ -335,12 +335,14 @@ namespace Roster_Builder
 
         private void cmbOption1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, sender as ComboBox);
             currentDetachment.roster[currentIndex].SaveDatasheets(11, panel1);
             updateLBRoster();
         }
 
         private void cmbOption2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, sender as ComboBox);
             currentDetachment.roster[currentIndex].SaveDatasheets(12, panel1);
             updateLBRoster();
         }
@@ -943,6 +945,18 @@ namespace Roster_Builder
 
             // If the ListBox has focus, draw a focus rectangle around the selected item.
             e.DrawFocusRectangle();
+        }
+
+        private void cbStratagem5_CheckedChanged(object sender, EventArgs e)
+        {
+            currentDetachment.roster[currentIndex].SaveDatasheets(75, panel1);
+            updateLBRoster();
+        }
+
+        private void cbStratagem4_CheckedChanged(object sender, EventArgs e)
+        {
+            currentDetachment.roster[currentIndex].SaveDatasheets(74, panel1);
+            updateLBRoster();
         }
     }
 }

@@ -395,9 +395,10 @@ namespace Roster_Builder.Genestealer_Cults
 
             ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
             CheckedListBox clbSubCustom = panel.Controls["clbSubCustom"] as CheckedListBox;
+            panel.Controls["lblSubfaction"].Text = "Select a Cult:";
 
             cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
-            panel.Controls["lblSubCustomCLB"].Text = "May take up to 4 points of the following:";
+            panel.Controls["lblSubCustomCLB"].Text = "May take up to 4 points of the following Cult Creeds:";
 
             if (currentSubFaction != "<Custom>")
             {

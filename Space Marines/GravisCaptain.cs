@@ -102,16 +102,22 @@ namespace Roster_Builder.Space_Marines
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
             CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
             CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
-            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
 
             cbStratagem3.Visible = true;
             cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
+            cbStratagem3.Text = f.StratagemList[2];
 
-            cbStratagem4.Visible = true;
+            if (f.currentSubFaction == "<Custom>" && f.customSubFactionTraits[2] != "Unknown")
+            {
+                cbStratagem4.Visible = true;
+            }
+            else
+            {
+                cbStratagem4.Visible = false;
+            }
+
             cbStratagem4.Location = new System.Drawing.Point(cbStratagem3.Location.X, cbStratagem3.Location.Y + 32);
-
-            cbStratagem5.Visible = true;
-            cbStratagem5.Location = new System.Drawing.Point(cbStratagem4.Location.X, cbStratagem4.Location.Y + 32);
+            cbStratagem4.Text = f.StratagemList[3];
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -156,17 +162,6 @@ namespace Roster_Builder.Space_Marines
                 cbStratagem4.Checked = false;
                 cbStratagem4.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem4.Text));
             }
-
-            if (Stratagem.Contains(cbStratagem5.Text))
-            {
-                cbStratagem5.Checked = true;
-                cbStratagem5.Enabled = true;
-            }
-            else
-            {
-                cbStratagem5.Checked = false;
-                cbStratagem5.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem5.Text));
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -179,7 +174,6 @@ namespace Roster_Builder.Space_Marines
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
             CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
             CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
-            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
 
             switch (code)
@@ -206,6 +200,16 @@ namespace Roster_Builder.Space_Marines
                     }
                     else
                     {
+                        if (Relic == "Angel Artifice")
+                        {
+                            cmbRelic.SelectedIndex = 0;
+                        }
+
+                        if (WarlordTrait == "Master of the Codex")
+                        {
+                            cmbWarlord.SelectedIndex = -1;
+                        }
+
                         cmbWarlord.Items.Remove("Master of the Codex");
                         cmbRelic.Items.Remove("Angel Artifice");
                     }
@@ -316,19 +320,6 @@ namespace Roster_Builder.Space_Marines
                         if (Stratagem.Contains(cbStratagem4.Text))
                         {
                             Stratagem.Remove(cbStratagem4.Text);
-                        }
-                    }
-                    break;
-                case 75:
-                    if (cbStratagem5.Checked)
-                    {
-                        Stratagem.Add(cbStratagem5.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem5.Text))
-                        {
-                            Stratagem.Remove(cbStratagem5.Text);
                         }
                     }
                     break;

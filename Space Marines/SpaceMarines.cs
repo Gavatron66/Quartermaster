@@ -28,11 +28,14 @@ namespace Roster_Builder.Space_Marines
             subFactionName = "<Chapter>";
             currentSubFaction = string.Empty;
             factionUpgradeName = "Masters of the Chapter";
-            customSubFactionTraits = new string[2];
+            customSubFactionTraits = new string[3];
             StratagemList.AddRange(new string[]
             {
                 "Stratagem: Hero of the Chapter",
-                "Stratagem: Relic of the Chapter"
+                "Stratagem: Relic of the Chapter",
+                "Stratagem: Warlord Gains a Trait (PLACEHOLDER)",
+                "Stratagem: Successor gains a Relic (PLACEHOLDER)",
+                "Stratagem: Relic to a Sergeant (PLACEHOLDER)"
             });
         }
 
@@ -245,7 +248,7 @@ namespace Roster_Builder.Space_Marines
                 datasheets.Insert(22, new PedroKantor());
             }
             else if (currentSubFaction == "Deathwatch")
-            {
+            {/*
                 StratagemList.Clear();
                 StratagemList.AddRange(new string[]
                 {
@@ -253,7 +256,7 @@ namespace Roster_Builder.Space_Marines
                     "Stratagem: Relic of the Chapter",
                     "Stratagem: Sanction of the Black Vault",
                     "Stratagem: A Vigil Unmatched"
-                });
+                });*/
 
                 datasheets.Insert(28, new ProteusKillTeam());
                 datasheets.Insert(29, new FortisKillTeam());
@@ -279,7 +282,7 @@ namespace Roster_Builder.Space_Marines
                 datasheets.RemoveAt(99);
             }
             else if (currentSubFaction == "Space Wolves")
-            {
+            {/*
                 StratagemList.Clear();
                 StratagemList.AddRange(new string[]
                 {
@@ -288,7 +291,7 @@ namespace Roster_Builder.Space_Marines
                     "Stratagem: A Trophy Bestowed",
                     "Stratagem: Thane of the Retinue",
                     "Stratagem: Warrior of Legend"
-                });
+                });*/
 
                 datasheets.RemoveAt(73);
 				datasheets.RemoveAt(55);
@@ -770,6 +773,16 @@ namespace Roster_Builder.Space_Marines
 
             relics.Add("(None)");
 
+            if(keywords.Contains("CORE") || keywords.Contains("CENTURION"))
+            {
+                relics.Add("Master-crafted Weapon");
+                relics.Add("Digital Weapons");
+
+                //Insert Stratagem relics here
+
+                return relics;
+            }
+
             relics.Add("The Armour Indomitus");
 
             if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS"))) ||
@@ -787,7 +800,7 @@ namespace Roster_Builder.Space_Marines
 
             if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
                 (keywords.Contains("PRIMARIS") && keywords.Contains("MK X GRAVIS") && !keywords.Contains("HBR")) ||
-                (keywords.Contains("LIEUTENANT") && (!keywords.Contains("PHOBOS") && currentSubFaction == "Black Templars")) ||
+                (keywords.Contains("LIEUTENANT") && (!keywords.Contains("PHOBOS"))) ||
                 (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
                 (keywords.Contains("APOTHECARY") && !keywords.Contains("PRIMARIS")) ||
                 keywords.Contains("ANCIENT") && keywords.Contains("COMMAND SQUAD"))
@@ -1561,34 +1574,48 @@ namespace Roster_Builder.Space_Marines
 
         public override void SetSubFactionPanel(Panel panel)
         {
-            if(antiLoop)
+            if (antiLoop)
             {
                 return;
             }
 
             antiLoop = true;
             Template template = new Template();
-            template.LoadFactionTemplate(3, panel);
+            template.LoadFactionTemplate(4, panel);
 
             ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
             ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
             ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
+            ComboBox cmbSubCustom3 = panel.Controls["cmbSubCustom3"] as ComboBox;
             Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
             Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
+            Label lblSubCustom3 = panel.Controls["lblSubCustom3"] as Label;
+
+            panel.Controls["lblSubfaction"].Text = "Select a Chapter:";
+            lblSubCustom1.Text = "Select a Successor Chapter Tactic:";
+            lblSubCustom2.Text = "Select a Successor Chapter Tactic:";
+            lblSubCustom3.Text = "Select a Successor Chapter:";
+            cmbSubCustom1.Location = new System.Drawing.Point(cmbSubCustom1.Location.X + 80, cmbSubCustom1.Location.Y);
+            cmbSubCustom2.Location = new System.Drawing.Point(cmbSubCustom2.Location.X + 80, cmbSubCustom2.Location.Y);
+            cmbSubCustom3.Location = new System.Drawing.Point(cmbSubCustom3.Location.X + 80, cmbSubCustom3.Location.Y);
 
             if (currentSubFaction != "<Custom>")
             {
                 cmbSubCustom1.Visible = false;
                 cmbSubCustom2.Visible = false;
+                cmbSubCustom3.Visible = false;
                 lblSubCustom1.Visible = false;
                 lblSubCustom2.Visible = false;
+                lblSubCustom3.Visible = false;
             }
             else
             {
                 cmbSubCustom1.Visible = true;
                 cmbSubCustom2.Visible = true;
+                cmbSubCustom3.Visible = true;
                 lblSubCustom1.Visible = true;
                 lblSubCustom2.Visible = true;
+                lblSubCustom3.Visible = true;
             }
 
             cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
@@ -1596,6 +1623,7 @@ namespace Roster_Builder.Space_Marines
 
             cmbSubCustom1.Items.Clear();
             cmbSubCustom2.Items.Clear();
+            cmbSubCustom3.Items.Clear();
 
             cmbSubCustom1.Items.AddRange(new string[]
             {
@@ -1641,10 +1669,29 @@ namespace Roster_Builder.Space_Marines
                 "Whirlwind of Rage"
             });
 
+            cmbSubCustom3.Items.AddRange(new string[]
+            {
+                "Unknown",
+                "Dark Angels",
+                "White Scars",
+                "Space Wolves",
+                "Imperial Fists",
+                "Blood Angels",
+                "Iron Hands",
+                "Ultramarines",
+                "Salamanders",
+                "Raven Guard",
+            });
+
             if (customSubFactionTraits[0] != null)
             {
                 cmbSubCustom1.SelectedIndex = cmbSubCustom1.Items.IndexOf(customSubFactionTraits[0]);
                 cmbSubCustom2.SelectedIndex = cmbSubCustom2.Items.IndexOf(customSubFactionTraits[1]);
+                cmbSubCustom3.SelectedIndex = cmbSubCustom3.Items.IndexOf(customSubFactionTraits[2]);
+            }
+            else
+            {
+                cmbSubCustom3.SelectedIndex = 0;
             }
             antiLoop = false;
         }
@@ -1654,27 +1701,44 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
             ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
             ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
+            ComboBox cmbSubCustom3 = panel.Controls["cmbSubCustom3"] as ComboBox;
             Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
             Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
+            Label lblSubCustom3 = panel.Controls["lblSubCustom3"] as Label;
 
             switch (code)
             {
                 case 50:
                     currentSubFaction = cmbSubFaction.SelectedItem.ToString();
-                    if(currentSubFaction == "<Custom>")
+
+                    if (currentSubFaction == "<Custom>")
                     {
                         cmbSubCustom1.Visible = true;
                         cmbSubCustom2.Visible = true;
+                        cmbSubCustom3.Visible = true;
                         lblSubCustom1.Visible = true;
                         lblSubCustom2.Visible = true;
+                        lblSubCustom3.Visible = true;
                     }
                     else
                     {
                         cmbSubCustom1.Visible = false;
                         cmbSubCustom2.Visible = false;
+                        cmbSubCustom3.Visible = false;
                         lblSubCustom1.Visible = false;
                         lblSubCustom2.Visible = false;
-                        customSubFactionTraits = new string[2];
+                        lblSubCustom3.Visible = false;
+                        customSubFactionTraits = new string[3];
+                    }
+
+                    if(currentSubFaction == "Crimson Fists")
+                    {
+                        cmbSubCustom3.SelectedItem = "Imperial Fists";
+                    }
+
+                    if(currentSubFaction == "Flesh Tearers")
+                    {
+                        cmbSubCustom3.SelectedItem = "Blood Angels";
                     }
                     break;
                 case 51:
@@ -1682,6 +1746,9 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 52:
                     customSubFactionTraits[1] = cmbSubCustom2.SelectedItem.ToString();
+                    break;
+                case 53:
+                    customSubFactionTraits[2] = cmbSubCustom3.SelectedItem.ToString();
                     break;
             }
         }
