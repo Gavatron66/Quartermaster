@@ -11,6 +11,8 @@ namespace Roster_Builder.Space_Marines
     public class SternguardVeterans : Datasheets
     {
         int currentIndex;
+        int heavySpec;
+
         public SternguardVeterans()
         {
             DEFAULT_POINTS = 20;
@@ -44,6 +46,10 @@ namespace Roster_Builder.Space_Marines
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -77,6 +83,47 @@ namespace Roster_Builder.Space_Marines
                 cmbOption1.Items.Insert(4, "Inferno Pistol");
             }
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[0]);
+
+            cbStratagem5.Text = repo.StratagemList[4];
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblOption2"].Location.X + 20, panel.Controls["cmbOption2"].Location.Y + 60);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
+            }
+
+            //I don't know why I need this, but otherwise there's a weird bug that occurs if I don't
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -90,23 +137,36 @@ namespace Roster_Builder.Space_Marines
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
                 case 11:
-                    Weapons[currentIndex + 1] = cmbOption1.SelectedItem.ToString();
                     if (currentIndex == 0)
                     {
                         lbModelSelect.Items[0] = "Sternguard Veteran Sergeant w/" + Weapons[0] + " and " + Weapons[1];
                     }
                     else
                     {
-                        lbModelSelect.Items[currentIndex] = "Sternguard Veteran w/ " + Weapons[currentIndex + 1];
+                        if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                        {
+                            Weapons[currentIndex + 1] = cmbOption1.SelectedItem.ToString();
+                            lbModelSelect.Items[currentIndex] = "Sternguard Veteran w/ " + Weapons[currentIndex + 1];
+                        }
+                        else
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
+                        }
                     }
                     break;
                 case 12:
                     Weapons[0] = cmbOption2.SelectedItem.ToString();
                     lbModelSelect.Items[0] = "Sternguard Veteran Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
+                    break;
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    Relic = chosenRelic;
                     break;
                 case 30:
                     UnitSize = Decimal.ToInt16(nudUnitSize.Value);
@@ -151,7 +211,16 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption2.Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
+                        cbStratagem5.Visible = true;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[0]);
+
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            panel.Controls["lblRelic"].Visible = true;
+                            cmbRelic.Visible = true;
+                        }
 
                         cmbOption1.Items.Clear();
                         cmbOption1.Items.AddRange(new string[]
@@ -177,18 +246,93 @@ namespace Roster_Builder.Space_Marines
                             cmbOption1.Items.Insert(7, "Hand Flamer");
                             cmbOption1.Items.Insert(8, "Inferno Pistol");
                         }
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
                     }
                     else
                     {
                         cmbOption2.Visible = false;
                         panel.Controls["lblOption2"].Visible = false;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
 
-                        weaponsCheck(cmbOption1 as ComboBox);
+                        cmbOption1.Items.Clear();
+                        cmbOption1.Items.AddRange(new string[]
+                        {
+                            "Combi-flamer",
+                            "Combi-grav",
+                            "Combi-melta",
+                            "Combi-plasma",
+                            "Flamer",
+                            "Grav-cannon",
+                            "Grav-gun",
+                            "Heavy Bolter",
+                            "Heavy Flamer",
+                            "Lascannon",
+                            "Meltagun",
+                            "Missile Launcher",
+                            "Multi-melta",
+                            "Plasma Cannon",
+                            "Plasma Gun",
+                            "Special Issue Boltgun",
+                            "Storm Bolter"
+                        });
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
+
+                        string[] heavySpecList = new string[]
+                        {
+                            "Flamer",
+                            "Grav-cannon",
+                            "Grav-gun",
+                            "Heavy Bolter",
+                            "Heavy Flamer",
+                            "Lascannon",
+                            "Meltagun",
+                            "Missile Launcher",
+                            "Multi-melta",
+                            "Plasma Cannon",
+                            "Plasma Gun"
+                        };
+
+                        heavySpec = 0;
+                        restrictedIndexes.Clear();
+                        foreach(var weapon in Weapons)
+                        {
+                            if(heavySpecList.Contains(weapon))
+                            {
+                                heavySpec++;
+                            }
+                        }
+
+                        if(heavySpec == 2 && !heavySpecList.Contains(Weapons[currentIndex + 1]))
+                        {
+                            restrictedIndexes.AddRange(new int[] { 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 });
+                        }
+
+                        this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     }
 
                     cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
 
                     antiLoop = false;
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
+                    }
                     break;
             }
 
@@ -198,75 +342,6 @@ namespace Roster_Builder.Space_Marines
         public override string ToString()
         {
             return "Sternguard Veteran Squad - " + Points + "pts";
-        }
-
-        private void weaponsCheck(ComboBox cmbOption1)
-        {
-            int restrict = 0;
-            string[] restrictArray = new string[]
-            {
-                "Grav-cannon",
-                "Heavy Bolter",
-                "Heavy Flamer",
-                "Lascannon",
-                "Missile Launcher",
-                "Multi-melta",
-                "Plasma Cannon",
-                "Flamer",
-                "Grav-gun",
-                "Meltagun",
-                "Plasma Gun"
-            };
-
-            foreach (string weapon in Weapons)
-            {
-                if(restrictArray.Contains(weapon))
-                {
-                    restrict++;
-                }
-                if(restrict == 2)
-                {
-                    break;
-                }
-            }
-
-            if(restrict == 2 && !restrictArray.Contains(Weapons[currentIndex + 1]))
-            {
-                cmbOption1.Items.Clear();
-                cmbOption1.Items.AddRange(new string[]
-                {
-                    "Combi-flamer",
-                    "Combi-grav",
-                    "Combi-melta",
-                    "Combi-plasma",
-                    "Special Issue Boltgun",
-                    "Storm Bolter"
-                });
-            }
-            else
-            {
-                cmbOption1.Items.Clear();
-                cmbOption1.Items.AddRange(new string[]
-                {
-                    "Combi-flamer",
-                    "Combi-grav",
-                    "Combi-melta",
-                    "Combi-plasma",
-                    "Flamer",
-                    "Grav-cannon",
-                    "Grav-gun",
-                    "Heavy Bolter",
-                    "Heavy Flamer",
-                    "Lascannon",
-                    "Meltagun",
-                    "Missile Launcher",
-                    "Multi-melta",
-                    "Plasma Cannon",
-                    "Plasma Gun",
-                    "Special Issue Boltgun",
-                    "Storm Bolter"
-                });
-            }
         }
     }
 }

@@ -33,10 +33,15 @@ namespace Roster_Builder.Space_Marines
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
+            repo = f as SpaceMarines;
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -53,7 +58,7 @@ namespace Roster_Builder.Space_Marines
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            cbOption1.Text = "Plasma Pistol (Assault Sergeant)";
+            cbOption1.Text = "Plasma Pistol (Hellblaster Sergeant)";
             if (Weapons[1] != "")
             {
                 cbOption1.Checked = true;
@@ -61,6 +66,46 @@ namespace Roster_Builder.Space_Marines
             else
             {
                 cbOption1.Checked = false;
+            }
+
+            cbStratagem5.Text = repo.StratagemList[4];
+            cbStratagem5.Location = new System.Drawing.Point(86, 29);
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblNumModels"].Location.X, panel.Controls["cbOption1"].Location.Y + 60);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+            cbStratagem5.Visible = true;
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                panel.Controls["lblRelic"].Visible = true;
+                cmbRelic.Visible = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
             }
         }
 
@@ -70,11 +115,17 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
                 case 11:
                     Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    break;
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    Relic = chosenRelic;
                     break;
                 case 21:
                     if (cbOption1.Checked)
@@ -88,6 +139,24 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 30:
                     UnitSize = Convert.ToInt32(nudUnitSize.Value);
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
+                    }
                     break;
             }
 

@@ -76,6 +76,26 @@ namespace Roster_Builder.Space_Marines
             }
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
+            cmbFactionupgrade.Items.Clear();
+            cmbFactionupgrade.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
+            if (Factionupgrade != null)
+            {
+                cmbFactionupgrade.SelectedIndex = cmbFactionupgrade.Items.IndexOf(Factionupgrade);
+            }
+            else
+            {
+                cmbFactionupgrade.SelectedIndex = 0;
+                if (Factionupgrade != "(None)")
+                {
+                    cmbWarlord.Items.Add("Steadfast Example");
+                    cmbRelic.Items.Add("Pennant of the Fallen");
+                }
+            }
+
             if (isWarlord)
             {
                 cbWarlord.Checked = true;
@@ -88,9 +108,6 @@ namespace Roster_Builder.Space_Marines
                 cmbWarlord.Enabled = false;
             }
 
-            cmbRelic.Items.Clear();
-            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
-
             if (Relic != null && cmbRelic.Items.Contains(Relic))
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
@@ -100,13 +117,26 @@ namespace Roster_Builder.Space_Marines
                 cmbRelic.SelectedIndex = 0;
             }
 
-            panel.Controls["lblFactionupgrade"].Visible = true;
-            cmbFactionupgrade.Visible = true;
-            cmbFactionupgrade.Items.Clear();
-            cmbFactionupgrade.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
+
+            cbStratagem3.Visible = true;
+            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
+            cbStratagem3.Text = f.StratagemList[2];
+
+            if (f.currentSubFaction == "<Custom>" && f.customSubFactionTraits[2] != "Unknown")
+            {
+                cbStratagem4.Visible = true;
+            }
+            else
+            {
+                cbStratagem4.Visible = false;
+            }
+
+            cbStratagem4.Location = new System.Drawing.Point(cbStratagem3.Location.X, cbStratagem3.Location.Y + 32);
+            cbStratagem4.Text = f.StratagemList[3];
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -129,6 +159,28 @@ namespace Roster_Builder.Space_Marines
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
+
+            if (Stratagem.Contains(cbStratagem3.Text))
+            {
+                cbStratagem3.Checked = true;
+                cbStratagem3.Enabled = true;
+            }
+            else
+            {
+                cbStratagem3.Checked = false;
+                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+            }
+
+            if (Stratagem.Contains(cbStratagem4.Text))
+            {
+                cbStratagem4.Checked = true;
+                cbStratagem4.Enabled = true;
+            }
+            else
+            {
+                cbStratagem4.Checked = false;
+                cbStratagem4.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem4.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -140,6 +192,8 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
 
             switch (code)
             {
@@ -158,6 +212,26 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
+                    if (Factionupgrade != "(None)" && Factionupgrade != null)
+                    {
+                        cmbWarlord.Items.Add("Steadfast Example");
+                        cmbRelic.Items.Add("Pennant of the Fallen");
+                    }
+                    else
+                    {
+                        if (Relic == "Pennant of the Fallen")
+                        {
+                            cmbRelic.SelectedIndex = 0;
+                        }
+
+                        if (WarlordTrait == "Steadfast Example")
+                        {
+                            cmbWarlord.SelectedIndex = -1;
+                        }
+
+                        cmbWarlord.Items.Remove("Steadfast Example");
+                        cmbRelic.Items.Remove("Pennant of the Fallen");
+                    }
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
@@ -202,6 +276,32 @@ namespace Roster_Builder.Space_Marines
                         if (Stratagem.Contains(cbStratagem2.Text))
                         {
                             Stratagem.Remove(cbStratagem2.Text);
+                        }
+                    }
+                    break;
+                case 73:
+                    if (cbStratagem3.Checked)
+                    {
+                        Stratagem.Add(cbStratagem3.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
+                        }
+                    }
+                    break;
+                case 74:
+                    if (cbStratagem4.Checked)
+                    {
+                        Stratagem.Add(cbStratagem4.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem4.Text))
+                        {
+                            Stratagem.Remove(cbStratagem4.Text);
                         }
                     }
                     break;

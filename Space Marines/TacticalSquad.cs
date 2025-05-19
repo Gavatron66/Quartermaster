@@ -86,6 +86,8 @@ namespace Roster_Builder.Space_Marines
             cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblOption2"].Location.X + 20, panel.Controls["cmbOption2"].Location.Y + 60);
             panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
             cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
 
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
@@ -116,6 +118,9 @@ namespace Roster_Builder.Space_Marines
                 cbStratagem5.Checked = false;
                 cmbRelic.SelectedIndex = 0;
             }
+
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -192,9 +197,9 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Visible = false;
                         cbStratagem5.Visible = false;
                         cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
                         panel.Controls["lblOption1"].Visible = false;
                         panel.Controls["lblOption2"].Visible = false;
-                        panel.Controls["lblRelic"].Visible = false;
                         antiLoop = false;
                         break;
                     }
@@ -238,7 +243,7 @@ namespace Roster_Builder.Space_Marines
                             "Storm Bolter",
                             "Thunder Hammer"
                         });
-                        if (repo.currentSubFaction == "Blood Angels")
+                        if (repo.customSubFactionTraits[2] == "Blood Angels")
                         {
                             cmbOption1.Items.Insert(8, "Hand Flamer");
                             cmbOption1.Items.Insert(9, "Inferno Pistol");
@@ -272,7 +277,7 @@ namespace Roster_Builder.Space_Marines
                             "Plasma Cannon",
                             "Plasma Gun"
                         });
-                        if(repo.currentSubFaction == "Deathwatch" || repo.currentSubFaction == "Blood Angels")
+                        if (repo.customSubFactionTraits[2] == "Blood Angels")
                         {
                             cmbOption1.Items.Insert(5, "Heavy Flamer");
                         }

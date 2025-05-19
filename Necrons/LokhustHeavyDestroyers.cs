@@ -67,7 +67,7 @@ namespace Roster_Builder.Necrons
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            if(antiLoop)
+            if (antiLoop)
             {
                 return;
             }
@@ -105,11 +105,7 @@ namespace Roster_Builder.Necrons
                     int temp = Convert.ToInt32(Weapons[0]);
                     antiLoop = true;
 
-                    if (nudOption1.Value < 0)
-                    {
-                        nudOption1.Value++;
-                    }
-                    else if (nudOption1.Value > UnitSize)
+                    if (nudOption1.Value > UnitSize)
                     {
                         nudOption1.Value--;
                     }
@@ -118,6 +114,10 @@ namespace Roster_Builder.Necrons
                         nudOption2.Value--;
                     }
                     else if (temp > nudOption1.Value)
+                    {
+                        nudOption2.Value++;
+                    }
+                    else if (temp != nudOption1.Value)
                     {
                         nudOption2.Value++;
                     }
@@ -130,11 +130,7 @@ namespace Roster_Builder.Necrons
                     int temp2 = Convert.ToInt32(Weapons[1]);
                     antiLoop = true;
 
-                    if (nudOption2.Value < 0)
-                    {
-                        nudOption2.Value++;
-                    }
-                    else if (nudOption2.Value > UnitSize)
+                    if (nudOption2.Value > UnitSize)
                     {
                         nudOption2.Value--;
                     }
@@ -143,6 +139,10 @@ namespace Roster_Builder.Necrons
                         nudOption1.Value--;
                     }
                     else if (temp2 > nudOption2.Value)
+                    {
+                        nudOption1.Value++;
+                    }
+                    else if (temp2 != nudOption2.Value)
                     {
                         nudOption1.Value++;
                     }

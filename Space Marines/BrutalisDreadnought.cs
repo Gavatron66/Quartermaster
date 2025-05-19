@@ -42,7 +42,7 @@ namespace Roster_Builder.Space_Marines
             cmbOption1.Items.AddRange(new string[]
             {
                 "Two Heavy Bolters",
-                "Two Multi-meltas"
+                "Two Multi-meltas (+30 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
@@ -71,6 +71,11 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS;
+
+            if (Weapons[0] == "Two Multi-meltas (+30 pts)")
+            {
+                Points += 30;
+            }
         }
 
         public override string ToString()

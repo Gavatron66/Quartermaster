@@ -63,7 +63,7 @@ namespace Roster_Builder.Space_Marines
             nudOption1.Value = Convert.ToDecimal(Weapons[1]);
 
             cbStratagem5.Text = repo.StratagemList[4];
-            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblOption1"].Location.X, panel.Controls["lblnud1"].Location.Y + 60);
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblOption1"].Location.X, panel.Controls["lblnud1"].Location.Y + 30);
             panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
             cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
             cbStratagem5.Visible = true;

@@ -335,14 +335,12 @@ namespace Roster_Builder
 
         private void cmbOption1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, sender as ComboBox);
             currentDetachment.roster[currentIndex].SaveDatasheets(11, panel1);
             updateLBRoster();
         }
 
         private void cmbOption2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, sender as ComboBox);
             currentDetachment.roster[currentIndex].SaveDatasheets(12, panel1);
             updateLBRoster();
         }
@@ -398,6 +396,9 @@ namespace Roster_Builder
             {
                 lblEditingUnit.Text = "Currently Editing: " + currentDetachment.roster[currentIndex].ToString();
             }
+
+            currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, cmbOption1);
+            currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, cmbOption2);
         }
 
         private void cbOption1_CheckedChanged(object sender, EventArgs e)

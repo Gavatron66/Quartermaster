@@ -65,7 +65,7 @@ namespace Roster_Builder.Space_Marines
                 "Plasma Pistol",
                 "Storm Bolter"
             });
-            if (f.currentSubFaction == "Blood Angels" || f.currentSubFaction == "Deathwatch")
+            if (repo.customSubFactionTraits[2] == "Blood Angels" || repo.customSubFactionTraits[2] == "Deathwatch")
             {
                 cmbOption1.Items.Insert(7, "Hand Flamer");
                 cmbOption1.Items.Insert(8, "Inferno Pistol");

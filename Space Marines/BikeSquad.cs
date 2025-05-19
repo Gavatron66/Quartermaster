@@ -47,6 +47,10 @@ namespace Roster_Builder.Space_Marines
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 3;
@@ -89,6 +93,49 @@ namespace Roster_Builder.Space_Marines
                 cbOption1.Checked = true;
             }
             cbOption1.Visible = true;
+
+            cbStratagem5.Text = repo.StratagemList[4];
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblOption1"].Location.X, panel.Controls["cmbOption1"].Location.Y + 60);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                panel.Controls["lblRelic"].Visible = true;
+                cmbRelic.Visible = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
+            }
+
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -98,32 +145,40 @@ namespace Roster_Builder.Space_Marines
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
                 case 11:
                     isLoading = true;
-                    if(currentIndex == attackIndex)
-                    {
-                        Weapons[1] = cmbOption1.SelectedItem.ToString();
-                    }
-                    else
-                    {
-                        Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
-                    }
                     
                     if (currentIndex == 0)
                     {
+                        Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
                         lbModelSelect.Items[currentIndex] = "Biker Sergeant w/ " + Weapons[currentIndex + 2];
                     }
                     else if (currentIndex == attackIndex)
                     {
+                        Weapons[1] = cmbOption1.SelectedItem.ToString();
                         lbModelSelect.Items[attackIndex] = "Attack Bike w/ " + Weapons[1];
                     }
                     else
                     {
-                        lbModelSelect.Items[currentIndex] = "Space Marine Biker w/ " + Weapons[currentIndex + 2];
+                        if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                        {
+                            Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
+                            lbModelSelect.Items[currentIndex] = "Space Marine Biker w/ " + Weapons[currentIndex + 2];
+                        }
+                        else
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 2]);
+                        }
                     }
+                    break;
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    Relic = chosenRelic;
                     break;
                 case 21:
                     if (cbOption1.Checked)
@@ -170,14 +225,30 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption1.Visible = false;
                         panel.Controls["lblOption1"].Visible = false;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
                     }
                     else
                     {
                         cmbOption1.Visible = true;
                         panel.Controls["lblOption1"].Visible = true;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
 
-                        if(currentIndex == 0)
+                        restrictedIndexes.Clear();
+
+                        if (currentIndex == 0)
                         {
+                            cbStratagem5.Visible = true;
+
+                            if (Stratagem.Contains(cbStratagem5.Text))
+                            {
+                                panel.Controls["lblRelic"].Visible = true;
+                                cmbRelic.Visible = true;
+                            }
+
                             cmbOption1.Items.Clear();
                             cmbOption1.Items.AddRange(new string[]
                             {
@@ -199,7 +270,7 @@ namespace Roster_Builder.Space_Marines
                                 "Storm Bolter",
                                 "Thunder Hammer"
                             });
-                            if(repo.currentSubFaction == "Deathwatch" || repo.currentSubFaction == "Blood Angels")
+                            if (repo.customSubFactionTraits[2] == "Deathwatch" || repo.customSubFactionTraits[2] == "Blood Angels")
                             {
                                 cmbOption1.Items.Insert(7, "Hand Flamer");
                                 cmbOption1.Items.Insert(8, "Inferno Pistol");
@@ -208,6 +279,10 @@ namespace Roster_Builder.Space_Marines
                         }
                         else if (currentIndex == attackIndex)
                         {
+                            cbStratagem5.Visible = false;
+                            cmbRelic.Visible = false;
+                            panel.Controls["lblRelic"].Visible = false;
+
                             cmbOption1.Items.Clear();
                             cmbOption1.Items.AddRange(new string[]
                             {
@@ -216,7 +291,12 @@ namespace Roster_Builder.Space_Marines
                             });
                             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[1]);
                         }
-                        else if(special < 2 || !(Weapons[currentIndex + 2] == "Bolt Pistol" || Weapons[currentIndex + 2] == "Astartes Chainsword")) {
+                        else
+                        {
+                            cbStratagem5.Visible = false;
+                            cmbRelic.Visible = false;
+                            panel.Controls["lblRelic"].Visible = false;
+
                             cmbOption1.Items.Clear();
                             cmbOption1.Items.AddRange(new string[]
                             {
@@ -228,17 +308,40 @@ namespace Roster_Builder.Space_Marines
                                 "Plasma Gun"
                             });
                             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 2]);
-                        }
-                        else
-                        {
-                            cmbOption1.Items.Clear();
-                            cmbOption1.Items.AddRange(new string[]
+                            if (repo.customSubFactionTraits[2] == "Space Wolves")
                             {
-                                "Astartes Chainsword",
-                                "Bolt Pistol"
-                            });
-                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 2]);
+                                cmbOption1.Items.Add("Plasma Pistol");
+                            }
+
+                            if (special == 2 && (Weapons[currentIndex + 2] == "Bolt Pistol" || Weapons[currentIndex + 2] == "Astartes Chainsword"))
+                            {
+                                restrictedIndexes.AddRange(new int[] { 2, 3, 4, 5 });
+                                if (repo.customSubFactionTraits[2] == "Space Wolves")
+                                {
+                                    restrictedIndexes.Add(6);
+                                }
+                            }
                         }
+
+                        this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+                    }
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
                     }
                     break;
             }
@@ -256,6 +359,14 @@ namespace Roster_Builder.Space_Marines
             if(Weapons.Contains("Multi-melta (+10 pts)"))
             {
                 Points += 10;
+            }
+
+            for(int i = 3; i < Weapons.Count; i++)
+            {
+                if (Weapons[i] != "Bolt Pistol" && Weapons[i] != "Astartes Chainsword")
+                {
+                    special++;
+                }
             }
         }
 

@@ -1691,7 +1691,14 @@ namespace Roster_Builder.Space_Marines
             }
             else
             {
-                cmbSubCustom3.SelectedIndex = 0;
+                if (customSubFactionTraits[2] == null)
+                {
+                    cmbSubCustom3.SelectedIndex = 0;
+                }
+                else
+                {
+                    cmbSubCustom3.SelectedIndex = cmbSubCustom3.Items.IndexOf(customSubFactionTraits[2]);
+                }
             }
             antiLoop = false;
         }
@@ -1735,10 +1742,13 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbSubCustom3.SelectedItem = "Imperial Fists";
                     }
-
-                    if(currentSubFaction == "Flesh Tearers")
+                    else if(currentSubFaction == "Flesh Tearers")
                     {
                         cmbSubCustom3.SelectedItem = "Blood Angels";
+                    }
+                    else if(currentSubFaction != string.Empty && currentSubFaction != "Black Templars" && currentSubFaction != "Deathwatch" && currentSubFaction != "<Custom>")
+                    {
+                        cmbSubCustom3.SelectedItem = currentSubFaction;
                     }
                     break;
                 case 51:
