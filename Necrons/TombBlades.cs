@@ -171,12 +171,12 @@ namespace Roster_Builder.Necrons
 
             foreach (var weapon in Weapons)
             {
-                if(weapon == "Nebuloscope (+3 pts)" || weapon == "Shieldvanes (+3 pts)")
+                if(weapon == "Nebuloscope (+3 pts)" || weapon == "Shieldvanes (+3 pts)"|| weapon == "Shadowloom (+3 pts)")
                 {
                     Points += 3;
                 }
 
-                if(weapon == "Shadowloom (+3 pts)" || weapon == "Twin Gauss Blaster (+5 pts)" || weapon == "Twin Tesla Carbine (+5 pts)")
+                if(weapon == "Twin Gauss Blaster (+5 pts)" || weapon == "Twin Tesla Carbine (+5 pts)")
                 {
                     Points += 5;
                 }

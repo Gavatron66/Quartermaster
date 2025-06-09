@@ -320,16 +320,22 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Ultramarines
                     else if (chosenRelic == "Vengeance of Ultramar")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
                         cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Helfury Bolts")
+                    {
+                        //See the end of SaveDatasheets
                     }
                     else if (chosenRelic == "Sunwrath Pistol")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
                     else if (chosenRelic == "Wrath of Prometheus")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
@@ -491,6 +497,16 @@ namespace Roster_Builder.Space_Marines
             {
                 Points += 25;
             }
+
+            #region Bolt Relics
+            restrictedIndexes.Clear();
+            if (Relic == "Hellfury Bolts")
+            {
+                restrictedIndexes.AddRange(new int[] { 6, 7, 8 });
+                cmbOption1.SelectedIndex = 0;
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+            #endregion
         }
 
         public override string ToString()

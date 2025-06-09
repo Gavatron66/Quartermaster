@@ -223,11 +223,13 @@ namespace Roster_Builder.Space_Marines
                             cmbOption1.Enabled = false;
                         }
                     #endregion
+                    #region Codex Supplement: Ultramarines
                     else if (chosenRelic == "Soldier's Blade")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
                     else if (chosenRelic == "The Teeth of Terra")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Astartes Chainsword");

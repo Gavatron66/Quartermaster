@@ -314,6 +314,7 @@ namespace Roster_Builder.Space_Marines
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     cmbOption1.Enabled = true;
                     cmbOption2.Enabled = true;
+                    restrictedIndexes.Clear();
 
                     #region Codex: Space Marines
                         if (chosenRelic == "The Burning Blade")
@@ -327,6 +328,7 @@ namespace Roster_Builder.Space_Marines
                             cmbOption2.Enabled = false;
                         }
                     #endregion
+                    #region Codex Supplement: Ultramarines
                     else if (chosenRelic == "Soldier's Blade")
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
@@ -337,6 +339,11 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
                         cmbOption1.Enabled = false;
                     }
+                    else if (chosenRelic == "Helfury Bolts")
+                    {
+                        //See the end of SaveDatasheets
+                    }
+                    #endregion
                     else if (chosenRelic == "Drake-smiter")
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Thunder Hammer (+5 pts)");
@@ -486,6 +493,14 @@ namespace Roster_Builder.Space_Marines
                     restrictedIndexes.Add(cmbOption1.Items.IndexOf("Storm Shield"));
                 }
             }
+
+            #region Bolt Relics
+            if (Relic == "Hellfury Bolts")
+            {
+                restrictedIndexes.AddRange(new int[] { 5, 6, 8, 9 });
+                cmbOption1.SelectedIndex = 0;
+            }
+            #endregion
 
             this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
             this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);

@@ -281,6 +281,7 @@ namespace Roster_Builder.Space_Marines
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     restrictedIndexes.Clear();
                     cmbOption1.Enabled = true;
+                    cbOption1.Enabled = true;
 
                     if (!Weapons[0].Contains("Rifle"))
                     {
@@ -320,16 +321,25 @@ namespace Roster_Builder.Space_Marines
                             restrictedIndexes.Add(3);
                         }
                     #endregion
+                    #region Codex Supplement: Ultramarines
                     else if (chosenRelic == "Soldier's Blade")
                     {
                         cbOption1.Checked = true;
                         cbOption1.Enabled = false;
+
+                        restrictedIndexes.Add(3);
+                    }
+                    else if (chosenRelic == "Hellfury Bolts")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 2;
                     }
                     else if (chosenRelic == "Sunwrath Pistol")
                     {
                         cmbOption1.SelectedIndex = 3;
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
                     else if (chosenRelic == "Drakeblade")
                     {
                         cbOption1.Checked = true;

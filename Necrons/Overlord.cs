@@ -60,12 +60,6 @@ namespace Roster_Builder.Necrons
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            if(cmbOption1.SelectedIndex == 2)
-            {
-                cbOption1.Enabled = false;
-                cbOption1.Checked = false;
-            }
-
             cbOption1.Text = "Resurrection Orb (+25 pts)";
             if (Weapons[1] == "Resurrection Orb (+25 pts)")
             {
@@ -74,6 +68,15 @@ namespace Roster_Builder.Necrons
             else
             {
                 cbOption1.Checked = false;
+            }
+
+            if (Weapons[0].Contains("Tachyon Arrow"))
+            {
+                cbOption1.Enabled = false;
+            }
+            else
+            {
+                cbOption1.Enabled = true;
             }
 
             if (isWarlord)
@@ -159,7 +162,7 @@ namespace Roster_Builder.Necrons
                 case 11:
                     Weapons[0] = cmbOption1.SelectedItem.ToString();
 
-                    if(cmbOption1.SelectedItem.ToString() == "Tachyon Arrow and Hyperphaise Glaive"
+                    if (Weapons[0] == "Tachyon Arrow and Hyperphaise Glaive"
                         || cmbRelic.SelectedItem.ToString() == "Orb of Eternity")
                     {
                         cbOption1.Enabled = false;
@@ -215,6 +218,16 @@ namespace Roster_Builder.Necrons
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Staff of Light");
                         cmbOption1.Enabled = false;
+                    }
+
+                    if (Weapons[0] == "Tachyon Arrow and Hyperphaise Glaive"
+                        || cmbRelic.SelectedItem.ToString() == "Orb of Eternity")
+                    {
+                        cbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cbOption1.Enabled = true;
                     }
                     break;
                 case 21:

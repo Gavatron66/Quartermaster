@@ -144,7 +144,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cmbNDFaction = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.lblErrors = new System.Windows.Forms.Label();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSelectPoints)).BeginInit();
             this.panel1.SuspendLayout();
@@ -1468,16 +1467,6 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // lblErrors
-            // 
-            this.lblErrors.AutoSize = true;
-            this.lblErrors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrors.Location = new System.Drawing.Point(719, 519);
-            this.lblErrors.Name = "lblErrors";
-            this.lblErrors.Size = new System.Drawing.Size(155, 20);
-            this.lblErrors.TabIndex = 82;
-            this.lblErrors.Text = "Roster has _ errors";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -1499,7 +1488,6 @@
             this.Controls.Add(this.lbRoster);
             this.Controls.Add(this.lbUnits);
             this.Controls.Add(this.lblPoints);
-            this.Controls.Add(this.lblErrors);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -1624,7 +1612,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbNDFaction;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label lblErrors;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNDname;

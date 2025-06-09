@@ -64,7 +64,6 @@ namespace Roster_Builder
             MenuPanel.Visible = true;
             MenuPanel.Location = new System.Drawing.Point(242, 25);
             MenuPanel.BringToFront();
-            lblErrors.Visible = false;
             panelSubFaction.Location = new System.Drawing.Point(242, 96);
             panelNewDetach.Visible = false;
 
@@ -158,8 +157,6 @@ namespace Roster_Builder
             lblCurrentPoints.Visible = true;
             btnSave.Visible = true;
             btnSave.BringToFront();
-            lblErrors.Visible = true;
-            lblErrors.BringToFront();
             lblEditingUnit.BringToFront(); 
             panelSubFaction.BringToFront();
             panelSubFaction.Visible = false;

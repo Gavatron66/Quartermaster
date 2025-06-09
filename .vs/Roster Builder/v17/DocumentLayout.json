@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\evans\\Desktop\\Quartermaster\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\spacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\spacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\spacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\spacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:faction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\datasheets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,17 +34,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAAOoBAAAAAAAAAAAMwPYBAAAJAAAA",
+              "ViewState": "AQIAAI0AAAAAAAAAAAAowJ4AAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-03T22:43:17.811Z",
               "IsPinned": true,
@@ -65,7 +65,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Faction.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Faction.cs",
               "RelativeDocumentMoniker": "Faction.cs",
@@ -74,8 +74,7 @@
               "ViewState": "AQIAABgAAAAAAAAAAAA6wCcAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T01:02:04.415Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -88,12 +87,11 @@
               "ViewState": "AQIAAMwAAAAAAAAAAABRwM8AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T01:02:03.421Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Template.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeDocumentMoniker": "Template.cs",
@@ -102,18 +100,17 @@
               "ViewState": "AQIAAKEIAAAAAAAAAAAswGMKAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-05T03:46:42.246Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "SpaceMarines.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\SpaceMarines.cs",
               "RelativeDocumentMoniker": "Space Marines\\SpaceMarines.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\SpaceMarines.cs",
               "RelativeToolTip": "Space Marines\\SpaceMarines.cs",
-              "ViewState": "AQIAAJkGAAAAAAAAAABRwJwGAAANAAAA",
+              "ViewState": "AQIAACYFAAAAAAAAAAAAAEIFAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-23T01:52:47.82Z",
               "IsPinned": true,

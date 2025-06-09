@@ -315,6 +315,7 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Ultramarines
                     else if (chosenRelic == "Soldier's Blade")
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
@@ -325,11 +326,16 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
                         cmbOption1.Enabled = false;
                     }
+                    else if (chosenRelic == "Helfury Bolts")
+                    {
+                        //See the end of SaveDatasheets
+                    }
                     else if (chosenRelic == "Sunwrath Pistol")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
                     else if (chosenRelic == "Drake-smiter")
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Thunder Hammer");
@@ -499,6 +505,16 @@ namespace Roster_Builder.Space_Marines
             Points = DEFAULT_POINTS;
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
+
+            #region Bolt Relics
+            restrictedIndexes.Clear();
+            if (Relic == "Hellfury Bolts")
+            {
+                restrictedIndexes.AddRange(new int[] { 6, 7 });
+                cmbOption1.SelectedIndex = 0;
+            }
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+            #endregion
         }
 
         public override string ToString()

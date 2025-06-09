@@ -241,7 +241,7 @@ namespace Roster_Builder.Space_Marines
                                 cmbOption1.SelectedIndex = 14;
                             }
                         }
-                        else if (chosenRelic == "The Teeth of Terra")
+                        else if (chosenRelic == "The Teeth of Terra" && repo.currentSubFaction == "Black Templars")
                         {
                             restrictedIndexes.Remove(0);
                             restrictedIndexes.Remove(4);
@@ -332,6 +332,34 @@ namespace Roster_Builder.Space_Marines
                                 cmbOption1.SelectedIndex = 15;
                             }
                         }
+                    #endregion
+                    #region Codex Supplement: Ultramarines
+                    else if(chosenRelic == "Soldier's Blade")
+                    {
+                        restrictedIndexes.Remove(1);
+                        restrictedIndexes.Remove(4);
+                        restrictedIndexes.Remove(7);
+                        restrictedIndexes.Remove(10);
+                        restrictedIndexes.Remove(12);
+                        restrictedIndexes.Remove(13);
+                        restrictedIndexes.Remove(14);
+                        restrictedIndexes.Remove(16);
+                        restrictedIndexes.Remove(19);
+                        restrictedIndexes.Remove(22);
+                        restrictedIndexes.Remove(25);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Hellfury Bolts")
+                    {
+                        restrictedIndexes.Clear();
+                        restrictedIndexes.Add(14);
+                        cmbOption1.SelectedIndex = 0;
+                    }
+                    else if(chosenRelic == "Sunwrath Pistol")
+                    {
+                        restrictedIndexes.RemoveRange(21, 6);
+                        cmbOption1.SelectedIndex = 21;
+                    }
                     #endregion
                     else
                     {
