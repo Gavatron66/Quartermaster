@@ -11,6 +11,7 @@ namespace Roster_Builder.Space_Marines
     public class TacticalSquad : Datasheets
     {
         int currentIndex;
+
         public TacticalSquad()
         {
             DEFAULT_POINTS = 18;
@@ -140,21 +141,22 @@ namespace Roster_Builder.Space_Marines
             switch (code)
             {
                 case 11:
-                    if(currentIndex == 0)
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
                     {
-                        lbModelSelect.Items[0] = "Space Marine Sergeant w/" + Weapons[0] + " and " + Weapons[1];
-                    } 
-                    else
-                    {
-                        if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                        if (currentIndex == 0)
+                        {
+                            Weapons[1] = cmbOption1.SelectedItem.ToString();
+                            lbModelSelect.Items[0] = "Space Marine Sergeant w/" + Weapons[0] + " and " + Weapons[1];
+                        }
+                        else
                         {
                             Weapons[currentIndex + 1] = cmbOption1.SelectedItem.ToString();
                             lbModelSelect.Items[currentIndex] = "Space Marine w/ " + Weapons[currentIndex + 1];
                         }
-                        else
-                        {
-                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
-                        }
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
                     }
                     break;
                 case 12:
@@ -163,7 +165,37 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
+                    antiLoop = true;
+                    restrictedIndexes.Clear();
+
+                    #region Codex Supplement: Ultramarines Strat Relics
+                    if (chosenRelic == "Hellfury Bolts (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                    }
+                    else if (chosenRelic == "Hellfury Bolts (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 9;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 4;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
+
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     Relic = chosenRelic;
+                    antiLoop = false;
                     break;
                 case 30:
                     UnitSize = Decimal.ToInt16(nudUnitSize.Value);
@@ -250,6 +282,31 @@ namespace Roster_Builder.Space_Marines
                         }
 
                         restrictedIndexes.Clear();
+                        cmbOption1.Enabled = true;
+                        cmbOption2.Enabled = true;
+
+                        #region Codex Supplement: Ultramarines Strat Relics
+                        if (Relic == "Hellfury Bolts (Slot 1)")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                        }
+                        else if (Relic == "Hellfury Bolts (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        else if (Relic == "Sunwrath Pistol (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 9;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Sunwrath Pistol (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 4;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+
                         this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     }
                     else

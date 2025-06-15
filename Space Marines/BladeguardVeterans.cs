@@ -107,6 +107,20 @@ namespace Roster_Builder.Space_Marines
             {
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    gb_cmbOption1.Enabled = true;
+
+                    //Ultramarines
+                    if(chosenRelic == "Hellfury Bolts")
+                    {
+                        gb_cmbOption1.SelectedIndex = 0;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol")
+                    {
+                        gb_cmbOption1.SelectedIndex = 2;
+                        gb_cmbOption1.Enabled = false;
+                    }
+
                     Relic = chosenRelic;
                     break;
                 case 30:

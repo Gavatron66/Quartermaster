@@ -214,6 +214,14 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+
+                    if (chosenRelic == "Hellfury Bolts")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+
                     Relic = chosenRelic;
                     break;
                 case 21:
@@ -327,6 +335,11 @@ namespace Roster_Builder.Space_Marines
                             "Power Sword"
                         });
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
+
+                        if(Relic == "Hellfury Bolts")
+                        {
+                            cmbOption1.Enabled = false;
+                        }
                     }
                     else
                     {

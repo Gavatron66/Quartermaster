@@ -137,22 +137,22 @@ namespace Roster_Builder.Space_Marines
             switch (code)
             {
                 case 11:
-                    if (currentIndex == 0)
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
                     {
-                        Weapons[(currentIndex * 2) + 1] = cmbOption1.SelectedItem.ToString();
-                        if (Weapons[0] == "")
+                        if (currentIndex == 0)
                         {
-                            lbModelSelect.Items[0] = ("Scout Sergeant w/ " + Weapons[1] + " and " + Weapons[2]);
+                            Weapons[(currentIndex * 2) + 1] = cmbOption1.SelectedItem.ToString();
+                            if (Weapons[0] == "")
+                            {
+                                lbModelSelect.Items[0] = ("Scout Sergeant w/ " + Weapons[1] + " and " + Weapons[2]);
+                            }
+                            else
+                            {
+                                lbModelSelect.Items[0] = ("Scout Sergeant w/ " + Weapons[1] + ", " + Weapons[2] +
+                                    " and " + Weapons[0]);
+                            }
                         }
                         else
-                        {
-                            lbModelSelect.Items[0] = ("Scout Sergeant w/ " + Weapons[1] + ", " + Weapons[2] +
-                                " and " + Weapons[0]);
-                        }
-                    }
-                    else
-                    {
-                        if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
                         {
                             Weapons[(currentIndex * 2) + 1] = cmbOption1.SelectedItem.ToString();
                             lbModelSelect.Items[currentIndex] = "Scout w/ " + Weapons[(currentIndex * 2) + 1]
@@ -168,10 +168,10 @@ namespace Roster_Builder.Space_Marines
                                 lbModelSelect.Items[currentIndex] = "Scout w/ " + Weapons[(currentIndex * 2) + 1];
                             }
                         }
-                        else
-                        {
-                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
-                        }
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
                     }
                     break;
                 case 12:
@@ -188,6 +188,21 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+
+                    cmbOption1.Enabled = true;
+                    restrictedIndexes.Clear();
+
+                    if (chosenRelic == "Hellfury Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol")
+                    {
+                        cmbOption1.SelectedIndex = 9;
+                        cmbOption1.Enabled = false;
+                    }
+
                     Relic = chosenRelic;
                     break;
                 case 21:
@@ -287,6 +302,16 @@ namespace Roster_Builder.Space_Marines
                         cmbRelic.Visible = false;
                         panel.Controls["lblRelic"].Visible = false;
 
+                        cbOption1.Visible = false;
+                        cbStratagem5.Visible = true;
+                        cmbOption1.Enabled = true;
+
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            panel.Controls["lblRelic"].Visible = true;
+                            cmbRelic.Visible = true;
+                        }
+
                         cmbOption1.Items.Clear();
                         cmbOption1.Items.AddRange(new string[]
                         {
@@ -336,6 +361,17 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[2]);
 
                         restrictedIndexes.Clear();
+
+                        if (Relic == "Hellfury Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                        }
+                        else if (Relic == "Sunwrath Pistol")
+                        {
+                            cmbOption1.SelectedIndex = 9;
+                            cmbOption1.Enabled = false;
+                        }
+
                         this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     }
                     else

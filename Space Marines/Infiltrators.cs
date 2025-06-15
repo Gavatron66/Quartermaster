@@ -56,7 +56,7 @@ namespace Roster_Builder.Space_Marines
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
             cbStratagem5.Text = repo.StratagemList[4];
-            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblNumModels"].Location.X, panel.Controls["lblNumModels"].Location.Y + 30);
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblNumModels"].Location.X, cmbOption1.Location.Y + 30);
             panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
             cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
             cbStratagem5.Visible = true;

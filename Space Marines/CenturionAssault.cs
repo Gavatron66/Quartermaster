@@ -162,6 +162,13 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+
+                    if(chosenRelic == "Hellfury Bolts")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+
                     Relic = chosenRelic;
                     break;
                 case 30:
@@ -198,6 +205,7 @@ namespace Roster_Builder.Space_Marines
                     cmbOption2.Visible = true;
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption2"].Visible = true;
+                    cmbOption2.Enabled = true;
 
                     cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex * 2]);
                     cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
@@ -210,6 +218,12 @@ namespace Roster_Builder.Space_Marines
                         {
                             panel.Controls["lblRelic"].Visible = true;
                             cmbRelic.Visible = true;
+
+                            if(Relic == "Hellfury Bolts")
+                            {
+                                cmbOption2.SelectedIndex = 1;
+                                cmbOption2.Enabled = false;
+                            }
                         }
                     }
                     else

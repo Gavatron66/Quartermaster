@@ -163,7 +163,25 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
+                    antiLoop = true;
+
+                    #region Codex Supplement: Ultramarines Strat Relics
+                    if (chosenRelic == "Hellfury Bolts (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Hellfury Bolts (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
+
                     Relic = chosenRelic;
+                    antiLoop = false;
                     break;
                 case 30:
                     int temp = UnitSize;
@@ -212,6 +230,19 @@ namespace Roster_Builder.Space_Marines
                             panel.Controls["lblRelic"].Visible = true;
                             cmbRelic.Visible = true;
                         }
+
+                        #region Codex Supplement: Ultramarines Strat Relics
+                        if (Relic == "Hellfury Bolts (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Hellfury Bolts (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
                     }
                     else
                     {

@@ -118,10 +118,28 @@ namespace Roster_Builder.Space_Marines
                     Weapons[0] = cmbOption1.SelectedItem.ToString();
                     break;
                 case 12:
-                    Weapons[1] = cmbOption2.SelectedItem.ToString();
+                    if (!restrictedIndexes.Contains(cmbOption2.SelectedIndex))
+                    {
+                        Weapons[1] = cmbOption2.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
+                    }
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption2.Enabled = true;
+                    restrictedIndexes.Clear();
+
+                    #region Codex Supplement: Ultramarines
+                    if (chosenRelic == "Hellfury Bolts")
+                    {
+                        restrictedIndexes.Add(2);
+                    }
+                    #endregion
+
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
                     Relic = chosenRelic;
                     break;
                 case 75:

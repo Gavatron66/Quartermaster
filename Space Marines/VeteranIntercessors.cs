@@ -210,6 +210,24 @@ namespace Roster_Builder.Genestealer_Cults
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+
+                    #region Codex Supplement: Ultramarines
+                    if (chosenRelic == "Hellfury Bolts")
+                    {
+                        gb_cmbOption1.SelectedIndex = 1;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol")
+                    {
+                        gb_cmbOption1.SelectedIndex = 3;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        gb_cmbOption1.Enabled = true;
+                    }
+                    #endregion
+
                     Relic = chosenRelic;
                     break;
                 case 30:

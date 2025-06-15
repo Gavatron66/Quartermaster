@@ -125,6 +125,14 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cbOption1.Enabled = true;
+
+                    if(chosenRelic == "Sunwrath Pistol")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+
                     Relic = chosenRelic;
                     break;
                 case 21:

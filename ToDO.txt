@@ -318,6 +318,10 @@ Sergeants
                     cmbRelic.SelectedIndex = -1;
                 }
             }
+		
+Tabbed out Sergeants need to be excluded from Hellfury Bolts (one tab) or Sunwrath Pistol (two tabs) or both (three tabs)
+		
+Sergeants in progress list
 
 Sergeants
 	Assault Intercessors

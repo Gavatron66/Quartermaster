@@ -217,6 +217,21 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+
+                    cmbOption1.Enabled = true;
+                    restrictedIndexes.Clear();
+
+                    if (chosenRelic == "Hellfury Bolts")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol")
+                    {
+                        cmbOption1.SelectedIndex = 4;
+                        cmbOption1.Enabled = false;
+                    }
+
                     Relic = chosenRelic;
                     break;
                 case 21:
@@ -304,6 +319,7 @@ namespace Roster_Builder.Space_Marines
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption2"].Visible = true;
                     cbOption2.Visible = true;
+                    cmbOption1.Enabled = true;
 
                     if (Weapons[(currentIndex * 2) + 1] != "Heavy Thunder Hammer (+12 pts)")
                     {
@@ -335,6 +351,15 @@ namespace Roster_Builder.Space_Marines
                         else
                         {
                             cmbRelic.Visible = false;
+                        }
+
+                        if (Relic == "Hellfury Bolts")
+                        {
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Sunwrath Pistol")
+                        {
+                            cmbOption1.Enabled = false;
                         }
                     }
                     else

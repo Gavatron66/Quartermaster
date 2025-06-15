@@ -776,17 +776,35 @@ namespace Roster_Builder.Space_Marines
 
             relics.Add("(None)");
 
+            //Sergeant Relics for the Stratagems
             if(keywords.Contains("CORE") || keywords.Contains("CENTURION"))
             {
                 relics.Add("Master-crafted Weapon");
                 relics.Add("Digital Weapons");
 
                 //Insert Stratagem relics here
-                if (customSubFactionTraits[2] == "Ultramarines")
+                #region Ultramarines
+                if (customSubFactionTraits[2] == "Ultramarines" && !keywords.Contains("TERMINATOR ASSAULT SQUAD"))
                 {
                     relics.Add("Hellfury Bolts");
-                    relics.Add("Sunwrath Pistol");
+
+                    //I don't like this solution but it will do for now
+                    if(!(keywords.Contains("TERMINATOR") || keywords.Contains("CENTURION") || keywords.Contains("PHOBOS")
+                        || keywords.Contains("MK X GRAVIS") || keywords.Contains("TYRANNIC WAR VETERANS") || keywords.Contains("OUTRIDER SQUAD")
+                        || keywords.Contains("SUPPRESSOR SQUAD") || keywords.Contains("DESOLATION SQUAD")))
+                    {
+                        relics.Add("Sunwrath Pistol");
+                    }
+
+                    if (keywords.Contains("TACTICAL SQUAD") || keywords.Contains("DEVASTATOR SQUAD") || keywords.Contains("CENTURION DEVASTATOR SQUAD"))
+                    {
+                        relics[3] = "Hellfury Bolts (Slot 1)";
+                        relics[4] = "Sunwrath Pistol (Slot 1)";
+                        relics.Insert(4, "Hellfury Bolts (Slot 2)");
+                        relics.Add("Sunwrath Pistol (Slot 2)");
+                    }
                 }
+                #endregion
 
                 return relics;
             }

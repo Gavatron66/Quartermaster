@@ -153,12 +153,7 @@ namespace Roster_Builder.Space_Marines
                 case 11:
                     isLoading = true;
                     
-                    if (currentIndex == 0)
-                    {
-                        Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
-                        lbModelSelect.Items[currentIndex] = "Biker Sergeant w/ " + Weapons[currentIndex + 2];
-                    }
-                    else if (currentIndex == attackIndex)
+                    if (currentIndex == attackIndex)
                     {
                         Weapons[1] = cmbOption1.SelectedItem.ToString();
                         lbModelSelect.Items[attackIndex] = "Attack Bike w/ " + Weapons[1];
@@ -167,8 +162,16 @@ namespace Roster_Builder.Space_Marines
                     {
                         if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
                         {
-                            Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
-                            lbModelSelect.Items[currentIndex] = "Space Marine Biker w/ " + Weapons[currentIndex + 2];
+                            if (currentIndex == 0)
+                            {
+                                Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
+                                lbModelSelect.Items[currentIndex] = "Biker Sergeant w/ " + Weapons[currentIndex + 2];
+                            }
+                            else
+                            {
+                                Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
+                                lbModelSelect.Items[currentIndex] = "Space Marine Biker w/ " + Weapons[currentIndex + 2];
+                            }
                         }
                         else
                         {
@@ -178,6 +181,21 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+
+                    cmbOption1.Enabled = true;
+                    restrictedIndexes.Clear();
+
+                    if (chosenRelic == "Hellfury Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol")
+                    {
+                        cmbOption1.SelectedIndex = 8;
+                        cmbOption1.Enabled = false;
+                    }
+
                     Relic = chosenRelic;
                     break;
                 case 21:
@@ -236,6 +254,7 @@ namespace Roster_Builder.Space_Marines
                         cbStratagem5.Visible = false;
                         cmbRelic.Visible = false;
                         panel.Controls["lblRelic"].Visible = false;
+                        cmbOption1.Enabled = true;
 
                         restrictedIndexes.Clear();
 
@@ -276,6 +295,17 @@ namespace Roster_Builder.Space_Marines
                                 cmbOption1.Items.Insert(8, "Inferno Pistol");
                             }
                             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[2]);
+
+                            if (Relic == "Hellfury Bolts")
+                            {
+                                restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                                cmbOption1.SelectedIndex = 1;
+                            }
+                            else if (Relic == "Sunwrath Pistol")
+                            {
+                                cmbOption1.SelectedIndex = 8;
+                                cmbOption1.Enabled = false;
+                            }
                         }
                         else if (currentIndex == attackIndex)
                         {

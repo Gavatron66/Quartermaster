@@ -143,21 +143,21 @@ namespace Roster_Builder.Space_Marines
             switch (code)
             {
                 case 11:
-                    if (currentIndex == 0)
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
                     {
-                        lbModelSelect.Items[0] = "Sternguard Veteran Sergeant w/" + Weapons[0] + " and " + Weapons[1];
-                    }
-                    else
-                    {
-                        if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                        if (currentIndex == 0)
+                        {
+                            lbModelSelect.Items[0] = "Sternguard Veteran Sergeant w/" + Weapons[0] + " and " + Weapons[1];
+                        }
+                        else
                         {
                             Weapons[currentIndex + 1] = cmbOption1.SelectedItem.ToString();
                             lbModelSelect.Items[currentIndex] = "Sternguard Veteran w/ " + Weapons[currentIndex + 1];
                         }
-                        else
-                        {
-                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
-                        }
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
                     }
                     break;
                 case 12:
@@ -166,6 +166,22 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+
+                    cmbOption2.Enabled = true;
+                    restrictedIndexes.Clear();
+
+                    if (chosenRelic == "Hellfury Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 13 });
+                        cmbOption1.SelectedIndex = 8;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol")
+                    {
+                        cmbOption2.SelectedIndex = 4;
+                        cmbOption2.Enabled = false;
+                    }
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+
                     Relic = chosenRelic;
                     break;
                 case 30:
@@ -206,6 +222,7 @@ namespace Roster_Builder.Space_Marines
 
                     cmbOption1.Visible = true;
                     panel.Controls["lblOption1"].Visible = true;
+                    cmbOption2.Enabled = true;
 
                     if (currentIndex == 0)
                     {
@@ -247,6 +264,17 @@ namespace Roster_Builder.Space_Marines
                             cmbOption1.Items.Insert(8, "Inferno Pistol");
                         }
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
+                        
+                        if (Relic == "Hellfury Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13 });
+                            this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+                        }
+                        else if (Relic == "Sunwrath Pistol")
+                        {
+                            cmbOption2.SelectedIndex = 4;
+                            cmbOption2.Enabled = false;
+                        }
                     }
                     else
                     {
