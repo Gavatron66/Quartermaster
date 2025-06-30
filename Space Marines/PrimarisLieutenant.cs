@@ -9,6 +9,8 @@ namespace Roster_Builder.Space_Marines
 {
     public class PrimarisLieutenant : Datasheets
     {
+        private string stratWarlordTrait;
+
         public PrimarisLieutenant()
         {
             DEFAULT_POINTS = 65;
@@ -38,6 +40,7 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox; // For Stratagem 3
 
             cmbWarlord.Items.Clear();
             List<string> traits = repo.GetWarlordTraits("");
@@ -140,6 +143,13 @@ namespace Roster_Builder.Space_Marines
             cbStratagem4.Location = new System.Drawing.Point(cbStratagem3.Location.X, cbStratagem3.Location.Y + 32);
             cbStratagem4.Text = f.StratagemList[3];
 
+            panel.Controls["lblOption6"].Visible = false;
+            panel.Controls["lblOption6"].Location = new System.Drawing.Point(panel.Controls["lblWarlord"].Location.X, cmbWarlord.Location.Y + 33);
+            cmbOption6.Visible = false;
+            cmbOption6.Location = new System.Drawing.Point(panel.Controls["lblOption6"].Location.X, panel.Controls["lblOption6"].Location.Y + 23);
+            cmbOption6.Items.Clear();
+            cmbOption6.Items.AddRange(repo.GetWarlordTraits("Strat").ToArray());
+
             if (Stratagem.Contains(cbStratagem1.Text))
             {
                 cbStratagem1.Checked = true;
@@ -166,11 +176,16 @@ namespace Roster_Builder.Space_Marines
             {
                 cbStratagem3.Checked = true;
                 cbStratagem3.Enabled = true;
+                cmbOption6.Visible = true;
+                panel.Controls["lblOption6"].Visible = true;
+                cmbOption6.SelectedIndex = cmbOption6.Items.IndexOf(stratWarlordTrait);
             }
             else
             {
                 cbStratagem3.Checked = false;
                 cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+                cmbOption6.Visible = false;
+                panel.Controls["lblOption6"].Visible = false;
             }
 
             if (Stratagem.Contains(cbStratagem4.Text))
@@ -195,6 +210,7 @@ namespace Roster_Builder.Space_Marines
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
             CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
             CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
+            ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox;
 
             switch (code)
             {
@@ -361,6 +377,29 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 21;
                     }
                     #endregion
+                    #region Codex Supplement: Salamanders
+                    else if (chosenRelic == "Dragonrage Bolts")
+                    {
+                        restrictedIndexes.Clear();
+                        restrictedIndexes.Add(14);
+                        cmbOption1.SelectedIndex = 0;
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        restrictedIndexes.Remove(1);
+                        restrictedIndexes.Remove(4);
+                        restrictedIndexes.Remove(7);
+                        restrictedIndexes.Remove(10);
+                        restrictedIndexes.Remove(12);
+                        restrictedIndexes.Remove(13);
+                        restrictedIndexes.Remove(14);
+                        restrictedIndexes.Remove(16);
+                        restrictedIndexes.Remove(19);
+                        restrictedIndexes.Remove(22);
+                        restrictedIndexes.Remove(25);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
                     else
                     {
                         restrictedIndexes.Clear();
@@ -368,6 +407,9 @@ namespace Roster_Builder.Space_Marines
 
                     Relic = chosenRelic;
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+                    break;
+                case 19:
+                    stratWarlordTrait = cmbOption6.SelectedItem as string;
                     break;
                 case 25:
                     if (cbWarlord.Checked)
@@ -403,9 +445,11 @@ namespace Roster_Builder.Space_Marines
                     }
                     break;
                 case 73:
-                    if (cbStratagem3.Checked)
+                    if (cbStratagem3.Checked && !Stratagem.Contains(cbStratagem3.Text))
                     {
                         Stratagem.Add(cbStratagem3.Text);
+                        cmbOption6.Visible = true;
+                        panel.Controls["lblOption6"].Visible = true;
                     }
                     else
                     {
@@ -413,18 +457,38 @@ namespace Roster_Builder.Space_Marines
                         {
                             Stratagem.Remove(cbStratagem3.Text);
                         }
+                        cmbOption6.Visible = false;
+                        panel.Controls["lblOption6"].Visible = false;
+                        cmbOption6.SelectedIndex = -1;
                     }
                     break;
                 case 74:
                     if (cbStratagem4.Checked)
                     {
                         Stratagem.Add(cbStratagem4.Text);
+                        cmbRelic.Items.Clear();
+                        Keywords.Add("Strat");
+                        cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                        Keywords.Remove("Strat");
                     }
                     else
                     {
                         if (Stratagem.Contains(cbStratagem4.Text))
                         {
                             Stratagem.Remove(cbStratagem4.Text);
+                        }
+
+                        cmbRelic.Items.Clear();
+                        cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
+                        if (cmbRelic.Items.Contains(Relic))
+                        {
+                            cmbRelic.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
                         }
                     }
                     break;

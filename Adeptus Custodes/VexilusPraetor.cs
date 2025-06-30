@@ -267,7 +267,7 @@ namespace Roster_Builder.Adeptus_Custodes
                     }
                     break;
                 case 73:
-                    if (cbStratagem3.Checked)
+                    if (cbStratagem3.Checked && !Stratagem.Contains(cbStratagem3.Text))
                     {
                         Stratagem.Add(cbStratagem3.Text);
 

@@ -56,6 +56,9 @@ Figured out 3 DG Stratagem implementations, refer to those going forward for cha
 
 Just fixed (3/11) some of the main form's listboxes to not flicker as often; try and figure that out for the model version
 
+Need to go back and fix Librarians; some relics give extra psychic powers
+	The Tome of Vel'cona is going to be tricky...
+
 Characters to do list:
 	Primaris Captain
 	Gravis Captain w/ Heavy Bolt Rifle
@@ -320,8 +323,6 @@ Sergeants
             }
 		
 Tabbed out Sergeants need to be excluded from Hellfury Bolts (one tab) or Sunwrath Pistol (two tabs) or both (three tabs)
-		
-Sergeants in progress list
 
 Sergeants
 	Assault Intercessors
