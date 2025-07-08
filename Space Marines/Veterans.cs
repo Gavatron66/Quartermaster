@@ -261,9 +261,10 @@ namespace Roster_Builder.Space_Marines
                     cmbOption2.Enabled = true;
                     restrictedIndexes.Clear();
 
-                    if(chosenRelic == "Hellfury Bolts")
+                    #region Codex Supplement: Ultramarines
+                    if (chosenRelic == "Hellfury Bolts")
                     {
-                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 13, 14 });
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                         cmbOption1.SelectedIndex = 1;
                     }
                     else if (chosenRelic == "Sunwrath Pistol")
@@ -271,7 +272,21 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.SelectedIndex = 4;
                         cmbOption2.Enabled = false;
                     }
+                    #endregion
+                    #region Codex Supplement: Salamanders
+                    if (chosenRelic == "Dragonrage Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cmbOption2.SelectedIndex = 8;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     Relic = chosenRelic;
                     break;
                 case 21:
@@ -392,16 +407,32 @@ namespace Roster_Builder.Space_Marines
                         });
                         restrictedIndexes.Clear();
 
+                        #region Codex Supplement: Ultramarines
                         if (Relic == "Hellfury Bolts")
                         {
-                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 13, 14 });
-                            this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
+                            cmbOption1.SelectedIndex = 1;
                         }
                         else if (Relic == "Sunwrath Pistol")
                         {
                             cmbOption2.SelectedIndex = 4;
                             cmbOption2.Enabled = false;
                         }
+                        #endregion
+                        #region Codex Supplement: Salamanders
+                        if (Relic == "Dragonrage Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
+                            cmbOption1.SelectedIndex = 1;
+                        }
+                        else if (Relic == "Drakeblade")
+                        {
+                            cmbOption2.SelectedIndex = 8;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+
+                        this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     }
                     else
                     {

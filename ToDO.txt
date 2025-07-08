@@ -322,37 +322,7 @@ Sergeants
                 }
             }
 		
-Tabbed out Sergeants need to be excluded from Hellfury Bolts (one tab) or Sunwrath Pistol (two tabs) or both (three tabs)
+Tabbed out Sergeants need to be excluded from Dragonrage Bolts (one tab) or Drakeblade (two tabs) or both (three tabs)
+Drakeblade - Power Sword, Master-crafted Power Sword or Combat Knife
 
 Sergeants
-	Assault Intercessors
-	Heavy Intercessors
-	Incursors
-	Infiltrators
-	Intercessors
-	Tactical Squad
-	Aggressors
-	Bladeguard Veterans
-	Centurion Assault
-	Company Veterans
-	Reiver Squad
-	Relic Terminators
-	Scout Squad
-	Sternguard Veterans
-	Terminator Assault Squad
-	Terminator Squad
-	Vanguard Veterans
-	Veteran Intercessors
-	Tyrannic War Veterans
-	Assault Squad
-	Bike Squad
-	Inceptor Squad
-	Outriders
-	Scout Bikes
-	Suppressors
-	Centurion Devastators
-	Devastators
-	Eliminators
-	Eradicators
-	Hellblasters
-	Desolation Squad

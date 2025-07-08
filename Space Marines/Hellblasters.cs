@@ -127,7 +127,12 @@ namespace Roster_Builder.Space_Marines
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     cbOption1.Enabled = true;
 
-                    if(chosenRelic == "Sunwrath Pistol")
+                    if(chosenRelic == "Hellfury Bolts" || chosenRelic == "Dragonrage Bolts")
+                    {
+                        cbOption1.Checked = false;
+                        cbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol") //Ultramarines Plasma Pistol
                     {
                         cbOption1.Checked = true;
                         cbOption1.Enabled = false;

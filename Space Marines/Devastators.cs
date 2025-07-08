@@ -207,6 +207,28 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Salamanders Strat Relics
+                    else if (chosenRelic == "Dragonrage Bolts (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                    }
+                    else if (chosenRelic == "Dragonrage Bolts (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Drakeblade (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 13;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Drakeblade (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 8;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     Relic = chosenRelic;
@@ -312,6 +334,28 @@ namespace Roster_Builder.Space_Marines
                         else if (Relic == "Sunwrath Pistol (Slot 2)")
                         {
                             cmbOption2.SelectedIndex = 4;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Salamanders Strat Relics
+                        else if (Relic == "Dragonrage Bolts (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                        }
+                        else if (Relic == "Dragonrage Bolts (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        else if (Relic == "Drakeblade (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 13;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Drakeblade (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 8;
                             cmbOption2.Enabled = false;
                         }
                         #endregion

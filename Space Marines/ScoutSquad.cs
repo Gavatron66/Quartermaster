@@ -117,6 +117,9 @@ namespace Roster_Builder.Space_Marines
                 cbStratagem5.Checked = false;
                 cmbRelic.SelectedIndex = 0;
             }
+
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -190,8 +193,10 @@ namespace Roster_Builder.Space_Marines
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
 
                     cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
                     restrictedIndexes.Clear();
 
+                    #region Codex Supplement: Ultramarines
                     if (chosenRelic == "Hellfury Bolts")
                     {
                         restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
@@ -202,6 +207,19 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 9;
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
+                    #region Codex Supplement: Salamanders
+                    else if (chosenRelic == "Dragonrage Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cmbOption2.SelectedIndex = 8;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -362,6 +380,7 @@ namespace Roster_Builder.Space_Marines
 
                         restrictedIndexes.Clear();
 
+                        #region Codex Supplement: Ultramarines
                         if (Relic == "Hellfury Bolts")
                         {
                             restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
@@ -371,6 +390,18 @@ namespace Roster_Builder.Space_Marines
                             cmbOption1.SelectedIndex = 9;
                             cmbOption1.Enabled = false;
                         }
+                        #endregion
+                        #region Codex Supplement: Salamanders
+                        else if (Relic == "Dragonrage Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                        }
+                        else if (Relic == "Drakeblade")
+                        {
+                            cmbOption2.SelectedIndex = 8;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
 
                         this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     }

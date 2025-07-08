@@ -796,12 +796,18 @@ namespace Roster_Builder.Space_Marines
                         relics.Add("Sunwrath Pistol");
                     }
 
-                    if (keywords.Contains("TACTICAL SQUAD") || keywords.Contains("DEVASTATOR SQUAD") || keywords.Contains("CENTURION DEVASTATOR SQUAD"))
+                    if (keywords.Contains("TACTICAL SQUAD") || keywords.Contains("DEVASTATOR SQUAD"))
                     {
                         relics[3] = "Hellfury Bolts (Slot 1)";
                         relics[4] = "Sunwrath Pistol (Slot 1)";
                         relics.Insert(4, "Hellfury Bolts (Slot 2)");
                         relics.Add("Sunwrath Pistol (Slot 2)");
+                    }
+
+                    if (keywords.Contains("CENTURION DEVASTATOR SQUAD"))
+                    {
+                        relics[3] = "Hellfury Bolts (Slot 1)";
+                        relics.Add("Hellfury Bolts (Slot 2)");
                     }
                 }
                 #endregion
@@ -809,23 +815,28 @@ namespace Roster_Builder.Space_Marines
                 if (customSubFactionTraits[2] == "Salamanders" && !keywords.Contains("TERMINATOR ASSAULT SQUAD"))
                 {
                     relics.Add("Dragonrage Bolts");
-                    relics.Add("Drakeblade");
 
                     //I don't like this solution but it will do for now
-                    //if (!(keywords.Contains("TERMINATOR") || keywords.Contains("CENTURION") || keywords.Contains("PHOBOS")
-                    //    || keywords.Contains("MK X GRAVIS") || keywords.Contains("TYRANNIC WAR VETERANS") || keywords.Contains("OUTRIDER SQUAD")
-                    //    || keywords.Contains("SUPPRESSOR SQUAD") || keywords.Contains("DESOLATION SQUAD")))
-                    //{
-                    //    relics.Add("Sunwrath Pistol");
-                    //}
+                    if (!(keywords.Contains("MK X GRAVIS") || keywords.Contains("CENTURION") || keywords.Contains("OUTRIDER SQUAD")
+                        || keywords.Contains("SUPPRESSOR SQUAD") || keywords.Contains("HELLBLASTER SQUAD") || keywords.Contains("DESOLATION SQUAD")
+                        || (keywords.Contains("PHOBOS") && !keywords.Contains("REIVER SQUAD"))))
+                    {
+                        relics.Add("Drakeblade");
+                    }
 
-                    //if (keywords.Contains("TACTICAL SQUAD") || keywords.Contains("DEVASTATOR SQUAD") || keywords.Contains("CENTURION DEVASTATOR SQUAD"))
-                    //{
-                    //    relics[3] = "Hellfury Bolts (Slot 1)";
-                    //    relics[4] = "Sunwrath Pistol (Slot 1)";
-                    //    relics.Insert(4, "Hellfury Bolts (Slot 2)");
-                    //    relics.Add("Sunwrath Pistol (Slot 2)");
-                    //}
+                    if (keywords.Contains("TACTICAL SQUAD") || keywords.Contains("DEVASTATOR SQUAD"))
+                    {
+                        relics[3] = "Dragonrage Bolts (Slot 1)";
+                        relics[4] = "Drakeblade (Slot 1)";
+                        relics.Insert(4, "Dragonrage Bolts (Slot 2)");
+                        relics.Add("Drakeblade (Slot 2)");
+                    }
+
+                    if (keywords.Contains("CENTURION DEVASTATOR SQUAD"))
+                    {
+                        relics[3] = "Dragonrage Bolts (Slot 1)";
+                        relics.Add("Dragonrage Bolts (Slot 2)");
+                    }
                 }
                 #endregion
 

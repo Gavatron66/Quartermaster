@@ -110,7 +110,9 @@ namespace Roster_Builder.Space_Marines
                 {
                     if (Relic != null && cmbRelic.Items.Contains(Relic))
                     {
+                        antiLoop = true;
                         cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                        antiLoop = false;
                     }
                     else
                     {
@@ -215,12 +217,27 @@ namespace Roster_Builder.Space_Marines
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
 
+                    #region Codex Supplement: Ultramarines
                     if (chosenRelic == "Hellfury Bolts")
                     {
                         cmbOption1.SelectedIndex = 0;
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
+                    #region Codex Supplement: Ultramarines
+                    else if (chosenRelic == "Dragonrage Bolts")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cmbOption2.SelectedIndex = 3;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -336,7 +353,7 @@ namespace Roster_Builder.Space_Marines
                         });
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
-                        if(Relic == "Hellfury Bolts")
+                        if(Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts")
                         {
                             cmbOption1.Enabled = false;
                         }

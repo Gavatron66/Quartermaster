@@ -163,7 +163,7 @@ namespace Roster_Builder.Space_Marines
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
 
-                    if(chosenRelic == "Hellfury Bolts")
+                    if(chosenRelic == "Hellfury Bolts" || chosenRelic == "Dragonrage Bolts")
                     {
                         cmbOption2.SelectedIndex = 1;
                         cmbOption2.Enabled = false;
@@ -219,7 +219,7 @@ namespace Roster_Builder.Space_Marines
                             panel.Controls["lblRelic"].Visible = true;
                             cmbRelic.Visible = true;
 
-                            if(Relic == "Hellfury Bolts")
+                            if(Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts")
                             {
                                 cmbOption2.SelectedIndex = 1;
                                 cmbOption2.Enabled = false;

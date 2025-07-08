@@ -185,6 +185,7 @@ namespace Roster_Builder.Space_Marines
                     cmbOption1.Enabled = true;
                     restrictedIndexes.Clear();
 
+                    #region Codex Supplement: Ultramarines
                     if (chosenRelic == "Hellfury Bolts")
                     {
                         restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
@@ -195,6 +196,19 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 8;
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
+                    #region Codex Supplement: Salamanders
+                    else if (chosenRelic == "Dragonrage Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cmbOption1.SelectedIndex = 12;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;

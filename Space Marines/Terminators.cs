@@ -19,7 +19,9 @@ namespace Roster_Builder.Space_Marines
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "NL2m1k";
             Weapons.Add("");
-            for (int i = 0; i < UnitSize; i++)
+            Weapons.Add("Storm Bolter");
+            Weapons.Add("Power Sword");
+            for (int i = 1; i < UnitSize; i++)
             {
                 Weapons.Add("Storm Bolter");
                 Weapons.Add("Power Fist");
@@ -76,13 +78,6 @@ namespace Roster_Builder.Space_Marines
                 "Storm Bolter"
             });
 
-            cmbOption2.Items.Clear();
-            cmbOption2.Items.AddRange(new string[]
-            {
-                "Chainfist",
-                "Power Fist"
-            });
-
             cbStratagem5.Text = repo.StratagemList[4];
             cbStratagem5.Location = new System.Drawing.Point(panel.Controls["cbOption1"].Location.X, panel.Controls["cbOption1"].Location.Y + 60);
             panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
@@ -129,6 +124,11 @@ namespace Roster_Builder.Space_Marines
 
         public override void SaveDatasheets(int code, Panel panel)
         {
+            if(antiLoop)
+            {
+                return;
+            }
+
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
@@ -201,6 +201,7 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 61:
                     currentIndex = lbModelSelect.SelectedIndex;
+                    antiLoop = true;
 
                     if (currentIndex < 0)
                     {
@@ -218,9 +219,6 @@ namespace Roster_Builder.Space_Marines
                         panel.Controls["lblOption1"].Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
                         cmbOption1.Enabled = true;
-
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 2]);
 
                         if (Weapons[0] == "")
                         {
@@ -245,14 +243,35 @@ namespace Roster_Builder.Space_Marines
                                 panel.Controls["lblRelic"].Visible = true;
                                 cmbRelic.Visible = true;
                             }
+
+                            cmbOption2.Items.Clear();
+                            cmbOption2.Items.AddRange(new string[]
+                            {
+                                "Power Sword"
+                            });
+                            cmbOption2.Enabled = false;
                         }
                         else
                         {
                             cbStratagem5.Visible = false;
                             cmbRelic.Visible = false;
                             panel.Controls["lblRelic"].Visible = false;
+
+                            cmbOption2.Items.Clear();
+                            cmbOption2.Items.AddRange(new string[]
+                            {
+                                "Chainfist",
+                                "Power Fist"
+                            });
+                            cmbOption2.Enabled = true;
                         }
+
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 2]);
+
                     }
+
+                    antiLoop = false;
                     break;
                 case 75:
                     if (cbStratagem5.Checked)

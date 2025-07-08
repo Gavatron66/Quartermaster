@@ -109,8 +109,8 @@ namespace Roster_Builder.Space_Marines
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     gb_cmbOption1.Enabled = true;
 
-                    //Ultramarines
-                    if(chosenRelic == "Hellfury Bolts")
+                    #region Codex Supplement: Ultramarines
+                    if (chosenRelic == "Hellfury Bolts")
                     {
                         gb_cmbOption1.SelectedIndex = 0;
                         gb_cmbOption1.Enabled = false;
@@ -120,6 +120,14 @@ namespace Roster_Builder.Space_Marines
                         gb_cmbOption1.SelectedIndex = 2;
                         gb_cmbOption1.Enabled = false;
                     }
+                    #endregion
+                    #region Codex Supplement: Salamanders
+                    if (chosenRelic == "Dragonrage Bolts")
+                    {
+                        gb_cmbOption1.SelectedIndex = 0;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;

@@ -10,7 +10,6 @@ namespace Roster_Builder.Space_Marines
     public class AssaultSquad : Datasheets
     {
         int currentIndex = 0;
-        bool isLoading = false;
         int[] restrictArray = new int[] { 0, 0 };
 
         public AssaultSquad()
@@ -113,7 +112,9 @@ namespace Roster_Builder.Space_Marines
                 {
                     if (Relic != null && cmbRelic.Items.Contains(Relic))
                     {
+                        antiLoop = true;
                         cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                        antiLoop = false;
                     }
                     else
                     {
@@ -133,7 +134,7 @@ namespace Roster_Builder.Space_Marines
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            if (isLoading)
+            if (antiLoop)
             {
                 return;
             }
@@ -198,8 +199,10 @@ namespace Roster_Builder.Space_Marines
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
 
                     cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
                     restrictedIndexes.Clear();
 
+                    #region Codex Supplement: Ultramarines
                     if (chosenRelic == "Hellfury Bolts")
                     {
                         cmbOption1.SelectedIndex = 1;
@@ -210,6 +213,19 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 4;
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
+                    #region Codex Supplement: Salamanders
+                    else if (chosenRelic == "Dragonrage Bolts")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cmbOption2.SelectedIndex = 5;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -255,7 +271,7 @@ namespace Roster_Builder.Space_Marines
                 case 61:
                     currentIndex = lbModelSelect.SelectedIndex;
 
-                    if (currentIndex < 0 && !isLoading)
+                    if (currentIndex < 0 && !antiLoop)
                     {
                         cmbOption1.Visible = false;
                         cmbOption2.Visible = false;
@@ -264,9 +280,10 @@ namespace Roster_Builder.Space_Marines
                         panel.Controls["lblOption1"].Visible = false;
                         panel.Controls["lblOption2"].Visible = false;
                         cmbOption1.Enabled = true;
+                        cmbOption2.Enabled = true;
                         break;
                     }
-                    isLoading = true;
+                    antiLoop = true;
 
                     if (currentIndex == 0)
                     {
@@ -321,15 +338,32 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
                         this.DrawItemWithRestrictions(new List<int>(), cmbOption1);
 
+                        #region Codex Supplement: Ultramarines
                         if (Relic == "Hellfury Bolts")
                         {
+                            cmbOption1.SelectedIndex = 1;
                             cmbOption1.Enabled = false;
                         }
                         else if (Relic == "Sunwrath Pistol")
                         {
+                            cmbOption1.SelectedIndex = 4;
                             cmbOption1.Enabled = false;
                         }
-                        isLoading = false;
+                        #endregion
+                        #region Codex Supplement: Salamanders
+                        else if (Relic == "Dragonrage Bolts")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Drakeblade")
+                        {
+                            cmbOption2.SelectedIndex = 5;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+
+                        antiLoop = false;
                         break;
                     }
 
@@ -369,7 +403,7 @@ namespace Roster_Builder.Space_Marines
                     }
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
 
-                    isLoading = false;
+                    antiLoop = false;
                     break;
                 case 75:
                     if (cbStratagem5.Checked)

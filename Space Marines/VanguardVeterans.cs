@@ -219,8 +219,10 @@ namespace Roster_Builder.Space_Marines
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
 
                     cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
                     restrictedIndexes.Clear();
 
+                    #region Codex Supplement: Ultramarines
                     if (chosenRelic == "Hellfury Bolts")
                     {
                         cmbOption1.SelectedIndex = 1;
@@ -231,6 +233,19 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 4;
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
+                    #region Codex Supplement: Salamanders
+                    else if (chosenRelic == "Dragonrage Bolts")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cmbOption2.SelectedIndex = 8;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -320,6 +335,7 @@ namespace Roster_Builder.Space_Marines
                     panel.Controls["lblOption2"].Visible = true;
                     cbOption2.Visible = true;
                     cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
 
                     if (Weapons[(currentIndex * 2) + 1] != "Heavy Thunder Hammer (+12 pts)")
                     {
@@ -353,14 +369,30 @@ namespace Roster_Builder.Space_Marines
                             cmbRelic.Visible = false;
                         }
 
+                        #region Codex Supplement: Ultramarines
                         if (Relic == "Hellfury Bolts")
                         {
+                            cmbOption1.SelectedIndex = 1;
                             cmbOption1.Enabled = false;
                         }
                         else if (Relic == "Sunwrath Pistol")
                         {
+                            cmbOption1.SelectedIndex = 4;
                             cmbOption1.Enabled = false;
                         }
+                        #endregion
+                        #region Codex Supplement: Salamanders
+                        else if (Relic == "Dragonrage Bolts")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Drakeblade")
+                        {
+                            cmbOption2.SelectedIndex = 8;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
                     }
                     else
                     {

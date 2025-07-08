@@ -196,6 +196,7 @@ namespace Roster_Builder.Genestealer_Cults
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     gb_cmbOption1.Enabled = true;
+                    gb_cmbOption2.Enabled = true;
 
                     #region Codex Supplement: Ultramarines
                     if (chosenRelic == "Hellfury Bolts")
@@ -208,9 +209,17 @@ namespace Roster_Builder.Genestealer_Cults
                         gb_cmbOption1.SelectedIndex = 2;
                         gb_cmbOption1.Enabled = false;
                     }
-                    else
+                    #endregion
+                    #region Codex Supplement: Salamanders
+                    if (chosenRelic == "Dragonrage Bolts")
                     {
-                        gb_cmbOption1.Enabled = true;
+                        gb_cmbOption1.SelectedIndex = 0;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        gb_cmbOption2.SelectedIndex = 3;
+                        gb_cmbOption2.Enabled = false;
                     }
                     #endregion
 

@@ -128,9 +128,10 @@ namespace Roster_Builder.Space_Marines
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     gb_cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
 
                     #region Codex Supplement: Ultramarines
-                    if(chosenRelic == "Hellfury Bolts")
+                    if (chosenRelic == "Hellfury Bolts")
                     {
                         gb_cmbOption1.SelectedIndex = 1;
                         gb_cmbOption1.Enabled = false;
@@ -140,9 +141,17 @@ namespace Roster_Builder.Space_Marines
                         gb_cmbOption1.SelectedIndex = 2;
                         gb_cmbOption1.Enabled = false;
                     }
-                    else
+                    #endregion
+                    #region Codex Supplement: Salamanders
+                    else if (chosenRelic == "Dragonrage Bolts")
                     {
-                        gb_cmbOption1.Enabled = true;
+                        gb_cmbOption1.SelectedIndex = 1;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cmbOption2.SelectedIndex = 2;
+                        cmbOption2.Enabled = false;
                     }
                     #endregion
 
