@@ -326,6 +326,7 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Raven Guard
                     else if (chosenRelic == "The Ebonclaws")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Lightning Claw");
@@ -343,6 +344,7 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
                     else if (chosenRelic == "The Axe of Medusa")
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
@@ -500,7 +502,8 @@ namespace Roster_Builder.Space_Marines
 
             #region Bolt Relics
             restrictedIndexes.Clear();
-            if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts")
+            if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
+                || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts")
             {
                 restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13, 15 });
                 cmbOption1.SelectedIndex = 1;

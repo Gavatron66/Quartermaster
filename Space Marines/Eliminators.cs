@@ -144,6 +144,12 @@ namespace Roster_Builder.Space_Marines
                         restrictedIndexes.Add(2);
                     }
                     #endregion
+                    #region Codex Supplement: Raven Guard
+                    if (chosenRelic == "Korvidari Bolts")
+                    {
+                        restrictedIndexes.Add(2);
+                    }
+                    #endregion
 
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
                     Relic = chosenRelic;

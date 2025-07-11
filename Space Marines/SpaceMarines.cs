@@ -228,7 +228,7 @@ namespace Roster_Builder.Space_Marines
             }
             else if (currentSubFaction == "Raven Guard")
             {
-                datasheets.Insert(22, new KayvaanShrike());
+                datasheets.Insert(0, new KayvaanShrike());
             }
             else if (currentSubFaction == "Iron Hands")
             {
@@ -839,6 +839,31 @@ namespace Roster_Builder.Space_Marines
                     }
                 }
                 #endregion
+                #region Raven Guard
+                if (customSubFactionTraits[2] == "Raven Guard" && !keywords.Contains("TERMINATOR ASSAULT SQUAD"))
+                {
+                    //I don't like this solution but it will do for now
+                    if (!(keywords.Contains("CENTURION") || (keywords.Contains("MK X GRAVIS") && !keywords.Contains("ERADICATOR SQUAD"))
+                        || keywords.Contains("TERMINATOR") || keywords.Contains("REIVER SQUAD")))
+                    {
+                        relics.Add("Silentus Pistol");
+                    }
+
+                    relics.Add("Korvidari Bolts");
+
+                    if (keywords.Contains("TACTICAL SQUAD") || keywords.Contains("DEVASTATOR SQUAD"))
+                    {
+                        relics[4] = "Korvidari Bolts (Slot 1)";
+                        relics.Add("Korvidari Bolts (Slot 2)");
+                    }
+
+                    if (keywords.Contains("CENTURION DEVASTATOR SQUAD"))
+                    {
+                        relics[3] = "Korvidari Bolts (Slot 1)";
+                        relics.Add("Korvidari Bolts (Slot 2)");
+                    }
+                }
+                #endregion
 
                 return relics;
             }
@@ -1286,7 +1311,7 @@ namespace Roster_Builder.Space_Marines
             }
             #endregion
             #region Raven Guard Relics
-                if (currentSubFaction == "Raven Guard")
+            if (currentSubFaction == "Raven Guard")
             {
                 if((keywords.Contains("CAPTAIN") && !keywords.Contains("PRIMARIS")) ||
                     (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS"))
@@ -1328,7 +1353,7 @@ namespace Roster_Builder.Space_Marines
                 relics.Add("Shadowmaster Cloak");
 
                 if((keywords.Contains("CAPTAIN") && !(keywords.Contains("MK X GRAVIS") || keywords.Contains("TERMINATOR"))) ||
-                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS") && !keywords.Contains("TERMINATOR")) ||
                     (keywords.Contains("LIBRARIAN") && !keywords.Contains("TERMINATOR")) ||
                     (keywords.Contains("LIEUTENANT") && !keywords.Contains("REIVER")) ||
                     (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
@@ -1840,6 +1865,12 @@ namespace Roster_Builder.Space_Marines
                         StratagemList[3] = "Stratagem: Trust of Prometheus";
                         StratagemList[4] = "Stratagem: Master Artisans";
                     }
+                    else if (customSubFactionTraits[2] == "Raven Guard")
+                    {
+                        StratagemList[2] = "Stratagem: Master of the Trifold Path";
+                        StratagemList[3] = "Stratagem: Token of Brotherhood";
+                        StratagemList[4] = "Stratagem: Favour of the Ravenspire";
+                    }
                     break;
                 case 51:
                     customSubFactionTraits[0] = cmbSubCustom1.SelectedItem.ToString();
@@ -1861,6 +1892,12 @@ namespace Roster_Builder.Space_Marines
                         StratagemList[2] = "Stratagem: Exemplar of the Promethean Creed";
                         StratagemList[3] = "Stratagem: Trust of Prometheus";
                         StratagemList[4] = "Stratagem: Master Artisans";
+                    }
+                    else if (customSubFactionTraits[2] == "Raven Guard")
+                    {
+                        StratagemList[2] = "Stratagem: Master of the Trifold Path";
+                        StratagemList[3] = "Stratagem: Token of Brotherhood";
+                        StratagemList[4] = "Stratagem: Favour of the Ravenspire";
                     }
                     break;
             }

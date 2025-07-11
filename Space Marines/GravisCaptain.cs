@@ -250,7 +250,7 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
-                    #region Codex Supplement: Slamanders
+                    #region Codex Supplement: Salamanders
                     else if (chosenRelic == "Drakeblade")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");

@@ -209,6 +209,18 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Raven Guard
+                    else if (chosenRelic == "Silentus Pistol")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Korvidari Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -310,6 +322,7 @@ namespace Roster_Builder.Space_Marines
                             }
                             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[2]);
 
+                            #region Codex Supplement: Ultramarines
                             if (Relic == "Hellfury Bolts")
                             {
                                 restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
@@ -320,6 +333,31 @@ namespace Roster_Builder.Space_Marines
                                 cmbOption1.SelectedIndex = 8;
                                 cmbOption1.Enabled = false;
                             }
+                            #endregion
+                            #region Codex Supplement: Salamanders
+                            else if (Relic == "Dragonrage Bolts")
+                            {
+                                restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                                cmbOption1.SelectedIndex = 1;
+                            }
+                            else if (Relic == "Drakeblade")
+                            {
+                                cmbOption1.SelectedIndex = 12;
+                                cmbOption1.Enabled = false;
+                            }
+                            #endregion
+                            #region Codex Supplement: Raven Guard
+                            else if (Relic == "Silentus Pistol")
+                            {
+                                cmbOption1.SelectedIndex = 1;
+                                cmbOption1.Enabled = false;
+                            }
+                            else if (Relic == "Korvidari Bolts")
+                            {
+                                restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                                cmbOption1.SelectedIndex = 1;
+                            }
+                            #endregion
                         }
                         else if (currentIndex == attackIndex)
                         {

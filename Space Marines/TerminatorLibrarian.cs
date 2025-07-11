@@ -197,28 +197,10 @@ namespace Roster_Builder.Space_Marines
 
             cmbDiscipline.SelectedItem = disciplineSelected;
 
-            if (Factionupgrade == "(None)" || Factionupgrade == null)
-            {
-                lblPsyker.Text = "Select two of the following:";
-                clbPsyker.ClearSelected();
-                for (int i = 0; i < clbPsyker.Items.Count; i++)
-                {
-                    clbPsyker.SetItemChecked(i, false);
-                }
-
-                if (PsykerPowers[0] != string.Empty)
-                {
-                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
-                }
-                if (PsykerPowers[1] != string.Empty)
-                {
-                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
-                }
-            }
-            else
+            if (!(Factionupgrade == "(None)" || Factionupgrade == null) ^ Relic == "Tome of Malcador")
             {
                 lblPsyker.Text = "Select three of the following:";
-                if(PsykerPowers.Length != 3)
+                if (PsykerPowers.Length != 3)
                 {
                     PsykerPowers = new string[3] { string.Empty, string.Empty, string.Empty };
                 }
@@ -240,6 +222,55 @@ namespace Roster_Builder.Space_Marines
                 if (PsykerPowers[2] != string.Empty)
                 {
                     clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[2]), true);
+                }
+            }
+            else if (!(Factionupgrade == "(None)" || Factionupgrade == null) && Relic == "Tome of Malcador")
+            {
+                lblPsyker.Text = "Select four of the following:";
+                if (PsykerPowers.Length != 4)
+                {
+                    PsykerPowers = new string[4] { string.Empty, string.Empty, string.Empty, string.Empty };
+                }
+
+                clbPsyker.ClearSelected();
+                for (int i = 0; i < clbPsyker.Items.Count; i++)
+                {
+                    clbPsyker.SetItemChecked(i, false);
+                }
+
+                if (PsykerPowers[0] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                }
+                if (PsykerPowers[1] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
+                }
+                if (PsykerPowers[2] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[2]), true);
+                }
+                if (PsykerPowers[3] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[3]), true);
+                }
+            }
+            else
+            {
+                lblPsyker.Text = "Select two of the following:";
+                clbPsyker.ClearSelected();
+                for (int i = 0; i < clbPsyker.Items.Count; i++)
+                {
+                    clbPsyker.SetItemChecked(i, false);
+                }
+
+                if (PsykerPowers[0] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                }
+                if (PsykerPowers[1] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
                 }
             }
 
@@ -363,11 +394,21 @@ namespace Roster_Builder.Space_Marines
                         cmbWarlord.Items.Add("Psychic Mastery");
                         cmbRelic.Items.Add("Neural Shroud");
 
-                        panel.Controls["lblPsyker"].Text = "Select three of the following:";
-                        
-                        if(PsykerPowers.Length != 3)
+                        if (Relic == "Tome of Malcador")
                         {
-                            PsykerPowers = new string[3] { PsykerPowers[0], PsykerPowers[1], string.Empty };
+                            panel.Controls["lblPsyker"].Text = "Select four of the following:";
+                            if (PsykerPowers.Length != 4)
+                            {
+                                PsykerPowers = new string[4] { PsykerPowers[0], PsykerPowers[1], PsykerPowers[2], string.Empty };
+                            }
+                        }
+                        else
+                        {
+                            panel.Controls["lblPsyker"].Text = "Select three of the following:";
+                            if (PsykerPowers.Length != 3)
+                            {
+                                PsykerPowers = new string[3] { PsykerPowers[0], PsykerPowers[1], string.Empty };
+                            }
                         }
                     }
                     else
@@ -385,24 +426,49 @@ namespace Roster_Builder.Space_Marines
                         cmbWarlord.Items.Remove("Psychic Mastery");
                         cmbRelic.Items.Remove("Neural Shroud");
 
-                        if (PsykerPowers.Length == 3)
+                        if (PsykerPowers.Length > 2)
                         {
-                            panel.Controls["lblPsyker"].Text = "Select two of the following:";
-                            var temp = PsykerPowers;
-
-                            if (PsykerPowers[2] != string.Empty)
+                            if (Relic == "Tome of Malcador")
                             {
-                                PsykerPowers = new string[2] { string.Empty, string.Empty };
+                                panel.Controls["lblPsyker"].Text = "Select three of the following:";
+                                var temp = PsykerPowers;
 
-                                for (int i = 0; i < clbPsyker.Items.Count; i++)
+                                if (PsykerPowers[2] != string.Empty)
                                 {
-                                    clbPsyker.SetItemChecked(i, false);
-                                }
+                                    PsykerPowers = new string[3] { string.Empty, string.Empty, string.Empty };
 
-                                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
-                                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[1]), true);
-                                PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                                PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
+                                    for (int i = 0; i < clbPsyker.Items.Count; i++)
+                                    {
+                                        clbPsyker.SetItemChecked(i, false);
+                                    }
+
+                                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
+                                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[1]), true);
+                                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[2]), true);
+                                    PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                                    PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
+                                    PsykerPowers[2] = clbPsyker.CheckedItems[2] as string;
+                                }
+                            }
+                            else
+                            {
+                                panel.Controls["lblPsyker"].Text = "Select two of the following:";
+                                var temp = PsykerPowers;
+
+                                if (PsykerPowers[1] != string.Empty)
+                                {
+                                    PsykerPowers = new string[2] { string.Empty, string.Empty };
+
+                                    for (int i = 0; i < clbPsyker.Items.Count; i++)
+                                    {
+                                        clbPsyker.SetItemChecked(i, false);
+                                    }
+
+                                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
+                                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[1]), true);
+                                    PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                                    PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
+                                }
                             }
                         }
                     }
@@ -428,7 +494,85 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption2.Enabled = true;
                     }
+
                     Relic = chosenRelic;
+
+                    if (!(Factionupgrade == "(None)" || Factionupgrade == null) ^ Relic == "Tome of Malcador")
+                    {
+                        panel.Controls["lblPsyker"].Text = "Select three of the following:";
+                        if (PsykerPowers.Length != 3)
+                        {
+                            PsykerPowers = new string[3] { string.Empty, string.Empty, string.Empty };
+                        }
+
+                        clbPsyker.ClearSelected();
+                        for (int i = 0; i < clbPsyker.Items.Count; i++)
+                        {
+                            clbPsyker.SetItemChecked(i, false);
+                        }
+
+                        if (PsykerPowers[0] != string.Empty)
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                        }
+                        if (PsykerPowers[1] != string.Empty)
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
+                        }
+                        if (PsykerPowers[2] != string.Empty)
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[2]), true);
+                        }
+                    }
+                    else if (!(Factionupgrade == "(None)" || Factionupgrade == null) && Relic == "Tome of Malcador")
+                    {
+                        panel.Controls["lblPsyker"].Text = "Select four of the following:";
+                        if (PsykerPowers.Length != 4)
+                        {
+                            PsykerPowers = new string[4] { string.Empty, string.Empty, string.Empty, string.Empty };
+                        }
+
+                        clbPsyker.ClearSelected();
+                        for (int i = 0; i < clbPsyker.Items.Count; i++)
+                        {
+                            clbPsyker.SetItemChecked(i, false);
+                        }
+
+                        if (PsykerPowers[0] != string.Empty)
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                        }
+                        if (PsykerPowers[1] != string.Empty)
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
+                        }
+                        if (PsykerPowers[2] != string.Empty)
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[2]), true);
+                        }
+                        if (PsykerPowers[3] != string.Empty)
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[3]), true);
+                        }
+                    }
+                    else
+                    {
+                        panel.Controls["lblPsyker"].Text = "Select two of the following:";
+                        clbPsyker.ClearSelected();
+                        for (int i = 0; i < clbPsyker.Items.Count; i++)
+                        {
+                            clbPsyker.SetItemChecked(i, false);
+                        }
+
+                        if (PsykerPowers[0] != string.Empty)
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                        }
+                        if (PsykerPowers[1] != string.Empty)
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
+                        }
+                    }
                     break;
                 case 19:
                     stratWarlordTrait = cmbOption6.SelectedItem as string;
@@ -452,23 +596,7 @@ namespace Roster_Builder.Space_Marines
                     else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
-                    if (Factionupgrade == "(None)" || Factionupgrade == null)
-                    {
-                        if (clbPsyker.CheckedItems.Count < 2)
-                        {
-                            break;
-                        }
-                        else if (clbPsyker.CheckedItems.Count == 2)
-                        {
-                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
-                        }
-                        else
-                        {
-                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
-                        }
-                    }
-                    else
+                    if (!(Factionupgrade == "(None)" || Factionupgrade == null) ^ Relic == "Tome of Malcador")
                     {
                         if (clbPsyker.CheckedItems.Count < 3)
                         {
@@ -479,6 +607,40 @@ namespace Roster_Builder.Space_Marines
                             PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
                             PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
                             PsykerPowers[2] = clbPsyker.CheckedItems[2] as string;
+                        }
+                        else
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        }
+                    }
+                    else if (!(Factionupgrade == "(None)" || Factionupgrade == null) && Relic == "Tome of Malcador")
+                    {
+                        if (clbPsyker.CheckedItems.Count < 4)
+                        {
+                            break;
+                        }
+                        else if (clbPsyker.CheckedItems.Count == 4)
+                        {
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
+                            PsykerPowers[2] = clbPsyker.CheckedItems[2] as string;
+                            PsykerPowers[3] = clbPsyker.CheckedItems[3] as string;
+                        }
+                        else
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        }
+                    }
+                    else
+                    {
+                        if (clbPsyker.CheckedItems.Count < 2)
+                        {
+                            break;
+                        }
+                        else if (clbPsyker.CheckedItems.Count == 2)
+                        {
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
                         }
                         else
                         {

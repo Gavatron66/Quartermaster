@@ -56,8 +56,7 @@ Figured out 3 DG Stratagem implementations, refer to those going forward for cha
 
 Just fixed (3/11) some of the main form's listboxes to not flicker as often; try and figure that out for the model version
 
-Need to go back and fix Librarians; some relics give extra psychic powers
-	The Tome of Vel'cona is going to be tricky...
+This is more of a note than a todo, the Tome of Vel'cona grants Salamander Librarians an additional Salamander-unique psychic power. I'm not going to implement at this time, or maybe ever, since that's a lot of work for such a niche case.
 
 Characters to do list:
 	Primaris Captain
@@ -322,7 +321,14 @@ Sergeants
                 }
             }
 		
-Tabbed out Sergeants need to be excluded from Dragonrage Bolts (one tab) or Drakeblade (two tabs) or both (three tabs)
-Drakeblade - Power Sword, Master-crafted Power Sword or Combat Knife
+Tabbed out Sergeants need to be excluded from Korvidari Bolts (one tab) or Silentus Pistol (two tabs) or both (three tabs)
+Silentus Pistol - Bolt Pistol or Heavy Bolt Pistol
+Bolt Relics:
+	Korvidari Bolts
+	Haywire Bolts
+	Stormwrath Bolts
+	Gatebreaker Bolts
 
+Characters to do list:
+	
 Sergeants

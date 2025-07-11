@@ -112,7 +112,8 @@ namespace Roster_Builder.Space_Marines
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     cmbOption1.Enabled = true;
 
-                    if (chosenRelic == "Hellfury Bolts" || chosenRelic == "Dragonrage Bolts")
+                    if (chosenRelic == "Hellfury Bolts" || chosenRelic == "Dragonrage Bolts" || chosenRelic == "Korvidari Bolts"
+                        || chosenRelic == "Haywire Bolts" || chosenRelic == "Stormwrath Bolts" || chosenRelic == "Gatebreaker Bolts")
                     {
                         cmbOption1.SelectedIndex = 0;
                         cmbOption1.Enabled = false;

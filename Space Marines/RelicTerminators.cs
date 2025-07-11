@@ -226,7 +226,7 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
-                    #region Codex Supplement: Ultramarines
+                    #region Codex Supplement: Salamanders
                     else if (chosenRelic == "Dragonrage Bolts")
                     {
                         cmbOption1.SelectedIndex = 0;
@@ -236,6 +236,13 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption2.SelectedIndex = 3;
                         cmbOption2.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: Raven Guard
+                    else if (chosenRelic == "Korvidari Bolts")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
                     }
                     #endregion
 
@@ -353,7 +360,8 @@ namespace Roster_Builder.Space_Marines
                         });
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
-                        if(Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts")
+                        if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
+                            || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts")
                         {
                             cmbOption1.Enabled = false;
                         }

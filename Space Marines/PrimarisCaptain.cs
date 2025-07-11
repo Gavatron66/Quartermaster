@@ -371,6 +371,7 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 1;
                     }
                     #endregion
+                    #region Codex Supplement: Raven Guard
                     else if (chosenRelic == "Ex Tenebris")
                     {
                         cmbOption1.SelectedIndex = 2;
@@ -380,6 +381,12 @@ namespace Roster_Builder.Space_Marines
                     {
                         //cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
                     }
+                    else if (chosenRelic == "Korvidari Bolts")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
                     else if (chosenRelic == "Scimitar of the Great Khan")
                     {
                         cbOption1.Checked = true;

@@ -220,6 +220,18 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Raven Guard
+                    else if (chosenRelic == "Silentus Pistol")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Korvidari Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -400,6 +412,17 @@ namespace Roster_Builder.Space_Marines
                         {
                             cmbOption2.SelectedIndex = 8;
                             cmbOption2.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Raven Guard
+                        else if (Relic == "Silentus Pistol")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        else if (Relic == "Korvidari Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
                         }
                         #endregion
 

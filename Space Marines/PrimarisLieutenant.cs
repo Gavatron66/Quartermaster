@@ -400,6 +400,19 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 1;
                     }
                     #endregion
+                    #region Codex Supplement: Raven Guard
+                    else if (chosenRelic == "Ex Tenebris")
+                    {
+                        restrictedIndexes.RemoveRange(15, 6);
+                        cmbOption1.SelectedIndex = 15;
+                    }
+                    else if (chosenRelic == "Korvidari Bolts" || chosenRelic == "Silentus Pistol")
+                    {
+                        restrictedIndexes.Clear();
+                        restrictedIndexes.Add(14);
+                        cmbOption1.SelectedIndex = 0;
+                    }
+                    #endregion
                     else
                     {
                         restrictedIndexes.Clear();

@@ -154,6 +154,13 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Raven Guard
+                    else if (chosenRelic == "Korvidari Bolts" || chosenRelic == "Silentus Pistol")
+                    {
+                        gb_cmbOption1.SelectedIndex = 1;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;

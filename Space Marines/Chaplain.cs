@@ -363,6 +363,7 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Raven Guard
                     else if (chosenRelic == "Raven's Fury")
                     {
                         cbOption1.Checked = true;
@@ -373,6 +374,7 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
                     else if (chosenRelic == "Betrayer's Bane")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-melta");
@@ -542,7 +544,8 @@ namespace Roster_Builder.Space_Marines
 
             #region Bolt Relics
             restrictedIndexes.Clear();
-            if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts")
+            if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
+                || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts")
             {
                 restrictedIndexes.AddRange(new int[] { 6, 7, 8 });
                 cmbOption1.SelectedIndex = 0;

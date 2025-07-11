@@ -214,23 +214,13 @@ namespace Roster_Builder.Genestealer_Cults
                     gb_cmbOption2.Enabled = true;
 
                     #region Codex Supplement: Ultramarines
-                    if (chosenRelic == "Hellfury Bolts")
-                    {
-                        gb_cmbOption1.SelectedIndex = 1;
-                        gb_cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Sunwrath Pistol")
+                    if (chosenRelic == "Sunwrath Pistol")
                     {
                         gb_cmbOption1.SelectedIndex = 3;
                         gb_cmbOption1.Enabled = false;
                     }
                     #endregion
                     #region Codex Supplement: Salamanders
-                    if (chosenRelic == "Dragonrage Bolts")
-                    {
-                        gb_cmbOption1.SelectedIndex = 1;
-                        gb_cmbOption1.Enabled = false;
-                    }
                     else if (chosenRelic == "Drakeblade")
                     {
                         gb_cmbOption2.SelectedIndex = 3;

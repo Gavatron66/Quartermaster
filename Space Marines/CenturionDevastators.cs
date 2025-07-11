@@ -191,6 +191,18 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Raven Guard Strat Relics
+                    if (chosenRelic == "Korvidari Bolts (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Korvidari Bolts (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     antiLoop = false;
@@ -262,6 +274,18 @@ namespace Roster_Builder.Space_Marines
                             cmbOption1.Enabled = false;
                         }
                         else if (Relic == "Dragonrage Bolts (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Raven Guard Strat Relics
+                        if (Relic == "Korvidari Bolts (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Korvidari Bolts (Slot 2)")
                         {
                             cmbOption2.SelectedIndex = 1;
                             cmbOption2.Enabled = false;
