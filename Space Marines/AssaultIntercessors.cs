@@ -161,6 +161,25 @@ namespace Roster_Builder.Space_Marines
                         gb_cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Iron Hands
+                    else if (chosenRelic == "Haywire Bolts")
+                    {
+                        gb_cmbOption1.SelectedIndex = 1;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Teeth of Mars")
+                    {
+                        cmbOption2.SelectedIndex = 0;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: White Scars
+                    else if (chosenRelic == "Stormwrath Bolts")
+                    {
+                        gb_cmbOption1.SelectedIndex = 1;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;

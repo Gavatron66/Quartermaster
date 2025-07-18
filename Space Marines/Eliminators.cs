@@ -150,6 +150,18 @@ namespace Roster_Builder.Space_Marines
                         restrictedIndexes.Add(2);
                     }
                     #endregion
+                    #region Codex Supplement: Iron Hands
+                    if (chosenRelic == "Haywire Bolts")
+                    {
+                        restrictedIndexes.Add(2);
+                    }
+                    #endregion
+                    #region Codex Supplement: White Scars
+                    if (chosenRelic == "Stomwrath Bolts")
+                    {
+                        restrictedIndexes.Add(2);
+                    }
+                    #endregion
 
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
                     Relic = chosenRelic;

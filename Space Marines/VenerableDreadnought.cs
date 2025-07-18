@@ -77,6 +77,34 @@ namespace Roster_Builder.Space_Marines
             {
                 cbOption1.Visible = true;
             }
+
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            cbStratagem5.Location = new System.Drawing.Point(cmbOption2.Location.X, cmbOption2.Location.Y + 32);
+            cbStratagem5.Text = "Stratagem: March of the Ancients";
+
+            if (repo.customSubFactionTraits[2] == "Iron Hands")
+            {
+                cbStratagem5.Visible = true;
+            }
+            else
+            {
+                cbStratagem5.Visible = false;
+                if (Stratagem.Contains(cbStratagem5.Text))
+                {
+                    Stratagem.Remove(cbStratagem5.Text);
+                }
+            }
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cbStratagem5.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem5.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -84,6 +112,7 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
 
             switch (code)
             {
@@ -109,6 +138,19 @@ namespace Roster_Builder.Space_Marines
 
                         cmbOption1.Enabled = true;
                         cmbOption2.Enabled = true;
+                    }
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
                     }
                     break;
             }

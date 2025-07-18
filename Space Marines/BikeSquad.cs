@@ -221,6 +221,25 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 1;
                     }
                     #endregion
+                    #region Codex Supplement: Iron Hands
+                    else if (chosenRelic == "Haywire Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Teeth of Mars")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: White Scars
+                    else if (chosenRelic == "Stormwrath Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -353,6 +372,25 @@ namespace Roster_Builder.Space_Marines
                                 cmbOption1.Enabled = false;
                             }
                             else if (Relic == "Korvidari Bolts")
+                            {
+                                restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                                cmbOption1.SelectedIndex = 1;
+                            }
+                            #endregion
+                            #region Codex Supplement: Iron Hands
+                            else if (Relic == "Haywire Bolts")
+                            {
+                                restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                                cmbOption1.SelectedIndex = 1;
+                            }
+                            else if (Relic == "Teeth of Mars")
+                            {
+                                cmbOption1.SelectedIndex = 0;
+                                cmbOption1.Enabled = false;
+                            }
+                            #endregion
+                            #region Codex Supplement: White Scars
+                            else if (Relic == "Stormwrath Bolts")
                             {
                                 restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
                                 cmbOption1.SelectedIndex = 1;

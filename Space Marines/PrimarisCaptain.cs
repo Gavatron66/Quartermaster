@@ -336,6 +336,7 @@ namespace Roster_Builder.Space_Marines
                         else if (chosenRelic == "Purgatorus") //
                         {
                             restrictedIndexes.Add(3);
+                            cmbOption1.SelectedIndex = 1;
                         }
                     #endregion
                     #region Codex Supplement: Ultramarines
@@ -379,7 +380,8 @@ namespace Roster_Builder.Space_Marines
                     }
                     else if (chosenRelic == "Silentus Pistol")
                     {
-                        //cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
                     }
                     else if (chosenRelic == "Korvidari Bolts")
                     {
@@ -387,6 +389,14 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 1;
                     }
                     #endregion
+                    #region Codex Supplement: Iron Hands
+                    else if (chosenRelic == "Haywire Bolts")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
+                    #region Codex Supplement: White Scars
                     else if (chosenRelic == "Scimitar of the Great Khan")
                     {
                         cbOption1.Checked = true;
@@ -394,8 +404,15 @@ namespace Roster_Builder.Space_Marines
                     }
                     else if (chosenRelic == "Equis-pattern Bolt Pistol")
                     {
-                        //cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
                     }
+                    else if (chosenRelic == "Stormwrath Bolts")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
                     else if (chosenRelic == "The Spartean")
                     {
                         //cmbOption1.Items.Remove("Plasma Pistol and Power Fist");

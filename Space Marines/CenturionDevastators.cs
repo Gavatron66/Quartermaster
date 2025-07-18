@@ -203,6 +203,30 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Iron Hands Strat Relics
+                    if (chosenRelic == "Haywire Bolts (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Haywire Bolts (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: White Scars Strat Relics
+                    if (chosenRelic == "Stormwrath Bolts (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Stormwrath Bolts (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     antiLoop = false;
@@ -268,7 +292,7 @@ namespace Roster_Builder.Space_Marines
                         }
                         #endregion
                         #region Codex Supplement: Salamanders Strat Relics
-                        if (Relic == "Dragonrage Bolts (Slot 1)")
+                        else if (Relic == "Dragonrage Bolts (Slot 1)")
                         {
                             cmbOption1.SelectedIndex = 1;
                             cmbOption1.Enabled = false;
@@ -280,12 +304,36 @@ namespace Roster_Builder.Space_Marines
                         }
                         #endregion
                         #region Codex Supplement: Raven Guard Strat Relics
-                        if (Relic == "Korvidari Bolts (Slot 1)")
+                        else if (Relic == "Korvidari Bolts (Slot 1)")
                         {
                             cmbOption1.SelectedIndex = 1;
                             cmbOption1.Enabled = false;
                         }
                         else if (Relic == "Korvidari Bolts (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Iron Hands Strat Relics
+                        else if (Relic == "Haywire Bolts (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Haywire Bolts (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: White Scars Strat Relics
+                        else if (Relic == "Stormwrath Bolts (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Stormwrath Bolts (Slot 2)")
                         {
                             cmbOption2.SelectedIndex = 1;
                             cmbOption2.Enabled = false;

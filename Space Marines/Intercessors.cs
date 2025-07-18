@@ -212,6 +212,13 @@ namespace Roster_Builder.Genestealer_Cults
                         gb_cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Iron Hands
+                    else if (chosenRelic == "Teeth of Mars")
+                    {
+                        gb_cmbOption2.SelectedIndex = 1;
+                        gb_cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;

@@ -108,7 +108,6 @@ Sergeants
 	Terminator Squad
 	Vanguard Veterans
 	Veteran Intercessors
-	Tyrannic War Veterans
 	Assault Squad
 	Bike Squad
 	Inceptor Squad
@@ -323,12 +322,3 @@ Sergeants
 		
 Tabbed out Sergeants need to be excluded from Korvidari Bolts (one tab) or Silentus Pistol (two tabs) or both (three tabs)
 Silentus Pistol - Bolt Pistol or Heavy Bolt Pistol
-Bolt Relics:
-	Korvidari Bolts
-	Haywire Bolts
-	Stormwrath Bolts
-	Gatebreaker Bolts
-
-Characters to do list:
-	
-Sergeants

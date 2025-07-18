@@ -413,6 +413,37 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 0;
                     }
                     #endregion
+                    #region Codex Supplement: Iron Hands
+                    else if (chosenRelic == "Haywire Bolts")
+                    {
+                        restrictedIndexes.Clear();
+                        restrictedIndexes.Add(14);
+                        cmbOption1.SelectedIndex = 0;
+                    }
+                    #endregion
+                    #region Codex Supplement: White Scars
+                    else if (chosenRelic == "Stormwrath Bolts" || chosenRelic == "Equis-pattern Bolt Pistol")
+                    {
+                        restrictedIndexes.Clear();
+                        restrictedIndexes.Add(14);
+                        cmbOption1.SelectedIndex = 0;
+                    }
+                    else if (chosenRelic == "Scimitar of the Great Khan")
+                    {
+                        restrictedIndexes.Remove(1);
+                        restrictedIndexes.Remove(4);
+                        restrictedIndexes.Remove(7);
+                        restrictedIndexes.Remove(10);
+                        restrictedIndexes.Remove(12);
+                        restrictedIndexes.Remove(13);
+                        restrictedIndexes.Remove(14);
+                        restrictedIndexes.Remove(16);
+                        restrictedIndexes.Remove(19);
+                        restrictedIndexes.Remove(22);
+                        restrictedIndexes.Remove(25);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
                     else
                     {
                         restrictedIndexes.Clear();

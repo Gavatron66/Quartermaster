@@ -368,6 +368,7 @@ namespace Roster_Builder.Space_Marines
                         //See the end of SaveDatasheets
                     }
                     #endregion
+                    #region Codex Supplement: Iron Hands
                     else if (chosenRelic == "The Axe of Medusa")
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
@@ -383,6 +384,7 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Astartes Chainsword");
                         cmbOption2.Enabled = false;
                     }
+                    #endregion
                     else if (chosenRelic == "Scimitar of the Great Khan")
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");

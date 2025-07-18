@@ -231,6 +231,40 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Iron Hands Strat Relics
+                    else if (chosenRelic == "Haywire Bolts (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                    }
+                    else if (chosenRelic == "Haywire Bolts (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Teeth of Mars (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Teeth of Mars (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 0;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: White Scars Strat Relics
+                    else if (chosenRelic == "Stormwrath Bolts (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                    }
+                    else if (chosenRelic == "Stormwrath Bolts (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     Relic = chosenRelic;
@@ -379,6 +413,40 @@ namespace Roster_Builder.Space_Marines
                             restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
                         }
                         else if (Relic == "Korvidari Bolts (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Iron Hands Strat Relics
+                        else if (Relic == "Haywire Bolts (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                        }
+                        else if (Relic == "Haywire Bolts (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        else if (Relic == "Teeth of Mars (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 0;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Teeth of Mars (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 0;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: White Scars Strat Relics
+                        else if (Relic == "Stormwrath Bolts (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                        }
+                        else if (Relic == "Stormwrath Bolts (Slot 2)")
                         {
                             cmbOption2.SelectedIndex = 1;
                             cmbOption2.Enabled = false;

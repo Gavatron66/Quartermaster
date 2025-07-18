@@ -86,6 +86,34 @@ namespace Roster_Builder.Space_Marines
             {
                 cbOption1.Checked = false;
             }
+
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            cbStratagem5.Location = new System.Drawing.Point(cbOption1.Location.X, cbOption1.Location.Y + 32);
+            cbStratagem5.Text = "Stratagem: March of the Ancients";
+
+            if (repo.customSubFactionTraits[2] == "Iron Hands")
+            {
+                cbStratagem5.Visible = true;
+            }
+            else
+            {
+                cbStratagem5.Visible = false;
+                if (Stratagem.Contains(cbStratagem5.Text))
+                {
+                    Stratagem.Remove(cbStratagem5.Text);
+                }
+            }
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cbStratagem5.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem5.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -95,8 +123,9 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbOption3 = panel.Controls["cmbOption3"] as ComboBox;
             NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
 
-            switch(code)
+            switch (code)
             {
                 case 11:
                     Weapons[0] = cmbOption1.SelectedItem as string;
@@ -119,6 +148,19 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 31:
                     Weapons[3] = nudOption1.Value.ToString();
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                    }
                     break;
             }
 

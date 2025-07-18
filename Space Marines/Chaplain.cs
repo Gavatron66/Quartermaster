@@ -375,16 +375,20 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Iron Hands
                     else if (chosenRelic == "Betrayer's Bane")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-melta");
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
+                    #region Codex Supplement: White Scars
                     else if (chosenRelic == "Equis-pattern Bolt Pistol")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
                     else if (chosenRelic == "The Spartean")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");

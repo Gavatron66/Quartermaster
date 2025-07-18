@@ -324,6 +324,7 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Iron Hands
                     else if (chosenRelic == "The Axe of Medusa")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Axe");
@@ -339,6 +340,8 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Astartes Chainsword");
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
+                    #region Codex Supplement: White Scars
                     else if (chosenRelic == "Scimitar of the Great Khan")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
@@ -349,6 +352,7 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
                     else if (chosenRelic == "The Spartean")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");

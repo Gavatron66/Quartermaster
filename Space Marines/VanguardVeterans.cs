@@ -253,6 +253,25 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Iron Hands
+                    else if (chosenRelic == "Haywire Bolts")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Teeth of Mars")
+                    {
+                        cmbOption2.SelectedIndex = 0;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: White Scars
+                    else if (chosenRelic == "Stormwrath Bolts")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -402,6 +421,25 @@ namespace Roster_Builder.Space_Marines
                         #endregion
                         #region Codex Supplement: Raven Guard
                         else if (Relic == "Silentus Pistol" || Relic == "Korvidari Bolts")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            cmbOption1.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Iron Hands
+                        else if (Relic == "Haywire Bolts")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Teeth of Mars")
+                        {
+                            cmbOption2.SelectedIndex = 0;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: White Scars
+                        else if (Relic == "Stormwrath Bolts")
                         {
                             cmbOption1.SelectedIndex = 1;
                             cmbOption1.Enabled = false;

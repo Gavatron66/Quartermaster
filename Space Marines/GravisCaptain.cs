@@ -257,16 +257,20 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codes Supplement: Iron Hands
                     else if (chosenRelic == "Teeth of Mars")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Astartes Chainsword");
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
+                    #region Codex Supplement: White Scars
                     else if (chosenRelic == "Scimitar of the Great Khan")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
                     else if (chosenRelic == "Fist of Vengeance")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Fist");
