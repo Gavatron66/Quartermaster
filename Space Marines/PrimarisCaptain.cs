@@ -148,7 +148,7 @@ namespace Roster_Builder.Space_Marines
             cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
             cbStratagem3.Text = f.StratagemList[2];
 
-            if (f.currentSubFaction == "<Custom>" && f.customSubFactionTraits[2] != "Unknown")
+            if (f.currentSubFaction != f.customSubFactionTraits[2] && f.customSubFactionTraits[2] != "Unknown")
             {
                 cbStratagem4.Visible = true;
             }
@@ -413,16 +413,19 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 1;
                     }
                     #endregion
+                    #region Codex Supplement: Imperial Fists
                     else if (chosenRelic == "The Spartean")
                     {
-                        //cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
                     }
                     else if (chosenRelic == "Duty's Burden")
                     {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Stalker Bolt Rifle");
-                        cmbOption1.Enabled = false;
+                        restrictedIndexes.Add(0);
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
                     }
-                    else if (chosenRelic == "Fist of Vengeance")
+                    else if (chosenRelic == "Fist of Vengeance") // Crimson Fists only
                     {
                         cmbOption1.SelectedIndex = 0;
                         cmbOption1.Enabled = false;
@@ -432,6 +435,12 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 0;
                         cmbOption1.Enabled = false;
                     }
+                    else if (chosenRelic == "Gatebreaker Bolts")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);

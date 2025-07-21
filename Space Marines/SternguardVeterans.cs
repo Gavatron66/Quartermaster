@@ -173,7 +173,7 @@ namespace Roster_Builder.Space_Marines
                     #region Codex Supplement: Ultramarines
                     if (chosenRelic == "Hellfury Bolts")
                     {
-                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13 });
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12 });
                         cmbOption1.SelectedIndex = 8;
                     }
                     else if (chosenRelic == "Sunwrath Pistol")
@@ -185,7 +185,7 @@ namespace Roster_Builder.Space_Marines
                     #region Codex Supplement: Salamanders
                     else if (chosenRelic == "Dragonrage Bolts")
                     {
-                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13 });
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12 });
                         cmbOption1.SelectedIndex = 8;
                     }
                     else if (chosenRelic == "Drakeblade")
@@ -202,14 +202,14 @@ namespace Roster_Builder.Space_Marines
                     }
                     else if (chosenRelic == "Korvidari Bolts")
                     {
-                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13 });
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12 });
                         cmbOption1.SelectedIndex = 8;
                     }
                     #endregion
                     #region Codex Supplement: Iron Hands
                     else if (chosenRelic == "Haywire Bolts")
                     {
-                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13 });
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12 });
                         cmbOption1.SelectedIndex = 8;
                     }
                     else if (chosenRelic == "Teeth of Mars")
@@ -221,8 +221,20 @@ namespace Roster_Builder.Space_Marines
                     #region Codex Supplement: White Scars
                     else if (chosenRelic == "Stormwrath Bolts")
                     {
-                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13 });
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12 });
                         cmbOption1.SelectedIndex = 8;
+                    }
+                    #endregion
+                    #region Codex Supplement: Imperial Fists
+                    else if (chosenRelic == "Gatebreaker Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12 });
+                        cmbOption1.SelectedIndex = 8;
+                    }
+                    else if (chosenRelic == "Fist of Terra")
+                    {
+                        cmbOption2.SelectedIndex = 6;
+                        cmbOption2.Enabled = false;
                     }
                     #endregion
 
@@ -296,12 +308,12 @@ namespace Roster_Builder.Space_Marines
                             "Combi-plasma",
                             "Grav-pistol",
                             "Lightning Claw",
-                            "Special Issue Boltgun",
                             "Plasma Pistol",
                             "Power Axe",
                             "Power Fist",
                             "Power Maul",
                             "Power Sword",
+                            "Special Issue Boltgun",
                             "Storm Bolter",
                         });
                         if (repo.currentSubFaction == "Blood Angels")
@@ -314,7 +326,7 @@ namespace Roster_Builder.Space_Marines
                         #region Codex Supplement: Ultramarines
                         if (Relic == "Hellfury Bolts")
                         {
-                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13 });
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12 });
                             cmbOption1.SelectedIndex = 8;
                         }
                         else if (Relic == "Sunwrath Pistol")
@@ -326,7 +338,7 @@ namespace Roster_Builder.Space_Marines
                         #region Codex Supplement: Salamanders
                         else if (Relic == "Dragonrage Bolts")
                         {
-                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13 });
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12 });
                             cmbOption1.SelectedIndex = 8;
                         }
                         else if (Relic == "Drakeblade")
@@ -343,14 +355,14 @@ namespace Roster_Builder.Space_Marines
                         }
                         else if (Relic == "Korvidari Bolts")
                         {
-                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13 });
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12 });
                             cmbOption1.SelectedIndex = 8;
                         }
                         #endregion
                         #region Codex Supplement: Iron Hands
                         else if (Relic == "Haywire Bolts")
                         {
-                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13 });
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12 });
                             cmbOption1.SelectedIndex = 8;
                         }
                         else if (Relic == "Teeth of Mars")
@@ -362,8 +374,20 @@ namespace Roster_Builder.Space_Marines
                         #region Codex Supplement: White Scars
                         else if (Relic == "Stormwrath Bolts")
                         {
-                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13 });
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12 });
                             cmbOption1.SelectedIndex = 8;
+                        }
+                        #endregion
+                        #region Codex Supplement: Imperial Fists
+                        else if (Relic == "Gatebreaker Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12 });
+                            cmbOption1.SelectedIndex = 8;
+                        }
+                        else if (Relic == "Fist of Terra")
+                        {
+                            cmbOption2.SelectedIndex = 6;
+                            cmbOption2.Enabled = false;
                         }
                         #endregion
                     }

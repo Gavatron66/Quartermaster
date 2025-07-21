@@ -265,6 +265,28 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Imperial Fists Strat Relics
+                    else if (chosenRelic == "Gatebreaker Bolts (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                    }
+                    else if (chosenRelic == "Gatebreaker Bolts (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Terra (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 11;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Fist of Terra (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 6;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     Relic = chosenRelic;
@@ -449,6 +471,28 @@ namespace Roster_Builder.Space_Marines
                         else if (Relic == "Stormwrath Bolts (Slot 2)")
                         {
                             cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Imperial Fists Strat Relics
+                        else if (Relic == "Gatebreaker Bolts (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                        }
+                        else if (Relic == "Gatebreaker Bolts (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        else if (Relic == "Fist of Terra (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 11;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Fist of Terra (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 6;
                             cmbOption2.Enabled = false;
                         }
                         #endregion

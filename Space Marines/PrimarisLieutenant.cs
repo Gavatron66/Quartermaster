@@ -131,7 +131,7 @@ namespace Roster_Builder.Space_Marines
             cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
             cbStratagem3.Text = f.StratagemList[2];
 
-            if (f.currentSubFaction == "<Custom>" && f.customSubFactionTraits[2] != "Unknown")
+            if (f.currentSubFaction != f.customSubFactionTraits[2] && f.customSubFactionTraits[2] != "Unknown")
             {
                 cbStratagem4.Visible = true;
             }
@@ -442,6 +442,34 @@ namespace Roster_Builder.Space_Marines
                         restrictedIndexes.Remove(22);
                         restrictedIndexes.Remove(25);
                         cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
+                    #region Codex Supplement: Imperial Fists
+                    else if (chosenRelic == "Gatebreaker Bolts" || chosenRelic == "The Spartean")
+                    {
+                        restrictedIndexes.Clear();
+                        restrictedIndexes.Add(14);
+                        cmbOption1.SelectedIndex = 0;
+                    }
+                    else if(chosenRelic == "Duty's Burden")
+                    {
+                        restrictedIndexes.RemoveRange(15, 6);
+                        restrictedIndexes.RemoveRange(0, 6);
+                        cmbOption1.SelectedIndex = 0;
+                    }
+                    else if (chosenRelic == "Fist of Terra" || chosenRelic == "Fist of Vengeance" /* Crimson Fists only*/ )
+                    {
+                        restrictedIndexes.Remove(2);
+                        restrictedIndexes.Remove(5);
+                        restrictedIndexes.Remove(8);
+                        restrictedIndexes.Remove(11);
+                        restrictedIndexes.Remove(17);
+                        restrictedIndexes.Remove(20);
+                        restrictedIndexes.Remove(23);
+                        restrictedIndexes.Remove(26);
+                        restrictedIndexes.Remove(27);
+                        restrictedIndexes.Remove(28);
+                        cmbOption1.SelectedIndex = 2;
                     }
                     #endregion
                     else

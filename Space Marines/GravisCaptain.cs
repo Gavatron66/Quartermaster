@@ -109,7 +109,7 @@ namespace Roster_Builder.Space_Marines
             cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
             cbStratagem3.Text = f.StratagemList[2];
 
-            if (f.currentSubFaction == "<Custom>" && f.customSubFactionTraits[2] != "Unknown")
+            if (f.currentSubFaction != f.customSubFactionTraits[2] && f.customSubFactionTraits[2] != "Unknown")
             {
                 cbStratagem4.Visible = true;
             }
@@ -271,7 +271,8 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
-                    else if (chosenRelic == "Fist of Vengeance")
+                    #region Codex Supplement: Imperial Fists
+                    else if (chosenRelic == "Fist of Vengeance") // Crimson Fists only
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Fist");
                         cmbOption1.Enabled = false;
@@ -281,6 +282,7 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Fist");
                         cmbOption1.Enabled = false;
                     }
+                    #endregion
                     else
                     {
                         cmbOption1.Enabled = true;

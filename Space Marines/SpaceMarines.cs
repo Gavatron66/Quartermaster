@@ -241,12 +241,12 @@ namespace Roster_Builder.Space_Marines
             }
             else if (currentSubFaction == "Imperial Fists")
             {
-                datasheets.Insert(22, new CaptainLysander());
-                datasheets.Insert(23, new TorGaradon());
+                datasheets.Insert(0, new CaptainLysander());
+                datasheets.Insert(1, new TorGaradon());
             }
             else if (currentSubFaction == "Crimson Fists")
             {
-                datasheets.Insert(22, new PedroKantor());
+                datasheets.Insert(0, new PedroKantor());
             }
 
             //Non-compliant Chapters with their own supplement
@@ -715,7 +715,7 @@ namespace Roster_Builder.Space_Marines
                 });
             }
 
-            if(keywords == "Geokinesis")
+            if(keywords == "Geokinesis") //Imperial Fists
             {
                 PsychicPowers.AddRange(new string[]
                 {
@@ -910,6 +910,35 @@ namespace Roster_Builder.Space_Marines
                     }
                 }
                 #endregion
+                #region Imperial Fists
+                if (customSubFactionTraits[2] == "Imperial Fists" && !keywords.Contains("TERMINATOR ASSAULT SQUAD"))
+                {
+                    relics.Add("Gatebreaker Bolts");
+
+                    //I don't like this solution but it will do for now
+                    if (!(keywords.Contains("MK X GRAVIS") || keywords.Contains("CENTURION") || keywords.Contains("OUTRIDER SQUAD")
+                        || keywords.Contains("SUPPRESSOR SQUAD") || keywords.Contains("HELLBLASTER SQUAD") || keywords.Contains("DESOLATION SQUAD")
+                        || keywords.Contains("PHOBOS") || keywords.Contains("BLADEGUARD") || keywords.Contains("TERMINATOR")) 
+                        | keywords.Contains("RELIC TERMINATOR SQUAD"))
+                    {
+                        relics.Add("Fist of Terra");
+                    }
+
+                    if (keywords.Contains("TACTICAL SQUAD") || keywords.Contains("DEVASTATOR SQUAD"))
+                    {
+                        relics[3] = "Gatebreaker Bolts (Slot 1)";
+                        relics[4] = "Fist of Terra (Slot 1)";
+                        relics.Insert(4, "Gatebreaker Bolts (Slot 2)");
+                        relics.Add("Fist of Terra (Slot 2)");
+                    }
+
+                    if (keywords.Contains("CENTURION DEVASTATOR SQUAD"))
+                    {
+                        relics[3] = "Gatebreaker Bolts (Slot 1)";
+                        relics.Add("Gatebreaker Bolts (Slot 2)");
+                    }
+                }
+                #endregion
 
                 return relics;
             }
@@ -1015,45 +1044,9 @@ namespace Roster_Builder.Space_Marines
             if (currentSubFaction == "Blood Angels")
             {
             }
-            #endregion
-            #region Crimson Fists Relics
-            if (currentSubFaction == "Crimson Fists")
+
+            if (customSubFactionTraits[2] == "Blood Angels")
             {
-                if ((keywords.Contains("CAPTAIN") && keywords.Contains("PRIMARIS") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS"))) ||
-                    (keywords.Contains("LIEUTENANT") && keywords.Contains("PRIMARIS") && !keywords.Contains("PHOBOS"))
-                    )
-                {
-                    relics.Add("Duty's Burden"); //MC Auto/Stalker Bolt Rifle
-                }
-
-                if ((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS")) ||
-                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS")) ||
-                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
-                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
-                    (keywords.Contains("ANCIENT") && !keywords.Contains("BLADEGUARD"))
-                    )
-                {
-                    relics.Add("Fist of Vengeance"); //Power Fist
-                }
-
-                relics.Add("Adamantine Mantle");
-                relics.Add("Artificer Armour");
-                relics.Add("Master-crafted Weapon");
-                relics.Add("Digital Weapons");
-
-                if ((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS")) ||
-                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS")) ||
-                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
-                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
-                    (keywords.Contains("ANCIENT") && !keywords.Contains("BLADEGUARD"))
-                    )
-                {
-                    relics.Add("Fist of Terra"); //Power Fist
-                }
-
-                relics.Add("Gatebreaker Bolts");
-                relics.Add("Auric Aquila");
-                relics.Add("Warden's Cuirass");
             }
             #endregion
             #region Dark Angels Relics
@@ -1066,6 +1059,11 @@ namespace Roster_Builder.Space_Marines
                 relics.Add("Foe-Smiter");
                 relics.Add("Eye of the Unseen");
                 relics.Add("Cup of Retribution");
+            }
+
+
+            if (customSubFactionTraits[2] == "Dark Angels")
+            {
                 relics.Add("Adamantine Mantle");
                 relics.Add("Artificer Armour");
                 relics.Add("Master-crafted Weapon");
@@ -1077,7 +1075,7 @@ namespace Roster_Builder.Space_Marines
             }
             #endregion
             #region Deathwatch Relics
-            if (currentSubFaction == "Deathwatch")
+                if (currentSubFaction == "Deathwatch")
             {
                 relics.Add("The Beacon Angelis");
 
@@ -1129,10 +1127,10 @@ namespace Roster_Builder.Space_Marines
             #region Flesh Tearers Relics
             #endregion
             #region Imperial Fists Relics
-                if (currentSubFaction == "Imperial Fists")
+            if (currentSubFaction == "Imperial Fists" || (customSubFactionTraits[2] == "Imperial Fists" && keywords.Contains("Strat")))
             {
                 if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("MK X GRAVIS") || keywords.Contains("TERMINATOR"))) ||
-                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS") && !keywords.Contains("TERMINATOR")) ||
                     (keywords.Contains("LIBRARIAN") && !keywords.Contains("TERMINATOR")) ||
                     (keywords.Contains("LIEUTENANT") && !keywords.Contains("REIVER")) ||
                     (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
@@ -1144,7 +1142,7 @@ namespace Roster_Builder.Space_Marines
                     relics.Add("The Spartean"); //Bolt Pistol, Heavy Bolt Pistol
                 }
 
-                if(keywords.Contains("ANCIENT"))
+                if (keywords.Contains("ANCIENT"))
                 {
                     relics.Add("The Banner of Staganda");
                 }
@@ -1155,17 +1153,22 @@ namespace Roster_Builder.Space_Marines
                 {
                     relics.Add("The Bones of Osrak");
                 }
+            }
+
+
+            if (customSubFactionTraits[2] == "Imperial Fists")
+            {
 
                 relics.Add("Adamantine Mantle");
                 relics.Add("Artificer Armour");
                 relics.Add("Master-crafted Weapon");
                 relics.Add("Digital Weapons");
 
-                if ((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS")) ||
-                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS")) ||
+                if ((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS") && !keywords.Contains("HBR")) ||
+                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS") && !keywords.Contains("TERMINATOR")) ||
                     (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
                     (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
-                    (keywords.Contains("ANCIENT") && !keywords.Contains("BLADEGUARD"))
+                    (keywords.Contains("ANCIENT") && !keywords.Contains("PRIMARIS"))
                     )
                 {
                     relics.Add("Fist of Terra"); //Power Fist
@@ -1176,10 +1179,31 @@ namespace Roster_Builder.Space_Marines
                 relics.Add("Warden's Cuirass");
             }
             #endregion
-            #region Iron Hands Relics
-            if (currentSubFaction == "Iron Hands")
+            #region Crimson Fists Relics ***DEBUG IN PROGRESS***
+            if (currentSubFaction == "Imperial Fists")
             {
-                if((keywords.Contains("CAPTAIN") && !keywords.Contains("PRIMARIS")) ||
+                if ((keywords.Contains("CAPTAIN") && keywords.Contains("PRIMARIS") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS"))) ||
+                    (keywords.Contains("LIEUTENANT") && keywords.Contains("PRIMARIS") && !keywords.Contains("PHOBOS"))
+                    )
+                {
+                    relics.Add("Duty's Burden"); //MC Auto/Stalker Bolt Rifle
+                }
+
+                if ((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS") && !keywords.Contains("HBR")) ||
+                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS") && !keywords.Contains("TERMINATOR")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("ANCIENT") && !keywords.Contains("PRIMARIS"))
+                    )
+                {
+                    relics.Add("Fist of Vengeance"); //Power Fist
+                }
+            }
+            #endregion
+            #region Iron Hands Relics
+            if (currentSubFaction == "Iron Hands" || (customSubFactionTraits[2] == "Iron Hands" && keywords.Contains("Strat")))
+            {
+                if ((keywords.Contains("CAPTAIN") && !keywords.Contains("PRIMARIS")) ||
                     (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS")) ||
                     (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
                     keywords.Contains("COMPANY ANCIENT")
@@ -1188,7 +1212,7 @@ namespace Roster_Builder.Space_Marines
                     relics.Add("The Axe of Medusa"); //Power Axe
                 }
 
-                if(keywords.Contains("PRIMARIS"))
+                if (keywords.Contains("PRIMARIS"))
                 {
                     relics.Add("The Aegis Ferrum");
                 }
@@ -1212,6 +1236,10 @@ namespace Roster_Builder.Space_Marines
                 relics.Add("The Ironstone");
                 relics.Add("The Tempered Helm");
                 relics.Add("The Gorgon's Chain");
+            }
+
+            if (customSubFactionTraits[2] == "Iron Hands")
+            {
                 relics.Add("Adamantine Mantle");
                 relics.Add("Artificer Armour");
                 relics.Add("Master-crafted Weapon");
@@ -1357,9 +1385,9 @@ namespace Roster_Builder.Space_Marines
             }
             #endregion
             #region Raven Guard Relics
-            if (currentSubFaction == "Raven Guard")
+            if (currentSubFaction == "Raven Guard" || (customSubFactionTraits[2] == "Raven Guard" && keywords.Contains("Strat")))
             {
-                if((keywords.Contains("CAPTAIN") && !keywords.Contains("PRIMARIS")) ||
+                if ((keywords.Contains("CAPTAIN") && !keywords.Contains("PRIMARIS")) ||
                     (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS"))
                     )
                 {
@@ -1369,7 +1397,7 @@ namespace Roster_Builder.Space_Marines
                 relics.Add("The Armour of Shadows");
                 relics.Add("The Raven Skull of Korvaad");
 
-                if((keywords.Contains("CAPTAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR") || keywords.Contains("BIKER"))) ||
+                if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR") || keywords.Contains("BIKER"))) ||
                     (keywords.Contains("CHAPLAIN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
                     (keywords.Contains("LIBRARIAN") && !(keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR"))) ||
                     (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS"))
@@ -1378,20 +1406,24 @@ namespace Roster_Builder.Space_Marines
                     relics.Add("Raven's Fury"); //Jump Pack only
                 }
 
-                if((keywords.Contains("CAPTAIN") && keywords.Contains("PRIMARIS") && !keywords.Contains("MK X GRAVIS")) ||
+                if ((keywords.Contains("CAPTAIN") && keywords.Contains("PRIMARIS") && !keywords.Contains("MK X GRAVIS")) ||
                     (keywords.Contains("LIEUTENANT") && keywords.Contains("PRIMARIS") && !keywords.Contains("REIVER"))
                     )
                 {
                     relics.Add("Ex Tenebris"); //MC Stalker Bolt Rifle, MC Occulus Bolt Carbine, MC Instigator Bolt Carbine
                 }
 
-                if((keywords.Contains("CAPTAIN") && keywords.Contains("PHOBOS")) ||
+                if ((keywords.Contains("CAPTAIN") && keywords.Contains("PHOBOS")) ||
                     (keywords.Contains("LIEUTENANT") && keywords.Contains("REIVER"))
                     )
                 {
                     relics.Add("Oppressor's End"); //Combat Knife
                 }
+            }
 
+
+            if (customSubFactionTraits[2] == "Raven Guard")
+            {
                 relics.Add("Adamantine Mantle");
                 relics.Add("Artificer Armour");
                 relics.Add("Master-crafted Weapon");
@@ -1485,21 +1517,21 @@ namespace Roster_Builder.Space_Marines
             }
             #endregion
             #region White Scars Relics
-            if(currentSubFaction == "White Scars")
+            if (currentSubFaction == "White Scars" || (customSubFactionTraits[2] == "White Scars" && keywords.Contains("Strat")))
             {
-                if(keywords.Contains("PSYKER"))
+                if (keywords.Contains("PSYKER"))
                 {
                     relics.Add("Mantle of the Stormseer");
                 }
 
                 relics.Add("The Hunter's Eye");
 
-                if(keywords.Contains("ANCIENT"))
+                if (keywords.Contains("ANCIENT"))
                 {
                     relics.Add("Banner of the Eagle");
                 }
 
-                if(keywords.Contains("BIKER"))
+                if (keywords.Contains("BIKER"))
                 {
                     relics.Add("Wrath of the Heavens");
                 }
@@ -1515,11 +1547,15 @@ namespace Roster_Builder.Space_Marines
 
                 relics.Add("Plume of the Plainsrunner");
 
-                if(keywords.Contains("KHAN"))
+                if (keywords.Contains("KHAN"))
                 {
                     relics.Add("Glaive of Vengeance");
                 }
+            }
 
+
+            if (customSubFactionTraits[2] == "Ultramarines")
+            {
                 relics.Add("Adamantine Mantle");
                 relics.Add("Artificer Armour");
                 relics.Add("Master-crafted Weapon");
@@ -1641,6 +1677,12 @@ namespace Roster_Builder.Space_Marines
                 traits.Add("Aura of Majesty");
                 traits.Add("Resolve of the Bear");
             }
+            else if (currentSubFaction == "Crimson Fists") 
+            { 
+                traits.Add("Refuse to Die");
+                traits.Add("Tenacious Opponent");
+                traits.Add("Stoic Defender");
+            }
             else if (customSubFactionTraits[2] == "Imperial Fists") 
             {
                 traits.Add("Siege Master");
@@ -1649,12 +1691,6 @@ namespace Roster_Builder.Space_Marines
                 traits.Add("Stubborn Heroism");
                 traits.Add("Architect of War");
                 traits.Add("Hand of Dorn");
-            }
-            else if (customSubFactionTraits[2] == "Crimson Fists") 
-            { 
-                traits.Add("Refuse to Die");
-                traits.Add("Tenacious Opponent");
-                traits.Add("Stoic Defender");
             }
             else if (customSubFactionTraits[2] == "Black Templars") { traits.Add("Oathkeeper"); }
             else if (customSubFactionTraits[2] == "Blood Angels") { traits.Add("Speed of the Primarch"); }
@@ -1929,6 +1965,12 @@ namespace Roster_Builder.Space_Marines
                         StratagemList[3] = "Stratagem: Gift of the Khans";
                         StratagemList[4] = "Stratagem: Khan's Champion";
                     }
+                    else if (customSubFactionTraits[2] == "Imperial Fists")
+                    {
+                        StratagemList[2] = "Stratagem: Sentinel of Terra";
+                        StratagemList[3] = "Stratagem: Champion of Blades";
+                        StratagemList[4] = "Stratagem: Gift of the Phalanx";
+                    }
                     break;
                 case 51:
                     customSubFactionTraits[0] = cmbSubCustom1.SelectedItem.ToString();
@@ -1968,6 +2010,12 @@ namespace Roster_Builder.Space_Marines
                         StratagemList[2] = "Stratagem: Tempered By Wisdom";
                         StratagemList[3] = "Stratagem: Gift of the Khans";
                         StratagemList[4] = "Stratagem: Khan's Champion";
+                    }
+                    else if (customSubFactionTraits[2] == "Imperial Fists")
+                    {
+                        StratagemList[2] = "Stratagem: Sentinel of Terra";
+                        StratagemList[3] = "Stratagem: Champion of Blades";
+                        StratagemList[4] = "Stratagem: Gift of the Phalanx";
                     }
                     break;
             }

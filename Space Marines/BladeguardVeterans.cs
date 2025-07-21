@@ -149,6 +149,13 @@ namespace Roster_Builder.Space_Marines
                         gb_cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Imperial Fists
+                    if (chosenRelic == "Gatebreaker Bolts")
+                    {
+                        gb_cmbOption1.SelectedIndex = 0;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;

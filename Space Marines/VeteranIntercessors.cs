@@ -234,6 +234,13 @@ namespace Roster_Builder.Genestealer_Cults
                         gb_cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Imperial Fists
+                    else if (chosenRelic == "Fist of Terra")
+                    {
+                        gb_cmbOption2.SelectedIndex = 2;
+                        gb_cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;

@@ -240,6 +240,18 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 1;
                     }
                     #endregion
+                    #region Codex Supplement: Imperial Fists
+                    else if (chosenRelic == "Gatebreaker Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Fist of Terra")
+                    {
+                        cmbOption1.SelectedIndex = 10;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -394,6 +406,18 @@ namespace Roster_Builder.Space_Marines
                             {
                                 restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
                                 cmbOption1.SelectedIndex = 1;
+                            }
+                            #endregion
+                            #region Codex Supplement: Imperial Fists
+                            else if (Relic == "Gatebreaker Bolts")
+                            {
+                                restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                                cmbOption1.SelectedIndex = 1;
+                            }
+                            else if (Relic == "Fist of Terra")
+                            {
+                                cmbOption1.SelectedIndex = 10;
+                                cmbOption1.Enabled = false;
                             }
                             #endregion
                         }

@@ -320,5 +320,3 @@ Sergeants
                 }
             }
 		
-Tabbed out Sergeants need to be excluded from Korvidari Bolts (one tab) or Silentus Pistol (two tabs) or both (three tabs)
-Silentus Pistol - Bolt Pistol or Heavy Bolt Pistol

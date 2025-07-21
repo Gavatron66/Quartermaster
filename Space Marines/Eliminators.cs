@@ -162,6 +162,12 @@ namespace Roster_Builder.Space_Marines
                         restrictedIndexes.Add(2);
                     }
                     #endregion
+                    #region Codex Supplement: Imperial Fists
+                    if (chosenRelic == "Gatebreaker Bolts")
+                    {
+                        restrictedIndexes.Add(2);
+                    }
+                    #endregion
 
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
                     Relic = chosenRelic;
