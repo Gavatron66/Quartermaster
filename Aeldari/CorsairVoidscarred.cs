@@ -58,6 +58,8 @@ namespace Roster_Builder.Aeldari
             ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
             antiLoop = true;
@@ -177,14 +179,22 @@ namespace Roster_Builder.Aeldari
             switch (code)
             {
                 case 11:
-                    Weapons[currentIndex] = cmbOption1.SelectedItem.ToString();
                     if (currentIndex == 0)
                     {
+                        Weapons[0] = cmbOption1.SelectedItem.ToString();
                         lbModelSelect.Items[currentIndex] = "Voidscarred Felarch w/ " + Weapons[currentIndex];
                     }
                     else
                     {
-                        lbModelSelect.Items[currentIndex] = "Corsair Voidscarred w/ " + Weapons[currentIndex];
+                        if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                        {
+                            Weapons[currentIndex] = cmbOption1.SelectedItem.ToString();
+                            lbModelSelect.Items[currentIndex] = "Corsair Voidscarred w/ " + Weapons[currentIndex];
+                        }
+                        else
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex]);
+                        }
                     }
                     break;
                 case 111:
@@ -299,17 +309,7 @@ namespace Roster_Builder.Aeldari
 
                     antiLoop = true;
 
-                    if(currentIndex < 0)
-                    {
-                        lblOption1.Visible = false;
-                        cmbOption1.Visible = false;
-                        clbPsyker.Visible = false;
-                        lblPsyker.Visible = false;
-                        lblPsykerList.Visible = false;
-                        cmbDiscipline.Visible = false;
-                        cbOption4.Visible = false;
-                    }
-                    else if (currentIndexStr.Contains("Felarch"))
+                    if (currentIndexStr.Contains("Felarch"))
                     {
                         lblOption1.Visible = true;
                         cmbOption1.Visible = true;
@@ -341,6 +341,8 @@ namespace Roster_Builder.Aeldari
                             cbOption4.Checked = false;
                             lbModelSelect.Items[0] = "Voidscarred Felarch w/ " + Weapons[0];
                         }
+
+                        this.DrawItemWithRestrictions(new List<int>(), cmbOption1);
                     }
                     else if (currentIndexStr.Contains("Corsair"))
                     {
@@ -389,6 +391,16 @@ namespace Roster_Builder.Aeldari
                         cmbDiscipline.Visible = true;
                         cbOption4.Visible = false;
                         cmbOption1.Enabled = true;
+                    }
+                    else
+                    {
+                        lblOption1.Visible = false;
+                        cmbOption1.Visible = false;
+                        clbPsyker.Visible = false;
+                        lblPsyker.Visible = false;
+                        lblPsykerList.Visible = false;
+                        cmbDiscipline.Visible = false;
+                        cbOption4.Visible = false;
                     }
 
                     antiLoop = false;
@@ -451,6 +463,7 @@ namespace Roster_Builder.Aeldari
             //Ranger Long Rifle
             //Fusion Pistol
             //Faolchú
+            restrictedIndexes.Clear();
 
             foreach(var weapon in Weapons)
             {
@@ -482,15 +495,12 @@ namespace Roster_Builder.Aeldari
 
             if(UnitSize < 10)
             {
-                cmbOption1.Items.Remove("Shuriken Cannon (+10 pts)");
-                cmbOption1.Items.Remove("Wraithcannon (+15 pts)");
-                cmbOption1.Items.Remove("Ranger Long Rifle (+5 pts)");
-                cmbOption1.Items.Remove("Shuriken and Fusion Pistols (+10 pts)");
+                restrictedIndexes.AddRange(new int[] { 2, 3, 4, 7 });
 
                 if (weapons[0] == 1 && !(currentIndexWeapon == "Corsair Blaster (+10 pts)" || currentIndexWeapon == "Corsair Shredder (+5 pts)"))
                 {
-                    cmbOption1.Items.Remove("Corsair Blaster (+10 pts)");
-                    cmbOption1.Items.Remove("Corsair Shredder (+5 pts)");
+                    restrictedIndexes.Add(0);
+                    restrictedIndexes.Add(1);
                 }
 
                 if (weapons[4] == 1 && !currentIndexWeapon.Contains("Faolchú (+10 pts)"))
@@ -506,24 +516,24 @@ namespace Roster_Builder.Aeldari
             {
                 if (weapons[0] == 2 && !(currentIndexWeapon == "Corsair Blaster (+10 pts)" || currentIndexWeapon == "Corsair Shredder (+5 pts)"))
                 {
-                    cmbOption1.Items.Remove("Corsair Blaster (+10 pts)");
-                    cmbOption1.Items.Remove("Corsair Shredder (+5 pts)");
+                    restrictedIndexes.Add(0);
+                    restrictedIndexes.Add(1);
                 }
 
                 if (weapons[1] == 1 && !(currentIndexWeapon == "Shuriken Cannon (+10 pts)" || currentIndexWeapon == "Wraithcannon (+15 pts)"))
                 {
-                    cmbOption1.Items.Remove("Shuriken Cannon (+10 pts)");
-                    cmbOption1.Items.Remove("Wraithcannon (+15 pts)");
+                    restrictedIndexes.Add(3);
+                    restrictedIndexes.Add(7);
                 }
 
                 if (weapons[2] == 1 && !(currentIndexWeapon == "Ranger Long Rifle (+5 pts)"))
                 {
-                    cmbOption1.Items.Remove("Ranger Long Rifle (+5 pts)");
+                    restrictedIndexes.Add(2);
                 }
 
                 if (weapons[3] == 1 && !(currentIndexWeapon == "Shuriken and Fusion Pistols (+10 pts)"))
                 {
-                    cmbOption1.Items.Remove("Shuriken and Fusion Pistols (+10 pts)");
+                    restrictedIndexes.Add(4);
                 }
 
                 if (weapons[4] == 1 && !currentIndexWeapon.Contains("Faolchú (+10 pts)"))
@@ -535,6 +545,8 @@ namespace Roster_Builder.Aeldari
                     cbOption4.Enabled = true;
                 }
             }
+
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
         }
     }
 }

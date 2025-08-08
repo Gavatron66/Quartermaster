@@ -11,6 +11,8 @@ namespace Roster_Builder.Aeldari.Harlequins
     public class Troupe : Datasheets
     {
         int currentIndex;
+        List<int> restrictedIndexes2 = new List<int>();
+
         public Troupe()
         {
             DEFAULT_POINTS = 13;
@@ -44,6 +46,8 @@ namespace Roster_Builder.Aeldari.Harlequins
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -79,25 +83,41 @@ namespace Roster_Builder.Aeldari.Harlequins
             switch (code)
             {
                 case 11:
-                    Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
-                    if(currentIndex == 0)
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
                     {
-                        lbModelSelect.Items[currentIndex] = "Lead Player w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[(currentIndex * 2) + 1];
+                        Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
+
+                        if (currentIndex == 0)
+                        {
+                            lbModelSelect.Items[0] = "Lead Player w/ " + Weapons[0] + " and " + Weapons[1];
+                        }
+                        else
+                        {
+                            lbModelSelect.Items[currentIndex] = "Player w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[(currentIndex * 2) + 1];
+                        }
                     }
                     else
                     {
-                        lbModelSelect.Items[currentIndex] = "Player w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[(currentIndex * 2) + 1];
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex * 2]);
                     }
                     break;
                 case 12:
-                    Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
-                    if (currentIndex == 0)
+                    if (!restrictedIndexes2.Contains(cmbOption2.SelectedIndex))
                     {
-                        lbModelSelect.Items[currentIndex] = "Lead Player w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[(currentIndex * 2) + 1];
+                        Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
+
+                        if (currentIndex == 0)
+                        {
+                            lbModelSelect.Items[0] = "Lead Player w/" + Weapons[0] + " and " + Weapons[1];
+                        }
+                        else
+                        {
+                            lbModelSelect.Items[currentIndex] = "Player w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[(currentIndex * 2) + 1];
+                        }
                     }
                     else
                     {
-                        lbModelSelect.Items[currentIndex] = "Player w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[(currentIndex * 2) + 1];
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
                     }
                     break;
                 case 30:
@@ -219,50 +239,56 @@ namespace Roster_Builder.Aeldari.Harlequins
                 }
             }
 
+            restrictedIndexes.Clear();
+            restrictedIndexes2.Clear();
+
             if(UnitSize <= 10)
             {
                 if (weaponsCheck[0] == 2 && Weapons[currentIndex * 2] != "Neuro Disruptor (+5 pts)")
                 {
-                    cmbOption1.Items.Remove("Neuro Disruptor (+5 pts)");
+                    restrictedIndexes.Add(1);
                 }
 
                 if (weaponsCheck[1] == 2 && Weapons[currentIndex * 2] != "Fusion Pistol (+5 pts)")
                 {
-                    cmbOption1.Items.Remove("Fusion Pistol (+5 pts)");
+                    restrictedIndexes.Add(0);
                 }
 
                 if (weaponsCheck[2] == 2 && Weapons[(currentIndex * 2) + 1] != "Harlequin's Caress (+5 pts)")
                 {
-                    cmbOption2.Items.Remove("Harlequin's Caress (+5 pts)");
+                    restrictedIndexes2.Add(1);
                 }
 
                 if (weaponsCheck[3] == 2 && Weapons[(currentIndex * 2) + 1] != "Harlequin's Embrace (+5 pts)")
                 {
-                    cmbOption2.Items.Remove("Harlequin's Embrace (+5 pts)");
+                    restrictedIndexes2.Add(2);
                 }
             }
             else if (UnitSize > 10)
             {
                 if (weaponsCheck[0] == 4 && Weapons[currentIndex * 2] != "Neuro Disruptor (+5 pts)")
                 {
-                    cmbOption1.Items.Remove("Neuro Disruptor (+5 pts)");
+                    restrictedIndexes.Add(1);
                 }
 
                 if (weaponsCheck[1] == 4 && Weapons[currentIndex * 2] != "Fusion Pistol (+5 pts)")
                 {
-                    cmbOption1.Items.Remove("Fusion Pistol (+5 pts)");
+                    restrictedIndexes.Add(0);
                 }
 
                 if (weaponsCheck[2] == 4 && Weapons[(currentIndex * 2) + 1] != "Harlequin's Caress (+5 pts)")
                 {
-                    cmbOption2.Items.Remove("Harlequin's Caress (+5 pts)");
+                    restrictedIndexes2.Add(1);
                 }
 
                 if (weaponsCheck[3] == 4 && Weapons[(currentIndex * 2) + 1] != "Harlequin's Embrace (+5 pts)")
                 {
-                    cmbOption2.Items.Remove("Harlequin's Embrace (+5 pts)");
+                    restrictedIndexes2.Add(2);
                 }
             }
+
+            this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+            this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
         }
     }
 }

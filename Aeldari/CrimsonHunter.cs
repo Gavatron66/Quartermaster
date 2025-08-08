@@ -49,10 +49,8 @@ namespace Roster_Builder.Aeldari
 
             panel.Controls["lblFactionupgrade"].Visible = true;
             cmbFaction.Visible = true;
-            lblRelic.Visible = true;
-            lblRelic.Location = new System.Drawing.Point(cmbFaction.Location.X, cmbFaction.Location.Y + 34);
-            cmbRelic.Visible = true;
-            cmbRelic.Location = new System.Drawing.Point(lblRelic.Location.X, lblRelic.Location.Y + 23);
+            lblRelic.Visible = false;
+            cmbRelic.Visible = false;
 
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());

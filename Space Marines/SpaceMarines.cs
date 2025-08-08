@@ -1179,8 +1179,8 @@ namespace Roster_Builder.Space_Marines
                 relics.Add("Warden's Cuirass");
             }
             #endregion
-            #region Crimson Fists Relics ***DEBUG IN PROGRESS***
-            if (currentSubFaction == "Imperial Fists")
+            #region Crimson Fists Relics
+            if (currentSubFaction == "Crimson Fists")
             {
                 if ((keywords.Contains("CAPTAIN") && keywords.Contains("PRIMARIS") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS"))) ||
                     (keywords.Contains("LIEUTENANT") && keywords.Contains("PRIMARIS") && !keywords.Contains("PHOBOS"))

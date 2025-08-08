@@ -54,6 +54,8 @@ namespace Roster_Builder.Aeldari
             Label lblnud1 = panel.Controls["lblnud1"] as Label;
             Label lblnud2 = panel.Controls["lblnud2"] as Label;
 
+            panel.Controls["lblModelPoints"].Text = "(45 pts for 1, +" + DEFAULT_POINTS + " pts/model for 2+)";
+
             lblnud1.Text = "Singing Spears (+5 pts):";
             lblnud1.Location = new System.Drawing.Point(lblnud1.Location.X - 20, lblnud1.Location.Y);
             lblnud2.Text = "Witchblades:";
@@ -144,6 +146,12 @@ namespace Roster_Builder.Aeldari
                 cmbRelic.SelectedIndex = 0;
             }
 
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+
+            cbStratagem1.Location = new System.Drawing.Point(cmbRelic.Location.X, cmbRelic.Location.Y + 32);
+            cbStratagem2.Location = new System.Drawing.Point(cmbRelic.Location.X, cmbRelic.Location.Y + 62);
+
             if (UnitSize != 1)
             {
                 cbWarlord.Visible = false;
@@ -151,6 +159,8 @@ namespace Roster_Builder.Aeldari
                 panel.Controls["lblRelic"].Visible = false;
                 cmbWarlord.Visible = false;
                 cmbRelic.Visible = false;
+                cbStratagem1.Visible = false;
+                cbStratagem2.Visible = false;
             }
             else
             {
@@ -159,11 +169,41 @@ namespace Roster_Builder.Aeldari
                 panel.Controls["lblRelic"].Visible = true;
                 cmbWarlord.Visible = true;
                 cmbRelic.Visible = true;
+                cbStratagem1.Visible = true;
+                cbStratagem2.Visible = true;
+            }
+
+
+            if (Stratagem.Contains(cbStratagem1.Text))
+            {
+                cbStratagem1.Checked = true;
+                cbStratagem1.Enabled = true;
+            }
+            else
+            {
+                cbStratagem1.Checked = false;
+                cbStratagem1.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem1.Text));
+            }
+
+            if (Stratagem.Contains(cbStratagem2.Text))
+            {
+                cbStratagem2.Checked = true;
+                cbStratagem2.Enabled = true;
+            }
+            else
+            {
+                cbStratagem2.Checked = false;
+                cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
+            if (antiLoop)
+            {
+                return;
+            }
+
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
@@ -172,6 +212,8 @@ namespace Roster_Builder.Aeldari
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
             switch (code)
             {
@@ -179,6 +221,7 @@ namespace Roster_Builder.Aeldari
                     int oldSize = UnitSize;
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
 
+                    antiLoop = true;
                     if (UnitSize > oldSize)
                     {
                         nudOption2.Value += UnitSize - oldSize;
@@ -195,12 +238,13 @@ namespace Roster_Builder.Aeldari
                             nudOption1.Value -= oldSize - UnitSize;
                         }
                     }
+                    antiLoop = false;
 
                     if (UnitSize >= 4)
                     {
                         lblPsyker.Text = "Select two of the following:";
-                        string[] temp = new string[2] { PsykerPowers[0], string.Empty };
-                        PsykerPowers = temp;
+                        string[] tempP = new string[2] { PsykerPowers[0], string.Empty };
+                        PsykerPowers = tempP;
                     }
                     else if (UnitSize < 4 && PsykerPowers.Length == 2)
                     {
@@ -209,8 +253,8 @@ namespace Roster_Builder.Aeldari
                         {
                             clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), false);
                         }
-                        string[] temp = new string[1] { PsykerPowers[0] };
-                        PsykerPowers = temp;
+                        string[] tempP = new string[1] { PsykerPowers[0] };
+                        PsykerPowers = tempP;
                     }
 
                     if (UnitSize != 1)
@@ -220,6 +264,14 @@ namespace Roster_Builder.Aeldari
                         panel.Controls["lblRelic"].Visible = false;
                         cmbWarlord.Visible = false;
                         cmbRelic.Visible = false;
+                        cbStratagem1.Visible = false;
+                        cbStratagem2.Visible = false;
+
+                        cmbWarlord.SelectedIndex = -1;
+                        cbWarlord.Checked = false;
+                        cmbRelic.SelectedIndex = 0;
+                        cbStratagem1.Checked = false;
+                        cbStratagem2.Checked = false;
                     }
                     else
                     {
@@ -228,35 +280,59 @@ namespace Roster_Builder.Aeldari
                         panel.Controls["lblRelic"].Visible = true;
                         cmbWarlord.Visible = true;
                         cmbRelic.Visible = true;
+                        cbStratagem1.Visible = true;
+                        cbStratagem2.Visible = true;
                     }
                     break;
                 case 31:
-                    if (nudOption1.Value == 0)
+                    var temp = singingSpears;
+                    antiLoop = true;
+
+                    if (nudOption1.Value < 0)
                     {
-                        break;
+                        nudOption1.Value++;
                     }
-                    else if (nudOption1.Value + nudOption2.Value <= nudUnitSize.Value)
+                    else if (nudOption1.Value > UnitSize)
                     {
-                        singingSpears = nudOption1.Value;
+                        nudOption1.Value--;
                     }
-                    else
+                    else if (temp < nudOption1.Value)
                     {
-                        nudOption1.Value -= 1;
+                        nudOption2.Value--;
                     }
+                    else if (temp > nudOption1.Value)
+                    {
+                        nudOption2.Value++;
+                    }
+                    antiLoop = false;
+
+                    singingSpears = nudOption1.Value;
+                    witchblades = nudOption2.Value;
                     break;
                 case 32:
-                    if (nudOption2.Value == 0)
+                    var temp2 = witchblades;
+                    antiLoop = true;
+
+                    if (nudOption2.Value < 0)
                     {
-                        break;
+                        nudOption2.Value++;
                     }
-                    else if (nudOption1.Value + nudOption2.Value <= nudUnitSize.Value)
+                    else if (nudOption2.Value > UnitSize)
                     {
-                        witchblades = nudOption2.Value;
+                        nudOption2.Value--;
                     }
-                    else
+                    else if (temp2 < nudOption2.Value)
                     {
-                        nudOption2.Value -= 1;
+                        nudOption1.Value--;
                     }
+                    else if (temp2 > nudOption2.Value)
+                    {
+                        nudOption1.Value++;
+                    }
+                    antiLoop = false;
+
+                    singingSpears = nudOption1.Value;
+                    witchblades = nudOption2.Value;
                     break;
                 case 60:
                     if(UnitSize >= 4)
@@ -288,6 +364,32 @@ namespace Roster_Builder.Aeldari
                         else
                         {
                             clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        }
+                    }
+                    break;
+                case 71:
+                    if (cbStratagem1.Checked)
+                    {
+                        Stratagem.Add(cbStratagem1.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem1.Text))
+                        {
+                            Stratagem.Remove(cbStratagem1.Text);
+                        }
+                    }
+                    break;
+                case 72:
+                    if (cbStratagem2.Checked)
+                    {
+                        Stratagem.Add(cbStratagem2.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem2.Text))
+                        {
+                            Stratagem.Remove(cbStratagem2.Text);
                         }
                     }
                     break;

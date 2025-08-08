@@ -1,12 +1,259 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\evans\\Desktop\\Quartermaster\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\aeldari\\harlequins\\voidweavers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\voidweavers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\aeldari\\harlequins\\skyweavers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\skyweavers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\space marines\\tacticalsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\tacticalsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\aeldari\\harlequins\\solitaire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\solitaire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\aeldari\\harlequins\\harlequins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\harlequins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\aeldari\\harlequins\\shadowseer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\shadowseer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\aeldari\\harlequins\\deathjester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\deathjester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\aeldari\\harlequins\\troupemaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\troupemaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\aeldari\\harlequins\\troupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\troupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adeptus custodes\\shieldcaptain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\shieldcaptain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\aeldari\\aeldari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\aeldari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAP8BAAAAAAAAAAAYwA8CAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T01:54:33.308Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T01:54:21.256Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Template.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
+              "RelativeDocumentMoniker": "Template.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
+              "RelativeToolTip": "Template.cs",
+              "ViewState": "AgIAAPcBAAAAAAAAAAAYwBsCAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-26T00:47:28.245Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Aeldari.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Aeldari.cs",
+              "RelativeDocumentMoniker": "Aeldari\\Aeldari.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Aeldari.cs",
+              "RelativeToolTip": "Aeldari\\Aeldari.cs",
+              "ViewState": "AgIAAOUBAAAAAAAAAAAcwAICAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T01:34:52.541Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Harlequins.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Harlequins.cs",
+              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\Harlequins.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Harlequins.cs",
+              "RelativeToolTip": "Aeldari\\Harlequins\\Harlequins.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAswMgAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T00:28:38.874Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Voidweavers.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Voidweavers.cs",
+              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\Voidweavers.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Voidweavers.cs",
+              "RelativeToolTip": "Aeldari\\Harlequins\\Voidweavers.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBMAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T01:47:45.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Skyweavers.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Skyweavers.cs",
+              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\Skyweavers.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Skyweavers.cs",
+              "RelativeToolTip": "Aeldari\\Harlequins\\Skyweavers.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwC4AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T01:42:34.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Solitaire.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Solitaire.cs",
+              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\Solitaire.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Solitaire.cs",
+              "RelativeToolTip": "Aeldari\\Harlequins\\Solitaire.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T01:38:21.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DeathJester.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\DeathJester.cs",
+              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\DeathJester.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\DeathJester.cs",
+              "RelativeToolTip": "Aeldari\\Harlequins\\DeathJester.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAD4v3cAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T01:34:21.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TacticalSquad.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\TacticalSquad.cs",
+              "RelativeDocumentMoniker": "Space Marines\\TacticalSquad.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\TacticalSquad.cs",
+              "RelativeToolTip": "Space Marines\\TacticalSquad.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwDAAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T01:13:24.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Troupe.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Troupe.cs",
+              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\Troupe.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Troupe.cs",
+              "RelativeToolTip": "Aeldari\\Harlequins\\Troupe.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAYwGwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T01:01:47.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Shadowseer.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Shadowseer.cs",
+              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\Shadowseer.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Shadowseer.cs",
+              "RelativeToolTip": "Aeldari\\Harlequins\\Shadowseer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T02:19:19.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TroupeMaster.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\TroupeMaster.cs",
+              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\TroupeMaster.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\TroupeMaster.cs",
+              "RelativeToolTip": "Aeldari\\Harlequins\\TroupeMaster.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAgwIgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T02:04:21.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ShieldCaptain.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\ShieldCaptain.cs",
+              "RelativeDocumentMoniker": "Adeptus Custodes\\ShieldCaptain.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\ShieldCaptain.cs",
+              "RelativeToolTip": "Adeptus Custodes\\ShieldCaptain.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAAAMEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T02:03:27.767Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

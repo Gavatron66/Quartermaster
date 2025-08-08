@@ -189,6 +189,9 @@ namespace Roster_Builder.Adeptus_Custodes
                         cbOption1.Enabled = true;
                     }
                     break;
+                case 13:
+                    stratWarlordTrait = cmbStrat.SelectedItem.ToString();
+                    break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
                     {
@@ -304,9 +307,6 @@ namespace Roster_Builder.Adeptus_Custodes
                         panel.Controls["lblOption3"].Visible = false;
                         cmbStrat.Visible = false;
                     }
-                    break;
-                case 13:
-                    stratWarlordTrait = cmbStrat.SelectedItem.ToString();
                     break;
             }
 

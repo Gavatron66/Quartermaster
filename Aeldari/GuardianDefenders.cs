@@ -43,6 +43,7 @@ namespace Roster_Builder.Aeldari
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
             lblnud1.Text = "Heavy Weapon Platforms (+20 pts):";
             nudOption1.Location = new System.Drawing.Point(nudOption1.Location.X + 35, nudOption1.Location.Y);
 

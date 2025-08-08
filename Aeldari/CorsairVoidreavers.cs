@@ -48,6 +48,8 @@ namespace Roster_Builder.Aeldari
             ComboBox gb_cmbOption1 = groupBox.Controls["gb_cmbOption1"] as ComboBox;
             CheckBox cbLeaderOption1 = groupBox.Controls["cbLeaderOption1"] as CheckBox;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
@@ -159,6 +161,12 @@ namespace Roster_Builder.Aeldari
                     {
                         nudOption1.Maximum--;
                         nudOption2.Maximum--;
+
+                        if(nudOption1.Value + nudOption2.Value == (decimal)2)
+                        {
+                            nudOption1.Value--;
+                        }
+
                         cmbOption2.Enabled = false;
                         cmbOption2.SelectedItem = "Shuriken Rifle";
                     }

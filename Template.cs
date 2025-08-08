@@ -2234,7 +2234,7 @@ namespace Roster_Builder
                     panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 128);
 
                     panel.Controls["cmbOption2"].Visible = true;
-                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 125);
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(313, 125);
                     break;
                 #endregion
                 #region case "2N"
