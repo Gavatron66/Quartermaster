@@ -37,6 +37,7 @@ namespace Roster_Builder.Tyranids
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
+            repo = f as Tyranids;
             Template.LoadTemplate(TemplateCode, panel);
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
@@ -47,6 +48,9 @@ namespace Roster_Builder.Tyranids
             CheckBox cbOption3 = panel.Controls["cbOption3"] as CheckBox;
             Label lblnud1 = panel.Controls["lblnud1"] as Label;
             Label lblnud2 = panel.Controls["lblnud2"] as Label;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -96,6 +100,29 @@ namespace Roster_Builder.Tyranids
             {
                 cbOption3.Checked = false;
             }
+
+            if (repo.currentSubFaction == "Jormungandr")
+            {
+                cbStratagem3.Visible = true;
+            }
+            else
+            {
+                cbStratagem3.Visible = false;
+            }
+
+            cbStratagem3.Location = new System.Drawing.Point(cbOption3.Location.X, cbOption3.Location.Y + 32);
+            cbStratagem3.Text = f.StratagemList[2];
+
+            if (Stratagem.Contains(cbStratagem3.Text))
+            {
+                cbStratagem3.Checked = true;
+                cbStratagem3.Enabled = true;
+            }
+            else
+            {
+                cbStratagem3.Checked = false;
+                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -106,8 +133,9 @@ namespace Roster_Builder.Tyranids
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             CheckBox cbOption3 = panel.Controls["cbOption3"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
-            switch(code)
+            switch (code)
             {
                 case 21:
                     if (cbOption1.Checked)
@@ -149,6 +177,19 @@ namespace Roster_Builder.Tyranids
                     break;
                 case 32:
                     fleshHooks = int.Parse(nudOption2.Value.ToString());
+                    break;
+                case 73:
+                    if (cbStratagem3.Checked)
+                    {
+                        Stratagem.Add(cbStratagem3.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
+                        }
+                    }
                     break;
             }
 

@@ -3,56 +3,148 @@
   "WorkspaceRootPath": "C:\\Users\\evans\\Desktop\\Quartermaster\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\aeldari\\harlequins\\voidweavers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\voidweavers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\tyranids\\tyrannofex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\tyrannofex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\aeldari\\harlequins\\skyweavers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\skyweavers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\tyranids\\hiveguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\hiveguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\space marines\\tacticalsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\tacticalsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\tyranids\\thornbacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\thornbacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\aeldari\\harlequins\\solitaire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\solitaire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\tyranids\\screamerkillers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\screamerkillers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\aeldari\\harlequins\\harlequins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\harlequins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\tyranids\\carnifexes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\carnifexes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\aeldari\\harlequins\\shadowseer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\shadowseer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\tyranids\\biovores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\biovores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\aeldari\\harlequins\\deathjester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\deathjester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\venomthropes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\venomthropes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\aeldari\\harlequins\\troupemaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\troupemaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\tyranids\\exocrine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\exocrine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\aeldari\\harlequins\\troupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\harlequins\\troupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\tyranids\\sporemines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\sporemines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\haruspex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\haruspex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adeptus custodes\\shieldcaptain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus custodes\\shieldcaptain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\mucolidspores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\mucolidspores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\aeldari\\aeldari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\aeldari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\ripperswarms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\ripperswarms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\raveners.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\raveners.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\genestealers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\genestealers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\wingedhivetyrant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\wingedhivetyrant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\trygonprime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\trygonprime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\parasiteofmortrex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\parasiteofmortrex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\oldoneeye.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\oldoneeye.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\tyrantguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\tyrantguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\zoanthropes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\zoanthropes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\pyrovores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\pyrovores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\toxicrene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\toxicrene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\maleceptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\maleceptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\gargoyles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\gargoyles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\hormagaunts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\hormagaunts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\termagants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\termagants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\tyranidwarriors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\tyranidwarriors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\hivetyrant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\hivetyrant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\swarmlord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\swarmlord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\tyranidprime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\tyranidprime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\tervigon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\tervigon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\neurothrope.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\neurothrope.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\broodlord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\broodlord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\tyranids.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\tyranids.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -66,11 +158,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 35,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -79,12 +171,11 @@
               "ViewState": "AgIAAP8BAAAAAAAAAAAYwA8CAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T01:54:33.308Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 36,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -92,164 +183,439 @@
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T01:54:21.256Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 34,
               "Title": "Template.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeDocumentMoniker": "Template.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeToolTip": "Template.cs",
-              "ViewState": "AgIAAPcBAAAAAAAAAAAYwBsCAABhAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAqwBsCAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-26T00:47:28.245Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Aeldari.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Aeldari.cs",
-              "RelativeDocumentMoniker": "Aeldari\\Aeldari.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Aeldari.cs",
-              "RelativeToolTip": "Aeldari\\Aeldari.cs",
-              "ViewState": "AgIAAOUBAAAAAAAAAAAcwAICAAA4AAAAAAAAAA==",
+              "DocumentIndex": 33,
+              "Title": "Tyranids.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Tyranids.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Tyranids.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Tyranids.cs",
+              "RelativeToolTip": "Tyranids\\Tyranids.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T01:34:52.541Z",
+              "WhenOpened": "2025-08-11T23:50:14.675Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Harlequins.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Harlequins.cs",
-              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\Harlequins.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Harlequins.cs",
-              "RelativeToolTip": "Aeldari\\Harlequins\\Harlequins.cs",
-              "ViewState": "AgIAAIwAAAAAAAAAAAAswMgAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T00:28:38.874Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Voidweavers.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Voidweavers.cs",
-              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\Voidweavers.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Voidweavers.cs",
-              "RelativeToolTip": "Aeldari\\Harlequins\\Voidweavers.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwC0AAABaAAAAAAAAAA==",
+              "Title": "Tyrannofex.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Tyrannofex.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Tyrannofex.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Tyrannofex.cs",
+              "RelativeToolTip": "Tyranids\\Tyrannofex.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAgwGEAAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T01:47:45.095Z",
+              "WhenOpened": "2025-08-30T01:47:13.928Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Skyweavers.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Skyweavers.cs",
-              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\Skyweavers.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Skyweavers.cs",
-              "RelativeToolTip": "Aeldari\\Harlequins\\Skyweavers.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwC4AAABLAAAAAAAAAA==",
+              "Title": "HiveGuard.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\HiveGuard.cs",
+              "RelativeDocumentMoniker": "Tyranids\\HiveGuard.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\HiveGuard.cs",
+              "RelativeToolTip": "Tyranids\\HiveGuard.cs",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAkwMMAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T01:42:34.83Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Solitaire.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Solitaire.cs",
-              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\Solitaire.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Solitaire.cs",
-              "RelativeToolTip": "Aeldari\\Harlequins\\Solitaire.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T01:38:21.135Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DeathJester.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\DeathJester.cs",
-              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\DeathJester.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\DeathJester.cs",
-              "RelativeToolTip": "Aeldari\\Harlequins\\DeathJester.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAD4v3cAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T01:34:21.294Z",
+              "WhenOpened": "2025-08-30T01:45:20.787Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TacticalSquad.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\TacticalSquad.cs",
-              "RelativeDocumentMoniker": "Space Marines\\TacticalSquad.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\TacticalSquad.cs",
-              "RelativeToolTip": "Space Marines\\TacticalSquad.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwDAAAABHAAAAAAAAAA==",
+              "Title": "Thornbacks.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Thornbacks.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Thornbacks.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Thornbacks.cs",
+              "RelativeToolTip": "Tyranids\\Thornbacks.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDYAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T01:13:24.723Z",
+              "WhenOpened": "2025-08-30T01:43:17.64Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Troupe.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Troupe.cs",
-              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\Troupe.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Troupe.cs",
-              "RelativeToolTip": "Aeldari\\Harlequins\\Troupe.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAYwGwAAAAuAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ScreamerKillers.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\ScreamerKillers.cs",
+              "RelativeDocumentMoniker": "Tyranids\\ScreamerKillers.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\ScreamerKillers.cs",
+              "RelativeToolTip": "Tyranids\\ScreamerKillers.cs",
+              "ViewState": "AgIAANAAAAAAAAAAAAAAwNUAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T01:01:47.305Z",
+              "WhenOpened": "2025-08-30T01:40:49.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Carnifexes.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Carnifexes.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Carnifexes.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Carnifexes.cs",
+              "RelativeToolTip": "Tyranids\\Carnifexes.cs",
+              "ViewState": "AgIAAE4BAAAAAAAAAAAkwFcBAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-30T01:37:17.028Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Shadowseer.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Shadowseer.cs",
-              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\Shadowseer.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\Shadowseer.cs",
-              "RelativeToolTip": "Aeldari\\Harlequins\\Shadowseer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Title": "Biovores.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Biovores.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Biovores.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Biovores.cs",
+              "RelativeToolTip": "Tyranids\\Biovores.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCUAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T02:19:19.058Z",
+              "WhenOpened": "2025-08-30T01:33:20.289Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "TroupeMaster.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\TroupeMaster.cs",
-              "RelativeDocumentMoniker": "Aeldari\\Harlequins\\TroupeMaster.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Harlequins\\TroupeMaster.cs",
-              "RelativeToolTip": "Aeldari\\Harlequins\\TroupeMaster.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAgwIgAAAAAAAAAAAAAAA==",
+              "Title": "Exocrine.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Exocrine.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Exocrine.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Exocrine.cs",
+              "RelativeToolTip": "Tyranids\\Exocrine.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAgwFYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T02:04:21.984Z",
+              "WhenOpened": "2025-08-30T01:21:43.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SporeMines.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\SporeMines.cs",
+              "RelativeDocumentMoniker": "Tyranids\\SporeMines.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\SporeMines.cs",
+              "RelativeToolTip": "Tyranids\\SporeMines.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCMAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T01:54:30.461Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "ShieldCaptain.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\ShieldCaptain.cs",
-              "RelativeDocumentMoniker": "Adeptus Custodes\\ShieldCaptain.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Custodes\\ShieldCaptain.cs",
-              "RelativeToolTip": "Adeptus Custodes\\ShieldCaptain.cs",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAAAMEAAAAaAAAAAAAAAA==",
+              "Title": "MucolidSpores.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\MucolidSpores.cs",
+              "RelativeDocumentMoniker": "Tyranids\\MucolidSpores.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\MucolidSpores.cs",
+              "RelativeToolTip": "Tyranids\\MucolidSpores.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCUAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T02:03:27.767Z"
+              "WhenOpened": "2025-08-29T01:54:21.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ParasiteofMortrex.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\ParasiteofMortrex.cs",
+              "RelativeDocumentMoniker": "Tyranids\\ParasiteofMortrex.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\ParasiteofMortrex.cs",
+              "RelativeToolTip": "Tyranids\\ParasiteofMortrex.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAACcAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T01:43:16.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RipperSwarms.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\RipperSwarms.cs",
+              "RelativeDocumentMoniker": "Tyranids\\RipperSwarms.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\RipperSwarms.cs",
+              "RelativeToolTip": "Tyranids\\RipperSwarms.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAqwCUAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T01:28:37.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Raveners.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Raveners.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Raveners.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Raveners.cs",
+              "RelativeToolTip": "Tyranids\\Raveners.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAqwDAAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T01:24:42.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Genestealers.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Genestealers.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Genestealers.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Genestealers.cs",
+              "RelativeToolTip": "Tyranids\\Genestealers.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAcwDIAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T01:19:38.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Zoanthropes.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Zoanthropes.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Zoanthropes.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Zoanthropes.cs",
+              "RelativeToolTip": "Tyranids\\Zoanthropes.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAmwFIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T01:14:08.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Venomthropes.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Venomthropes.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Venomthropes.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Venomthropes.cs",
+              "RelativeToolTip": "Tyranids\\Venomthropes.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAgwE8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T01:12:04.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Haruspex.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Haruspex.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Haruspex.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Haruspex.cs",
+              "RelativeToolTip": "Tyranids\\Haruspex.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAgwFYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T01:09:11.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Pyrovores.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Pyrovores.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Pyrovores.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Pyrovores.cs",
+              "RelativeToolTip": "Tyranids\\Pyrovores.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAcwCQAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T01:02:54.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Maleceptor.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Maleceptor.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Maleceptor.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Maleceptor.cs",
+              "RelativeToolTip": "Tyranids\\Maleceptor.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAmwG4AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T01:00:31.022Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "TyrantGuard.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\TyrantGuard.cs",
+              "RelativeDocumentMoniker": "Tyranids\\TyrantGuard.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\TyrantGuard.cs",
+              "RelativeToolTip": "Tyranids\\TyrantGuard.cs",
+              "ViewState": "AgIAAK8AAAAAAAAAAAAAwMEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T03:09:07.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Toxicrene.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Toxicrene.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Toxicrene.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Toxicrene.cs",
+              "RelativeToolTip": "Tyranids\\Toxicrene.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAgwE4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T03:05:11.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Gargoyles.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Gargoyles.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Gargoyles.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Gargoyles.cs",
+              "RelativeToolTip": "Tyranids\\Gargoyles.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCQAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T03:02:19.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Hormagaunts.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Hormagaunts.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Hormagaunts.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Hormagaunts.cs",
+              "RelativeToolTip": "Tyranids\\Hormagaunts.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAiwCIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T03:00:15.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Termagants.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Termagants.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Termagants.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Termagants.cs",
+              "RelativeToolTip": "Tyranids\\Termagants.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAuwIwAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T02:57:23.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "TyranidWarriors.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\TyranidWarriors.cs",
+              "RelativeDocumentMoniker": "Tyranids\\TyranidWarriors.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\TyranidWarriors.cs",
+              "RelativeToolTip": "Tyranids\\TyranidWarriors.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAcwCwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T02:47:29.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OldOneEye.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\OldOneEye.cs",
+              "RelativeDocumentMoniker": "Tyranids\\OldOneEye.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\OldOneEye.cs",
+              "RelativeToolTip": "Tyranids\\OldOneEye.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAqwDQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T02:45:01.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TrygonPrime.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\TrygonPrime.cs",
+              "RelativeDocumentMoniker": "Tyranids\\TrygonPrime.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\TrygonPrime.cs",
+              "RelativeToolTip": "Tyranids\\TrygonPrime.cs",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAkwNsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T02:41:51.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Tervigon.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Tervigon.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Tervigon.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Tervigon.cs",
+              "RelativeToolTip": "Tyranids\\Tervigon.cs",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAkwNkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T02:35:48.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "TyranidPrime.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\TyranidPrime.cs",
+              "RelativeDocumentMoniker": "Tyranids\\TyranidPrime.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\TyranidPrime.cs",
+              "RelativeToolTip": "Tyranids\\TyranidPrime.cs",
+              "ViewState": "AgIAABYBAAAAAAAAAAAYwCoBAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T02:20:24.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Neurothrope.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Neurothrope.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Neurothrope.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Neurothrope.cs",
+              "RelativeToolTip": "Tyranids\\Neurothrope.cs",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAAwFYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T02:16:58.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Broodlord.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Broodlord.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Broodlord.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Broodlord.cs",
+              "RelativeToolTip": "Tyranids\\Broodlord.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAYwKYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T02:12:42.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Swarmlord.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Swarmlord.cs",
+              "RelativeDocumentMoniker": "Tyranids\\Swarmlord.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Swarmlord.cs",
+              "RelativeToolTip": "Tyranids\\Swarmlord.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAYwIoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T02:09:28.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "HiveTyrant.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\HiveTyrant.cs",
+              "RelativeDocumentMoniker": "Tyranids\\HiveTyrant.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\HiveTyrant.cs",
+              "RelativeToolTip": "Tyranids\\HiveTyrant.cs",
+              "ViewState": "AgIAABgBAAAAAAAAAAAkwCsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T01:52:20.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "WingedHiveTyrant.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\WingedHiveTyrant.cs",
+              "RelativeDocumentMoniker": "Tyranids\\WingedHiveTyrant.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\WingedHiveTyrant.cs",
+              "RelativeToolTip": "Tyranids\\WingedHiveTyrant.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA+wDEAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T01:21:28.121Z"
             }
           ]
         }

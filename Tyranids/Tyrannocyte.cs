@@ -11,7 +11,7 @@ namespace Roster_Builder.Tyranids
     {
         public Tyrannocyte()
         {
-            DEFAULT_POINTS = 120;
+            DEFAULT_POINTS = 110;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m";

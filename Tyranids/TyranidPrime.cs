@@ -45,6 +45,9 @@ namespace Roster_Builder.Tyranids
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -120,6 +123,17 @@ namespace Roster_Builder.Tyranids
                 cmbWarlord.Enabled = false;
             }
 
+            if (repo.currentSubFaction == "Jormungandr")
+            {
+                cbStratagem3.Visible = true;
+            }
+            else
+            {
+                cbStratagem3.Visible = false;
+            }
+            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
+            cbStratagem3.Text = f.StratagemList[2];
+
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
@@ -131,9 +145,6 @@ namespace Roster_Builder.Tyranids
             {
                 cmbRelic.SelectedIndex = 0;
             }
-
-            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
-            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -156,6 +167,17 @@ namespace Roster_Builder.Tyranids
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
+
+            if (Stratagem.Contains(cbStratagem3.Text))
+            {
+                cbStratagem3.Checked = true;
+                cbStratagem3.Enabled = true;
+            }
+            else
+            {
+                cbStratagem3.Checked = false;
+                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -170,6 +192,7 @@ namespace Roster_Builder.Tyranids
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -206,8 +229,8 @@ namespace Roster_Builder.Tyranids
                     }
                     else if (chosenRelic == "Searhive")
                     {
-                        cbOption2.Checked = true;
-                        cbOption2.Enabled = false;
+                        cbOption3.Checked = true;
+                        cbOption3.Enabled = false;
                     }
                     Relic = chosenRelic;
                     break;
@@ -274,6 +297,19 @@ namespace Roster_Builder.Tyranids
                         }
                     }
                     break;
+                case 73:
+                    if (cbStratagem3.Checked)
+                    {
+                        Stratagem.Add(cbStratagem3.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
+                        }
+                    }
+                    break;
                 default: break;
             }
 
@@ -281,15 +317,15 @@ namespace Roster_Builder.Tyranids
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
-            if (Weapons.Contains("Adrenal Glands (+5 pts)"))
+            if (cbOption1.Checked)
             {
                 Points += 5;
             }
-            if (Weapons.Contains("Flesh Hooks (+5 pts)"))
+            if (cbOption2.Checked)
             {
                 Points += 5;
             }
-            if (Weapons.Contains("Toxin Sacs (+5 pts)"))
+            if (cbOption3.Checked)
             {
                 Points += 5;
             }

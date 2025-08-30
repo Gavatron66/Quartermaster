@@ -53,6 +53,9 @@ namespace Roster_Builder.Tyranids
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             cbOption1.Location = new System.Drawing.Point(cbOption1.Location.X, cbOption1.Location.Y + 50);
             cbOption2.Location = new System.Drawing.Point(cbOption2.Location.X, cbOption2.Location.Y + 45);
@@ -93,7 +96,7 @@ namespace Roster_Builder.Tyranids
                 "Venom Cannon (+5 pts)"
             });
 
-            cbOption1.Text = "Adrenal Glands (+15 pts)";
+            cbOption1.Text = "Adrenal Glands (+15 pts/unit)";
             if (Weapons[0] == cbOption1.Text)
             {
                 cbOption1.Checked = true;
@@ -103,7 +106,7 @@ namespace Roster_Builder.Tyranids
                 cbOption1.Checked = false;
             }
 
-            cbOption2.Text = "Flesh Hooks (+5 pts)";
+            cbOption2.Text = "Flesh Hooks (+5 pts/unit)";
             if (Weapons[1] == cbOption2.Text)
             {
                 cbOption2.Checked = true;
@@ -113,7 +116,7 @@ namespace Roster_Builder.Tyranids
                 cbOption2.Checked = false;
             }
 
-            cbOption3.Text = "Toxin Sacs (+10 pts)";
+            cbOption3.Text = "Toxin Sacs (+10 pts/unit)";
             if (Weapons[2] == cbOption3.Text)
             {
                 cbOption3.Checked = true;
@@ -123,6 +126,28 @@ namespace Roster_Builder.Tyranids
                 cbOption3.Checked = false;
             }
 
+            if (repo.currentSubFaction == "Jormungandr")
+            {
+                cbStratagem3.Visible = true;
+            }
+            else
+            {
+                cbStratagem3.Visible = false;
+            }
+
+            cbStratagem3.Location = new System.Drawing.Point(cbOption3.Location.X, cbOption3.Location.Y + 32);
+            cbStratagem3.Text = f.StratagemList[2];
+
+            if (Stratagem.Contains(cbStratagem3.Text))
+            {
+                cbStratagem3.Checked = true;
+                cbStratagem3.Enabled = true;
+            }
+            else
+            {
+                cbStratagem3.Checked = false;
+                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -134,16 +159,31 @@ namespace Roster_Builder.Tyranids
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
                 case 11:
-                    Weapons[(currentIndex * 2) + 3] = cmbOption1.SelectedItem.ToString();
-                    lbModelSelect.Items[currentIndex] = "Tyranid Warrior w/ " + Weapons[(currentIndex * 2) + 3] + " and " + Weapons[(currentIndex * 2) + 4];
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    {
+                        Weapons[(currentIndex * 2) + 3] = cmbOption1.SelectedItem.ToString();
+                        lbModelSelect.Items[currentIndex] = "Tyranid Warrior w/ " + Weapons[(currentIndex * 2) + 3] + " and " + Weapons[(currentIndex * 2) + 4];
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2) + 3]);
+                    }
                     break;
                 case 12:
-                    Weapons[(currentIndex * 2) + 4] = cmbOption2.SelectedItem.ToString();
-                    lbModelSelect.Items[currentIndex] = "Tyranid Warrior w/ " + Weapons[(currentIndex * 2) + 3] + " and " + Weapons[(currentIndex * 2) + 4];
+                    if (!restrictedIndexes.Contains(cmbOption2.SelectedIndex))
+                    {
+                        Weapons[(currentIndex * 2) + 4] = cmbOption2.SelectedItem.ToString();
+                        lbModelSelect.Items[currentIndex] = "Tyranid Warrior w/ " + Weapons[(currentIndex * 2) + 3] + " and " + Weapons[(currentIndex * 2) + 4];
+                    }
+                    else
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 4]);
+                    }
                     break;
                 case 21:
                     if (cbOption1.Checked)
@@ -222,33 +262,41 @@ namespace Roster_Builder.Tyranids
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption2"].Visible = true;
 
+                    restrictedIndexes.Clear();
                     if(stranglers == UnitSize/3 && Weapons[(currentIndex * 2) + 4] != "Barbed Strangler (+10 pts)")
                     {
                         if(cmbOption2.Items.Contains("Barbed Strangler (+10 pts)"))
                         {
-                            cmbOption2.Items.RemoveAt(0);
+                            restrictedIndexes.Add(0);
                         }
-                    }
-                    else if (!cmbOption2.Items.Contains("Barbed Strangler (+10 pts)"))
-                    {
-                        cmbOption2.Items.Insert(0, "Barbed Strangler (+10 pts)");
                     }
 
                     if (venomcannons == UnitSize / 3 && Weapons[(currentIndex * 2) + 4] != "Venom Cannon (+5 pts)")
                     {
                         if (cmbOption2.Items.Contains("Venom Cannon (+5 pts)"))
                         {
-                            cmbOption2.Items.Remove("Venom Cannon (+5 pts)");
+                            restrictedIndexes.Add(8);
                         }
                     }
-                    else if (!cmbOption2.Items.Contains("Venom Cannon (+5 pts)"))
-                    {
-                        cmbOption2.Items.Add("Venom Cannon (+5 pts)");
-                    }
+
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
 
                     cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2) + 3]);
                     cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 4]);
 
+                    break;
+                case 73:
+                    if (cbStratagem3.Checked)
+                    {
+                        Stratagem.Add(cbStratagem3.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
+                        }
+                    }
                     break;
             }
 

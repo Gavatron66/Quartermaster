@@ -43,6 +43,7 @@ namespace Roster_Builder.Tyranids
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             panel.Controls["cmbFactionUpgrade"].Visible = true;
             panel.Controls["lblFactionUpgrade"].Visible = true;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -84,6 +85,29 @@ namespace Roster_Builder.Tyranids
             {
                 cmbFaction.SelectedIndex = 0;
             }
+
+            if (repo.currentSubFaction == "Jormungandr")
+            {
+                cbStratagem3.Visible = true;
+            }
+            else
+            {
+                cbStratagem3.Visible = false;
+            }
+
+            cbStratagem3.Location = new System.Drawing.Point(cmbFaction.Location.X, cmbFaction.Location.Y + 32);
+            cbStratagem3.Text = f.StratagemList[2];
+
+            if (Stratagem.Contains(cbStratagem3.Text))
+            {
+                cbStratagem3.Checked = true;
+                cbStratagem3.Enabled = true;
+            }
+            else
+            {
+                cbStratagem3.Checked = false;
+                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -92,6 +116,7 @@ namespace Roster_Builder.Tyranids
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -114,6 +139,19 @@ namespace Roster_Builder.Tyranids
                         Weapons[2] = cbOption2.Text;
                     }
                     else { Weapons[2] = string.Empty; }
+                    break;
+                case 73:
+                    if (cbStratagem3.Checked)
+                    {
+                        Stratagem.Add(cbStratagem3.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
+                        }
+                    }
                     break;
             }
 

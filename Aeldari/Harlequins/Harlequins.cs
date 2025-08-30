@@ -218,36 +218,24 @@ namespace Roster_Builder.Aeldari.Harlequins
             relics.Add("The Starmist Raiment");
             relics.Add("The Laughing God's Eye");
 
-            if (keywords.Contains("SHADOWSEER"))
+            if (currentSubFaction == "Light")
             {
-                relics.Add("Shadow Stone");
+                if (keywords.Contains("SHADOWSEER"))
+                {
+                    relics.Add("Shadow Stone");
+                }
             }
-
-            relics.Add("The Ghoulmask");
-
-            if (keywords.Contains("TROUPE MASTER"))
+            if(currentSubFaction == "Dark")
             {
-                relics.Add("Twilight Fang");
+                relics.Add("The Ghoulmask");
             }
-
-            //if (currentSubFaction == "Light")
-            //{
-            //    if (keywords.Contains("SHADOWSEER"))
-            //    {
-            //        relics.Add("Shadow Stone");
-            //    }
-            //}
-            //if(currentSubFaction == "Dark")
-            //{
-            //    relics.Add("The Ghoulmask");
-            //}
-            //if (currentSubFaction == "Twilight")
-            //{
-            //    if (keywords.Contains("TROUPE MASTER"))
-            //    {
-            //        relics.Add("Twilight Fang");
-            //    }
-            //}
+            if (currentSubFaction == "Twilight")
+            {
+                if (keywords.Contains("TROUPE MASTER"))
+                {
+                    relics.Add("Twilight Fang");
+                }
+            }
 
             return relics;
         }
