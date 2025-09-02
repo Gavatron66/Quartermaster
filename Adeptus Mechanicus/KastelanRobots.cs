@@ -47,6 +47,8 @@ namespace Roster_Builder.Adeptus_Mechanicus
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             ComboBox cmbOption3 = panel.Controls["cmbOption3"] as ComboBox;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 2;
             antiLoop = true;

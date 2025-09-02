@@ -58,6 +58,7 @@ Just fixed (3/11) some of the main form's listboxes to not flicker as often; try
 
 This is more of a note than a todo, the Tome of Vel'cona grants Salamander Librarians an additional Salamander-unique psychic power. I'm not going to implement at this time, or maybe ever, since that's a lot of work for such a niche case.
 
+***Leaving these for the future SM supplements***
 Characters to do list:
 	Primaris Captain
 	Gravis Captain w/ Heavy Bolt Rifle
@@ -320,3 +321,5 @@ Sergeants
                 }
             }
 			
+			
+	

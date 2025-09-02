@@ -45,6 +45,8 @@ namespace Roster_Builder.Adeptus_Mechanicus
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;
             antiLoop = true;
@@ -71,7 +73,7 @@ namespace Roster_Builder.Adeptus_Mechanicus
             cmbOption1.Items.AddRange(new string[]
             {
                 "Radium Jezzail",
-                "Taser Lance"
+                "Taser Lance (+5 pts)"
             });
 
             cbOption1.Text = "Phosphor Serpenta";
@@ -169,6 +171,13 @@ namespace Roster_Builder.Adeptus_Mechanicus
             }
 
             Points = DEFAULT_POINTS * UnitSize;
+            foreach(var weapon in Weapons)
+            {
+                if(weapon == "Taser Lance (+5 pts)")
+                {
+                    Points += 5;
+                }
+            }
         }
 
         public override string ToString()
