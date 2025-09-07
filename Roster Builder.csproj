@@ -820,7 +820,6 @@
     <Compile Include="Tau Empire\SunSharkBomber.cs" />
     <Compile Include="Tau Empire\T%27au.cs" />
     <Compile Include="Tau Empire\TacticalDrones.cs" />
-    <Compile Include="Tau Empire\TidewallDefensePlatform.cs" />
     <Compile Include="Tau Empire\TidewallDroneport.cs" />
     <Compile Include="Tau Empire\TidewallGunrig.cs" />
     <Compile Include="Tau Empire\TidewallShieldline.cs" />

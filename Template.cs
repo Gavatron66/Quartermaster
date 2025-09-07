@@ -3578,7 +3578,7 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(343, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
+                    panel.Controls["lblModelPoints"].Visible = false;
                     panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblnud1"].Visible = true;

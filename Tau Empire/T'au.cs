@@ -119,7 +119,6 @@ namespace Roster_Builder.Tau_Empire
                 new SunSharkBomber(),
                 //---------- Fortification ----------
                 new TidewallShieldline(),
-                new TidewallDefensePlatform(),
                 new TidewallDroneport(),
                 new TidewallGunrig(),
                 //---------- Lord of War ----------
@@ -250,10 +249,35 @@ namespace Roster_Builder.Tau_Empire
 
             if (keywords.Contains("CRISIS"))
             {
-                upgrades.Add("Wide Sprectrum Scanners (+20 pts)"); //Early Warning Override only
+                upgrades.Add("Wide-Spectrum Scanners (+20 pts)"); //Early Warning Override only
             }
 
-			return upgrades;
+            if (currentSubFaction == "T'au")
+            {
+                upgrades.Add("Vectored Manoeuvring Thursters");
+            }
+            else if (currentSubFaction == "Vior'la" && keywords.Contains("COMMANDER"))
+            {
+                upgrades.Add("Automated Armour Defences"); //Commander
+            }
+            else if (currentSubFaction == "Sa'cea")
+            {
+                upgrades.Add("Grav-Inhibitor Field");
+            }
+            else if (currentSubFaction == "Dal'yth")
+            {
+                upgrades.Add("Dynamic Mirror Field");
+            }
+            else if (currentSubFaction == "Bork'an" && keywords.Contains("COMMANDER"))
+            {
+                upgrades.Add("Overdrive Power Systems"); //Commander
+            }
+            else if (currentSubFaction == "Farsight Enclaves")
+            {
+                upgrades.Add("Talisman of Arthas Moloch");
+            }
+
+            return upgrades;
         }
 
         public override bool GetIfEnabled(int index)
@@ -321,31 +345,6 @@ namespace Roster_Builder.Tau_Empire
             {
                 relics.Add("Ka'chak'tarr");         //Kroot Shaper
             }
-
-			if (currentSubFaction == "T'au" && keywords.Contains("BATTLESUIT"))
-			{
-                relics.Add("Vectored Manoeuvring Thursters");
-			}
-			else if (currentSubFaction == "Vior'la" || keywords.Contains("COMMANDER"))
-			{
-                relics.Add("Automated Armour Defences"); //Commander
-			}
-			else if (currentSubFaction == "Sa'cea")
-			{
-                relics.Add("Grav-Inhibitor Field");
-			}
-			else if (currentSubFaction == "Dal'yth")
-			{
-                relics.Add("Dynamic Mirror Field");
-			}
-			else if (currentSubFaction == "Bork'an" || keywords.Contains("COMMANDER"))
-			{
-                relics.Add("Overdrive Power Systems"); //Commander
-			}
-			else if (currentSubFaction == "Farsight Enclaves")
-			{
-                relics.Add("Talisman of Arthas Moloch");
-			}
 
 			return relics;
 		}

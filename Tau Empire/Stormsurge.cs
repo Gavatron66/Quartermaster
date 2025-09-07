@@ -70,7 +70,7 @@ namespace Roster_Builder.Tau_Empire
 			{
 				"(None)",
 				"Early Warning Override",
-				"Multi-tracker"
+				"Stormsurge Multi-tracker"
 			});
 			cmbOption4.SelectedIndex = cmbOption4.Items.IndexOf(Weapons[3]);
 		}

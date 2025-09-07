@@ -57,15 +57,12 @@ namespace Roster_Builder.Tau_Empire
             {
                 "Airbursting Fragmentation Projector (+10/+15/+20 pts)",
                 "Burst Cannon (+10/+15/+20 pts)",
-                "Counterfire Defence System",
                 "Cyclic Ion Blaster (+10/+20/+25 pts)",
-                "Early Warning Override",
                 "Fusion Blaster (+15/+20/+25 pts)",
                 "Missile Pod (+10/+15/+25 pts)",
-                "Multi-tracker",
                 "Plasma Rifle (+10/+15/+25 pts)",
+                "Positional Relay",
                 "Shield Generator (+10 pts)",
-                "Target Lock",
                 "T'au Flamer (+5/+10/+15 pts)",
                 "Velocity Tracker"
             });
@@ -77,15 +74,12 @@ namespace Roster_Builder.Tau_Empire
                 "(None)",
                 "Airbursting Fragmentation Projector (+10/+15/+20 pts)",
                 "Burst Cannon (+10/+15/+20 pts)",
-                "Counterfire Defence System",
                 "Cyclic Ion Blaster (+10/+20/+25 pts)",
-                "Early Warning Override",
                 "Fusion Blaster (+15/+20/+25 pts)",
                 "Missile Pod (+10/+15/+25 pts)",
-                "Multi-tracker",
                 "Plasma Rifle (+10/+15/+25 pts)",
+                "Positional Relay",
                 "Shield Generator (+10 pts)",
-                "Target Lock",
                 "T'au Flamer (+5/+10/+15 pts)",
                 "Velocity Tracker"
             });
@@ -97,15 +91,12 @@ namespace Roster_Builder.Tau_Empire
                 "(None)",
                 "Airbursting Fragmentation Projector (+10/+15/+20 pts)",
                 "Burst Cannon (+10/+15/+20 pts)",
-                "Counterfire Defence System",
                 "Cyclic Ion Blaster (+10/+20/+25 pts)",
-                "Early Warning Override",
                 "Fusion Blaster (+15/+20/+25 pts)",
                 "Missile Pod (+10/+15/+25 pts)",
-                "Multi-tracker",
                 "Plasma Rifle (+10/+15/+25 pts)",
+                "Positional Relay",
                 "Shield Generator (+10 pts)",
-                "Target Lock",
                 "T'au Flamer (+5/+10/+15 pts)",
                 "Velocity Tracker"
             });
@@ -117,15 +108,12 @@ namespace Roster_Builder.Tau_Empire
                 "(None)",
                 "Airbursting Fragmentation Projector (+10/+15/+20 pts)",
                 "Burst Cannon (+10/+15/+20 pts)",
-                "Counterfire Defence System",
                 "Cyclic Ion Blaster (+10/+20/+25 pts)",
-                "Early Warning Override",
                 "Fusion Blaster (+15/+20/+25 pts)",
                 "Missile Pod (+10/+15/+25 pts)",
-                "Multi-tracker",
                 "Plasma Rifle (+10/+15/+25 pts)",
+                "Positional Relay",
                 "Shield Generator (+10 pts)",
-                "Target Lock",
                 "T'au Flamer (+5/+10/+15 pts)",
                 "Velocity Tracker"
             });

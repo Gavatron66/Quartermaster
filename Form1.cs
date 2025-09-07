@@ -396,6 +396,9 @@ namespace Roster_Builder
 
             currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, cmbOption1);
             currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, cmbOption2);
+            currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, cmbOption3);
+            currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, cmbOption4);
+            currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, cmbOption5);
         }
 
         private void cbOption1_CheckedChanged(object sender, EventArgs e)

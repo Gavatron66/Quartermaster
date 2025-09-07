@@ -54,6 +54,8 @@ namespace Roster_Builder.Tau_Empire
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
             panel.Controls["lblOption1"].Visible = true;
             panel.Controls["lblOption2"].Visible = true;
             cmbOption1.Visible = true;

@@ -320,6 +320,3 @@ Sergeants
                     cmbRelic.SelectedIndex = -1;
                 }
             }
-			
-			
-	

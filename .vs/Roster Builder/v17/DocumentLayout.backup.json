@@ -3,100 +3,120 @@
   "WorkspaceRootPath": "C:\\Users\\evans\\Desktop\\Quartermaster\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adeptus mechanicus\\admech.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\admech.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\t\u0027au.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\t\u0027au.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\kastelanrobots.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\kastelanrobots.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\tau empire\\stormsurge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\stormsurge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\sydoniandragoons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\sydoniandragoons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\tau empire\\tidewalldroneport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\tidewalldroneport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\ironstriderballistarii.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\ironstriderballistarii.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\tau empire\\tidewallshieldline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\tidewallshieldline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\pteraxiisterylizors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\pteraxiisterylizors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\tacticaldrones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\tacticaldrones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\pteraxiiskystalkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\pteraxiiskystalkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\tau empire\\sunsharkbomber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\sunsharkbomber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\serberysraiders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\serberysraiders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\serberyssulphurhounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\serberyssulphurhounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\sicarianinfiltrators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\sicarianinfiltrators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\sicarianruststalkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\sicarianruststalkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adeptus mechanicus\\skitariimarshal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\skitariimarshal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\skitariivanguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\skitariivanguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\necrons\\necronwarriors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:necrons\\necronwarriors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\fulguriteelectropriests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\fulguriteelectropriests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\corpuscariielectropriests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\corpuscariielectropriests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\kataphrondestroyers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\kataphrondestroyers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\amservitors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\amservitors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\kataphronbreachers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\kataphronbreachers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adeptus mechanicus\\skitariirangers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\skitariirangers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\tyranidwarriors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\tyranidwarriors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\tacticalsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\tacticalsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\tau empire\\skyraygunship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\skyraygunship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\tau empire\\broadsides.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\broadsides.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\pathfinders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\pathfinders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\crisisbattlesuits.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\crisisbattlesuits.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\piranhas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\piranhas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\kroothounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\kroothounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\vespidstingwings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\vespidstingwings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\crisisbodyguards.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\crisisbodyguards.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\breacherteam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\breacherteam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\stealthbattlesuits.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\stealthbattlesuits.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\striketeam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\striketeam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\necrons\\necronwarriors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:necrons\\necronwarriors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\krootoxriders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\krootoxriders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\krootcarnivores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\krootcarnivores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\vanguardveterans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\vanguardveterans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\krootshaper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\krootshaper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\coldstarcommander.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\coldstarcommander.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\enforcercommander.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\enforcercommander.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\crisiscommander.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\crisiscommander.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tau empire\\commandershadowsun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tau empire\\commandershadowsun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -110,20 +130,21 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 7,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAANsBAAAAAAAAAAAuwA8CAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAGQBAAAAAAAAAAAQwIwBAABrAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T01:54:33.308Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 22,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -131,293 +152,345 @@
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T01:54:21.256Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 9,
               "Title": "Template.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeDocumentMoniker": "Template.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeToolTip": "Template.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAqwBsCAABhAAAAAAAAAA==",
+              "ViewState": "AgIAACIJAAAAAAAAAAAmwPwNAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-26T00:47:28.245Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AdMech.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\AdMech.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\AdMech.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\AdMech.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\AdMech.cs",
-              "ViewState": "AgIAANoAAAAAAAAAAAAIwAABAAA1AAAAAAAAAA==",
+              "Title": "T\u0027au.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\T\u0027au.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\T\u0027au.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\T\u0027au.cs",
+              "RelativeToolTip": "Tau Empire\\T\u0027au.cs",
+              "ViewState": "AgIAAPgAAAAAAAAAAAAswAoBAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T20:59:35.72Z",
+              "WhenOpened": "2025-09-02T00:48:26.449Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "KastelanRobots.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\KastelanRobots.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\KastelanRobots.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\KastelanRobots.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\KastelanRobots.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwCUAAAAAAAAAAAAAAA==",
+              "Title": "Stormsurge.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\Stormsurge.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\Stormsurge.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\Stormsurge.cs",
+              "RelativeToolTip": "Tau Empire\\Stormsurge.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwDYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T00:41:36.213Z",
+              "WhenOpened": "2025-09-07T21:55:21.763Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SydonianDragoons.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SydonianDragoons.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\SydonianDragoons.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SydonianDragoons.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\SydonianDragoons.cs",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAYwKIAAAA2AAAAAAAAAA==",
+              "Title": "TidewallDroneport.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\TidewallDroneport.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\TidewallDroneport.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\TidewallDroneport.cs",
+              "RelativeToolTip": "Tau Empire\\TidewallDroneport.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAkwGwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T00:38:59.95Z",
+              "WhenOpened": "2025-09-07T21:44:08.256Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IronstriderBallistarii.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\IronstriderBallistarii.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\IronstriderBallistarii.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\IronstriderBallistarii.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\IronstriderBallistarii.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwCwAAABLAAAAAAAAAA==",
+              "Title": "TidewallShieldline.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\TidewallShieldline.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\TidewallShieldline.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\TidewallShieldline.cs",
+              "RelativeToolTip": "Tau Empire\\TidewallShieldline.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwCoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T00:37:44.094Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PteraxiiSterylizors.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\PteraxiiSterylizors.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\PteraxiiSterylizors.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\PteraxiiSterylizors.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\PteraxiiSterylizors.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T00:30:13.014Z",
+              "WhenOpened": "2025-09-07T21:40:38.238Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "PteraxiiSkystalkers.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\PteraxiiSkystalkers.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\PteraxiiSkystalkers.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\PteraxiiSkystalkers.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\PteraxiiSkystalkers.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAUwCAAAAAfAAAAAAAAAA==",
+              "Title": "SunSharkBomber.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\SunSharkBomber.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\SunSharkBomber.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\SunSharkBomber.cs",
+              "RelativeToolTip": "Tau Empire\\SunSharkBomber.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAwEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T00:30:11.856Z",
+              "WhenOpened": "2025-09-07T21:40:51.422Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "SerberysRaiders.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SerberysRaiders.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\SerberysRaiders.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SerberysRaiders.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\SerberysRaiders.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAUwCAAAAAJAAAAAAAAAA==",
+              "Title": "SkyRayGunship.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\SkyRayGunship.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\SkyRayGunship.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\SkyRayGunship.cs",
+              "RelativeToolTip": "Tau Empire\\SkyRayGunship.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T00:16:47.62Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SerberysSulphurhounds.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SerberysSulphurhounds.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\SerberysSulphurhounds.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SerberysSulphurhounds.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\SerberysSulphurhounds.cs",
-              "ViewState": "AgIAALgAAAAAAAAAAAAkwMMAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T00:16:22.851Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SicarianRuststalkers.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SicarianRuststalkers.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\SicarianRuststalkers.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SicarianRuststalkers.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\SicarianRuststalkers.cs",
-              "ViewState": "AgIAAPcAAAAAAAAAAAAkwAsBAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T22:34:14.311Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "NecronWarriors.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Necrons\\NecronWarriors.cs",
-              "RelativeDocumentMoniker": "Necrons\\NecronWarriors.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Necrons\\NecronWarriors.cs",
-              "RelativeToolTip": "Necrons\\NecronWarriors.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwD8AAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T22:31:11.988Z",
+              "WhenOpened": "2025-09-07T21:40:46.085Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "SicarianInfiltrators.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SicarianInfiltrators.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\SicarianInfiltrators.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SicarianInfiltrators.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\SicarianInfiltrators.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAUwJEAAAAJAAAAAAAAAA==",
+              "Title": "Broadsides.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\Broadsides.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\Broadsides.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\Broadsides.cs",
+              "RelativeToolTip": "Tau Empire\\Broadsides.cs",
+              "ViewState": "AgIAAAwBAAAAAAAAAAAAABcBAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T22:30:44.378Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CorpuscariiElectroPriests.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\CorpuscariiElectroPriests.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\CorpuscariiElectroPriests.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\CorpuscariiElectroPriests.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\CorpuscariiElectroPriests.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T22:24:50.482Z",
+              "WhenOpened": "2025-09-06T01:19:42.436Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "FulguriteElectroPriests.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\FulguriteElectroPriests.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\FulguriteElectroPriests.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\FulguriteElectroPriests.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\FulguriteElectroPriests.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCIAAABXAAAAAAAAAA==",
+              "Title": "KrootHounds.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\KrootHounds.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\KrootHounds.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\KrootHounds.cs",
+              "RelativeToolTip": "Tau Empire\\KrootHounds.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACQAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T22:24:43.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T01:17:51.37Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AMServitors.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\AMServitors.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\AMServitors.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\AMServitors.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\AMServitors.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "VespidStingwings.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\VespidStingwings.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\VespidStingwings.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\VespidStingwings.cs",
+              "RelativeToolTip": "Tau Empire\\VespidStingwings.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCQAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T22:23:06.419Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T01:17:43.418Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "KataphronDestroyers.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\KataphronDestroyers.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\KataphronDestroyers.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\KataphronDestroyers.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\KataphronDestroyers.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAmwC8AAABPAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "Piranhas.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\Piranhas.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\Piranhas.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\Piranhas.cs",
+              "RelativeToolTip": "Tau Empire\\Piranhas.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAkwC4AAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T22:19:12.748Z",
+              "WhenOpened": "2025-09-06T01:16:55.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Pathfinders.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\Pathfinders.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\Pathfinders.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\Pathfinders.cs",
+              "RelativeToolTip": "Tau Empire\\Pathfinders.cs",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAAAJsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T01:06:40.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TacticalDrones.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\TacticalDrones.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\TacticalDrones.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\TacticalDrones.cs",
+              "RelativeToolTip": "Tau Empire\\TacticalDrones.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAYwIEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T00:57:11.981Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "KataphronBreachers.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\KataphronBreachers.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\KataphronBreachers.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\KataphronBreachers.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\KataphronBreachers.cs",
-              "ViewState": "AgIAAJEAAAAAAAAAAAAqwKMAAAAaAAAAAAAAAA==",
+              "Title": "StealthBattlesuits.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\StealthBattlesuits.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\StealthBattlesuits.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\StealthBattlesuits.cs",
+              "RelativeToolTip": "Tau Empire\\StealthBattlesuits.cs",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAgwDYAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T22:03:08.836Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T00:51:21.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CrisisBodyguards.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\CrisisBodyguards.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\CrisisBodyguards.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\CrisisBodyguards.cs",
+              "RelativeToolTip": "Tau Empire\\CrisisBodyguards.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwDYAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T00:49:03.344Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "SkitariiVanguard.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SkitariiVanguard.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\SkitariiVanguard.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SkitariiVanguard.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\SkitariiVanguard.cs",
-              "ViewState": "AgIAALYBAAAAAAAAAAAhwLkBAAAaAAAAAAAAAA==",
+              "Title": "CrisisBattlesuits.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\CrisisBattlesuits.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\CrisisBattlesuits.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\CrisisBattlesuits.cs",
+              "RelativeToolTip": "Tau Empire\\CrisisBattlesuits.cs",
+              "ViewState": "AgIAALgAAAAAAAAAAAAkwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T21:51:34.103Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SkitariiMarshal.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SkitariiMarshal.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\SkitariiMarshal.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SkitariiMarshal.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\SkitariiMarshal.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwB8AAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T22:37:20.491Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T00:48:20.732Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "TacticalSquad.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\TacticalSquad.cs",
-              "RelativeDocumentMoniker": "Space Marines\\TacticalSquad.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\TacticalSquad.cs",
-              "RelativeToolTip": "Space Marines\\TacticalSquad.cs",
-              "ViewState": "AgIAABQCAAAAAAAAAAAAwBwCAAAaAAAAAAAAAA==",
+              "Title": "KrootoxRiders.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\KrootoxRiders.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\KrootoxRiders.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\KrootoxRiders.cs",
+              "RelativeToolTip": "Tau Empire\\KrootoxRiders.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCMAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T22:36:00.082Z"
+              "WhenOpened": "2025-09-06T00:43:26.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "KrootCarnivores.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\KrootCarnivores.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\KrootCarnivores.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\KrootCarnivores.cs",
+              "RelativeToolTip": "Tau Empire\\KrootCarnivores.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T00:42:09.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "VanguardVeterans.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\VanguardVeterans.cs",
+              "RelativeDocumentMoniker": "Space Marines\\VanguardVeterans.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\VanguardVeterans.cs",
+              "RelativeToolTip": "Space Marines\\VanguardVeterans.cs",
+              "ViewState": "AgIAAK8AAAAAAAAAAAAkwLUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T00:06:17.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BreacherTeam.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\BreacherTeam.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\BreacherTeam.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\BreacherTeam.cs",
+              "RelativeToolTip": "Tau Empire\\BreacherTeam.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAQwHsAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T00:02:40.835Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
-              "Title": "TyranidWarriors.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\TyranidWarriors.cs",
-              "RelativeDocumentMoniker": "Tyranids\\TyranidWarriors.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\TyranidWarriors.cs",
-              "RelativeToolTip": "Tyranids\\TyranidWarriors.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAgwIgAAAAAAAAAAAAAAA==",
+              "Title": "NecronWarriors.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Necrons\\NecronWarriors.cs",
+              "RelativeDocumentMoniker": "Necrons\\NecronWarriors.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Necrons\\NecronWarriors.cs",
+              "RelativeToolTip": "Necrons\\NecronWarriors.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAkwCoAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T21:42:06.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T00:00:15.637Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
-              "Title": "SkitariiRangers.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SkitariiRangers.cs",
-              "RelativeDocumentMoniker": "Adeptus Mechanicus\\SkitariiRangers.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\SkitariiRangers.cs",
-              "RelativeToolTip": "Adeptus Mechanicus\\SkitariiRangers.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAUwDsAAABHAAAAAAAAAA==",
+              "Title": "StrikeTeam.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\StrikeTeam.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\StrikeTeam.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\StrikeTeam.cs",
+              "RelativeToolTip": "Tau Empire\\StrikeTeam.cs",
+              "ViewState": "AgIAAK8AAAAAAAAAAAAqwLUAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T21:30:11.004Z",
+              "WhenOpened": "2025-09-05T01:47:30.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "KrootShaper.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\KrootShaper.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\KrootShaper.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\KrootShaper.cs",
+              "RelativeToolTip": "Tau Empire\\KrootShaper.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T01:39:49.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ColdstarCommander.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\ColdstarCommander.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\ColdstarCommander.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\ColdstarCommander.cs",
+              "RelativeToolTip": "Tau Empire\\ColdstarCommander.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T01:26:55.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "EnforcerCommander.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\EnforcerCommander.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\EnforcerCommander.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\EnforcerCommander.cs",
+              "RelativeToolTip": "Tau Empire\\EnforcerCommander.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAgwFQAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T01:05:07.481Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CrisisCommander.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\CrisisCommander.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\CrisisCommander.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\CrisisCommander.cs",
+              "RelativeToolTip": "Tau Empire\\CrisisCommander.cs",
+              "ViewState": "AgIAAB4BAAAAAAAAAAAkwDQBAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T02:02:53.227Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "CommanderShadowsun.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\CommanderShadowsun.cs",
+              "RelativeDocumentMoniker": "Tau Empire\\CommanderShadowsun.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tau Empire\\CommanderShadowsun.cs",
+              "RelativeToolTip": "Tau Empire\\CommanderShadowsun.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAA1wCYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T01:52:10.854Z"
             }
           ]
         }
