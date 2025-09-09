@@ -160,7 +160,7 @@ namespace Roster_Builder.Orks
                 case 16:
                     Factionupgrade = cmbFaction.Text;
                     cbOption1.Enabled = true;
-                    if (Factionupgrade == "Bionik Oiler")
+                    if (Factionupgrade == "Bionik Oiler (+10 pts)")
                     {
                         cbOption1.Checked = true;
                         cbOption1.Enabled = false;

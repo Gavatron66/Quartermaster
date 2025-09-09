@@ -179,12 +179,12 @@ namespace Roster_Builder.Orks
 					Factionupgrade = cmbFaction.Text;
                     cbOption1.Enabled = true;
 					cmbOption1.Enabled = true;
-                    if (Factionupgrade == "Bionik Oiler")
+                    if (Factionupgrade == "Bionik Oiler (+10 pts)")
 					{
 						cbOption1.Checked = true;
 						cbOption1.Enabled = false;
                     }
-                    else if (Factionupgrade == "Extra-Kustom Weapon")
+                    else if (Factionupgrade == "Extra-Kustom Weapon (+10 pts)")
                     {
 						cmbOption1.SelectedIndex = 3;
 						cmbOption1.Enabled = false;
@@ -192,7 +192,20 @@ namespace Roster_Builder.Orks
                     break;
 				case 17:
 					string chosenRelic = cmbRelic.SelectedItem.ToString();
-					Relic = chosenRelic;
+					cmbOption1.Enabled = true;
+
+					if(chosenRelic == "Da Killa Klaw")
+					{
+						cmbOption1.SelectedIndex = 0;
+						cmbOption1.Enabled = false;
+					}
+					else if (chosenRelic == "Da Ded Shiny Shoota" || chosenRelic == "Da Gobshot Thunderbuss")
+					{
+						cmbOption1.SelectedIndex = 4;
+						cmbOption1.Enabled = false;
+					}
+
+						Relic = chosenRelic;
 					break;
 				case 21:
 					if (cbOption1.Checked)

@@ -36,7 +36,11 @@ namespace Roster_Builder.Orks
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
-            panel.Controls["lblNumModels"].Text = "Number of Big Shootas (+5 pts/each):";
+            panel.Controls["lblExtra1"].Location = panel.Controls["lblNumModels"].Location;
+            panel.Controls["lblNumModels"].Visible = false;
+            panel.Controls["lblExtra1"].Text = "Number of Big Shootas (+5 pts/each):";
+            panel.Controls["lblModelPoints"].Visible = false;
+            panel.Controls["lblExtra1"].Visible = true;
 
             nudUnitSize.Location = new System.Drawing.Point(nudUnitSize.Location.X + 105, nudUnitSize.Location.Y);
 

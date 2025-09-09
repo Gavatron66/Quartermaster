@@ -48,6 +48,8 @@ namespace Roster_Builder.Orks
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 3;
             antiLoop = true;
@@ -114,7 +116,7 @@ namespace Roster_Builder.Orks
                     Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
                     if(currentIndex == 0)
                     {
-                        lbModelSelect.Items[currentIndex] = "Meganob w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[((currentIndex) * 2) + 1];
+                        lbModelSelect.Items[currentIndex] = "Boss Meganob w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[((currentIndex) * 2) + 1];
                     }
                     else
                     {
@@ -125,7 +127,7 @@ namespace Roster_Builder.Orks
                     Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
                     if (currentIndex == 0)
                     {
-                        lbModelSelect.Items[currentIndex] = "Meganob w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[((currentIndex) * 2) + 1];
+                        lbModelSelect.Items[currentIndex] = "Boss Meganob w/ " + Weapons[(currentIndex) * 2] + " and " + Weapons[((currentIndex) * 2) + 1];
                     }
                     else
                     {

@@ -51,6 +51,8 @@ namespace Roster_Builder.Orks
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
             cbOption1.Location = new System.Drawing.Point(cbOption1.Location.X, cbOption1.Location.Y + 60);
             cbOption2.Location = new System.Drawing.Point(cbOption2.Location.X, cbOption2.Location.Y + 60);
             panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(panel.Controls["lblFactionUpgrade"].Location.X, panel.Controls["lblFactionUpgrade"].Location.Y + 60);

@@ -23,7 +23,7 @@ namespace Roster_Builder.Orks
             Keywords.AddRange(new string[]
             {
                 "ORKS", "<CLAN>",
-                "VEHICLE", "TRANSPORT", "WAGON", "BONBREAKA"
+                "VEHICLE", "TRANSPORT", "WAGON", "BONEBREAKA"
             });
             Role = "Heavy Support";
         }
