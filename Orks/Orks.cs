@@ -429,7 +429,7 @@ namespace Roster_Builder.Orks
 
 			if(currentSubFaction == "Goffs")
 			{
-				relics.Add("Da Irongob")
+				relics.Add("Da Irongob");
 			}
 
 			if (currentSubFaction == "Bad Moons" && ((keywords.Contains("MEGA ARMOUR") && keywords.Contains("BIG MEK")) 
