@@ -37,6 +37,7 @@ namespace Roster_Builder.Grey_Knights
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -56,12 +57,40 @@ namespace Roster_Builder.Grey_Knights
                 "Missile Launcher"
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
+
+            cbStratagem4.Location = new System.Drawing.Point(cmbOption2.Location.X, cmbOption2.Location.Y + 32);
+            cbStratagem4.Text = f.StratagemList[2];
+
+            if(repo.currentSubFaction == "Preservers")
+            {
+                cbStratagem4.Visible = true;
+            }
+            else
+            {
+                cbStratagem4.Visible = false;
+                if (Stratagem.Contains(cbStratagem4.Text))
+                {
+                    Stratagem.Remove(cbStratagem4.Text);
+                }
+            }
+
+            if (Stratagem.Contains(cbStratagem4.Text))
+            {
+                cbStratagem4.Checked = true;
+                cbStratagem4.Enabled = true;
+            }
+            else
+            {
+                cbStratagem4.Checked = false;
+                cbStratagem4.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem4.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
 
             switch (code)
             {
@@ -70,6 +99,19 @@ namespace Roster_Builder.Grey_Knights
                     break;
                 case 12:
                     Weapons[1] = cmbOption2.SelectedItem as string;
+                    break;
+                case 72:
+                    if (cbStratagem4.Checked)
+                    {
+                        Stratagem.Add(cbStratagem4.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem4.Text))
+                        {
+                            Stratagem.Remove(cbStratagem4.Text);
+                        }
+                    }
                     break;
             }
 

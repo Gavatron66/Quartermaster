@@ -11,6 +11,7 @@ namespace Roster_Builder.Grey_Knights
     {
         List<string> dominusPowers;
         List<string> litanies;
+        private string stratWarlordTrait;
 
         public BrotherhoodChaplain()
         {
@@ -119,6 +120,19 @@ namespace Roster_Builder.Grey_Knights
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+            ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox; // For Stratagem 3
+
+            cbStratagem3.Visible = true;
+            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
+            cbStratagem3.Text = f.StratagemList[3];
+
+            panel.Controls["lblOption6"].Visible = false;
+            panel.Controls["lblOption6"].Location = new System.Drawing.Point(panel.Controls["lblPsyker"].Location.X, panel.Controls["lblPsyker"].Location.Y + clbPsyker.Height + 67);
+            cmbOption6.Visible = false;
+            cmbOption6.Location = new System.Drawing.Point(panel.Controls["lblOption6"].Location.X, panel.Controls["lblOption6"].Location.Y + 23);
+            cmbOption6.Items.Clear();
+            cmbOption6.Items.AddRange(repo.GetWarlordTraits("").ToArray());
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -141,6 +155,23 @@ namespace Roster_Builder.Grey_Knights
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
+
+            if (Stratagem.Contains(cbStratagem3.Text))
+            {
+                cbStratagem3.Checked = true;
+                cbStratagem3.Enabled = true;
+                cmbOption6.Visible = true;
+                panel.Controls["lblOption6"].Visible = true;
+                cmbOption6.SelectedIndex = cmbOption6.Items.IndexOf(stratWarlordTrait);
+            }
+            else
+            {
+                cbStratagem3.Checked = false;
+                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+                cmbOption6.Visible = false;
+                panel.Controls["lblOption6"].Visible = false;
+                stratWarlordTrait = "";
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -149,9 +180,11 @@ namespace Roster_Builder.Grey_Knights
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -171,6 +204,9 @@ namespace Roster_Builder.Grey_Knights
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     Relic = chosenRelic;
+                    break;
+                case 19:
+                    stratWarlordTrait = cmbOption6.SelectedItem as string;
                     break;
                 case 25:
                     if (cbWarlord.Checked)
@@ -226,6 +262,24 @@ namespace Roster_Builder.Grey_Knights
                         {
                             Stratagem.Remove(cbStratagem2.Text);
                         }
+                    }
+                    break;
+                case 73:
+                    if (cbStratagem3.Checked && !Stratagem.Contains(cbStratagem3.Text))
+                    {
+                        Stratagem.Add(cbStratagem3.Text);
+                        cmbOption6.Visible = true;
+                        panel.Controls["lblOption6"].Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
+                        }
+                        cmbOption6.Visible = false;
+                        panel.Controls["lblOption6"].Visible = false;
+                        cmbOption6.SelectedIndex = -1;
                     }
                     break;
                 default: break;

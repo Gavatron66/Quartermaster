@@ -188,15 +188,15 @@ namespace Roster_Builder.Space_Marines
                         {
                             Weapons.Add("Storm Bolter");
                             Weapons.Add("Power Fist");
-                            lbModelSelect.Items.Add("Terminator w/ " + Weapons[(currentIndex * 2) + 1]
-                                + " and " + Weapons[(currentIndex * 2) + 2]);
+                            lbModelSelect.Items.Add("Terminator w/ " + Weapons[(temp * 2)]
+                                + " and " + Weapons[(temp * 2) + 1]);
                         }
                     }
 
                     if (temp > UnitSize)
                     {
                         lbModelSelect.Items.RemoveAt(temp - 1);
-                        Weapons.RemoveRange((currentIndex * 2) + 1, 2);
+                        Weapons.RemoveRange((temp * 2) - 2, 2);
                     }
                     break;
                 case 61:

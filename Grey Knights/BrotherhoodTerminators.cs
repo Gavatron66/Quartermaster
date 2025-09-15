@@ -44,6 +44,10 @@ namespace Roster_Builder.Grey_Knights
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -70,12 +74,55 @@ namespace Roster_Builder.Grey_Knights
             cmbOption2.Items.Clear();
             cmbOption2.Items.AddRange(new string[]
             {
-                "Nemesis Daemon Hammer",
+                "Nemesis Daemon Hammer (+10 pts)",
                 "Nemesis Force Halberd",
                 "Nemesis Force Sword",
                 "Nemesis Warding Stave",
                 "Two Nemesis Falchions"
             });
+
+            cbStratagem5.Text = repo.StratagemList[4];
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblOption1"].Location.X, panel.Controls["cmbOption2"].Location.Y + 60);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                panel.Controls["lblRelic"].Visible = true;
+                cmbRelic.Visible = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
+            }
+
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -84,6 +131,8 @@ namespace Roster_Builder.Grey_Knights
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
@@ -111,6 +160,18 @@ namespace Roster_Builder.Grey_Knights
                         lbModelSelect.Items[currentIndex] = "Terminator w/ " + Weapons[(currentIndex * 2)]
                             + " and " + Weapons[(currentIndex * 2) + 1];
                     }
+                    break;
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption2.Enabled = true;
+
+                    if(chosenRelic == "Stave of Supremacy")
+                    {
+                        cmbOption2.SelectedIndex = 3;
+                        cmbOption2.Enabled = false;
+                    }
+
+                    Relic = chosenRelic;
                     break;
                 case 30:
                     int temp = UnitSize;
@@ -150,6 +211,7 @@ namespace Roster_Builder.Grey_Knights
                         panel.Controls["lblOption1"].Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
                         cmbOption1.Enabled = true;
+                        cmbOption2.Enabled = true;
 
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2)]);
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
@@ -158,6 +220,48 @@ namespace Roster_Builder.Grey_Knights
                         {
                             cmbOption1.Enabled = false;
                         }
+
+                        if(currentIndex == 0)
+                        {
+                            cbStratagem5.Visible = true;
+
+                            if (Stratagem.Contains(cbStratagem5.Text))
+                            {
+                                panel.Controls["lblRelic"].Visible = true;
+                                cmbRelic.Visible = true;
+                            }
+
+                            if (Relic == "Stave of Supremacy")
+                            {
+                                cmbOption2.SelectedIndex = 3;
+                                cmbOption2.Enabled = false;
+                            }
+                        }
+                        else
+                        {
+                            cbStratagem5.Visible = false;
+                            cmbRelic.Visible = false;
+                            panel.Controls["lblRelic"].Visible = false;
+                            cmbOption2.Enabled = true;
+                        }
+                    }
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
                     }
                     break;
                 default: break;
@@ -171,6 +275,10 @@ namespace Roster_Builder.Grey_Knights
                 if (weapon == "Incinerator" || weapon == "Psilencer" || weapon == "Psycannon")
                 {
                     restriction++;
+                }
+                else if (weapon == "Nemesis Daemon Hammer (+10 pts)")
+                {
+                    Points += 10;
                 }
             }
         }

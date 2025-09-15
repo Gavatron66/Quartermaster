@@ -854,7 +854,7 @@ namespace Roster_Builder
             Font font = senderComboBox.Font;
             int vertScrollBarWidth =
                 (senderComboBox.Items.Count > senderComboBox.MaxDropDownItems)
-                ? SystemInformation.VerticalScrollBarWidth : 0;
+                ? SystemInformation.VerticalScrollBarWidth : 5;
 
             int newWidth;
             foreach (var s in ((ComboBox)sender).Items)
