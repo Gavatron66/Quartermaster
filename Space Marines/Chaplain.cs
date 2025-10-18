@@ -406,6 +406,9 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Deathwatch
+                    //Nothing to note
+                    #endregion
                     else
                     {
                         cmbOption1.Enabled = true;
@@ -555,6 +558,11 @@ namespace Roster_Builder.Space_Marines
             {
                 restrictedIndexes.AddRange(new int[] { 6, 7, 8 });
                 cmbOption1.SelectedIndex = 0;
+            }
+            else if (Relic == "Banebolts of Eryxia" || Relic == "Artificer Bolt Cache")
+            {
+                restrictedIndexes.AddRange(new int[] { 6, 7, 8, 9, 10 });
+                cmbOption1.SelectedIndex = 1;
             }
             this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
             #endregion

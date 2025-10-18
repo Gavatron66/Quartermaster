@@ -58,6 +58,8 @@ Just fixed (3/11) some of the main form's listboxes to not flicker as often; try
 
 This is more of a note than a todo, the Tome of Vel'cona grants Salamander Librarians an additional Salamander-unique psychic power. I'm not going to implement at this time, or maybe ever, since that's a lot of work for such a niche case.
 
+Proteus Kill Team; Showing points for the different models is not great, but can't decide on anything concrete; current implementation will do, come back to fix if desired.
+
 ***Leaving these for the future SM supplements***
 Characters to do list:
 	Primaris Captain
@@ -320,4 +322,5 @@ Sergeants
                     cmbRelic.SelectedIndex = -1;
                 }
             }
-			
+	
+	restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13, 14, 15, 17, 18 });

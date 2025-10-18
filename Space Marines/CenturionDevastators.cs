@@ -239,6 +239,18 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Deathwatch Strat Relics
+                    if (chosenRelic == "Banebolts of Eryxia (Slot 1)" || chosenRelic == "Artificer Bolt Cache (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Banebolts of Eryxia (Slot 2)" || chosenRelic == "Artificer Bolt Cache (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     antiLoop = false;

@@ -391,6 +391,13 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Deathwatch
+                    else if (chosenRelic == "The Thief of Secrets")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -513,6 +520,11 @@ namespace Roster_Builder.Space_Marines
                 || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts")
             {
                 restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13, 15 });
+                cmbOption1.SelectedIndex = 1;
+            }
+            else if (Relic == "Banebolts of Eryxia" || Relic == "Artificer Bolt Cache")
+            {
+                restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 11, 12, 13, 14, 15, 17, 18 });
                 cmbOption1.SelectedIndex = 1;
             }
             this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);

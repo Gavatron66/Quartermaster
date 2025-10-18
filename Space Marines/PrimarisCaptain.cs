@@ -254,7 +254,7 @@ namespace Roster_Builder.Space_Marines
                     {
                         cbOption1.Enabled = true;
 
-                        if(Relic == "The Burning Blade" || Relic == "Drakeblade")
+                        if(Relic == "The Burning Blade" || Relic == "Drakeblade" || Relic == "The Thief of Secrets")
                         {
                             cbOption1.Checked = true;
                             cbOption1.Enabled = false;
@@ -436,6 +436,25 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     else if (chosenRelic == "Gatebreaker Bolts")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
+                    #region Codex Supplement: Deathwatch
+                    else if (chosenRelic == "Dominus Aegis")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Thief of Secrets")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+
+                        restrictedIndexes.Add(3);
+                    }
+                    else if (chosenRelic == "Banebolts of Eryxia" || chosenRelic == "Artificer Bolt Cache")
                     {
                         restrictedIndexes.Add(3);
                         cmbOption1.SelectedIndex = 1;

@@ -232,7 +232,7 @@ namespace Roster_Builder.Space_Marines
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     if (chosenRelic == "The Burning Blade" || chosenRelic == "Soldier's Blade" || chosenRelic == "Drakeblade"
-                        || chosenRelic == "Scimitar of the Great Khan")
+                        || chosenRelic == "Scimitar of the Great Khan" || chosenRelic == "The Thief of Secrets")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
                         cmbOption1.Enabled = false;

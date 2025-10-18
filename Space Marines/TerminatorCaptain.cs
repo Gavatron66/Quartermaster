@@ -420,6 +420,22 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Deathwatch
+                    else if (chosenRelic == "Dominus Aegis")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Storm Shield");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Thief of Secrets")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Banebolts of Eryxia" || chosenRelic == "Artificer Bolt Cache")
+                    {
+                        //See the end of SaveDatasheets
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -551,7 +567,8 @@ namespace Roster_Builder.Space_Marines
 
             #region Bolt Relics
             if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
-                || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts")
+                || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
+                || Relic == "Banebolts of Eryxia" || Relic == "Artificer Bolt Cache")
             {
                 restrictedIndexes.AddRange(new int[] { 5, 6, 8, 9 });
                 cmbOption1.SelectedIndex = 0;

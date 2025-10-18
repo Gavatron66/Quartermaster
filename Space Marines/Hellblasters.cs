@@ -128,7 +128,8 @@ namespace Roster_Builder.Space_Marines
                     cbOption1.Enabled = true;
 
                     if (chosenRelic == "Hellfury Bolts" || chosenRelic == "Dragonrage Bolts" || chosenRelic == "Korvidari Bolts"
-                        || chosenRelic == "Haywire Bolts" || chosenRelic == "Stormwrath Bolts" || chosenRelic == "Gatebreaker Bolts")
+                        || chosenRelic == "Haywire Bolts" || chosenRelic == "Stormwrath Bolts" || chosenRelic == "Gatebreaker Bolts"
+                        || chosenRelic == "Banebolts of Eryxia" || chosenRelic == "Artificer Bolt Cache")
                     {
                         cbOption1.Checked = false;
                         cbOption1.Enabled = false;

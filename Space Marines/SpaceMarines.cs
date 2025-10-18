@@ -251,38 +251,29 @@ namespace Roster_Builder.Space_Marines
 
             //Non-compliant Chapters with their own supplement
             else if (currentSubFaction == "Deathwatch")
-            {/*
-                StratagemList.Clear();
-                StratagemList.AddRange(new string[]
-                {
-                    "Stratagem: Hero of the Chapter",
-                    "Stratagem: Relic of the Chapter",
-                    "Stratagem: Sanction of the Black Vault",
-                    "Stratagem: A Vigil Unmatched"
-                });*/
-
-                datasheets.Insert(28, new ProteusKillTeam());
-                datasheets.Insert(29, new FortisKillTeam());
-                datasheets.Insert(30, new IndomitorKillTeam());
-                datasheets.Insert(31, new SpectrusKillTeam());
-                datasheets.Insert(22, new WatchMaster());
-                datasheets.Insert(23, new WatchCaptainArtemis());
-                datasheets.Insert(24, new DWChaplainCassius());
-                datasheets.Insert(25, new CodicierNatorian());
-                datasheets.Insert(36, new DeathwatchVeterans());
-                datasheets.Insert(37, new KillTeamCassius());
-                datasheets.Insert(57, new DeathwatchTerminators());
-                datasheets.Insert(69, new VeteranBikeSquad());
-                datasheets.Insert(111, new CorvusBlackstar()); //111
-                datasheets.RemoveAt(66);
-                datasheets.RemoveAt(71);
-                datasheets.RemoveAt(69);
-                datasheets.RemoveAt(82);
-                datasheets.RemoveAt(50);
-                datasheets.RemoveAt(31);
-                datasheets.RemoveAt(38);
-                datasheets.RemoveAt(66);
-                datasheets.RemoveAt(99);
+            {
+                datasheets.RemoveAt(95); //Land Speeder Storm
+                datasheets.RemoveAt(73); //Devastator Squad
+                datasheets.RemoveAt(60); //Attack Bike Squad
+                datasheets.RemoveAt(59); //Scout Bike Squad
+                datasheets.RemoveAt(58); //Bike Squad
+                datasheets.RemoveAt(55); //Assault Squad
+                datasheets.RemoveAt(40); //Sternguard Veteran Squad
+                datasheets.RemoveAt(29); //Scout Squad
+                datasheets.RemoveAt(27); //Tactical Squad
+                datasheets.Insert(0, new WatchMaster());
+                datasheets.Insert(1, new WatchCaptainArtemis());
+                datasheets.Insert(13, new CodicierNatorian());
+                datasheets.Insert(18, new DWChaplainCassius());
+                datasheets.Insert(31, new DeathwatchVeterans());
+                datasheets.Insert(32, new ProteusKillTeam());
+                datasheets.Insert(33, new FortisKillTeam());
+                datasheets.Insert(34, new IndomitorKillTeam());
+                datasheets.Insert(35, new SpectrusKillTeam());
+                datasheets.Insert(36, new KillTeamCassius());
+                datasheets.Insert(51, new DeathwatchTerminators());
+                datasheets.Insert(63, new VeteranBikeSquad());
+                datasheets.Insert(102, new CorvusBlackstar());
             }
             else if (currentSubFaction == "Space Wolves")
             {/*
@@ -498,7 +489,7 @@ namespace Roster_Builder.Space_Marines
         {
             List<string> upgrades = new List<string>() { "(None)" };
 
-            if (keywords.Contains("CAPTAIN"))
+            if (keywords.Contains("CAPTAIN") && !(currentSubFaction == "Deathwatch"))
             {
                 upgrades.Add("Chapter Master (+35 pts)");
             }
@@ -728,7 +719,7 @@ namespace Roster_Builder.Space_Marines
                 });
             }
 
-            if (keywords == "Xenopurge")
+            if (keywords == "Xenopurge") //Deathwatch
             {
                 PsychicPowers.AddRange(new string[]
                 {
@@ -777,7 +768,7 @@ namespace Roster_Builder.Space_Marines
             relics.Add("(None)");
 
             //Sergeant Relics for the Stratagems
-            if(keywords.Contains("CORE") || keywords.Contains("CENTURION"))
+            if(keywords.Contains("CORE") || keywords.Contains("CENTURION") || keywords.Contains("VETERAN BIKE SQUAD"))
             {
                 relics.Add("Master-crafted Weapon");
                 relics.Add("Digital Weapons");
@@ -939,6 +930,26 @@ namespace Roster_Builder.Space_Marines
                     }
                 }
                 #endregion
+                #region Deathwatch
+                if (customSubFactionTraits[2] == "Deathwatch")
+                {
+                    relics.Insert(1, "Artificer Armour");
+
+                    if (!keywords.Contains("TERMINATOR ASSAULT SQUAD"))
+                    {
+                        relics.Add("Banebolts of Eryxia");
+                        relics.Add("Artificer Bolt Cache");
+
+                        if (keywords.Contains("CENTURION DEVASTATOR SQUAD") || keywords.Contains("TACTICAL SQUAD") || keywords.Contains("DEVASTATOR SQUAD"))
+                        {
+                            relics[4] = "Banebolts of Eryxia (Slot 1)";
+                            relics[5] = "Banebolts of Eryxia (Slot 2)";
+                            relics.Add("Artificer Bolt Cache (Slot 1)");
+                            relics.Add("Artificer Bolt Cache (Slot 2)");
+                        }
+                    }
+                }
+                #endregion
 
                 return relics;
             }
@@ -991,7 +1002,7 @@ namespace Roster_Builder.Space_Marines
             }
 
             if (!(keywords.Contains("TERMINATOR") || keywords.Contains("MK X GRAVIS") || (keywords.Contains("TECHMARINE") && keywords.Contains("PRIMARIS"))
-                || keywords.Contains("CHAPTER CHAMPION") || keywords.Contains("CHAPTER ANCIENT") || keywords.Contains("KHAN")))
+                || keywords.Contains("CHAPTER CHAMPION") || keywords.Contains("CHAPTER ANCIENT") || keywords.Contains("KHAN") || keywords.Contains("WATCH MASTER")))
             {
                 relics.Add("Purgatorus");
             }
@@ -1079,9 +1090,9 @@ namespace Roster_Builder.Space_Marines
             {
                 relics.Add("The Beacon Angelis");
 
-                if(keywords.Contains("CAPTAIN") && !(keywords.Contains("PHOBOS") || keywords.Contains("GRAVIS"))
+                if(keywords.Contains("CAPTAIN") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS"))
                     || (keywords.Contains("LIEUTENANT") && keywords.Contains("PRIMARIS") && !(keywords.Contains("PHOBOS")))
-                    || keywords.Contains("COMPANY CHAMPION") || (keywords.Contains("TERMINATOR") && keywords.Contains("ANCIENT")))
+                    || keywords.Contains("COMPANY CHAMPION"))
                 {
 					relics.Add("Dominus Aegis");
 				}
@@ -1554,7 +1565,7 @@ namespace Roster_Builder.Space_Marines
             }
 
 
-            if (customSubFactionTraits[2] == "Ultramarines")
+            if (customSubFactionTraits[2] == "White Scars")
             {
                 relics.Add("Adamantine Mantle");
                 relics.Add("Artificer Armour");
@@ -1930,7 +1941,7 @@ namespace Roster_Builder.Space_Marines
                     {
                         customSubFactionTraits[2] = "Blood Angels";
                     }
-                    else if(currentSubFaction != string.Empty && currentSubFaction != "Black Templars" && currentSubFaction != "Deathwatch" && currentSubFaction != "<Custom>")
+                    else
                     {
                         customSubFactionTraits[2] = currentSubFaction;
                     }
@@ -1970,6 +1981,12 @@ namespace Roster_Builder.Space_Marines
                         StratagemList[2] = "Stratagem: Sentinel of Terra";
                         StratagemList[3] = "Stratagem: Champion of Blades";
                         StratagemList[4] = "Stratagem: Gift of the Phalanx";
+                    }
+                    else if (customSubFactionTraits[2] == "Deathwatch")
+                    {
+                        StratagemList[2] = "Stratagem: A Vigil Unmatched";
+                        StratagemList[3] = "PLACEHOLDER YOU SHOULDN'T SEE THIS";
+                        StratagemList[4] = "Stratagem: Sanction of the Black Vault";
                     }
                     break;
                 case 51:
@@ -2016,6 +2033,12 @@ namespace Roster_Builder.Space_Marines
                         StratagemList[2] = "Stratagem: Sentinel of Terra";
                         StratagemList[3] = "Stratagem: Champion of Blades";
                         StratagemList[4] = "Stratagem: Gift of the Phalanx";
+                    }
+                    else if (customSubFactionTraits[2] == "Deathwatch")
+                    {
+                        StratagemList[2] = "Stratagem: A Vigil Unmatched";
+                        StratagemList[3] = "PLACEHOLDER YOU SHOULDN'T SEE THIS";
+                        StratagemList[4] = "Stratagem: Sanction of the Black Vault";
                     }
                     break;
             }
