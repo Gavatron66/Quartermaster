@@ -163,6 +163,13 @@ namespace Roster_Builder.Space_Marines
                         gb_cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Space Wolves
+                    if (chosenRelic == "Morkai's Teeth Bolts")
+                    {
+                        gb_cmbOption1.SelectedIndex = 0;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;

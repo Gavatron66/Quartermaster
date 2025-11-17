@@ -500,6 +500,47 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 0;
                     }
                     #endregion
+                    #region Codex Supplement: Space Wolves
+                    else if (chosenRelic == "Fireheart")
+                    {
+                        restrictedIndexes.Remove(21);
+                        restrictedIndexes.Remove(22);
+                        restrictedIndexes.Remove(23);
+                        restrictedIndexes.Remove(24);
+                        restrictedIndexes.Remove(25);
+                        restrictedIndexes.Remove(26);
+                        cmbOption1.SelectedIndex = 21;
+                    }
+                    else if (chosenRelic == "Black Death")
+                    {
+                        restrictedIndexes.Remove(29);
+                        restrictedIndexes.Remove(30);
+                        cmbOption1.SelectedIndex = 29;
+                    }
+                    else if (chosenRelic == "Morkai's Teeth Bolts")
+                    {
+                        restrictedIndexes.Clear();
+                        restrictedIndexes.Add(14);
+                        cmbOption1.SelectedIndex = 0;
+                    }
+                    else if (chosenRelic == "Frost Weapon")
+                    {
+                        restrictedIndexes.Remove(1);
+                        restrictedIndexes.Remove(4);
+                        restrictedIndexes.Remove(7);
+                        restrictedIndexes.Remove(10);
+                        restrictedIndexes.Remove(12);
+                        restrictedIndexes.Remove(13);
+                        restrictedIndexes.Remove(14);
+                        restrictedIndexes.Remove(16);
+                        restrictedIndexes.Remove(19);
+                        restrictedIndexes.Remove(22);
+                        restrictedIndexes.Remove(25);
+                        restrictedIndexes.Remove(29);
+                        restrictedIndexes.Remove(30);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
                     else
                     {
                         restrictedIndexes.Clear();

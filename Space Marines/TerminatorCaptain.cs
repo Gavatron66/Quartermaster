@@ -436,6 +436,23 @@ namespace Roster_Builder.Space_Marines
                         //See the end of SaveDatasheets
                     }
                     #endregion
+                    #region Codex Supplement: Space Wolves
+                    else if (chosenRelic == "Black Death")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Morkai's Teeth Bolts")
+                    {
+                        //See the end of SaveDatasheets
+                    }
+                    else if(chosenRelic == "Frost Weapon")
+                    {
+                        restrictedIndexes2.AddRange(new int[] { 0, 3, 4, 6, 7, 8 });
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
+                        //See the end of SaveDatasheets
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -565,13 +582,18 @@ namespace Roster_Builder.Space_Marines
                 }
             }
 
+            if (Relic == "Frost Weapon")
+            {
+                restrictedIndexes2.AddRange(new int[] { 0, 3, 4, 6, 7, 8 });
+            }
+
             #region Bolt Relics
             if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
                 || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
-                || Relic == "Banebolts of Eryxia" || Relic == "Artificer Bolt Cache")
+                || Relic == "Banebolts of Eryxia" || Relic == "Artificer Bolt Cache" || Relic == "Morkai's Teeth Bolts")
             {
                 restrictedIndexes.AddRange(new int[] { 5, 6, 8, 9 });
-                cmbOption1.SelectedIndex = 0;
+                cmbOption1.SelectedIndex = 7;
             }
             #endregion
 

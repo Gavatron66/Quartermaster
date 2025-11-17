@@ -11,6 +11,7 @@ namespace Roster_Builder.Space_Marines
     public class Lieutenant : Datasheets
     {
         private string stratWarlordTrait;
+        List<int> restrictedIndexes2 = new List<int>();
 
         public Lieutenant()
         {
@@ -398,6 +399,23 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Space Wolves
+                    else if (chosenRelic == "Fireheart")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Black Death")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Frost Weapon")
+                    {
+                        restrictedIndexes2.AddRange(new int[] { 0, 3, 4, 6 });
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -514,10 +532,18 @@ namespace Roster_Builder.Space_Marines
                 }
             }
 
+            restrictedIndexes2.Clear();
+            if (Relic == "Frost Weapon")
+            {
+                restrictedIndexes2.AddRange(new int[] { 0, 3, 4, 6 });
+                cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
+            }
+
             #region Bolt Relics
             restrictedIndexes.Clear();
             if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
-                || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts")
+                || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
+                || Relic == "Morkai's Teeth Bolts")
             {
                 restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13, 15 });
                 cmbOption1.SelectedIndex = 1;
@@ -528,6 +554,7 @@ namespace Roster_Builder.Space_Marines
                 cmbOption1.SelectedIndex = 1;
             }
             this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+            this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
             #endregion
         }
 

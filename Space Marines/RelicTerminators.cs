@@ -186,22 +186,30 @@ namespace Roster_Builder.Space_Marines
                     }
                     break;
                 case 12:
-                    Weapons[(currentIndex * 3) + 1] = cmbOption2.SelectedItem.ToString();
 
                     if (currentIndex == 0)
                     {
-                        if (Weapons[2] != "")
+                        if((Relic == "Frost Weapon" && cmbOption2.SelectedIndex != 0 && cmbOption2.SelectedIndex != 2) || Relic != "Frost Weapon")
                         {
-                            lbModelSelect.Items[0] = "Relic Terminator Sergeant w/ " + Weapons[0] + ", " + Weapons[1] +
-                                " and a " + Weapons[2];
+                            Weapons[(currentIndex * 3) + 1] = cmbOption2.SelectedItem.ToString();
+                            if (Weapons[2] != "")
+                            {
+                                lbModelSelect.Items[0] = "Relic Terminator Sergeant w/ " + Weapons[0] + ", " + Weapons[1] +
+                                    " and a " + Weapons[2];
+                            }
+                            else
+                            {
+                                lbModelSelect.Items[0] = "Relic Terminator Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
+                            }
                         }
                         else
                         {
-                            lbModelSelect.Items[0] = "Relic Terminator Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
+                            cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 3) + 1]);
                         }
                     }
                     else
                     {
+                        Weapons[(currentIndex * 3) + 1] = cmbOption2.SelectedItem.ToString();
                         if (Weapons[(currentIndex * 3) + 2] != "")
                         {
                             lbModelSelect.Items[currentIndex] = "Relic Terminator w/ " + Weapons[currentIndex * 3]
@@ -276,6 +284,18 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption1.SelectedIndex = 0;
                         cmbOption1.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: Space Wolves
+                    else if (chosenRelic == "Morkai's Teeth Bolts")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Frost Weapon")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        this.DrawItemWithRestrictions(new List<int> { 0, 2 }, cmbOption2);
                     }
                     #endregion
 
@@ -394,10 +414,19 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
                         if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
-                            || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts")
+                            || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
+                            || Relic == "Morkai's Teeth Bolts")
                         {
                             cmbOption1.Enabled = false;
                         }
+
+                        restrictedIndexes.Clear();
+                        if(Relic == "Frost Weapon")
+                        {
+                            restrictedIndexes.Add(0);
+                            restrictedIndexes.Add(2);
+                        }
+                        this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
                     }
                     else
                     {

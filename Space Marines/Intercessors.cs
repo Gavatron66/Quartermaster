@@ -226,6 +226,13 @@ namespace Roster_Builder.Genestealer_Cults
                         gb_cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Space Wolves
+                    else if (chosenRelic == "Frost Weapon")
+                    {
+                        gb_cmbOption2.SelectedIndex = 3;
+                        gb_cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;

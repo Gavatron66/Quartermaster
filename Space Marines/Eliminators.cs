@@ -174,6 +174,12 @@ namespace Roster_Builder.Space_Marines
                         restrictedIndexes.Add(2);
                     }
                     #endregion
+                    #region Codex Supplement: Space Wolves
+                    if (chosenRelic == "Morkai's Teeth Bolts")
+                    {
+                        restrictedIndexes.Add(2);
+                    }
+                    #endregion
 
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
                     Relic = chosenRelic;

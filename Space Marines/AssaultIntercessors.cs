@@ -199,6 +199,18 @@ namespace Roster_Builder.Space_Marines
                         gb_cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Space Wolves
+                    else if (chosenRelic == "Frost Weapon")
+                    {
+                        cmbOption2.SelectedIndex = 2;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Morkai's Teeth Bolts")
+                    {
+                        gb_cmbOption1.SelectedIndex = 1;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;

@@ -251,6 +251,18 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Space Wolves Strat Relics
+                    if (chosenRelic == "Morkai's Teeth Bolts (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Morkai's Teeth Bolts (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     antiLoop = false;
@@ -370,6 +382,18 @@ namespace Roster_Builder.Space_Marines
                             cmbOption1.Enabled = false;
                         }
                         else if (Relic == "Gatebreaker Bolts (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Space Wolves Strat Relics
+                        if (Relic == "Morkai's Teeth Bolts (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Morkai's Teeth Bolts (Slot 2)")
                         {
                             cmbOption2.SelectedIndex = 1;
                             cmbOption2.Enabled = false;

@@ -22,6 +22,7 @@ namespace Roster_Builder.Space_Marines
             "Plasma Cannon (+15 pts)"
         };
         bool heavy = false;
+        List<int> restrictedIndexes2 = new List<int>();
 
         public Veterans()
         {
@@ -228,9 +229,9 @@ namespace Roster_Builder.Space_Marines
                     }
                     break;
                 case 12:
-                    if (currentIndex == 0)
+                    if (!restrictedIndexes2.Contains(cmbOption2.SelectedIndex))
                     {
-                        if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                        if (currentIndex == 0)
                         {
                             Weapons[(currentIndex * 3) + 1] = cmbOption2.SelectedItem.ToString();
                             if (Weapons[(currentIndex * 3) + 2] != "")
@@ -242,24 +243,29 @@ namespace Roster_Builder.Space_Marines
                                 lbModelSelect.Items[currentIndex] = "Company Veteran Sergeant w/ " + Weapons[(currentIndex) * 3] + " and " + Weapons[(currentIndex * 3) + 1];
                             }
                         }
+                        else
+                        {
+                            Weapons[(currentIndex * 3) + 1] = cmbOption2.SelectedItem.ToString();
+                            if (Weapons[(currentIndex * 3) + 2] != "")
+                            {
+                                lbModelSelect.Items[currentIndex] = ("Company Veteran w/ " + Weapons[currentIndex * 3] + ", " + Weapons[(currentIndex * 3) + 1] + " and " + Weapons[(currentIndex * 3) + 2]);
+                            }
+                            else
+                            {
+                                lbModelSelect.Items[currentIndex] = "Company Veteran w/ " + Weapons[(currentIndex) * 3] + " and " + Weapons[(currentIndex * 3) + 1];
+                            }
+                        }
                     }
                     else
                     {
-                        Weapons[(currentIndex * 3) + 1] = cmbOption2.SelectedItem.ToString();
-                        if (Weapons[(currentIndex * 3) + 2] != "")
-                        {
-                            lbModelSelect.Items[currentIndex] = ("Company Veteran w/ " + Weapons[currentIndex * 3] + ", " + Weapons[(currentIndex * 3) + 1] + " and " + Weapons[(currentIndex * 3) + 2]);
-                        }
-                        else
-                        {
-                            lbModelSelect.Items[currentIndex] = "Company Veteran w/ " + Weapons[(currentIndex) * 3] + " and " + Weapons[(currentIndex * 3) + 1];
-                        }
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 3) + 1]);
                     }
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     cmbOption2.Enabled = true;
                     restrictedIndexes.Clear();
+                    restrictedIndexes2.Clear();
 
                     #region Codex Supplement: Ultramarines
                     if (chosenRelic == "Hellfury Bolts")
@@ -335,8 +341,21 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 1;
                     }
                     #endregion
+                    #region Codex Supplement: Space Wolves
+                    else if (chosenRelic == "Morkai's Teeth Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Frost Weapon")
+                    {
+                        restrictedIndexes2.AddRange(new int[] { 0, 1, 2, 4, 6, 7, 9, 10 });
+                        cmbOption2.SelectedIndex = 8;
+                    }
+                    #endregion
 
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+                    this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
                     Relic = chosenRelic;
                     break;
                 case 21:
@@ -456,6 +475,7 @@ namespace Roster_Builder.Space_Marines
                             "Thunder Hammer (+12 pts)"
                         });
                         restrictedIndexes.Clear();
+                        restrictedIndexes2.Clear();
 
                         #region Codex Supplement: Ultramarines
                         if (Relic == "Hellfury Bolts")
@@ -524,8 +544,28 @@ namespace Roster_Builder.Space_Marines
                             cmbOption2.Enabled = false;
                         }
                         #endregion
+                        #region Codex Supplement: Deathwatch
+                        else if (Relic == "Banebolts of Eryxia" || Relic == "Artificer Bolt Cache")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
+                            cmbOption1.SelectedIndex = 1;
+                        }
+                        #endregion
+                        #region Codex Supplement: Space Wolves
+                        else if (Relic == "Morkai's Teeth Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
+                            cmbOption1.SelectedIndex = 1;
+                        }
+                        else if (Relic == "Frost Weapon")
+                        {
+                            restrictedIndexes2.AddRange(new int[] { 0, 1, 2, 4, 6, 7, 9, 10 });
+                            cmbOption2.SelectedIndex = 8;
+                        }
+                        #endregion
 
                         this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+                        this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
                     }
                     else
                     {
@@ -582,6 +622,7 @@ namespace Roster_Builder.Space_Marines
                     }
 
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+                    this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
                     cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex * 3]);
                     cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 3) + 1]);
                     if (Weapons[(currentIndex * 3) + 2] != "")

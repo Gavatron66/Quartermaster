@@ -180,6 +180,7 @@ namespace Roster_Builder.Space_Marines
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
 
+                    antiLoop = true;
                     cmbOption1.Enabled = true;
                     restrictedIndexes.Clear();
 
@@ -250,7 +251,20 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Space Wolves
+                    else if (chosenRelic == "Morkai's Teeth Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Frost Weapon")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 1, 2, 3, 4, 5, 6, 8, 10, 11, 13, 14 });
+                        cmbOption1.SelectedIndex = 9;
+                    }
+                    #endregion
 
+                    antiLoop = false;
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     Relic = chosenRelic;
                     break;
@@ -367,6 +381,18 @@ namespace Roster_Builder.Space_Marines
                         {
                             cmbOption1.SelectedIndex = 10;
                             cmbOption1.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Space Wolves
+                        else if (Relic == "Morkai's Teeth Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                            cmbOption1.SelectedIndex = 1;
+                        }
+                        else if (Relic == "Frost Weapon")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 1, 2, 3, 4, 5, 6, 8, 10, 11, 13, 14 });
+                            cmbOption1.SelectedIndex = 9;
                         }
                         #endregion
 

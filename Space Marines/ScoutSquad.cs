@@ -178,15 +178,23 @@ namespace Roster_Builder.Space_Marines
                     }
                     break;
                 case 12:
-                    Weapons[2] = cmbOption2.SelectedItem.ToString();
-                    if (Weapons[0] == "")
+                    if (Relic != "Frost Weapon" ||
+                        (Relic == "Frost Weapon" && (cmbOption2.SelectedIndex == 3 || cmbOption2.SelectedIndex == 5 || cmbOption2.SelectedIndex == 8)))
                     {
-                        lbModelSelect.Items[0] = ("Scout Sergeant w/ " + Weapons[1] + " and " + Weapons[2]);
+                        Weapons[2] = cmbOption2.SelectedItem.ToString();
+                        if (Weapons[0] == "")
+                        {
+                            lbModelSelect.Items[0] = ("Scout Sergeant w/ " + Weapons[1] + " and " + Weapons[2]);
+                        }
+                        else
+                        {
+                            lbModelSelect.Items[0] = ("Scout Sergeant w/ " + Weapons[1] + ", " + Weapons[2] +
+                                " and " + Weapons[0]);
+                        }
                     }
                     else
                     {
-                        lbModelSelect.Items[0] = ("Scout Sergeant w/ " + Weapons[1] + ", " + Weapons[2] +
-                            " and " + Weapons[0]);
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[2]);
                     }
                     break;
                 case 17:
@@ -263,6 +271,23 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Space Wolves
+                    else if (chosenRelic == "Morkai's Teeth Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Frost Weapon")
+                    {
+                        cmbOption2.SelectedIndex = 8;
+                        this.DrawItemWithRestrictions(new List<int> { 0, 1, 2, 4, 6, 7, 9 }, cmbOption2);
+                    }
+                    #endregion
+
+                    if (chosenRelic != "Frost Weapon") //Space Wolves Sgt Relic
+                    {
+                        this.DrawItemWithRestrictions(new List<int>(), cmbOption2);
+                    }
 
                     Relic = chosenRelic;
                     break;
@@ -487,6 +512,21 @@ namespace Roster_Builder.Space_Marines
                             cmbOption2.Enabled = false;
                         }
                         #endregion
+                        #region Codex Supplement: Space Wolves
+                        else if (Relic == "Morkai's Teeth Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                        }
+                        #endregion
+
+                        if (Relic == "Frost Weapon") //Space Wolves Sgt Relic
+                        {
+                            this.DrawItemWithRestrictions(new List<int> { 0, 1, 2, 4, 6, 7, 9 }, cmbOption2);
+                        }
+                        else
+                        {
+                            this.DrawItemWithRestrictions(new List<int>(), cmbOption2);
+                        }
 
                         this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     }

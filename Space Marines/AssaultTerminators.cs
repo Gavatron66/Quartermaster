@@ -142,6 +142,16 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+
+                    #region Codex Supplement: Space Wolves
+                    if (chosenRelic == "Frost Weapon")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
+
                     Relic = chosenRelic;
                     break;
                 case 21:
@@ -188,6 +198,7 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption1.Visible = true;
                         panel.Controls["lblOption1"].Visible = true;
+                        cmbOption1.Enabled = true;
 
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
 
@@ -209,6 +220,14 @@ namespace Roster_Builder.Space_Marines
                                 panel.Controls["lblRelic"].Visible = true;
                                 cmbRelic.Visible = true;
                             }
+
+                            #region Codex Supplement: Space Wolves
+                            if (Relic == "Frost Weapon")
+                            {
+                                cmbOption1.SelectedIndex = 0;
+                                cmbOption1.Enabled = false;
+                            }
+                            #endregion
                         }
                         else
                         {

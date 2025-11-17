@@ -485,6 +485,28 @@ namespace Roster_Builder.Space_Marines
                         //See the end of SaveDatasheets
                     }
                     #endregion
+                    #region Codex Supplement: Space Wolves
+                    else if (chosenRelic == "Fireheart")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Black Death")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Morkai's Teeth Bolts")
+                    {
+                        //See the end of SaveDatasheets
+                    }
+                    else if (chosenRelic == "Frost Weapon")
+                    {
+                        restrictedIndexes2.AddRange(new int[] { 0, 2, 4, 5, 7, 8 });
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
+                        //See the end of SaveDatasheets
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -616,9 +638,16 @@ namespace Roster_Builder.Space_Marines
                 }
             }
 
+            if (Relic == "Frost Weapon")
+            {
+                restrictedIndexes2.AddRange(new int[] { 0, 2, 4, 5, 7, 8 });
+                cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
+            }
+
             #region Bolt Relics
             if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
-                || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts")
+                || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
+                 || Relic == "Morkai's Teeth Bolts")
             {
                 restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13, 15, 16 });
                 cmbOption1.SelectedIndex = 1;

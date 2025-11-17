@@ -409,6 +409,13 @@ namespace Roster_Builder.Space_Marines
                     #region Codex Supplement: Deathwatch
                     //Nothing to note
                     #endregion
+                    #region Codex Supplement: Space Wolves
+                    else if (chosenRelic == "Fireheart")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
                     else
                     {
                         cmbOption1.Enabled = true;
@@ -554,7 +561,8 @@ namespace Roster_Builder.Space_Marines
             #region Bolt Relics
             restrictedIndexes.Clear();
             if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
-                || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts")
+                || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
+                || Relic == "Morkai's Teeth Bolts")
             {
                 restrictedIndexes.AddRange(new int[] { 6, 7, 8 });
                 cmbOption1.SelectedIndex = 0;

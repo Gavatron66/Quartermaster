@@ -254,7 +254,8 @@ namespace Roster_Builder.Space_Marines
                     {
                         cbOption1.Enabled = true;
 
-                        if(Relic == "The Burning Blade" || Relic == "Drakeblade" || Relic == "The Thief of Secrets")
+                        if(Relic == "The Burning Blade" || Relic == "Drakeblade" || Relic == "The Thief of Secrets"
+                            || Relic == "Frost Weapon")
                         {
                             cbOption1.Checked = true;
                             cbOption1.Enabled = false;
@@ -455,6 +456,25 @@ namespace Roster_Builder.Space_Marines
                         restrictedIndexes.Add(3);
                     }
                     else if (chosenRelic == "Banebolts of Eryxia" || chosenRelic == "Artificer Bolt Cache")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
+                    #region Codex Supplement: Space Wolves
+                    else if (chosenRelic == "Fireheart")
+                    {
+                        cmbOption1.SelectedIndex = 3;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Frost Weapon")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+
+                        restrictedIndexes.Add(3);
+                    }
+                    else if (chosenRelic == "Morkai's Teeth Bolts")
                     {
                         restrictedIndexes.Add(3);
                         cmbOption1.SelectedIndex = 1;
