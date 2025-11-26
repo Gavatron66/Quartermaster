@@ -50,6 +50,11 @@ namespace Roster_Builder.Drukhari
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+            panel.Controls["lblExtra1"].Text = "One model may take a different weapon per 5 models, with two additional options per 10";
+            panel.Controls["lblExtra1"].Location = new System.Drawing.Point(panel.Controls["lbModelSelect"].Location.X, panel.Controls["lblOption1"].Location.Y - 22);
+            panel.Controls["lblExtra1"].Visible = true;
+
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
             nudUnitSize.Value = nudUnitSize.Minimum;
@@ -122,8 +127,15 @@ namespace Roster_Builder.Drukhari
                         break;
                     }
 
-                    Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
-                    lbModelSelect.Items[currentIndex] = "Kabalite Warrior w/ " + Weapons[currentIndex + 2];
+                    if(!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    {
+                        Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
+                        lbModelSelect.Items[currentIndex] = "Kabalite Warrior w/ " + Weapons[currentIndex + 2];
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 2]);
+                    }
 
                     break;
                 case 12:
@@ -176,6 +188,7 @@ namespace Roster_Builder.Drukhari
                 case 61:
                     currentIndex = lbModelSelect.SelectedIndex;
                     antiLoop = true;
+                    restrictedIndexes.Clear();
 
                     if (currentIndex < 0)
                     {
@@ -184,7 +197,6 @@ namespace Roster_Builder.Drukhari
                         cbOption1.Visible = false;
                         panel.Controls["lblOption1"].Visible = false;
                         panel.Controls["lblOption2"].Visible = false;
-                        panel.Controls["lblFaction"].Visible = false;
                         antiLoop = false;
                         break;
                     }
@@ -241,18 +253,19 @@ namespace Roster_Builder.Drukhari
                         if(((UnitSize / 10) == restriction[0]) && cmbOption1.SelectedItem != null
                             && !(cmbOption1.SelectedItem.ToString() == "Dark Lance (+15 pts)" || cmbOption1.SelectedItem.ToString() == "Splinter Cannon (+10 pts)"))
                         {
-                            cmbOption1.Items.Remove("Dark Lance (+15 pts)");
-                            cmbOption1.Items.Remove("Splinter Cannon (+10 pts)");
+                            restrictedIndexes.Add(1);
+                            restrictedIndexes.Add(3);
                         }
 
                         if (((UnitSize / 5) == restriction[1]) && cmbOption1.SelectedItem != null
                             && !(cmbOption1.SelectedItem.ToString() == "Blaster (+10 pts)" || cmbOption1.SelectedItem.ToString() == "Shredder (+5 pts)"))
                         {
-                            cmbOption1.Items.Remove("Blaster (+10 pts)");
-                            cmbOption1.Items.Remove("Shredder (+5 pts)");
+                            restrictedIndexes.Add(0);
+                            restrictedIndexes.Add(2);
                         }
                     }
 
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     antiLoop = false;
                     break;
             }

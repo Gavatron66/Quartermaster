@@ -45,6 +45,11 @@ namespace Roster_Builder.Drukhari
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+            panel.Controls["lblExtra1"].Text = "Three models may take a different weapon per 10 models, one of each";
+            panel.Controls["lblExtra1"].Location = new System.Drawing.Point(panel.Controls["lbModelSelect"].Location.X, panel.Controls["lblOption1"].Location.Y - 22);
+            panel.Controls["lblExtra1"].Visible = true;
+
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
             nudUnitSize.Value = nudUnitSize.Minimum;
@@ -116,8 +121,15 @@ namespace Roster_Builder.Drukhari
                         break;
                     }
 
-                    Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
-                    lbModelSelect.Items[currentIndex] = "Wych w/ " + Weapons[currentIndex + 2];
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    {
+                        Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
+                        lbModelSelect.Items[currentIndex] = "Wych w/ " + Weapons[currentIndex + 2];
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 2]);
+                    }
 
                     break;
                 case 12:
@@ -183,6 +195,7 @@ namespace Roster_Builder.Drukhari
                 case 61:
                     currentIndex = lbModelSelect.SelectedIndex;
                     antiLoop = true;
+                    restrictedIndexes.Clear();
 
                     if (currentIndex < 0)
                     {
@@ -244,20 +257,21 @@ namespace Roster_Builder.Drukhari
 
                         if (restriction[0] == UnitSize / 10 && Weapons[currentIndex + 2] != "Hydra Gauntlets (+5 pts)")
                         {
-                            cmbOption1.Items.Remove("Hydra Gauntlets (+5 pts)");
+                            restrictedIndexes.Add(0);
                         }
 
                         if (restriction[1] == UnitSize / 10 && Weapons[currentIndex + 2] != "Razorflails (+5 pts)")
                         {
-                            cmbOption1.Items.Remove("Razorflails (+5 pts)");
+                            restrictedIndexes.Add(1);
                         }
 
                         if (restriction[2] == UnitSize / 10 && Weapons[currentIndex + 2] != "Shardnet and Impaler (+10 pts)")
                         {
-                            cmbOption1.Items.Remove("Shardnet and Impaler (+10 pts)");
+                            restrictedIndexes.Add(2);
                         }
                     }
 
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     antiLoop = false;
                     break;
             }

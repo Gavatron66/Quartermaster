@@ -155,6 +155,11 @@ namespace Roster_Builder.Drukhari
 						cmbOption2.SelectedIndex = -1;
 						cmbOption2.Enabled = false;
 					}
+					else if (cmbOption2.Items.Count > 0)
+                    {
+                        cmbOption2.SelectedIndex = 0;
+                        cmbOption2.Enabled = true;
+					}
 					break;
 				case 12:
 					if(cmbOption2.SelectedIndex != -1)
@@ -177,10 +182,54 @@ namespace Roster_Builder.Drukhari
 					}
 					break;
 				case 16:
-					Factionupgrade = cmbFaction.Text;
-					break;
-				case 17:
+                    Factionupgrade = cmbFaction.Text;
+                    if (Factionupgrade != "(None)" && Factionupgrade != null)
+                    {
+                        cmbWarlord.Items.Add("Whirling Death");
+                        cmbRelic.Items.Add("Dancer's Edge");
+                    }
+                    else
+                    {
+                        if (Relic == "Dancer's Edge")
+                        {
+                            cmbRelic.SelectedIndex = 0;
+                        }
+
+                        if (WarlordTrait == "Whirling Death")
+                        {
+                            cmbWarlord.SelectedIndex = -1;
+                        }
+
+                        cmbWarlord.Items.Remove("Whirling Death");
+                        cmbRelic.Items.Remove("Dancer's Edge");
+                    }
+                    break;
+                case 17:
 					string chosenRelic = cmbRelic.SelectedItem.ToString();
+					cmbOption1.Enabled = true;
+					cmbOption2.Enabled = true;
+
+					if(chosenRelic == "Parasite's Kiss")
+					{
+						cmbOption2.SelectedIndex = 2;
+						cmbOption2.Enabled = false;
+					}
+					else if(chosenRelic == "The Triptych Whip")
+					{
+						cmbOption2.SelectedIndex = 0;
+						cmbOption2.Enabled = false;
+					}
+					else if(chosenRelic == "The Blood Glaive")
+					{
+						cmbOption1.SelectedIndex = 0;
+						cmbOption1.Enabled = false;
+					}
+					else if(chosenRelic == "Dancer's Edge")
+					{
+						cmbOption1.SelectedIndex = 0;
+						cmbOption1.Enabled = false;
+					}
+
 					Relic = chosenRelic;
 					break;
 				case 25:

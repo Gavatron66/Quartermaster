@@ -47,6 +47,11 @@ namespace Roster_Builder.Drukhari
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+            panel.Controls["lblExtra1"].Text = "One model may take a different weapon per 5 models";
+            panel.Controls["lblExtra1"].Location = new System.Drawing.Point(panel.Controls["lbModelSelect"].Location.X, panel.Controls["lblOption1"].Location.Y - 22);
+            panel.Controls["lblExtra1"].Visible = true;
+
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
             nudUnitSize.Value = nudUnitSize.Minimum;

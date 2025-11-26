@@ -38,6 +38,8 @@ namespace Roster_Builder.Drukhari
             NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
             NumericUpDown nudOption2 = panel.Controls["nudOption2"] as NumericUpDown;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
             panel.Controls["lblnud1"].Text = "Models with Liquifier Guns (+5 pts):";
             panel.Controls["lblnud2"].Text = "Models with Monstrous Cleavers:";
 
