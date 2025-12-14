@@ -1,6 +1,4 @@
-﻿using Roster_Builder.Death_Guard;
-using Roster_Builder.Space_Marines;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,13 +13,14 @@ namespace Roster_Builder.Adepta_Sororitas
         {
             DEFAULT_POINTS = 25;
             Points = DEFAULT_POINTS;
-            TemplateCode = "1m_c";
+            TemplateCode = "1m_pc";
             Weapons.Add("Zealot's Vindictor (+5 pts)");
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS MINISTORUM",
                 "INFANTRY", "CHARACTER", "CULT IMPERIALIS", "PRIEST", "PREACHER"
             });
+            PsykerPowers = new string[1] { string.Empty };
             Role = "Elites";
         }
 
@@ -39,6 +38,8 @@ namespace Roster_Builder.Adepta_Sororitas
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            Label lblPsyker = panel.Controls["lblPsyker"] as Label;
+            CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -79,6 +80,52 @@ namespace Roster_Builder.Adepta_Sororitas
                 cmbRelic.SelectedIndex = 0;
             }
 
+            List<string> psykerpowers = new List<string>();
+            psykerpowers = repo.GetPsykerPowers("Priest");
+            clbPsyker.Items.Clear();
+            foreach (string power in psykerpowers)
+            {
+                clbPsyker.Items.Add(power);
+            }
+
+            if (Relic != "The Sigil Ecclesiasticus")
+            {
+                lblPsyker.Text = "Select one of the following:";
+                clbPsyker.ClearSelected();
+                for (int i = 0; i < clbPsyker.Items.Count; i++)
+                {
+                    clbPsyker.SetItemChecked(i, false);
+                }
+
+                if (PsykerPowers[0] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                }
+            }
+            else
+            {
+                lblPsyker.Text = "Select two of the following:";
+                if (PsykerPowers.Length != 2)
+                {
+                    PsykerPowers = new string[2] { string.Empty, string.Empty };
+                }
+
+                clbPsyker.ClearSelected();
+                for (int i = 0; i < clbPsyker.Items.Count; i++)
+                {
+                    clbPsyker.SetItemChecked(i, false);
+                }
+
+                if (PsykerPowers[0] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                }
+                if (PsykerPowers[1] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
+                }
+            }
+
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
@@ -111,13 +158,21 @@ namespace Roster_Builder.Adepta_Sororitas
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
             switch (code)
             {
                 case 11:
-                    Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    {
+                        Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+                    }
                     break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
@@ -131,6 +186,51 @@ namespace Roster_Builder.Adepta_Sororitas
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+
+                    if(chosenRelic == "The Ecclesiarch's Fury")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+
+                    if (chosenRelic == "The Sigil Ecclesiasticus")
+                    {
+                        panel.Controls["lblPsyker"].Text = "Select two of the following:";
+                        var temp = PsykerPowers;
+
+                        PsykerPowers = new string[2] { string.Empty, string.Empty };
+                        if (temp[0] != string.Empty)
+                        {
+
+                            for (int i = 0; i < clbPsyker.Items.Count; i++)
+                            {
+                                clbPsyker.SetItemChecked(i, false);
+                            }
+
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        }
+                    }
+                    else
+                    {
+                        panel.Controls["lblPsyker"].Text = "Select one of the following:";
+                        var temp = PsykerPowers;
+
+                        PsykerPowers = new string[1] { string.Empty };
+                        if (temp[0] != string.Empty)
+                        {
+
+                            for (int i = 0; i < clbPsyker.Items.Count; i++)
+                            {
+                                clbPsyker.SetItemChecked(i, false);
+                            }
+
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        }
+                    }
+
                     Relic = chosenRelic;
                     break;
                 case 25:
@@ -139,6 +239,39 @@ namespace Roster_Builder.Adepta_Sororitas
                         this.isWarlord = true;
                     }
                     else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
+                    break;
+                case 60:
+                    if (Relic == "The Sigil Ecclesiasticus")
+                    {
+                        if (clbPsyker.CheckedItems.Count < 2)
+                        {
+                            break;
+                        }
+                        else if (clbPsyker.CheckedItems.Count == 2)
+                        {
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
+                        }
+                        else
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        }
+                    }
+                    else
+                    {
+                        if (clbPsyker.CheckedItems.Count < 1)
+                        {
+                            break;
+                        }
+                        else if (clbPsyker.CheckedItems.Count == 1)
+                        {
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        }
+                        else
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        }
+                    }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)

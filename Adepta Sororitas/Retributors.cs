@@ -11,8 +11,8 @@ namespace Roster_Builder.Adepta_Sororitas
     {
         int currentIndex = 0;
         int stdIndex = -1;
-        bool isLoading = false;
-        int restrictArray = 0;
+        int[] restrictArray = new int[] { 0, 0 };
+        List<int> restrictedIndexes2 = new List<int>();
 
         public Retributors()
         {
@@ -22,9 +22,8 @@ namespace Roster_Builder.Adepta_Sororitas
             TemplateCode = "NL2m3k";
             Weapons.Add("Boltgun and Bolt Pistol");
             Weapons.Add("(None)");
-            Weapons.Add(""); //Armorium Cherub (+5 pts)
-            Weapons.Add(""); //Armorium Cherub (+5 pts)
-            Weapons.Add(""); //Simulacrum Imperialis (+5 pts)
+            Weapons.Add(""); //Incensor Cherub (+5 pts)
+            Weapons.Add(""); //Incensor Cherub (+5 pts)
             for (int i = 1; i < UnitSize; i++)
             {
                 Weapons.Add("Boltgun");
@@ -54,9 +53,13 @@ namespace Roster_Builder.Adepta_Sororitas
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             CheckBox cbOption3 = panel.Controls["cbOption3"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
             cbOption1.Location = new System.Drawing.Point(cbOption1.Location.X, cbOption1.Location.Y + 60);
             cbOption2.Location = new System.Drawing.Point(cbOption2.Location.X, cbOption2.Location.Y + 60);
+            cbOption3.Location = new System.Drawing.Point(cbOption3.Location.X, cbOption3.Location.Y + 60);
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -77,20 +80,65 @@ namespace Roster_Builder.Adepta_Sororitas
             }
             for (int i = 1; i < UnitSize; i++)
             {
-                lbModelSelect.Items.Add("Retributor with " + Weapons[i + 4]);
+                lbModelSelect.Items.Add("Retributor with " + Weapons[i + 3]);
             }
 
             cmbOption1.Items.Clear();
             cmbOption2.Items.Clear();
 
             cbOption1.Text = "Incensor Cherub (+5 pts)";
-            cbOption2.Text = "Incensor Cherub (+5 pts)";
+            cbOption2.Text = cbOption1.Text;
             cbOption3.Text = "Simulacrum Imperialis (+5 pts)";
+
+            cbStratagem5.Text = repo.StratagemList[2];
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["cbOption2"].Location.X, panel.Controls["cbOption2"].Location.Y + 30);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            antiLoop = true;
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                panel.Controls["lblRelic"].Visible = true;
+                cmbRelic.Visible = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
+            }
+
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
+            antiLoop = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            if (isLoading)
+            if (antiLoop)
             {
                 return;
             }
@@ -101,13 +149,49 @@ namespace Roster_Builder.Adepta_Sororitas
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
+            CheckBox cbOption3 = panel.Controls["cbOption3"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
                 case 11:
-                    if (currentIndex == 0)
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
                     {
-                        Weapons[0] = cmbOption1.SelectedItem.ToString();
+                        if (currentIndex == 0)
+                        {
+                            Weapons[0] = cmbOption1.SelectedItem.ToString();
+                            if (Weapons[1] == "(None)")
+                            {
+                                lbModelSelect.Items[0] = "Retributor Superior w/ " + Weapons[0];
+                            }
+                            else
+                            {
+                                lbModelSelect.Items[0] = "Retributor Superior w/ " + Weapons[0] + " and " + Weapons[1];
+                            }
+                        }
+                        else
+                        {
+                            Weapons[currentIndex + 3] = cmbOption1.SelectedItem.ToString();
+                            lbModelSelect.Items[currentIndex] = "Retributor with " + Weapons[currentIndex + 3];
+                        }
+                    }
+                    else
+                    {
+                        if (currentIndex == 0)
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+                        }
+                        else
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 3]);
+                        }
+                    }
+                    break;
+                case 12:
+                    if (!restrictedIndexes2.Contains(cmbOption2.SelectedIndex))
+                    {
+                        Weapons[1] = cmbOption2.SelectedItem.ToString();
                         if (Weapons[1] == "(None)")
                         {
                             lbModelSelect.Items[0] = "Retributor Superior w/ " + Weapons[0];
@@ -119,42 +203,59 @@ namespace Roster_Builder.Adepta_Sororitas
                     }
                     else
                     {
-                        Weapons[currentIndex + 4] = cmbOption1.SelectedItem.ToString();
-                        lbModelSelect.Items[currentIndex] = "Retributor with " + Weapons[currentIndex + 4];
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
                     }
                     break;
-                case 12:
-                    Weapons[1] = cmbOption2.SelectedItem.ToString();
-                    if (Weapons[1] == "(None)")
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    Relic = chosenRelic;
+                    cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
+
+                    if (chosenRelic == "The Ecclesiarch's Fury")
                     {
-                        lbModelSelect.Items[0] = "Retributor Superior w/ " + Weapons[0];
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
                     }
-                    else
+                    else if (chosenRelic == "Redemption")
                     {
-                        lbModelSelect.Items[0] = "Retributor Superior w/ " + Weapons[0] + " and " + Weapons[1];
+                        cmbOption1.SelectedIndex = 7;
+                        cmbOption1.Enabled = false;
                     }
                     break;
                 case 21:
                     if (cbOption1.Checked)
                     {
-                        Weapons[3] = cbOption1.Text;
+                        Weapons[2] = cbOption1.Text;
+                    }
+                    else
+                    {
+                        Weapons[2] = "";
+                    }
+                    break;
+                case 22:
+                    if (cbOption2.Checked)
+                    {
+                        Weapons[3] = cbOption2.Text;
                     }
                     else
                     {
                         Weapons[3] = "";
                     }
                     break;
-                case 22:
-                    if (cbOption2.Checked)
+                case 23:
+                    if (cbOption3.Checked)
                     {
-                        Weapons[2] = cbOption2.Text;
+                        Weapons[currentIndex + 3] = cbOption3.Text;
                         stdIndex = currentIndex;
+                        lbModelSelect.Items[currentIndex] = "Retributor with " + Weapons[currentIndex + 3];
                         cmbOption1.Enabled = false;
                     }
                     else
                     {
-                        Weapons[2] = "";
+                        Weapons[currentIndex + 3] = "Boltgun";
                         stdIndex = -1;
+                        lbModelSelect.Items[currentIndex] = "Retributor with " + Weapons[currentIndex + 3];
                         cmbOption1.Enabled = true;
                     }
                     break;
@@ -165,30 +266,35 @@ namespace Roster_Builder.Adepta_Sororitas
                     if (temp < UnitSize)
                     {
                         Weapons.Add("Boltgun");
-                        lbModelSelect.Items.Add("Retributor with " + Weapons[temp + 4]);
+                        lbModelSelect.Items.Add("Retributor with " + Weapons[temp + 3]);
                     }
 
                     if (temp > UnitSize)
                     {
                         lbModelSelect.Items.RemoveAt(temp - 1);
-                        Weapons.RemoveRange(UnitSize + 4, 1);
+                        Weapons.RemoveRange(UnitSize + 3, 1);
                     }
 
                     break;
                 case 61:
+                    antiLoop = true;
                     currentIndex = lbModelSelect.SelectedIndex;
 
-                    if (currentIndex < 0 && !isLoading)
+                    if (currentIndex < 0 && !antiLoop)
                     {
                         cmbOption1.Visible = false;
                         cmbOption2.Visible = false;
                         cbOption1.Visible = false;
                         cbOption2.Visible = false;
+                        cbOption3.Visible = false;
                         panel.Controls["lblOption1"].Visible = false;
                         panel.Controls["lblOption2"].Visible = false;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
                         break;
                     }
-                    isLoading = true;
+                    antiLoop = true;
 
                     if (currentIndex == 0)
                     {
@@ -199,6 +305,15 @@ namespace Roster_Builder.Adepta_Sororitas
                         panel.Controls["lblOption2"].Visible = true;
                         cbOption1.Visible = true;
                         cbOption2.Visible = true;
+                        cbOption3.Visible = false;
+
+                        cbStratagem5.Visible = true;
+
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            panel.Controls["lblRelic"].Visible = true;
+                            cmbRelic.Visible = true;
+                        }
 
                         cmbOption1.Items.Clear();
                         cmbOption1.Items.AddRange(new string[]
@@ -223,7 +338,20 @@ namespace Roster_Builder.Adepta_Sororitas
                             "Power Sword (+5 pts)"
                         });
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
-                        isLoading = false;
+
+                        cmbOption1.Enabled = true;
+                        cmbOption2.Enabled = true;
+                        if (Relic == "The Ecclesiarch's Fury")
+                        {
+                            cmbOption2.Enabled = false;
+                        }
+                        else if (Relic == "Redemption")
+                        {
+                            cmbOption1.Enabled = false;
+                        }
+
+                        this.DrawItemWithRestrictions(new List<int>(), cmbOption1);
+                        antiLoop = false;
                         break;
                     }
 
@@ -234,31 +362,40 @@ namespace Roster_Builder.Adepta_Sororitas
                     panel.Controls["lblOption2"].Visible = false;
                     cbOption1.Visible = true;
                     cbOption2.Visible = true;
+                    cbOption3.Visible = true;
+                    cbStratagem5.Visible = false;
+                    cmbRelic.Visible = false;
+                    panel.Controls["lblRelic"].Visible = false;
 
                     cmbOption1.Items.Clear();
                     cmbOption1.Items.AddRange(new string[]
                     {
-                        "Artificer-crafted Storm Bolter (+5 pts)", //s
                         "Boltgun",
-                        "Meltagun (+10 pts)", //s
-                        "Ministorum Flamer (+5 pts)", //s
+                        "Heavy Bolter (+10 pts)", //h
+                        "Ministorum Heavy Flamer (+10 pts)", //h
+                        "Multi-melta (+20 pts)" //h
                     });
-                    cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 4]);
-
-                    if (restrictArray == 4 && Weapons[currentIndex + 4] == "Boltgun")
+                    cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 3]);
+                    if (Weapons[currentIndex + 3] == cbOption2.Text)
                     {
-                        cmbOption1.Items.Remove("Artificer-crafted Storm Bolter (+5 pts)");
-                        cmbOption1.Items.Remove("Meltagun (+10 pts)");
-                        cmbOption1.Items.Remove("Ministorum Flamer (+5 pts)");
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
                     }
 
-                    if (Weapons[currentIndex + 4] == "Boltgun" && (stdIndex == -1 || stdIndex == currentIndex))
+                    restrictedIndexes.Clear();
+                    if (restrictArray[0] == 4 && Weapons[currentIndex + 3] == "Boltgun")
                     {
-                        cbOption2.Enabled = true;
+                        restrictedIndexes.AddRange(new int[] { 1, 2, 3 });
+                    }
+
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+
+                    if ((Weapons[currentIndex + 3] == "Boltgun" || Weapons[currentIndex + 3] == cbOption3.Text) && (stdIndex == -1 || stdIndex == currentIndex))
+                    {
+                        cbOption3.Enabled = true;
                     }
                     else
                     {
-                        cbOption2.Enabled = false;
+                        cbOption3.Enabled = false;
                     }
 
                     if (stdIndex == currentIndex)
@@ -266,22 +403,40 @@ namespace Roster_Builder.Adepta_Sororitas
                         cmbOption1.Enabled = false;
                     }
 
-                    isLoading = false;
+                    antiLoop = false;
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
+                    }
                     break;
             }
 
             Points = DEFAULT_POINTS * UnitSize;
 
-            restrictArray = 0; //Special
+            restrictArray[0] = 0;
 
             foreach (var weapon in Weapons)
             {
-                if (weapon == "Artificer-crafted Storm Bolter (+5 pts)" || weapon == "Meltagun (+10 pts)" || weapon == "Ministorum Flamer (+5 pts)")
+                if (weapon == "Heavy Bolter (+10 pts)" || weapon == "Multi-melta (+20 pts)" || weapon == "Ministorum Heavy Flamer (+10 pts)")
                 {
-                    restrictArray++;
+                    restrictArray[0]++;
                 }
 
-                if (weapon == "Artificer-crafted Storm Bolter (+5 pts)" || weapon == "Incensor Cherub (+5 pts)" || weapon == "Inferno Pistol (+5 pts)"
+                if (weapon == "Incensor Cherub (+5 pts)" || weapon == "Inferno Pistol (+5 pts)"
                     || weapon == "Ministorum Flamer (+5 pts)" || weapon == "Ministorum Hand Flamer (+5 pts)" || weapon == "Plasma Pistol (+5 pts)"
                     || weapon == "Power Maul (+5 pts)" || weapon == "Power Sword (+5 pts)" || weapon == "Simulacrum Imperialis (+5 pts)")
                 {
@@ -289,9 +444,14 @@ namespace Roster_Builder.Adepta_Sororitas
                 }
 
                 if (weapon.Contains("Combi-melta") || weapon.Contains("Combi-plasma") || weapon.Contains("Condemnor Boltgun")
-                    || weapon == "Meltagun (+10 pts)" || weapon.Contains("Ministorum Combi-flamer"))
+                    || weapon == "Heavy Bolter (+10 pts)" || weapon.Contains("Ministorum Combi-flamer"))
                 {
                     Points += 10;
+                }
+
+                if (weapon == "Multi-melta (+20 pts)")
+                {
+                    Points += 20;
                 }
             }
         }

@@ -2714,11 +2714,11 @@ namespace Roster_Builder
 
                     panel.Controls["cbOption2"].Location = new System.Drawing.Point(243, 183);
 
-                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(243, 208);
+                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(243, 213);
 
-                    panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(239, 235);
+                    panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(239, 240);
 
-                    panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 258);
+                    panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 263);
                     break;
                 #endregion
                 #region case "NL3k"

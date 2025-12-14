@@ -84,7 +84,7 @@ namespace Roster_Builder.Adeptus_Mechanicus
             gb_cmbOption1.SelectedIndex = gb_cmbOption1.Items.IndexOf(Weapons[2]);
 
             cbStratagem3.Text = repo.StratagemList[2];
-            cbStratagem3.Location = new System.Drawing.Point(panel.Controls["nudUnitSize"].Location.X + 20, panel.Controls["cmbOption2"].Location.Y + 60 + gb.Height);
+            cbStratagem3.Location = new System.Drawing.Point(panel.Controls["nudUnitSize"].Location.X + 20, panel.Controls["cmbOption2"].Location.Y + 80 + gb.Height);
             cbStratagem4.Text = repo.StratagemList[3];
             cbStratagem4.Location = new System.Drawing.Point(panel.Controls["cbStratagem3"].Location.X, panel.Controls["cbStratagem3"].Location.Y + 30);
 

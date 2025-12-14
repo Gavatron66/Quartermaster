@@ -50,11 +50,11 @@ namespace Roster_Builder.Drukhari
 				new UrienRakarth(),
 				//---------- Troops ----------
 				new KabaliteWarriors(),
-                //new KabaliteTrueborn(),
+                new KabaliteTrueborn(),
 				new Wyches(),
-                //new HekatrixBloodbrides(),
+                new HekatrixBloodbrides(),
 				new Wracks(),
-                //new Haemoxytes(),
+                new Haemoxytes(),
 				//---------- Elites ----------
 				new CourtOfTheArchon(),
 				new Incubi(),
@@ -182,67 +182,54 @@ namespace Roster_Builder.Drukhari
 
             if(keywords.Contains("ARCHON"))
             {
-                //if(kabal == "Kabal of the Black Heart")
-                //{
-                //    relics.Add("Writ of the Living Muse");
-                //}
-                //else if (kabal == "Kabal of the Poisoned Tongue")
-                //{
-                //    relics.Add("Soul-seeker");
-                //}
-                //else if (kabal == "Kabal of the Flayed Skull")
-                //{
-                //    relics.Add("The Obsidian Veil");
-                //}
-                //else if (kabal == "Kabal of the Obsidian Rose")
-                //{
-                //    relics.Add("Flawless Workmanship");
-                //}
-
-                relics.Add("Writ of the Living Muse");
-                relics.Add("Soul-seeker");
-                relics.Add("The Obsidian Veil");
-                relics.Add("Flawless Workmanship");
+                if(kabal == "Kabal of the Black Heart")
+                {
+                    relics.Add("Writ of the Living Muse");
+                }
+                else if (kabal == "Kabal of the Poisoned Tongue")
+                {
+                    relics.Add("Soul-seeker");
+                }
+                else if (kabal == "Kabal of the Flayed Skull")
+                {
+                    relics.Add("The Obsidian Veil");
+                }
+                else if (kabal == "Kabal of the Obsidian Rose")
+                {
+                    relics.Add("Flawless Workmanship");
+                }
             }
 
             if(keywords.Contains("SUCCUBUS"))
             {
-                //if(wychCult == "Cult of Strife")
-                //{
-                //    relics.Add("The Phial Bouquet");
-                //}
-                //else if(wychCult == "Cult of the Cursed Blade")
-                //{
-                //    relics.Add("Traitor's Embrace");
-                //}
-                //else if(wychCult == "Cult of the Red Grief")
-                //{
-                //    relics.Add("The Blood Glaive");
-                //}
-
-                relics.Add("The Phial Bouquet");
-                relics.Add("Traitor's Embrace");
-                relics.Add("The Blood Glaive");
+                if(wychCult == "Cult of Strife")
+                {
+                    relics.Add("The Phial Bouquet");
+                }
+                else if(wychCult == "Cult of the Cursed Blade")
+                {
+                    relics.Add("Traitor's Embrace");
+                }
+                else if(wychCult == "Cult of the Red Grief")
+                {
+                    relics.Add("The Blood Glaive");
+                }
             }
 
             if(keywords.Contains("HAEMONCULUS"))
             {
-                //if(coven == "The Prophets of Flesh")
-                //{
-                //    relics.Add("The Vexator Mask");
-                //}
-                //else if(coven == "The Dark Creed")
-                //{
-                //    relics.Add("Spirit-sting");
-                //}
-                //else if(coven == "The Coven of Twelve")
-                //{
-                //    relics.Add("The Flensing Blade");
-                //}
-
-                relics.Add("The Vexator Mask");
-                relics.Add("Spirit-sting");
-                relics.Add("The Flensing Blade");
+                if(coven == "The Prophets of Flesh")
+                {
+                    relics.Add("The Vexator Mask");
+                }
+                else if(coven == "The Dark Creed")
+                {
+                    relics.Add("Spirit-sting");
+                }
+                else if(coven == "The Coven of Twelve")
+                {
+                    relics.Add("The Flensing Blade");
+                }
             }
 
 			return relics;

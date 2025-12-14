@@ -56,7 +56,7 @@ namespace Roster_Builder.Aeldari
             int temp = Convert.ToInt32(Weapons[2]);
             nudOption1.Minimum = 0;
             nudOption1.Value = nudOption1.Minimum;
-            nudOption1.Maximum = 2;
+            nudOption1.Maximum = 1;
             nudOption1.Value = temp;
 
             cmbOption1.Items.Clear();
@@ -122,6 +122,18 @@ namespace Roster_Builder.Aeldari
                     break;
                 case 30:
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
+                    if(UnitSize == 20)
+                    {
+                        nudOption1.Maximum = 2;
+                    }
+                    else
+                    {
+                        if(nudOption1.Value > 1)
+                        {
+                            nudOption1.Value--;
+                        }
+                        nudOption1.Maximum = 1;
+                    }
                     break;
                 case 31:
                     Weapons[2] = nudOption1.Value.ToString();

@@ -56,9 +56,13 @@ This is more of a note than a todo, the Tome of Vel'cona grants Salamander Libra
 
 Proteus Kill Team; Showing points for the different models is not great, but can't decide on anything concrete; current implementation will do, come back to fix if desired.
 
-The nud controls need to be redone for the following units:
-	Ork Boyz
-	Drukhari Grotesques
+Ork Boyz need their nud logic redone to bring it in line with the rest of the program
+
+Need to double check all the factions for relics and upgrades that allow them to know additional psychic powers/prayers (with the exception of Adeptus Astartes and the Tome of Vel'cona, for the reason stated above). The following are the ones I know of:
+	Farseer/Warlock, Ulthwe
+	
+Why did I do chosenRelic? Removing it fixes a lot of problems....
+	Best guess it is for something to do with DG, but since I'm not doing the rest to that standard, I'll have to experiment...
 
 ***Leaving these for the future SM supplements***
 Characters to do list:
@@ -324,8 +328,3 @@ Sergeants
             }
 	
 	restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13, 14, 15, 17, 18 });
-	
-To Do List
-		//new KabaliteTrueborn(),
-		//new HekatrixBloodbrides(),
-		//new Haemoxytes()

@@ -49,9 +49,12 @@ namespace Roster_Builder.Adepta_Sororitas
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             ComboBox cmbOption3 = panel.Controls["cmbOption3"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             nudUnitSize.Visible = false;
             panel.Controls["lblNumModels"].Visible = false;
+            panel.Controls["lblModelPoints"].Visible = false;
 
             lbModelSelect.Items.Clear();
             lbModelSelect.Items.Add("Paragon Superior - " + CalcPoints(0) + " pts");
@@ -81,6 +84,51 @@ namespace Roster_Builder.Adepta_Sororitas
                 "Paragon War Blade",
                 "Paragon War Mace"
             });
+
+            cbStratagem5.Text = repo.StratagemList[2];
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblOption1"].Location.X, panel.Controls["cmbOption3"].Location.Y + 32);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            antiLoop = true;
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                panel.Controls["lblRelic"].Visible = true;
+                cmbRelic.Visible = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
+            }
+
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
+            antiLoop = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -95,6 +143,8 @@ namespace Roster_Builder.Adepta_Sororitas
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             ComboBox cmbOption3 = panel.Controls["cmbOption3"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
@@ -131,6 +181,9 @@ namespace Roster_Builder.Adepta_Sororitas
                         lbModelSelect.Items[currentIndex] = ("Paragon - " + CalcPoints(currentIndex) + " pts");
                     }
                     break;
+                case 17:
+                    Relic = cmbRelic.SelectedItem.ToString();
+                    break;
                 case 61:
                     currentIndex = lbModelSelect.SelectedIndex;
 
@@ -156,6 +209,42 @@ namespace Roster_Builder.Adepta_Sororitas
                     cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 3) + 1]);
                     cmbOption3.SelectedIndex = cmbOption3.Items.IndexOf(Weapons[(currentIndex * 3) + 2]);
 
+                    if(currentIndex == 0)
+                    {
+
+                        cbStratagem5.Visible = true;
+
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            panel.Controls["lblRelic"].Visible = true;
+                            cmbRelic.Visible = true;
+                        }
+                    }
+                    else
+                    {
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                    }
+
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
+                    }
                     break;
             }
 

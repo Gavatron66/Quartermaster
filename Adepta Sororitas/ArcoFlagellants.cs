@@ -37,6 +37,8 @@ namespace Roster_Builder.Adepta_Sororitas
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
             nudUnitSize.Minimum = 3;
             nudUnitSize.Value = nudUnitSize.Minimum;
             nudUnitSize.Maximum = 10;

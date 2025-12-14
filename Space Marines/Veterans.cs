@@ -270,8 +270,8 @@ namespace Roster_Builder.Space_Marines
                     #region Codex Supplement: Ultramarines
                     if (chosenRelic == "Hellfury Bolts")
                     {
-                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                         cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                     }
                     else if (chosenRelic == "Sunwrath Pistol")
                     {
@@ -282,8 +282,8 @@ namespace Roster_Builder.Space_Marines
                     #region Codex Supplement: Salamanders
                     else if (chosenRelic == "Dragonrage Bolts")
                     {
-                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                         cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                     }
                     else if (chosenRelic == "Drakeblade")
                     {
@@ -299,15 +299,15 @@ namespace Roster_Builder.Space_Marines
                     }
                     else if (chosenRelic == "Korvidari Bolts")
                     {
-                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                         cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                     }
                     #endregion
                     #region Codex Supplement: Iron Hands
                     else if (chosenRelic == "Haywire Bolts")
                     {
-                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                         cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                     }
                     else if (chosenRelic == "Teeth of Mars")
                     {
@@ -318,15 +318,15 @@ namespace Roster_Builder.Space_Marines
                     #region Codex Supplement: White Scars
                     else if (chosenRelic == "Stormwrath Bolts")
                     {
-                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                         cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                     }
                     #endregion
                     #region Codex Supplement: Imperial Fists
                     else if (chosenRelic == "Gatebreaker Bolts")
                     {
-                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                         cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                     }
                     else if (chosenRelic == "Fist of Terra")
                     {
@@ -337,20 +337,20 @@ namespace Roster_Builder.Space_Marines
                     #region Codex Supplement: Deathwatch
                     else if (chosenRelic == "Banebolts of Eryxia" || chosenRelic == "Artificer Bolt Cache")
                     {
-                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                         cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                     }
                     #endregion
                     #region Codex Supplement: Space Wolves
                     else if (chosenRelic == "Morkai's Teeth Bolts")
                     {
-                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                         cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13 });
                     }
                     else if (chosenRelic == "Frost Weapon")
                     {
-                        restrictedIndexes2.AddRange(new int[] { 0, 1, 2, 4, 6, 7, 9, 10 });
                         cmbOption2.SelectedIndex = 8;
+                        restrictedIndexes2.AddRange(new int[] { 0, 1, 2, 4, 6, 7, 9, 10 });
                     }
                     #endregion
 

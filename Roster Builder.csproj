@@ -384,6 +384,7 @@
     <Compile Include="Drukhari\Haemonculus.cs" />
     <Compile Include="Drukhari\Hellions.cs" />
     <Compile Include="Drukhari\Incubi.cs" />
+    <Compile Include="Drukhari\KabaliteTrueborn.cs" />
     <Compile Include="Drukhari\KabaliteWarriors.cs" />
     <Compile Include="Drukhari\Khymerae.cs" />
     <Compile Include="Drukhari\LelithHesperax.cs" />
@@ -399,7 +400,9 @@
     <Compile Include="Drukhari\UrienRakarth.cs" />
     <Compile Include="Drukhari\Venom.cs" />
     <Compile Include="Drukhari\VoidravenBomber.cs" />
+    <Compile Include="Drukhari\Haemoxytes.cs" />
     <Compile Include="Drukhari\Wracks.cs" />
+    <Compile Include="Drukhari\HekatrixBloodbrides.cs" />
     <Compile Include="Drukhari\Wyches.cs" />
     <Compile Include="Faction.cs" />
     <Compile Include="Detachment.cs" />

@@ -61,6 +61,7 @@ namespace Roster_Builder.Aeldari
             lblnud2.Text = "Witchblades:";
             lblnud2.Location = new System.Drawing.Point(lblnud2.Location.X + 45, lblnud2.Location.Y);
 
+            antiLoop = true;
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;
             nudUnitSize.Value = nudUnitSize.Minimum;
@@ -76,6 +77,7 @@ namespace Roster_Builder.Aeldari
             nudOption2.Value = 0;
             nudOption2.Maximum = 6;
             nudOption2.Value = witchblades;
+            antiLoop = false;
 
             List<string> psykerpowers = new List<string>();
             psykerpowers = repo.GetPsykerPowers("Battle");

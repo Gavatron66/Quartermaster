@@ -43,7 +43,7 @@ namespace Roster_Builder.Drukhari
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            //ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
             panel.Controls["lblExtra1"].Text = "Three models may take a different weapon per 10 models, one of each";
@@ -80,21 +80,21 @@ namespace Roster_Builder.Drukhari
 
             cbOption1.Text = "Phantasm Grenade Launcher (+5 pts)";
 
-            cmbFaction.Items.Clear();
-            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-            panel.Controls["lblFactionUpgrade"].Text = "Favoured Retinue";
+            //cmbFaction.Items.Clear();
+            //cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+            //panel.Controls["lblFactionUpgrade"].Text = "Favoured Retinue";
 
-            if (Factionupgrade != null)
-            {
-                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-            }
-            else
-            {
-                cmbFaction.SelectedIndex = 0;
-            }
+            //if (Factionupgrade != null)
+            //{
+            //    cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+            //}
+            //else
+            //{
+            //    cmbFaction.SelectedIndex = 0;
+            //}
 
-            panel.Controls["lblFactionUpgrade"].Visible = true;
-            cmbFaction.Visible = true;
+            //panel.Controls["lblFactionUpgrade"].Visible = true;
+            //cmbFaction.Visible = true;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -109,7 +109,7 @@ namespace Roster_Builder.Drukhari
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
-            ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            //ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
@@ -136,9 +136,9 @@ namespace Roster_Builder.Drukhari
                     Weapons[2] = cmbOption2.SelectedItem.ToString();
                     lbModelSelect.Items[0] = "Hekatrix w/ " + Weapons[1] + " and " + Weapons[2];
                     break;
-                case 16:
-                    Factionupgrade = cmbFactionupgrade.Text;
-                    break;
+                //case 16:
+                //    Factionupgrade = cmbFactionupgrade.Text;
+                //    break;
                 case 21:
                     if (cbOption1.Checked)
                     {

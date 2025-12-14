@@ -52,6 +52,7 @@ namespace Roster_Builder.Tau_Empire
             GroupBox gb = panel.Controls["gbUnitLeader"] as GroupBox;
             ComboBox gb_cmbOption1 = gb.Controls["gb_cmbOption1"] as ComboBox;
 
+            panel.Controls["lblNumModels"].Visible = false;
             panel.Controls["lblExtra1"].Location = panel.Controls["lblNumModels"].Location;
             panel.Controls["lblExtra1"].Text = "Number of Models w/ Pulse Rifles: ";
             panel.Controls["lblExtra1"].Visible = true;
