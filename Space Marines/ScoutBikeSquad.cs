@@ -263,6 +263,18 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 9;
                     }
                     #endregion
+                    #region Codex Supplement: Dark Angels
+                    else if (chosenRelic == "Bolts of Judgement")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Atonement")
+                    {
+                        cmbOption1.SelectedIndex = 8;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     antiLoop = false;
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
@@ -393,6 +405,18 @@ namespace Roster_Builder.Space_Marines
                         {
                             restrictedIndexes.AddRange(new int[] { 0, 1, 2, 3, 4, 5, 6, 8, 10, 11, 13, 14 });
                             cmbOption1.SelectedIndex = 9;
+                        }
+                        #endregion
+                        #region Codex Supplement: Atonement
+                        else if (Relic == "Bolts of Judgement")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                            cmbOption1.SelectedIndex = 1;
+                        }
+                        else if (Relic == "Atonement")
+                        {
+                            cmbOption1.SelectedIndex = 8;
+                            cmbOption1.Enabled = false;
                         }
                         #endregion
 

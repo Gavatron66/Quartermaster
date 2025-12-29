@@ -166,7 +166,8 @@ namespace Roster_Builder.Space_Marines
 
                     if (chosenRelic == "Hellfury Bolts" || chosenRelic == "Dragonrage Bolts" || chosenRelic == "Korvidari Bolts"
                         || chosenRelic == "Haywire Bolts" || chosenRelic == "Stormwrath Bolts" || chosenRelic == "Gatebreaker Bolts"
-                        || chosenRelic == "Banebolts of Eryxia" || chosenRelic == "Artificer Bolt Cache" || chosenRelic == "Morkai's Teeth Bolts")
+                        || chosenRelic == "Banebolts of Eryxia" || chosenRelic == "Artificer Bolt Cache" || chosenRelic == "Morkai's Teeth Bolts"
+                        || chosenRelic == "Bolts of Judgement")
                     {
                         cmbOption2.SelectedIndex = 1;
                         cmbOption2.Enabled = false;
@@ -223,7 +224,9 @@ namespace Roster_Builder.Space_Marines
                             cmbRelic.Visible = true;
 
                             if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
-                                || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts")
+                                || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
+                                || Relic == "Banebolts of Eryxia" || Relic == "Artificer Bolt Cache" || Relic == "Morkai's Teeth Bolts"
+                                || Relic == "Bolts of Judgement")
                             {
                                 cmbOption2.SelectedIndex = 1;
                                 cmbOption2.Enabled = false;

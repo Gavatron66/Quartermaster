@@ -490,6 +490,11 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Combi-melta");
                         cmbOption2.Enabled = false;
                     }
+                    else if (chosenRelic == "Foe-smiter")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Storm Bolter");
+                        cmbOption2.Enabled = false;
+                    }
                     else
                     {
                         cmbOption2.Enabled = true;

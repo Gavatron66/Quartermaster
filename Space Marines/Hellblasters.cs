@@ -129,12 +129,13 @@ namespace Roster_Builder.Space_Marines
 
                     if (chosenRelic == "Hellfury Bolts" || chosenRelic == "Dragonrage Bolts" || chosenRelic == "Korvidari Bolts"
                         || chosenRelic == "Haywire Bolts" || chosenRelic == "Stormwrath Bolts" || chosenRelic == "Gatebreaker Bolts"
-                        || chosenRelic == "Banebolts of Eryxia" || chosenRelic == "Artificer Bolt Cache" || chosenRelic == "Morkai's Teeth Bolts")
+                        || chosenRelic == "Banebolts of Eryxia" || chosenRelic == "Artificer Bolt Cache" || chosenRelic == "Morkai's Teeth Bolts"
+                        || chosenRelic == "Bolts of Judgement")
                     {
                         cbOption1.Checked = false;
                         cbOption1.Enabled = false;
                     }
-                    else if (chosenRelic == "Sunwrath Pistol") //Ultramarines Plasma Pistol
+                    else if (chosenRelic == "Sunwrath Pistol" || chosenRelic == "Atonement") //Ultramarines/Dark Angels Plasma Pistol
                     {
                         cbOption1.Checked = true;
                         cbOption1.Enabled = false;

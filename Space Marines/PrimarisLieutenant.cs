@@ -541,6 +541,34 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 1;
                     }
                     #endregion
+                    #region Codex Supplement: Dark Angels
+                    else if (chosenRelic == "Heavenfall Blade")
+                    {
+                        restrictedIndexes.Remove(1);
+                        restrictedIndexes.Remove(4);
+                        restrictedIndexes.Remove(7);
+                        restrictedIndexes.Remove(10);
+                        restrictedIndexes.Remove(12);
+                        restrictedIndexes.Remove(13);
+                        restrictedIndexes.Remove(14);
+                        restrictedIndexes.Remove(16);
+                        restrictedIndexes.Remove(19);
+                        restrictedIndexes.Remove(22);
+                        restrictedIndexes.Remove(25);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Atonement")
+                    {
+                        restrictedIndexes.RemoveRange(21, 6);
+                        cmbOption1.SelectedIndex = 21;
+                    }
+                    else if (chosenRelic == "Bolts of Judgement")
+                    {
+                        restrictedIndexes.Clear();
+                        restrictedIndexes.Add(14);
+                        cmbOption1.SelectedIndex = 0;
+                    }
+                    #endregion
                     else
                     {
                         restrictedIndexes.Clear();

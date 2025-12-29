@@ -233,6 +233,13 @@ namespace Roster_Builder.Genestealer_Cults
                         gb_cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Ultramarines
+                    else if (chosenRelic == "Atonement")
+                    {
+                        gb_cmbOption1.SelectedIndex = 2;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;

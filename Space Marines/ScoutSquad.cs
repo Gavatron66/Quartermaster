@@ -283,11 +283,25 @@ namespace Roster_Builder.Space_Marines
                         this.DrawItemWithRestrictions(new List<int> { 0, 1, 2, 4, 6, 7, 9 }, cmbOption2);
                     }
                     #endregion
+                    #region Codex Supplement: Dark Angels
+                    else if (chosenRelic == "Bolts of Judgement")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Atonement")
+                    {
+                        cmbOption1.SelectedIndex = 9;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     if (chosenRelic != "Frost Weapon") //Space Wolves Sgt Relic
                     {
                         this.DrawItemWithRestrictions(new List<int>(), cmbOption2);
                     }
+
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
 
                     Relic = chosenRelic;
                     break;
@@ -445,79 +459,6 @@ namespace Roster_Builder.Space_Marines
                             cmbOption2.Items.Insert(4, "Inferno Pistol");
                         }
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[2]);
-
-                        restrictedIndexes.Clear();
-
-                        #region Codex Supplement: Ultramarines
-                        if (Relic == "Hellfury Bolts")
-                        {
-                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
-                        }
-                        else if (Relic == "Sunwrath Pistol")
-                        {
-                            cmbOption1.SelectedIndex = 9;
-                            cmbOption1.Enabled = false;
-                        }
-                        #endregion
-                        #region Codex Supplement: Salamanders
-                        else if (Relic == "Dragonrage Bolts")
-                        {
-                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
-                        }
-                        else if (Relic == "Drakeblade")
-                        {
-                            cmbOption2.SelectedIndex = 8;
-                            cmbOption2.Enabled = false;
-                        }
-                        #endregion
-                        #region Codex Supplement: Raven Guard
-                        else if (Relic == "Silentus Pistol")
-                        {
-                            cmbOption2.SelectedIndex = 1;
-                            cmbOption2.Enabled = false;
-                        }
-                        else if (Relic == "Korvidari Bolts")
-                        {
-                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
-                        }
-                        #endregion
-                        #region Codex Supplement: Iron Hands
-                        else if (Relic == "Haywire Bolts")
-                        {
-                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
-                            cmbOption1.SelectedIndex = 1;
-                        }
-                        else if (Relic == "Teeth of Mars")
-                        {
-                            cmbOption2.SelectedIndex = 0;
-                            cmbOption2.Enabled = false;
-                        }
-                        #endregion
-                        #region Codex Supplement: White Scars
-                        else if (Relic == "Stormwrath Bolts")
-                        {
-                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
-                            cmbOption1.SelectedIndex = 1;
-                        }
-                        #endregion
-                        #region Codex Supplement: Imperial Fists
-                        else if (Relic == "Gatebreaker Bolts")
-                        {
-                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
-                            cmbOption1.SelectedIndex = 1;
-                        }
-                        else if (Relic == "Fist of Terra")
-                        {
-                            cmbOption2.SelectedIndex = 6;
-                            cmbOption2.Enabled = false;
-                        }
-                        #endregion
-                        #region Codex Supplement: Space Wolves
-                        else if (Relic == "Morkai's Teeth Bolts")
-                        {
-                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
-                        }
-                        #endregion
 
                         if (Relic == "Frost Weapon") //Space Wolves Sgt Relic
                         {

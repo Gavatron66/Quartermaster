@@ -194,10 +194,13 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
-                    if (Factionupgrade != "(None)" && Factionupgrade != null)
+                    if (Factionupgrade.Contains("Chapter Master") && Factionupgrade != null)
                     {
-                        cmbWarlord.Items.Add("Master of the Codex");
-                        cmbRelic.Items.Add("Angel Artifice");
+                        if (!cmbWarlord.Items.Contains("Master of the Codex") && !cmbRelic.Items.Contains("Angel Artifice"))
+                        {
+                            cmbWarlord.Items.Add("Master of the Codex");
+                            cmbRelic.Items.Add("Angel Artifice");
+                        }
                     }
                     else
                     {

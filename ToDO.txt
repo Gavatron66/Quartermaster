@@ -63,6 +63,10 @@ Need to double check all the factions for relics and upgrades that allow them to
 	
 Why did I do chosenRelic? Removing it fixes a lot of problems....
 	Best guess it is for something to do with DG, but since I'm not doing the rest to that standard, I'll have to experiment...
+	
+Apparently, Vehicles can't have Relics! I need to go back and double check some things, because there's not a lot of Characters who also have the VEHICLE keyword.
+What I know:
+	Catacomb Command Barge
 
 ***Leaving these for the future SM supplements***
 Characters to do list:
@@ -328,3 +332,5 @@ Sergeants
             }
 	
 	restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13, 14, 15, 17, 18 });
+
+Characters to do list:

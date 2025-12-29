@@ -208,10 +208,13 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
-                    if (Factionupgrade != "(None)" && Factionupgrade != null)
+                    if (Factionupgrade.Contains("Chapter Master") && Factionupgrade != null)
                     {
-                        cmbWarlord.Items.Add("Master of the Codex");
-                        cmbRelic.Items.Add("Angel Artifice");
+                        if (!cmbWarlord.Items.Contains("Master of the Codex") && !cmbRelic.Items.Contains("Angel Artifice"))
+                        {
+                            cmbWarlord.Items.Add("Master of the Codex");
+                            cmbRelic.Items.Add("Angel Artifice");
+                        }
                     }
                     else
                     {
@@ -299,6 +302,13 @@ namespace Roster_Builder.Space_Marines
                     #endregion
                     #region Codex Supplement: Space Wolves
                     else if (chosenRelic == "Frost Weapon")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: Dark Angels
+                    else if (chosenRelic == "Heavenfall Blade")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
                         cmbOption1.Enabled = false;

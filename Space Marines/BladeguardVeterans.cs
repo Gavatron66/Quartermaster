@@ -170,6 +170,18 @@ namespace Roster_Builder.Space_Marines
                         gb_cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Dark Angels
+                    if (chosenRelic == "Atonement")
+                    {
+                        gb_cmbOption1.SelectedIndex = 2;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Bolts of Judgement")
+                    {
+                        gb_cmbOption1.SelectedIndex = 0;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;

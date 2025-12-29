@@ -64,10 +64,6 @@ namespace Roster_Builder.Space_Marines
                 cmbOption1.Items.Add("Special Issue Bolt Carbine");
             }
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
-            if(Relic == "Purgatorus")
-            {
-                cmbOption1.Items.RemoveAt(3);
-            }
 
             cbOption1.Text = "Master-crafted Power Sword";
             cbOption2.Text = "Power Fist";
@@ -249,13 +245,15 @@ namespace Roster_Builder.Space_Marines
                     {
                         cbOption1.Checked = false;
                         cbOption1.Enabled = false;
+                        cbOption2.Enabled = false;
                     }
                     else
                     {
                         cbOption1.Enabled = true;
+                        cbOption2.Enabled = true;
 
-                        if(Relic == "The Burning Blade" || Relic == "Drakeblade" || Relic == "The Thief of Secrets"
-                            || Relic == "Frost Weapon")
+                        if (Relic == "The Burning Blade" || Relic == "Drakeblade" || Relic == "The Thief of Secrets"
+                            || Relic == "Frost Weapon" || Relic == "Heavenfall Blade")
                         {
                             cbOption1.Checked = true;
                             cbOption1.Enabled = false;
@@ -274,10 +272,13 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 16:
                     Factionupgrade = cmbFactionupgrade.Text;
-                    if(Factionupgrade != "(None)" && Factionupgrade != null)
+                    if (Factionupgrade.Contains("Chapter Master") && Factionupgrade != null)
                     {
-                        cmbWarlord.Items.Add("Master of the Codex");
-                        cmbRelic.Items.Add("Angel Artifice");
+                        if(!cmbWarlord.Items.Contains("Master of the Codex") && !cmbRelic.Items.Contains("Angel Artifice"))
+                        {
+                            cmbWarlord.Items.Add("Master of the Codex");
+                            cmbRelic.Items.Add("Angel Artifice");
+                        }
                     }
                     else
                     {
@@ -475,6 +476,26 @@ namespace Roster_Builder.Space_Marines
                         restrictedIndexes.Add(3);
                     }
                     else if (chosenRelic == "Morkai's Teeth Bolts")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
+                    #region Codex Supplement: Dark Angels
+                    else if (chosenRelic == "Heavenfall Blade")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 0;
+                    }
+                    else if (chosenRelic == "Atonement")
+                    {
+                        cmbOption1.SelectedIndex = 3;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Bolts of Judgement")
                     {
                         restrictedIndexes.Add(3);
                         cmbOption1.SelectedIndex = 1;

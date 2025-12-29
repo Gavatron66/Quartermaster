@@ -325,25 +325,25 @@ namespace Roster_Builder.Space_Marines
             }
             else if (currentSubFaction == "Dark Angels")
             {
-                datasheets.RemoveRange(39, 2);
-                datasheets.Insert(11, new RavenwingTalonmaster());
-                datasheets.Insert(12, new DeathwingStrikemaster());
-                datasheets.Insert(21, new InterrogatorChaplain());
-                datasheets.Insert(22, new TerminatorInterrogator());
-                datasheets.Insert(26, new Azrael());
-                datasheets.Insert(27, new Belial());
-                datasheets.Insert(28, new Sammael());
-                datasheets.Insert(29, new Ezekiel());
-                datasheets.Insert(30, new Asmodai());
-                datasheets.Insert(31, new Lazarus());
-                datasheets.Insert(39, new DeathwingChampion());
-                datasheets.Insert(40, new RavenwingChampion());
-                datasheets.Insert(44, new DeathwingApothecary());
-                datasheets.Insert(45, new RavenwingApothecary());
-                datasheets.Insert(50, new RavenwingAncient());
-                datasheets.Insert(60, new DeathwingTerminators());
-                datasheets.Insert(61, new DeathwingKnights());
-                datasheets.Insert(62, new DeathwingCommand());
+                datasheets.RemoveRange(39, 2); //Removes Sternguard and Vanguard Veterans
+                datasheets.Insert(0, new Azrael());
+                datasheets.Insert(1, new Belial());
+                datasheets.Insert(2, new Sammael());
+                datasheets.Insert(3, new Lazarus());
+                datasheets.Insert(15, new DeathwingStrikemaster());
+                datasheets.Insert(16, new RavenwingTalonmaster());
+                datasheets.Insert(17, new Ezekiel());
+                datasheets.Insert(22, new Asmodai());
+                datasheets.Insert(26, new TerminatorInterrogator());
+                datasheets.Insert(28, new InterrogatorChaplain());
+                datasheets.Insert(55, new DeathwingApothecary());
+                datasheets.Insert(56, new DeathwingChampion());
+                datasheets.Insert(57, new DeathwingTerminators());
+                datasheets.Insert(58, new DeathwingKnights());
+                datasheets.Insert(59, new DeathwingCommand());
+                datasheets.Insert(60, new RavenwingApothecary());
+                datasheets.Insert(61, new RavenwingChampion());
+                datasheets.Insert(62, new RavenwingAncient());
                 datasheets.Insert(63, new RavenwingBlackKnights());
                 datasheets.Insert(86, new RavenwingDarkshroud());
                 datasheets.Insert(87, new RavenwingVengeance());
@@ -745,7 +745,7 @@ namespace Roster_Builder.Space_Marines
                 });
             }
 
-            if (keywords == "Interromancy")
+            if (keywords == "Interromancy") //Dark Angels
             {
                 PsychicPowers.AddRange(new string[]
                 {
@@ -980,6 +980,33 @@ namespace Roster_Builder.Space_Marines
                     }
                 }
                 #endregion
+                #region Dark Angels
+                if (customSubFactionTraits[2] == "Dark Angels" && !(keywords.Contains("TERMINATOR ASSAULT SQUAD") || keywords.Contains("DEATHWING KNIGHTS")))
+                {
+                    relics.Add("Bolts of Judgement");
+
+                    if (!(keywords.Contains("TERMINATOR") || keywords.Contains("CENTURION") || keywords.Contains("PHOBOS")
+                        || keywords.Contains("MK X GRAVIS") || keywords.Contains("TYRANNIC WAR VETERANS") || keywords.Contains("OUTRIDER SQUAD")
+                        || keywords.Contains("SUPPRESSOR SQUAD") || keywords.Contains("DESOLATION SQUAD") || keywords.Contains("RAVENWING")))
+                    {
+                        relics.Add("Atonement");
+                    }
+
+                    if (keywords.Contains("TACTICAL SQUAD") || keywords.Contains("DEVASTATOR SQUAD"))
+                    {
+                        relics[3] = "Bolts of Judgement (Slot 1)";
+                        relics[4] = "Atonement (Slot 1)";
+                        relics.Insert(4, "Bolts of Judgement (Slot 2)");
+                        relics.Add("Atonement (Slot 2)");
+                    }
+
+                    if (keywords.Contains("CENTURION DEVASTATOR SQUAD"))
+                    {
+                        relics[3] = "Bolts of Judgement (Slot 1)";
+                        relics.Add("Bolts of Judgement (Slot 2)");
+                    }
+                }
+                #endregion
 
                 return relics;
             }
@@ -987,10 +1014,10 @@ namespace Roster_Builder.Space_Marines
             relics.Add("The Armour Indomitus");
 
             if ((keywords.Contains("CAPTAIN") && !(keywords.Contains("PHOBOS") || keywords.Contains("MK X GRAVIS") || keywords.Contains("KHAN"))) ||
-                ((keywords.Contains("LIEUTENANT") && (keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR") || keywords.Contains("WOLF GUARD BATTLE LEADER"))) 
+                (keywords.Contains("LIEUTENANT") && (keywords.Contains("PRIMARIS") || keywords.Contains("TERMINATOR") || keywords.Contains("WOLF GUARD BATTLE LEADER")) 
                     && !keywords.Contains("PHOBOS")) ||
                 (keywords.Contains("TERMINATOR") && keywords.Contains("ANCIENT") && customSubFactionTraits[2] == "Dark Angels") ||
-                keywords.Contains("COMPANY CHAMPION"))
+                (keywords.Contains("COMPANY CHAMPION") && !keywords.Contains("DEATHWING") && !keywords.Contains("RAVENWING")))
             {
                 relics.Add("The Shield Eternal");
             }
@@ -1004,8 +1031,9 @@ namespace Roster_Builder.Space_Marines
                 (keywords.Contains("PRIMARIS") && keywords.Contains("MK X GRAVIS") && !keywords.Contains("HBR")) ||
                 (keywords.Contains("LIEUTENANT") && !(keywords.Contains("PHOBOS") || (keywords.Contains("PRIMARIS") && currentSubFaction != "Black Templars") || keywords.Contains("TERMINATOR"))) ||
                 (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
-                (keywords.Contains("APOTHECARY") && !keywords.Contains("PRIMARIS")) ||
-                keywords.Contains("ANCIENT") && keywords.Contains("COMMAND SQUAD"))
+                (keywords.Contains("APOTHECARY") && !keywords.Contains("PRIMARIS") && !keywords.Contains("DEATHWING") && !keywords.Contains("RAVENWING")) ||
+                keywords.Contains("ANCIENT") && keywords.Contains("COMMAND SQUAD") ||
+                (keywords.Contains("INTERROGATOR-CHAPLAIN") && !keywords.Contains("TERMINATOR")))
             {
                 relics.Add("The Teeth of Terra");
             }
@@ -1025,15 +1053,17 @@ namespace Roster_Builder.Space_Marines
             if ((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS") && !keywords.Contains("KHAN")) ||
                 (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
                 (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
-                keywords.Contains("COMPANY CHAMPION") || keywords.Contains("COMPANY ANCIENT") ||
+                (keywords.Contains("COMPANY CHAMPION") && !keywords.Contains("DEATHWING")) || (keywords.Contains("COMPANY ANCIENT") && !keywords.Contains("RAVENWING")) ||
                 keywords.Contains("CHAPTER ANCIENT") || keywords.Contains("CHAPTER CHAMPION") || 
-                keywords.Contains("ANCIENT") && keywords.Contains("PRIMARIS") && !keywords.Contains("BLADEGUARD"))
+                (keywords.Contains("ANCIENT") && keywords.Contains("PRIMARIS") && !keywords.Contains("BLADEGUARD")) ||
+                (keywords.Contains("INTERROGATOR-CHAPLAIN") && !keywords.Contains("TERMINATOR")))
             {
                 relics.Add("The Burning Blade");
             }
 
             if (!(keywords.Contains("TERMINATOR") || keywords.Contains("MK X GRAVIS") || (keywords.Contains("TECHMARINE") && keywords.Contains("PRIMARIS"))
-                || keywords.Contains("CHAPTER CHAMPION") || keywords.Contains("CHAPTER ANCIENT") || keywords.Contains("KHAN") || keywords.Contains("WATCH MASTER")))
+                || (keywords.Contains("COMPANY CHAMPION") && !keywords.Contains("RAVENWING")) || keywords.Contains("CHAPTER ANCIENT") 
+                || keywords.Contains("KHAN") || keywords.Contains("WATCH MASTER")))
             {
                 relics.Add("Purgatorus");
             }
@@ -1094,13 +1124,49 @@ namespace Roster_Builder.Space_Marines
             #region Dark Angels Relics
             if (currentSubFaction == "Dark Angels")
             {
-                relics.Add("Mace of Redemption");
-                relics.Add("Pennant of Remembrance");
+                if(keywords.Contains("CHAPLAIN") || 
+                    ((keywords.Contains("CAPTAIN") || (keywords.Contains("LIEUTENANT") && !keywords.Contains("DEATHWING")) || keywords.Contains("TECHMARINE")) && !keywords.Contains("PRIMARIS"))
+                    || (keywords.Contains("COMPANY ANCIENT") && !keywords.Contains("RAVENWING")))
+                {
+                    relics.Add("Mace of Redemption");
+                }
+
+                if(keywords.Contains("ANCIENT") && (keywords.Contains("BLADEGUARD") || keywords.Contains("TERMINATOR")))
+                {
+                    relics.Add("Pennant of Remembrance");
+                }
+
                 relics.Add("Shroud of Heroes");
-                relics.Add("Reliquary of the Repentant");
-                relics.Add("Foe-Smiter");
+
+                if(keywords.Contains("BIKER"))
+                {
+                    relics.Add("Reliquary of the Repentant");
+                }
+
+                if ((keywords.Contains("CAPTAIN") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("LIBRARIAN") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("ANCIENT") && !(keywords.Contains("PRIMARIS") || keywords.Contains("CHAPTER ANCIENT") || keywords.Contains("RAVENWING"))) ||
+                    (keywords.Contains("DEATHWING") && !(keywords.Contains("DEATHWING STRIKEMASTER") || keywords.Contains("DEATHWING CHAMPION"))))
+                {
+                    relics.Add("Foe-smiter");
+                }
+
+                if(keywords.Contains("DEATHWING STRIKEMASTER"))
+                {
+                    relics.Remove("Foe-smiter");
+                    relics.Add("Foe-smiter (Slot 1)");
+                    relics.Add("Foe-smiter (Slot 2)");
+                }
+
                 relics.Add("Eye of the Unseen");
-                relics.Add("Cup of Retribution");
+
+                if(keywords.Contains("CHAPLAIN"))
+                {
+                    relics.Add("Cup of Retribution");
+                }
             }
 
 
@@ -1110,10 +1176,55 @@ namespace Roster_Builder.Space_Marines
                 relics.Add("Artificer Armour");
                 relics.Add("Master-crafted Weapon");
                 relics.Add("Digital Weapons");
-                relics.Add("Heavenfall Blade");
+
+                if ((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS") && !keywords.Contains("KHAN")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("COMPANY CHAMPION") && !keywords.Contains("DEATHWING")) || (keywords.Contains("COMPANY ANCIENT") && !keywords.Contains("RAVENWING")) ||
+                    (keywords.Contains("ANCIENT") && keywords.Contains("PRIMARIS") && !keywords.Contains("BLADEGUARD")) ||
+                    keywords.Contains("JUDICIAR") || (keywords.Contains("INTERROGATOR-CHAPLAIN") && !keywords.Contains("TERMINATOR")))
+                {
+                    relics.Add("Heavenfall Blade");
+                }
+
                 relics.Add("Arbiter's Gaze");
-                relics.Add("Atonement");
+
+                if (keywords.Contains("CAPTAIN") && !(keywords.Contains("TERMINATOR") || keywords.Contains("MK X GRAVIS") || keywords.Contains("PHOBOS"))
+                    || keywords.Contains("CAVALRY")
+                    || (keywords.Contains("LIEUTENANT") && !(keywords.Contains("PHOBOS") || keywords.Contains("TERMINATOR")))
+                    || (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS") && !keywords.Contains("TERMINATOR"))
+                    || (keywords.Contains("LIBRARIAN") && !keywords.Contains("PRIMARIS") && !keywords.Contains("TERMINATOR"))
+                    || (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS"))
+                    || (keywords.Contains("COMPANY ANCIENT") && !keywords.Contains("RAVENWING")))
+
+                {
+                    relics.Add("Atonement");
+                }
+
                 relics.Add("Bolts of Judgement");
+
+                if (keywords.Contains("DEATHWING STRIKEMASTER"))
+                {
+                    relics.Remove("Bolts of Judgement");
+                    relics.Add("Bolts of Judgement (Slot 1)");
+                    relics.Add("Bolts of Judgement (Slot 2)");
+                }
+
+                //The following applies to the Ravenwing Talonmaster only
+                //Normally Vehicles can't take Relics, but the RT is an exception, with some specific examples mentioned in the Codex
+                if (keywords.Contains("RAVENWING TALONMASTER"))
+                {
+                    relics.Clear();
+                    relics.AddRange(new string[]
+                    {
+                        "(None)",
+                        "Digital Weapons",
+                        "Eye of the Unseen",
+                        "Heavenfall Blade",
+                        "Arbiter's Gaze",
+                        "Bolts of Judgement"
+                    });
+                }
             }
             #endregion
             #region Deathwatch Relics
@@ -1382,15 +1493,15 @@ namespace Roster_Builder.Space_Marines
                 relics.Add("The Armour of Russ");
                 relics.Add("The Wulfen Stone");
 
-                if(keywords.Contains("CAPTAIN") && !(keywords.Contains("TERMINATOR") || keywords.Contains("MK X GRAVIS") || keywords.Contains("PHOBOS"))
+                if (keywords.Contains("CAPTAIN") && !(keywords.Contains("TERMINATOR") || keywords.Contains("MK X GRAVIS") || keywords.Contains("PHOBOS"))
                     || keywords.Contains("CAVALRY")
                     || (keywords.Contains("LIEUTENANT") && !(keywords.Contains("PHOBOS") || keywords.Contains("TERMINATOR")))
                     || (keywords.Contains("CHAPLAIN") && !keywords.Contains("PRIMARIS") && !keywords.Contains("TERMINATOR"))
-					|| (keywords.Contains("LIBRARIAN") && !keywords.Contains("PRIMARIS") && !keywords.Contains("TERMINATOR"))
-					|| (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS"))
-					|| keywords.Contains("COMPANY ANCIENT"))
+                    || (keywords.Contains("LIBRARIAN") && !keywords.Contains("PRIMARIS") && !keywords.Contains("TERMINATOR"))
+                    || (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS"))
+                    || keywords.Contains("COMPANY ANCIENT"))
 
-				{
+                {
                     relics.Add("Fireheart");
                 }
 
@@ -1406,35 +1517,35 @@ namespace Roster_Builder.Space_Marines
 
                 relics.Add("Mountain-breaker Helm");
 
-                if(keywords.Contains("LIBRARIAN"))
-				{
-					relics.Add("The Storm's Eye");
-				}
+                if (keywords.Contains("LIBRARIAN"))
+                {
+                    relics.Add("The Storm's Eye");
+                }
 
                 relics.Add("The Pelt of Balewolf");
+            }
 
-                if (customSubFactionTraits[2] == "Space Wolves")
+            if (customSubFactionTraits[2] == "Space Wolves")
+            {
+                relics.Add("Adamantine Mantle");
+                relics.Add("Artificer Armour");
+                relics.Add("Master-crafted Weapon");
+                relics.Add("Digital Weapons");
+                relics.Add("Morkai's Teeth Bolts");
+                relics.Add("Wolf Tail Talisman");
+
+                if((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
+                    (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
+                    (keywords.Contains("ANCIENT") && !keywords.Contains("BLADEGUARD")) ||
+                    keywords.Contains("COMPANY CHAMPION") && !keywords.Contains("PHOBOS"))
                 {
-                    relics.Add("Adamantine Mantle");
-                    relics.Add("Artificer Armour");
-                    relics.Add("Master-crafted Weapon");
-                    relics.Add("Digital Weapons");
-                    relics.Add("Morkai's Teeth Bolts");
-                    relics.Add("Wolf Tail Talisman");
+                    relics.Add("Frost Weapon");
+                }
 
-                    if((keywords.Contains("CAPTAIN") && !keywords.Contains("PHOBOS")) ||
-                        (keywords.Contains("LIEUTENANT") && !keywords.Contains("PHOBOS")) ||
-                        (keywords.Contains("TECHMARINE") && !keywords.Contains("PRIMARIS")) ||
-                        (keywords.Contains("ANCIENT") && !keywords.Contains("BLADEGUARD")) ||
-                        keywords.Contains("COMPANY CHAMPION") && !keywords.Contains("PHOBOS"))
-                    {
-                        relics.Add("Frost Weapon");
-                    }
-
-                    if (keywords.Contains("LIBRARIAN"))
-                    {
-                        relics.Add("Runic Weapon");
-                    }
+                if (keywords.Contains("LIBRARIAN"))
+                {
+                    relics.Add("Runic Weapon");
                 }
             }
             #endregion
@@ -2037,6 +2148,12 @@ namespace Roster_Builder.Space_Marines
                         StratagemList[3] = "Stratagem: A Trophy Bestowed";
                         StratagemList[4] = "Stratagem: Thane of the Retinue";
                     }
+                    else if (customSubFactionTraits[2] == "Dark Angels")
+                    {
+                        StratagemList[2] = "Stratagem: Paragon of the Chapter";
+                        StratagemList[3] = "Stratagem: Honoured by the Rock";
+                        StratagemList[4] = "Stratagem: Marked for Command";
+                    }
                     break;
                 case 51:
                     customSubFactionTraits[0] = cmbSubCustom1.SelectedItem.ToString();
@@ -2094,6 +2211,12 @@ namespace Roster_Builder.Space_Marines
                         StratagemList[2] = "Stratagem: Warrior of Legend";
                         StratagemList[3] = "Stratagem: A Trophy Bestowed";
                         StratagemList[4] = "Stratagem: Thane of the Retinue";
+                    }
+                    else if (customSubFactionTraits[2] == "Dark Angels")
+                    {
+                        StratagemList[2] = "Stratagem: Paragon of the Chapter";
+                        StratagemList[3] = "Stratagem: Honoured by the Rock";
+                        StratagemList[4] = "Stratagem: Marked for Command";
                     }
                     break;
             }

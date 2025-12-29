@@ -264,6 +264,18 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Dark Angels
+                    else if (chosenRelic == "Bolts of Judgement")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Atonement")
+                    {
+                        cmbOption1.SelectedIndex = 4;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -375,69 +387,6 @@ namespace Roster_Builder.Space_Marines
                         });
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
                         this.DrawItemWithRestrictions(new List<int>(), cmbOption1);
-
-                        #region Codex Supplement: Ultramarines
-                        if (Relic == "Hellfury Bolts")
-                        {
-                            cmbOption1.SelectedIndex = 1;
-                            cmbOption1.Enabled = false;
-                        }
-                        else if (Relic == "Sunwrath Pistol")
-                        {
-                            cmbOption1.SelectedIndex = 4;
-                            cmbOption1.Enabled = false;
-                        }
-                        #endregion
-                        #region Codex Supplement: Salamanders
-                        else if (Relic == "Dragonrage Bolts")
-                        {
-                            cmbOption1.SelectedIndex = 1;
-                            cmbOption1.Enabled = false;
-                        }
-                        else if (Relic == "Drakeblade")
-                        {
-                            cmbOption2.SelectedIndex = 5;
-                            cmbOption2.Enabled = false;
-                        }
-                        #endregion
-                        #region Codex Supplement: Raven Guard
-                        else if (Relic == "Silentus Pistol" || Relic == "Korvidari Bolts")
-                        {
-                            cmbOption1.SelectedIndex = 1;
-                            cmbOption1.Enabled = false;
-                        }
-                        #endregion
-                        #region Codex Supplement: Iron Hands
-                        else if (Relic == "Haywire Bolts")
-                        {
-                            cmbOption1.SelectedIndex = 1;
-                            cmbOption1.Enabled = false;
-                        }
-                        else if (Relic == "Teeth of Mars")
-                        {
-                            cmbOption2.SelectedIndex = 0;
-                            cmbOption2.Enabled = false;
-                        }
-                        #endregion
-                        #region Codex Supplement: White Scars
-                        else if (Relic == "Stormwrath Bolts")
-                        {
-                            cmbOption1.SelectedIndex = 1;
-                            cmbOption1.Enabled = false;
-                        }
-                        #endregion
-                        #region Codex Supplement: Imperial Fists
-                        else if (Relic == "Gatebreaker Bolts")
-                        {
-                            cmbOption1.SelectedIndex = 1;
-                            cmbOption1.Enabled = false;
-                        }
-                        else if (Relic == "Fist of Terra")
-                        {
-                            cmbOption2.SelectedIndex = 3;
-                            cmbOption2.Enabled = false;
-                        }
-                        #endregion
 
                         antiLoop = false;
                         break;

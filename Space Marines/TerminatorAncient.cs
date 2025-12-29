@@ -213,7 +213,14 @@ namespace Roster_Builder.Space_Marines
             switch (code)
             {
                 case 11:
-                    Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    if(!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    {
+                        Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+                    }
                     break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
@@ -250,15 +257,24 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    restrictedIndexes.Clear();
+
                     if (chosenRelic == "The Shield Eternal" && repo.currentSubFaction == "Dark Angels")
                     {
                         cmbOption1.SelectedIndex = 2;
                         cmbOption1.Enabled = false;
                     }
+                    else if(chosenRelic == "Foe-smiter" || chosenRelic == "Bolts of Judgement")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 2, 3 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
                     else
                     {
                         cmbOption1.Enabled = true;
                     }
+
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     Relic = chosenRelic;
                     break;
                 case 19:

@@ -299,10 +299,13 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
-                    if (Factionupgrade != "(None)" && Factionupgrade != null)
+                    if (Factionupgrade.Contains("Chapter Master") && Factionupgrade != null)
                     {
-                        cmbWarlord.Items.Add("Master of the Codex");
-                        cmbRelic.Items.Add("Angel Artifice");
+                        if (!cmbWarlord.Items.Contains("Master of the Codex") && !cmbRelic.Items.Contains("Angel Artifice"))
+                        {
+                            cmbWarlord.Items.Add("Master of the Codex");
+                            cmbRelic.Items.Add("Angel Artifice");
+                        }
                     }
                     else
                     {
@@ -507,6 +510,32 @@ namespace Roster_Builder.Space_Marines
                         //See the end of SaveDatasheets
                     }
                     #endregion
+                    #region Codex Supplement: Dark Angels
+                    else if (chosenRelic == "Mace of Redemption")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Maul");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Foe-smiter")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Heavenfall Blade")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Atonement")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Bolts of Judgement")
+                    {
+                        //See the end of SaveDatasheets
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -647,7 +676,7 @@ namespace Roster_Builder.Space_Marines
             #region Bolt Relics
             if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
                 || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
-                 || Relic == "Morkai's Teeth Bolts")
+                 || Relic == "Morkai's Teeth Bolts" || Relic == "Bolts of Judgement")
             {
                 restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13, 15, 16 });
                 cmbOption1.SelectedIndex = 1;

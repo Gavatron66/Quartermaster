@@ -287,6 +287,28 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Dark Angels Strat Relics
+                    else if (chosenRelic == "Bolts of Judgement (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                    }
+                    else if (chosenRelic == "Bolts of Judgement (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Atonement (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 9;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Atonement (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 4;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     Relic = chosenRelic;
@@ -493,6 +515,28 @@ namespace Roster_Builder.Space_Marines
                         else if (Relic == "Fist of Terra (Slot 2)")
                         {
                             cmbOption2.SelectedIndex = 6;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Dark Angels Strat Relics
+                        else if (Relic == "Bolts of Judgement (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                        }
+                        else if (Relic == "Bolts of Judgement (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        else if (Relic == "Atonement (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 9;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Atonement (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 4;
                             cmbOption2.Enabled = false;
                         }
                         #endregion

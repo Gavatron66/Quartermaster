@@ -3,136 +3,124 @@
   "WorkspaceRootPath": "C:\\Users\\evans\\Desktop\\Quartermaster\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adepta sororitas\\mortifiers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\mortifiers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\space marines\\spacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\spacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adepta sororitas\\penitentengines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\penitentengines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\space marines\\dark angels\\ravenwingchampion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\dark angels\\ravenwingchampion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\adepta sororitas\\retributors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\retributors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\space marines\\dark angels\\deathwingchampion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\dark angels\\deathwingchampion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\space marines\\companyancient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\companyancient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\space marines\\dark angels\\ravenwingapothecary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\dark angels\\ravenwingapothecary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\primarisapothecary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\primarisapothecary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\space marines\\companychampion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\companychampion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\space marines\\dark angels\\ravenwingancient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\dark angels\\ravenwingancient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\dark angels\\deathwingapothecary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\dark angels\\deathwingapothecary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\dark angels\\deathwingstrikemaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\dark angels\\deathwingstrikemaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\space marines\\dark angels\\deathwingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\dark angels\\deathwingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\dark angels\\azrael.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\dark angels\\azrael.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\dark angels\\ravenwingblackknights.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\dark angels\\ravenwingblackknights.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\dark angels\\deathwingknights.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\dark angels\\deathwingknights.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\dark angels\\deathwingterminators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\dark angels\\deathwingterminators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\dark angels\\asmodai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\dark angels\\asmodai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\dark angels\\interrogatorchaplain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\dark angels\\interrogatorchaplain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\dark angels\\ravenwingtalonmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\dark angels\\ravenwingtalonmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\terminatorchaplain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\terminatorchaplain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\dark angels\\terminatorinterrogator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\dark angels\\terminatorinterrogator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\battlesisters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\battlesisters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\primarislieutenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\primarislieutenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\dominionsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\dominionsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\lieutenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\lieutenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\celestian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\celestian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\captain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\captain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\zephyrim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\zephyrim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\chaplain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\chaplain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\tyranids\\hormagaunts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:tyranids\\hormagaunts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\missionary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\missionary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\seraphim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\seraphim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\space wolves\\bloodclaws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\space wolves\\bloodclaws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\intercessors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\intercessors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\adeptasororitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\adeptasororitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\paragonwarsuits.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\paragonwarsuits.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\celestiansacresants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\celestiansacresants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\palatine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\palatine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\veterans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\veterans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\deathcultassassins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\deathcultassassins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\canoness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\canoness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\arcoflagellants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\arcoflagellants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\sistersrepentia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\sistersrepentia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\crusaders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\crusaders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\dogmata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\dogmata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\preacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\preacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\dialogus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\dialogus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\imagifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\imagifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\spacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\spacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\grey knights\\paladins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:grey knights\\paladins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\librarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\librarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\aeldari\\farseer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:aeldari\\farseer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\eradicators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\eradicators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\assaultsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\assaultsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\terminators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\terminators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -142,24 +130,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 29,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAHYBAAAAAAAAAAAMwIMBAABnAAAAAAAAAA==",
+              "ViewState": "AgIAAEEBAAAAAAAAAADgv04BAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T01:54:33.308Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 26,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -171,382 +159,361 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 0,
               "Title": "SpaceMarines.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\SpaceMarines.cs",
               "RelativeDocumentMoniker": "Space Marines\\SpaceMarines.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\SpaceMarines.cs",
               "RelativeToolTip": "Space Marines\\SpaceMarines.cs",
-              "ViewState": "AgIAAPQCAAAAAAAAAAAQwJQBAAApAAAAAAAAAA==",
+              "ViewState": "AgIAABEEAAAAAAAAAAAAwCgEAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T01:48:05.566Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 20,
               "Title": "Template.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeDocumentMoniker": "Template.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeToolTip": "Template.cs",
-              "ViewState": "AgIAABsKAAAAAAAAAAAWwJoKAABeAAAAAAAAAA==",
+              "ViewState": "AgIAAFgFAAAAAAAAAAAswIEKAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-26T00:47:28.245Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AdeptaSororitas.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\AdeptaSororitas.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\AdeptaSororitas.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\AdeptaSororitas.cs",
-              "RelativeToolTip": "Adepta Sororitas\\AdeptaSororitas.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAAAgwMIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T02:56:23.919Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PenitentEngines.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\PenitentEngines.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\PenitentEngines.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\PenitentEngines.cs",
-              "RelativeToolTip": "Adepta Sororitas\\PenitentEngines.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwC0AAABaAAAAAAAAAA==",
+              "Title": "RavenwingChampion.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\RavenwingChampion.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Dark Angels\\RavenwingChampion.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\RavenwingChampion.cs",
+              "RelativeToolTip": "Space Marines\\Dark Angels\\RavenwingChampion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T23:41:56.814Z",
+              "WhenOpened": "2025-12-29T03:07:12.495Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Mortifiers.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Mortifiers.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\Mortifiers.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Mortifiers.cs",
-              "RelativeToolTip": "Adepta Sororitas\\Mortifiers.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDIAAABaAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "RavenwingApothecary.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\RavenwingApothecary.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Dark Angels\\RavenwingApothecary.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\RavenwingApothecary.cs",
+              "RelativeToolTip": "Space Marines\\Dark Angels\\RavenwingApothecary.cs",
+              "ViewState": "AgIAAB0BAAAAAAAAAAAkwEkBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T23:41:34.8Z",
+              "WhenOpened": "2025-12-29T03:07:10.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CompanyAncient.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\CompanyAncient.cs",
+              "RelativeDocumentMoniker": "Space Marines\\CompanyAncient.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\CompanyAncient.cs",
+              "RelativeToolTip": "Space Marines\\CompanyAncient.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAgwOIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T02:49:55.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RavenwingAncient.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\RavenwingAncient.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Dark Angels\\RavenwingAncient.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\RavenwingAncient.cs",
+              "RelativeToolTip": "Space Marines\\Dark Angels\\RavenwingAncient.cs",
+              "ViewState": "AgIAAB0BAAAAAAAAAAAkwCgBAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T02:41:54.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CompanyChampion.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\CompanyChampion.cs",
+              "RelativeDocumentMoniker": "Space Marines\\CompanyChampion.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\CompanyChampion.cs",
+              "RelativeToolTip": "Space Marines\\CompanyChampion.cs",
+              "ViewState": "AgIAALQAAAAAAAAAAAAowDIBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T01:56:42.504Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Retributors.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Retributors.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\Retributors.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Retributors.cs",
-              "RelativeToolTip": "Adepta Sororitas\\Retributors.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAAADgAAABHAAAAAAAAAA==",
+              "Title": "DeathwingChampion.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\DeathwingChampion.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Dark Angels\\DeathwingChampion.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\DeathwingChampion.cs",
+              "RelativeToolTip": "Space Marines\\Dark Angels\\DeathwingChampion.cs",
+              "ViewState": "AgIAALwAAAAAAAAAAAAAwMIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T03:56:16.582Z",
+              "WhenOpened": "2025-12-29T01:56:22.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PrimarisApothecary.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\PrimarisApothecary.cs",
+              "RelativeDocumentMoniker": "Space Marines\\PrimarisApothecary.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\PrimarisApothecary.cs",
+              "RelativeToolTip": "Space Marines\\PrimarisApothecary.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAkwDsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T05:38:42.46Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "Hormagaunts.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Hormagaunts.cs",
-              "RelativeDocumentMoniker": "Tyranids\\Hormagaunts.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Tyranids\\Hormagaunts.cs",
-              "RelativeToolTip": "Tyranids\\Hormagaunts.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAgAAAAAAAAAA==",
+              "Title": "DeathwingApothecary.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\DeathwingApothecary.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Dark Angels\\DeathwingApothecary.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\DeathwingApothecary.cs",
+              "RelativeToolTip": "Space Marines\\Dark Angels\\DeathwingApothecary.cs",
+              "ViewState": "AgIAALUAAAAAAAAAAAAkwMEAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T03:35:48.059Z"
+              "WhenOpened": "2025-12-28T05:38:35.99Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Intercessors.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Intercessors.cs",
-              "RelativeDocumentMoniker": "Space Marines\\Intercessors.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Intercessors.cs",
-              "RelativeToolTip": "Space Marines\\Intercessors.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAgwG4AAABwAAAAAAAAAA==",
+              "DocumentIndex": 19,
+              "Title": "TerminatorInterrogator.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\TerminatorInterrogator.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Dark Angels\\TerminatorInterrogator.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\TerminatorInterrogator.cs",
+              "RelativeToolTip": "Space Marines\\Dark Angels\\TerminatorInterrogator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T03:25:55.944Z"
+              "WhenOpened": "2025-12-28T05:12:53.089Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Zephyrim.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Zephyrim.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\Zephyrim.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Zephyrim.cs",
-              "RelativeToolTip": "Adepta Sororitas\\Zephyrim.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAgwFIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 18,
+              "Title": "TerminatorChaplain.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\TerminatorChaplain.cs",
+              "RelativeDocumentMoniker": "Space Marines\\TerminatorChaplain.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\TerminatorChaplain.cs",
+              "RelativeToolTip": "Space Marines\\TerminatorChaplain.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T03:16:14.775Z",
+              "WhenOpened": "2025-12-28T05:11:27.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "PrimarisLieutenant.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\PrimarisLieutenant.cs",
+              "RelativeDocumentMoniker": "Space Marines\\PrimarisLieutenant.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\PrimarisLieutenant.cs",
+              "RelativeToolTip": "Space Marines\\PrimarisLieutenant.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAApwCkAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T05:01:31.052Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Lieutenant.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Lieutenant.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Lieutenant.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Lieutenant.cs",
+              "RelativeToolTip": "Space Marines\\Lieutenant.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAIAwwHUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T04:59:02.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DeathwingStrikemaster.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\DeathwingStrikemaster.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Dark Angels\\DeathwingStrikemaster.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\DeathwingStrikemaster.cs",
+              "RelativeToolTip": "Space Marines\\Dark Angels\\DeathwingStrikemaster.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T03:12:07.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "RavenwingTalonmaster.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\RavenwingTalonmaster.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Dark Angels\\RavenwingTalonmaster.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\RavenwingTalonmaster.cs",
+              "RelativeToolTip": "Space Marines\\Dark Angels\\RavenwingTalonmaster.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKoAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T02:43:27.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Captain.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Captain.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Captain.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Captain.cs",
+              "RelativeToolTip": "Space Marines\\Captain.cs",
+              "ViewState": "AgIAAKECAAAAAAAAAAAAALICAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T03:00:34.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Chaplain.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Chaplain.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Chaplain.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Chaplain.cs",
+              "RelativeToolTip": "Space Marines\\Chaplain.cs",
+              "ViewState": "AgIAAPQAAAAAAAAAAAAwwA0BAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T02:54:07.596Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "InterrogatorChaplain.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\InterrogatorChaplain.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Dark Angels\\InterrogatorChaplain.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\InterrogatorChaplain.cs",
+              "RelativeToolTip": "Space Marines\\Dark Angels\\InterrogatorChaplain.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T02:44:04.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Asmodai.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\Asmodai.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Dark Angels\\Asmodai.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\Asmodai.cs",
+              "RelativeToolTip": "Space Marines\\Dark Angels\\Asmodai.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T02:42:47.384Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "BloodClaws.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Space Wolves\\BloodClaws.cs",
-              "RelativeDocumentMoniker": "Space Marines\\Space Wolves\\BloodClaws.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Space Wolves\\BloodClaws.cs",
-              "RelativeToolTip": "Space Marines\\Space Wolves\\BloodClaws.cs",
-              "ViewState": "AgIAAAkBAAAAAAAAAAAkwHIBAAAAAAAAAAAAAA==",
+              "Title": "Azrael.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\Azrael.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Dark Angels\\Azrael.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\Azrael.cs",
+              "RelativeToolTip": "Space Marines\\Dark Angels\\Azrael.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T02:45:17.827Z"
+              "WhenOpened": "2025-12-23T02:40:15.339Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Seraphim.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Seraphim.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\Seraphim.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Seraphim.cs",
-              "RelativeToolTip": "Adepta Sororitas\\Seraphim.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAD4v2cAAAALAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "RavenwingBlackKnights.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\RavenwingBlackKnights.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Dark Angels\\RavenwingBlackKnights.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\RavenwingBlackKnights.cs",
+              "RelativeToolTip": "Space Marines\\Dark Angels\\RavenwingBlackKnights.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T02:31:19.033Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DominionSquad.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\DominionSquad.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\DominionSquad.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\DominionSquad.cs",
-              "RelativeToolTip": "Adepta Sororitas\\DominionSquad.cs",
-              "ViewState": "AgIAAI0BAAAAAAAAAAAYwLoBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T03:39:12.931Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "DeathCultAssassins.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\DeathCultAssassins.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\DeathCultAssassins.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\DeathCultAssassins.cs",
-              "RelativeToolTip": "Adepta Sororitas\\DeathCultAssassins.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACcAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T03:31:48.781Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ArcoFlagellants.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\ArcoFlagellants.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\ArcoFlagellants.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\ArcoFlagellants.cs",
-              "RelativeToolTip": "Adepta Sororitas\\ArcoFlagellants.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACcAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T03:31:39.289Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Crusaders.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Crusaders.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\Crusaders.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Crusaders.cs",
-              "RelativeToolTip": "Adepta Sororitas\\Crusaders.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACcAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T03:30:32.66Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "SistersRepentia.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\SistersRepentia.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\SistersRepentia.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\SistersRepentia.cs",
-              "RelativeToolTip": "Adepta Sororitas\\SistersRepentia.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCcAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T03:29:30.444Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ParagonWarsuits.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\ParagonWarsuits.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\ParagonWarsuits.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\ParagonWarsuits.cs",
-              "RelativeToolTip": "Adepta Sororitas\\ParagonWarsuits.cs",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAkwJYAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T03:05:39.584Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Dogmata.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Dogmata.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\Dogmata.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Dogmata.cs",
-              "RelativeToolTip": "Adepta Sororitas\\Dogmata.cs",
-              "ViewState": "AgIAAO4AAAAAAAAAAAAkwLkAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T03:39:52.969Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "CelestianSacresants.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\CelestianSacresants.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\CelestianSacresants.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\CelestianSacresants.cs",
-              "RelativeToolTip": "Adepta Sororitas\\CelestianSacresants.cs",
-              "ViewState": "AgIAAMAAAAAAAAAAAAAqwPwAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T03:31:36.446Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Celestian.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Celestian.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\Celestian.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Celestian.cs",
-              "RelativeToolTip": "Adepta Sororitas\\Celestian.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAAAFkAAACSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T03:02:04.524Z"
+              "WhenOpened": "2025-12-23T02:16:39.23Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
-              "Title": "Preacher.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Preacher.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\Preacher.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Preacher.cs",
-              "RelativeToolTip": "Adepta Sororitas\\Preacher.cs",
-              "ViewState": "AgIAALMAAAAAAAAAAAAkwNMAAABSAAAAAAAAAA==",
+              "Title": "Eradicators.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Eradicators.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Eradicators.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Eradicators.cs",
+              "RelativeToolTip": "Space Marines\\Eradicators.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCIAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T04:28:38.937Z"
+              "WhenOpened": "2025-12-23T02:07:53.182Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Dialogus.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Dialogus.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\Dialogus.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Dialogus.cs",
-              "RelativeToolTip": "Adepta Sororitas\\Dialogus.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAAPgAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "DeathwingKnights.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\DeathwingKnights.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Dark Angels\\DeathwingKnights.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\DeathwingKnights.cs",
+              "RelativeToolTip": "Space Marines\\Dark Angels\\DeathwingKnights.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABUAAABiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T04:25:04.043Z"
+              "WhenOpened": "2025-12-23T02:06:54.81Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 27,
-              "Title": "Imagifier.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Imagifier.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\Imagifier.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Imagifier.cs",
-              "RelativeToolTip": "Adepta Sororitas\\Imagifier.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Title": "AssaultSquad.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\AssaultSquad.cs",
+              "RelativeDocumentMoniker": "Space Marines\\AssaultSquad.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\AssaultSquad.cs",
+              "RelativeToolTip": "Space Marines\\AssaultSquad.cs",
+              "ViewState": "AgIAACEBAAAAAAAAAAAUwKcAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T04:20:18.876Z"
+              "WhenOpened": "2025-12-22T02:24:34.304Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Veterans.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Veterans.cs",
-              "RelativeDocumentMoniker": "Space Marines\\Veterans.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Veterans.cs",
-              "RelativeToolTip": "Space Marines\\Veterans.cs",
-              "ViewState": "AgIAAPgAAAAAAAAAAAAMwAoBAAAuAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "DeathwingCommand.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\DeathwingCommand.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Dark Angels\\DeathwingCommand.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\DeathwingCommand.cs",
+              "RelativeToolTip": "Space Marines\\Dark Angels\\DeathwingCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T03:40:19.131Z"
+              "WhenOpened": "2025-12-22T02:15:21.973Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Paladins.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Grey Knights\\Paladins.cs",
-              "RelativeDocumentMoniker": "Grey Knights\\Paladins.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Grey Knights\\Paladins.cs",
-              "RelativeToolTip": "Grey Knights\\Paladins.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAAAkwMIAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 28,
+              "Title": "Terminators.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Terminators.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Terminators.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Terminators.cs",
+              "RelativeToolTip": "Space Marines\\Terminators.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAgwHcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T03:31:26.26Z"
+              "WhenOpened": "2025-12-22T02:02:02.172Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BattleSisters.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\BattleSisters.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\BattleSisters.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\BattleSisters.cs",
-              "RelativeToolTip": "Adepta Sororitas\\BattleSisters.cs",
-              "ViewState": "AgIAAK8BAAAAAAAAAAAiwLUBAAApAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "DeathwingTerminators.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\DeathwingTerminators.cs",
+              "RelativeDocumentMoniker": "Space Marines\\Dark Angels\\DeathwingTerminators.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Dark Angels\\DeathwingTerminators.cs",
+              "RelativeToolTip": "Space Marines\\Dark Angels\\DeathwingTerminators.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADABAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T02:48:39.228Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Farseer.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Farseer.cs",
-              "RelativeDocumentMoniker": "Aeldari\\Farseer.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Aeldari\\Farseer.cs",
-              "RelativeToolTip": "Aeldari\\Farseer.cs",
-              "ViewState": "AgIAAKMAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T03:06:33.511Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Librarian.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Librarian.cs",
-              "RelativeDocumentMoniker": "Space Marines\\Librarian.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\Librarian.cs",
-              "RelativeToolTip": "Space Marines\\Librarian.cs",
-              "ViewState": "AgIAAIEBAAAAAAAAAAAAAMoBAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T02:51:15.267Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Missionary.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Missionary.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\Missionary.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Missionary.cs",
-              "RelativeToolTip": "Adepta Sororitas\\Missionary.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAmwNQAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T02:47:31.372Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Palatine.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Palatine.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\Palatine.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Palatine.cs",
-              "RelativeToolTip": "Adepta Sororitas\\Palatine.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAgwBIAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T02:37:10.018Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Canoness.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Canoness.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\Canoness.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\Canoness.cs",
-              "RelativeToolTip": "Adepta Sororitas\\Canoness.cs",
-              "ViewState": "AgIAAKcAAAAAAAAAAAAuwNUAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T02:08:31.667Z"
+              "WhenOpened": "2025-12-22T02:01:57.102Z",
+              "EditorCaption": ""
             }
           ]
         }

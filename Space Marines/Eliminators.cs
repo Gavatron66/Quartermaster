@@ -180,6 +180,12 @@ namespace Roster_Builder.Space_Marines
                         restrictedIndexes.Add(2);
                     }
                     #endregion
+                    #region Codex Supplement: Dark Angels
+                    else if (chosenRelic == "Bolts of Judgement")
+                    {
+                        restrictedIndexes.Add(2);
+                    }
+                    #endregion
 
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
                     Relic = chosenRelic;

@@ -250,6 +250,7 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
 
                     #region Codex: Space Marines
                     if (chosenRelic == "Primarch's Wrath")
@@ -394,10 +395,34 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Axe");
                     }
                     #endregion
-                    else
+                    #region Codex Supplement: Dark Angels
+                    else if (chosenRelic == "Mace of Redemption")
                     {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Maul");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Foe-smiter")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Heavenfall Blade")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Atonement")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Bolts of Judgement")
+                    {
+                        //See the end of SaveDatasheets
                         cmbOption1.Enabled = true;
                     }
+                    #endregion
+
                     Relic = chosenRelic;
                     break;
                 case 19:
@@ -499,7 +524,7 @@ namespace Roster_Builder.Space_Marines
             #region Bolt Relics
             if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
                 || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
-                || Relic == "Morkai's Teeth Bolts")
+                || Relic == "Morkai's Teeth Bolts" || Relic == "Bolts of Judgement")
             {
                 restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
                 cmbOption1.SelectedIndex = 1;

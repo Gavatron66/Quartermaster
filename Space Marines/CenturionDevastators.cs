@@ -56,10 +56,10 @@ namespace Roster_Builder.Space_Marines
             nudUnitSize.Value = currentSize;
 
             lbModelSelect.Items.Clear();
-            lbModelSelect.Items.Add("Assault Centurion Sergeant w/ " + Weapons[0] + " and " + Weapons[1]);
+            lbModelSelect.Items.Add("Devastator Centurion Sergeant w/ " + Weapons[0] + " and " + Weapons[1]);
             for (int i = 1; i < UnitSize; i++)
             {
-                lbModelSelect.Items.Add("Assault Centurion w/ " + Weapons[i * 2] + " and " + Weapons[(i * 2) + 1]);
+                lbModelSelect.Items.Add("Devastator Centurion w/ " + Weapons[i * 2] + " and " + Weapons[(i * 2) + 1]);
             }
 
             cmbOption1.Items.Clear();
@@ -78,7 +78,7 @@ namespace Roster_Builder.Space_Marines
             });
 
             cbStratagem5.Text = repo.StratagemList[4];
-            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["cbOption1"].Location.X, panel.Controls["cbOption1"].Location.Y + 60);
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblOption1"].Location.X, panel.Controls["cmbOption2"].Location.Y + 60);
             panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
             cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
             panel.Controls["lblRelic"].Visible = false;
@@ -141,11 +141,11 @@ namespace Roster_Builder.Space_Marines
                     Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
                     if (currentIndex == 0)
                     {
-                        lbModelSelect.Items[0] = "Assault Centurion Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
+                        lbModelSelect.Items[0] = "Devastator Centurion Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
                     }
                     else
                     {
-                        lbModelSelect.Items[currentIndex] = "Assault Centurion w/ " + Weapons[currentIndex * 2] +
+                        lbModelSelect.Items[currentIndex] = "Devastator Centurion w/ " + Weapons[currentIndex * 2] +
                             " and " + Weapons[(currentIndex * 2) + 1];
                     }
                     break;
@@ -153,11 +153,11 @@ namespace Roster_Builder.Space_Marines
                     Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
                     if (currentIndex == 0)
                     {
-                        lbModelSelect.Items[0] = "Assault Centurion Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
+                        lbModelSelect.Items[0] = "Devastator Centurion Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
                     }
                     else
                     {
-                        lbModelSelect.Items[currentIndex] = "Assault Centurion w/ " + Weapons[currentIndex * 2] +
+                        lbModelSelect.Items[currentIndex] = "Devastator Centurion w/ " + Weapons[currentIndex * 2] +
                             " and " + Weapons[(currentIndex * 2) + 1];
                     }
                     break;
@@ -263,6 +263,18 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Dark Angels Strat Relics
+                    else if (chosenRelic == "Bolts of Judgement (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Bolts of Judgement (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     antiLoop = false;
@@ -275,7 +287,7 @@ namespace Roster_Builder.Space_Marines
                     {
                         Weapons.Add("Grav-cannon");
                         Weapons.Add("Hurricane Bolter");
-                        lbModelSelect.Items.Add("Assault Centurion w/ " + Weapons[currentIndex * 2] +
+                        lbModelSelect.Items.Add("Devastator Centurion w/ " + Weapons[currentIndex * 2] +
                             " and " + Weapons[(currentIndex * 2) + 1]);
                     }
 
@@ -387,6 +399,18 @@ namespace Roster_Builder.Space_Marines
                             cmbOption2.Enabled = false;
                         }
                         #endregion
+                        #region Codex Supplement: Deathwatch Strat Relics
+                        if (Relic == "Banebolts of Eryxia (Slot 1)" || Relic == "Artificer Bolt Cache (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Banebolts of Eryxia (Slot 2)" || Relic == "Artificer Bolt Cache (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
                         #region Codex Supplement: Space Wolves Strat Relics
                         if (Relic == "Morkai's Teeth Bolts (Slot 1)")
                         {
@@ -394,6 +418,18 @@ namespace Roster_Builder.Space_Marines
                             cmbOption1.Enabled = false;
                         }
                         else if (Relic == "Morkai's Teeth Bolts (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Dark Angels Strat Relics
+                        else if (Relic == "Bolts of Judgement (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Bolts of Judgement (Slot 2)")
                         {
                             cmbOption2.SelectedIndex = 1;
                             cmbOption2.Enabled = false;

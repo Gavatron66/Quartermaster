@@ -298,6 +298,13 @@ namespace Roster_Builder.Space_Marines
                         this.DrawItemWithRestrictions(new List<int> { 0, 2 }, cmbOption2);
                     }
                     #endregion
+                    #region Codex Supplement: Dark Angels
+                    else if (chosenRelic == "Bolts of Judgement")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -415,7 +422,7 @@ namespace Roster_Builder.Space_Marines
 
                         if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
                             || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
-                            || Relic == "Morkai's Teeth Bolts")
+                            || Relic == "Morkai's Teeth Bolts" || Relic == "Bolts of Judgement")
                         {
                             cmbOption1.Enabled = false;
                         }

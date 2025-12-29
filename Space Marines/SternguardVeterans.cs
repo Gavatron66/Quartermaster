@@ -237,6 +237,18 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Dark Angels
+                    else if (chosenRelic == "Bolts of Judgement")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12 });
+                        cmbOption1.SelectedIndex = 8;
+                    }
+                    else if (chosenRelic == "Atonement")
+                    {
+                        cmbOption2.SelectedIndex = 4;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
 
@@ -387,6 +399,18 @@ namespace Roster_Builder.Space_Marines
                         else if (Relic == "Fist of Terra")
                         {
                             cmbOption2.SelectedIndex = 6;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Dark Angels
+                        if (Relic == "Bolts of Judgement")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12 });
+                            cmbOption1.SelectedIndex = 8;
+                        }
+                        else if (Relic == "Atonement")
+                        {
+                            cmbOption2.SelectedIndex = 4;
                             cmbOption2.Enabled = false;
                         }
                         #endregion

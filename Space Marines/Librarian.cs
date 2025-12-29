@@ -496,9 +496,11 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+                    cbOption1.Enabled = true;
 
                     #region Codex: Space Marines
-                        if (chosenRelic == "Primarch's Wrath")
+                    if (chosenRelic == "Primarch's Wrath")
                         {
                             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
                             cmbOption1.Enabled = false;
@@ -580,11 +582,22 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
-                    else
+                    #region Codex Supplement: Dark Angels
+                    else if (chosenRelic == "Foe-smiter")
                     {
-                        cmbOption1.Enabled = true;
-                        cbOption1.Enabled = true;
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
+                        cmbOption1.Enabled = false;
                     }
+                    else if (chosenRelic == "Bolts of Judgement")
+                    {
+                        //See the end of SaveDatasheets
+                    }
+                    else if (chosenRelic == "Atonement")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
 
@@ -839,7 +852,7 @@ namespace Roster_Builder.Space_Marines
             restrictedIndexes.Clear();
             if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
                 || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
-                || Relic == "Morkai's Teeth Bolts")
+                || Relic == "Morkai's Teeth Bolts" || Relic == "Bolts of Judgement")
             {
                 restrictedIndexes.AddRange(new int[] { 6, 7 });
                 cmbOption1.SelectedIndex = 0;
