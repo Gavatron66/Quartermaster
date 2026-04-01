@@ -84,7 +84,7 @@ namespace Roster_Builder
                 new AdeptusCustodes(),
                 new AdMech(),
                 new Aeldari.Aeldari(),
-                //new AstraMilitarum(),
+                new AstraMilitarum(),
                 //new ChaosSpaceMarines(),
                 new DeathGuard(),
                 new Drukhari.Drukhari(),

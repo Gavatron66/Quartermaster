@@ -333,4 +333,27 @@ Sergeants
 	
 	restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13, 14, 15, 17, 18 });
 
+
 Characters to do list:
+	new RogalDorn(),
+	new HeavyWeaponsSquad(),
+	new FieldOrdnanceBattery(),
+	new LemanRuss(),
+	new Basilisk(),
+	new Hydra(),
+	new Manticore(),
+	new Wyvern(),
+	new Deathstrike(),
+	new Chimera(),
+	new Taurox(),
+	new TauroxPrime(),
+	new Valkyrie(),
+	new AegisDefenceLine(),
+	new Baneblade(),
+	new Banehammer(),
+	new Banesword(),
+	new Doomhammer(),
+	new Hellhammer(),
+	new Shadowsword(),
+	new Stormlord(),
+	new Stormsword(),

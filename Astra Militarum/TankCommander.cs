@@ -239,6 +239,15 @@ namespace Roster_Builder.Astra_Militarum
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    if(chosenRelic == "Gatekeeper")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                    }
                     Relic = chosenRelic;
                     break;
                 case 21:

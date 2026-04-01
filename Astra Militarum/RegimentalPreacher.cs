@@ -114,10 +114,26 @@ namespace Roster_Builder.Astra_Militarum
             switch (code)
             {
                 case 11:
-                    Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    {
+                        Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+                    }
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    restrictedIndexes.Clear();
+
+                    if(chosenRelic == "Legacy of Kalladius")
+                    {
+                        restrictedIndexes.Add(1);
+                        cmbOption1.SelectedIndex = 0;
+                    }
+
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     Relic = chosenRelic;
                     break;
                 case 25:
