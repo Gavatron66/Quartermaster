@@ -91,7 +91,7 @@ namespace Roster_Builder
                 new GSC(),
                 new GreyKnights(),
                 new Harlequins(),
-                //new ImperialKnights(),
+                new ImperialKnights(),
                 //new LeaguesOfVotann(),
                 new Necrons.Necrons(),
                 new Orks.Orks(),

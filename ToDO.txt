@@ -335,25 +335,4 @@ Sergeants
 
 
 Characters to do list:
-	new RogalDorn(),
-	new HeavyWeaponsSquad(),
-	new FieldOrdnanceBattery(),
-	new LemanRuss(),
-	new Basilisk(),
-	new Hydra(),
-	new Manticore(),
-	new Wyvern(),
-	new Deathstrike(),
-	new Chimera(),
-	new Taurox(),
-	new TauroxPrime(),
-	new Valkyrie(),
-	new AegisDefenceLine(),
-	new Baneblade(),
-	new Banehammer(),
-	new Banesword(),
-	new Doomhammer(),
-	new Hellhammer(),
-	new Shadowsword(),
-	new Stormlord(),
-	new Stormsword(),
+	Uncomment Strats so they work properly, then I did it!!!!!

@@ -3,132 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\evans\\Desktop\\Quartermaster\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\astra militarum\\wyvern.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\wyvern.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\imperial knights\\imperialknights.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:imperial knights\\imperialknights.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\astramilitarum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\astramilitarum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\imperial knights\\knightwarden.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:imperial knights\\knightwarden.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\astra militarum\\lemanruss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\lemanruss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\imperial knights\\knightpaladin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:imperial knights\\knightpaladin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\astra militarum\\armouredsentinels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\armouredsentinels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\imperial knights\\knightgallant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:imperial knights\\knightgallant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\astra militarum\\heavyweaponssquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\heavyweaponssquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\imperial knights\\knighterrant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:imperial knights\\knighterrant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\scoutsentinels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\scoutsentinels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\imperial knights\\knightpreceptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:imperial knights\\knightpreceptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\attilanroughriders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\attilanroughriders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\imperial knights\\armigerhelverin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:imperial knights\\armigerhelverin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\commissar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\commissar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\imperial knights\\knightcastellan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:imperial knights\\knightcastellan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\ogryns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\ogryns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\imperial knights\\knightcrusader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:imperial knights\\knightcrusader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\kasrkin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\kasrkin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\imperial knights\\armigerwarglaive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:imperial knights\\armigerwarglaive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\munitorumservitors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\munitorumservitors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adeptus mechanicus\\admech.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adeptus mechanicus\\admech.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\regimentalenginseer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\regimentalenginseer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\imperial knights\\knightvaliant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:imperial knights\\knightvaliant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\tempestusscions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\tempestusscions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\catachanjunglefighters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\catachanjunglefighters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\deathkorpsofkrieg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\deathkorpsofkrieg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\cadianshocktroops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\cadianshocktroops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\regimentalpreacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\regimentalpreacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\cadiancastellan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\cadiancastellan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\cadiancommandsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\cadiancommandsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\platooncommandsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\platooncommandsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\infantrysquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\infantrysquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\battlesisters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\battlesisters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\primarislieutenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\primarislieutenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\tempestuscommandsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\tempestuscommandsquad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\adepta sororitas\\adeptasororitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:adepta sororitas\\adeptasororitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\primarispsyker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\primarispsyker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\ironhandstraken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\ironhandstraken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\astra militarum\\tankcommander.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:astra militarum\\tankcommander.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\imperial knights\\canisrex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:imperial knights\\canisrex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\spacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\spacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -138,24 +78,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 14,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAAMCAAAAAAAAAAAEwBICAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAIYBAAAAAAAAAADgv5UBAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T01:54:33.308Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 15,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -167,20 +107,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 13,
               "Title": "SpaceMarines.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\SpaceMarines.cs",
               "RelativeDocumentMoniker": "Space Marines\\SpaceMarines.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\SpaceMarines.cs",
               "RelativeToolTip": "Space Marines\\SpaceMarines.cs",
-              "ViewState": "AgIAAAgDAAAAAAAAAAAIwBwEAABvAAAAAAAAAA==",
+              "ViewState": "AgIAAPQHAAAAAAAAAAAAADUIAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T01:48:05.566Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 16,
               "Title": "Template.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeDocumentMoniker": "Template.cs",
@@ -193,345 +133,162 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AstraMilitarum.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\AstraMilitarum.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\AstraMilitarum.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\AstraMilitarum.cs",
-              "RelativeToolTip": "Astra Militarum\\AstraMilitarum.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAawHYAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ImperialKnights.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\ImperialKnights.cs",
+              "RelativeDocumentMoniker": "Imperial Knights\\ImperialKnights.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\ImperialKnights.cs",
+              "RelativeToolTip": "Imperial Knights\\ImperialKnights.cs",
+              "ViewState": "AgIAABQBAAAAAAAAAADgvyUBAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T04:18:06.118Z",
+              "WhenOpened": "2026-04-01T01:12:56.616Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Wyvern.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\Wyvern.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\Wyvern.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\Wyvern.cs",
-              "RelativeToolTip": "Astra Militarum\\Wyvern.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAkwB8AAAAdAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "AdMech.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\AdMech.cs",
+              "RelativeDocumentMoniker": "Adeptus Mechanicus\\AdMech.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adeptus Mechanicus\\AdMech.cs",
+              "RelativeToolTip": "Adeptus Mechanicus\\AdMech.cs",
+              "ViewState": "AgIAANwAAAAAAAAAAAAmwOMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T00:56:25.725Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-10T03:09:15.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "KnightValiant.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightValiant.cs",
+              "RelativeDocumentMoniker": "Imperial Knights\\KnightValiant.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightValiant.cs",
+              "RelativeToolTip": "Imperial Knights\\KnightValiant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMkBAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T02:33:33.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CanisRex.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\CanisRex.cs",
+              "RelativeDocumentMoniker": "Imperial Knights\\CanisRex.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\CanisRex.cs",
+              "RelativeToolTip": "Imperial Knights\\CanisRex.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T02:07:09.138Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LemanRuss.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\LemanRuss.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\LemanRuss.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\LemanRuss.cs",
-              "RelativeToolTip": "Astra Militarum\\LemanRuss.cs",
-              "ViewState": "AgIAAIIBAAAAAAAAAAAswBIAAAAnAAAAAAAAAA==",
+              "Title": "KnightPaladin.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightPaladin.cs",
+              "RelativeDocumentMoniker": "Imperial Knights\\KnightPaladin.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightPaladin.cs",
+              "RelativeToolTip": "Imperial Knights\\KnightPaladin.cs",
+              "ViewState": "AgIAAFcBAAAAAAAAAAAkwH8BAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T00:02:50.001Z",
+              "WhenOpened": "2026-04-10T01:27:05.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "KnightGallant.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightGallant.cs",
+              "RelativeDocumentMoniker": "Imperial Knights\\KnightGallant.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightGallant.cs",
+              "RelativeToolTip": "Imperial Knights\\KnightGallant.cs",
+              "ViewState": "AgIAAD8BAAAAAAAAAAAkwFwBAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T01:16:17.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "KnightWarden.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightWarden.cs",
+              "RelativeDocumentMoniker": "Imperial Knights\\KnightWarden.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightWarden.cs",
+              "RelativeToolTip": "Imperial Knights\\KnightWarden.cs",
+              "ViewState": "AgIAAFIBAAAAAAAAAADwv2YBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T02:16:36.064Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "HeavyWeaponsSquad.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\HeavyWeaponsSquad.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\HeavyWeaponsSquad.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\HeavyWeaponsSquad.cs",
-              "RelativeToolTip": "Astra Militarum\\HeavyWeaponsSquad.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAgwGUAAAAjAAAAAAAAAA==",
+              "Title": "KnightErrant.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightErrant.cs",
+              "RelativeDocumentMoniker": "Imperial Knights\\KnightErrant.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightErrant.cs",
+              "RelativeToolTip": "Imperial Knights\\KnightErrant.cs",
+              "ViewState": "AgIAAFoBAAAAAAAAAAAAAHcBAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T23:58:00.368Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ArmouredSentinels.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\ArmouredSentinels.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\ArmouredSentinels.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\ArmouredSentinels.cs",
-              "RelativeToolTip": "Astra Militarum\\ArmouredSentinels.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T02:08:44.226Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ScoutSentinels.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\ScoutSentinels.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\ScoutSentinels.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\ScoutSentinels.cs",
-              "RelativeToolTip": "Astra Militarum\\ScoutSentinels.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwC4AAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T02:08:35.985Z"
+              "WhenOpened": "2026-04-08T00:49:47.745Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "AttilanRoughRiders.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\AttilanRoughRiders.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\AttilanRoughRiders.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\AttilanRoughRiders.cs",
-              "RelativeToolTip": "Astra Militarum\\AttilanRoughRiders.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAowCkAAABPAAAAAAAAAA==",
+              "Title": "ArmigerHelverin.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\ArmigerHelverin.cs",
+              "RelativeDocumentMoniker": "Imperial Knights\\ArmigerHelverin.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\ArmigerHelverin.cs",
+              "RelativeToolTip": "Imperial Knights\\ArmigerHelverin.cs",
+              "ViewState": "AgIAABsBAAAAAAAAAAAkwD0BAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T01:50:50.35Z"
+              "WhenOpened": "2026-04-02T00:25:18.256Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Ogryns.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\Ogryns.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\Ogryns.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\Ogryns.cs",
-              "RelativeToolTip": "Astra Militarum\\Ogryns.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAABXAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "KnightPreceptor.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightPreceptor.cs",
+              "RelativeDocumentMoniker": "Imperial Knights\\KnightPreceptor.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightPreceptor.cs",
+              "RelativeToolTip": "Imperial Knights\\KnightPreceptor.cs",
+              "ViewState": "AgIAAHwBAAAAAAAAAAAAAJMBAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T01:42:25.57Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Commissar.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\Commissar.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\Commissar.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\Commissar.cs",
-              "RelativeToolTip": "Astra Militarum\\Commissar.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA3wCEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T01:29:57.901Z"
+              "WhenOpened": "2026-04-10T02:47:16.788Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Kasrkin.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\Kasrkin.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\Kasrkin.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\Kasrkin.cs",
-              "RelativeToolTip": "Astra Militarum\\Kasrkin.cs",
-              "ViewState": "AgIAAC0BAAAAAAAAAAAAwDUBAAAVAAAAAAAAAA==",
+              "Title": "ArmigerWarglaive.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\ArmigerWarglaive.cs",
+              "RelativeDocumentMoniker": "Imperial Knights\\ArmigerWarglaive.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\ArmigerWarglaive.cs",
+              "RelativeToolTip": "Imperial Knights\\ArmigerWarglaive.cs",
+              "ViewState": "AgIAACQBAAAAAAAAAAAkwDYBAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T00:32:06.412Z"
+              "WhenOpened": "2026-04-06T00:45:38.189Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "RegimentalEnginseer.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\RegimentalEnginseer.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\RegimentalEnginseer.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\RegimentalEnginseer.cs",
-              "RelativeToolTip": "Astra Militarum\\RegimentalEnginseer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "KnightCastellan.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightCastellan.cs",
+              "RelativeDocumentMoniker": "Imperial Knights\\KnightCastellan.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightCastellan.cs",
+              "RelativeToolTip": "Imperial Knights\\KnightCastellan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANIBAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T01:34:37.74Z"
+              "WhenOpened": "2026-04-10T02:26:03.822Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MunitorumServitors.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\MunitorumServitors.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\MunitorumServitors.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\MunitorumServitors.cs",
-              "RelativeToolTip": "Astra Militarum\\MunitorumServitors.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "KnightCrusader.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightCrusader.cs",
+              "RelativeDocumentMoniker": "Imperial Knights\\KnightCrusader.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Imperial Knights\\KnightCrusader.cs",
+              "RelativeToolTip": "Imperial Knights\\KnightCrusader.cs",
+              "ViewState": "AgIAAE4BAAAAAAAAAADwv2QBAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T01:34:27.54Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "RegimentalPreacher.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\RegimentalPreacher.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\RegimentalPreacher.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\RegimentalPreacher.cs",
-              "RelativeToolTip": "Astra Militarum\\RegimentalPreacher.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAkwIQAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T01:29:06.802Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "TempestusScions.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\TempestusScions.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\TempestusScions.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\TempestusScions.cs",
-              "RelativeToolTip": "Astra Militarum\\TempestusScions.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAQwDQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T01:18:05.465Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CatachanJungleFighters.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\CatachanJungleFighters.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\CatachanJungleFighters.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\CatachanJungleFighters.cs",
-              "RelativeToolTip": "Astra Militarum\\CatachanJungleFighters.cs",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAswNYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T00:26:26.233Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "PrimarisLieutenant.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\PrimarisLieutenant.cs",
-              "RelativeDocumentMoniker": "Space Marines\\PrimarisLieutenant.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\PrimarisLieutenant.cs",
-              "RelativeToolTip": "Space Marines\\PrimarisLieutenant.cs",
-              "ViewState": "AgIAAOUAAAAAAAAAAAAkwM8AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-22T23:18:33.15Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "DeathKorpsOfKrieg.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\DeathKorpsOfKrieg.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\DeathKorpsOfKrieg.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\DeathKorpsOfKrieg.cs",
-              "RelativeToolTip": "Astra Militarum\\DeathKorpsOfKrieg.cs",
-              "ViewState": "AgIAAO8AAAAAAAAAAAAAAPgAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T02:26:08.208Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "CadianShockTroops.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\CadianShockTroops.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\CadianShockTroops.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\CadianShockTroops.cs",
-              "RelativeToolTip": "Astra Militarum\\CadianShockTroops.cs",
-              "ViewState": "AgIAAAMBAAAAAAAAAAAgwBcBAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T01:26:02.69Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "AdeptaSororitas.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\AdeptaSororitas.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\AdeptaSororitas.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\AdeptaSororitas.cs",
-              "RelativeToolTip": "Adepta Sororitas\\AdeptaSororitas.cs",
-              "ViewState": "AgIAALgAAAAAAAAAAADwv8oAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T02:01:26.309Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "InfantrySquad.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\InfantrySquad.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\InfantrySquad.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\InfantrySquad.cs",
-              "RelativeToolTip": "Astra Militarum\\InfantrySquad.cs",
-              "ViewState": "AgIAABYBAAAAAAAAAIAwwC8BAABeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T01:48:18.06Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "TempestusCommandSquad.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\TempestusCommandSquad.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\TempestusCommandSquad.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\TempestusCommandSquad.cs",
-              "RelativeToolTip": "Astra Militarum\\TempestusCommandSquad.cs",
-              "ViewState": "AgIAALwAAAAAAAAAAAAEwNQAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T01:23:24.097Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "PrimarisPsyker.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\PrimarisPsyker.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\PrimarisPsyker.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\PrimarisPsyker.cs",
-              "RelativeToolTip": "Astra Militarum\\PrimarisPsyker.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T03:43:28.791Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "IronHandStraken.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\IronHandStraken.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\IronHandStraken.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\IronHandStraken.cs",
-              "RelativeToolTip": "Astra Militarum\\IronHandStraken.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T03:39:00.863Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "CadianCommandSquad.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\CadianCommandSquad.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\CadianCommandSquad.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\CadianCommandSquad.cs",
-              "RelativeToolTip": "Astra Militarum\\CadianCommandSquad.cs",
-              "ViewState": "AgIAANoAAAAAAAAAAAAAANoAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T02:09:02.16Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "BattleSisters.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\BattleSisters.cs",
-              "RelativeDocumentMoniker": "Adepta Sororitas\\BattleSisters.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Adepta Sororitas\\BattleSisters.cs",
-              "RelativeToolTip": "Adepta Sororitas\\BattleSisters.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAzwDcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T03:15:28.651Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "PlatoonCommandSquad.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\PlatoonCommandSquad.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\PlatoonCommandSquad.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\PlatoonCommandSquad.cs",
-              "RelativeToolTip": "Astra Militarum\\PlatoonCommandSquad.cs",
-              "ViewState": "AgIAAG4BAAAAAAAAAIAwwIcBAABeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T02:02:35.927Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "TankCommander.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\TankCommander.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\TankCommander.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\TankCommander.cs",
-              "RelativeToolTip": "Astra Militarum\\TankCommander.cs",
-              "ViewState": "AgIAANcAAAAAAAAAAAAIwPoAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T01:38:08.027Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "CadianCastellan.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\CadianCastellan.cs",
-              "RelativeDocumentMoniker": "Astra Militarum\\CadianCastellan.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Astra Militarum\\CadianCastellan.cs",
-              "RelativeToolTip": "Astra Militarum\\CadianCastellan.cs",
-              "ViewState": "AgIAAKMAAAAAAAAAAAAAALMAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T03:23:23.513Z"
+              "WhenOpened": "2026-04-10T01:11:23.231Z"
             }
           ]
         }
