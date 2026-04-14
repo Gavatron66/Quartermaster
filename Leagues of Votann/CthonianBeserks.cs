@@ -45,6 +45,8 @@ namespace Roster_Builder.Leagues_of_Votann
             nudOption1.Location = new System.Drawing.Point(nudOption1.Location.X + 115, nudOption1.Location.Y);
             nudOption2.Location = new System.Drawing.Point(nudOption2.Location.X + 115, nudOption2.Location.Y);
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
             nudUnitSize.Value = nudUnitSize.Minimum;
