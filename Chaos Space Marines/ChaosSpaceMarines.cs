@@ -17,6 +17,7 @@ namespace Roster_Builder.Chaos_Space_Marines
             StratagemList.AddRange(new string[]
             {
                 "Stratagem: Aspiring Lord",  //Warlord Trait
+                "Stratagem: Gifts of Chaos",    //Relic
                 "Stratagem: Trophies of the Long War", //Extra relic for an 'Aspiring' or 'Champion'
                 "Stratagem: Lord of the Ezekarion", //Extra Warlord Trait for a Black Legion Warlord
                 "Stratagem: Apostle of the Dark Council", //Buff to a Word Bearers Priest
@@ -114,6 +115,7 @@ namespace Roster_Builder.Chaos_Space_Marines
 
         public override List<string> GetFactionUpgrades(List<string> keywords)
         {
+            if(keywords.Contains("PSYKER") && !keywords.Contains("DAEMON PRINCE"))
             {
                 return new List<string>
                 {
@@ -189,14 +191,166 @@ namespace Roster_Builder.Chaos_Space_Marines
 
             relics.Add("(None)");
 
+<<<<<<< Updated upstream
+            if(!keywords.Contains("DARK COMMUNE"))
+            {
+                relics.Add("Ul'o'cca, the Black");
+                relics.Add("Zaall, the Wrathful");
+=======
+            //Champion/Aspiring Relics
+            //NEEDS TO BE VETTED FOR FACTION CONDITIONS
+            if(keywords.Contains("CORE") || keywords.Contains("CULTISTS MOB") || keywords.Contains("DAEMONKIN"))
+            {
+                if(!(keywords.Contains("DAEMONKIN") || keywords.Contains("CULTISTS")))
+                {
+                    if (keywords.Contains("LEGIONARIES"))
+                    {
+                        relics.Add("Hyper-Growth Bolts (Slot 1)");
+                        relics.Add("Hyper-Growth Bolts (Slot 2)");
+                    }
+                    else
+                    {
+                        relics.Add("Hyper-Growth Bolts");
+                    }
+                }
+
+                if(keywords.Contains("TERMINATOR") || keywords.Contains("CHOSEN") || keywords.Contains("BIKER"))
+                {
+                    relics.Add("Maelstrom's Bite");
+                }
+
+                if (!(keywords.Contains("DAEMONKIN") || keywords.Contains("CULTISTS") || keywords.Contains("FLY")))
+                {
+                    if (keywords.Contains("LEGIONARIES"))
+                    {
+                        relics.Add("Ashen Axe (Slot 1)");
+                        relics.Add("Ashen Axe (Slot 2)");
+                    }
+                    else
+                    {
+                        relics.Add("Ashen Axe");
+                    }
+                }
+
+                relics.Add("The Armour Diabolus");
+
+                if (!(keywords.Contains("DAEMONKIN") || keywords.Contains("TERMINATOR") || keywords.Contains("HAVOCS")))
+                {
+                    relics.Add("Viper's Spite");
+                }
+
+                relics.Add("Icon of the Hydra Cult");
+
+                if (!(keywords.Contains("DAEMONKIN") || keywords.Contains("CULTISTS") || keywords.Contains("TERMINATOR")))
+                {
+                    if (keywords.Contains("LEGIONARIES"))
+                    {
+                        relics.Add("Distortion (Slot 1)");
+                        relics.Add("Distortion (Slot 2)");
+                    }
+                    else
+                    {
+                        relics.Add("Distortion");
+                    }
+                }
+
+                relics.Add("Armour of Abhorrence");
+
+                if(keywords.Contains("FLY")) 
+                {
+                    relics.Add("Talons of the Night Terror");
+                }
+
+                if(keywords.Contains("CHOSEN") || keywords.Contains("TERMINATOR"))
+                {
+                    relics.Add("Claw of the Stygian Count");
+                }
+
+                if (keywords.Contains("TERMINATOR") || keywords.Contains("CHOSEN") || keywords.Contains("BIKER"))
+                {
+                    relics.Add("Spitespitter");
+                }
+
+                if (keywords.Contains("LEGIONARIES") || keywords.Contains("NOISE MARINES") || keywords.Contains("BIKER"))
+                {
+                    if (keywords.Contains("LEGIONARIES"))
+                    {
+                        relics.Add("Axe of the Forgemaster (Slot 1)");
+                        relics.Add("Axe of the Forgemaster (Slot 2)");
+                    }
+                    else
+                    {
+                        relics.Add("Axe of the Forgemaster");
+                    }
+                }
+
+                if (!(keywords.Contains("DAEMONKIN") || keywords.Contains("CULTISTS")))
+                {
+                    if (keywords.Contains("LEGIONARIES"))
+                    {
+                        relics.Add("Loyalty's Reward (Slot 1)");
+                        relics.Add("Loyalty's Reward (Slot 2)");
+                    }
+                    else
+                    {
+                        relics.Add("Loyalty's Reward");
+                    }
+                }
+
+                relics.Add("Trophies of Slaughter");
+
+                if (!(keywords.Contains("DAEMONKIN") || keywords.Contains("CULTISTS") || keywords.Contains("FLY")))
+                {
+                    if (keywords.Contains("LEGIONARIES"))
+                    {
+                        relics.Add("The Black Mace (Slot 1)");
+                        relics.Add("The Black Mace (Slot 2)");
+                    }
+                    else
+                    {
+                        relics.Add("The Black Mace");
+                    }
+                }
+
+                if (!(keywords.Contains("DAEMONKIN") || keywords.Contains("TERMINATOR") || keywords.Contains("HAVOCS")))
+                {
+                    relics.Add("The Warp's Malice");
+                }
+
+                if (!(keywords.Contains("DAEMONKIN") || keywords.Contains("TERMINATOR") || keywords.Contains("CULTISTS")))
+                {
+                    if (keywords.Contains("LEGIONARIES"))
+                    {
+                        relics.Add("Blade of the Relentless (Slot 1)");
+                        relics.Add("Blade of the Relentless (Slot 2)");
+                    }
+                    else
+                    {
+                        relics.Add("Blade of the Relentless");
+                    }
+                }
+
+                relics.Add("Black Rune of Damnation");
+
+                return relics;
+            }
+
+            if(!keywords.Contains("DARK COMMUNE") && !keywords.Contains("DAEMON PRINCE"))
             {
                 relics.Add("Ul'o'cca, the Black");
             }
 
             if(!keywords.Contains("DARK COMMUNE"))
             {
+                if(!keywords.Contains("PSYKER"))
+                {
+                    relics.Add("Zaall, the Wrathful");
+                }
+
+>>>>>>> Stashed changes
                 relics.Add("G'holl'ax, the Decayed");
                 relics.Add("Q'o'ak, the Boundless");
+                relics.Add("Thaa'ris and Rhi'ol, the Rapacious");
             }
             
             if(keywords.Contains("PRIEST"))
@@ -233,6 +387,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 relics.Add("The Warp's Malice");
             }
 
+            if (!keywords.Contains("DARK COMMUNE") && !keywords.Contains("PSYKER"))
             {
                 relics.Add("Talisman of Burning Blood");
             }
@@ -253,10 +408,8 @@ namespace Roster_Builder.Chaos_Space_Marines
                 relics.Add("Liber Hereticus");
             }
 
-            if (/*currentSubFaction == "Black Legion"*/true)
             if (currentSubFaction == "Black Legion")
             {
-                if (keywords.Contains("CHAOS LORD"))
                 if (keywords.Contains("CHAOS LORD") && !keywords.Contains("TERMINATOR"))
                 {
                     relics.Add("Ghorisvex's Teeth");
@@ -290,7 +443,6 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Word Bearers"*/true)
             if (currentSubFaction == "Word Bearers")
             {
                 if (keywords.Contains("CHAOS LORD") || keywords.Contains("DARK APOSTLE"))
@@ -323,7 +475,6 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Night Lords"*/true)
             if (currentSubFaction == "Night Lords")
             {
                 if ((keywords.Contains("CHAOS LORD") && keywords.Contains("TERMINATOR")) || keywords.Contains("DAEMON PRINCE"))
@@ -353,7 +504,6 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Iron Warriors"*/true)
             if (currentSubFaction == "Iron Warriors")
             {
                 if (keywords.Contains("CHAOS LORD") || keywords.Contains("EXALTED CHAMPION") || keywords.Contains("DAEMON PRINCE") ||
@@ -391,8 +541,8 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
+            if (currentSubFaction == "Alpha Legion")
             {
-                if (keywords.Contains("CHAOS LORD"))
                 if (keywords.Contains("CHAOS LORD") && !keywords.Contains("TERMINATOR"))
                 {
                     relics.Add("Blade of the Hydra");
@@ -428,7 +578,6 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Emperor's Children"*/true)
             if (currentSubFaction == "Emperor's Children")
             {
 
@@ -456,7 +605,6 @@ namespace Roster_Builder.Chaos_Space_Marines
                 relics.Add("Raiment Revulsive");
             }
 
-            if (/*currentSubFaction == "Red Corsairs"*/true)
             if (currentSubFaction == "Red Corsairs")
             {
 
@@ -477,7 +625,6 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Creations of Bile"*/true)
             if (currentSubFaction == "Creations of Bile")
             {
                 if (!keywords.Contains("DARK COMMUNE"))
