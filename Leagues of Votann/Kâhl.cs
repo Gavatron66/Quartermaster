@@ -94,13 +94,13 @@ namespace Roster_Builder.Leagues_of_Votann
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null)
+            if (Relic != null && cmbRelic.Items.Contains(Relic))
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = -1;
+                cmbRelic.SelectedIndex = 0;
             }
 
             cmbFaction.Items.Clear();
@@ -179,6 +179,36 @@ namespace Roster_Builder.Leagues_of_Votann
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
+                    cmbOption3.Enabled = true;
+
+                    if(chosenRelic == "Aktôl's Fortress" || chosenRelic == "The Grey Crest" || chosenRelic == "The Last Crest of Jâluk")
+                    {
+                        cmbOption3.SelectedIndex = 0;
+                        cmbOption3.Enabled = false;
+                    }
+                    else if(chosenRelic == "Flâyre" || chosenRelic == "The Just Blade")
+                    {
+                        cmbOption2.SelectedIndex = 0;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if(chosenRelic == "Grudge's End")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Wârpestryk")
+                    {
+                        cmbOption3.SelectedIndex = 1;
+                        cmbOption3.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Hearthfist")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+
                     Relic = chosenRelic;
                     break;
                 case 25:

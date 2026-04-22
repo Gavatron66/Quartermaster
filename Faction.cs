@@ -40,6 +40,15 @@ namespace Roster_Builder
         public virtual void SetUpForm(Form form)
         {
             lbUnits = form.Controls["lbUnits"] as ListBox;
+            Panel panel = form.Controls["panel1"] as Panel;
+
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            Label lblFactionupgrade = panel.Controls["lblFactionupgrade"] as Label;
+
+            cbStratagem1.Text = StratagemList[0];
+            cbStratagem2.Text = StratagemList[1];
+            lblFactionupgrade.Text = factionUpgradeName;
         }
 
         public abstract List<string> GetPsykerPowers(string keywords);

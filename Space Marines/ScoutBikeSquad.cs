@@ -44,6 +44,10 @@ namespace Roster_Builder.Space_Marines
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 3;
@@ -79,7 +83,7 @@ namespace Roster_Builder.Space_Marines
                 "Storm Bolter",
                 "Thunder Hammer"
             });
-            if (repo.currentSubFaction == "Deathwatch" || repo.currentSubFaction == "Blood Angels")
+            if (repo.customSubFactionTraits[2] == "Deathwatch" || repo.customSubFactionTraits[2] == "Blood Angels")
             {
                 cmbOption1.Items.Insert(7, "Hand Flamer");
                 cmbOption1.Items.Insert(8, "Inferno Pistol");
@@ -91,6 +95,48 @@ namespace Roster_Builder.Space_Marines
                 "Astartes Grenade Launcher",
                 "Twin Boltgun"
             });
+            cbStratagem5.Text = repo.StratagemList[4];
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblOption1"].Location.X, panel.Controls["cmbOption2"].Location.Y + 60);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                panel.Controls["lblRelic"].Visible = true;
+                cmbRelic.Visible = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
+            }
+
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -104,12 +150,21 @@ namespace Roster_Builder.Space_Marines
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
                 case 11:
-                    Weapons[0] = cmbOption1.SelectedItem.ToString();
-                    lbModelSelect.Items[0] = "Scout Biker Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    {
+                        Weapons[0] = cmbOption1.SelectedItem.ToString();
+                        lbModelSelect.Items[0] = "Scout Biker Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+                    }
                     break;
                 case 12:
                     Weapons[currentIndex + 1] = cmbOption2.SelectedItem.ToString();
@@ -121,6 +176,109 @@ namespace Roster_Builder.Space_Marines
                     {
                         lbModelSelect.Items[currentIndex] = "Scout Biker w/ " + Weapons[currentIndex + 1];
                     }
+                    break;
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+
+                    antiLoop = true;
+                    cmbOption1.Enabled = true;
+                    restrictedIndexes.Clear();
+
+                    #region Codex Supplement: Ultramarines
+                    if (chosenRelic == "Hellfury Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Sunwrath Pistol")
+                    {
+                        cmbOption1.SelectedIndex = 8;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: Salamanders
+                    else if (chosenRelic == "Dragonrage Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        cmbOption1.SelectedIndex = 12;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: Raven Guard
+                    else if (chosenRelic == "Silentus Pistol")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Korvidari Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
+                    #region Codex Supplement: Iron Hands
+                    else if (chosenRelic == "Haywire Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Teeth of Mars")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: White Scars
+                    else if (chosenRelic == "Stormwrath Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
+                    #region Codex Supplement: Imperial Fists
+                    else if (chosenRelic == "Gatebreaker Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Fist of Terra")
+                    {
+                        cmbOption1.SelectedIndex = 10;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: Space Wolves
+                    else if (chosenRelic == "Morkai's Teeth Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Frost Weapon")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 1, 2, 3, 4, 5, 6, 8, 10, 11, 13, 14 });
+                        cmbOption1.SelectedIndex = 9;
+                    }
+                    #endregion
+                    #region Codex Supplement: Dark Angels
+                    else if (chosenRelic == "Bolts of Judgement")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Atonement")
+                    {
+                        cmbOption1.SelectedIndex = 8;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
+
+                    antiLoop = false;
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+                    Relic = chosenRelic;
                     break;
                 case 30:
                     int temp = UnitSize;
@@ -157,18 +315,145 @@ namespace Roster_Builder.Space_Marines
                         panel.Controls["lblOption1"].Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
 
+                        cbStratagem5.Visible = true;
+
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            panel.Controls["lblRelic"].Visible = true;
+                            cmbRelic.Visible = true;
+                        }
+
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[currentIndex + 1]);
+
+                        restrictedIndexes.Clear();
+
+                        #region Codex Supplement: Ultramarines
+                        if (Relic == "Hellfury Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                            cmbOption1.SelectedIndex = 1;
+                        }
+                        else if (Relic == "Sunwrath Pistol")
+                        {
+                            cmbOption1.SelectedIndex = 8;
+                            cmbOption1.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Salamanders
+                        else if (Relic == "Dragonrage Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                            cmbOption1.SelectedIndex = 1;
+                        }
+                        else if (Relic == "Drakeblade")
+                        {
+                            cmbOption1.SelectedIndex = 12;
+                            cmbOption1.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Raven Guard
+                        else if (Relic == "Silentus Pistol")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Korvidari Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                            cmbOption1.SelectedIndex = 1;
+                        }
+                        #endregion
+                        #region Codex Supplement: Iron Hands
+                        else if (Relic == "Haywire Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                            cmbOption1.SelectedIndex = 1;
+                        }
+                        else if (Relic == "Teeth of Mars")
+                        {
+                            cmbOption1.SelectedIndex = 0;
+                            cmbOption1.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: White Scars
+                        else if (Relic == "Stormwrath Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                            cmbOption1.SelectedIndex = 1;
+                        }
+                        #endregion
+                        #region Codex Supplement: Imperial Fists
+                        else if (Relic == "Gatebreaker Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                            cmbOption1.SelectedIndex = 1;
+                        }
+                        else if (Relic == "Fist of Terra")
+                        {
+                            cmbOption1.SelectedIndex = 10;
+                            cmbOption1.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Space Wolves
+                        else if (Relic == "Morkai's Teeth Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                            cmbOption1.SelectedIndex = 1;
+                        }
+                        else if (Relic == "Frost Weapon")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 1, 2, 3, 4, 5, 6, 8, 10, 11, 13, 14 });
+                            cmbOption1.SelectedIndex = 9;
+                        }
+                        #endregion
+                        #region Codex Supplement: Atonement
+                        else if (Relic == "Bolts of Judgement")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 14 });
+                            cmbOption1.SelectedIndex = 1;
+                        }
+                        else if (Relic == "Atonement")
+                        {
+                            cmbOption1.SelectedIndex = 8;
+                            cmbOption1.Enabled = false;
+                        }
+                        #endregion
+
+                        this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     }
                     else
                     {
+                        restrictedIndexes.Clear();
+
+                        cmbOption1.Visible = false;
                         cmbOption2.Visible = true;
+                        panel.Controls["lblOption1"].Visible = false;
                         panel.Controls["lblOption2"].Visible = true;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
 
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[currentIndex + 1]);
                     }
-
-
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
+                    }
                     break;
             }
 

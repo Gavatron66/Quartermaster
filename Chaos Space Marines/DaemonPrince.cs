@@ -87,13 +87,13 @@ namespace Roster_Builder.Chaos_Space_Marines
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null)
+            if (Relic != null && cmbRelic.Items.Contains(Relic))
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = -1;
+                cmbRelic.SelectedIndex = 0;
             }
 
             cmbFaction.Items.Clear();
@@ -201,7 +201,36 @@ namespace Roster_Builder.Chaos_Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
-                    Relic = chosenRelic;
+                    cmbFaction.Enabled = true;
+                    cmbOption1.Enabled = true;
+
+                    if(chosenRelic == "Zaall, the Wrathful" || chosenRelic == "Talisman of Burning Blood")
+                    {
+                        cmbFaction.SelectedIndex = 0;
+                        cmbFaction.Enabled = false;
+                    }
+                    else if(chosenRelic == "G'holl'ax, the Decayed" || chosenRelic == "Orb of Unlife")
+                    {
+                        cmbFaction.SelectedIndex = 2;
+                        cmbFaction.Enabled = false;
+                    }
+                    else if (chosenRelic == "Q'o'ak, the Boundless" || chosenRelic == "Eye of Tzeentch")
+                    {
+                        cmbFaction.SelectedIndex = 1;
+                        cmbFaction.Enabled = false;
+                    }
+                    else if (chosenRelic == "Thaa'ris and Rhi'ol, the Rapacious" || chosenRelic == "Intoxicating Elixir")
+                    {
+                        cmbFaction.SelectedIndex = 3;
+                        cmbFaction.Enabled = false;
+                    }
+                    else if(chosenRelic == "Ashen Axe")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+
+                        Relic = chosenRelic;
                     break;
                 case 21:
                     if (cbOption1.Checked)

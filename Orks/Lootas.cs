@@ -45,6 +45,8 @@ namespace Roster_Builder.Orks
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
             cmbFaction.Visible = true;
             panel.Controls["lblFactionupgrade"].Visible = true;
 
@@ -104,6 +106,13 @@ namespace Roster_Builder.Orks
                     break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
+
+                    if (Factionupgrade == "Extra-Kustom Weapon (+10 pts)")
+                    {
+                        Weapons[0] = "Kustom Mega-blasta (+5 pts)";
+                        lbModelSelect.Items[0] = "Spanner w/ " + Weapons[0];
+                    }
+
                     break;
                 case 30:
                     int temp = UnitSize / 4;

@@ -28,7 +28,8 @@ namespace Roster_Builder.Death_Guard
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
-            
+            repo = f as DeathGuard;
+
             ComboBox cmbOption1 = panel.Controls["cmboption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmboption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;

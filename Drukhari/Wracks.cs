@@ -45,7 +45,12 @@ namespace Roster_Builder.Drukhari
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            //ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+            panel.Controls["lblExtra1"].Text = "One model may take a different weapon per 5 models";
+            panel.Controls["lblExtra1"].Location = new System.Drawing.Point(panel.Controls["lbModelSelect"].Location.X, panel.Controls["lblOption1"].Location.Y - 22);
+            panel.Controls["lblExtra1"].Visible = true;
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -75,21 +80,21 @@ namespace Roster_Builder.Drukhari
                 }
             }
 
-            cmbFaction.Items.Clear();
-            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-            panel.Controls["lblFactionUpgrade"].Text = "Favoured Retinue";
+            //cmbFaction.Items.Clear();
+            //cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+            //panel.Controls["lblFactionUpgrade"].Text = "Favoured Retinue";
 
-            if (Factionupgrade != null)
-            {
-                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-            }
-            else
-            {
-                cmbFaction.SelectedIndex = 0;
-            }
+            //if (Factionupgrade != null)
+            //{
+            //    cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+            //}
+            //else
+            //{
+            //    cmbFaction.SelectedIndex = 0;
+            //}
 
-            panel.Controls["lblFactionUpgrade"].Visible = true;
-            cmbFaction.Visible = true;
+            //panel.Controls["lblFactionUpgrade"].Visible = true;
+            //cmbFaction.Visible = true;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -103,7 +108,7 @@ namespace Roster_Builder.Drukhari
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            //ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
@@ -147,9 +152,9 @@ namespace Roster_Builder.Drukhari
                         lbModelSelect.Items[0] = "Acothyst w/ " + Weapons[0] + " and " + Weapons[1];
                     }
                     break;
-                case 16:
-                    Factionupgrade = cmbFactionupgrade.Text;
-                    break;
+                //case 16:
+                //    Factionupgrade = cmbFactionupgrade.Text;
+                //    break;
                 case 30:
                     int temp = UnitSize;
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());

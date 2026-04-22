@@ -10,6 +10,7 @@ namespace Roster_Builder.Tau_Empire
 	public class Broadsides : Datasheets
 	{
 		int currentIndex;
+		List<int> restrictedIndexes2 = new List<int>();
 
 		public Broadsides()
 		{
@@ -48,7 +49,9 @@ namespace Roster_Builder.Tau_Empire
 			ComboBox cmbOption4 = panel.Controls["cmbOption4"] as ComboBox;
 			ComboBox cmbOption5 = panel.Controls["cmbOption5"] as ComboBox;
 
-			int currentSize = UnitSize;
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
+            int currentSize = UnitSize;
 			nudUnitSize.Minimum = 1;
 			antiLoop = true;
 			nudUnitSize.Value = nudUnitSize.Minimum;
@@ -86,13 +89,17 @@ namespace Roster_Builder.Tau_Empire
 
 			cmbOption3.Items.Clear();
 			cmbOption3.Items.AddRange(new string[]
-			{
-				"(None)",
-				"Advanced Targeting System",
-				"Multi-tracker",
-				"Seeker Missile (+5 pts)",
-				"Twin Smart Missile System (+15 pts)",
-			});
+            {
+                "(None)",
+                "Advanced Targeting System",
+                "Early Warning Override",
+                "Multi-tracker",
+                "Seeker Missile (+5 pts)",
+                "Stabilised Optics",
+                "Twin Plasma Rifle (+10 pts)",
+                "Twin Smart Missile System (+15 pts)",
+                "Velocity Tracker"
+            });
 
 			cmbOption4.Items.Clear();
 			cmbOption4.Items.AddRange(new string[]
@@ -144,27 +151,45 @@ namespace Roster_Builder.Tau_Empire
 					}
 					break;
 				case 12:
-					Weapons[(currentIndex * 5) + 1] = cmbOption2.SelectedItem.ToString();
-					if (currentIndex == 0)
-					{
-						lbModelSelect.Items[currentIndex] = ("Broadside Shas'vre - " + CalcPoints(currentIndex) + " pts");
-					}
-					else
-					{
-						lbModelSelect.Items[currentIndex] = ("Broadside Shas'ui - " + CalcPoints(currentIndex) + " pts");
-					}
+                    antiLoop = true;
+                    if (!restrictedIndexes.Contains(cmbOption2.SelectedIndex))
+                    {
+                        Weapons[(currentIndex * 5) + 1] = cmbOption2.SelectedItem.ToString();
+                        if (currentIndex == 0)
+                        {
+                            lbModelSelect.Items[currentIndex] = ("Broadside Shas'vre - " + CalcPoints(currentIndex) + " pts");
+                        }
+                        else
+                        {
+                            lbModelSelect.Items[currentIndex] = ("Broadside Shas'ui - " + CalcPoints(currentIndex) + " pts");
+                        }
+                    }
+                    else
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 5) + 1]);
+                    }
+                    antiLoop = false;
 					break;
-				case 13:
-					Weapons[(currentIndex * 5) + 2] = cmbOption3.SelectedItem.ToString();
-					if (currentIndex == 0)
-					{
-						lbModelSelect.Items[currentIndex] = ("Broadside Shas'vre - " + CalcPoints(currentIndex) + " pts");
-					}
-					else
-					{
-						lbModelSelect.Items[currentIndex] = ("Broadside Shas'ui - " + CalcPoints(currentIndex) + " pts");
-					}
-					break;
+                case 13:
+                    antiLoop = true;
+                    if (!restrictedIndexes.Contains(cmbOption3.SelectedIndex))
+                    {
+                        Weapons[(currentIndex * 5) + 2] = cmbOption3.SelectedItem.ToString();
+                        if (currentIndex == 0)
+                        {
+                            lbModelSelect.Items[currentIndex] = ("Broadside Shas'vre - " + CalcPoints(currentIndex) + " pts");
+                        }
+                        else
+                        {
+                            lbModelSelect.Items[currentIndex] = ("Broadside Shas'ui - " + CalcPoints(currentIndex) + " pts");
+                        }
+                    }
+                    else
+                    {
+                        cmbOption3.SelectedIndex = cmbOption3.Items.IndexOf(Weapons[(currentIndex * 5) + 2]);
+                    }
+                    antiLoop = false;
+                    break;
 				case 14:
 					Weapons[(currentIndex * 5) + 3] = cmbOption4.SelectedItem.ToString();
 					if (currentIndex == 0)
@@ -248,7 +273,42 @@ namespace Roster_Builder.Tau_Empire
 			Points = (DEFAULT_POINTS * UnitSize) + CalcPoints(-1);
 
 			Points += repo.GetFactionUpgradePoints(Factionupgrade);
-		}
+
+            antiLoop = true;
+			if(currentIndex >= 0)
+            {
+                restrictedIndexes.Clear();
+				restrictedIndexes2.Clear();
+                if (Weapons[(currentIndex * 5) + 1] != "(None)")
+                {
+                    if (Weapons[(currentIndex * 5) + 1] == "Early Warning Override" || Weapons[(currentIndex * 5) + 1] == "Stabilised Optics"
+                        || Weapons[(currentIndex * 5) + 1] == "Twin Plasma Rifle" || Weapons[(currentIndex * 5) + 1] == "Velocity Tracker")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 2, 5, 6, 8 });
+                    }
+                    else
+                    {
+                        restrictedIndexes.Add(cmbOption2.Items.IndexOf(Weapons[(currentIndex * 5) + 1]));
+                    }
+                }
+
+                if (Weapons[(currentIndex * 5) + 2] != "(None)")
+                {
+                    if (Weapons[(currentIndex * 5) + 2] == "Early Warning Override" || Weapons[(currentIndex * 5) + 2] == "Stabilised Optics"
+                        || Weapons[(currentIndex * 5) + 2] == "Twin Plasma Rifle" || Weapons[(currentIndex * 5) + 2] == "Velocity Tracker")
+                    {
+                        restrictedIndexes2.AddRange(new int[] { 2, 5, 6, 8 });
+                    }
+                    else
+                    {
+                        restrictedIndexes2.Add(cmbOption3.Items.IndexOf(Weapons[(currentIndex * 5) + 2]));
+                    }
+                }
+                this.DrawItemWithRestrictions(restrictedIndexes, cmbOption3);
+                this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
+            }
+            antiLoop = false;
+        }
 
 		public override string ToString()
 		{

@@ -59,7 +59,7 @@ namespace Roster_Builder.Orks
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            cbOption1.Text = "Lobba (+5 pts)";
+            cbOption1.Text = "Lobba (+10 pts)";
             if (Weapons[1] == cbOption1.Text)
             {
                 cbOption1.Checked = true;
@@ -206,9 +206,9 @@ namespace Roster_Builder.Orks
             {
                 Points += 15;
             }
-            if (Weapons.Contains("Lobba (+5 pts)"))
+            if (Weapons.Contains("Lobba (+10 pts)"))
             {
-                Points += 5;
+                Points += 10;
             }
             if (Weapons.Contains("Wreckin' Ball (+5 pts)"))
             {

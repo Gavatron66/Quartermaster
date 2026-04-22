@@ -62,13 +62,13 @@ namespace Roster_Builder.Drukhari
 			cmbRelic.Items.Clear();
 			cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-			if (Relic != null)
+			if (Relic != null && cmbRelic.Items.Contains(Relic))
 			{
 				cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
 			}
 			else
 			{
-				cmbRelic.SelectedIndex = -1;
+				cmbRelic.SelectedIndex = 0;
 			}
 
 			cmbFaction.Items.Clear();
@@ -131,9 +131,29 @@ namespace Roster_Builder.Drukhari
 					}
 					break;
 				case 16:
-					Factionupgrade = cmbFaction.Text;
-					break;
-				case 17:
+                    Factionupgrade = cmbFaction.Text;
+                    if (Factionupgrade != "(None)" && Factionupgrade != null)
+                    {
+                        cmbWarlord.Items.Add("Twisted Animator");
+                        cmbRelic.Items.Add("Poisoner's Ampule");
+                    }
+                    else
+                    {
+                        if (Relic == "Poisoner's Ampule")
+                        {
+                            cmbRelic.SelectedIndex = 0;
+                        }
+
+                        if (WarlordTrait == "Twisted Animator")
+                        {
+                            cmbWarlord.SelectedIndex = -1;
+                        }
+
+                        cmbWarlord.Items.Remove("Twisted Animator");
+                        cmbRelic.Items.Remove("Poisoner's Ampule");
+                    }
+                    break;
+                case 17:
 					Relic = cmbRelic.SelectedItem.ToString();
 					break;
 				case 25:

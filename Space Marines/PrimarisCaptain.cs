@@ -9,11 +9,13 @@ namespace Roster_Builder.Space_Marines
 {
     public class PrimarisCaptain : Datasheets
     {
+        private string stratWarlordTrait;
+
         public PrimarisCaptain()
         {
             DEFAULT_POINTS = 80;
             Points = DEFAULT_POINTS;
-            TemplateCode = "1m1k_c";
+            TemplateCode = "1m2k_c";
             Weapons.Add("Master-crafted Auto Bolt Rifle");
             Weapons.Add("");
             Keywords.AddRange(new string[]
@@ -36,6 +38,7 @@ namespace Roster_Builder.Space_Marines
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
@@ -61,18 +64,17 @@ namespace Roster_Builder.Space_Marines
                 cmbOption1.Items.Add("Special Issue Bolt Carbine");
             }
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
-            if(Relic == "Purgatorus")
-            {
-                cmbOption1.Items.RemoveAt(3);
-            }
+
+            cbOption1.Text = "Master-crafted Power Sword";
+            cbOption2.Text = "Power Fist";
 
             if(f.currentSubFaction == "Dark Angels")
             {
-                cbOption1.Text = "Power Fist";
+                cbOption2.Visible = true;
             }
             else
             {
-                cbOption1.Text = "Master-crafted Power Sword";
+                cbOption2.Visible = false;
             }
 
             if (Weapons[1] == "Master-crafted Power Sword")
@@ -81,12 +83,34 @@ namespace Roster_Builder.Space_Marines
             }
             else if (Weapons[1] == "Power Fist")
             {
-                cbOption1.Text = "Power Fist";
-                cbOption1.Checked = true;
+                cbOption2.Checked = true;
             }
             else
             {
                 cbOption1.Checked = false;
+                cbOption2.Checked = false;
+            }
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
+            panel.Controls["lblFactionupgrade"].Visible = true;
+            cmbFactionupgrade.Visible = true;
+            cmbFactionupgrade.Items.Clear();
+            cmbFactionupgrade.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+
+            if (Factionupgrade != null)
+            {
+                cmbFactionupgrade.SelectedIndex = cmbFactionupgrade.Items.IndexOf(Factionupgrade);
+            }
+            else
+            {
+                cmbFactionupgrade.SelectedIndex = 0;
+                if(Factionupgrade != "(None)")
+                {
+                    cmbWarlord.Items.Add("Master of the Codex");
+                    cmbRelic.Items.Add("Angel Artifice");
+                }
             }
 
             if (isWarlord)
@@ -101,34 +125,43 @@ namespace Roster_Builder.Space_Marines
                 cmbWarlord.Enabled = false;
             }
 
-            cmbRelic.Items.Clear();
-            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
-
-            if (Relic != null)
+            if (Relic != null && cmbRelic.Items.Contains(Relic))
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = -1;
-            }
-
-            panel.Controls["lblFactionupgrade"].Visible = true;
-            cmbFactionupgrade.Visible = true;
-            cmbFactionupgrade.Items.Clear();
-            cmbFactionupgrade.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-
-            if (Factionupgrade != null)
-            {
-                cmbFactionupgrade.SelectedIndex = cmbFactionupgrade.Items.IndexOf(Factionupgrade);
-            }
-            else
-            {
-                cmbFactionupgrade.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = 0;
             }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
+            ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox; // For Stratagem 3
+
+            cbStratagem3.Visible = true;
+            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
+            cbStratagem3.Text = f.StratagemList[2];
+
+            if (f.currentSubFaction != f.customSubFactionTraits[2] && f.customSubFactionTraits[2] != "Unknown")
+            {
+                cbStratagem4.Visible = true;
+            }
+            else
+            {
+                cbStratagem4.Visible = false;
+            }
+
+            cbStratagem4.Location = new System.Drawing.Point(cbStratagem3.Location.X, cbStratagem3.Location.Y + 32);
+            cbStratagem4.Text = f.StratagemList[3];
+
+            panel.Controls["lblOption6"].Visible = false;
+            panel.Controls["lblOption6"].Location = new System.Drawing.Point(panel.Controls["lblOption1"].Location.X, panel.Controls["lblWarlord"].Location.Y);
+            cmbOption6.Visible = false;
+            cmbOption6.Location = new System.Drawing.Point(panel.Controls["lblOption6"].Location.X, panel.Controls["lblOption6"].Location.Y + 23);
+            cmbOption6.Items.Clear();
+            cmbOption6.Items.AddRange(repo.GetWarlordTraits("Strat").ToArray());
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -151,33 +184,76 @@ namespace Roster_Builder.Space_Marines
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
+
+            if (Stratagem.Contains(cbStratagem3.Text))
+            {
+                cbStratagem3.Checked = true;
+                cbStratagem3.Enabled = true;
+                cmbOption6.Visible = true;
+                panel.Controls["lblOption6"].Visible = true;
+                cmbOption6.SelectedIndex = cmbOption6.Items.IndexOf(stratWarlordTrait);
+            }
+            else
+            {
+                cbStratagem3.Checked = false;
+                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+                cmbOption6.Visible = false;
+                panel.Controls["lblOption6"].Visible = false;
+                stratWarlordTrait = "";
+            }
+
+            if (Stratagem.Contains(cbStratagem4.Text))
+            {
+                cbStratagem4.Checked = true;
+                cbStratagem4.Enabled = true;
+            }
+            else
+            {
+                cbStratagem4.Checked = false;
+                cbStratagem4.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem4.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
 
             switch (code)
             {
                 case 11:
-                    Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    {
+                        Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+                    }
 
                     if (Weapons[0] == "Plasma Pistol and Power Fist" || Weapons[0] == "Heavy Bolt Pistol, Master-crafted Power Sword and Relic Shield")
                     {
                         cbOption1.Checked = false;
                         cbOption1.Enabled = false;
+                        cbOption2.Enabled = false;
                     }
                     else
                     {
                         cbOption1.Enabled = true;
-                        if(Relic == "Soldier's Blade" || Relic == "The Burning Blade")
+                        cbOption2.Enabled = true;
+
+                        if (Relic == "The Burning Blade" || Relic == "Drakeblade" || Relic == "The Thief of Secrets"
+                            || Relic == "Frost Weapon" || Relic == "Heavenfall Blade")
                         {
                             cbOption1.Checked = true;
                             cbOption1.Enabled = false;
@@ -196,54 +272,109 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 16:
                     Factionupgrade = cmbFactionupgrade.Text;
+                    if (Factionupgrade.Contains("Chapter Master") && Factionupgrade != null)
+                    {
+                        if(!cmbWarlord.Items.Contains("Master of the Codex") && !cmbRelic.Items.Contains("Angel Artifice"))
+                        {
+                            cmbWarlord.Items.Add("Master of the Codex");
+                            cmbRelic.Items.Add("Angel Artifice");
+                        }
+                    }
+                    else
+                    {
+                        if(Relic == "Angel Artifice")
+                        {
+                            cmbRelic.SelectedIndex = 0;
+                        }
+
+                        if(WarlordTrait == "Master of the Codex")
+                        {
+                            cmbWarlord.SelectedIndex = -1;
+                        }
+
+                        cmbWarlord.Items.Remove("Master of the Codex");
+                        cmbRelic.Items.Remove("Angel Artifice");
+                    }
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
-                    if(chosenRelic == "Bellicos Bolt Rifle")
+                    restrictedIndexes.Clear();
+                    cmbOption1.Enabled = true;
+                    cbOption1.Enabled = true;
+
+                    if (!Weapons[0].Contains("Rifle"))
                     {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Auto Bolt Rifle");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Lament")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Stalker Bolt Rifle");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Primarch's Wrath")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Special Issue Bolt Carbine");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "The Burning Blade")
-                    {
-                        cbOption1.Checked = true;
                         cbOption1.Enabled = false;
-                        cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
                     }
-                    else if (chosenRelic == "The Shield Eternal")
-                    {
-                        cmbOption1.SelectedIndex = 0;
-                        cmbOption1.Enabled = false;
-                    }
+
+                    #region Codex: Space Marines
+                        if (chosenRelic == "Bellicos Bolt Rifle")
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Auto Bolt Rifle");
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (chosenRelic == "Lament")
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Stalker Bolt Rifle");
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (chosenRelic == "Primarch's Wrath") //
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Special Issue Bolt Carbine");
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (chosenRelic == "The Burning Blade") //
+                        {
+                            cbOption1.Checked = true;
+                            cbOption1.Enabled = false;
+
+                            restrictedIndexes.Add(3);
+                        }
+                        else if (chosenRelic == "The Shield Eternal") //
+                        { 
+                            cmbOption1.SelectedIndex = 0;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (chosenRelic == "Purgatorus") //
+                        {
+                            restrictedIndexes.Add(3);
+                            cmbOption1.SelectedIndex = 1;
+                        }
+                    #endregion
+                    #region Codex Supplement: Ultramarines
                     else if (chosenRelic == "Soldier's Blade")
                     {
                         cbOption1.Checked = true;
                         cbOption1.Enabled = false;
+
+                        restrictedIndexes.Add(3);
+                    }
+                    else if (chosenRelic == "Hellfury Bolts")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
                     }
                     else if (chosenRelic == "Sunwrath Pistol")
                     {
                         cmbOption1.SelectedIndex = 3;
                         cmbOption1.Enabled = false;
                     }
-                    else if (chosenRelic == "Purgatorus")
-                    {
-                        cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
-                    }
+                    #endregion
+                    #region Codex Supplement: Salamanders
                     else if (chosenRelic == "Drakeblade")
                     {
                         cbOption1.Checked = true;
                         cbOption1.Enabled = false;
+
+                        restrictedIndexes.Add(3);
                     }
+                    else if (chosenRelic == "Dragonrage Bolts")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
+                    #region Codex Supplement: Raven Guard
                     else if (chosenRelic == "Ex Tenebris")
                     {
                         cmbOption1.SelectedIndex = 2;
@@ -251,8 +382,23 @@ namespace Roster_Builder.Space_Marines
                     }
                     else if (chosenRelic == "Silentus Pistol")
                     {
-                        cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
                     }
+                    else if (chosenRelic == "Korvidari Bolts")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
+                    #region Codex Supplement: Iron Hands
+                    else if (chosenRelic == "Haywire Bolts")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
+                    #region Codex Supplement: White Scars
                     else if (chosenRelic == "Scimitar of the Great Khan")
                     {
                         cbOption1.Checked = true;
@@ -260,18 +406,28 @@ namespace Roster_Builder.Space_Marines
                     }
                     else if (chosenRelic == "Equis-pattern Bolt Pistol")
                     {
-                        cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
                     }
+                    else if (chosenRelic == "Stormwrath Bolts")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
+                    #region Codex Supplement: Imperial Fists
                     else if (chosenRelic == "The Spartean")
                     {
-                        cmbOption1.Items.Remove("Plasma Pistol and Power Fist");
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
                     }
                     else if (chosenRelic == "Duty's Burden")
                     {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Stalker Bolt Rifle");
-                        cmbOption1.Enabled = false;
+                        restrictedIndexes.Add(0);
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
                     }
-                    else if (chosenRelic == "Fist of Vengeance")
+                    else if (chosenRelic == "Fist of Vengeance") // Crimson Fists only
                     {
                         cmbOption1.SelectedIndex = 0;
                         cmbOption1.Enabled = false;
@@ -281,25 +437,99 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 0;
                         cmbOption1.Enabled = false;
                     }
-                    else
+                    else if (chosenRelic == "Gatebreaker Bolts")
                     {
-                        cmbOption1.Enabled = true;
-                        cbOption1.Enabled = true;
-                        if(!(cmbOption1.Items.Contains("Plasma Pistol and Power Fist")))
-                        {
-                            cmbOption1.Items.Insert(3, "Plasma Pistol and Power Fist");
-                        }
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
                     }
+                    #endregion
+                    #region Codex Supplement: Deathwatch
+                    else if (chosenRelic == "Dominus Aegis")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Thief of Secrets")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+
+                        restrictedIndexes.Add(3);
+                    }
+                    else if (chosenRelic == "Banebolts of Eryxia" || chosenRelic == "Artificer Bolt Cache")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
+                    #region Codex Supplement: Space Wolves
+                    else if (chosenRelic == "Fireheart")
+                    {
+                        cmbOption1.SelectedIndex = 3;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Frost Weapon")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+
+                        restrictedIndexes.Add(3);
+                    }
+                    else if (chosenRelic == "Morkai's Teeth Bolts")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
+                    #region Codex Supplement: Dark Angels
+                    else if (chosenRelic == "Heavenfall Blade")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 0;
+                    }
+                    else if (chosenRelic == "Atonement")
+                    {
+                        cmbOption1.SelectedIndex = 3;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Bolts of Judgement")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
+
                     Relic = chosenRelic;
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+                    break;
+                case 19:
+                    stratWarlordTrait = cmbOption6.SelectedItem as string;
                     break;
                 case 21:
                     if (cbOption1.Checked)
                     {
                         Weapons[1] = cbOption1.Text;
+                        cbOption2.Enabled = false;
                     }
                     else
                     {
                         Weapons[1] = "";
+                        cbOption2.Enabled = true;
+                    }
+                    break;
+                case 22:
+                    if (cbOption2.Checked)
+                    {
+                        Weapons[1] = cbOption2.Text;
+                        cbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        Weapons[1] = "";
+                        cbOption1.Enabled = true;
                     }
                     break;
                 case 25:
@@ -332,6 +562,54 @@ namespace Roster_Builder.Space_Marines
                         if (Stratagem.Contains(cbStratagem2.Text))
                         {
                             Stratagem.Remove(cbStratagem2.Text);
+                        }
+                    }
+                    break;
+                case 73:
+                    if (cbStratagem3.Checked && !Stratagem.Contains(cbStratagem3.Text))
+                    {
+                        Stratagem.Add(cbStratagem3.Text);
+                        cmbOption6.Visible = true;
+                        panel.Controls["lblOption6"].Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
+                        }
+                        cmbOption6.Visible = false;
+                        panel.Controls["lblOption6"].Visible = false;
+                        cmbOption6.SelectedIndex = -1;
+                    }
+                    break;
+                case 74:
+                    if (cbStratagem4.Checked)
+                    {
+                        Stratagem.Add(cbStratagem4.Text);
+                        cmbRelic.Items.Clear();
+                        Keywords.Add("Strat");
+                        cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                        Keywords.Remove("Strat");
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem4.Text))
+                        {
+                            Stratagem.Remove(cbStratagem4.Text);
+                        }
+
+                        cmbRelic.Items.Clear();
+                        cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
+                        if(cmbRelic.Items.Contains(Relic))
+                        {
+                            cmbRelic.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
                         }
                     }
                     break;

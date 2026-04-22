@@ -12,8 +12,11 @@ namespace Roster_Builder.Space_Marines.Space_Wolves
 	{
 		int currentIndex;
 		int[] restrict = new int[2] { 0, 0 };
-		int wolfGuard = 0;
+        List<int> restrictedIndexes2 = new List<int>();
+        int wolfGuard = 0;
 		// 0 = False, 1 = Pack Leader, 2 = Terminator Pack Leader
+		int stratLeader = 0;
+		// 0 = None selected, 1 = Bloow Claw Pack Leader, 2 = Wolf Guard
 
 		public BloodClaws()
 		{
@@ -21,7 +24,7 @@ namespace Roster_Builder.Space_Marines.Space_Wolves
 			UnitSize = 5;
 			Points = DEFAULT_POINTS * UnitSize;
 			TemplateCode = "NL2m";
-			Weapons.Add("");
+			Weapons.Add(""); //Wolf Guard Options
 			Weapons.Add("");
 			Weapons.Add("Astartes Chainsword");
 			for (int i = 1; i < UnitSize; i++)
@@ -50,8 +53,12 @@ namespace Roster_Builder.Space_Marines.Space_Wolves
 			NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
 			ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
 			ComboBox cmbFaction = panel.Controls["cmbFactionUpgrade"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
-			panel.Controls["lblExtra1"].Visible = true;
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
+            panel.Controls["lblExtra1"].Visible = true;
 			cmbFaction.Visible = true;
 
 			int currentSize = UnitSize;
@@ -98,11 +105,48 @@ namespace Roster_Builder.Space_Marines.Space_Wolves
 				"Wolf Guard Pack Leader (+18 pts)",
 				"Wolf Guard Terminator Pack Leader (+34 pts)"
 			});
-			cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(wolfGuard);
+			cmbFaction.SelectedIndex = wolfGuard;
 
 			panel.Controls["lblExtra1"].Location = panel.Controls["lblFactionUpgrade"].Location;
 			panel.Controls["lblExtra1"].Text = "May contain one of the following: ";
-		}
+
+            cbStratagem5.Text = repo.StratagemList[4];
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblFactionUpgrade"].Location.X, cmbFaction.Location.Y + 32);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
+            }
+        }
 
 		public override void SaveDatasheets(int code, Panel panel)
 		{
@@ -116,14 +160,57 @@ namespace Roster_Builder.Space_Marines.Space_Wolves
 			NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
 			ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
 			ComboBox cmbFaction = panel.Controls["cmbFactionUpgrade"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
-			switch (code)
+            switch (code)
 			{
 				case 11:
-					if(wolfGuard != 0 && currentIndex == 1)
+					if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
 					{
-						Weapons[0] = cmbOption1.SelectedItem.ToString();
-						if(wolfGuard == 1)
+						if (wolfGuard != 0 && currentIndex == 1)
+						{
+							Weapons[0] = cmbOption1.SelectedItem.ToString();
+							if (wolfGuard == 1)
+							{
+								lbModelSelect.Items[1] = "Wolf Guard Pack Leader w/ " + Weapons[0] + " and " + Weapons[1];
+							}
+							else if (wolfGuard == 2)
+							{
+								lbModelSelect.Items[1] = "Wolf Guard Terminator Pack Leader w/ " + Weapons[0] + " and " + Weapons[1];
+							}
+						}
+						else
+						{
+							Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
+							if (currentIndex == 0)
+							{
+								lbModelSelect.Items[0] = "Pack Leader w/ " + Weapons[2];
+							}
+							else
+							{
+								lbModelSelect.Items[currentIndex] = "Blood Claw w/ " + Weapons[currentIndex + 2];
+							}
+						}
+					}
+					else
+                    {
+						if(wolfGuard != 0 && currentIndex == 1)
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+                        }
+						else
+						{
+							cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 2]);
+						}
+                    }
+
+					break;
+				case 12:
+					if (!restrictedIndexes.Contains(cmbOption2.SelectedIndex))
+					{
+						Weapons[1] = cmbOption2.SelectedItem.ToString();
+						if (wolfGuard == 1)
 						{
 							lbModelSelect.Items[1] = "Wolf Guard Pack Leader w/ " + Weapons[0] + " and " + Weapons[1];
 						}
@@ -133,29 +220,9 @@ namespace Roster_Builder.Space_Marines.Space_Wolves
 						}
 					}
 					else
-					{
-						Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
-						if(currentIndex == 0)
-						{
-							lbModelSelect.Items[0] = "Pack Leader w/ " + Weapons[2];
-						}
-						else
-						{
-							lbModelSelect.Items[currentIndex] = "Blood Claw w/ " + Weapons[currentIndex + 2];
-						}
-					}
-
-					break;
-				case 12:
-					Weapons[1] = cmbOption2.SelectedItem.ToString();
-					if (wolfGuard == 1)
-					{
-						lbModelSelect.Items[1] = "Wolf Guard Pack Leader w/ " + Weapons[0] + " and " + Weapons[1];
-					}
-					else if (wolfGuard == 2)
-					{
-						lbModelSelect.Items[1] = "Wolf Guard Terminator Pack Leader w/ " + Weapons[0] + " and " + Weapons[1];
-					}
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
+                    }
 					break;
 				case 16:
 					wolfGuard = cmbFaction.SelectedIndex;
@@ -199,23 +266,59 @@ namespace Roster_Builder.Space_Marines.Space_Wolves
 						}
 					}
 					break;
-				case 30:
-					int temp = UnitSize;
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+                    restrictedIndexes.Clear();
+                    restrictedIndexes2.Clear();
+
+                    if (chosenRelic == "Frost Weapon" && stratLeader == 1) //Pack Leader
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 2 });
+                    }
+					else if (chosenRelic == "Morkai's Teeth Bolts" && stratLeader == 2 && wolfGuard == 1)
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 13, 14 });
+                    }
+                    else if (chosenRelic == "Frost Weapon" && stratLeader == 2 && wolfGuard == 1)
+                    {
+                        cmbOption2.SelectedIndex = 4;
+                        restrictedIndexes2.AddRange(new int[] { 0, 1, 3, 5, 6, 8, 9 });
+                    }
+                    else if (chosenRelic == "Morkai's Teeth Bolts" && stratLeader == 2 && wolfGuard == 2)
+                    {
+                        cmbOption1.SelectedIndex = 10;
+                        restrictedIndexes.AddRange(new int[] { 0, 5, 6, 7, 8, 9, 11 });
+                    }
+                    else if (chosenRelic == "Frost Weapon" && stratLeader == 2 && wolfGuard == 2)
+                    {
+                        cmbOption2.SelectedIndex = 2;
+                        restrictedIndexes2.AddRange(new int[] { 0, 3, 4, 6, 7 });
+                    }
+
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+                    this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
+                    Relic = chosenRelic;
+                    break;
+                case 30:
+					int temp = UnitSize + (wolfGuard == 0 ? 0 : 1);
 					UnitSize = int.Parse(nudUnitSize.Value.ToString());
 
-					if (temp < UnitSize)
+					if (temp < UnitSize + (wolfGuard == 0 ? 0 : 1))
 					{
-						for (int i = temp; i < UnitSize; i++)
+						for (int i = temp; i < UnitSize + (wolfGuard == 0 ? 0 : 1); i++)
 						{
 							Weapons.Add("Astartes Chainsword");
-							lbModelSelect.Items.Add("Blood Claw w/ " + Weapons[temp + 2]);
+							lbModelSelect.Items.Add("Blood Claw w/ " + Weapons[temp + 2 - (wolfGuard == 0 ? 0 : 1)]);
 						}
 					}
 
-					if (temp > UnitSize)
+					if (temp > UnitSize + (wolfGuard == 0 ? 0 : 1))
 					{
 						lbModelSelect.Items.RemoveAt(temp - 1);
-						Weapons.RemoveRange(temp - 1, 1);
+						Weapons.RemoveRange(temp + (wolfGuard == 0 ? 1 : 0), 1);
 					}
 					break;
 				case 61:
@@ -228,7 +331,10 @@ namespace Roster_Builder.Space_Marines.Space_Wolves
 						cmbOption1.Visible = false;
 						panel.Controls["lblOption2"].Visible = false;
 						cmbOption2.Visible = false;
-						antiLoop = false;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        antiLoop = false;
 						break;
 					}
 					else if (currentIndex == 0)
@@ -238,7 +344,20 @@ namespace Roster_Builder.Space_Marines.Space_Wolves
 						panel.Controls["lblOption2"].Visible = false;
 						cmbOption2.Visible = false;
 
-						cmbOption1.Items.Clear();
+                        cbStratagem5.Visible = true;
+
+                        if (Stratagem.Contains(cbStratagem5.Text) && stratLeader == 1)
+                        {
+                            panel.Controls["lblRelic"].Visible = true;
+                            cmbRelic.Visible = true;
+                        }
+                        else
+                        {
+                            panel.Controls["lblRelic"].Visible = false;
+                            cmbRelic.Visible = false;
+                        }
+
+                        cmbOption1.Items.Clear();
 						cmbOption1.Items.AddRange(new string[]
 						{
 							"Astartes Chainsword",
@@ -247,7 +366,17 @@ namespace Roster_Builder.Space_Marines.Space_Wolves
 							"Power Sword"
 						});
 						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[2]);
-					}
+
+                        restrictedIndexes.Clear();
+
+						if(Relic == "Frost Weapon" && stratLeader == 1)
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 2 });
+                            cmbOption1.SelectedIndex = 1;
+                        }
+
+                        this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+                    }
 					else if (currentIndex == 1 && wolfGuard != 0)
 					{
 						panel.Controls["lblOption1"].Visible = true;
@@ -255,7 +384,20 @@ namespace Roster_Builder.Space_Marines.Space_Wolves
 						panel.Controls["lblOption2"].Visible = true;
 						cmbOption2.Visible = true;
 
-						cmbOption1.Items.Clear();
+                        cbStratagem5.Visible = true;
+
+                        if (Stratagem.Contains(cbStratagem5.Text) && stratLeader == 2)
+                        {
+                            panel.Controls["lblRelic"].Visible = true;
+                            cmbRelic.Visible = true;
+                        }
+                        else
+                        {
+                            panel.Controls["lblRelic"].Visible = false;
+                            cmbRelic.Visible = false;
+                        }
+
+                        cmbOption1.Items.Clear();
 						cmbOption2.Items.Clear();
 
 						if(wolfGuard == 1)
@@ -292,7 +434,21 @@ namespace Roster_Builder.Space_Marines.Space_Wolves
 								"Storm Shield",
 								"Thunder Hammer (+10 pts)"
 							});
-						}
+
+                            restrictedIndexes.Clear();
+                            restrictedIndexes2.Clear();
+
+							if(Relic == "Morkai's Teeth Bolts" && stratLeader == 2)
+							{
+								restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 13, 14 });
+								cmbOption1.SelectedIndex = 1;
+							}
+							else if (Relic == "Frost Weapon" && stratLeader == 2)
+							{
+								restrictedIndexes2.AddRange(new int[] { 0, 1, 3, 5, 6, 8, 9 });
+								cmbOption2.SelectedIndex = 4;
+							}
+                        }
 						else if (wolfGuard == 2)
 						{
 							cmbOption1.Items.AddRange(new string[]
@@ -322,19 +478,39 @@ namespace Roster_Builder.Space_Marines.Space_Wolves
 								"Storm Shield",
 								"Thunder Hammer"
 							});
-						}
+
+                            restrictedIndexes.Clear();
+                            restrictedIndexes2.Clear();
+
+                            if (Relic == "Morkai's Teeth Bolts" && stratLeader == 2)
+                            {
+								restrictedIndexes.AddRange(new int[] { 0, 5, 6, 7, 8, 9, 11 });
+                                cmbOption1.SelectedIndex = 10;
+                            }
+                            else if (Relic == "Frost Weapon" && stratLeader == 2)
+                            {
+								restrictedIndexes2.AddRange(new int[] { 0, 3, 4, 6, 7 });
+                                cmbOption2.SelectedIndex = 2;
+                            }
+                        }
 
 						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 						cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
-					}
+
+                        this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+                        this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
+                    }
 					else
 					{
 						panel.Controls["lblOption1"].Visible = true;
 						cmbOption1.Visible = true;
 						panel.Controls["lblOption2"].Visible = false;
 						cmbOption2.Visible = false;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
 
-						cmbOption1.Items.Clear();
+                        cmbOption1.Items.Clear();
 						cmbOption1.Items.AddRange(new string[]
 						{
 							"Astartes Chainsword",
@@ -346,25 +522,54 @@ namespace Roster_Builder.Space_Marines.Space_Wolves
 						});
 						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 2]);
 
+						restrictedIndexes.Clear();
+
 						if (restrict[0] == (UnitSize / 15) + 1 && 
 							(Weapons[currentIndex + 2] == "Astartes Chainsword" || Weapons[currentIndex + 2] == "Plasma Pistol"))
 						{
-							cmbOption1.Items.Remove("Flamer");
-							cmbOption1.Items.Remove("Grav-gun");
-							cmbOption1.Items.Remove("Meltagun");
-							cmbOption1.Items.Remove("Plasma Gun");
+							restrictedIndexes.AddRange(new int[] { 1, 2, 3, 4 });
 						}
 
 						if (restrict[1] == 1 && Weapons[currentIndex + 2] != "Plasma Pistol")
 						{
-							cmbOption1.Items.Remove("Plasma Pistol");
+							restrictedIndexes.Add(5);
 						}
 					}
 
+					this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+					this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
 
 					antiLoop = false;
 					break;
-			}
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+
+						if(currentIndex == 0)
+						{
+							stratLeader = 1;
+						}
+						else
+						{
+							stratLeader = 2;
+						}
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
+						stratLeader = 0;
+                    }
+                    break;
+            }
 
 			Points = DEFAULT_POINTS * UnitSize;
 

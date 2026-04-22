@@ -48,10 +48,14 @@ namespace Roster_Builder.Space_Marines.Deathwatch
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             Label lblExtra1 = panel.Controls["lblExtra1"] as Label;
             Label lblOption1 = panel.Controls["lblOption1"] as Label;
-            lblExtra1.Location = new System.Drawing.Point(lblOption1.Location.X, lblOption1.Location.Y - 25);
+            lblExtra1.Location = new System.Drawing.Point(lblOption1.Location.X, panel.Controls["cmbOption2"].Location.Y + 25);
             lblExtra1.Text = "If a weapon contains a *, then it can only taken by itself";
 
             int currentSize = UnitSize;
@@ -103,6 +107,49 @@ namespace Roster_Builder.Space_Marines.Deathwatch
                 cbOption1.Checked = true;
             }
             cbOption1.Visible = true;
+
+            cbStratagem5.Text = repo.StratagemList[4];
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblOption2"].Location.X + 20, panel.Controls["cmbOption2"].Location.Y + 60);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                panel.Controls["lblRelic"].Visible = true;
+                cmbRelic.Visible = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
+            }
+
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -114,6 +161,8 @@ namespace Roster_Builder.Space_Marines.Deathwatch
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             Label lblExtra1 = panel.Controls["lblExtra1"] as Label;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
@@ -125,7 +174,14 @@ namespace Roster_Builder.Space_Marines.Deathwatch
                     }
                     else if (currentIndex == 0)
                     {
-                        Weapons[2] = cmbOption1.SelectedItem.ToString();
+                        if(!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                        {
+                            Weapons[2] = cmbOption1.SelectedItem.ToString();
+                        }
+                        else
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[2]);
+                        }
                     }
                     else
                     {
@@ -196,6 +252,18 @@ namespace Roster_Builder.Space_Marines.Deathwatch
                         lbModelSelect.Items[0] = ("Veteran Biker Sergeant w/ " + Weapons[2] + " and " + Weapons[3]);
                     }
                     break;
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    restrictedIndexes.Clear();
+
+                    if (chosenRelic == "Banebolts of Eryxia" || chosenRelic == "Artificer Bolt Cache")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 1, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 24, 25, 26 });
+                    }
+
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+                    Relic = chosenRelic;
+                    break;
                 case 21:
                     if (cbOption1.Checked)
                     {
@@ -205,12 +273,12 @@ namespace Roster_Builder.Space_Marines.Deathwatch
                             Weapons[1] = ("Heavy Bolter");
                         }
                         attackIndex = lbModelSelect.Items.Count;
-                        lbModelSelect.Items.Add("Attack Bike w/ " + Weapons[1]);
+                        lbModelSelect.Items.Add("Veteran Attack Bike w/ " + Weapons[1]);
                     }
                     else
                     {
                         Weapons[0] = "";
-                        lbModelSelect.Items.Remove("Attack Bike w/ " + Weapons[1]);
+                        lbModelSelect.Items.RemoveAt(attackIndex);
                         Weapons[1] = "";
                     }
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
@@ -224,7 +292,7 @@ namespace Roster_Builder.Space_Marines.Deathwatch
                         for (int i = temp; i < UnitSize; i++)
                         {
                             Weapons.Add("(None)");
-                            lbModelSelect.Items.Add("Veteran Biker w/ " + Weapons[temp + 2]);
+                            lbModelSelect.Items.Add("Veteran Biker");
                         }
                     }
 
@@ -253,12 +321,24 @@ namespace Roster_Builder.Space_Marines.Deathwatch
                         cmbOption2.Visible = false;
                         panel.Controls["lblOption2"].Visible = false;
                         lblExtra1.Visible = false;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+
+                        restrictedIndexes.Clear();
 
                         if (currentIndex == 0)
                         {
                             cmbOption2.Visible = true;
                             panel.Controls["lblOption2"].Visible = true;
                             lblExtra1.Visible = true;
+                            cbStratagem5.Visible = true;
+
+                            if (Stratagem.Contains(cbStratagem5.Text))
+                            {
+                                panel.Controls["lblRelic"].Visible = true;
+                                cmbRelic.Visible = true;
+                            }
 
                             if (Weapons[2].Contains('*'))
                             {
@@ -321,6 +401,13 @@ namespace Roster_Builder.Space_Marines.Deathwatch
                                 "Xenophase Blade"
                             });
                             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[3]);
+
+                            if (Relic == "Banebolts of Eryxia" || Relic == "Artificer Bolt Cache")
+                            {
+                                restrictedIndexes.AddRange(new int[] { 1, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 24, 25, 26 });
+                            }
+
+                            this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                         }
                         else if (currentIndex == attackIndex)
                         {
@@ -331,6 +418,7 @@ namespace Roster_Builder.Space_Marines.Deathwatch
                                 "Multi-melta"
                             });
                             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[1]);
+                            this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                         }
                         else
                         {
@@ -345,7 +433,26 @@ namespace Roster_Builder.Space_Marines.Deathwatch
                                 "Power Sword"
                             });
                             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 3]);
+                            this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                         }
+                    }
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
                     }
                     break;
             }

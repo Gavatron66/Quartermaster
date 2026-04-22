@@ -42,6 +42,8 @@ namespace Roster_Builder.Orks
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;
             nudUnitSize.Value = nudUnitSize.Minimum;
@@ -73,6 +75,15 @@ namespace Roster_Builder.Orks
                     break;
                 case 30:
                     UnitSize = int.Parse(nud.Value.ToString());
+                    if (UnitSize > 1)
+                    {
+                        cmbFaction.SelectedIndex = 0;
+                        cmbFaction.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbFaction.Enabled = true;
+                    }
                     break;
             }
 

@@ -36,19 +36,12 @@ namespace Roster_Builder.Chaos_Space_Marines
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
 
+            cbWarlord.Checked = true;
+            cbWarlord.Enabled = false;
             cmbWarlord.Enabled = false;
             cmbWarlord.Items.Clear();
             cmbWarlord.Items.Add(WarlordTrait);
             cmbWarlord.SelectedIndex = 0;
-
-            if (isWarlord)
-            {
-                cbWarlord.Checked = true;
-            }
-            else
-            {
-                cbWarlord.Checked = false;
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)

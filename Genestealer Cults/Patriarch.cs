@@ -112,13 +112,13 @@ namespace Roster_Builder.Genestealer_Cults
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null)
+            if (Relic != null && cmbRelic.Items.Contains(Relic))
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = -1;
+                cmbRelic.SelectedIndex = 0;
             }
 
             panel.Controls["lblFactionupgrade"].Visible = true;
@@ -137,6 +137,30 @@ namespace Roster_Builder.Genestealer_Cults
                 cbStratagem1.Checked = false;
                 cbStratagem1.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem1.Text));
             }
+
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+            cbStratagem3.Text = repo.StratagemList[2].ToString();
+            cbStratagem3.Location = new System.Drawing.Point(cbStratagem1.Location.X - 10, cbStratagem1.Location.Y + 32);
+            cbStratagem3.Visible = true;
+
+            if(repo.currentSubFaction == "The Bladed Cog")
+             {
+                if (Stratagem.Contains(cbStratagem3.Text))
+                {
+                    cbStratagem3.Checked = true;
+                    cbStratagem3.Enabled = true;
+                }
+                else
+                {
+                    cbStratagem3.Checked = false;
+                    cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+                }
+            }
+            else
+            {
+                cbStratagem3.Enabled = false;
+                cbStratagem3.Checked = false;
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -148,6 +172,7 @@ namespace Roster_Builder.Genestealer_Cults
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -218,6 +243,19 @@ namespace Roster_Builder.Genestealer_Cults
                         if (Stratagem.Contains(cbStratagem1.Text))
                         {
                             Stratagem.Remove(cbStratagem1.Text);
+                        }
+                    }
+                    break;
+                case 73:
+                    if (cbStratagem3.Checked)
+                    {
+                        Stratagem.Add(cbStratagem3.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
                         }
                     }
                     break;

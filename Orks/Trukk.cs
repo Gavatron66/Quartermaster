@@ -31,9 +31,13 @@ namespace Roster_Builder.Orks
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
+            repo = f as Orks;
             Template.LoadTemplate(TemplateCode, panel);
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            panel.Controls["cmbFactionUpgrade"].Visible = true;
+            panel.Controls["lblFactionUpgrade"].Visible = true;
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -43,20 +47,38 @@ namespace Roster_Builder.Orks
                 "Wreckin' Ball (+5 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+
+            cmbFaction.Items.Clear();
+            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+
+            if (Factionupgrade != null)
+            {
+                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+            }
+            else
+            {
+                cmbFaction.SelectedIndex = 0;
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
                 case 11:
                     Weapons[0] = cmbOption1.SelectedItem as string;
                     break;
+                case 16:
+                    Factionupgrade = cmbFaction.Text;
+                    break;
             }
 
             Points = DEFAULT_POINTS;
+
+            Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
             if (!Weapons.Contains("(None)"))
             {

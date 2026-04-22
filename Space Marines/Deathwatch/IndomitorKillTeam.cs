@@ -20,11 +20,11 @@ namespace Roster_Builder.Space_Marines.Deathwatch
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "NL2m";
             Weapons.Add("Heavy Bolt Rifle");
-            Weapons.Add("Heavy Intercessor Sergeant");
+            Weapons.Add("Heavy Intercessor Sergeant (23 pts)");
             for (int i = 1; i < UnitSize; i++)
             {
                 Weapons.Add("Heavy Bolt Rifle");
-                Weapons.Add("Heavy Intercessor");
+                Weapons.Add("Heavy Intercessor (23 pts)");
             }
             Keywords.AddRange(new string[]
             {
@@ -48,6 +48,10 @@ namespace Roster_Builder.Space_Marines.Deathwatch
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+
+            panel.Controls["lblModelPoints"].Text = "";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -66,10 +70,10 @@ namespace Roster_Builder.Space_Marines.Deathwatch
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Aggressor",
-                "Eradicator",
-                "Heavy Intercessor",
-                "Inceptor",
+                "Aggressor (30 pts)",
+                "Eradicator (45 pts)",
+                "Heavy Intercessor (23 pts)",
+                "Inceptor (40 pts)",
             });
 
             cmbFaction.Items.Clear();
@@ -86,6 +90,49 @@ namespace Roster_Builder.Space_Marines.Deathwatch
             {
                 cmbFaction.SelectedIndex = 0;
             }
+
+            cbStratagem5.Text = repo.StratagemList[4];
+            cbStratagem5.Location = new System.Drawing.Point(cmbFaction.Location.X, cmbFaction.Location.Y + 32);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                panel.Controls["lblRelic"].Visible = true;
+                cmbRelic.Visible = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
+            }
+
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -100,6 +147,8 @@ namespace Roster_Builder.Space_Marines.Deathwatch
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
@@ -110,32 +159,43 @@ namespace Roster_Builder.Space_Marines.Deathwatch
                     }
 
                     Weapons[(currentIndex * 2) + 1] = cmbOption1.SelectedItem.ToString();
-                    if (Weapons[(currentIndex * 2) + 1] == "Heavy Intercessor")
+                    if (Weapons[(currentIndex * 2) + 1] == "Heavy Intercessor (23 pts)")
                     {
                         Weapons[(currentIndex * 2)] = "Heavy Bolt Rifle";
                     }
-                    else if (Weapons[(currentIndex * 2) + 1] == "Aggressor")
+                    else if (Weapons[(currentIndex * 2) + 1] == "Aggressor (30 pts)")
                     {
-                        Weapons[(currentIndex * 2)] = "Auto Boltstorm Gauntlets";
+                        Weapons[(currentIndex * 2)] = "Auto Boltstorm Gauntlets and Frag Grenade Launcher";
                     }
-                    else if (Weapons[(currentIndex * 2) + 1] == "Eradicator")
+                    else if (Weapons[(currentIndex * 2) + 1] == "Eradicator (45 pts)")
                     {
                         Weapons[(currentIndex * 2)] = "Melta Rifle";
                     }
-                    else if (Weapons[(currentIndex * 2) + 1] == "Inceptor")
+                    else if (Weapons[(currentIndex * 2) + 1] == "Inceptor (40 pts)")
                     {
-                        Weapons[(currentIndex * 2)] = "Assault Bolters";
+                        Weapons[(currentIndex * 2)] = "Two Assault Bolters";
                     }
                     lbModelSelect.Items[currentIndex] = Weapons[(currentIndex * 2) + 1] + " w/ " + Weapons[(currentIndex * 2)];
 
                     lbModelSelect.SelectedIndex = currentIndex;
                     break;
                 case 12:
-                    Weapons[currentIndex * 2] = cmbOption2.SelectedItem.ToString();
-                    lbModelSelect.Items[currentIndex] = Weapons[(currentIndex * 2) + 1] + " w/ " + Weapons[(currentIndex * 2)];
+                    if (!restrictedIndexes.Contains(cmbOption2.SelectedIndex))
+                    {
+                        Weapons[currentIndex * 2] = cmbOption2.SelectedItem.ToString();
+                        lbModelSelect.Items[currentIndex] = Weapons[(currentIndex * 2) + 1] + " w/ " + Weapons[(currentIndex * 2)];
+                    }
+                    else
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[currentIndex * 2]);
+                    }
                     break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
+                    break;
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    Relic = chosenRelic;
                     break;
                 case 30:
                     int temp = UnitSize;
@@ -173,29 +233,42 @@ namespace Roster_Builder.Space_Marines.Deathwatch
 
                     cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
                     cmbOption2.Items.Clear();
+                    restrictedIndexes.Clear();
 
-                    if (Weapons[(currentIndex * 2) + 1] == "Heavy Intercessor Sergeant")
+                    if (Weapons[(currentIndex * 2) + 1] == "Heavy Intercessor Sergeant (23 pts)")
                     {
                         panel.Controls["lblOption1"].Visible = false;
                         cmbOption1.Visible = false;
                         panel.Controls["lblOption2"].Visible = true;
                         cmbOption2.Visible = true;
+                        cbStratagem5.Visible = true;
+
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            panel.Controls["lblRelic"].Visible = true;
+                            cmbRelic.Visible = true;
+                        }
 
                         cmbOption2.Items.Clear();
                         cmbOption2.Items.AddRange(new string[]
                         {
-                            "Heavy Auto Bolt Rifle",
+                            "Executor Bolt Rifle",
                             "Heavy Bolt Rifle",
-                            "Heavy Stalker Bolt Rifle"
+                            "Hellstorm Bolt Rifle"
                         });
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[currentIndex * 2]);
+
+                        this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
                     }
-                    else if (Weapons[(currentIndex * 2) + 1] == "Heavy Intercessor")
+                    else if (Weapons[(currentIndex * 2) + 1] == "Heavy Intercessor (23 pts)")
                     {
                         panel.Controls["lblOption1"].Visible = true;
                         cmbOption1.Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
                         cmbOption2.Visible = true;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
 
                         if (currentIndex < 5)
                         {
@@ -212,45 +285,54 @@ namespace Roster_Builder.Space_Marines.Deathwatch
                         cmbOption2.Items.Clear();
                         cmbOption2.Items.AddRange(new string[]
                         {
+                            "Executor Bolt Rifle",
                             "Executor Heavy Bolter",
-                            "Heavy Auto Bolt Rifle",
                             "Heavy Bolter",
                             "Heavy Bolt Rifle",
-                            "Heavy Stalker Bolt Rifle",
+                            "Hellstorm Bolt Rifle",
                             "Hellstorm Heavy Bolter"
                         });
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[currentIndex * 2]);
 
+                        restrictedIndexes.Clear();
                         if (!Weapons[currentIndex * 2].Contains("Bolter") && restrict[0] == restrict[3] / 5)
                         {
-                            cmbOption2.Items.Remove("Executor Heavy Bolter");
-                            cmbOption2.Items.Remove("Heavy Bolter");
-                            cmbOption2.Items.Remove("Hellstorm Heavy Bolter");
+                            restrictedIndexes.AddRange(new int[] { 1, 2, 5 });
                         }
+
+                        this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
                     }
-                    else if (Weapons[(currentIndex * 2) + 1] == "Aggressor")
+                    else if (Weapons[(currentIndex * 2) + 1] == "Aggressor (30 pts)")
                     {
                         panel.Controls["lblOption1"].Visible = true;
                         cmbOption1.Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
                         cmbOption2.Visible = true;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
 
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
 
                         cmbOption2.Items.Clear();
                         cmbOption2.Items.AddRange(new string[]
                         {
-                            "Auto Boltstorm Gauntlets",
+                            "Auto Boltstorm Gauntlets and Frag Grenade Launcher",
                             "Flamestorm Gauntlets"
                         });
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[currentIndex * 2]);
+
+                        this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
                     }
-                    else if (Weapons[(currentIndex * 2) + 1] == "Eradicator")
+                    else if (Weapons[(currentIndex * 2) + 1] == "Eradicator (45 pts)")
                     {
                         panel.Controls["lblOption1"].Visible = true;
                         cmbOption1.Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
                         cmbOption2.Visible = true;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
 
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
 
@@ -263,27 +345,34 @@ namespace Roster_Builder.Space_Marines.Deathwatch
                         });
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[currentIndex * 2]);
 
-                        if (!(Weapons[currentIndex * 2] == "Multi-melta") && restrict[1] == restrict[2] / 3)
+                        if (!(Weapons[currentIndex * 2] == "Multi-melta") && restrict[1] == 1)
                         {
-                            cmbOption2.Items.Remove("Multi-melta");
+                            restrictedIndexes.Add(2);
                         }
+
+                        this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
                     }
-                    else if (Weapons[(currentIndex * 2) + 1] == "Inceptor")
+                    else if (Weapons[(currentIndex * 2) + 1] == "Inceptor (40 pts)")
                     {
                         panel.Controls["lblOption1"].Visible = true;
                         cmbOption1.Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
                         cmbOption2.Visible = true;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
 
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
 
                         cmbOption2.Items.Clear();
                         cmbOption2.Items.AddRange(new string[]
                         {
-                            "Assault Bolters",
-                            "Plasma Exterminators"
+                            "Two Assault Bolters",
+                            "Two Plasma Exterminators"
                         });
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[currentIndex * 2]);
+
+                        this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
                     }
                     else
                     {
@@ -292,11 +381,34 @@ namespace Roster_Builder.Space_Marines.Deathwatch
                         panel.Controls["lblOption2"].Visible = false;
                         cmbOption2.Visible = false;
                         panel.Controls["lblOption3"].Visible = false;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
 
                         cmbOption1.SelectedIndex = -1;
                     }
 
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
+
                     antiLoop = false;
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
+                    }
                     break;
             }
 
@@ -310,21 +422,20 @@ namespace Roster_Builder.Space_Marines.Deathwatch
 
             foreach (var weapon in Weapons)
             {
-                if (weapon == "Heavy Intercessor" || weapon == "Heavy Intercessor Sergeant")
+                if (weapon == "Heavy Intercessor (23 pts)" || weapon == "Heavy Intercessor Sergeant (23 pts)")
                 {
                     Points += 23;
                     restrict[3]++;
                 }
-                if (weapon == "Inceptor")
+                if (weapon == "Inceptor (40 pts)")
                 {
                     Points += 40;
                 }
-                if (weapon == "Eradicator")
+                if (weapon == "Eradicator (45 pts)")
                 {
                     Points += 45;
-                    restrict[2]++;
                 }
-                if (weapon == "Aggressor")
+                if (weapon == "Aggressor (30 pts)")
                 {
                     Points += 30;
                 }
@@ -338,14 +449,6 @@ namespace Roster_Builder.Space_Marines.Deathwatch
                 {
                     restrict[1]++;
                 }
-            }
-
-            if (restrict[1] != 0 && restrict[2] < 3)
-            {
-                int temp = Weapons.IndexOf("Multi-melta");
-                Weapons[temp] = "Melta Rifle";
-                restrict[1]--;
-                lbModelSelect.Items[(temp / 2)] = Weapons[temp + 1] + " w/ " + Weapons[temp];
             }
         }
 

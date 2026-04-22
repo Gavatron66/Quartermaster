@@ -11,8 +11,8 @@ namespace Roster_Builder.Adepta_Sororitas
     {
         int currentIndex = 0;
         int stdIndex = -1;
-        bool isLoading = false;
         int[] restrictArray = new int[] { 0, 0 };
+        List<int> restrictedIndexes2 = new List<int>();
 
         public Celestian()
         {
@@ -23,7 +23,6 @@ namespace Roster_Builder.Adepta_Sororitas
             Weapons.Add("Boltgun and Bolt Pistol");
             Weapons.Add("(None)");
             Weapons.Add(""); //Incensor Cherub (+5 pts)
-            Weapons.Add(""); //Simulacrum Imperialis (+5 pts)
             for (int i = 1; i < UnitSize; i++)
             {
                 Weapons.Add("Boltgun");
@@ -52,7 +51,10 @@ namespace Roster_Builder.Adepta_Sororitas
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
             cbOption1.Location = new System.Drawing.Point(cbOption1.Location.X, cbOption1.Location.Y + 60);
             cbOption2.Location = new System.Drawing.Point(cbOption2.Location.X, cbOption2.Location.Y + 60);
 
@@ -75,7 +77,7 @@ namespace Roster_Builder.Adepta_Sororitas
             }
             for (int i = 1; i < UnitSize; i++)
             {
-                lbModelSelect.Items.Add("Celestian with " + Weapons[i + 3]);
+                lbModelSelect.Items.Add("Celestian with " + Weapons[i + 2]);
             }
 
             cmbOption1.Items.Clear();
@@ -83,11 +85,56 @@ namespace Roster_Builder.Adepta_Sororitas
 
             cbOption1.Text = "Incensor Cherub (+5 pts)";
             cbOption2.Text = "Simulacrum Imperialis (+5 pts)";
+
+            cbStratagem5.Text = repo.StratagemList[2];
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["cbOption1"].Location.X, panel.Controls["cbOption1"].Location.Y + 32);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            antiLoop = true;
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                panel.Controls["lblRelic"].Visible = true;
+                cmbRelic.Visible = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
+            }
+
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
+            antiLoop = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            if (isLoading)
+            if (antiLoop)
             {
                 return;
             }
@@ -98,13 +145,48 @@ namespace Roster_Builder.Adepta_Sororitas
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
                 case 11:
-                    if (currentIndex == 0)
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
                     {
-                        Weapons[0] = cmbOption1.SelectedItem.ToString();
+                        if (currentIndex == 0)
+                        {
+                            Weapons[0] = cmbOption1.SelectedItem.ToString();
+                            if (Weapons[1] == "(None)")
+                            {
+                                lbModelSelect.Items[0] = "Celestian Superior w/ " + Weapons[0];
+                            }
+                            else
+                            {
+                                lbModelSelect.Items[0] = "Celestian Superior w/ " + Weapons[0] + " and " + Weapons[1];
+                            }
+                        }
+                        else
+                        {
+                            Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
+                            lbModelSelect.Items[currentIndex] = "Celestian with " + Weapons[currentIndex + 2];
+                        }
+                    }
+                    else
+                    {
+                        if (currentIndex == 0)
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+                        }
+                        else
+                        {
+                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 2]);
+                        }
+                    }
+                    break;
+                case 12:
+                    if (!restrictedIndexes2.Contains(cmbOption2.SelectedIndex))
+                    {
+                        Weapons[1] = cmbOption2.SelectedItem.ToString();
                         if (Weapons[1] == "(None)")
                         {
                             lbModelSelect.Items[0] = "Celestian Superior w/ " + Weapons[0];
@@ -116,42 +198,50 @@ namespace Roster_Builder.Adepta_Sororitas
                     }
                     else
                     {
-                        Weapons[currentIndex + 3] = cmbOption1.SelectedItem.ToString();
-                        lbModelSelect.Items[currentIndex] = "Celestian with " + Weapons[currentIndex + 3];
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
                     }
                     break;
-                case 12:
-                    Weapons[1] = cmbOption2.SelectedItem.ToString();
-                    if (Weapons[1] == "(None)")
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
+
+                    if (chosenRelic == "The Ecclesiarch's Fury")
                     {
-                        lbModelSelect.Items[0] = "Celestian Superior w/ " + Weapons[0];
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
                     }
-                    else
+                    else if (chosenRelic == "Redemption")
                     {
-                        lbModelSelect.Items[0] = "Celestian Superior w/ " + Weapons[0] + " and " + Weapons[1];
+                        cmbOption1.SelectedIndex = 7;
+                        cmbOption1.Enabled = false;
                     }
+
+                    Relic = chosenRelic;
                     break;
                 case 21:
                     if (cbOption1.Checked)
                     {
-                        Weapons[3] = cbOption1.Text;
+                        Weapons[2] = cbOption1.Text;
                     }
                     else
                     {
-                        Weapons[3] = "";
+                        Weapons[2] = "";
                     }
                     break;
                 case 22:
                     if (cbOption2.Checked)
                     {
-                        Weapons[2] = cbOption2.Text;
+                        Weapons[currentIndex + 2] = cbOption2.Text;
                         stdIndex = currentIndex;
+                        lbModelSelect.Items[currentIndex] = "Celestian with " + Weapons[currentIndex + 2];
                         cmbOption1.Enabled = false;
                     }
                     else
                     {
-                        Weapons[2] = "";
+                        Weapons[currentIndex + 2] = "Boltgun";
                         stdIndex = -1;
+                        lbModelSelect.Items[currentIndex] = "Celestian with " + Weapons[currentIndex + 2];
                         cmbOption1.Enabled = true;
                     }
                     break;
@@ -162,20 +252,21 @@ namespace Roster_Builder.Adepta_Sororitas
                     if (temp < UnitSize)
                     {
                         Weapons.Add("Boltgun");
-                        lbModelSelect.Items.Add("Celestian with " + Weapons[temp + 3]);
+                        lbModelSelect.Items.Add("Celestian with " + Weapons[temp + 2]);
                     }
 
                     if (temp > UnitSize)
                     {
                         lbModelSelect.Items.RemoveAt(temp - 1);
-                        Weapons.RemoveRange(UnitSize + 3, 1);
+                        Weapons.RemoveRange(UnitSize + 2, 1);
                     }
 
                     break;
                 case 61:
+                    antiLoop = true;
                     currentIndex = lbModelSelect.SelectedIndex;
 
-                    if (currentIndex < 0 && !isLoading)
+                    if (currentIndex < 0 && !antiLoop)
                     {
                         cmbOption1.Visible = false;
                         cmbOption2.Visible = false;
@@ -183,9 +274,12 @@ namespace Roster_Builder.Adepta_Sororitas
                         cbOption2.Visible = false;
                         panel.Controls["lblOption1"].Visible = false;
                         panel.Controls["lblOption2"].Visible = false;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
                         break;
                     }
-                    isLoading = true;
+                    antiLoop = true;
 
                     if (currentIndex == 0)
                     {
@@ -196,6 +290,14 @@ namespace Roster_Builder.Adepta_Sororitas
                         panel.Controls["lblOption2"].Visible = true;
                         cbOption1.Visible = true;
                         cbOption2.Visible = false;
+
+                        cbStratagem5.Visible = true;
+
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            panel.Controls["lblRelic"].Visible = true;
+                            cmbRelic.Visible = true;
+                        }
 
                         cmbOption1.Items.Clear();
                         cmbOption1.Items.AddRange(new string[]
@@ -220,7 +322,20 @@ namespace Roster_Builder.Adepta_Sororitas
                             "Power Sword (+5 pts)"
                         });
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
-                        isLoading = false;
+
+                        cmbOption1.Enabled = true;
+                        cmbOption2.Enabled = true;
+                        if (Relic == "The Ecclesiarch's Fury")
+                        {
+                            cmbOption2.Enabled = false;
+                        }
+                        else if (Relic == "Redemption")
+                        {
+                            cmbOption1.Enabled = false;
+                        }
+
+                        this.DrawItemWithRestrictions(new List<int>(), cmbOption1);
+                        antiLoop = false;
                         break;
                     }
 
@@ -231,6 +346,9 @@ namespace Roster_Builder.Adepta_Sororitas
                     panel.Controls["lblOption2"].Visible = false;
                     cbOption1.Visible = true;
                     cbOption2.Visible = true;
+                    cbStratagem5.Visible = false;
+                    cmbRelic.Visible = false;
+                    panel.Controls["lblRelic"].Visible = false;
 
                     cmbOption1.Items.Clear();
                     cmbOption1.Items.AddRange(new string[]
@@ -243,28 +361,26 @@ namespace Roster_Builder.Adepta_Sororitas
                         "Ministorum Heavy Flamer (+10 pts)", //h
                         "Multi-melta (+20 pts)" //h
                     });
-                    cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 3]);
-
-                    if (restrictArray[0] + restrictArray[1] == 2 && Weapons[currentIndex + 3] == "Boltgun")
+                    cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 2]);
+                    if (Weapons[currentIndex + 2] == cbOption2.Text)
                     {
-                        cmbOption1.Items.Remove("Artificer-crafted Storm Bolter (+5 pts)");
-                        cmbOption1.Items.Remove("Meltagun (+10 pts)");
-                        cmbOption1.Items.Remove("Ministorum Flamer (+5 pts)");
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
                     }
 
-                    if ((restrictArray[1] == 1
-                        && Weapons[currentIndex + 3] != "Heavy Bolter (+10 pts)" && Weapons[currentIndex + 3] != "Ministorum Heavy Flamer (+10 pts)"
-                        && Weapons[currentIndex + 3] != "Multi-melta (+20 pts)")
-                        ||
-                        (restrictArray[0] + restrictArray[1] == 2 && restrictArray[1] == 0) &&
-                            Weapons[currentIndex + 3] == "Boltgun")
+                    restrictedIndexes.Clear();
+
+                    if ((restrictArray[0] == 2 || restrictArray[0] + restrictArray[1] == 2) && Weapons[currentIndex + 2] == "Boltgun")
                     {
-                        cmbOption1.Items.Remove("Heavy Bolter (+10 pts)");
-                        cmbOption1.Items.Remove("Ministorum Heavy Flamer (+10 pts)");
-                        cmbOption1.Items.Remove("Multi-melta (+20 pts)");
+                        restrictedIndexes.AddRange(new int[] { 0, 2, 3, 4, 5, 6 });
+                    }
+                    else if ((restrictArray[1] == 1 && Weapons[currentIndex + 2] == "Boltgun"))
+                    {
+                        restrictedIndexes.AddRange(new int[] { 2, 5, 6 });
                     }
 
-                    if (Weapons[currentIndex + 3] == "Boltgun" && (stdIndex == -1 || stdIndex == currentIndex))
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+
+                    if ((Weapons[currentIndex + 2] == "Boltgun" || Weapons[currentIndex + 2] == cbOption2.Text) && (stdIndex == -1 || stdIndex == currentIndex))
                     {
                         cbOption2.Enabled = true;
                     }
@@ -278,7 +394,25 @@ namespace Roster_Builder.Adepta_Sororitas
                         cmbOption1.Enabled = false;
                     }
 
-                    isLoading = false;
+                    antiLoop = false;
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
+                    }
                     break;
             }
 

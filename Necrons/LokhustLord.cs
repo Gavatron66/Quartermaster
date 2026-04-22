@@ -82,13 +82,13 @@ namespace Roster_Builder.Necrons
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null)
+            if (Relic != null && cmbRelic.Items.Contains(Relic))
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = -1;
+                cmbRelic.SelectedIndex = 0;
             }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
@@ -148,6 +148,9 @@ namespace Roster_Builder.Necrons
                 case 17:
                     Relic = cmbRelic.SelectedItem.ToString();
 
+                    cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
+
                     if (cmbRelic.SelectedItem.ToString() == "Blood Scythe")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Warscythe");
@@ -173,11 +176,7 @@ namespace Roster_Builder.Necrons
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Staff of Light");
                         cmbOption1.Enabled = false;
                     }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                        cmbOption2.Enabled = true;
-                    }
+
                     break;
                 case 25:
                     if (cbWarlord.Checked)

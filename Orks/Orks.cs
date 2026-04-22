@@ -181,14 +181,6 @@ namespace Roster_Builder.Orks
 			{
 				points += 10;
 			}
-			else if (upgrade == "(None)" || upgrade.Contains("Mob"))
-			{
-
-			}
-			else if(upgrade != "")
-			{
-				points += Convert.ToInt32(upgrade);
-			}
 
             return points;
 		}
@@ -200,7 +192,7 @@ namespace Roster_Builder.Orks
 				"(None)"
 			};
 
-			if(keywords.Contains("VEHICLE"))
+			if(keywords.Contains("VEHICLE") && !keywords.Contains("DEFFKOPTAS"))
 			{
 				if(keywords.Contains("WAGON"))
 				{
@@ -212,19 +204,21 @@ namespace Roster_Builder.Orks
 					upgrades.Add("Fortress on Wheels (+20 pts)");
 				}
 
-                if (keywords.Contains("SHOKKJUMP DRAGSTA"))
+                if (keywords.Contains("SHOKKJUMP DRAGSTAS"))
                 {
                     upgrades.Add("Gyroscopic Whirligig (+10 pts)");
                 }
 
 				if(keywords.Contains("WAZBOM BLASTAJET") || keywords.Contains("BONEBREAKA")
-					|| keywords.Contains("GUNWAGON") || keywords.Contains("KILL RIG")
+					|| keywords.Contains("GUNWAGON")
 					|| keywords.Contains("GORKANAUT") || keywords.Contains("MORKANAUT")
                     || keywords.Contains("STOMPA"))
 				{
 					upgrades.Add("More Dakka (+30 pts)");
 				} 
-				else
+				else if (!keywords.Contains("DEFFKILLA WARTRIKE") && !keywords.Contains("SHOKKJUMP DRAGSTAS")
+					&& !keywords.Contains("RUKKATRUKK SQUIGBUGGIES") && !keywords.Contains("MEK GUNZ")
+					&& !keywords.Contains("HUNTA RIG") && !keywords.Contains("KILL RIG"))
 				{
                     upgrades.Add("More Dakka (+15 pts)");
                 }
@@ -234,7 +228,7 @@ namespace Roster_Builder.Orks
                     upgrades.Add("Nitro Squigs (+25 pts)");
                 }
 
-                if (keywords.Contains("BONEBREKA"))
+                if (keywords.Contains("BONEBREAKA"))
                 {
                     upgrades.Add("Red Rolla (+20 pts)");
                 }
@@ -266,7 +260,7 @@ namespace Roster_Builder.Orks
                     upgrades.Add("Stompamatic Pistons (+30 pts)");
                 }
 
-				if(keywords.Contains("DEFF DREAD"))
+				if(keywords.Contains("DEFF DREADS"))
                 {
                     upgrades.Add("Stompamatic Pistons (+15 pts)");
                 }
@@ -401,9 +395,7 @@ namespace Roster_Builder.Orks
                 relics.Add("Supa-Cybork Body");
             }
 
-            if (keywords.Contains("WARBOSS") || keywords.Contains("NOB ON SMASHA SQUIG") 
-				|| keywords.Contains("BIG MEK") && !(keywords.Contains("SHOKK ATTACK GUN") || keywords.Contains("MEGA ARMOUR")) 
-				|| keywords.Contains("MEK"))
+            if (keywords.Contains("WARBOSS") || keywords.Contains("NOB ON SMASHA SQUIG")) 
             {
                 relics.Add("Headwoppa's Killchoppa");
             }
@@ -413,7 +405,7 @@ namespace Roster_Builder.Orks
                 relics.Add("Da Krushin' Armour");
             }
 
-            if ((keywords.Contains("MEGA ARMOUR") && keywords.Contains("BIG MEK")) || keywords.Contains("PAINBOY")
+            if ((keywords.Contains("MEGA ARMOUR") && keywords.Contains("BIG MEK")) || (keywords.Contains("PAINBOY") && !keywords.Contains("PAINBOSS"))
 				|| (keywords.Contains("WARBOSS") && !(keywords.Contains("MEGA ARMOUR") || keywords.Contains("BEAST SNAGGA"))))
             {
                 relics.Add("Da Killa Klaw");
@@ -435,14 +427,14 @@ namespace Roster_Builder.Orks
                 relics.Add("Beasthide Mantle");
             }
 
-			if (currentSubFaction == "Goffs")
+			if(currentSubFaction == "Goffs")
 			{
 				relics.Add("Da Irongob");
 			}
-			
+
 			if (currentSubFaction == "Bad Moons" && ((keywords.Contains("MEGA ARMOUR") && keywords.Contains("BIG MEK")) 
 				|| (keywords.Contains("NOB") && !keywords.Contains("BEAST SNAGGA"))
-                || (keywords.Contains("WARBOSS") && !(keywords.Contains("MEGA ARMOUR") || keywords.Contains("BEAST SNAGGA")))))
+				|| (keywords.Contains("WARBOSS") && !(keywords.Contains("MEGA ARMOUR") || keywords.Contains("BEAST SNAGGA")))))
 			{
 				relics.Add("Da Gobshot Thunderbuss");
 			}
@@ -480,13 +472,13 @@ namespace Roster_Builder.Orks
 			return new List<string>()
 			{
 				string.Empty,
-				"Bad Moons",
-				"Blood Axes",
-				"Deathskulls",
-				"Evil Sunz",
-				"Freebooterz",
 				"Goffs",
-				"Snakebites"
+				"Bad Moons",
+				"Evil Sunz",
+				"Snakebites",
+				"Deathskulls",
+				"Blood Axes",
+				"Freebooterz"
 			};
 		}
 

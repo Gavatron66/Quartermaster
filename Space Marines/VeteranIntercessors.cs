@@ -48,8 +48,12 @@ namespace Roster_Builder.Genestealer_Cults
             GroupBox gb = panel.Controls["gbUnitLeader"] as GroupBox;
             ComboBox gb_cmbOption1 = gb.Controls["gb_cmbOption1"] as ComboBox;
             ComboBox gb_cmbOption2 = gb.Controls["gb_cmbOption2"] as ComboBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
 
-            panel.Controls["lblnud1"].Text = "Number of Astartes Grenade Launchers:";
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
+            panel.Controls["lblnud1"].Text = "Astartes Grenade Launchers (1x/5 models):";
             panel.Controls["lblnud1"].Location = new System.Drawing.Point(88, 95);
 
             gb.Text = "Intercessor Sergeant";
@@ -87,7 +91,6 @@ namespace Roster_Builder.Genestealer_Cults
                 "Astartes Chainsword",
                 "Bolt Rifle",
                 "Hand Flamer",
-                "Heavy Bolt Pistol",
                 "Plasma Pistol",
                 "Power Sword",
             });
@@ -103,6 +106,45 @@ namespace Roster_Builder.Genestealer_Cults
                 "Thunder Hammer"
             });
             gb_cmbOption2.SelectedIndex = gb_cmbOption2.Items.IndexOf(Weapons[3]);
+
+            cbStratagem5.Text = repo.StratagemList[4];
+            cbStratagem5.Location = new System.Drawing.Point(gb.Location.X, gb.Location.Y + 10 + gb.Height);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+            cbStratagem5.Visible = true;
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                panel.Controls["lblRelic"].Visible = true;
+                cmbRelic.Visible = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
+            }
             loading = false;
         }
 
@@ -120,6 +162,8 @@ namespace Roster_Builder.Genestealer_Cults
             GroupBox gb = panel.Controls["gbUnitLeader"] as GroupBox;
             ComboBox gb_cmbOption1 = gb.Controls["gb_cmbOption1"] as ComboBox;
             ComboBox gb_cmbOption2 = gb.Controls["gb_cmbOption2"] as ComboBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
 
             switch (code)
             {
@@ -133,13 +177,86 @@ namespace Roster_Builder.Genestealer_Cults
                     if (Weapons[0] == "Stalker Bolt Rifle")
                     {
                         gb_cmbOption1.Items.Insert(4, Weapons[0]);
+
+                        if (Weapons[2].Contains("Bolt Rifle") || Weapons[2].Contains("Heavy Bolt Pistol"))
+                        {
+                            gb_cmbOption1.SelectedIndex = 4;
+                        }
                     }
-                    else if (Weapons[0] == "Heavy Bolt Pistol and Astartes Chainsword") { }
+                    else if (Weapons[0].Contains("Heavy Bolt Pistol"))
+                    {
+                        gb_cmbOption1.Items.Insert(2, "Heavy Bolt Pistol");
+
+                        if (Weapons[2].Contains("Bolt Rifle") || Weapons[2].Contains("Heavy Bolt Pistol"))
+                        {
+                            gb_cmbOption1.SelectedIndex = 2;
+                        }
+
+                        if (Weapons[3] == "(None)")
+                        {
+                            gb_cmbOption2.SelectedIndex = 1;
+                        }
+                    }
                     else
                     {
                         gb_cmbOption1.Items.Insert(1, Weapons[0]);
+
+                        if (Weapons[2].Contains("Bolt Rifle") || Weapons[2].Contains("Heavy Bolt Pistol"))
+                        {
+                            gb_cmbOption1.SelectedIndex = 1;
+                        }
                     }
 
+                    break;
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    gb_cmbOption1.Enabled = true;
+                    gb_cmbOption2.Enabled = true;
+
+                    #region Codex Supplement: Ultramarines
+                    if (chosenRelic == "Sunwrath Pistol")
+                    {
+                        gb_cmbOption1.SelectedIndex = 3;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: Salamanders
+                    else if (chosenRelic == "Drakeblade")
+                    {
+                        gb_cmbOption2.SelectedIndex = 3;
+                        gb_cmbOption2.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: Iron Hands
+                    else if (chosenRelic == "Teeth of Mars")
+                    {
+                        gb_cmbOption2.SelectedIndex = 1;
+                        gb_cmbOption2.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: Imperial Fists
+                    else if (chosenRelic == "Fist of Terra")
+                    {
+                        gb_cmbOption2.SelectedIndex = 2;
+                        gb_cmbOption2.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: Space Wolves
+                    else if (chosenRelic == "Frost Weapon")
+                    {
+                        gb_cmbOption2.SelectedIndex = 3;
+                        gb_cmbOption2.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: Dark Angels
+                    else if (chosenRelic == "Atonement")
+                    {
+                        gb_cmbOption1.SelectedIndex = 3;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    #endregion
+
+                    Relic = chosenRelic;
                     break;
                 case 30:
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
@@ -164,6 +281,24 @@ namespace Roster_Builder.Genestealer_Cults
                     break;
                 case 412:
                     Weapons[3] = gb_cmbOption2.SelectedItem.ToString();
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
+                    }
                     break;
             }
 

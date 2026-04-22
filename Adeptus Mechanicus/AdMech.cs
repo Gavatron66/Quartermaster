@@ -20,9 +20,9 @@ namespace Roster_Builder.Adeptus_Mechanicus
             {
                 "Stratagem: Mechanicus Locum",
                 "Stratagem: Archeotech Specialists",
-                "Stratagem: Indentured Machines",
                 "Stratagem: Host of the Intermediary",
-                "Stratagem: Artefactorum"
+                "Stratagem: Artefactorum",
+                "Stratagem: Indentured Machines"
             });
         }
 
@@ -48,7 +48,7 @@ namespace Roster_Builder.Adeptus_Mechanicus
 
             string[] expansionist = new string[]
             {
-                "Forward Operators",
+                "Forward Operations",
                 "Acquisitive Reach",
                 "Rugged Explorators"
             };
@@ -172,6 +172,20 @@ namespace Roster_Builder.Adeptus_Mechanicus
             List<string> relics = new List<string>();
 
             relics.Add("(None)");
+
+            if(!keywords.Contains("CHARACTER"))
+            {
+                relics.AddRange(new string[]
+                    {
+                        "The Cage of Varadimas",
+                        "Temporcopia",
+                        "The Omniscient Mask",
+                        "The Skull of Elder Nikola"
+                    }
+                );
+
+                return relics;
+            }
 
             if(keywords.Contains("CYBERNETICA DATASMITH"))
             {

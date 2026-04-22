@@ -47,6 +47,7 @@ namespace Roster_Builder.Necrons
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 3;
@@ -170,12 +171,12 @@ namespace Roster_Builder.Necrons
 
             foreach (var weapon in Weapons)
             {
-                if(weapon == "Nebuloscope (+3 pts)" || weapon == "Shieldvanes (+3 pts)")
+                if(weapon == "Nebuloscope (+3 pts)" || weapon == "Shieldvanes (+3 pts)"|| weapon == "Shadowloom (+3 pts)")
                 {
                     Points += 3;
                 }
 
-                if(weapon == "Shadowloom (+3 pts)" || weapon == "Twin Gauss Blaster (+5 pts)" || weapon == "Twin Tesla Carbine (+5 pts)")
+                if(weapon == "Twin Gauss Blaster (+5 pts)" || weapon == "Twin Tesla Carbine (+5 pts)")
                 {
                     Points += 5;
                 }

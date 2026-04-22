@@ -42,7 +42,7 @@ namespace Roster_Builder.Space_Marines
             cmbOption1.Items.AddRange(new string[]
             {
                 "Skyhammer Missile Launcher",
-                "Two Heavy Bolter",
+                "Two Heavy Bolters",
                 "Typhoon Missile Launcher"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);

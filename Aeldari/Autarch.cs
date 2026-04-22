@@ -63,6 +63,7 @@ namespace Roster_Builder.Aeldari
             cmbOption2.Items.Clear();
             cmbOption2.Items.AddRange(new string[]
             {
+                "Banshee Blade",
                 "Scorpion Chainsword",
                 "Star Glaive"
             });
@@ -120,13 +121,13 @@ namespace Roster_Builder.Aeldari
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null)
+            if (Relic != null && cmbRelic.Items.Contains(Relic))
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = -1;
+                cmbRelic.SelectedIndex = 0;
             }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
@@ -175,7 +176,14 @@ namespace Roster_Builder.Aeldari
                     Weapons[0] = cmbOption1.SelectedItem.ToString();
                     break;
                 case 12:
-                    Weapons[1] = cmbOption2.SelectedItem.ToString();
+                    if (!restrictedIndexes.Contains(cmbOption2.SelectedIndex))
+                    {
+                        Weapons[1] = cmbOption2.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
+                    }
                     break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
@@ -192,6 +200,11 @@ namespace Roster_Builder.Aeldari
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    restrictedIndexes.Clear();
+                    cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
+                    cbOption3.Enabled = true;
+
                     if(chosenRelic == "Kurnous' Bow")
                     {
                         cmbOption1.SelectedIndex = 3;
@@ -200,20 +213,20 @@ namespace Roster_Builder.Aeldari
                     }
                     else if (chosenRelic == "Shard of Anaris")
                     {
-                        cmbOption2.SelectedIndex = 1;
-                        cmbOption2.Enabled = false;
+                        cmbOption2.SelectedIndex = 2;
+                        restrictedIndexes.Add(1);
                     }
                     else if (chosenRelic == "Firesabre")
                     {
-                        cmbOption2.SelectedIndex = 1;
-                        cmbOption2.Enabled = false;
+                        cmbOption2.SelectedIndex = 2;
+                        restrictedIndexes.Add(1);
                     }
-                    else
+
+                    if(restrictedIndexes.Count > 0)
                     {
-                        cmbOption1.Enabled = true;
-                        cmbOption2.Enabled = true;
-                        cbOption3.Enabled = true;
+                        this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
                     }
+
                     Relic = chosenRelic;
                     break;
                 case 21:

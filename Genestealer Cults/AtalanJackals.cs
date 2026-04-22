@@ -57,17 +57,26 @@ namespace Roster_Builder.Genestealer_Cults
 
             panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86 , 18);
             nudUnitSize.Location = new System.Drawing.Point(243, 16);
+
             panel.Controls["lblUnitSize2"].Location = new System.Drawing.Point(121, 50);
             nudUnitSize2.Location = new System.Drawing.Point(278, 48);
+
             panel.Controls["lblOption1"].Location = new System.Drawing.Point(239, 130);
             cmbOption1.Location = new System.Drawing.Point(243, 153);
 
             panel.Controls["lblNumModels"].Visible = true;
             nudUnitSize.Visible = true;
+
             panel.Controls["lblUnitSize2"].Visible = true;
             nudUnitSize2.Visible = true;
 
             panel.Controls["lblUnitSize2"].Text = "Number of Wolfquads (+30 pts/model): ";
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+            panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(
+                panel.Controls["lblModelPoints"].Location.X, nudUnitSize.Location.Y);
+
+            nudUnitSize2.Location = new System.Drawing.Point(383, nudUnitSize2.Location.Y);
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 4;
@@ -79,10 +88,15 @@ namespace Roster_Builder.Genestealer_Cults
 
             nudUnitSize2.Minimum = 0;
             antiLoop = true;
-            nudUnitSize2.Value = nudUnitSize.Minimum;
+            nudUnitSize2.Value = nudUnitSize2.Minimum;
             nudUnitSize2.Maximum = 2;
             nudUnitSize2.Value = wolfquads;
             antiLoop = false;
+
+            if(nudUnitSize.Value != 8)
+            {
+                nudUnitSize2.Maximum = 1;
+            }
 
             lbModelSelect.Items.Clear();
             lbModelSelect.Items.Add("Atalan Leader");
@@ -139,6 +153,7 @@ namespace Roster_Builder.Genestealer_Cults
             {
                 case 11:
                     wolfquadWeapons[currentIndex - UnitSize] = cmbOption1.SelectedItem.ToString();
+                    lbModelSelect.Items[currentIndex] = "Atalan Wolfquad w/ " + wolfquadWeapons[currentIndex - UnitSize];
                     break;
                 case 16:
                     Factionupgrade = cmbFactionupgrade.Text;
@@ -152,6 +167,15 @@ namespace Roster_Builder.Genestealer_Cults
                     {
                         Weapons[currentIndex * 3] = "";
                     }
+
+                    if(currentIndex == 0)
+                    {
+                        lbModelSelect.Items[currentIndex] = JackalName(true);
+                    }
+                    else
+                    {
+                        lbModelSelect.Items[currentIndex] = JackalName(false);
+                    }
                     break;
                 case 22:
                     if (cbOption2.Checked)
@@ -162,6 +186,15 @@ namespace Roster_Builder.Genestealer_Cults
                     {
                         Weapons[(currentIndex * 3) + 1] = "";
                     }
+
+                    if (currentIndex == 0)
+                    {
+                        lbModelSelect.Items[currentIndex] = JackalName(true);
+                    }
+                    else
+                    {
+                        lbModelSelect.Items[currentIndex] = JackalName(false);
+                    }
                     break;
                 case 23:
                     if (cbOption3.Checked)
@@ -171,6 +204,15 @@ namespace Roster_Builder.Genestealer_Cults
                     else
                     {
                         Weapons[(currentIndex * 3) + 2] = "";
+                    }
+
+                    if (currentIndex == 0)
+                    {
+                        lbModelSelect.Items[currentIndex] = JackalName(true);
+                    }
+                    else
+                    {
+                        lbModelSelect.Items[currentIndex] = JackalName(false);
                     }
                     break;
                 case 30:
@@ -189,6 +231,19 @@ namespace Roster_Builder.Genestealer_Cults
                     {
                         lbModelSelect.Items.RemoveAt(temp - 1);
                         Weapons.RemoveRange((UnitSize * 3) - 1, 3);
+                    }
+
+                    if (UnitSize == 8)
+                    {
+                        nudUnitSize2.Maximum = 2;
+                    }
+                    else
+                    {
+                        if(wolfquads == 2)
+                        {
+                            nudUnitSize2.Value--;
+                        }
+                        nudUnitSize2.Maximum = 1;
                     }
                     break;
                 case 61:
@@ -279,13 +334,13 @@ namespace Roster_Builder.Genestealer_Cults
 
                     if (temp2 < wolfquads)
                     {
-                        lbModelSelect.Items.Add("Atalan Wolfquad");
                         wolfquadWeapons.Add("Heavy Stubber");
+                        lbModelSelect.Items.Add("Atalan Wolfquad w/ Heavy Stubber");
                     }
 
                     if (temp2 > wolfquads)
                     {
-                        lbModelSelect.Items.Remove("Atalan Wolfquad");
+                        lbModelSelect.Items.RemoveAt(Convert.ToInt32(nudUnitSize.Value));
                         wolfquadWeapons.RemoveAt(temp2 - 1);
                     }
                     break;
@@ -315,6 +370,118 @@ namespace Roster_Builder.Genestealer_Cults
         public override string ToString()
         {
             return "Atalan Jackals - " + Points + "pts";
+        }
+
+        private string JackalName(bool leader)
+        {
+            if (leader)
+            {
+                //First Weapon only
+                if (Weapons[currentIndex * 3] != "" && Weapons[(currentIndex * 3) + 1] == ""
+                    && Weapons[(currentIndex * 3) + 2] == "")
+                {
+                    return "Atalan Leader w/ " + Weapons[currentIndex * 3];
+                }
+
+                //Second Weapon only
+                else if (Weapons[currentIndex * 3] == "" && Weapons[(currentIndex * 3) + 1] != ""
+                    && Weapons[(currentIndex * 3) + 2] == "")
+                {
+                    return "Atalan Leader w/ " + Weapons[(currentIndex * 3) + 1];
+                }
+
+                //Third Weapon only
+                else if (Weapons[currentIndex * 3] == "" && Weapons[(currentIndex * 3) + 1] == ""
+                    && Weapons[(currentIndex * 3) + 2] != "")
+                {
+                    return "Atalan Leader w/ " + Weapons[(currentIndex * 3) + 2];
+                }
+
+                //First and Second Weapon
+                else if (Weapons[currentIndex * 3] != "" && Weapons[(currentIndex * 3) + 1] != ""
+                    && Weapons[(currentIndex * 3) + 2] == "")
+                {
+                    return "Atalan Leader w/ " + Weapons[currentIndex * 3] + " and " + Weapons[(currentIndex * 3) + 1];
+                }
+
+                //First and Third Weapon
+                else if (Weapons[currentIndex * 3] != "" && Weapons[(currentIndex * 3) + 1] == ""
+                    && Weapons[(currentIndex * 3) + 2] != "")
+                {
+                    return "Atalan Leader w/ " + Weapons[currentIndex * 3] + " and " + Weapons[(currentIndex * 3) + 2];
+                }
+
+                //Second and Third Weapon
+                else if (Weapons[currentIndex * 3] == "" && Weapons[(currentIndex * 3) + 1] != ""
+                    && Weapons[(currentIndex * 3) + 2] != "")
+                {
+                    return "Atalan Leader w/ " + Weapons[(currentIndex * 3) + 1] + " and " + Weapons[(currentIndex * 3) + 2];
+                }
+
+                //All Weapons
+                else if (Weapons[currentIndex * 3] != "" && Weapons[(currentIndex * 3) + 1] != ""
+                    && Weapons[(currentIndex * 3) + 2] != "")
+                {
+                    return "Atalan Leader w/ " + Weapons[currentIndex * 3] + ", " + Weapons[(currentIndex * 2) + 1] + " and " + Weapons[(currentIndex * 3) + 2];
+                }
+
+                //No Weapon
+                return "Atalan Leader";
+            }
+            else
+            {
+                //First Weapon only
+                if (Weapons[currentIndex * 3] != "" && Weapons[(currentIndex * 3) + 1] == ""
+                    && Weapons[(currentIndex * 3) + 2] == "")
+                {
+                    return "Atalan Jackal w/ " + Weapons[currentIndex * 3];
+                }
+
+                //Second Weapon only
+                else if (Weapons[currentIndex * 3] == "" && Weapons[(currentIndex * 3) + 1] != ""
+                    && Weapons[(currentIndex * 3) + 2] == "")
+                {
+                    return "Atalan Jackal w/ " + Weapons[(currentIndex * 3) + 1];
+                }
+
+                //Third Weapon only
+                else if (Weapons[currentIndex * 3] == "" && Weapons[(currentIndex * 3) + 1] == ""
+                    && Weapons[(currentIndex * 3) + 2] != "")
+                {
+                    return "Atalan Jackal w/ " + Weapons[(currentIndex * 3) + 2];
+                }
+
+                //First and Second Weapon
+                else if (Weapons[currentIndex * 3] != "" && Weapons[(currentIndex * 3) + 1] != ""
+                    && Weapons[(currentIndex * 3) + 2] == "")
+                {
+                    return "Atalan Jackal w/ " + Weapons[currentIndex * 3] + " and " + Weapons[(currentIndex * 3) + 1];
+                }
+
+                //First and Third Weapon
+                else if (Weapons[currentIndex * 3] != "" && Weapons[(currentIndex * 3) + 1] == ""
+                    && Weapons[(currentIndex * 3) + 2] != "")
+                {
+                    return "Atalan Jackal w/ " + Weapons[currentIndex * 3] + " and " + Weapons[(currentIndex * 3) + 2];
+                }
+
+                //Second and Third Weapon
+                else if (Weapons[currentIndex * 3] == "" && Weapons[(currentIndex * 3) + 1] != ""
+                    && Weapons[(currentIndex * 3) + 2] != "")
+                {
+                    return "Atalan Jackal w/ " + Weapons[(currentIndex * 3) + 1] + " and " + Weapons[(currentIndex * 3) + 2];
+                }
+
+                //All Weapons
+                else if (Weapons[currentIndex * 3] != "" && Weapons[(currentIndex * 3) + 1] != ""
+                    && Weapons[(currentIndex * 3) + 2] != "")
+                {
+                    return "Atalan Jackal w/ " + Weapons[currentIndex * 3] + ", " + Weapons[(currentIndex * 2) + 1] + " and " + Weapons[(currentIndex * 3) + 2];
+                }
+
+                //No Weapon
+                return "Atalan Jackal";
+            }
         }
     }
 }

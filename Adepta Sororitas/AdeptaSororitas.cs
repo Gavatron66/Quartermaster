@@ -193,51 +193,148 @@ namespace Roster_Builder.Adepta_Sororitas
 
         public override List<string> GetRelics(List<string> keywords)
         {
-            List<string> relics = new List<string>()
-            {
-                "(None)",
-                "Blade of Saint Ellynor",
-                "Brazier of Eternal Flame",
-                "Wrath of the Emperor",
-                "Litanies of Faith",
-                "Mantle of Ophelia",
-                "Triptych of the Macharian Crusade",
-                "Book of Saint Lucius",
-                "Iron Surplice of Saint Istaela",
-                "The Ecclesiarch's Fury",
-                "Redemption",
-                "The Sigil Ecclesiasticus",
-                "Blessings of Sebastian Thor",
-                "Simulacrum Sanctorum",
-                "Chaplet of Sacrifice"
-            };
+            List<string> relics = new List<string>();
+            relics.Add("(None)");
 
-            if (currentSubFaction == "Order of Our Martyred Lady")
+            //Superior Relics
+            if(keywords.Contains("CORE"))
+            {
+                relics.Add("Litanies of Faith");
+
+                if(!(keywords.Contains("CELESTIAN SACRESANTS") || keywords.Contains("PARAGON WARSUITS") || keywords.Contains("ZEPHYRIM SQUAD")))
+                {
+                    relics.Add("The Ecclesiarch's Fury");
+                }
+
+                if(!(keywords.Contains("PARAGON WARSUITS")))
+                {
+                    relics.Add("Redemption");
+                }
+
+                relics.Add("Blessings of Sebastian Thor");
+
+                return relics;
+            }
+
+            if(keywords.Contains("CANONESS"))
+            {
+                relics.Add("Blade of Saint Ellynor");
+                relics.Add("Brazier of Eternal Flame");
+            }
+
+            if(!(keywords.Contains("IMAGIFIER") || keywords.Contains("PREACHER") || keywords.Contains("REPENTIA SUPERIOR") || keywords.Contains("MISSIONARY")))
+            {
+                relics.Add("Wrath of the Emperor");
+            }
+
+            if(keywords.Contains("ADEPTA SORORITAS"))
+            {
+                relics.Add("Litanies of Faith");
+            }
+
+            if(keywords.Contains("CANONESS"))
+            {
+                relics.Add("Mantle of Ophelia");
+            }
+
+            if(keywords.Contains("SANCTIFIED") || keywords.Contains("CULT IMPERIALIS"))
+            {
+                relics.Add("Triptych of the Macharian Crusade");
+            }
+
+            relics.Add("Book of Saint Lucius");
+
+            if (keywords.Contains("ADEPTA SORORITAS"))
+            {
+                relics.Add("Iron Surplice of Saint Istaela");
+            }
+
+            if(keywords.Contains("CANONESS") || keywords.Contains("MISSIONARY") || keywords.Contains("PREACHER"))
+            {
+                relics.Add("The Ecclesiarch's Fury");
+            }
+
+            if(keywords.Contains("CANONESS") || keywords.Contains("PALATINE"))
+            {
+                relics.Add("Redemption");
+            }
+
+            if(keywords.Contains("PRIEST"))
+            {
+                relics.Add("The Sigil Ecclesiasticus");
+            }
+
+            if(keywords.Contains("ADEPTA SORORITAS"))
+            {
+                relics.Add("Blessings of Sebastian Thor");
+            }
+
+            if(keywords.Contains("IMAGIFIER"))
+            {
+                relics.Add("Simulacrum Sanctorum");
+            }
+
+            if(keywords.Contains("ADEPTA SORORITAS"))
+            {
+                relics.Add("Chaplet of Sacrifice");
+            }
+
+            //if (currentSubFaction == "Order of Our Martyred Lady" && keywords.Contains("CANONESS"))
+            //{
+            //    relics.Add("Martyrs' Vengeance");
+            //}
+
+            //if (currentSubFaction == "Order of the Valorous Heart" && keywords.Contains("ADEPTA SORORITAS"))
+            //{
+            //    relics.Add("Casket of Penance");
+            //}
+
+            //if (currentSubFaction == "Order of the Bloody Rose" && keywords.Contains("CANONESS"))
+            //{
+            //    relics.Add("Beneficence");
+            //}
+
+            //if (currentSubFaction == "Order of the Ebon Chalice" && keywords.Contains("CANONESS"))
+            //{
+            //    relics.Add("Annunciation of the Creed");
+            //}
+
+            //if (currentSubFaction == "Order of the Argent Shroud" && keywords.Contains("ADEPTA SORORITAS"))
+            //{
+            //    relics.Add("Quicksilver Veil");
+            //}
+
+            //if (currentSubFaction == "Order of the Sacred Rose" && keywords.Contains("CANONESS"))
+            //{
+            //    relics.Add("Light of Saint Agnaetha");
+            //}
+
+            if (keywords.Contains("CANONESS"))
             {
                 relics.Add("Martyrs' Vengeance");
             }
 
-            if (currentSubFaction == "Order of the Valorous Heart")
+            if (keywords.Contains("ADEPTA SORORITAS"))
             {
                 relics.Add("Casket of Penance");
             }
 
-            if (currentSubFaction == "Order of the Bloody Rose")
+            if (keywords.Contains("CANONESS"))
             {
                 relics.Add("Beneficence");
             }
 
-            if (currentSubFaction == "Order of the Ebon Chalice")
+            if (keywords.Contains("CANONESS"))
             {
                 relics.Add("Annunciation of the Creed");
             }
 
-            if (currentSubFaction == "Order of the Argent Shroud")
+            if (keywords.Contains("ADEPTA SORORITAS"))
             {
                 relics.Add("Quicksilver Veil");
             }
 
-            if (currentSubFaction == "Order of the Sacred Rose")
+            if (keywords.Contains("CANONESS"))
             {
                 relics.Add("Light of Saint Agnaetha");
             }

@@ -52,6 +52,10 @@ namespace Roster_Builder.Leagues_of_Votann
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             CheckBox cbOption3 = panel.Controls["cbOption3"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             #region Custom Form Setup
             Label lblOption1 = panel.Controls["lblOption1"] as Label;
@@ -114,6 +118,51 @@ namespace Roster_Builder.Leagues_of_Votann
                 "Ion Blasters (+1 pts/model)"
             });
             cmbOption3.SelectedIndex = cmbOption3.Items.IndexOf(Weapons[0]);
+
+            cbStratagem5.Text = repo.StratagemList[2];
+            cbStratagem5.Location = new System.Drawing.Point(cbOption1.Location.X, cbOption3.Location.Y + 32);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            antiLoop = true;
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                panel.Controls["lblRelic"].Visible = true;
+                cmbRelic.Visible = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
+            }
+
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
+            antiLoop = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -131,6 +180,8 @@ namespace Roster_Builder.Leagues_of_Votann
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             CheckBox cbOption3 = panel.Controls["cbOption3"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
@@ -173,6 +224,29 @@ namespace Roster_Builder.Leagues_of_Votann
                         }
                     }
                     break;
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
+
+                    if (chosenRelic == "Grudge's End (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if(chosenRelic == "Grudge's End (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 0;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Hearthfist")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+
+                    Relic = chosenRelic;
+                    break;
                 case 21:
                     medpack = cbOption1.Checked;
                     break;
@@ -207,10 +281,11 @@ namespace Roster_Builder.Leagues_of_Votann
 
                     if (temp > UnitSize)
                     {
-                        if (lbModelSelect.Items.Count > (UnitSize / 10) + 1)
+                        if (lbModelSelect.Items.Count > (UnitSize / 10) + 2)
                         {
-                            lbModelSelect.Items.RemoveAt(temp / 10);
-                            Weapons.RemoveRange((UnitSize / 10), 1);
+                            lbModelSelect.Items.RemoveAt((temp / 10) + 2);
+                            lbModelSelect.Items.RemoveAt((temp / 10) + 1);
+                            Weapons.RemoveRange((UnitSize / 10) + 4, 2);
                         }
                     }
                     break;
@@ -223,6 +298,9 @@ namespace Roster_Builder.Leagues_of_Votann
                         panel.Controls["lblOption1"].Visible = false;
                         cmbOption2.Visible = false;
                         panel.Controls["lblOption2"].Visible = false;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
 
                         break;
                     }
@@ -233,10 +311,21 @@ namespace Roster_Builder.Leagues_of_Votann
                         panel.Controls["lblOption1"].Visible = true;
                         cmbOption2.Visible = false;
                         panel.Controls["lblOption2"].Visible = false;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
 
                         cmbOption1.Items.Clear();
                         if (currentIndex == 0)
                         {
+                            cbStratagem5.Visible = true;
+
+                            if (Stratagem.Contains(cbStratagem5.Text))
+                            {
+                                panel.Controls["lblRelic"].Visible = true;
+                                cmbRelic.Visible = true;
+                            }
+
                             restrictedIndexes.Clear();
 
                             cmbOption2.Visible = true;
@@ -250,6 +339,15 @@ namespace Roster_Builder.Leagues_of_Votann
                                 "Plasma Sword (+5 pts)"
                             });
                             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[1]);
+
+                            if(Stratagem.Count > 0)
+                            {
+                                antiLoop = false;
+                                int tempIndex = cmbRelic.SelectedIndex;
+                                cmbRelic.SelectedIndex = 0;
+                                cmbRelic.SelectedIndex = tempIndex;
+                                antiLoop = true;
+                            }
                         }
                         else
                         {
@@ -285,6 +383,24 @@ namespace Roster_Builder.Leagues_of_Votann
                         }
 
                         antiLoop = false;
+                    }
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
                     }
                     break;
             }

@@ -27,7 +27,7 @@ namespace Roster_Builder.Death_Guard
                 "Stratagem: Gifts of Decay", //Relic Stratagem
                 "Stratagem: Champion of Disease", //Stratagem Code 1
                 "Stratagem: Grandfatherly Influence", //Stratagem Code 2
-                "Stratagem: Sevenfold Blessings" // The Wretched Unique Stratagem
+                "Stratagem: Sevenfold Blessings (The Wretched only)" // The Wretched Unique Stratagem
             });
             restrictedItems.AddRange(new string[]
             {
@@ -231,6 +231,24 @@ namespace Roster_Builder.Death_Guard
 
             relicsList.Add("(None)");
 
+            if(Keywords.Contains("CORE")) //For Stratagem: Champion of Disease
+            {
+                if(Keywords.Contains("DEATHSHROUD TERMINATORS")) {
+                    relicsList.Add("Reaper of Glorious Entropy");
+                }
+
+                relicsList.Add("Plague Skull of Glothila");
+
+                if (!Keywords.Contains("DEATHSHROUD TERMINATORS"))
+                {
+                    relicsList.Add("Plaguebringer");
+                }
+
+                relicsList.Add("Suppurating Plate");
+
+                return relicsList;
+            }
+
             if(Keywords.Contains("LORD OF CONTAGION"))
             {
                 relicsList.Add("Reaper of Glorious Entropy");
@@ -336,6 +354,9 @@ namespace Roster_Builder.Death_Guard
             ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
 
             cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
+
+            panel.Controls["lblSubfaction"].Text = "Select a Plague Company:";
+            cmbSubFaction.Location = new System.Drawing.Point(cmbSubFaction.Location.X + 10, cmbSubFaction.Location.Y);
         }
 
         public override void SaveSubFaction(int code, Panel panel)

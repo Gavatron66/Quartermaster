@@ -51,11 +51,15 @@ namespace Roster_Builder.Orks
             Label lblExtra1 = panel.Controls["lblExtra1"] as Label;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
+            antiLoop = true;
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
-            nudUnitSize.Value = nudUnitSize.Minimum;
             nudUnitSize.Maximum = 15;
+            nudUnitSize.Value = nudUnitSize.Minimum;
             nudUnitSize.Value = currentSize;
+            antiLoop = false;
 
             lbModelSelect.Items.Clear();
             lbModelSelect.Items.Add("Boss Nob w/ " + Weapons[2]);

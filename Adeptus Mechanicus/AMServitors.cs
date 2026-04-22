@@ -11,7 +11,7 @@ namespace Roster_Builder.Adeptus_Mechanicus
     {
         public AMServitors()
         {
-            DEFAULT_POINTS = 28;
+            DEFAULT_POINTS = 7;
             UnitSize = 4;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "2m";

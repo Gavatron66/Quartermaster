@@ -42,16 +42,36 @@ namespace Roster_Builder.Adeptus_Custodes
                 "Multi-melta"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+
+            cbStratagem3.Location = new System.Drawing.Point(cmbOption1.Location.X, cmbOption1.Location.Y + 32);
+            cbStratagem3.Visible = true;
+            cbStratagem3.Text = repo.StratagemList[3];
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
                 case 11:
                     Weapons[0] = cmbOption1.SelectedItem as string;
+                    break;
+                case 73:
+                    if (cbStratagem3.Checked)
+                    {
+                        Stratagem.Add(cbStratagem3.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
+                        }
+                    }
                     break;
             }
 

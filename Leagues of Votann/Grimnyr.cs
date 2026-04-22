@@ -66,13 +66,13 @@ namespace Roster_Builder.Leagues_of_Votann
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null)
+            if (Relic != null && cmbRelic.Items.Contains(Relic))
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = -1;
+                cmbRelic.SelectedIndex = 0;
             }
 
             cmbFaction.Items.Clear();
@@ -88,27 +88,57 @@ namespace Roster_Builder.Leagues_of_Votann
             }
 
             List<string> psykerpowers = new List<string>();
-            psykerpowers = repo.GetPsykerPowers("Dominus");
+            psykerpowers = repo.GetPsykerPowers("");
             clbPsyker.Items.Clear();
             foreach (string power in psykerpowers)
             {
                 clbPsyker.Items.Add(power);
             }
 
-            lblPsyker.Text = "Select two of the following:";
-            clbPsyker.ClearSelected();
-            for (int i = 0; i < clbPsyker.Items.Count; i++)
+            if (Relic != "The Murmuring Stave")
             {
-                clbPsyker.SetItemChecked(i, false);
-            }
+                lblPsyker.Text = "Select two of the following:";
+                clbPsyker.ClearSelected();
+                for (int i = 0; i < clbPsyker.Items.Count; i++)
+                {
+                    clbPsyker.SetItemChecked(i, false);
+                }
 
-            if (PsykerPowers[0] != string.Empty)
-            {
-                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                if (PsykerPowers[0] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                }
+                if (PsykerPowers[1] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
+                }
             }
-            if (PsykerPowers[1] != string.Empty)
+            else
             {
-                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
+                lblPsyker.Text = "Select three of the following:";
+                if (PsykerPowers.Length != 3)
+                {
+                    PsykerPowers = new string[3] { string.Empty, string.Empty, string.Empty };
+                }
+
+                clbPsyker.ClearSelected();
+                for (int i = 0; i < clbPsyker.Items.Count; i++)
+                {
+                    clbPsyker.SetItemChecked(i, false);
+                }
+
+                if (PsykerPowers[0] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                }
+                if (PsykerPowers[1] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
+                }
+                if (PsykerPowers[2] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[2]), true);
+                }
             }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
@@ -164,6 +194,44 @@ namespace Roster_Builder.Leagues_of_Votann
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+
+                    if (chosenRelic == "The Murmuring Stave")
+                    {
+                        panel.Controls["lblPsyker"].Text = "Select three of the following:";
+                        var temp = PsykerPowers;
+
+                        PsykerPowers = new string[3] { string.Empty, string.Empty, string.Empty };
+                        if (temp[0] != string.Empty)
+                        {
+
+                            for (int i = 0; i < clbPsyker.Items.Count; i++)
+                            {
+                                clbPsyker.SetItemChecked(i, false);
+                            }
+
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        }
+                    }
+                    else
+                    {
+                        panel.Controls["lblPsyker"].Text = "Select two of the following:";
+                        var temp = PsykerPowers;
+
+                        PsykerPowers = new string[2] { string.Empty, string.Empty };
+                        if (temp[0] != string.Empty)
+                        {
+
+                            for (int i = 0; i < clbPsyker.Items.Count; i++)
+                            {
+                                clbPsyker.SetItemChecked(i, false);
+                            }
+
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        }
+                    }
+
                     Relic = chosenRelic;
                     break;
                 case 25:
@@ -174,18 +242,38 @@ namespace Roster_Builder.Leagues_of_Votann
                     else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
-                    if (clbPsyker.CheckedItems.Count < 2)
+                    if (Relic == "The Murmuring Stave")
                     {
-                        break;
-                    }
-                    else if (clbPsyker.CheckedItems.Count == 2)
-                    {
-                        PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                        PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
+                        if (clbPsyker.CheckedItems.Count < 3)
+                        {
+                            break;
+                        }
+                        else if (clbPsyker.CheckedItems.Count == 3)
+                        {
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
+                            PsykerPowers[2] = clbPsyker.CheckedItems[2] as string;
+                        }
+                        else
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        }
                     }
                     else
                     {
-                        clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        if (clbPsyker.CheckedItems.Count < 2)
+                        {
+                            break;
+                        }
+                        else if (clbPsyker.CheckedItems.Count == 2)
+                        {
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
+                        }
+                        else
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        }
                     }
                     break;
                 case 71:

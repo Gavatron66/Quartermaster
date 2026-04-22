@@ -54,6 +54,7 @@ namespace Roster_Builder.Space_Marines
                 "(None)",
                 "Bellicatus Missile Array",
                 "Ironhail Skytalon Array",
+                "Orbital Comms Array",
                 "Shield Dome"
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);

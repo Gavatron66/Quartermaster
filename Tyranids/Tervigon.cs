@@ -48,6 +48,7 @@ namespace Roster_Builder.Tyranids
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -99,13 +100,13 @@ namespace Roster_Builder.Tyranids
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null)
+            if (Relic != null && cmbRelic.Items.Contains(Relic))
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = -1;
+                cmbRelic.SelectedIndex = 0;
             }
 
             List<string> psykerpowers = new List<string>();
@@ -128,6 +129,17 @@ namespace Roster_Builder.Tyranids
                 clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
             }
 
+            if (repo.currentSubFaction == "Jormungandr")
+            {
+                cbStratagem3.Visible = true;
+            }
+            else
+            {
+                cbStratagem3.Visible = false;
+            }
+            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
+            cbStratagem3.Text = f.StratagemList[2];
+
             if (Stratagem.Contains(cbStratagem1.Text))
             {
                 cbStratagem1.Checked = true;
@@ -149,6 +161,17 @@ namespace Roster_Builder.Tyranids
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
+
+            if (Stratagem.Contains(cbStratagem3.Text))
+            {
+                cbStratagem3.Checked = true;
+                cbStratagem3.Enabled = true;
+            }
+            else
+            {
+                cbStratagem3.Checked = false;
+                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -162,6 +185,7 @@ namespace Roster_Builder.Tyranids
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -192,6 +216,23 @@ namespace Roster_Builder.Tyranids
                         cbOption2.Checked = true;
                         cbOption2.Enabled = false;
                     }
+                    else if (chosenRelic == "Resonance Barb")
+                    {
+                        panel.Controls["lblPsyker"].Text = "Select two of the following:";
+                        PsykerPowers = new string[2] { PsykerPowers[0], string.Empty };
+                    }
+
+                    if (chosenRelic != "Resonance Barb" && PsykerPowers.Length > 1)
+                    {
+                        panel.Controls["lblPsyker"].Text = "Select one of the following:";
+                        PsykerPowers = new string[1] { string.Empty };
+                        clbPsyker.ClearSelected();
+                        for (int i = 0; i < clbPsyker.Items.Count; i++)
+                        {
+                            clbPsyker.SetItemChecked(i, false);
+                        }
+                    }
+
                     Relic = chosenRelic;
                     break;
                 case 21:
@@ -216,17 +257,32 @@ namespace Roster_Builder.Tyranids
                     else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
-                    if (clbPsyker.CheckedItems.Count < 1)
+                    if (Relic == "Resonance Barb")
                     {
-                        break;
-                    }
-                    else if (clbPsyker.CheckedItems.Count == 1)
-                    {
-                        PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        if (clbPsyker.CheckedItems.Count < 2)
+                        {
+                            break;
+                        }
+                        else if (clbPsyker.CheckedItems.Count == 2)
+                        {
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
+                        }
+                        else
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        }
                     }
                     else
                     {
-                        clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        if (clbPsyker.CheckedItems.Count == 1)
+                        {
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        }
+                        else
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        }
                     }
 
                     break;
@@ -253,6 +309,19 @@ namespace Roster_Builder.Tyranids
                         if (Stratagem.Contains(cbStratagem2.Text))
                         {
                             Stratagem.Remove(cbStratagem2.Text);
+                        }
+                    }
+                    break;
+                case 73:
+                    if (cbStratagem3.Checked)
+                    {
+                        Stratagem.Add(cbStratagem3.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
                         }
                     }
                     break;

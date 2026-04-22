@@ -56,6 +56,7 @@ namespace Roster_Builder.Tau_Empire
 
             nudUnitSize.Visible = false;
             panel.Controls["lblNumModels"].Visible = false;
+            panel.Controls["lblModelPoints"].Visible = false;
 
             panel.Controls["lblOption2"].Visible = true;
             cmbOption2.Visible = true;
@@ -153,14 +154,21 @@ namespace Roster_Builder.Tau_Empire
             {
                 case 11:
                     antiLoop = true;
-                    Weapons[currentIndex + 5] = cmbOption1.SelectedItem.ToString();
-                    if(currentIndex == 0)
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
                     {
-                        lbModelSelect.Items[0] = "Pathfinder Shas'ui w/ " + Weapons[5];
+                        Weapons[currentIndex + 5] = cmbOption1.SelectedItem.ToString();
+                        if (currentIndex == 0)
+                        {
+                            lbModelSelect.Items[0] = "Pathfinder Shas'ui w/ " + Weapons[5];
+                        }
+                        else
+                        {
+                            lbModelSelect.Items[currentIndex] = "Pathfinder w/ " + Weapons[currentIndex + 5];
+                        }
                     }
                     else
                     {
-                        lbModelSelect.Items[currentIndex] = "Pathfinder w/ " + Weapons[currentIndex + 5];
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 5]);
                     }
                     antiLoop = false;
                     break;
@@ -226,26 +234,28 @@ namespace Roster_Builder.Tau_Empire
                     });
                     cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 5]);
 
+                    restrictedIndexes.Clear();
                     if (weaponsCheck[0] == 3 && (Weapons[currentIndex + 5] != "Ion Rifle (+5 pts)" || Weapons[currentIndex + 5] != "Rail Rifle (+5 pts)"))
                     {
-                        cmbOption1.Items.Remove("Ion Rifle (+5 pts)");
-                        cmbOption1.Items.Remove("Rail Rifle (+5 pts)");
+                        restrictedIndexes.AddRange(new int[] { 1, 4 });
                     }
 
                     if (weaponsCheck[1] == 1 && Weapons[currentIndex + 5] != "Semi-automatic Grenade Launcher (+5 pts)")
                     {
-                        cmbOption1.Items.Remove("Semi-automatic Grenade Launcher (+5 pts)");
+                        restrictedIndexes.Add(5);
                     }
 
                     if (weaponsCheck[2] == 1 && Weapons[currentIndex + 5] != "Neuroweb System Jammer (+5 pts)")
                     {
-                        cmbOption1.Items.Remove("Neuroweb System Jammer (+5 pts)");
+                        restrictedIndexes.Add(2);
                     }
 
                     if (weaponsCheck[3] == 1 && Weapons[currentIndex + 5] != "Drone Controller (+5 pts)")
                     {
-                        cmbOption1.Items.Remove("Drone Controller (+5 pts)");
+                        restrictedIndexes.Add(0);
                     }
+
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
 
                     antiLoop = false;
                     break;

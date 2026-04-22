@@ -38,13 +38,9 @@ namespace Roster_Builder.Adeptus_Custodes
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
-            cmbWarlord.Items.Clear();
-            List<string> traits = repo.GetWarlordTraits("SoS");
-            foreach (var item in traits)
-            {
-                cmbWarlord.Items.Add(item);
-            }
-
+            cbWarlord.Visible = false;
+            cmbWarlord.Visible = false;
+            panel.Controls["lblWarlord"].Visible = false;
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -55,28 +51,16 @@ namespace Roster_Builder.Adeptus_Custodes
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            if (isWarlord)
-            {
-                cbWarlord.Checked = true;
-                cmbWarlord.Enabled = true;
-                cmbWarlord.Text = WarlordTrait;
-            }
-            else
-            {
-                cbWarlord.Checked = false;
-                cmbWarlord.Enabled = false;
-            }
-
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null)
+            if (Relic != null && cmbRelic.Items.Contains(Relic))
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = -1;
+                cmbRelic.SelectedIndex = 0;
             }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
@@ -108,26 +92,15 @@ namespace Roster_Builder.Adeptus_Custodes
         public override void SaveDatasheets(int code, Panel panel)
         {
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
-            ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
                 case 11:
                     Weapons[0] = cmbOption1.SelectedItem.ToString();
-                    break;
-                case 15:
-                    if (cmbWarlord.SelectedIndex != -1)
-                    {
-                        WarlordTrait = cmbWarlord.SelectedItem.ToString();
-                    }
-                    else
-                    {
-                        WarlordTrait = string.Empty;
-                    }
                     break;
                 case 17:
                     Relic = cmbRelic.SelectedItem.ToString();
@@ -151,13 +124,6 @@ namespace Roster_Builder.Adeptus_Custodes
                     {
                         cmbOption1.Enabled = true;
                     }
-                    break;
-                case 25:
-                    if (cbWarlord.Checked)
-                    {
-                        this.isWarlord = true;
-                    }
-                    else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
