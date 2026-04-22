@@ -73,13 +73,13 @@ namespace Roster_Builder.Aeldari
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             List<string> psykerpowers = new List<string>();
@@ -108,11 +108,6 @@ namespace Roster_Builder.Aeldari
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-
-            cbStratagem3.Text = repo.StratagemList[3];
-            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
-            cbStratagem3.Visible = true;
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -135,17 +130,6 @@ namespace Roster_Builder.Aeldari
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
-
-            if (Stratagem.Contains(cbStratagem3.Text))
-            {
-                cbStratagem3.Checked = true;
-                cbStratagem3.Enabled = true;
-            }
-            else
-            {
-                cbStratagem3.Checked = false;
-                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -158,7 +142,6 @@ namespace Roster_Builder.Aeldari
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -227,19 +210,6 @@ namespace Roster_Builder.Aeldari
                         if (Stratagem.Contains(cbStratagem2.Text))
                         {
                             Stratagem.Remove(cbStratagem2.Text);
-                        }
-                    }
-                    break;
-                case 73:
-                    if (cbStratagem3.Checked)
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
                         }
                     }
                     break;

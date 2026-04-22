@@ -101,4 +101,3 @@ C:\Users\evans\Desktop\Quartermaster\bin\Debug\System.ValueTuple.xml
 C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster B.2CB3B829.Up2Date
 C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster Builder.exe
 C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster Builder.pdb
-C:\Users\evans\Desktop\Quartermaster\obj\Debug\Roster Builder.exe.config

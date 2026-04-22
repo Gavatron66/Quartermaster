@@ -17,12 +17,35 @@
 	along with Horus Heresy and potentially Age of Sigmar (we'll see how the next edition handles list building when the time comes)
 		
 Provide an error if a datasheet has not selected enough Psychic Powers
+
+Implement the remianing unique stratagems for the following:
+	Death Guard
+	Necrons
+	Adeptus Custodes
+	GSC
+	Space Marines
+	Aeldari
+	Harlequins
+	Tyranids
+	Mechanicus
+	T'au
 	
 Space Marines has limits on what each unit can take depending on subchapter. Most of the time, this isn't a problem. The following have a codex supplement that adds/changes their rosters:
 	Black Templars
 	Blood Angels
+	
+Prohibit selecting the same custom faction trait
+
+Space Marines
+	Intercessor Sergeant has some wierd options, will have to go back and add restrictions where nessecary
+	
+Hybrid Metamorphs needs to be visited when the location and sizing rework is ready
+	Atalan Jackals
 
 Fix Named Characters? Some named Characters belong to specific subfactions, and technically if they contain a different subfaction keyword than they invalidate the detachment.
+
+Compare Primaris Lieutenant and Primaris Captain
+	They have annoyingly complicated options, so going to need some testing for it
 
 T'au Piranhas hide Seeker Missiles; may want to be looked at
 Broadsides have some weapons restrictions
@@ -34,105 +57,60 @@ Riptide template is adequate, but could be better. Take a look?
 
 Not super happy with how Nemesis Dreadknights are, maybe a re-look at?
 	Also, Dreadknights can't take the same weapon twice, but haven't figured out how to do that yet
+	
+Blood Angels Assault Squad adds Meltagun and Plasma Gun to the two Assault Marines option in the Wargear options
 
 Lords of Commorragh has relics and warlord traits that only they can have
 
 Need to come back to Drukhari once I figure out how to implement the 
 variety of subfactions since Drukhari are just special like that
 
+Need to implement the relics for Drukhari, Deathwatch, Space Wolves
+
 Switching between detachments appears to broken, need to look in on that
 
+Rule of 3?
+	Applies to all non-Troops or non-Dedicated Transports
+
+Last unit finished: Mortarion
+
+UPDATE (01/10/2025) - I was working on Warlord and Relic restrictions! Following the list alphabetically
+
+Go back and double check Death Guard
 There is a potential error in Necrons that I wasn't able to duplicate
 Maybe figured out the NUD control scenarios! Further testing is required
 	Examples found in Necron Warriors and Lokhust Heavy Destroyers
 	
-Double check plasma Pistol logic for chaos space marines, since some have restrictions 
+Double check plasma Pistol logic for chaos space marines, since some have restrictions
 
-Figured out 3 DG Stratagem implementations, refer to those going forward for characters
+When going back through, check if category weapons have points values for taking them
 
-Just fixed (3/11) some of the main form's listboxes to not flicker as often; try and figure that out for the model version
-
-This is more of a note than a todo, the Tome of Vel'cona grants Salamander Librarians an additional Salamander-unique psychic power. I'm not going to implement at this time, or maybe ever, since that's a lot of work for such a niche case.
-
-Proteus Kill Team; Showing points for the different models is not great, but can't decide on anything concrete; current implementation will do, come back to fix if desired.
-
-Ork Boyz need their nud logic redone to bring it in line with the rest of the program
-
-Need to double check all the factions for relics and upgrades that allow them to know additional psychic powers/prayers (with the exception of Adeptus Astartes and the Tome of Vel'cona, for the reason stated above). The following are the ones I know of:
-	Farseer/Warlock, Ulthwe
+Characters:
+	DG Chaos Lord
+	DG Terminator Lord
+	DG Daemon Prince
+	DG Terminator Sorcerer
+	Lord of Contagion
+	Lord of Virulence
+	Malignant Plaguecaster
+	Typhus
+	Biologus Putrifier
+	Foul Blightspawn
+	Noxious Blightbringer
+	Plague Surgeon
+	Tallyman
+Sevenfold Blessings:
+	DG Daemon Prince
+	DG Terminator Sorcerer
+	Malignant Plaguecaster
+Champion of Disease:
+	Plague Marines
+	Blightlord Terminators
+	Deathshroud Terminators
+Grandfatherly Influence:
+	Chaos Spawn
 	
-Why did I do chosenRelic? Removing it fixes a lot of problems....
-	Best guess it is for something to do with DG, but since I'm not doing the rest to that standard, I'll have to experiment...
-	
-For Future Reference: I figured out the issue with chosenRelic when selecting the unit leader in the list box so that it disables the correct boxes. The example is in Hearthkyn Warriors.
-	Will I go back and double check things? Maybe. It's a decent amount of work for not much benefit, so maybe.
 
-***Leaving these for the future SM supplements***
-Characters to do list:
-	Primaris Captain
-	Gravis Captain w/ Heavy Bolt Rifle
-	Phobos Captain
-	Gravis Captain
-	Terminator Captain
-	Captain
-	Captain on Bike
-	Primaris Lieutenant
-	Reiver Lieutenant
-	Lieutenant
-	Phobos Lieutenant
-	Primaris Librarian
-	Librarian
-	Phobos Librarian
-	Terminator Librarian
-	Primaris Chaplain
-	Primaris Bike Chaplain
-	Terminator Chaplain
-	Chaplain
-	Primaris Techmarine
-	Techmarine
-	Company Champion
-	Primaris Apothecary
-	Apothecary
-	Company Ancient
-	Primaris Ancient
-	Bladeguard Ancient
-	Terminator Ancient
-	Judiciar
-	
-Sergeants
-	Assault Intercessors
-	Heavy Intercessors
-	Incursors
-	Infiltrators
-	Intercessors
-	Tactical Squad
-	Aggressors
-	Bladeguard Veterans
-	Centurion Assault
-	Company Veterans
-	Reiver Squad
-	Relic Terminators
-	Scout Squad
-	Sternguard Veterans
-	Terminator Assault Squad
-	Terminator Squad
-	Vanguard Veterans
-	Veteran Intercessors
-	Assault Squad
-	Bike Squad
-	Inceptor Squad
-	Outriders
-	Scout Bikes
-	Suppressors
-	Centurion Devastators
-	Devastators
-	Eliminators
-	Eradicators
-	Hellblasters
-	Desolation Squad
-
-
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 			
             factionsRestrictions = repo.restrictedItems;
 			
@@ -328,35 +306,16 @@ Sergeants
                 {
                     cmbRelic.SelectedIndex = -1;
                 }
+<<<<<<< Updated upstream
+            }
+=======
             }
 	
 	restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13, 14, 15, 17, 18 });
 
 
 Characters to do list:
-	AbaddonTheDespoiler(),
-	HaarkenWorldclaimer(),	Lord of Terror
-	HuronBlackheart(),	Reaver Lord
-	DaemonPrince(),
-	FabiusBile(),	Surgical Precision
-	Cypher(),	Unholy Fortitude
-	MasterOfPossession(),
-	ChaosLord(),
-	TerminatorChaosLord(),
-	Sorcerer(),
-	TerminatorSorcerer(),
-	LuciusTheEternal(),	Faultless Duellist
-	LordDiscordant(),
-	Warpsmith(),
-	DarkApostle(),
-	ExaltedChampion(),
-	DarkCommune(),
-	Legionaries(),
-	CulistsMob(),
-	AccursedCultists(),
 	ChaosTerminators(),
-	MasterOfExecutions(),
-	Possessed(),
 	Chosen(),
 	Helbrute(),
 	KhorneBerzerkersCSM(),
@@ -381,3 +340,24 @@ Characters to do list:
 	Heldrake(),
 	KhorneLordOfSkulls(),
 	NoctilithCrown()
+	
+	
+Hyper-Growth Bolts - Bolt Weapon | Creations of Bile
+Maelstrom's Bite - Combi-melta | Red Corsairs
+Ashen Axe - Power Axe | Word Bearers
+The Armor Diabolus | Word Bearers
+Viper's Spite - Bolt Pistol | Alpha Legion
+Icon of the Hydra Cult | Alpha Legion
+Distortion - Power Sword/Accursed Weapon | Emperor's Children
+Armour of Abhorrence | Emperor's Children
+Talons of the Night Terror - FLY model | Night Lords
+Claw of the Stygian Count - Lightning Claw/Accursed Weapon | Night Lords
+Spitespitter - Combi-weapon | Iron Warriors
+Axe of the Forgemaster - Power Axe | Iron Warriors
+Loyalty's Reward - Bolt Weapon | Black Legion
+Trophies of Slaughter | Black Legion
+The Black Mace - Power Maul/Accursed Weapon
+The Warp's Malice - Bolt Pistol
+Blade of the Relentless - Power Sword/Daemon Blade/Accursed Weapon
+Black Rune of Damnation
+>>>>>>> Stashed changes

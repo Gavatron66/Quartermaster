@@ -67,13 +67,13 @@ namespace Roster_Builder.Astra_Militarum
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
@@ -114,26 +114,10 @@ namespace Roster_Builder.Astra_Militarum
             switch (code)
             {
                 case 11:
-                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
-                    {
-                        Weapons[0] = cmbOption1.SelectedItem.ToString();
-                    }
-                    else
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
-                    }
+                    Weapons[0] = cmbOption1.SelectedItem.ToString();
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
-                    restrictedIndexes.Clear();
-
-                    if(chosenRelic == "Legacy of Kalladius")
-                    {
-                        restrictedIndexes.Add(1);
-                        cmbOption1.SelectedIndex = 0;
-                    }
-
-                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     Relic = chosenRelic;
                     break;
                 case 25:

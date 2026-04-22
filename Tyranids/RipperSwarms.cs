@@ -37,8 +37,6 @@ namespace Roster_Builder.Tyranids
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 3;
             nudUnitSize.Value = nudUnitSize.Minimum;

@@ -43,7 +43,6 @@ namespace Roster_Builder.Aeldari
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
             lblnud1.Text = "Heavy Weapon Platforms (+20 pts):";
             nudOption1.Location = new System.Drawing.Point(nudOption1.Location.X + 35, nudOption1.Location.Y);
 
@@ -56,7 +55,7 @@ namespace Roster_Builder.Aeldari
             int temp = Convert.ToInt32(Weapons[2]);
             nudOption1.Minimum = 0;
             nudOption1.Value = nudOption1.Minimum;
-            nudOption1.Maximum = 1;
+            nudOption1.Maximum = 2;
             nudOption1.Value = temp;
 
             cmbOption1.Items.Clear();
@@ -122,18 +121,6 @@ namespace Roster_Builder.Aeldari
                     break;
                 case 30:
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
-                    if(UnitSize == 20)
-                    {
-                        nudOption1.Maximum = 2;
-                    }
-                    else
-                    {
-                        if(nudOption1.Value > 1)
-                        {
-                            nudOption1.Value--;
-                        }
-                        nudOption1.Maximum = 1;
-                    }
                     break;
                 case 31:
                     Weapons[2] = nudOption1.Value.ToString();

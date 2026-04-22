@@ -18,7 +18,7 @@ namespace Roster_Builder.Aeldari
         {
             DEFAULT_POINTS = 40;
             UnitSize = 1;
-            Points = DEFAULT_POINTS * UnitSize + 25;
+            Points = DEFAULT_POINTS * UnitSize + 20;
             TemplateCode = "3N_p";
             Keywords.AddRange(new string[]
             {
@@ -54,14 +54,11 @@ namespace Roster_Builder.Aeldari
             Label lblnud1 = panel.Controls["lblnud1"] as Label;
             Label lblnud2 = panel.Controls["lblnud2"] as Label;
 
-            panel.Controls["lblModelPoints"].Text = "(65 pts for 1, +" + DEFAULT_POINTS + " pts/model for 2+)";
-
             lblnud1.Text = "Singing Spears (+5 pts):";
             lblnud1.Location = new System.Drawing.Point(lblnud1.Location.X - 20, lblnud1.Location.Y);
             lblnud2.Text = "Witchblades:";
             lblnud2.Location = new System.Drawing.Point(lblnud2.Location.X + 45, lblnud2.Location.Y);
 
-            antiLoop = true;
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;
             nudUnitSize.Value = nudUnitSize.Minimum;
@@ -77,7 +74,6 @@ namespace Roster_Builder.Aeldari
             nudOption2.Value = 0;
             nudOption2.Maximum = 3;
             nudOption2.Value = witchblades;
-            antiLoop = false;
 
             List<string> psykerpowers = new List<string>();
             psykerpowers = repo.GetPsykerPowers("Battle");
@@ -139,73 +135,34 @@ namespace Roster_Builder.Aeldari
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
-            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
-            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-
-            cbStratagem1.Location = new System.Drawing.Point(cmbRelic.Location.X, cmbRelic.Location.Y + 32);
-            cbStratagem2.Location = new System.Drawing.Point(cmbRelic.Location.X, cmbRelic.Location.Y + 62);
-
-            if (UnitSize != 1)
+            if(UnitSize != 1)
             {
                 cbWarlord.Visible = false;
                 panel.Controls["lblWarlord"].Visible = false;
                 panel.Controls["lblRelic"].Visible = false;
                 cmbWarlord.Visible = false;
                 cmbRelic.Visible = false;
-                cbStratagem1.Visible = false;
-                cbStratagem2.Visible = false;
-            }
-            else
+            } else
             {
                 cbWarlord.Visible = true;
                 panel.Controls["lblWarlord"].Visible = true;
                 panel.Controls["lblRelic"].Visible = true;
                 cmbWarlord.Visible = true;
                 cmbRelic.Visible = true;
-                cbStratagem1.Visible = true;
-                cbStratagem2.Visible = true;
-            }
-
-
-            if (Stratagem.Contains(cbStratagem1.Text))
-            {
-                cbStratagem1.Checked = true;
-                cbStratagem1.Enabled = true;
-            }
-            else
-            {
-                cbStratagem1.Checked = false;
-                cbStratagem1.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem1.Text));
-            }
-
-            if (Stratagem.Contains(cbStratagem2.Text))
-            {
-                cbStratagem2.Checked = true;
-                cbStratagem2.Enabled = true;
-            }
-            else
-            {
-                cbStratagem2.Checked = false;
-                cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            if (antiLoop)
-            {
-                return;
-            }
-
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
@@ -214,8 +171,6 @@ namespace Roster_Builder.Aeldari
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
-            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
             switch (code)
             {
@@ -223,7 +178,6 @@ namespace Roster_Builder.Aeldari
                     int oldSize = UnitSize;
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
 
-                    antiLoop = true;
                     if (UnitSize > oldSize)
                     {
                         nudOption2.Value += UnitSize - oldSize;
@@ -240,23 +194,22 @@ namespace Roster_Builder.Aeldari
                             nudOption1.Value -= oldSize - UnitSize;
                         }
                     }
-                    antiLoop = false;
 
-                    if (UnitSize >= 4)
+                    if (UnitSize >= 3)
                     {
                         lblPsyker.Text = "Select two of the following:";
-                        string[] tempP = new string[2] { PsykerPowers[0], string.Empty };
-                        PsykerPowers = tempP;
+                        string[] temp = new string[2] { PsykerPowers[0], string.Empty };
+                        PsykerPowers = temp;
                     }
-                    else if (UnitSize < 4 && PsykerPowers.Length == 2)
+                    else if (UnitSize < 3 && PsykerPowers.Length == 2)
                     {
                         lblPsyker.Text = "Select one of the following:";
                         if (PsykerPowers[1] != string.Empty)
                         {
                             clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), false);
                         }
-                        string[] tempP = new string[1] { PsykerPowers[0] };
-                        PsykerPowers = tempP;
+                        string[] temp = new string[1] { PsykerPowers[0] };
+                        PsykerPowers = temp;
                     }
 
                     if (UnitSize != 1)
@@ -266,14 +219,6 @@ namespace Roster_Builder.Aeldari
                         panel.Controls["lblRelic"].Visible = false;
                         cmbWarlord.Visible = false;
                         cmbRelic.Visible = false;
-                        cbStratagem1.Visible = false;
-                        cbStratagem2.Visible = false;
-
-                        cmbWarlord.SelectedIndex = -1;
-                        cbWarlord.Checked = false;
-                        cmbRelic.SelectedIndex = 0;
-                        cbStratagem1.Checked = false;
-                        cbStratagem2.Checked = false;
                     }
                     else
                     {
@@ -282,59 +227,35 @@ namespace Roster_Builder.Aeldari
                         panel.Controls["lblRelic"].Visible = true;
                         cmbWarlord.Visible = true;
                         cmbRelic.Visible = true;
-                        cbStratagem1.Visible = true;
-                        cbStratagem2.Visible = true;
                     }
                     break;
                 case 31:
-                    var temp = singingSpears;
-                    antiLoop = true;
-
-                    if (nudOption1.Value < 0)
+                    if (nudOption1.Value == 0)
                     {
-                        nudOption1.Value++;
+                        break;
                     }
-                    else if (nudOption1.Value > UnitSize)
+                    else if (nudOption1.Value + nudOption2.Value <= nudUnitSize.Value)
                     {
-                        nudOption1.Value--;
+                        singingSpears = nudOption1.Value;
                     }
-                    else if (temp < nudOption1.Value)
+                    else
                     {
-                        nudOption2.Value--;
+                        nudOption1.Value -= 1;
                     }
-                    else if (temp > nudOption1.Value)
-                    {
-                        nudOption2.Value++;
-                    }
-                    antiLoop = false;
-
-                    singingSpears = nudOption1.Value;
-                    witchblades = nudOption2.Value;
                     break;
                 case 32:
-                    var temp2 = witchblades;
-                    antiLoop = true;
-
-                    if (nudOption2.Value < 0)
+                    if (nudOption2.Value == 0)
                     {
-                        nudOption2.Value++;
+                        break;
                     }
-                    else if (nudOption2.Value > UnitSize)
+                    else if (nudOption1.Value + nudOption2.Value <= nudUnitSize.Value)
                     {
-                        nudOption2.Value--;
+                        witchblades = nudOption2.Value;
                     }
-                    else if (temp2 < nudOption2.Value)
+                    else
                     {
-                        nudOption1.Value--;
+                        nudOption2.Value -= 1;
                     }
-                    else if (temp2 > nudOption2.Value)
-                    {
-                        nudOption1.Value++;
-                    }
-                    antiLoop = false;
-
-                    singingSpears = nudOption1.Value;
-                    witchblades = nudOption2.Value;
                     break;
                 case 60:
                     if (UnitSize >= 3)
@@ -366,32 +287,6 @@ namespace Roster_Builder.Aeldari
                         else
                         {
                             clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
-                        }
-                    }
-                    break;
-                case 71:
-                    if (cbStratagem1.Checked)
-                    {
-                        Stratagem.Add(cbStratagem1.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem1.Text))
-                        {
-                            Stratagem.Remove(cbStratagem1.Text);
-                        }
-                    }
-                    break;
-                case 72:
-                    if (cbStratagem2.Checked)
-                    {
-                        Stratagem.Add(cbStratagem2.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem2.Text))
-                        {
-                            Stratagem.Remove(cbStratagem2.Text);
                         }
                     }
                     break;

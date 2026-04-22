@@ -69,54 +69,28 @@ namespace Roster_Builder.Adepta_Sororitas
                 clbPsyker.Items.Add(power);
             }
 
+            lblPsyker.Text = "Select one of the following:";
+            clbPsyker.ClearSelected();
+            for (int i = 0; i < clbPsyker.Items.Count; i++)
+            {
+                clbPsyker.SetItemChecked(i, false);
+            }
+
+            if (PsykerPowers[0] != string.Empty)
+            {
+                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+            }
+
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
-            }
-
-            if (Relic != "The Sigil Ecclesiasticus")
-            {
-                lblPsyker.Text = "Select one of the following:";
-                clbPsyker.ClearSelected();
-                for (int i = 0; i < clbPsyker.Items.Count; i++)
-                {
-                    clbPsyker.SetItemChecked(i, false);
-                }
-
-                if (PsykerPowers[0] != string.Empty)
-                {
-                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
-                }
-            }
-            else
-            {
-                lblPsyker.Text = "Select two of the following:";
-                if (PsykerPowers.Length != 2)
-                {
-                    PsykerPowers = new string[2] { string.Empty, string.Empty };
-                }
-
-                clbPsyker.ClearSelected();
-                for (int i = 0; i < clbPsyker.Items.Count; i++)
-                {
-                    clbPsyker.SetItemChecked(i, false);
-                }
-
-                if (PsykerPowers[0] != string.Empty)
-                {
-                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
-                }
-                if (PsykerPowers[1] != string.Empty)
-                {
-                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
-                }
+                cmbRelic.SelectedIndex = -1;
             }
 
             if (Stratagem.Contains(cbStratagem1.Text))
@@ -166,50 +140,6 @@ namespace Roster_Builder.Adepta_Sororitas
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
-
-                    if (chosenRelic == "The Sigil Ecclesiasticus")
-                    {
-                        panel.Controls["lblPsyker"].Text = "Select two of the following:";
-                        var temp = PsykerPowers;
-
-                        PsykerPowers = new string[2] { string.Empty, string.Empty };
-                        if (temp[0] != string.Empty)
-                        {
-
-                            for (int i = 0; i < clbPsyker.Items.Count; i++)
-                            {
-                                clbPsyker.SetItemChecked(i, false);
-                            }
-
-                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
-                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-
-                            if (temp[1] != string.Empty)
-                            {
-                                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[1]), true);
-                                PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        panel.Controls["lblPsyker"].Text = "Select one of the following:";
-                        var temp = PsykerPowers;
-
-                        PsykerPowers = new string[1] { string.Empty };
-                        if (temp[0] != string.Empty)
-                        {
-
-                            for (int i = 0; i < clbPsyker.Items.Count; i++)
-                            {
-                                clbPsyker.SetItemChecked(i, false);
-                            }
-
-                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
-                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                        }
-                    }
-
                     Relic = chosenRelic;
                     break;
                 case 25:
@@ -220,37 +150,19 @@ namespace Roster_Builder.Adepta_Sororitas
                     else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
-                    if (Relic == "The Sigil Ecclesiasticus")
+                    if (clbPsyker.CheckedItems.Count < 1)
                     {
-                        if (clbPsyker.CheckedItems.Count < 2)
-                        {
-                            break;
-                        }
-                        else if (clbPsyker.CheckedItems.Count == 2)
-                        {
-                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
-                        }
-                        else
-                        {
-                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
-                        }
+                        break;
+                    }
+                    else if (clbPsyker.CheckedItems.Count == 1)
+                    {
+                        PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
                     }
                     else
                     {
-                        if (clbPsyker.CheckedItems.Count < 1)
-                        {
-                            break;
-                        }
-                        else if (clbPsyker.CheckedItems.Count == 1)
-                        {
-                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                        }
-                        else
-                        {
-                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
-                        }
+                        clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
                     }
+
                     break;
                 case 71:
                     if (cbStratagem1.Checked)

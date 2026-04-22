@@ -55,9 +55,6 @@ namespace Roster_Builder.Tyranids
             ComboBox cmbOption5 = panel.Controls["cmbOption5"] as ComboBox;
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             antiLoop = true;
             int currentSize = UnitSize;
@@ -125,29 +122,6 @@ namespace Roster_Builder.Tyranids
 
             cmbFaction.Items.Clear();
             cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-
-            if (repo.currentSubFaction == "Jormungandr")
-            {
-                cbStratagem3.Visible = true;
-            }
-            else
-            {
-                cbStratagem3.Visible = false;
-            }
-
-            cbStratagem3.Location = new System.Drawing.Point(nudUnitSize.Location.X, nudUnitSize.Location.Y + 32);
-            cbStratagem3.Text = f.StratagemList[2];
-
-            if (Stratagem.Contains(cbStratagem3.Text))
-            {
-                cbStratagem3.Checked = true;
-                cbStratagem3.Enabled = true;
-            }
-            else
-            {
-                cbStratagem3.Checked = false;
-                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -168,9 +142,8 @@ namespace Roster_Builder.Tyranids
             ComboBox cmbOption5 = panel.Controls["cmbOption5"] as ComboBox;
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
-            switch (code)
+            switch(code)
             {
                 case 11:
                     Weapons[currentIndex * 9] = cmbOption1.SelectedItem.ToString();
@@ -340,19 +313,6 @@ namespace Roster_Builder.Tyranids
                     else
                     {
                         cbOption3.Checked = false;
-                    }
-                    break;
-                case 73:
-                    if (cbStratagem3.Checked)
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
-                        }
                     }
                     break;
             }

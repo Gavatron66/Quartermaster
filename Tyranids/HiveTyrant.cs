@@ -10,8 +10,6 @@ namespace Roster_Builder.Tyranids
 {
     public class HiveTyrant : Datasheets
     {
-        List<int> restrictedIndexes2 = new List<int>();
-
         public HiveTyrant()
         {
             DEFAULT_POINTS = 180;
@@ -52,7 +50,6 @@ namespace Roster_Builder.Tyranids
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -114,13 +111,13 @@ namespace Roster_Builder.Tyranids
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             List<string> psykerpowers = new List<string>();
@@ -147,17 +144,6 @@ namespace Roster_Builder.Tyranids
                 clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
             }
 
-            if (repo.currentSubFaction == "Jormungandr")
-            {
-                cbStratagem3.Visible = true;
-            }
-            else
-            {
-                cbStratagem3.Visible = false;
-            }
-            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
-            cbStratagem3.Text = f.StratagemList[2];
-
             if (Stratagem.Contains(cbStratagem1.Text))
             {
                 cbStratagem1.Checked = true;
@@ -179,17 +165,6 @@ namespace Roster_Builder.Tyranids
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
-
-            if (Stratagem.Contains(cbStratagem3.Text))
-            {
-                cbStratagem3.Checked = true;
-                cbStratagem3.Enabled = true;
-            }
-            else
-            {
-                cbStratagem3.Checked = false;
-                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -204,45 +179,34 @@ namespace Roster_Builder.Tyranids
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
                 case 11:
-                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
-                    {
-                        Weapons[0] = cmbOption1.SelectedItem.ToString();
-                    }
-                    else
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
-                    }
-
-                    restrictedIndexes2.Clear();
+                    Weapons[0] = cmbOption1.SelectedItem.ToString();
                     if (Weapons[0] == "Stranglethorn Cannon (+10 pts)" || Weapons[0] == "Heavy Venom Cannon (+15 pts)")
                     {
-                        restrictedIndexes2.AddRange(new int[] { 0, 1 });
+                        cmbOption2.Items.Remove("Stranglethorn Cannon (+10 pts)");
+                        cmbOption2.Items.Remove("Heavy Venom Cannon (+15 pts)");
                     }
-                    this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
-
+                    else if (!cmbOption2.Items.Contains("Heavy Venom Cannon (+15 pts)"))
+                    {
+                        cmbOption2.Items.Insert(0, "Heavy Venom Cannon (+15 pts)");
+                        cmbOption2.Items.Insert(1, "Stranglethorn Cannon (+10 pts)");
+                    }
                     break;
                 case 12:
-                    if (!restrictedIndexes2.Contains(cmbOption2.SelectedIndex))
-                    {
-                        Weapons[1] = cmbOption2.SelectedItem.ToString();
-                    }
-                    else
-                    {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
-                    }
-
-                    restrictedIndexes.Clear();
+                    Weapons[1] = cmbOption2.SelectedItem.ToString();
                     if (Weapons[1] == "Stranglethorn Cannon (+10 pts)" || Weapons[1] == "Heavy Venom Cannon (+15 pts)")
                     {
-                        restrictedIndexes.AddRange(new int[] { 0, 2 });
+                        cmbOption1.Items.Remove("Stranglethorn Cannon (+10 pts)");
+                        cmbOption1.Items.Remove("Heavy Venom Cannon (+15 pts)");
                     }
-                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
-
+                    else if (!cmbOption1.Items.Contains("Heavy Venom Cannon (+15 pts)"))
+                    {
+                        cmbOption1.Items.Insert(0, "Heavy Venom Cannon (+15 pts)");
+                        cmbOption1.Items.Insert(2, "Stranglethorn Cannon (+10 pts)");
+                    }
                     break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
@@ -256,12 +220,10 @@ namespace Roster_Builder.Tyranids
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
-
                     cmbOption1.Enabled = true;
                     cmbOption2.Enabled = true;
                     cbOption1.Enabled = true;
                     cbOption2.Enabled = true;
-
                     if(chosenRelic == "The Reaper of Obliterax")
                     {
                         cmbOption1.SelectedIndex = 1;
@@ -292,23 +254,6 @@ namespace Roster_Builder.Tyranids
                         cbOption2.Checked = true;
                         cbOption2.Enabled = false;
                     }
-                    else if (chosenRelic == "Resonance Barb")
-                    {
-                        panel.Controls["lblPsyker"].Text = "Select three of the following:";
-                        PsykerPowers = new string[3] { PsykerPowers[0], PsykerPowers[1], string.Empty };
-                    }
-
-                    if (chosenRelic != "Resonance Barb" && PsykerPowers.Length > 2)
-                    {
-                        panel.Controls["lblPsyker"].Text = "Select two of the following:";
-                        PsykerPowers = new string[2] { string.Empty, string.Empty };
-                        clbPsyker.ClearSelected();
-                        for (int i = 0; i < clbPsyker.Items.Count; i++)
-                        {
-                            clbPsyker.SetItemChecked(i, false);
-                        }
-                    }
-
                     Relic = chosenRelic;
                     break;
                 case 21:
@@ -333,39 +278,20 @@ namespace Roster_Builder.Tyranids
                     else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
-                    if (Relic == "Resonance Barb")
+                    if (clbPsyker.CheckedItems.Count < 2)
                     {
-                        if (clbPsyker.CheckedItems.Count < 3)
-                        {
-                            break;
-                        }
-                        else if (clbPsyker.CheckedItems.Count == 3)
-                        {
-                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
-                            PsykerPowers[2] = clbPsyker.CheckedItems[2] as string;
-                        }
-                        else
-                        {
-                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
-                        }
+                        break;
+                    }
+                    else if (clbPsyker.CheckedItems.Count == 2)
+                    {
+                        PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
                     }
                     else
                     {
-                        if (clbPsyker.CheckedItems.Count < 2)
-                        {
-                            break;
-                        }
-                        else if (clbPsyker.CheckedItems.Count == 2)
-                        {
-                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
-                        }
-                        else
-                        {
-                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
-                        }
+                        clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
                     }
+
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -390,19 +316,6 @@ namespace Roster_Builder.Tyranids
                         if (Stratagem.Contains(cbStratagem2.Text))
                         {
                             Stratagem.Remove(cbStratagem2.Text);
-                        }
-                    }
-                    break;
-                case 73:
-                    if (cbStratagem3.Checked)
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
                         }
                     }
                     break;

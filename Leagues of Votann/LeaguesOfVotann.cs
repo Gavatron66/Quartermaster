@@ -140,31 +140,7 @@ namespace Roster_Builder.Leagues_of_Votann
             
             relics.Add("(None)");
 
-            //Theyn/Hesr Relics
-            if (keywords.Contains("CORE"))
-            {
-                if(keywords.Contains("HEARTHGUARD"))
-                {
-                    relics.Add("The Grey Crest");
-                }
-
-                if(keywords.Contains("HEARTHKYN WARRIORS"))
-                {
-                    relics.Add("Grudge's End (Slot 1)");
-                    relics.Add("Grudge's End (Slot 2)");
-                }
-
-                relics.Add("The Hearthfist");
-
-                if (keywords.Contains("HEARTHGUARD"))
-                {
-                    relics.Add("Warpestryk");
-                }
-
-                return relics;
-            }
-
-            if (!keywords.Contains("BRÔKHYR IRON-MASTER"))
+            if(!keywords.Contains("BRÔKHYR"))
             {
                 relics.Add("Aktôl's Fortress");
             }
@@ -188,7 +164,7 @@ namespace Roster_Builder.Leagues_of_Votann
 
             relics.Add("Wayfarer's Grace");
 
-            if (!keywords.Contains("BRÔKHYR IRON-MASTER"))
+            if (!keywords.Contains("BRÔKHYR"))
             {
                 relics.Add("The Grey Crest");
             }
@@ -215,7 +191,7 @@ namespace Roster_Builder.Leagues_of_Votann
                 relics.Add("Thyrikite Plate");
             }
 
-            if (keywords.Contains("BRÔKHYR IRON-MASTER"))
+            if (keywords.Contains("BRÔKHYR"))
             {
                 relics.Add("Vôlumm's Master Artifice");
             }
@@ -229,23 +205,19 @@ namespace Roster_Builder.Leagues_of_Votann
             { 
                 relics.Add("Kôrvyk's Cuirass"); 
             }
-            
-            if (currentSubFaction == "Trans-Hyperian Alliance") 
+            else if (currentSubFaction == "Trans-Hyperian Alliance") 
             { 
                 relics.Add("The CORV Duas"); 
             }
-             
-            if (currentSubFaction == "Kronus Hegemony" && (keywords.Contains("EINHYR") || keywords.Contains("KÂHL"))) 
+            else if (currentSubFaction == "Kronus Hegemony" && (keywords.Contains("EINHYR") || keywords.Contains("KÂHL"))) 
             { 
                 relics.Add("The Just Blade"); 
             }
-            
-            if (currentSubFaction == "Ymyr Conglomerate" && !keywords.Contains("BRÔKHYR IRON-MASTER")) 
+            else if (currentSubFaction == "Ymyr Conglomerate" && !keywords.Contains("BRÔKHYR")) 
             { 
                 relics.Add("The Last Crest of Jâluk"); 
             }
-            
-            if (currentSubFaction == "Urani-Surtr Regulates") 
+            else if (currentSubFaction == "Urani-Surtr Regulates") 
             { 
                 relics.Add("The Abiding Mantle"); 
             }

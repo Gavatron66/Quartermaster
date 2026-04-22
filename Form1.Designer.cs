@@ -48,9 +48,6 @@
             this.nudSelectPoints = new System.Windows.Forms.NumericUpDown();
             this.btnLoad = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbStratagem5 = new System.Windows.Forms.CheckBox();
-            this.cbStratagem4 = new System.Windows.Forms.CheckBox();
-            this.lblModelPoints = new System.Windows.Forms.Label();
             this.cbOption5 = new System.Windows.Forms.CheckBox();
             this.cbOption4 = new System.Windows.Forms.CheckBox();
             this.cmbDiscipline = new System.Windows.Forms.ComboBox();
@@ -144,6 +141,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cmbNDFaction = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.lblErrors = new System.Windows.Forms.Label();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSelectPoints)).BeginInit();
             this.panel1.SuspendLayout();
@@ -366,9 +364,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.cbStratagem5);
-            this.panel1.Controls.Add(this.cbStratagem4);
-            this.panel1.Controls.Add(this.lblModelPoints);
             this.panel1.Controls.Add(this.cbOption5);
             this.panel1.Controls.Add(this.cbOption4);
             this.panel1.Controls.Add(this.cmbDiscipline);
@@ -424,39 +419,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1670, 680);
             this.panel1.TabIndex = 8;
-            // 
-            // cbStratagem5
-            // 
-            this.cbStratagem5.AutoSize = true;
-            this.cbStratagem5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStratagem5.Location = new System.Drawing.Point(629, 162);
-            this.cbStratagem5.Name = "cbStratagem5";
-            this.cbStratagem5.Size = new System.Drawing.Size(122, 24);
-            this.cbStratagem5.TabIndex = 92;
-            this.cbStratagem5.Text = "Stratagem 5";
-            this.cbStratagem5.UseVisualStyleBackColor = true;
-            this.cbStratagem5.CheckedChanged += new System.EventHandler(this.cbStratagem5_CheckedChanged);
-            // 
-            // cbStratagem4
-            // 
-            this.cbStratagem4.AutoSize = true;
-            this.cbStratagem4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStratagem4.Location = new System.Drawing.Point(629, 138);
-            this.cbStratagem4.Name = "cbStratagem4";
-            this.cbStratagem4.Size = new System.Drawing.Size(122, 24);
-            this.cbStratagem4.TabIndex = 91;
-            this.cbStratagem4.Text = "Stratagem 4";
-            this.cbStratagem4.UseVisualStyleBackColor = true;
-            this.cbStratagem4.CheckedChanged += new System.EventHandler(this.cbStratagem4_CheckedChanged);
-            // 
-            // lblModelPoints
-            // 
-            this.lblModelPoints.AutoSize = true;
-            this.lblModelPoints.Location = new System.Drawing.Point(304, 20);
-            this.lblModelPoints.Name = "lblModelPoints";
-            this.lblModelPoints.Size = new System.Drawing.Size(118, 20);
-            this.lblModelPoints.TabIndex = 90;
-            this.lblModelPoints.Text = "lblModelPoints";
             // 
             // cbOption5
             // 
@@ -1467,6 +1429,16 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // lblErrors
+            // 
+            this.lblErrors.AutoSize = true;
+            this.lblErrors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrors.Location = new System.Drawing.Point(719, 519);
+            this.lblErrors.Name = "lblErrors";
+            this.lblErrors.Size = new System.Drawing.Size(155, 20);
+            this.lblErrors.TabIndex = 82;
+            this.lblErrors.Text = "Roster has _ errors";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -1488,12 +1460,12 @@
             this.Controls.Add(this.lbRoster);
             this.Controls.Add(this.lbUnits);
             this.Controls.Add(this.lblPoints);
+            this.Controls.Add(this.lblErrors);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Quartermaster";
+            this.Text = "Form1";
             this.MenuPanel.ResumeLayout(false);
             this.MenuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSelectPoints)).EndInit();
@@ -1612,6 +1584,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbNDFaction;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblErrors;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNDname;
@@ -1634,9 +1607,6 @@
         private System.Windows.Forms.ComboBox cmbSubCustom5;
         private System.Windows.Forms.Label lblSubCustom6;
         private System.Windows.Forms.ComboBox cmbSubCustom6;
-        private System.Windows.Forms.Label lblModelPoints;
-        private System.Windows.Forms.CheckBox cbStratagem5;
-        private System.Windows.Forms.CheckBox cbStratagem4;
     }
 }
 

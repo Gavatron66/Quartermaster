@@ -43,8 +43,6 @@ namespace Roster_Builder.Adepta_Sororitas
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;
             nudUnitSize.Value = nudUnitSize.Minimum;

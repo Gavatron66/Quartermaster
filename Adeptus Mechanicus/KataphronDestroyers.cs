@@ -45,9 +45,6 @@ namespace Roster_Builder.Adeptus_Mechanicus
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
-            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
-
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 3;
@@ -65,7 +62,7 @@ namespace Roster_Builder.Adeptus_Mechanicus
             cmbOption1.Items.AddRange(new object[]
             {
                 "Heavy Grav-cannon",
-                "Kataphron Plasma Culverin (+5 pts)"
+                "Kataphron Plasma Culverin (+10 pts)"
             });
 
             cmbOption2.Items.Clear();
@@ -74,29 +71,6 @@ namespace Roster_Builder.Adeptus_Mechanicus
                 "Cognis Flamer",
                 "Phosphor Blaster"
             });
-
-            if (repo.currentSubFaction == "Agripinaa")
-            {
-                cbStratagem5.Visible = true;
-            }
-            else
-            {
-                cbStratagem5.Visible = false;
-            }
-
-            cbStratagem5.Location = new System.Drawing.Point(cmbOption2.Location.X, cmbOption2.Location.Y + 32);
-            cbStratagem5.Text = f.StratagemList[4];
-
-            if (Stratagem.Contains(cbStratagem5.Text))
-            {
-                cbStratagem5.Checked = true;
-                cbStratagem5.Enabled = true;
-            }
-            else
-            {
-                cbStratagem5.Checked = false;
-                cbStratagem5.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem5.Text));
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -105,7 +79,6 @@ namespace Roster_Builder.Adeptus_Mechanicus
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
-            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
 
             switch (code)
             {
@@ -162,28 +135,15 @@ namespace Roster_Builder.Adeptus_Mechanicus
                     cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
 
                     break;
-                case 75:
-                    if (cbStratagem5.Checked)
-                    {
-                        Stratagem.Add(cbStratagem5.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem5.Text))
-                        {
-                            Stratagem.Remove(cbStratagem5.Text);
-                        }
-                    }
-                    break;
             }
 
             Points = DEFAULT_POINTS * UnitSize;
 
             foreach (var weapon in Weapons)
             {
-                if (weapon == "Kataphron Plasma Culverin (+5 pts)")
+                if (weapon == "Kataphron Plasma Culverin (+10 pts)")
                 {
-                    Points += 5;
+                    Points += 10;
                 }
             }
         }

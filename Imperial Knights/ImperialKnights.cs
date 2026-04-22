@@ -10,8 +10,6 @@ namespace Roster_Builder.Imperial_Knights
     public class ImperialKnights : Faction
     {
         string allegiance = string.Empty;
-        public bool hasFreeblade = false;
-        public List<string> freebladeTraditions = new List<string>() { "Noble Combatants" };
 
         public ImperialKnights()
         {
@@ -24,7 +22,6 @@ namespace Roster_Builder.Imperial_Knights
                 "Stratagem: Knight Baron",
                 "Stratagem: Heirlooms of the Household",
                 "Stratagem: Revered Paragon",
-                "Stratagem: You Shouldn't See This"
             });
 
         }
@@ -135,16 +132,16 @@ namespace Roster_Builder.Imperial_Knights
             List<string> upgrades = new List<string>()
             {
                 "(None)",
-                "High Monarch (+45 pts)",
                 "Master of Justice (+30 pts)",
+                "High Monarch (+45 pts)",
                 "Monarchsward (+35 pts)",
-                "Herald (+20 pts)",
                 "Gatekeeper (+35 pts)",
+                "Herald (+20 pts)",
                 "Princeps (+35 pts)",
+                "Forge Master (+30 pts)",
                 "Master Tactician (+30 pts)",
                 "Master of Lore (+35 pts)",
-                "Master of Vox (+20 pts)",
-                "Forge Master (+30 pts)"
+                "Master of Vox (+20 pts)"
             };
 
             return upgrades;
@@ -152,11 +149,6 @@ namespace Roster_Builder.Imperial_Knights
 
         public override bool GetIfEnabled(int index)
         {
-            if(index == 11)
-            {
-                return currentSubFaction == "Freeblade Lance" ? true : !hasFreeblade;
-            }
-
             return true;
         }
 
@@ -189,12 +181,7 @@ namespace Roster_Builder.Imperial_Knights
                 relics.Add("Ravager"); //Reaper Chainsword
             }
 
-            if (!keywords.Contains("DOMINUS-CLASS"))
-            {
-                relics.Add("Armour of the Sainted Ion"); //Questoris/Armiger Class
-            }
-
-            if (allegiance == "Questor Imperialis" && !keywords.Contains("DOMINUS-CLASS"))
+            if(allegiance == "Questor Imperialis" && !keywords.Contains("DOMINUS-CLASS"))
             {
                 relics.Add("Helm of the Nameless Warrior"); //Questor Imperialis Questoris/Armiger Class
             }
@@ -219,7 +206,7 @@ namespace Roster_Builder.Imperial_Knights
                 relics.Add("Mark of the Omnissiah"); //Questor Mechanicus Questoris/Armiger Class
             }
 
-            if (allegiance == "Questor Imperialis" && keywords.Contains("QUESTORIS-CLASS"))
+            if (allegiance == "Questor Imperialis" && !keywords.Contains("DOMINUS-CLASS"))
             {
                 relics.Add("Banner of Macharius Triumphant"); //Questor Imperialis Questoris Class
             }
@@ -254,56 +241,6 @@ namespace Roster_Builder.Imperial_Knights
                 relics.Add("Judgement"); //Stormspear Rocket Pod
             }
 
-            if (currentSubFaction == "House Terryn" && (keywords.Contains("KNIGHT CRUSADER") || keywords.Contains("KNIGHT PALADIN"))) 
-            {
-                relics.Add("Thunder of Voltoris"); //Rapid-fire Battle Cannon
-            }
-
-            if (currentSubFaction == "House Griffith" && keywords.Contains("QUESTORIS-CLASS"))
-            {
-                relics.Add("Mark of the Lance");
-            }
-
-            if (currentSubFaction == "House Cadmus" && !keywords.Contains("DOMINUS-CLASS"))
-            {
-                relics.Add("The Hunter's Eye");
-            }
-
-            if (currentSubFaction == "House Hawkshroud" && !keywords.Contains("DOMINUS-CLASS"))
-            {
-                relics.Add("Angel's Grace");
-            }
-
-            if (currentSubFaction == "House Mortan" && (keywords.Contains("QUESTORIS-CLASS") && !keywords.Contains("KNIGHT CRUSADER")))
-            {
-                relics.Add("Honour's Bite");
-            }
-
-            if(currentSubFaction == "House Raven" && keywords.Contains("QUESTORIS-CLASS"))
-            {
-                relics.Add("The Banner Inviolate");
-            }
-
-            if(currentSubFaction == "House Taranis")
-            {
-                relics.Add("Fury of Mars");
-            }
-
-            if(currentSubFaction == "House Krast")
-            {
-                relics.Add("The Headsman's Mark");
-            }
-
-            if(currentSubFaction == "House Vulker")
-            {
-                relics.Add("The Auric Mask");
-            }
-
-            if(currentSubFaction == "Freeblade Lance" && (keywords.Contains("QUESTORIS-CLASS") && !keywords.Contains("KNIGHT CRUSADER")))
-            {
-                relics.Add("Bringer of Justice");
-            }
-
             return relics;
         }
 
@@ -321,7 +258,6 @@ namespace Roster_Builder.Imperial_Knights
                 "House Taranis",
                 "House Krast",
                 "House Vulker",
-                "Freeblade Lance",
                 "<Custom>"
             };
         }
@@ -383,22 +319,9 @@ namespace Roster_Builder.Imperial_Knights
                     {
                         allegiance = "Questor Imperialis";
                     }
-                    else if(cmbSubFaction.SelectedIndex > 6 && cmbSubFaction.SelectedIndex <= 8)
+                    else if(cmbSubFaction.SelectedIndex > 6 && cmbSubFaction.SelectedIndex != 10)
                     {
                         allegiance = "Questor Mechanicus";
-                    }
-                    else if(cmbSubFaction.SelectedIndex == 9)
-                    {
-                        allegiance = "None";
-                    }
-
-                    if (currentSubFaction == "House Raven")
-                    {
-                        StratagemList[3] = "Stratagem: Order of Champions";
-                    }
-                    if (currentSubFaction == "Freeblade Lance")
-                    {
-                        StratagemList[3] = "Stratagem: Favoured Knight";
                     }
 
                     break;

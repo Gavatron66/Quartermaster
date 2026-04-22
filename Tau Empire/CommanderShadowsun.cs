@@ -47,7 +47,6 @@ namespace Roster_Builder.Tau_Empire
             panel.Controls["cbStratagem2"].Visible = false;
 
             cbWarlord.Location = new System.Drawing.Point(cbWarlord.Location.X + 193, cbWarlord.Location.Y);
-            panel.Controls["lblWarlord"].Location = new System.Drawing.Point(cbWarlord.Location.X, panel.Controls["lblWarlord"].Location.Y);
             cmbWarlord.Location = new System.Drawing.Point(cmbWarlord.Location.X + 193, cmbWarlord.Location.Y);
 
             cmbOption1.Items.Clear();

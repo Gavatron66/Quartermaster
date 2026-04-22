@@ -64,6 +64,7 @@ namespace Roster_Builder
             MenuPanel.Visible = true;
             MenuPanel.Location = new System.Drawing.Point(242, 25);
             MenuPanel.BringToFront();
+            lblErrors.Visible = false;
             panelSubFaction.Location = new System.Drawing.Point(242, 96);
             panelNewDetach.Visible = false;
 
@@ -157,6 +158,8 @@ namespace Roster_Builder
             lblCurrentPoints.Visible = true;
             btnSave.Visible = true;
             btnSave.BringToFront();
+            lblErrors.Visible = true;
+            lblErrors.BringToFront();
             lblEditingUnit.BringToFront(); 
             panelSubFaction.BringToFront();
             panelSubFaction.Visible = false;
@@ -176,11 +179,11 @@ namespace Roster_Builder
                 cmbSubFaction.Items.Add(subfaction);
             }
 
-            //if (!isLoading)
-            //{
-            //    lbRoster.Items.Add(units.subFactionName);
-            //    updateLBRoster();
-            //}
+            if (!isLoading)
+            {
+                lbRoster.Items.Add(units.subFactionName);
+                updateLBRoster();
+            }
 
             if(txtName.Text == "<Optional>")
             {
@@ -197,7 +200,6 @@ namespace Roster_Builder
 
         private void btnAddToRoster_Click(object sender, EventArgs e)
         {
-            /*
             if (lbUnits.SelectedIndex >= 0 && !restrictedIndexes.Contains(lbUnits.SelectedIndex))
             {
                 if (lbUnits.SelectedItem is Datasheets)
@@ -208,41 +210,19 @@ namespace Roster_Builder
                     currentDetachment.roster.Add(newUnit.CreateUnit());
                 }
 
-                //updateLBRoster();
+                updateLBRoster();
             }
-            */
-            var list = currentDetachment.currentFaction.GetDatasheets();
-            foreach(var item in list)
-            {
-                currentDetachment.roster.Add(item.CreateUnit());
-            }
-
-            object zeroItem = lbRoster.Items[0];
-            lbRoster.Items.Clear();
-            lbRoster.Items.Add(zeroItem);
-            for (int i = 0; i < currentDetachment.roster.Count; i++)
-            {
-                lbRoster.Items.Add(currentDetachment.roster[i].ToString());
-            }
-            updateLBRoster();
         }
 
         private void updateLBRoster()
         {
-            //object zeroItem = lbRoster.Items[0];
-            //lbRoster.Items.Clear();
+            object zeroItem = lbRoster.Items[0];
+            lbRoster.Items.Clear();
 
-            //lbRoster.Items.Add(zeroItem);
-            //for (int i = 0; i < currentDetachment.roster.Count; i++)
-            //{
-            //    lbRoster.Items.Add(currentDetachment.roster[i].ToString());
-            //}
-
-            if(currentIndex != -1 && !isLoading)
+            lbRoster.Items.Add(zeroItem);
+            for (int i = 0; i < currentDetachment.roster.Count; i++)
             {
-                isLoading = true;
-                lbRoster.Items[currentIndex + 1] = currentDetachment.roster[currentIndex].ToString();
-                isLoading = false;
+                lbRoster.Items.Add(currentDetachment.roster[i].ToString());
             }
 
             int pts = 0;
@@ -295,16 +275,7 @@ namespace Roster_Builder
             currentDetachment.roster.RemoveAt(currentIndex);
             currentIndex = -1;
 
-            object zeroItem = lbRoster.Items[0];
-            lbRoster.Items.Clear();
-
-            lbRoster.Items.Add(zeroItem);
-            for (int i = 0; i < currentDetachment.roster.Count; i++)
-            {
-                lbRoster.Items.Add(currentDetachment.roster[i].ToString());
-            }
-
-            //updateLBRoster();
+            updateLBRoster();
             lblEditingUnit.Text = string.Empty;
 
             foreach (Control control in panel1.Controls)
@@ -344,11 +315,6 @@ namespace Roster_Builder
 
         private void lbRoster_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(isLoading)
-            {
-                return;
-            }
-
             lbUnits.SelectedIndex = -1;
             foreach (Control control in panel1.Controls)
             {
@@ -393,12 +359,6 @@ namespace Roster_Builder
             {
                 lblEditingUnit.Text = "Currently Editing: " + currentDetachment.roster[currentIndex].ToString();
             }
-
-            currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, cmbOption1);
-            currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, cmbOption2);
-            currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, cmbOption3);
-            currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, cmbOption4);
-            currentDetachment.roster[currentIndex].DrawItemWithRestrictions(new List<int> { }, cmbOption5);
         }
 
         private void cbOption1_CheckedChanged(object sender, EventArgs e)
@@ -854,7 +814,7 @@ namespace Roster_Builder
             Font font = senderComboBox.Font;
             int vertScrollBarWidth =
                 (senderComboBox.Items.Count > senderComboBox.MaxDropDownItems)
-                ? SystemInformation.VerticalScrollBarWidth : 5;
+                ? SystemInformation.VerticalScrollBarWidth : 0;
 
             int newWidth;
             foreach (var s in ((ComboBox)sender).Items)
@@ -946,18 +906,6 @@ namespace Roster_Builder
 
             // If the ListBox has focus, draw a focus rectangle around the selected item.
             e.DrawFocusRectangle();
-        }
-
-        private void cbStratagem5_CheckedChanged(object sender, EventArgs e)
-        {
-            currentDetachment.roster[currentIndex].SaveDatasheets(75, panel1);
-            updateLBRoster();
-        }
-
-        private void cbStratagem4_CheckedChanged(object sender, EventArgs e)
-        {
-            currentDetachment.roster[currentIndex].SaveDatasheets(74, panel1);
-            updateLBRoster();
         }
     }
 }

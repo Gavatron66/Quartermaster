@@ -35,8 +35,6 @@ namespace Roster_Builder.Drukhari
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             nudUnitSize.Minimum = 1;
             nudUnitSize.Value = nudUnitSize.Minimum;
             nudUnitSize.Maximum = 6;

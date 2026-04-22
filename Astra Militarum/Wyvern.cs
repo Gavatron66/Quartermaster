@@ -29,7 +29,7 @@ namespace Roster_Builder.Astra_Militarum
 
         public override Datasheets CreateUnit()
         {
-            return new Wyvern();
+            return new Manticore();
         }
         public override void LoadDatasheets(Panel panel, Faction f)
         {

@@ -11,6 +11,7 @@ namespace Roster_Builder.Chaos_Space_Marines
     {
         List<string> DHPowers;
         List<string> prayer;
+        private string stratWarlordTrait;
 
         public DarkCommune()
         {
@@ -49,6 +50,11 @@ namespace Roster_Builder.Chaos_Space_Marines
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+            ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox; // For Stratagem 3
+
 
             cmbWarlord.Items.Clear();
             List<string> traits = repo.GetWarlordTraits("");
@@ -72,13 +78,13 @@ namespace Roster_Builder.Chaos_Space_Marines
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             cmbFaction.Items.Clear();
@@ -104,26 +110,73 @@ namespace Roster_Builder.Chaos_Space_Marines
             {
                 clbPsyker.Items.Add(power);
             }
-
-            lblPsyker.Text = "Select two of the following, \none from the first six, \none from the other:";
             clbPsyker.Location = new System.Drawing.Point(clbPsyker.Location.X, clbPsyker.Location.Y + 35);
-            clbPsyker.ClearSelected();
-            for (int i = 0; i < clbPsyker.Items.Count; i++)
+
+            if (Relic == "Inferno Tome")
             {
-                clbPsyker.SetItemChecked(i, false);
+                lblPsyker.Text = "Select three of the following, \none from the first six, \ntwo from the other:";
+                if (PsykerPowers.Length != 3)
+                {
+                    PsykerPowers = new string[3] { string.Empty, string.Empty, string.Empty };
+                }
+
+                clbPsyker.ClearSelected();
+                for (int i = 0; i < clbPsyker.Items.Count; i++)
+                {
+                    clbPsyker.SetItemChecked(i, false);
+                }
+
+                if (PsykerPowers[0] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                }
+                if (PsykerPowers[1] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
+                }
+                if (PsykerPowers[2] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[2]), true);
+                }
+            }
+            else
+            {
+                lblPsyker.Text = "Select two of the following, \none from the first six, \none from the other:";
+                clbPsyker.ClearSelected();
+                for (int i = 0; i < clbPsyker.Items.Count; i++)
+                {
+                    clbPsyker.SetItemChecked(i, false);
+                }
+
+                if (PsykerPowers[0] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                }
+                if (PsykerPowers[1] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
+                }
             }
 
-            if (PsykerPowers[0] != string.Empty)
+            if (repo.currentSubFaction == "Black Legion")
             {
-                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                cbStratagem3.Visible = true;
+                cbStratagem3.Text = f.StratagemList[3];
             }
-            if (PsykerPowers[1] != string.Empty)
+            else if (repo.currentSubFaction == "Word Bearers")
             {
-                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
+                cbStratagem3.Visible = true;
+                cbStratagem3.Text = f.StratagemList[4];
             }
 
-            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
-            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
+
+            panel.Controls["lblOption6"].Visible = false;
+            panel.Controls["lblOption6"].Location = new System.Drawing.Point(clbPsyker.Location.X, clbPsyker.Location.Y + clbPsyker.Height + 32);
+            cmbOption6.Visible = false;
+            cmbOption6.Location = new System.Drawing.Point(panel.Controls["lblOption6"].Location.X, panel.Controls["lblOption6"].Location.Y + 23);
+            cmbOption6.Items.Clear();
+            cmbOption6.Items.AddRange(repo.GetWarlordTraits("").ToArray());
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -146,6 +199,24 @@ namespace Roster_Builder.Chaos_Space_Marines
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
+
+            if (Stratagem.Contains(cbStratagem3.Text))
+            {
+                cbStratagem3.Checked = true;
+                cbStratagem3.Enabled = true;
+
+                cmbOption6.Visible = true;
+                panel.Controls["lblOption6"].Visible = true;
+                cmbOption6.SelectedIndex = cmbOption6.Items.IndexOf(stratWarlordTrait);
+            }
+            else
+            {
+                cbStratagem3.Checked = false;
+                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+                cmbOption6.Visible = false;
+                panel.Controls["lblOption6"].Visible = false;
+                stratWarlordTrait = "";
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -157,25 +228,58 @@ namespace Roster_Builder.Chaos_Space_Marines
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+            ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox; // For Stratagem 3
 
             switch (code)
             {
-                case 15:
-                    if (cmbWarlord.SelectedIndex != -1)
-                    {
-                        WarlordTrait = cmbWarlord.SelectedItem.ToString();
-                    }
-                    else
-                    {
-                        WarlordTrait = string.Empty;
-                    }
-                    break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+
+                    if (chosenRelic == "Inferno Tome")
+                    {
+                        panel.Controls["lblPsyker"].Text = "Select two of the following, \none from the first six, \ntwo from the other:";
+                        var temp = PsykerPowers;
+
+                        PsykerPowers = new string[3] { string.Empty, string.Empty, string.Empty };
+                        if (temp[0] != string.Empty)
+                        {
+
+                            for (int i = 0; i < clbPsyker.Items.Count; i++)
+                            {
+                                clbPsyker.SetItemChecked(i, false);
+                            }
+
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        }
+                    }
+                    else
+                    {
+                        panel.Controls["lblPsyker"].Text = "Select two of the following, \none from the first six, \none from the other:";
+                        var temp = PsykerPowers;
+
+                        PsykerPowers = new string[2] { string.Empty, string.Empty };
+                        if (temp[0] != string.Empty)
+                        {
+
+                            for (int i = 0; i < clbPsyker.Items.Count; i++)
+                            {
+                                clbPsyker.SetItemChecked(i, false);
+                            }
+
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        }
+                    }
+
                     Relic = chosenRelic;
+                    break;
+                case 19:
+                    stratWarlordTrait = cmbOption6.SelectedItem as string;
                     break;
                 case 25:
                     if (cbWarlord.Checked)
@@ -185,17 +289,24 @@ namespace Roster_Builder.Chaos_Space_Marines
                     else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
-                    if (clbPsyker.CheckedItems.Count < 2)
+                    if (Relic == "Inferno Tome")
                     {
-                        break;
-                    }
-                    else if (clbPsyker.CheckedItems.Count == 2)
-                    {
-                        if (DHPowers.Contains(clbPsyker.CheckedItems[0]) && prayer.Contains(clbPsyker.CheckedItems[1])
-                            || DHPowers.Contains(clbPsyker.CheckedItems[1]) && prayer.Contains(clbPsyker.CheckedItems[0]))
+                        if (clbPsyker.CheckedItems.Count < 3)
+                        {
+                            if (clbPsyker.CheckedItems.Count == 2 && DHPowers.Contains(clbPsyker.CheckedItems[0]) && DHPowers.Contains(clbPsyker.CheckedItems[1]) && clbPsyker.CheckedItems.Count == 2)
+                            {
+                                clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                            }
+                            break;
+                        }
+                        else if (clbPsyker.CheckedItems.Count == 3 
+                            && (DHPowers.Contains(clbPsyker.CheckedItems[0]) && (prayer.Contains(clbPsyker.CheckedItems[1]) && prayer.Contains(clbPsyker.CheckedItems[2]))
+                            || DHPowers.Contains(clbPsyker.CheckedItems[1]) && (prayer.Contains(clbPsyker.CheckedItems[0]) && prayer.Contains(clbPsyker.CheckedItems[2]))
+                            || DHPowers.Contains(clbPsyker.CheckedItems[2]) && (prayer.Contains(clbPsyker.CheckedItems[0]) && prayer.Contains(clbPsyker.CheckedItems[1]))))
                         {
                             PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
                             PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
+                            PsykerPowers[2] = clbPsyker.CheckedItems[2] as string;
                         }
                         else
                         {
@@ -204,7 +315,21 @@ namespace Roster_Builder.Chaos_Space_Marines
                     }
                     else
                     {
-                        clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        if (clbPsyker.CheckedItems.Count < 2)
+                        {
+                            break;
+                        }
+                        else if ((DHPowers.Contains(clbPsyker.CheckedItems[0]) && prayer.Contains(clbPsyker.CheckedItems[1])
+                            || DHPowers.Contains(clbPsyker.CheckedItems[1]) && prayer.Contains(clbPsyker.CheckedItems[0]))
+                            && clbPsyker.CheckedItems.Count == 2)
+                        {
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
+                        }
+                        else
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        }
                     }
                     break;
                 case 71:
@@ -231,6 +356,27 @@ namespace Roster_Builder.Chaos_Space_Marines
                         {
                             Stratagem.Remove(cbStratagem2.Text);
                         }
+                    }
+                    break;
+                case 73:
+                    if (cbStratagem3.Checked && !Stratagem.Contains(cbStratagem3.Text))
+                    {
+                        Stratagem.Add(cbStratagem3.Text);
+                        if (repo.currentSubFaction == "Black Legion")
+                        {
+                            cmbOption6.Visible = true;
+                            panel.Controls["lblOption6"].Visible = true;
+                        }
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Remove(cbStratagem3.Text);
+                        }
+                        cmbOption6.Visible = false;
+                        panel.Controls["lblOption6"].Visible = false;
+                        cmbOption6.SelectedIndex = -1;
                     }
                     break;
                 default: break;

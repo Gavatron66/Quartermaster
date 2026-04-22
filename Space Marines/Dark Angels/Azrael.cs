@@ -11,7 +11,7 @@ namespace Roster_Builder.Space_Marines.Dark_Angels
     {
         public Azrael()
         {
-            DEFAULT_POINTS = 170;
+            DEFAULT_POINTS = 140;
             UnitSize = 1;
             TemplateCode = "nc";
             Points = DEFAULT_POINTS;

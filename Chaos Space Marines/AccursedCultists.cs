@@ -37,8 +37,12 @@ namespace Roster_Builder.Chaos_Space_Marines
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
 
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
             panel.Controls["nudOption1"].Location = new System.Drawing.Point(nudUnitSize.Location.X, 59);
             panel.Controls["lblnud1"].Text = "Number of Torments:";
+            panel.Controls["lblExtra1"].Text = "(+15 pts/model)";
+            panel.Controls["lblExtra1"].Location = new System.Drawing.Point(panel.Controls["lblModelPoints"].Location.X, panel.Controls["lblModelPoints"].Location.Y + 32);
+            panel.Controls["lblExtra1"].Visible = true;
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;

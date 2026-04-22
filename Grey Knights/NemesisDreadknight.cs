@@ -10,8 +10,6 @@ namespace Roster_Builder.Grey_Knights
 {
     public class NemesisDreadknight : Datasheets
     {
-        List<int> restrictedIndexes2 = new List<int>();
-
         public NemesisDreadknight()
         {
             DEFAULT_POINTS = 130;
@@ -94,38 +92,10 @@ namespace Roster_Builder.Grey_Knights
             switch (code)
             {
                 case 11:
-                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
-                    {
-                        Weapons[0] = cmbOption1.SelectedItem.ToString();
-                        restrictedIndexes2.Clear();
-                        restrictedIndexes2.Add(cmbOption1.SelectedIndex);
-
-                        if (!restrictedIndexes2.Contains(0))
-                        {
-                            this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
-                        }
-                    }
-                    else
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
-                    }
+                    Weapons[0] = cmbOption1.SelectedItem.ToString();
                     break;
                 case 12:
-                    if (!restrictedIndexes2.Contains(cmbOption2.SelectedIndex))
-                    {
-                        Weapons[1] = cmbOption2.SelectedItem.ToString();
-                        restrictedIndexes.Clear();
-                        restrictedIndexes.Add(cmbOption2.SelectedIndex);
-
-                        if (!restrictedIndexes.Contains(0))
-                        {
-                            this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
-                        }
-                    }
-                    else
-                    {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
-                    }
+                    Weapons[1] = cmbOption2.SelectedItem.ToString();
                     break;
                 case 13:
                     Weapons[2] = cmbOption3.SelectedItem.ToString();

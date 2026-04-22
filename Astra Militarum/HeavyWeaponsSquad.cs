@@ -9,16 +9,19 @@ namespace Roster_Builder.Astra_Militarum
 {
     public class HeavyWeaponsSquad : Datasheets
     {
+        int currentIndex;
+        bool isLoading = false;
 
         public HeavyWeaponsSquad()
         {
             DEFAULT_POINTS = 55;
             UnitSize = 3;
             Points = DEFAULT_POINTS;
-            TemplateCode = "3m";
-            Weapons.Add("Heavy Bolter");
-            Weapons.Add("Heavy Bolter");
-            Weapons.Add("Heavy Bolter");
+            TemplateCode = "NL1m";
+            for (int i = 0; i < UnitSize; i++)
+            {
+                Weapons.Add("Heavy Bolter");
+            }
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ASTRA MILITARUM",
@@ -37,13 +40,17 @@ namespace Roster_Builder.Astra_Militarum
             repo = f as AstraMilitarum;
             Template.LoadTemplate(TemplateCode, panel);
 
+            ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            ComboBox cmbOption3 = panel.Controls["cmbOption3"] as ComboBox;
 
             panel.Controls["lblNumModels"].Visible = false;
             panel.Controls["nudUnitSize"].Visible = false;
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+
+            lbModelSelect.Items.Clear();
+            for (int i = 0; i < UnitSize; i++)
+            {
+                lbModelSelect.Items.Add("Heavy Weapons Team w/ " + Weapons[i]);
+            }
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -54,52 +61,46 @@ namespace Roster_Builder.Astra_Militarum
                 "Missile Launcher",
                 "Mortar"
             });
-            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
-
-            cmbOption2.Items.Clear();
-            cmbOption2.Items.AddRange(new string[]
-            {
-                "Autocannon",
-                "Heavy Bolter",
-                "Lascannon",
-                "Missile Launcher",
-                "Mortar"
-            });
-            cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
-
-            cmbOption3.Items.Clear();
-            cmbOption3.Items.AddRange(new string[]
-            {
-                "Autocannon",
-                "Heavy Bolter",
-                "Lascannon",
-                "Missile Launcher",
-                "Mortar"
-            });
-            cmbOption3.SelectedIndex = cmbOption3.Items.IndexOf(Weapons[2]);
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
+            if (isLoading)
+            {
+                return;
+            }
+
+            NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
+            ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            ComboBox cmbOption3 = panel.Controls["cmbOption3"] as ComboBox;
 
             switch (code)
             {
                 case 11:
-                    Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    Weapons[currentIndex] = cmbOption1.SelectedItem.ToString();
+                    lbModelSelect.Items[currentIndex] = "Heavy Weapons Team w/ " + Weapons[currentIndex];
                     break;
-                case 12:
-                    Weapons[1] = cmbOption1.SelectedItem.ToString();
-                    break;
-                case 13:
-                    Weapons[2] = cmbOption1.SelectedItem.ToString();
-                    break;
-                    
+                case 61:
+                    currentIndex = lbModelSelect.SelectedIndex;
+
+                    if (currentIndex < 0)
+                    {
+                        cmbOption1.Visible = false;
+                        panel.Controls["lblOption1"].Visible = false;
+                        break;
+                    }
+                    else
+                    {
+                        isLoading = true;
+                        cmbOption1.Visible = true;
+                        panel.Controls["lblOption1"].Visible = true;
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex]);
+                        isLoading = false;
+                        break;
+                    }
             }
 
-            Points = DEFAULT_POINTS;
+            Points = DEFAULT_POINTS * UnitSize;
         }
 
         public override string ToString()

@@ -48,11 +48,8 @@ namespace Roster_Builder.Genestealer_Cults
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             cbOption1.Location = new System.Drawing.Point(282, 184);
-
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -104,29 +101,6 @@ namespace Roster_Builder.Genestealer_Cults
             {
                 cmbFactionupgrade.SelectedIndex = 0;
             }
-
-            cbStratagem3.Text = repo.StratagemList[2].ToString();
-            cbStratagem3.Location = new System.Drawing.Point(cmbFactionupgrade.Location.X, cmbFactionupgrade.Location.Y + 32);
-            cbStratagem3.Visible = true;
-
-            if (repo.currentSubFaction == "The Bladed Cog")
-            {
-                if (Stratagem.Contains(cbStratagem3.Text))
-                {
-                    cbStratagem3.Checked = true;
-                    cbStratagem3.Enabled = true;
-                }
-                else
-                {
-                    cbStratagem3.Checked = false;
-                    cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-                }
-            }
-            else
-            {
-                cbStratagem3.Enabled = false;
-                cbStratagem3.Checked = false;
-            }
         }
 
 
@@ -143,7 +117,6 @@ namespace Roster_Builder.Genestealer_Cults
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -155,15 +128,9 @@ namespace Roster_Builder.Genestealer_Cults
                         break;
                     }
 
-                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
-                    {
-                        Weapons[currentIndex + 1] = cmbOption1.SelectedItem.ToString();
-                        lbModelSelect.Items[currentIndex] = "Acolyte Hybrid w/ " + Weapons[currentIndex + 1];
-                    }
-                    else
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
-                    }
+                    Weapons[currentIndex + 1] = cmbOption1.SelectedItem.ToString();
+                    lbModelSelect.Items[currentIndex] = "Acolyte Hybrid w/ " + Weapons[currentIndex + 1];
+
                     break;
                 case 12:
                     Weapons[1] = cmbOption2.SelectedItem.ToString();
@@ -205,6 +172,16 @@ namespace Roster_Builder.Genestealer_Cults
                 case 61:
                     currentIndex = lbModelSelect.SelectedIndex;
 
+                    string[] tempcoll = new string[6]
+                    {
+                        "Autopistol",
+                        "Demolition Charges (+5 pts)",
+                        "Hand Flamer (+3 pts)",
+                        "Heavy Rock Cutter (+10 pts)",
+                        "Heavy Rock Drill (+10 pts)",
+                        "Heavy Rock Saw (+5 pts)",
+                    };
+
                     if (currentIndex < 0)
                     {
                         cmbOption1.Visible = false;
@@ -224,7 +201,6 @@ namespace Roster_Builder.Genestealer_Cults
                         panel.Controls["lblOption2"].Visible = true;
                         cbOption1.Visible = false;
 
-                        restrictedIndexes.Clear();
                         cmbOption1.Items.Clear();
                         cmbOption1.Items.AddRange(new string[]
                         {
@@ -242,19 +218,12 @@ namespace Roster_Builder.Genestealer_Cults
                     }
 
                     cmbOption1.Items.Clear();
-                    cmbOption1.Items.AddRange(new string[]
+                    for(int i = 0; i < tempcoll.Length; i++)
                     {
-                        "Autopistol",
-                        "Demolition Charges (+5 pts)",
-                        "Hand Flamer (+3 pts)",
-                        "Heavy Rock Cutter (+10 pts)",
-                        "Heavy Rock Drill (+10 pts)",
-                        "Heavy Rock Saw (+5 pts)",
-                    });
-
+                        cmbOption1.Items.Add(tempcoll[i]);
+                    }
 
                     int weaponsCheck = 0;
-                    restrictedIndexes.Clear();
                     for(int i = 0; i < Weapons.Count; i++)
                     {
                         if (Weapons[i] == "Demolition Charges (+5 pts)")
@@ -275,12 +244,13 @@ namespace Roster_Builder.Genestealer_Cults
                         }
                     }
 
-                    if (weaponsCheck == (UnitSize / 5) * 2 && 
-                        (!Weapons[currentIndex + 1].Contains("+5 pts") && !Weapons[currentIndex + 1].Contains("+10 pts")))
+                    if (weaponsCheck == (UnitSize / 5) * 2)
                     {
-                        restrictedIndexes.AddRange(new int[] {1, 3,4,5});
+                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Demolition Charges (+5 pts)"));
+                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Heavy Rock Cutter (+10 pts)"));
+                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Heavy Rock Drill (+10 pts)"));
+                        cmbOption1.Items.RemoveAt(cmbOption1.Items.IndexOf("Heavy Rock Saw (+5 pts)"));
                     }
-                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
 
                     cmbOption1.Visible = true;
                     cmbOption1.Enabled = true;
@@ -311,23 +281,24 @@ namespace Roster_Builder.Genestealer_Cults
                         cbOption1.Checked = false;
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
                     }
+
+                    if (Weapons[currentIndex + 1] == "Demolition Charges (+5 pts)" 
+                        || Weapons[currentIndex + 1] == "Heavy Rock Cutter (+10 pts)"
+                        || Weapons[currentIndex + 1] == "Heavy Rock Drill (+10 pts)" 
+                        || Weapons[currentIndex + 1] == "Heavy Saw (+5 pts)")
+                    {
+                        cmbOption1.Items.Clear();
+                        for (int i = 0; i < tempcoll.Length; i++)
+                        {
+                            cmbOption1.Items.Add(tempcoll[i]);
+                        }
+
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
+                    }
                     antiLoop = false;
 
                     Points = UnitSize * DEFAULT_POINTS;
 
-                    break;
-                case 73:
-                    if (cbStratagem3.Checked)
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
-                        }
-                    }
                     break;
             }
 

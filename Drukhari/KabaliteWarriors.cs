@@ -48,12 +48,7 @@ namespace Roster_Builder.Drukhari
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            //ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
-
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-            panel.Controls["lblExtra1"].Text = "One model may take a different weapon per 5 models, with two additional options per 10";
-            panel.Controls["lblExtra1"].Location = new System.Drawing.Point(panel.Controls["lbModelSelect"].Location.X, panel.Controls["lblOption1"].Location.Y - 22);
-            panel.Controls["lblExtra1"].Visible = true;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -78,21 +73,21 @@ namespace Roster_Builder.Drukhari
 
             cbOption1.Text = "Phantasm Grenade Launcher (+5 pts)";
 
-            //cmbFaction.Items.Clear();
-            //cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-            //panel.Controls["lblFactionUpgrade"].Text = "Favoured Retinue";
+            cmbFaction.Items.Clear();
+            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+            panel.Controls["lblFactionUpgrade"].Text = "Favoured Retinue";
 
-            //if (Factionupgrade != null)
-            //{
-            //    cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-            //}
-            //else
-            //{
-            //    cmbFaction.SelectedIndex = 0;
-            //}
+            if (Factionupgrade != null)
+            {
+                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+            }
+            else
+            {
+                cmbFaction.SelectedIndex = 0;
+            }
 
-            //panel.Controls["lblFactionUpgrade"].Visible = true;
-            //cmbFaction.Visible = true;
+            panel.Controls["lblFactionUpgrade"].Visible = true;
+            cmbFaction.Visible = true;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -107,7 +102,7 @@ namespace Roster_Builder.Drukhari
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
-            //ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
@@ -127,15 +122,8 @@ namespace Roster_Builder.Drukhari
                         break;
                     }
 
-                    if(!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
-                    {
-                        Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
-                        lbModelSelect.Items[currentIndex] = "Kabalite Warrior w/ " + Weapons[currentIndex + 2];
-                    }
-                    else
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 2]);
-                    }
+                    Weapons[currentIndex + 2] = cmbOption1.SelectedItem.ToString();
+                    lbModelSelect.Items[currentIndex] = "Kabalite Warrior w/ " + Weapons[currentIndex + 2];
 
                     break;
                 case 12:
@@ -150,9 +138,9 @@ namespace Roster_Builder.Drukhari
                         lbModelSelect.Items[0] = "Sybarite w/ " + Weapons[1] + " and " + Weapons[2];
                     }
                     break;
-                //case 16:
-                //    Factionupgrade = cmbFactionupgrade.Text;
-                //    break;
+                case 16:
+                    Factionupgrade = cmbFactionupgrade.Text;
+                    break;
                 case 21:
                     if (cbOption1.Checked)
                     {
@@ -188,7 +176,6 @@ namespace Roster_Builder.Drukhari
                 case 61:
                     currentIndex = lbModelSelect.SelectedIndex;
                     antiLoop = true;
-                    restrictedIndexes.Clear();
 
                     if (currentIndex < 0)
                     {
@@ -197,6 +184,7 @@ namespace Roster_Builder.Drukhari
                         cbOption1.Visible = false;
                         panel.Controls["lblOption1"].Visible = false;
                         panel.Controls["lblOption2"].Visible = false;
+                        panel.Controls["lblFaction"].Visible = false;
                         antiLoop = false;
                         break;
                     }
@@ -253,19 +241,18 @@ namespace Roster_Builder.Drukhari
                         if(((UnitSize / 10) == restriction[0]) && cmbOption1.SelectedItem != null
                             && !(cmbOption1.SelectedItem.ToString() == "Dark Lance (+15 pts)" || cmbOption1.SelectedItem.ToString() == "Splinter Cannon (+10 pts)"))
                         {
-                            restrictedIndexes.Add(1);
-                            restrictedIndexes.Add(3);
+                            cmbOption1.Items.Remove("Dark Lance (+15 pts)");
+                            cmbOption1.Items.Remove("Splinter Cannon (+10 pts)");
                         }
 
                         if (((UnitSize / 5) == restriction[1]) && cmbOption1.SelectedItem != null
                             && !(cmbOption1.SelectedItem.ToString() == "Blaster (+10 pts)" || cmbOption1.SelectedItem.ToString() == "Shredder (+5 pts)"))
                         {
-                            restrictedIndexes.Add(0);
-                            restrictedIndexes.Add(2);
+                            cmbOption1.Items.Remove("Blaster (+10 pts)");
+                            cmbOption1.Items.Remove("Shredder (+5 pts)");
                         }
                     }
 
-                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     antiLoop = false;
                     break;
             }

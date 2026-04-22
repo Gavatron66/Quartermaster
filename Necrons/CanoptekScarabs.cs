@@ -34,7 +34,6 @@ namespace Roster_Builder.Necrons
             Template.LoadTemplate(TemplateCode, panel);
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 3;

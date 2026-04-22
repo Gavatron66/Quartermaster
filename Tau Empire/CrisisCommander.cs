@@ -185,13 +185,13 @@ namespace Roster_Builder.Tau_Empire
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             cmbFaction.Items.Clear();
@@ -275,8 +275,7 @@ namespace Roster_Builder.Tau_Empire
                 case 16:
                     Factionupgrade = cmbFaction.Text;
 					cmbOption1.Enabled = true;
-                    cmbOption4.Enabled = true;
-                    if (Factionupgrade == "Alternating Fusion Blaster (+25 pts)")
+					if (Factionupgrade == "Alternating Fusion Blaster (+25 pts)")
 					{
 						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Fusion Blaster (+15/+20/+25 pts)");
 						cmbOption1.Enabled = false;
@@ -306,12 +305,7 @@ namespace Roster_Builder.Tau_Empire
 						cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("T'au Flamer (+5/+10/+15 pts)");
 						cmbOption1.Enabled = false;
 					}
-                    else if (Factionupgrade == "Wide-Spectrum Scanners (+20 pts)")
-                    {
-                        cmbOption4.SelectedIndex = cmbOption4.Items.IndexOf("Early Warning Override");
-                        cmbOption4.Enabled = false;
-                    }
-                        break;
+					break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     Relic = chosenRelic;

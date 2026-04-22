@@ -62,11 +62,6 @@ namespace Roster_Builder.Space_Marines.Ultramarines
 
             if (!doesContain)
             {
-                if(disciplineSelected == null)
-                {
-                    disciplineSelected = "Indomitus";
-                }
-
                 psykerpowers = repo.GetPsykerPowers(disciplineSelected);
             }
             else

@@ -33,7 +33,7 @@ namespace Roster_Builder.Astra_Militarum
                 "Armoured Superiority",
                 "Blitz Division",
                 "Expert Bobardiers",
-                "Heirloom Weapons",
+                "Heirloom Weapon",
                 "Recon Operators",
                 "Trophy Hunters",
                 "Grim Demeanour",
@@ -55,7 +55,7 @@ namespace Roster_Builder.Astra_Militarum
                 "Armoured Superiority",
                 "Blitz Division",
                 "Expert Bobardiers",
-                "Heirloom Weapons",
+                "Heirloom Weapon",
                 "Recon Operators",
                 "Trophy Hunters",
                 "Grim Demeanour",
@@ -181,36 +181,12 @@ namespace Roster_Builder.Astra_Militarum
 
         public override List<string> GetFactionUpgrades(List<string> keywords)
         {
-            if(keywords.Contains("ROGAL DORN BATTLE TANK"))
+            if(keywords.Contains("BATTLE TANK"))
             {
                 return new List<string>
                 {
                     "(None)",
                     "Vaunted Praetorian (+15 pts)",
-                    "Meticulous Calibrator (+20 pts)",
-                    "Mechanical Pack Rat (+20 pts)",
-                    "Veteran Commandeer (+20 pts)",
-                    "Knight of Piety (+25 pts)",
-                    "Master of Camouflage (+25 pts)"
-                };
-            }
-            else if (keywords.Contains("LEMAN RUSS BATTLE TANK"))
-            {
-                return new List<string>
-                {
-                    "(None)",
-                    "Meticulous Calibrator (+20 pts)",
-                    "Mechanical Pack Rat (+20 pts)",
-                    "Veteran Commandeer (+20 pts)",
-                    "Knight of Piety (+25 pts)",
-                    "Master of Camouflage (+25 pts)",
-                };
-            }
-            else if (keywords.Contains("TANK COMMANDER"))
-            {
-                return new List<string>
-                {
-                    "(None)",
                     "Meticulous Calibrator (+20 pts)",
                     "Mechanical Pack Rat (+20 pts)",
                     "Veteran Commandeer (+20 pts)",
@@ -261,124 +237,24 @@ namespace Roster_Builder.Astra_Militarum
             List<string> relics = new List<string>();
 
             relics.Add("(None)");
-
-            //Sergeant/Watchmaster Relics
-            if (keywords.Contains("CORE"))
-            {
-                if(!keywords.Contains("CAVALRY") && !keywords.Contains("CATACHAN"))
-                {
-                    relics.Add("Legacy of Kalladius");
-                }
-
-                if(!keywords.Contains("SHOCK TROOPS") && !keywords.Contains("CATACHAN"))
-                {
-                    relics.Add("Claw of the Desert Tigers");
-                }
-
-                if(keywords.Contains("INFANTRY"))
-                {
-                    relics.Add("The Barbicant's Key");
-                }
-
-                if(((keywords.Contains("INFANTRY SQUAD") && !keywords.Contains("SHOCK TROOPS")) || keywords.Contains("KRIEG") || keywords.Contains("KASRKIN"))
-                     && !keywords.Contains("CATACHAN") || keywords.Contains("TEMPESTUS SCIONS"))
-                {
-                    relics.Add("The Emperor's Fury");
-                }
-
-                if(keywords.Contains("CADIAN") && !keywords.Contains("CATACHAN"))
-                {
-                    relics.Add("Relic of Lost Cadia");
-                }
-
-                return relics;
-            }
-
-            if (keywords.Contains("COMMISSAR"))
-            {
-                relics.Add("The Emperor's Benediction"); //Commissar w/ Bolt Pistol
-            }
-
-            if (keywords.Contains("OFFICER"))
-            {
-                relics.Add("Tactical Auto-reliquary of Tyberius"); //Officer
-            }
-
-            if(keywords.Contains("INFANTRY"))
-            {
-                relics.Add("Death Mask of Ollanius"); //Infantry
-            }
-
-            if (keywords.Contains("INFANTRY"))
-            {
-                relics.Add("The Barbicant's Key"); //Infantry
-            }
-
+            relics.Add("The Emperor's Benediction"); //Commissar w/ Bolt Pistol
+            relics.Add("Tactical Auto-reliquary of Tyberius"); //Officer
+            relics.Add("Death Mask of Ollanius"); //Infantry
+            relics.Add("The Barbicant's Key"); //Infantry
             relics.Add("Kurov's Aquila");
-
-            if(keywords.Contains("TANK COMMANDER"))
-            {
-                relics.Add("Gatekeeper"); //Tank Commander w/ LR Battle Cannon
-            }
-
-            if(keywords.Contains("CADIAN"))
-            {
-                relics.Add("Relic of Lost Cadia"); //Cadian
-            }
-
-            if (keywords.Contains("INFANTRY"))
-            {
-                relics.Add("Order of the Bastium Stellaris"); //Infantry
-            }
-
-            if(!(keywords.Contains("TANK COMMANDER") || keywords.Contains("PRIMARIS PSYKER")
-                || keywords.Contains("ENGINSEER") || keywords.Contains("TEMPESTOR PRIME")))
-            {
-                relics.Add("Legacy of Kalladius"); //Model w/ Chainsword
-            }
-
-            if(keywords.Contains("PSYKER"))
-            {
-                relics.Add("Psy-sigil of Sanction"); //Psyker
-            }
-
+            relics.Add("Gatekeeper"); //Tank Commander w/ LR Battle Cannon
+            relics.Add("Relic of Lost Cadia"); //Cadian
+            relics.Add("Order of the Bastium Stellaris"); //Infantry
+            relics.Add("Legacy of Kalladius"); //Model w/ Chainsword
+            relics.Add("Psy-sigil of Sanction"); //Psyker
             relics.Add("Armour of Graf Toschenko");
-
-            if(keywords.Contains("OFFICER"))
-            {
-                relics.Add("Laurels of Command"); //Officer
-            }
-
-            if(keywords.Contains("CASTELLAN") || keywords.Contains("COMMANDER") || keywords.Contains("CADIAN COMMANDER") || keywords.Contains("COMMISSAR"))
-            {
-                relics.Add("Claw of the Desert Tigers"); //Power Sword/Sabre
-            }
-
-            if(keywords.Contains("COMMANDER") || keywords.Contains("CADIAN COMMANDER") || keywords.Contains("TEMPESTOR PRIME"))
-            {
-                relics.Add("Clarion Proclamatus"); //Command Squad w/ Master Vox
-            }
-
-            if (keywords.Contains("COMMANDER") || keywords.Contains("CADIAN COMMANDER") || keywords.Contains("TEMPESTOR PRIME"))
-            {
-                relics.Add("Finial of the Nemrodesh 1st"); //Command Squad w/ Regimental Std
-            }
-
-            if(keywords.Contains("TEMPESTOR PRIME") || keywords.Contains("COMMISSAR"))
-            {
-                relics.Add("Null Coat"); //Tempestor Prime or Commissar
-            }
-
-            if (keywords.Contains("CASTELLAN") || keywords.Contains("COMMANDER") || keywords.Contains("CADIAN COMMANDER") 
-                || keywords.Contains("COMMISSAR") || keywords.Contains("TEMPESTOR PRIME"))
-            {
-                relics.Add("The Emperor's Fury"); //Plasma Pistol
-            }
-
-            if(keywords.Contains("TEMPESTOR PRIME"))
-            {
-                relics.Add("Refractor Field Generator"); //Tempestor Prime
-            }
+            relics.Add("Laurels of Command"); //Officer
+            relics.Add("Claw of the Desert Tigers"); //Power Sword/Sabre
+            relics.Add("Clarion Proclamatus"); //Command Squad w/ Master Vox
+            relics.Add("Finial of the Nemrodesh 1st"); //Command Squad w/ Regimental Std
+            relics.Add("Null Coat"); //Tempestor Prime or Commissar
+            relics.Add("The Emperor's Fury"); //Plasma Pistol
+            relics.Add("Refractor Field Generator"); //Tempestor Prime
 
             return relics;
         }
@@ -503,7 +379,7 @@ namespace Roster_Builder.Astra_Militarum
                 "Armoured Superiority",
                 "Blitz Division",
                 "Expert Bobardiers",
-                "Heirloom Weapons",
+                "Heirloom Weapon",
                 "Recon Operators",
                 "Trophy Hunters",
                 "Grim Demeanour",
@@ -522,7 +398,7 @@ namespace Roster_Builder.Astra_Militarum
                 "Armoured Superiority",
                 "Blitz Division",
                 "Expert Bobardiers",
-                "Heirloom Weapons",
+                "Heirloom Weapon",
                 "Recon Operators",
                 "Trophy Hunters",
                 "Grim Demeanour",

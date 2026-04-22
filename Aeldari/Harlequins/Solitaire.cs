@@ -16,8 +16,8 @@ namespace Roster_Builder.Aeldari.Harlequins
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
             {
-                "AELDARI", "HARLEQUINS",
-                "CHARACTER", "INFANTRY", "HARLEQUIN'S KISS", "HARLEQUIN'S CARESS", "SOLITAIRE"
+                "AELDARI", "HARLEQUINS", "<SAEDATH>",
+                "CHARACTER", "INFANTRY", "DEATH JESTER"
             });
             Role = "Elites";
         }

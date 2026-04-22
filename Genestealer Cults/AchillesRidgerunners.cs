@@ -45,8 +45,6 @@ namespace Roster_Builder.Genestealer_Cults
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;
             antiLoop = true;

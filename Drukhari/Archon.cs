@@ -12,10 +12,10 @@ namespace Roster_Builder.Drukhari
 		public Archon()
 		{
 			DEFAULT_POINTS = 70;
-			TemplateCode = "2m_c";
+			TemplateCode = "1m1k_c";
 			Points = DEFAULT_POINTS;
 			Weapons.Add("Power Sword");
-			Weapons.Add("Splinter Pistol");
+			Weapons.Add("");
 			Keywords.AddRange(new string[]
 			{
 				"AELDARI", "DRUKHARI", "<KABAL>",
@@ -35,8 +35,8 @@ namespace Roster_Builder.Drukhari
 			Template.LoadTemplate(TemplateCode, panel);
 
 			ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
+			CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+			CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
 			ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
 			ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 			ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
@@ -58,15 +58,17 @@ namespace Roster_Builder.Drukhari
 			});
 			cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            cmbOption2.Items.Clear();
-            cmbOption2.Items.AddRange(new string[]
-            {
-                "Blast Pistol",
-                "Splinter Pistol"
-            });
-            cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
+			cbOption1.Text = "Blast Pistol";
+			if (Weapons[1] == cbOption1.Text)
+			{
+				cbOption1.Checked = true;
+			}
+			else
+			{
+				cbOption1.Checked = false;
+			}
 
-            if (isWarlord)
+			if (isWarlord)
 			{
 				cbWarlord.Checked = true;
 				cmbWarlord.Enabled = true;
@@ -81,13 +83,13 @@ namespace Roster_Builder.Drukhari
 			cmbRelic.Items.Clear();
 			cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-			if (Relic != null && cmbRelic.Items.Contains(Relic))
+			if (Relic != null)
 			{
 				cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
 			}
 			else
 			{
-				cmbRelic.SelectedIndex = 0;
+				cmbRelic.SelectedIndex = -1;
 			}
 
 			panel.Controls["lblFactionupgrade"].Visible = true;
@@ -133,8 +135,8 @@ namespace Roster_Builder.Drukhari
 		public override void SaveDatasheets(int code, Panel panel)
 		{
 			ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
+			CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+			CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
 			ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
 			ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 			ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
@@ -146,10 +148,7 @@ namespace Roster_Builder.Drukhari
 				case 11:
 					Weapons[0] = cmbOption1.SelectedItem.ToString();
 					break;
-                case 12:
-                    Weapons[1] = cmbOption2.SelectedItem.ToString();
-                    break;
-                case 15:
+				case 15:
 					if (cmbWarlord.SelectedIndex != -1)
 					{
 						WarlordTrait = cmbWarlord.SelectedItem.ToString();
@@ -160,51 +159,21 @@ namespace Roster_Builder.Drukhari
 					}
 					break;
 				case 16:
-                    Factionupgrade = cmbFactionupgrade.Text;
-                    if (Factionupgrade != "(None)" && Factionupgrade != null)
-                    {
-                        cmbWarlord.Items.Add("Consummate Weaponmaster");
-                        cmbRelic.Items.Add("Soulhelm");
-                    }
-                    else
-                    {
-                        if (Relic == "Soulhelm")
-                        {
-                            cmbRelic.SelectedIndex = 0;
-                        }
-
-                        if (WarlordTrait == "Consummate Weaponmaster")
-                        {
-                            cmbWarlord.SelectedIndex = -1;
-                        }
-
-                        cmbWarlord.Items.Remove("Consummate Weaponmaster");
-                        cmbRelic.Items.Remove("Soulhelm");
-                    }
-                    break;
-                case 17:
-                    string chosenRelic = cmbRelic.SelectedItem.ToString();
-					cmbOption1.Enabled = true;
-					cmbOption2.Enabled = true;
-
-					if(chosenRelic == "Parasite's Kiss")
+					Factionupgrade = cmbFactionupgrade.Text;
+					break;
+				case 17:
+					Relic = cmbRelic.SelectedItem.ToString();
+					break;
+				case 21:
+					if (cbOption1.Checked)
 					{
-						cmbOption2.SelectedIndex = 1;
-						cmbOption2.Enabled = false;
+						Weapons[1] = cbOption1.Text;
 					}
-					else if(chosenRelic == "The Djin Blade")
+					else
 					{
-						cmbOption1.SelectedIndex = 1;
-						cmbOption1.Enabled = false;
+						Weapons[1] = "";
 					}
-					else if(chosenRelic == "Soul-seeker")
-					{
-						cmbOption2.SelectedIndex = 1;
-						cmbOption2.Enabled = false;
-					}
-
-					Relic = chosenRelic;
-                    break;
+					break;
 				case 25:
 					if (cbWarlord.Checked)
 					{

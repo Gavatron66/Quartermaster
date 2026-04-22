@@ -46,9 +46,6 @@ namespace Roster_Builder.Tyranids
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 3;
@@ -88,29 +85,6 @@ namespace Roster_Builder.Tyranids
             {
                 cbOption2.Checked = false;
             }
-
-            if (repo.currentSubFaction == "Jormungandr")
-            {
-                cbStratagem3.Visible = true;
-            }
-            else
-            {
-                cbStratagem3.Visible = false;
-            }
-
-            cbStratagem3.Location = new System.Drawing.Point(cbOption2.Location.X, cbOption2.Location.Y + 32);
-            cbStratagem3.Text = f.StratagemList[2];
-
-            if (Stratagem.Contains(cbStratagem3.Text))
-            {
-                cbStratagem3.Checked = true;
-                cbStratagem3.Enabled = true;
-            }
-            else
-            {
-                cbStratagem3.Checked = false;
-                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -120,7 +94,6 @@ namespace Roster_Builder.Tyranids
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -193,19 +166,6 @@ namespace Roster_Builder.Tyranids
 
                     cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 2]);
 
-                    break;
-                case 73:
-                    if (cbStratagem3.Checked)
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
-                        }
-                    }
                     break;
             }
 

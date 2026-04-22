@@ -40,11 +40,6 @@ namespace Roster_Builder.Orks
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
-
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-            cmbFaction.Visible = true;
-            panel.Controls["lblFactionupgrade"].Visible = true;
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;
@@ -66,18 +61,6 @@ namespace Roster_Builder.Orks
                 "Smasha Gun",
                 "Traktor Kannon"
             });
-
-            cmbFaction.Items.Clear();
-            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-
-            if (Factionupgrade != null)
-            {
-                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-            }
-            else
-            {
-                cmbFaction.SelectedIndex = 0;
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -90,7 +73,6 @@ namespace Roster_Builder.Orks
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
@@ -98,26 +80,9 @@ namespace Roster_Builder.Orks
                     Weapons[currentIndex] = cmbOption1.SelectedItem.ToString();
                     lbModelSelect.Items[currentIndex] = "Mek Gun w/ " + Weapons[currentIndex];
                     break;
-                case 16:
-                    Factionupgrade = cmbFaction.Text;
-                    break;
                 case 30:
                     int temp = UnitSize;
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
-
-                    if (UnitSize > 1)
-                    {
-                        cmbFaction.Items.Clear();
-                        cmbFaction.Items.Add("(None)");
-                        cmbFaction.SelectedIndex = 0;
-                        cmbFaction.Items.Add("'Orrible Gitz");
-                    }
-                    else
-                    {
-                        cmbFaction.Items.Clear();
-                        cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-                        cmbFaction.SelectedIndex = 0;
-                    }
 
                     if (temp < UnitSize)
                     {
@@ -151,8 +116,6 @@ namespace Roster_Builder.Orks
             }
 
             Points = DEFAULT_POINTS * UnitSize;
-
-            Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
             foreach (var weapon in Weapons)
             {

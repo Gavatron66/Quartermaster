@@ -45,8 +45,6 @@ namespace Roster_Builder.Orks
             CheckBox cbLeaderOption1 = gb.Controls["cbLeaderOption1"] as CheckBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             cmbFaction.Visible = true;
             panel.Controls["lblFactionupgrade"].Visible = true;
 

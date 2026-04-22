@@ -43,9 +43,6 @@ namespace Roster_Builder.Genestealer_Cults
             GroupBox gbUnitLeader = panel.Controls["gbUnitLeader"] as GroupBox;
             ComboBox cmbOption1 = gbUnitLeader.Controls["gb_cmbOption1"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -74,29 +71,6 @@ namespace Roster_Builder.Genestealer_Cults
             {
                 cmbFaction.SelectedIndex = 0;
             }
-
-            cbStratagem3.Text = repo.StratagemList[2].ToString();
-            cbStratagem3.Location = new System.Drawing.Point(cmbFaction.Location.X, cmbFaction.Location.Y + 32);
-            cbStratagem3.Visible = true;
-
-            if (repo.currentSubFaction == "The Bladed Cog")
-            {
-                if (Stratagem.Contains(cbStratagem3.Text))
-                {
-                    cbStratagem3.Checked = true;
-                    cbStratagem3.Enabled = true;
-                }
-                else
-                {
-                    cbStratagem3.Checked = false;
-                    cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-                }
-            }
-            else
-            {
-                cbStratagem3.Enabled = false;
-                cbStratagem3.Checked = false;
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -105,7 +79,6 @@ namespace Roster_Builder.Genestealer_Cults
             GroupBox gbUnitLeader = panel.Controls["gbUnitLeader"] as GroupBox;
             ComboBox gb_cmbOption1 = gbUnitLeader.Controls["gb_cmbOption1"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -119,19 +92,6 @@ namespace Roster_Builder.Genestealer_Cults
                     if (gb_cmbOption1.SelectedIndex != -1)
                     {
                         Weapons[0] = gb_cmbOption1.SelectedItem.ToString();
-                    }
-                    break;
-                case 73:
-                    if (cbStratagem3.Checked)
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
-                        }
                     }
                     break;
             }

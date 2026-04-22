@@ -338,7 +338,6 @@ namespace Roster_Builder.Adeptus_Custodes
             ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
 
             cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
-            panel.Controls["lblSubfaction"].Text = "Select a Shield Host:";
         }
 
         public override string ToString()
@@ -350,7 +349,6 @@ namespace Roster_Builder.Adeptus_Custodes
         {
 
         }
-
         public override void SetUpForm(Form form)
         {
             base.SetUpForm(form);

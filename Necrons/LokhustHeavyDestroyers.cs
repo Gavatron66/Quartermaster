@@ -33,7 +33,6 @@ namespace Roster_Builder.Necrons
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
-            repo = f as Necrons;
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
@@ -41,7 +40,6 @@ namespace Roster_Builder.Necrons
 
             panel.Controls["lblnud1"].Text = "Models with Enmitic Exterminators:";
             panel.Controls["lblnud2"].Text = "Models with Gauss Destructors:";
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;
@@ -67,7 +65,7 @@ namespace Roster_Builder.Necrons
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            if (antiLoop)
+            if(antiLoop)
             {
                 return;
             }
@@ -105,7 +103,11 @@ namespace Roster_Builder.Necrons
                     int temp = Convert.ToInt32(Weapons[0]);
                     antiLoop = true;
 
-                    if (nudOption1.Value > UnitSize)
+                    if (nudOption1.Value < 0)
+                    {
+                        nudOption1.Value++;
+                    }
+                    else if (nudOption1.Value > UnitSize)
                     {
                         nudOption1.Value--;
                     }
@@ -114,10 +116,6 @@ namespace Roster_Builder.Necrons
                         nudOption2.Value--;
                     }
                     else if (temp > nudOption1.Value)
-                    {
-                        nudOption2.Value++;
-                    }
-                    else if (temp != nudOption1.Value)
                     {
                         nudOption2.Value++;
                     }
@@ -130,7 +128,11 @@ namespace Roster_Builder.Necrons
                     int temp2 = Convert.ToInt32(Weapons[1]);
                     antiLoop = true;
 
-                    if (nudOption2.Value > UnitSize)
+                    if (nudOption2.Value < 0)
+                    {
+                        nudOption2.Value++;
+                    }
+                    else if (nudOption2.Value > UnitSize)
                     {
                         nudOption2.Value--;
                     }
@@ -139,10 +141,6 @@ namespace Roster_Builder.Necrons
                         nudOption1.Value--;
                     }
                     else if (temp2 > nudOption2.Value)
-                    {
-                        nudOption1.Value++;
-                    }
-                    else if (temp2 != nudOption2.Value)
                     {
                         nudOption1.Value++;
                     }

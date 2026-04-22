@@ -10,16 +10,15 @@ namespace Roster_Builder.Astra_Militarum
     public class LemanRuss : Datasheets
     {
         int currentIndex;
-        int tankAceIndex = -1;
 
         public LemanRuss()
         {
             DEFAULT_POINTS = 155;
             UnitSize = 1;
-            Points = DEFAULT_POINTS + 5;
+            Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "carnifex";
             Weapons.Add("Battle Cannon");
-            Weapons.Add("Lascannon (+5 pts)");
+            Weapons.Add("Lascannon");
             Weapons.Add("(None)");
             Weapons.Add("(None)");
             Weapons.Add("");
@@ -55,8 +54,6 @@ namespace Roster_Builder.Astra_Militarum
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             antiLoop = true;
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;
@@ -88,7 +85,7 @@ namespace Roster_Builder.Astra_Militarum
             {
                 "Heavy Bolter",
                 "Heavy Flamer",
-                "Lascannon (+5 pts)"
+                "Lascannon"
             });
 
             cmbOption3.Items.Clear();
@@ -154,15 +151,6 @@ namespace Roster_Builder.Astra_Militarum
                     lbModelSelect.Items[currentIndex] = "Leman Russ w/ " + Weapons[currentIndex * 8] + " - " + CalcPoints(currentIndex) + "pts";
                     break;
                 case 16:
-                    if (cmbFaction.SelectedItem.ToString() != "(None)")
-                    {
-                        tankAceIndex = currentIndex;
-                    }
-                    else if(tankAceIndex == currentIndex && cmbFaction.SelectedItem.ToString() == "(None)")
-                    {
-                        tankAceIndex = -1;
-                    }
-
                     Weapons[(currentIndex * 8) + 7] = cmbFaction.SelectedItem.ToString();
                     lbModelSelect.Items[currentIndex] = "Leman Russ w/ " + Weapons[currentIndex * 8] + " - " + CalcPoints(currentIndex) + "pts";
                     break;
@@ -208,7 +196,7 @@ namespace Roster_Builder.Astra_Militarum
                         for (int i = temp; i < UnitSize; i++)
                         {
                             Weapons.Add("Battle Cannon");
-                            Weapons.Add("Lascannon (+5 pts)");
+                            Weapons.Add("Lascannon");
                             Weapons.Add("(None)");
                             Weapons.Add("(None)");
                             Weapons.Add("");
@@ -296,15 +284,6 @@ namespace Roster_Builder.Astra_Militarum
                     {
                         cbOption3.Checked = false;
                     }
-
-                    if(tankAceIndex >= 0 && currentIndex != tankAceIndex)
-                    {
-                        cmbFaction.Enabled = false;
-                    }
-                    else
-                    {
-                        cmbFaction.Enabled = true;
-                    }
                     break;
             }
 
@@ -325,7 +304,7 @@ namespace Roster_Builder.Astra_Militarum
                 for (int i = 0; i < UnitSize * 8; i++)
                 {
                     if (Weapons[i] == "Armoured Tracks (+5 pts)" || Weapons[i] == "Heavy Stubber (+5 pts)" || Weapons[i] == "Hunter-killer Missile (+5 pts)"
-                        || Weapons[i] == "Storm Bolter (+5 pts)" || Weapons[i] == "Lascannon (+5 pts)")
+                        || Weapons[i] == "Storm Bolter (+5 pts)")
                     {
                         points += 5;
                     }
@@ -360,7 +339,7 @@ namespace Roster_Builder.Astra_Militarum
             for(int i = index * 8; i < 8 + (8 * index); i++)
             {
                 if (Weapons[i] == "Armoured Tracks (+5 pts)" || Weapons[i] == "Heavy Stubber (+5 pts)" || Weapons[i] == "Hunter-killer Missile (+5 pts)"
-                    || Weapons[i] == "Storm Bolter (+5 pts)" || Weapons[i] == "Lascannon (+5 pts)")
+                    || Weapons[i] == "Storm Bolter (+5 pts)")
                 {
                     points += 5;
                 }

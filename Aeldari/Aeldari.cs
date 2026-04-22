@@ -493,12 +493,12 @@ namespace Roster_Builder.Aeldari
                     relics.Add("Aegis of Eldanesh");
                 }
 
-                if(keywords.Contains("PSYKER"))
+                if(keywords.Contains("PSYKER") && keywords.Contains("BIKER"))
                 {
                     relics.Add("The Weeping Stones");
                 }
-
-                if (currentSubFaction == "Ulthwé" && keywords.Contains("PSYKER"))
+                
+                if(currentSubFaction == "Ulthwé" && keywords.Contains("PSYKER"))
                 {
                     relics.Add("The Ghosthelm of Alishazier");
                 }

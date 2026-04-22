@@ -31,66 +31,25 @@ namespace Roster_Builder.Tyranids
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as Tyranids;
             Template.LoadTemplate(TemplateCode, panel);
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 10;
             nudUnitSize.Value = nudUnitSize.Minimum;
             nudUnitSize.Maximum = 20;
             nudUnitSize.Value = currentSize;
-
-            if (repo.currentSubFaction == "Jormungandr")
-            {
-                cbStratagem3.Visible = true;
-            }
-            else
-            {
-                cbStratagem3.Visible = false;
-            }
-
-            cbStratagem3.Location = new System.Drawing.Point(nudUnitSize.Location.X, nudUnitSize.Location.Y + 32);
-            cbStratagem3.Text = f.StratagemList[2];
-
-            if (Stratagem.Contains(cbStratagem3.Text))
-            {
-                cbStratagem3.Checked = true;
-                cbStratagem3.Enabled = true;
-            }
-            else
-            {
-                cbStratagem3.Checked = false;
-                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
                 case 30:
                     UnitSize = Convert.ToInt32(nudUnitSize.Value);
-                    break;
-                case 73:
-                    if (cbStratagem3.Checked)
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
-                        }
-                    }
                     break;
             }
 

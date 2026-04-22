@@ -15,8 +15,8 @@ namespace Roster_Builder.Adepta_Sororitas
             DEFAULT_POINTS = 45;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
-            TemplateCode = "1m_c";
-            Weapons.Add("Bolt Pistol");
+            TemplateCode = "1k_c";
+            Weapons.Add("");
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADPETUS MINISTORUM", "ADEPTA SORORITAS", "<ORDER>",
@@ -35,7 +35,7 @@ namespace Roster_Builder.Adepta_Sororitas
             repo = f as AdeptaSororitas;
             Template.LoadTemplate(TemplateCode, panel);
 
-            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
@@ -48,13 +48,15 @@ namespace Roster_Builder.Adepta_Sororitas
                 cmbWarlord.Items.Add(item);
             }
 
-            cmbOption1.Items.Clear();
-            cmbOption1.Items.AddRange(new string[]
+            cbOption1.Text = "Plasma Pistol (+5 pts)";
+            if (Weapons[0] != string.Empty)
             {
-                "Bolt Pistol",
-                "Plasma Pistol (+5 pts)"
-            });
-            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+                cbOption1.Checked = true;
+            }
+            else
+            {
+                cbOption1.Checked = false;
+            }
 
             if (isWarlord)
             {
@@ -83,13 +85,13 @@ namespace Roster_Builder.Adepta_Sororitas
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             panel.Controls["lblFactionupgrade"].Visible = true;
@@ -123,7 +125,7 @@ namespace Roster_Builder.Adepta_Sororitas
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
@@ -132,9 +134,6 @@ namespace Roster_Builder.Adepta_Sororitas
 
             switch (code)
             {
-                case 11:
-                    Weapons[0] = cmbOption1.SelectedItem.ToString();
-                    break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
                     {
@@ -144,26 +143,21 @@ namespace Roster_Builder.Adepta_Sororitas
                     {
                         WarlordTrait = string.Empty;
                     }
+
                     break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
-                    cmbOption1.Enabled = true;
-                    
-                    if(chosenRelic == "Wrath of the Emperor")
-                    {
-                        cmbOption1.SelectedIndex = 0;
-                        cmbOption1.Enabled = false;
-                    }
-                    else if(chosenRelic == "Redemption")
-                    {
-                        cmbOption1.SelectedIndex = 1;
-                        cmbOption1.Enabled = false;
-                    }
-
                     Relic = chosenRelic;
+                    break;
+                case 21:
+                    if (cbOption1.Checked)
+                    {
+                        Weapons[0] = cbOption1.Text;
+                    }
+                    else { Weapons[0] = string.Empty; }
                     break;
                 case 25:
                     if (cbWarlord.Checked)
@@ -191,7 +185,7 @@ namespace Roster_Builder.Adepta_Sororitas
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
-            if (Weapons[0] == "Plasma Pistol (+5 pts)")
+            if (cbOption1.Checked)
             {
                 Points += 5;
             }

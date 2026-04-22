@@ -37,8 +37,6 @@ namespace Roster_Builder.Adepta_Sororitas
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 4;
             nudUnitSize.Value = nudUnitSize.Minimum;

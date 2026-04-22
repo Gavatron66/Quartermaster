@@ -49,19 +49,21 @@ namespace Roster_Builder.Aeldari
 
             panel.Controls["lblFactionupgrade"].Visible = true;
             cmbFaction.Visible = true;
-            lblRelic.Visible = false;
-            cmbRelic.Visible = false;
+            lblRelic.Visible = true;
+            lblRelic.Location = new System.Drawing.Point(cmbFaction.Location.X, cmbFaction.Location.Y + 34);
+            cmbRelic.Visible = true;
+            cmbRelic.Location = new System.Drawing.Point(lblRelic.Location.X, lblRelic.Location.Y + 23);
 
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             cmbFaction.Items.Clear();

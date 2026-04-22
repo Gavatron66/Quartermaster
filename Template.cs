@@ -1759,9 +1759,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lblFactionupgrade"].Location = new System.Drawing.Point(239, 59);
 
                     panel.Controls["cmbFactionupgrade"].Location = new System.Drawing.Point(243, 82);
@@ -1774,9 +1771,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["gbUnitLeader"].Visible = true;
                     panel.Controls["gbUnitLeader"].Location = new System.Drawing.Point(90, 59);
@@ -1803,9 +1797,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 63);
 
@@ -1824,9 +1815,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["cbOption1"].Visible = true;
                     panel.Controls["cbOption1"].Location = new System.Drawing.Point(90, 66);
@@ -1856,9 +1844,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["gbUnitLeader"].Visible = true;
                     panel.Controls["gbUnitLeader"].Location = new System.Drawing.Point(90, 59);
                     panel.Controls["gbUnitLeader"].Size = new System.Drawing.Size(426, 77);
@@ -1883,9 +1868,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["gbUnitLeader"].Visible = true;
                     panel.Controls["gbUnitLeader"].Location = new System.Drawing.Point(90, 59);
@@ -1918,9 +1900,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["cbOption1"].Visible = true;
                     panel.Controls["cbOption1"].Location = new System.Drawing.Point(243, 59);
 
@@ -1936,9 +1915,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 63);
@@ -1961,9 +1937,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 63);
 
@@ -1985,9 +1958,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 63);
@@ -2019,9 +1989,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 63);
@@ -2066,9 +2033,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 63);
 
@@ -2097,9 +2061,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["cbOption1"].Visible = true;
                     panel.Controls["cbOption1"].Location = new System.Drawing.Point(243, 59);
 
@@ -2118,9 +2079,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblPsyker"].Visible = true;
                     panel.Controls["lblPsyker"].Location = new System.Drawing.Point(86, 59);
@@ -2145,9 +2103,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 63);
 
@@ -2168,9 +2123,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption1"].Location = new System.Drawing.Point(88, 63);
@@ -2215,9 +2167,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lblnud1"].Visible = true;
                     panel.Controls["lblnud1"].Location = new System.Drawing.Point(88, 63);
 
@@ -2234,7 +2183,7 @@ namespace Roster_Builder
                     panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 128);
 
                     panel.Controls["cmbOption2"].Visible = true;
-                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(313, 125);
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 125);
                     break;
                 #endregion
                 #region case "2N"
@@ -2244,9 +2193,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblnud1"].Visible = true;
                     panel.Controls["lblnud1"].Location = new System.Drawing.Point(88, 63);
@@ -2266,9 +2212,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27); //36
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblnud1"].Visible = true;
                     panel.Controls["lblnud1"].Location = new System.Drawing.Point(156, 63);
@@ -2303,9 +2246,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption1"].Location = new System.Drawing.Point(88, 63);
@@ -2344,9 +2284,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lblnud1"].Visible = true;
                     panel.Controls["lblnud1"].Location = new System.Drawing.Point(86, 61);
 
@@ -2364,9 +2301,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblnud1"].Visible = true;
                     panel.Controls["lblnud1"].Location = new System.Drawing.Point(126, 61);
@@ -2388,9 +2322,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 63);
@@ -2418,9 +2349,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblnud1"].Visible = true;
                     panel.Controls["lblnud1"].Location = new System.Drawing.Point(154, 55);
@@ -2468,9 +2396,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lblnud1"].Visible = true;
                     panel.Controls["lblnud1"].Location = new System.Drawing.Point(126, 61);
 
@@ -2501,9 +2426,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblnud1"].Visible = true;
                     panel.Controls["lblnud1"].Location = new System.Drawing.Point(106, 61);
@@ -2542,9 +2464,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblnud1"].Visible = true;
                     panel.Controls["lblnud1"].Location = new System.Drawing.Point(106, 61);
@@ -2593,9 +2512,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lblnud1"].Visible = true;
                     panel.Controls["lblnud1"].Location = new System.Drawing.Point(126, 61);
 
@@ -2626,9 +2542,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblnud1"].Visible = true;
                     panel.Controls["lblnud1"].Location = new System.Drawing.Point(126, 61);
@@ -2665,9 +2578,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
                     panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
@@ -2695,9 +2605,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
                     panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
@@ -2714,11 +2621,11 @@ namespace Roster_Builder
 
                     panel.Controls["cbOption2"].Location = new System.Drawing.Point(243, 183);
 
-                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(243, 213);
+                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(243, 208);
 
-                    panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(239, 240);
+                    panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(239, 235);
 
-                    panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 263);
+                    panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 258);
                     break;
                 #endregion
                 #region case "NL3k"
@@ -2728,9 +2635,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
@@ -2754,9 +2658,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
@@ -2783,9 +2684,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
                     panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
@@ -2808,9 +2706,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
@@ -2838,9 +2733,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
@@ -2871,9 +2763,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
                     panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
@@ -2894,9 +2783,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
@@ -2925,9 +2811,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
                     panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
@@ -2952,9 +2835,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
@@ -2991,9 +2871,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
                     panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
@@ -3022,9 +2899,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
@@ -3060,9 +2934,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
@@ -3107,9 +2978,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
                     panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
@@ -3149,9 +3017,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
                     panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
@@ -3185,10 +3050,7 @@ namespace Roster_Builder
 					panel.Controls["nudUnitSize"].Visible = true;
 					panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
-                    panel.Controls["lbModelSelect"].Visible = true;
+					panel.Controls["lbModelSelect"].Visible = true;
 					panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
 					panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
 
@@ -3225,9 +3087,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
                     panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
@@ -3260,9 +3119,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
@@ -3297,9 +3153,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
                     panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
@@ -3331,9 +3184,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 77);
                     panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
@@ -3356,9 +3206,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblnud1"].Visible = true;
                     panel.Controls["lblnud1"].Location = new System.Drawing.Point(126, 61);
@@ -3411,9 +3258,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption1"].Location = new System.Drawing.Point(88, 63);
@@ -3469,9 +3313,6 @@ namespace Roster_Builder
 
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
-
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
 
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
@@ -3532,9 +3373,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = true;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lbModelSelect"].Visible = true;
                     panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
                     panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
@@ -3578,9 +3416,6 @@ namespace Roster_Builder
                     panel.Controls["nudUnitSize"].Visible = true;
                     panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(343, 27);
 
-                    panel.Controls["lblModelPoints"].Visible = false;
-                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
-
                     panel.Controls["lblnud1"].Visible = true;
                     panel.Controls["lblnud1"].Location = new System.Drawing.Point(88, 63);
 
@@ -3616,72 +3451,8 @@ namespace Roster_Builder
                     groupbox.Controls["gb_cmbOption1"].Visible = true;
                     groupbox.Controls["gb_cmbOption1"].Location = new System.Drawing.Point(231, 31);
                     break;
-                #endregion
-                #region case "cadianCommand"
-                case "cadianCommand":
-                    panel.Controls["lblOption1"].Visible = true;
-                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
-
-                    panel.Controls["gbUnitLeader"].Visible = true;
-                    panel.Controls["gbUnitLeader"].Location = new System.Drawing.Point(86, 29);
-                    panel.Controls["gbUnitLeader"].Size = new System.Drawing.Size(426, 112);
-
-                    groupbox = panel.Controls["gbUnitLeader"] as GroupBox;
-
-                    groupbox.Controls["gb_lblOption1"].Visible = true;
-                    groupbox.Controls["gb_lblOption1"].Location = new System.Drawing.Point(6, 34);
-
-                    groupbox.Controls["gb_cmbOption1"].Visible = true;
-                    groupbox.Controls["gb_cmbOption1"].Location = new System.Drawing.Point(231, 31);
-
-                    groupbox.Controls["gb_lblOption2"].Visible = true;
-                    groupbox.Controls["gb_lblOption2"].Location = new System.Drawing.Point(6, 66);
-
-                    groupbox.Controls["gb_cmbOption2"].Visible = true;
-                    groupbox.Controls["gb_cmbOption2"].Location = new System.Drawing.Point(231, 63);
-
-                    panel.Controls["lblOption1"].Visible = true;
-                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 173);
-
-                    panel.Controls["cmbOption1"].Visible = true;
-                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 169);
-
-                    panel.Controls["lblOption2"].Visible = true;
-                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 207);
-
-                    panel.Controls["cmbOption2"].Visible = true;
-                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 203);
-
-                    panel.Controls["lblOption3"].Visible = true;
-                    panel.Controls["lblOption3"].Location = new System.Drawing.Point(86, 241);
-
-                    panel.Controls["cmbOption3"].Visible = true;
-                    panel.Controls["cmbOption3"].Location = new System.Drawing.Point(311, 237);
-
-                    panel.Controls["cbWarlord"].Visible = true;
-                    panel.Controls["cbWarlord"].Location = new System.Drawing.Point(87, 275);//275
-
-                    panel.Controls["lblWarlord"].Visible = true;
-                    panel.Controls["lblWarlord"].Location = new System.Drawing.Point(83, 302);
-
-                    panel.Controls["cmbWarlord"].Visible = true;
-                    panel.Controls["cmbWarlord"].Location = new System.Drawing.Point(85, 325);
-
-                    panel.Controls["lblRelic"].Visible = true;
-                    panel.Controls["lblRelic"].Location = new System.Drawing.Point(293, 275); //294, 67
-
-                    panel.Controls["cmbRelic"].Visible = true;
-                    panel.Controls["cmbRelic"].Location = new System.Drawing.Point(293, 297); //298,90
-
-                    panel.Controls["cbStratagem1"].Visible = true;
-                    panel.Controls["cbStratagem1"].Location = new System.Drawing.Point(294, 334);
-
-                    panel.Controls["cbStratagem2"].Visible = true;
-                    panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(294, 364);
-
-                    break;
                     #endregion
-                    //Hearthkyn Warriors use a special jury-rigged version of NL2m3k
+                //Hearthkyn Warriors use a special jury-rigged version of NL2m3k
             }
         }
 

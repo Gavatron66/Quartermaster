@@ -58,8 +58,6 @@ namespace Roster_Builder.Orks
 
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             nudOption1.Location = new System.Drawing.Point(nudOption1.Location.X + 80, nudOption1.Location.Y);
             nudOption4.Location = new System.Drawing.Point(nudOption4.Location.X + 10, nudOption4.Location.Y);
 

@@ -41,7 +41,6 @@ namespace Roster_Builder.Necrons
 
             panel.Controls["lblnud1"].Text = "Models with Gauss Flayers:";
             panel.Controls["lblnud2"].Text = "Models with Gauss Reapers:";
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 10;

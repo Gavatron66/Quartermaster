@@ -13,7 +13,7 @@ namespace Roster_Builder.Astra_Militarum
         {
             DEFAULT_POINTS = 40;
             UnitSize = 4;
-            Points = DEFAULT_POINTS;
+            Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "2m";
             Weapons.Add("Servo-arm");
             Weapons.Add("Servo-arm");
@@ -73,7 +73,7 @@ namespace Roster_Builder.Astra_Militarum
                     break;
             }
 
-            Points = DEFAULT_POINTS;
+            Points = DEFAULT_POINTS * UnitSize;
 
             foreach (string weapon in Weapons)
             {

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Cache;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,20 +9,17 @@ namespace Roster_Builder.Genestealer_Cults
 {
     public class HybridMetamorphs : Datasheets
     {
-        int currentIndex;
         public HybridMetamorphs()
         {
             DEFAULT_POINTS = 12;
             UnitSize = 5;
             Points = DEFAULT_POINTS * UnitSize;
-            TemplateCode = "NL2m1k";
-            Weapons.Add("Autopistol");
-            Weapons.Add("Metamorph Mutations");
-            for (int i = 1; i < UnitSize; i++)
-            {
-                Weapons.Add("Autopistol");
-            }
-
+            TemplateCode = "3N1kS(2m)";
+            Weapons.Add("5"); //AutopistolS
+            Weapons.Add("0"); //Hand Flamer (+3 pts)S
+            Weapons.Add("0"); //Cult Icon (+10 pts)
+            Weapons.Add("Autopistol"); //Leader Option 1
+            Weapons.Add("Metamorph Mutations"); //Leader Option 2
             Keywords.AddRange(new string[]
             {
                 "TYRANIDS", "GENESTEALER CULTS", "<CULT>",
@@ -39,276 +35,171 @@ namespace Roster_Builder.Genestealer_Cults
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as GSC;
             Template.LoadTemplate(TemplateCode, panel);
+            repo = f as GSC;
+
+            panel.Controls["lblFactionUpgrade"].Visible = true;
+            panel.Controls["cmbFactionUpgrade"].Visible = true;
+
+            Label lblnud1 = panel.Controls["lblnud1"] as Label;
+            Label lblnud2 = panel.Controls["lblnud2"] as Label;
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
-            ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
-            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
+            NumericUpDown nudOption2 = panel.Controls["nudOption2"] as NumericUpDown;
+
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
-            ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
-            cbOption1.Location = new System.Drawing.Point(282, 184);
+            GroupBox groupBox = panel.Controls["gbUnitLeader"] as GroupBox;
+            ComboBox gb_cmbOption1 = groupBox.Controls["gb_cmbOption1"] as ComboBox;
+            ComboBox gb_cmbOption2 = groupBox.Controls["gb_cmbOption2"] as ComboBox;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+            lblnud1.Text = "Models with Autopistols:";
+            lblnud2.Text = "Models with Hand Flamers (+3 pts):";
+
+            cbOption1.Text = "Cult Icon (+10 pts)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
-            antiLoop = true;
             nudUnitSize.Value = nudUnitSize.Minimum;
-            antiLoop = false;
             nudUnitSize.Maximum = 15;
             nudUnitSize.Value = currentSize;
 
-            lbModelSelect.Items.Clear();
-            lbModelSelect.Items.Add("Metamorph Leader w/ " + Weapons[0] + " and " + Weapons[1]);
-            for (int i = 1; i < UnitSize; i++)
+            nudOption1.Minimum = 0;
+            nudOption1.Maximum = nudUnitSize.Maximum;
+            nudOption1.Value = 0;
+
+            nudOption2.Minimum = 0;
+            nudOption2.Maximum = nudUnitSize.Maximum;
+            nudOption2.Value = 0;
+
+            int temp = int.Parse(Weapons[0]);
+            nudOption1.Value = temp;
+            temp = int.Parse(Weapons[1]);
+            nudOption2.Value = temp;
+
+            antiLoop = true;
+            if (int.Parse(Weapons[2]) == 1)
             {
-                lbModelSelect.Items.Add("Metamorph Hybrid w/ " + Weapons[i + 1]);
+                cbOption1.Checked = true;
             }
-
-            cmbOption1.Items.Clear();
-            cmbOption1.Items.AddRange(new string[]
+            else
             {
+                cbOption1.Checked = false;
+            }
+            antiLoop = false;
+
+            groupBox.Text = "Metamorph Leader";
+
+            gb_cmbOption1.Items.Clear();
+            gb_cmbOption1.Items.AddRange(new string[] {
                 "Autopistol",
-                "Hand Flamer (+3 pts)"
+                "Cult Bonesword (+5 pts)",
+                "Cult Lash Whip"
             });
+            gb_cmbOption1.SelectedIndex = gb_cmbOption1.Items.IndexOf(Weapons[3]);
 
-            cmbOption2.Items.Clear();
-            cmbOption2.Items.AddRange(new string[]
-            {
+            gb_cmbOption2.Items.Clear();
+            gb_cmbOption2.Items.AddRange(new string[] {
                 "Cult Bonesword (+5 pts)",
                 "Cult Lash Whip",
                 "Metamorph Mutations"
             });
+            gb_cmbOption2.SelectedIndex = gb_cmbOption2.Items.IndexOf(Weapons[4]);
 
-            cbOption1.Text = "Cult Icon (+10 pts)";
-
-            cmbFactionupgrade.Visible = true;
-            panel.Controls["lblFactionupgrade"].Visible = true;
-
-            cmbFactionupgrade.Items.Clear();
-            cmbFactionupgrade.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+            cmbFaction.Items.Clear();
+            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
 
             if (Factionupgrade != null)
             {
-                cmbFactionupgrade.SelectedIndex = cmbFactionupgrade.Items.IndexOf(Factionupgrade);
+                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
             }
             else
             {
-                cmbFactionupgrade.SelectedIndex = 0;
-            }
-
-            cbStratagem3.Text = repo.StratagemList[2].ToString();
-            cbStratagem3.Location = new System.Drawing.Point(cmbFactionupgrade.Location.X, cmbFactionupgrade.Location.Y + 32);
-            cbStratagem3.Visible = true;
-
-            if (repo.currentSubFaction == "The Bladed Cog")
-            {
-                if (Stratagem.Contains(cbStratagem3.Text))
-                {
-                    cbStratagem3.Checked = true;
-                    cbStratagem3.Enabled = true;
-                }
-                else
-                {
-                    cbStratagem3.Checked = false;
-                    cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-                }
-            }
-            else
-            {
-                cbStratagem3.Enabled = false;
-                cbStratagem3.Checked = false;
+                cmbFaction.SelectedIndex = 0;
             }
         }
 
-
         public override void SaveDatasheets(int code, Panel panel)
         {
-            if (antiLoop)
+            if(antiLoop)
             {
                 return;
             }
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
-            ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
-            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
+            NumericUpDown nudOption2 = panel.Controls["nudOption2"] as NumericUpDown;
+
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
-            ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+
+            GroupBox groupBox = panel.Controls["gbUnitLeader"] as GroupBox;
+            ComboBox gb_cmbOption1 = groupBox.Controls["gb_cmbOption1"] as ComboBox;
+            ComboBox gb_cmbOption2 = groupBox.Controls["gb_cmbOption2"] as ComboBox;
 
             switch (code)
             {
-                case 11:
-                    if (currentIndex == 0)
-                    {
-                        Weapons[0] = cmbOption1.SelectedItem.ToString();
-                        lbModelSelect.Items[0] = "Metamorph Leader w/ " + Weapons[0] + " and " + Weapons[1];
-                        break;
-                    }
-
-                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
-                    {
-                        Weapons[currentIndex + 1] = cmbOption1.SelectedItem.ToString();
-                        lbModelSelect.Items[currentIndex] = "Metamorph Hybrid w/ " + Weapons[currentIndex + 1];
-                    }
-                    else
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
-                    }
-                    break;
-                case 12:
-                    Weapons[1] = cmbOption2.SelectedItem.ToString();
-                    lbModelSelect.Items[0] = "Metamorph Leader w/ " + Weapons[0] + " and " + Weapons[1];
-
-                    break;
                 case 16:
-                    Factionupgrade = cmbFactionupgrade.Text;
+                    Factionupgrade = cmbFaction.Text;
                     break;
                 case 21:
                     if (cbOption1.Checked)
                     {
-                        Weapons[currentIndex + 1] = cbOption1.Text;
-                        cmbOption1.Enabled = false;
+                        Weapons[2] = "1";
                     }
-                    else
-                    {
-                        Weapons[currentIndex + 1] = "Autopistol";
-                        cmbOption1.Enabled = true;
-                    }
-                    lbModelSelect.Items[currentIndex] = "Metamorph Hybrid w/ " + Weapons[currentIndex + 1];
+                    else { Weapons[2] = "0"; }
                     break;
                 case 30:
-                    int temp = UnitSize;
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
-
-                    if (temp < UnitSize)
-                    {
-                        Weapons.Add("Autopistol");
-                        lbModelSelect.Items.Add("Metamorph Hybrid w/ Autopistol");
-                    }
-
-                    if (temp > UnitSize)
-                    {
-                        lbModelSelect.Items.RemoveAt(temp - 1);
-                        Weapons.RemoveRange((UnitSize) + 1, 1);
-                    }
                     break;
-                case 61:
-                    currentIndex = lbModelSelect.SelectedIndex;
-
-                    if (currentIndex < 0)
+                case 31:
+                    if (nudOption1.Value == 0)
                     {
-                        cmbOption1.Visible = false;
-                        cmbOption2.Visible = false;
-                        cbOption1.Visible = false;
-                        panel.Controls["lblOption1"].Visible = false;
-                        panel.Controls["lblOption2"].Visible = false;
                         break;
                     }
-
-                    if (currentIndex == 0 && !antiLoop)
+                    else if (nudOption1.Value + nudOption2.Value + int.Parse(Weapons[2]) <= nudUnitSize.Value - 1)
                     {
-                        cmbOption1.Visible = true;
-                        cmbOption1.Enabled = true;
-                        cmbOption2.Visible = true;
-                        panel.Controls["lblOption1"].Visible = true;
-                        panel.Controls["lblOption2"].Visible = true;
-                        cbOption1.Visible = false;
-
-                        cmbOption1.Items.Clear();
-                        cmbOption1.Items.AddRange(new string[]
-                        {
-                            "Autopistol",
-                            "Cult Bonesword (+5 pts)",
-                            "Cult Lash Whip",
-                            "Hand Flamer (+3 pts)"
-                        });
-
-                        antiLoop = true;
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
-                        antiLoop = false;
+                        Weapons[0] = Convert.ToString(nudOption1.Value);
+                    }
+                    else
+                    {
+                        nudOption1.Value -= 1;
+                    }
+                    break;
+                case 32:
+                    if (nudOption2.Value == 0)
+                    {
                         break;
                     }
-
-                    cmbOption1.Items.Clear();
-                    cmbOption1.Items.AddRange(new string[]
+                    else if (nudOption1.Value + nudOption2.Value + int.Parse(Weapons[2]) <= nudUnitSize.Value - 1)
                     {
-                        "Autopistol",
-                        "Hand Flamer (+3 pts)",
-                    });
-
-                    cmbOption1.Visible = true;
-                    cmbOption1.Enabled = true;
-                    cbOption1.Visible = true;
-                    panel.Controls["lblOption1"].Visible = true;
-
-                    cmbOption2.Visible = false;
-                    panel.Controls["lblOption2"].Visible = false;
-
-                    if (Weapons.Contains("Cult Icon (+10 pts)"))
-                    {
-                        cbOption1.Enabled = false;
+                        Weapons[1] = Convert.ToString(nudOption2.Value);
                     }
                     else
                     {
-                        cbOption1.Enabled = true;
+                        nudOption2.Value -= 1;
                     }
-
-                    antiLoop = true;
-                    if (Weapons[currentIndex + 1] == "Cult Icon (+10 pts)")
-                    {
-                        cbOption1.Enabled = true;
-                        cbOption1.Checked = true;
-                        cmbOption1.Enabled = false;
-                    }
-                    else
-                    {
-                        cbOption1.Checked = false;
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
-                    }
-                    antiLoop = false;
-
-                    Points = UnitSize * DEFAULT_POINTS;
-
                     break;
-                case 73:
-                    if (cbStratagem3.Checked)
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
-                        }
-                    }
+                case 411:
+                    Weapons[3] = gb_cmbOption1.SelectedItem.ToString();
+                    break;
+                case 412:
+                    Weapons[4] = gb_cmbOption2.SelectedItem.ToString();
                     break;
             }
 
             Points = DEFAULT_POINTS * UnitSize;
 
-            foreach (var item in Weapons)
+            Points += (int.Parse(Weapons[1]) * 3);
+            Points += (int.Parse(Weapons[2]) * 20);
+
+            for(int i = 3; i < 5; i++)
             {
-                if (item == "Cult Bonesword (+5 pts)")
+                if (Weapons[i] == "Cult Bonesword (+5 pts)")
                 {
                     Points += 5;
-                }
-
-                if (item == "Cult Icon (+10 pts)")
-                {
-                    Points += 10;
-                }
-
-                if (item == "Hand Flamer (+3 pts)")
-                {
-                    Points += 3;
                 }
             }
 

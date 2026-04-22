@@ -214,40 +214,27 @@ namespace Roster_Builder.Grey_Knights
                 "(None)"
             };
 
-            if(keywords.Contains("CORE"))
-            {
-                relics.AddRange(new string[]
-                {
-                    "Domina Liber Daemonica",
-                    "Sanctic Shard",
-                    "Augurium Scrolls",
-                    "Stave of Supremacy"
-                });
-
-                return relics;
-            }
-
-            if(keywords.Contains("BROTHER-CAPTAIN") || keywords.Contains("BROTHERHOOD LIBRARIAN") ||
+            if(keywords.Contains("BROTHER-CAPTAIN") || keywords.Contains("LIBRARIAN") ||
                 (keywords.Contains("GRAND MASTER") && !keywords.Contains("NEMESIS DREADKNIGHT")) ||
-                keywords.Contains("BROTHERHOOD APOTHECARY"))
+                keywords.Contains("APOTHECARY"))
             {
                 relics.Add("Soul Glaive");
             }
 
-            if (keywords.Contains("BROTHER-CAPTAIN") || keywords.Contains("BROTHERHOOD LIBRARIAN") ||
+            if (keywords.Contains("BROTHER-CAPTAIN") || keywords.Contains("LIBRARIAN") ||
                 (keywords.Contains("GRAND MASTER") && !keywords.Contains("NEMESIS DREADKNIGHT")) ||
-                keywords.Contains("BROTHERHOOD APOTHECARY"))
+                keywords.Contains("APOTHECARY"))
             {
                 relics.Add("Destroyer of Crys'yllix");
             }
 
-            if(!(keywords.Contains("BROTHERHOOD TECHMARINE") || keywords.Contains("NEMESIS DREADKNIGHT")
-                || keywords.Contains("BROTHERHOOD APOTHECARY")))
+            if(!(keywords.Contains("TECHMARINE") || keywords.Contains("NEMESIS DREADKNIGHT")
+                || keywords.Contains("APOTHECARY")))
             {
                 relics.Add("Fury of Deimos");
             }
 
-            if(keywords.Contains("ANCIENT") || keywords.Contains("PALADIN ANCIENT"))
+            if(keywords.Contains("ANCIENT"))
             {
                 relics.Add("Banner of Refining Flame");
             }
@@ -263,24 +250,24 @@ namespace Roster_Builder.Grey_Knights
 
             relics.Add("Gyrotemporal Vault");
 
-            if(keywords.Contains("BROTHER-CAPTAIN") || keywords.Contains("BROTHERHOOD CHAMPION")
-                || keywords.Contains("BROTHERHOOD LIBRARIAN")
+            if(keywords.Contains("BROTHER-CAPTAIN") || keywords.Contains("CHAMPION")
+                || keywords.Contains("LIBRARIAN")
                 || (keywords.Contains("GRAND MASTER") && !keywords.Contains("NEMESIS DREADKNIGHT"))
-                || keywords.Contains("BROTHERHOOD APOTHECARY")) 
+                || keywords.Contains("APOTHECARY")) 
             {
                 relics.Add("Blade of the Forsworn");
             }
 
             relics.Add("Sigil of Exigence");
 
-            if(!(keywords.Contains("BROTHERHOOD CHAPLAIN") || keywords.Contains("BROTHERHOOD TECHMARINE")))
+            if(!(keywords.Contains("CHAPLAIN") || keywords.Contains("TECHMARINE")))
             {
                 relics.Add("Augurium Scrolls");
             }
 
-            if (keywords.Contains("BROTHER-CAPTAIN") || keywords.Contains("BROTHERHOOD LIBRARIAN") ||
+            if (keywords.Contains("BROTHER-CAPTAIN") || keywords.Contains("LIBRARIAN") ||
                 (keywords.Contains("GRAND MASTER") && !keywords.Contains("NEMESIS DREADKNIGHT")) ||
-                keywords.Contains("BROTHERHOOD APOTHECARY"))
+                keywords.Contains("APOTHECARY"))
             {
                 relics.Add("Stave of Supremacy");
             }
@@ -290,12 +277,12 @@ namespace Roster_Builder.Grey_Knights
                 relics.Add("Kantu Vambrace");
             }
 
-            if(keywords.Contains("BROTHERHOOD LIBRARIAN"))
+            if(keywords.Contains("LIBRARIAN"))
             {
                 relics.Add("Artisan Nullifier Matrix");
             }
 
-            if (keywords.Contains("BROTHERHOOD TECHMARINE"))
+            if (keywords.Contains("TECHMARINE"))
             {
                 relics.Add("Aetheric Conduit");
             }

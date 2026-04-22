@@ -44,8 +44,6 @@ namespace Roster_Builder.Necrons
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             CheckBox cbOption3 = panel.Controls["cbOption3"] as CheckBox;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;
             antiLoop = true;
@@ -60,7 +58,7 @@ namespace Roster_Builder.Necrons
                 lbModelSelect.Items.Add("Canoptek Spyder - " + CalcPoints(i) + " pts");
             }
 
-            cbOption1.Text = "Two Particle Beamers (+10 pts)";
+            cbOption1.Text = "Two Particle Beamers (+5 pts)";
             cbOption2.Text = "Fabricator Claw Array (+5 pts)";
             cbOption3.Text = "Gloom Prism (+5 pts)";
         }
@@ -180,11 +178,7 @@ namespace Roster_Builder.Necrons
 
             foreach(string weapon in Weapons)
             {
-                if (weapon.Contains("10"))
-                {
-                    Points += 10;
-                }
-                else if (weapon != "")
+                if(weapon != "")
                 {
                     Points += 5;
                 }
@@ -202,11 +196,7 @@ namespace Roster_Builder.Necrons
 
             for(int i = index * 3; i < (index + 1) * 3; i++)
             {
-                if (Weapons[i].Contains("10"))
-                {
-                    val += 10;
-                }
-                else if (Weapons[i] != "")
+                if (Weapons[i] != "")
                 {
                     val += 5;
                 }

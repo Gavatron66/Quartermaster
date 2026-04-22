@@ -35,8 +35,6 @@ namespace Roster_Builder.Adeptus_Custodes
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
             nudUnitSize.Value = nudUnitSize.Minimum;

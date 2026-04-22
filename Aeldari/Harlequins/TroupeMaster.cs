@@ -10,7 +10,6 @@ namespace Roster_Builder.Aeldari.Harlequins
 {
     public class TroupeMaster : Datasheets
     {
-        private string stratWarlordTrait;
         public TroupeMaster()
         {
             DEFAULT_POINTS = 75;
@@ -87,13 +86,13 @@ namespace Roster_Builder.Aeldari.Harlequins
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             cmbFaction.Items.Clear();
@@ -110,8 +109,6 @@ namespace Roster_Builder.Aeldari.Harlequins
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-            ComboBox cmbStrat = panel.Controls["cmbOption3"] as ComboBox;
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -134,32 +131,6 @@ namespace Roster_Builder.Aeldari.Harlequins
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
-
-            panel.Controls["lblOption3"].Location = new System.Drawing.Point(cmbWarlord.Location.X - 4, cmbWarlord.Location.Y + 32);
-            cmbStrat.Location = new System.Drawing.Point(cmbWarlord.Location.X, cmbWarlord.Location.Y + 55);
-            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
-            cbStratagem3.Visible = true;
-            cbStratagem3.Text = repo.StratagemList[2];
-
-            if (Stratagem.Contains(cbStratagem3.Text))
-            {
-                cbStratagem3.Checked = true;
-                cbStratagem3.Enabled = true;
-
-                panel.Controls["lblOption3"].Visible = true;
-                cmbStrat.Visible = true;
-
-                cmbStrat.Items.Clear();
-                cmbStrat.Items.AddRange(repo.GetWarlordTraits("").ToArray());
-                cmbStrat.SelectedIndex = cmbStrat.Items.IndexOf(stratWarlordTrait);
-            }
-            else
-            {
-                cbStratagem3.Checked = false;
-                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-                panel.Controls["lblOption3"].Visible = false;
-                cmbStrat.Visible = false;
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -172,8 +143,6 @@ namespace Roster_Builder.Aeldari.Harlequins
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-            ComboBox cmbStrat = panel.Controls["cmbOption3"] as ComboBox;
 
             switch (code)
             {
@@ -182,9 +151,6 @@ namespace Roster_Builder.Aeldari.Harlequins
                     break;
                 case 12:
                     Weapons[1] = cmbOption2.SelectedItem.ToString();
-                    break;
-                case 13:
-                    stratWarlordTrait = cmbStrat.SelectedItem.ToString();
                     break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
@@ -201,9 +167,6 @@ namespace Roster_Builder.Aeldari.Harlequins
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
-                    cmbOption1.Enabled = true;
-                    cmbOption2.Enabled = true;
-
                     if (chosenRelic == "The Storied Sword")
                     {
                         cmbOption2.SelectedIndex = 0;
@@ -224,7 +187,11 @@ namespace Roster_Builder.Aeldari.Harlequins
                         cmbOption2.SelectedIndex = 0;
                         cmbOption2.Enabled = false;
                     }
-
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                        cmbOption2.Enabled = true;
+                    }
                     Relic = chosenRelic;
                     break;
                 case 25:
@@ -258,28 +225,6 @@ namespace Roster_Builder.Aeldari.Harlequins
                         {
                             Stratagem.Remove(cbStratagem2.Text);
                         }
-                    }
-                    break;
-                case 73:
-                    if (cbStratagem3.Checked && !Stratagem.Contains(cbStratagem3.Text))
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-
-                        panel.Controls["lblOption3"].Visible = true;
-                        cmbStrat.Visible = true;
-
-                        cmbStrat.Items.Clear();
-                        cmbStrat.Items.AddRange(repo.GetWarlordTraits("").ToArray());
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
-                        }
-
-                        panel.Controls["lblOption3"].Visible = false;
-                        cmbStrat.Visible = false;
                     }
                     break;
                 default: break;

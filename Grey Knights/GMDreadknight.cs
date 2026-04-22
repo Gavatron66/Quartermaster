@@ -10,9 +10,6 @@ namespace Roster_Builder.Grey_Knights
 {
     public class GMDreadknight : Datasheets
     {
-        private string stratWarlordTrait;
-        List<int> restrictedIndexes2 = new List<int>();
-
         public GMDreadknight()
         {
             DEFAULT_POINTS = 160;
@@ -58,8 +55,8 @@ namespace Roster_Builder.Grey_Knights
             cmbOption1.Items.AddRange(new string[]
             {
                 "(None)",
-                "Gatling Psilencer (+20 pts)",
                 "Heavy Incinerator (+15 pts)",
+                "Gatling Psilencer (+20 pts)",
                 "Heavy Psycannon (+20 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
@@ -68,8 +65,8 @@ namespace Roster_Builder.Grey_Knights
             cmbOption2.Items.AddRange(new string[]
             {
                 "(None)",
-                "Gatling Psilencer (+20 pts)",
                 "Heavy Incinerator (+15 pts)",
+                "Gatling Psilencer (+20 pts)",
                 "Heavy Psycannon (+20 pts)"
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
@@ -115,13 +112,13 @@ namespace Roster_Builder.Grey_Knights
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             List<string> psykerpowers = new List<string>();
@@ -162,19 +159,6 @@ namespace Roster_Builder.Grey_Knights
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-            ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox; // For Stratagem 3
-
-            cbStratagem3.Visible = true;
-            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
-            cbStratagem3.Text = f.StratagemList[3];
-
-            panel.Controls["lblOption6"].Visible = false;
-            panel.Controls["lblOption6"].Location = new System.Drawing.Point(panel.Controls["lblPsyker"].Location.X, panel.Controls["lblPsyker"].Location.Y + clbPsyker.Height + 32);
-            cmbOption6.Visible = false;
-            cmbOption6.Location = new System.Drawing.Point(panel.Controls["lblOption6"].Location.X, panel.Controls["lblOption6"].Location.Y + 23);
-            cmbOption6.Items.Clear();
-            cmbOption6.Items.AddRange(repo.GetWarlordTraits("").ToArray());
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -197,23 +181,6 @@ namespace Roster_Builder.Grey_Knights
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
-
-            if (Stratagem.Contains(cbStratagem3.Text))
-            {
-                cbStratagem3.Checked = true;
-                cbStratagem3.Enabled = true;
-                cmbOption6.Visible = true;
-                panel.Controls["lblOption6"].Visible = true;
-                cmbOption6.SelectedIndex = cmbOption6.Items.IndexOf(stratWarlordTrait);
-            }
-            else
-            {
-                cbStratagem3.Checked = false;
-                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-                cmbOption6.Visible = false;
-                panel.Controls["lblOption6"].Visible = false;
-                stratWarlordTrait = "";
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -221,52 +188,22 @@ namespace Roster_Builder.Grey_Knights
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             ComboBox cmbOption3 = panel.Controls["cmbOption3"] as ComboBox;
-            ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
                 case 11:
-                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
-                    {
-                        Weapons[0] = cmbOption1.SelectedItem.ToString();
-                        restrictedIndexes2.Clear();
-                        restrictedIndexes2.Add(cmbOption1.SelectedIndex);
-
-                        if(!restrictedIndexes2.Contains(0))
-                        {
-                            this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
-                        }
-                    }
-                    else
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
-                    }
+                    Weapons[0] = cmbOption1.SelectedItem.ToString();
                     break;
                 case 12:
-                    if (!restrictedIndexes2.Contains(cmbOption2.SelectedIndex))
-                    {
-                        Weapons[1] = cmbOption2.SelectedItem.ToString();
-                        restrictedIndexes.Clear();
-                        restrictedIndexes.Add(cmbOption2.SelectedIndex);
-
-                        if (!restrictedIndexes.Contains(0))
-                        {
-                            this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
-                        }
-                    }
-                    else
-                    {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
-                    }
+                    Weapons[1] = cmbOption2.SelectedItem.ToString();
                     break;
                 case 13:
                     Weapons[2] = cmbOption3.SelectedItem.ToString();
@@ -287,9 +224,6 @@ namespace Roster_Builder.Grey_Knights
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     Relic = chosenRelic;
-                    break;
-                case 19:
-                    stratWarlordTrait = cmbOption6.SelectedItem as string;
                     break;
                 case 21:
                     if (cbOption1.Checked)
@@ -348,24 +282,6 @@ namespace Roster_Builder.Grey_Knights
                         {
                             Stratagem.Remove(cbStratagem2.Text);
                         }
-                    }
-                    break;
-                case 73:
-                    if (cbStratagem3.Checked && !Stratagem.Contains(cbStratagem3.Text))
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-                        cmbOption6.Visible = true;
-                        panel.Controls["lblOption6"].Visible = true;
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
-                        }
-                        cmbOption6.Visible = false;
-                        panel.Controls["lblOption6"].Visible = false;
-                        cmbOption6.SelectedIndex = -1;
                     }
                     break;
                 default: break;

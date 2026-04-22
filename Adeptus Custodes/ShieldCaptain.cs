@@ -10,8 +10,6 @@ namespace Roster_Builder.Adeptus_Custodes
 {
     public class ShieldCaptain : Datasheets
     {
-        private string stratWarlordTrait;
-
         public ShieldCaptain()
         {
             DEFAULT_POINTS = 105;
@@ -86,13 +84,13 @@ namespace Roster_Builder.Adeptus_Custodes
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             panel.Controls["lblFactionupgrade"].Visible = true;
@@ -111,8 +109,6 @@ namespace Roster_Builder.Adeptus_Custodes
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-            ComboBox cmbStrat = panel.Controls["cmbOption3"] as ComboBox;
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -135,32 +131,6 @@ namespace Roster_Builder.Adeptus_Custodes
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
-
-            panel.Controls["lblOption3"].Location = new System.Drawing.Point(cmbWarlord.Location.X - 4, cmbWarlord.Location.Y + 32);
-            cmbStrat.Location = new System.Drawing.Point(cmbWarlord.Location.X, cmbWarlord.Location.Y + 55);
-            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
-            cbStratagem3.Visible = true;
-            cbStratagem3.Text = repo.StratagemList[2];
-
-            if (Stratagem.Contains(cbStratagem3.Text))
-            {
-                cbStratagem3.Checked = true;
-                cbStratagem3.Enabled = true;
-
-                panel.Controls["lblOption3"].Visible = true;
-                cmbStrat.Visible = true;
-
-                cmbStrat.Items.Clear();
-                cmbStrat.Items.AddRange(repo.GetWarlordTraits("").ToArray());
-                cmbStrat.SelectedIndex = cmbStrat.Items.IndexOf(stratWarlordTrait);
-            }
-            else
-            {
-                cbStratagem3.Checked = false;
-                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-                panel.Controls["lblOption3"].Visible = false;
-                cmbStrat.Visible = false;
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -173,8 +143,6 @@ namespace Roster_Builder.Adeptus_Custodes
             ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-            ComboBox cmbStrat = panel.Controls["cmbOption3"] as ComboBox;
 
             switch (code)
             {
@@ -188,9 +156,6 @@ namespace Roster_Builder.Adeptus_Custodes
                     {
                         cbOption1.Enabled = true;
                     }
-                    break;
-                case 13:
-                    stratWarlordTrait = cmbStrat.SelectedItem.ToString();
                     break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
@@ -284,28 +249,6 @@ namespace Roster_Builder.Adeptus_Custodes
                         {
                             Stratagem.Remove(cbStratagem2.Text);
                         }
-                    }
-                    break;
-                case 73:
-                    if (cbStratagem3.Checked && !Stratagem.Contains(cbStratagem3.Text))
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-
-                        panel.Controls["lblOption3"].Visible = true;
-                        cmbStrat.Visible = true;
-
-                        cmbStrat.Items.Clear();
-                        cmbStrat.Items.AddRange(repo.GetWarlordTraits("").ToArray());
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
-                        }
-
-                        panel.Controls["lblOption3"].Visible = false;
-                        cmbStrat.Visible = false;
                     }
                     break;
             }

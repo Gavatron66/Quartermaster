@@ -43,8 +43,6 @@ namespace Roster_Builder.Drukhari
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             CheckBox cbOption3 = panel.Controls["cbOption3"] as CheckBox;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;
             antiLoop = true;

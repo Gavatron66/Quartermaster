@@ -19,7 +19,7 @@ namespace Roster_Builder.Necrons
             Keywords.AddRange(new string[]
             {
                 "NECRONS",
-                "VEHICLE", "QUANTUM SHIELDING", "DYNASTIC AGENT", "TRIARCH", "TRIARCH STALKER"
+                "VEHICLE", "GUANTUM SHIELDING", "DYNASTIC AGENT", "TRIARCH", "TRIARCH STALKER"
             });
             Role = "Elites";
         }

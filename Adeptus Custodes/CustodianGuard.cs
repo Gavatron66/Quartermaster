@@ -45,8 +45,6 @@ namespace Roster_Builder.Adeptus_Custodes
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 3;
             antiLoop = true;

@@ -50,7 +50,6 @@
 	71 - cbStratagem1 (For Warlord Requisition only)
 	72 - cbStratagem2 (For Relic Requisition only)
 	73 - cbStratagem3
-	etc.
 8X - GetIfEnabled codes
 	80 - Warlord
 	81 - Relic

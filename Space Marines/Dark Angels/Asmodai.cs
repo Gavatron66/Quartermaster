@@ -98,11 +98,11 @@ namespace Roster_Builder.Space_Marines.Dark_Angels
                     break;
                 default: break;
                 case 60:
-                    if (clbPsyker.CheckedItems.Count < 2)
+                    if (clbPsyker.CheckedItems.Count < 3)
                     {
                         break;
                     }
-                    else if (clbPsyker.CheckedItems.Count == 2)
+                    else if (clbPsyker.CheckedItems.Count == 3)
                     {
                         PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
                         PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;

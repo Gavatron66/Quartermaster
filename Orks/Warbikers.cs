@@ -45,8 +45,6 @@ namespace Roster_Builder.Orks
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             cmbFaction.Visible = true;
             panel.Controls["lblFactionupgrade"].Visible = true;
 

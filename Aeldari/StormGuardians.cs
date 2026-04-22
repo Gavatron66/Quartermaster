@@ -47,31 +47,17 @@ namespace Roster_Builder.Aeldari
             NumericUpDown nudOption3 = panel.Controls["nudOption3"] as NumericUpDown;
             NumericUpDown nudOption4 = panel.Controls["nudOption4"] as NumericUpDown;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
-            panel.Controls["lblExtra1"].Location = new System.Drawing.Point(lblnud1.Location.X - 80, nudUnitSize.Location.Y + 32);
-            panel.Controls["lblExtra1"].Text = "May take one of the following for every 10 models:";
-            panel.Controls["lblExtra1"].Visible = true;
-
             lblnud1.Text = "Serpent's Scale Platforms (+20 pts):";
-            lblnud1.Location = new System.Drawing.Point(lblnud1.Location.X - 80, lblnud1.Location.Y + 32);
-            nudOption1.Location = new System.Drawing.Point(nudOption1.Location.X, nudOption1.Location.Y + 32);
-
-            panel.Controls["lblExtra2"].Location = new System.Drawing.Point(lblnud1.Location.X, nudOption1.Location.Y + 32);
-            panel.Controls["lblExtra2"].Text = "May take up to two of each of the following for every 10 models:";
-            panel.Controls["lblExtra2"].Visible = true;
+            lblnud1.Location = new System.Drawing.Point(lblnud1.Location.X - 80, lblnud1.Location.Y);
 
             lblnud2.Text = "Aeldari Flamers (+5 pts):";
-            lblnud2.Location = new System.Drawing.Point(lblnud2.Location.X - 10, lblnud2.Location.Y + 64);
-            nudOption2.Location = new System.Drawing.Point(nudOption2.Location.X, nudOption2.Location.Y + 64);
+            lblnud2.Location = new System.Drawing.Point(lblnud2.Location.X - 10, lblnud2.Location.Y);
 
             lblnud3.Text = "Guardian Fusion Guns (+10 pts):";
-            lblnud3.Location = new System.Drawing.Point(lblnud3.Location.X - 60, lblnud3.Location.Y + 64);
-            nudOption3.Location = new System.Drawing.Point(nudOption3.Location.X, nudOption3.Location.Y + 64);
+            lblnud3.Location = new System.Drawing.Point(lblnud3.Location.X - 60, lblnud3.Location.Y);
 
             lblnud4.Text = "Aeldari Power Swords (+5 pts):";
-            lblnud4.Location = new System.Drawing.Point(lblnud4.Location.X - 45, lblnud4.Location.Y + 64);
-            nudOption4.Location = new System.Drawing.Point(nudOption4.Location.X, nudOption4.Location.Y + 64);
+            lblnud4.Location = new System.Drawing.Point(lblnud4.Location.X - 45, lblnud4.Location.Y);
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 10;
@@ -81,7 +67,7 @@ namespace Roster_Builder.Aeldari
 
             nudOption1.Minimum = 0;
             nudOption1.Value = 0;
-            nudOption1.Maximum = 1;
+            nudOption1.Maximum = 2;
             nudOption1.Value = Convert.ToDecimal(Weapons[0]);
 
             nudOption2.Minimum = 0;
@@ -122,49 +108,15 @@ namespace Roster_Builder.Aeldari
 
                     if (UnitSize == 20)
                     {
-                        nudOption1.Maximum += 1;
                         nudOption2.Maximum += 2;
                         nudOption3.Maximum += 2;
                         nudOption4.Maximum += 2;
                     }
                     else if (UnitSize < 20 && nudOption2.Maximum != 2)
                     {
-                        nudOption1.Maximum -= 1;
                         nudOption2.Maximum -= 2;
                         nudOption3.Maximum -= 2;
                         nudOption4.Maximum -= 2;
-
-                        if (nudOption1.Value == 2)
-                        {
-                            nudOption1.Value--;
-                        }
-
-                        if (nudOption2.Value > 2)
-                        {
-                            nudOption2.Value--;
-                            if(nudOption2.Value > 2)
-                            {
-                                nudOption2.Value--;
-                            }
-                        }
-
-                        if (nudOption3.Value > 2)
-                        {
-                            nudOption3.Value--;
-                            if (nudOption3.Value > 2)
-                            {
-                                nudOption3.Value--;
-                            }
-                        }
-
-                        if (nudOption4.Value > 2)
-                        {
-                            nudOption4.Value--;
-                            if (nudOption4.Value > 2)
-                            {
-                                nudOption4.Value--;
-                            }
-                        }
                     }
 
                     break;

@@ -9,7 +9,6 @@ namespace Roster_Builder.Space_Marines
 {
     public class TerminatorChaplain : Datasheets
     {
-        private string stratWarlordTrait;
         public TerminatorChaplain()
         {
             DEFAULT_POINTS = 85;
@@ -43,7 +42,6 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
-            ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox; // For Stratagem 3
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -63,26 +61,6 @@ namespace Roster_Builder.Space_Marines
                 cmbWarlord.Items.Add(item);
             }
 
-            cmbRelic.Items.Clear();
-            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
-
-            cmbFaction.Items.Clear();
-            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-
-            if (Factionupgrade != null)
-            {
-                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-            }
-            else
-            {
-                cmbFaction.SelectedIndex = 0;
-                if (Factionupgrade != "(None)")
-                {
-                    cmbWarlord.Items.Add("Wise Orator");
-                    cmbRelic.Items.Add("The Emperor's Judgement");
-                }
-            }
-
             if (isWarlord)
             {
                 cbWarlord.Checked = true;
@@ -95,13 +73,28 @@ namespace Roster_Builder.Space_Marines
                 cmbWarlord.Enabled = false;
             }
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
+            }
+
+            cmbFaction.Items.Clear();
+            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+
+            if (Factionupgrade != null)
+            {
+                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+            }
+            else
+            {
+                cmbFaction.SelectedIndex = 0;
             }
 
             List<string> psykerpowers = new List<string>();
@@ -112,71 +105,20 @@ namespace Roster_Builder.Space_Marines
                 clbPsyker.Items.Add(power);
             }
 
-            if (Factionupgrade == "(None)" || Factionupgrade == null)
+            lblPsyker.Text = "Select one of the following:";
+            clbPsyker.ClearSelected();
+            for (int i = 0; i < clbPsyker.Items.Count; i++)
             {
-                lblPsyker.Text = "Select one of the following:";
-                clbPsyker.ClearSelected();
-                for (int i = 0; i < clbPsyker.Items.Count; i++)
-                {
-                    clbPsyker.SetItemChecked(i, false);
-                }
-
-                if (PsykerPowers[0] != string.Empty)
-                {
-                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
-                }
+                clbPsyker.SetItemChecked(i, false);
             }
-            else
+
+            if (PsykerPowers[0] != string.Empty)
             {
-                lblPsyker.Text = "Select two of the following:";
-                if (PsykerPowers.Length != 2)
-                {
-                    PsykerPowers = new string[2] { string.Empty, string.Empty };
-                }
-
-                clbPsyker.ClearSelected();
-                for (int i = 0; i < clbPsyker.Items.Count; i++)
-                {
-                    clbPsyker.SetItemChecked(i, false);
-                }
-
-                if (PsykerPowers[0] != string.Empty)
-                {
-                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
-                }
-                if (PsykerPowers[1] != string.Empty)
-                {
-                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
-                }
+                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
             }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
-
-            cbStratagem3.Visible = true;
-            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
-            cbStratagem3.Text = f.StratagemList[2];
-
-            if (f.currentSubFaction != f.customSubFactionTraits[2] && f.customSubFactionTraits[2] != "Unknown")
-            {
-                cbStratagem4.Visible = true;
-            }
-            else
-            {
-                cbStratagem4.Visible = false;
-            }
-
-            cbStratagem4.Location = new System.Drawing.Point(cbStratagem3.Location.X, cbStratagem3.Location.Y + 32);
-            cbStratagem4.Text = f.StratagemList[3];
-
-            panel.Controls["lblOption6"].Visible = false;
-            panel.Controls["lblOption6"].Location = new System.Drawing.Point(clbPsyker.Location.X, clbPsyker.Location.Y + clbPsyker.Height + 13);
-            cmbOption6.Visible = false;
-            cmbOption6.Location = new System.Drawing.Point(panel.Controls["lblOption6"].Location.X, panel.Controls["lblOption6"].Location.Y + 23);
-            cmbOption6.Items.Clear();
-            cmbOption6.Items.AddRange(repo.GetWarlordTraits("Strat").ToArray());
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -199,33 +141,6 @@ namespace Roster_Builder.Space_Marines
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
-
-            if (Stratagem.Contains(cbStratagem3.Text))
-            {
-                cbStratagem3.Checked = true;
-                cbStratagem3.Enabled = true;
-                cmbOption6.Visible = true;
-                panel.Controls["lblOption6"].Visible = true;
-                cmbOption6.SelectedIndex = cmbOption6.Items.IndexOf(stratWarlordTrait);
-            }
-            else
-            {
-                cbStratagem3.Checked = false;
-                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-                cmbOption6.Visible = false;
-                panel.Controls["lblOption6"].Visible = false;
-            }
-
-            if (Stratagem.Contains(cbStratagem4.Text))
-            {
-                cbStratagem4.Checked = true;
-                cbStratagem4.Enabled = true;
-            }
-            else
-            {
-                cbStratagem4.Checked = false;
-                cbStratagem4.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem4.Text));
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -238,9 +153,6 @@ namespace Roster_Builder.Space_Marines
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
-            ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox;
 
             switch (code)
             {
@@ -259,42 +171,6 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
-
-                    if (Factionupgrade != "(None)" && Factionupgrade != null)
-                    {
-                        cmbWarlord.Items.Add("Wise Orator");
-                        cmbRelic.Items.Add("The Emperor's Judgement");
-
-                        panel.Controls["lblPsyker"].Text = "Select two of the following:";
-                        if (PsykerPowers.Length != 2)
-                        {
-                            PsykerPowers = new string[2] { PsykerPowers[0], string.Empty };
-                        }
-                    }
-                    else
-                    {
-                        cmbWarlord.Items.Remove("Wise Orator");
-                        cmbRelic.Items.Remove("The Emperor's Judgement");
-
-                        if (PsykerPowers.Length == 2)
-                        {
-                            panel.Controls["lblPsyker"].Text = "Select one of the following:";
-                            var temp = PsykerPowers;
-
-                            if (PsykerPowers[1] != string.Empty)
-                            {
-                                PsykerPowers = new string[1] { string.Empty };
-
-                                for (int i = 0; i < clbPsyker.Items.Count; i++)
-                                {
-                                    clbPsyker.SetItemChecked(i, false);
-                                }
-
-                                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
-                                PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                            }
-                        }
-                    }
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
@@ -313,19 +189,11 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-melta");
                         cmbOption1.Enabled = false;
                     }
-                    else if (chosenRelic == "Foe-smiter")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
-                        cmbOption1.Enabled = false;
-                    }
                     else
                     {
                         cmbOption1.Enabled = true;
                     }
                     Relic = chosenRelic;
-                    break;
-                case 19:
-                    stratWarlordTrait = cmbOption6.SelectedItem as string;
                     break;
                 case 25:
                     if (cbWarlord.Checked)
@@ -335,32 +203,13 @@ namespace Roster_Builder.Space_Marines
                     else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
-                    if (Factionupgrade == "(None)" || Factionupgrade == null)
+                    if (clbPsyker.CheckedItems.Count == 1)
                     {
-                        if (clbPsyker.CheckedItems.Count == 1)
-                        {
-                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                        }
-                        else
-                        {
-                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
-                        }
+                        PsykerPowers[0] = clbPsyker.SelectedItem.ToString();
                     }
                     else
                     {
-                        if (clbPsyker.CheckedItems.Count < 2)
-                        {
-                            break;
-                        }
-                        else if (clbPsyker.CheckedItems.Count == 2)
-                        {
-                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
-                        }
-                        else
-                        {
-                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
-                        }
+                        clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
                     }
                     break;
                 case 71:
@@ -386,54 +235,6 @@ namespace Roster_Builder.Space_Marines
                         if (Stratagem.Contains(cbStratagem2.Text))
                         {
                             Stratagem.Remove(cbStratagem2.Text);
-                        }
-                    }
-                    break;
-                case 73:
-                    if (cbStratagem3.Checked && !Stratagem.Contains(cbStratagem3.Text))
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-                        cmbOption6.Visible = true;
-                        panel.Controls["lblOption6"].Visible = true;
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
-                        }
-                        cmbOption6.Visible = false;
-                        panel.Controls["lblOption6"].Visible = false;
-                        cmbOption6.SelectedIndex = -1;
-                    }
-                    break;
-                case 74:
-                    if (cbStratagem4.Checked)
-                    {
-                        Stratagem.Add(cbStratagem4.Text);
-                        cmbRelic.Items.Clear();
-                        Keywords.Add("Strat");
-                        cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
-                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
-                        Keywords.Remove("Strat");
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem4.Text))
-                        {
-                            Stratagem.Remove(cbStratagem4.Text);
-                        }
-
-                        cmbRelic.Items.Clear();
-                        cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
-
-                        if (cmbRelic.Items.Contains(Relic))
-                        {
-                            cmbRelic.SelectedIndex = 0;
-                        }
-                        else
-                        {
-                            cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
                         }
                     }
                     break;

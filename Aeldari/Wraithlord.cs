@@ -130,25 +130,25 @@ namespace Roster_Builder.Aeldari
 
             Points = DEFAULT_POINTS;
 
-            foreach (var weapon in Weapons)
+            if(Weapons.Contains("Aeldari Flamer (+5 pts)") || Weapons.Contains("Scatter Laser (+5 pts)"))
             {
-                if(weapon == "Aeldari Flamer (+5 pts)" || weapon == "Scatter Laser (+5 pts)")
-                {
-                    Points += 5;
-                }
-                else if (weapon == "Shuriken Cannon (+10 pts)")
-                {
-                    Points += 10;
-                }
-                else if (weapon == "Aeldari Missile Launcher (+15 pts)" || weapon == "Ghostglaive (+15 pts)"
-                    || weapon == "Starcannon (+15 pts)")
-                {
-                    Points += 15;
-                }
-                else if (weapon == "Bright Lance (+20 pts)")
-                {
-                    Points += 20;
-                }
+                Points += 5;
+            }
+
+            if(Weapons.Contains("Shuriken Cannon (+10 pts)"))
+            {
+                Points += 10;
+            }
+
+            if(Weapons.Contains("Aeldari Missile Launcher (+15 pts)") || Weapons.Contains("Ghostglaive (+15 pts)") 
+                || Weapons.Contains("Starcannon (+15 pts)"))
+            {
+                Points += 15;
+            }
+
+            if(Weapons.Contains("Bright Lance (+20 pts)"))
+            {
+                Points += 20;
             }
         }
 

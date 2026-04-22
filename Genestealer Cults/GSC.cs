@@ -22,9 +22,9 @@ namespace Roster_Builder.Genestealer_Cults
             customSubPoints = 0;
             StratagemList.AddRange(new string[]
             {
-                "Stratagem: Gene-sire's Gifts",
-                "Stratagem: Leaders of the Cult",
-                "Stratagem: Xenoform Bionics (The Bladed Cog only)"
+                "Gene-sire's Gifts",
+                "Leaders of the Cult",
+                "Xenoform Bionics"
             });
         }
 
@@ -119,49 +119,20 @@ namespace Roster_Builder.Genestealer_Cults
 
         public override List<string> GetFactionUpgrades(List<string> keywords)
         {
-            List<string> upgrades = new List<string>();
-
-            upgrades.Add("(None)");
-
-            if (keywords.Contains("INFANTRY"))
+            return new List<string>()
             {
-                upgrades.Add("Lying in Wait (+20 pts)");
-            }
-
-            if(keywords.Contains("PRIMUS"))
-            {
-                upgrades.Add("Exacting Planner (+15 pts)");
-            }
-
-            if (keywords.Contains("BIOPHAGUS"))
-            {
-                upgrades.Add("Alchemist Supreme (+15 pts)");
-            }
-
-            upgrades.Add("A Trap Sprung (+15 pts)");
-
-            if (keywords.Contains("CROSSFIRE"))
-            {
-                upgrades.Add("A Perfect Ambush (+15 pts)");
-            }
-
-            upgrades.Add("From Every Angle (+10 pts)");
-
-            if (keywords.Contains("PSYKER"))
-            {
-                upgrades.Add("Meditations in Shadow (+15 pts)");
-            }
-
-            upgrades.Add("Excavate (+20 pts)");
-
-            if (!keywords.Contains("VEHICLE"))
-            {
-                upgrades.Add("They Came From Below (+10 pts)");
-            }
-
-            upgrades.Add("Our Time is Nigh (+15 pts)");
-
-            return upgrades;
+                "(None)",
+                "Lying in Wait (+20 pts)",
+                "Exacting Planner (+15 pts)",
+                "Alchemist Supreme (+15 pts)",
+                "A Trap Sprung (+15 pts)",
+                "A Perfect Ambush (+15 pts)",
+                "From Every Angle (+10 pts)",
+                "Meditations in Shadow (+15 pts)",
+                "Excavate (+20 pts)",
+                "They Came From Below (+10 pts)",
+                "Our Time is Nigh (+15 pts)"
+            };
         }
 
         public override bool GetIfEnabled(int index)
@@ -226,7 +197,9 @@ namespace Roster_Builder.Genestealer_Cults
                 relics.Add("Dagger of Swift Sacrifice");
             }
 
-            if (keywords.Contains("MAGUS") || keywords.Contains("PATRIARCH"))
+            if (keywords.Contains("MAGUS") || keywords.Contains("PATRIARCH") ||
+                keywords.Contains("ABOMINANT") || keywords.Contains("BIOPHAGUS") ||
+                keywords.Contains("SANCTUS"))
             {
                 relics.Add("The Crouchling");
             }
@@ -251,33 +224,33 @@ namespace Roster_Builder.Genestealer_Cults
                 relics.Add("The Voice of the Liberator");
             }
 
-            if ((keywords.Contains("PRIMUS") || keywords.Contains("LOCUS"))
-                && currentSubFaction == "Cult of the Four-armed Emperor")
+            if ((keywords.Contains("PRIMUS") || keywords.Contains("LOCUS") 
+                && currentSubFaction == "Cult of the Four-armed Emperor"))
             {
                 relics.Add("Sword of the Four-armed Emperor");
             }
 
-            if (currentSubFaction == "The Hivecult")
+            if (currentSubFaction == "Hivecult")
             {
                 relics.Add("Vockor's Talisman");
             }
 
-            if (currentSubFaction == "The Bladed Cog")
+            if (currentSubFaction == "Bladed Cog")
             {
                 relics.Add("Mark of the Clawed Omnissiah");
             }
 
-            if (currentSubFaction == "The Rusted Claw")
+            if (currentSubFaction == "Rusted Claw")
             {
                 relics.Add("The Nomad's Mantle");
             }
 
-            if (currentSubFaction == "The Pauper Princes")
+            if (currentSubFaction == "Pauper Princes")
             {
                 relics.Add("Reliquary of Saint Tenndarc");
             }
 
-            if (currentSubFaction == "The Twisted Helix")
+            if (currentSubFaction == "Twisted Helix")
             {
                 relics.Add("Elixir of the Prime Specimen");
             }
@@ -395,10 +368,9 @@ namespace Roster_Builder.Genestealer_Cults
 
             ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
             CheckedListBox clbSubCustom = panel.Controls["clbSubCustom"] as CheckedListBox;
-            panel.Controls["lblSubfaction"].Text = "Select a Cult:";
 
             cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
-            panel.Controls["lblSubCustomCLB"].Text = "May take up to 4 points of the following Cult Creeds:";
+            panel.Controls["lblSubCustomCLB"].Text = "May take up to 4 points of the following:";
 
             if (currentSubFaction != "<Custom>")
             {

@@ -11,16 +11,14 @@ namespace Roster_Builder.Drukhari
     {
         int[] restriction = new int[] { 0, 0 };
         int currentIndex;
-        List<int> restrictedIndexes2 = new List<int>();
 
         public Reavers()
         {
             DEFAULT_POINTS = 20;
             UnitSize = 3;
             Points = UnitSize * DEFAULT_POINTS;
-            TemplateCode = "NL3m";
+            TemplateCode = "NL2m";
             Weapons.Add("Splinter Rifle");
-            Weapons.Add("(None)");
             Weapons.Add("(None)");
             for (int i = 1; i < UnitSize; i++)
             {
@@ -47,11 +45,9 @@ namespace Roster_Builder.Drukhari
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
+            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            ComboBox cmbOption3 = panel.Controls["cmbOption3"] as ComboBox;
-
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 3;
@@ -60,59 +56,26 @@ namespace Roster_Builder.Drukhari
             nudUnitSize.Value = currentSize;
 
             lbModelSelect.Items.Clear();
-            if (Weapons[1] == "(None)" && Weapons[2] != "(None)")
+            if (Weapons[1] == "(None)")
             {
-                lbModelSelect.Items.Add("Arena Champion w/ " + Weapons[0] + " and " + Weapons[2]);
-            }
-            else if (Weapons[1] != "(None)" && Weapons[2] == "(None)")
-            {
-                lbModelSelect.Items.Add("Arena Champion w/ " + Weapons[0] + " and " + Weapons[1]);
-            }
-            else if (Weapons[1] != "(None)" &&  Weapons[2] != "(None)")
-            {
-                lbModelSelect.Items.Add("Arena Champion w/ " + Weapons[0] + ", " + Weapons[1] + ", and " + Weapons[2]);
+                lbModelSelect.Items.Add("Arena Champion w/ " + Weapons[0]);
             }
             else
             {
-                lbModelSelect.Items.Add("Arena Champion w/ " + Weapons[0]);
+                lbModelSelect.Items.Add("Arena Champion w/ " + Weapons[0] + " and " + Weapons[1]);
             }
 
             for (int i = 1; i < UnitSize; i++)
             {
-                if (Weapons[(i * 2) + 2] == "(None)")
+                if (Weapons[(i*2) + 1] == "(None)")
                 {
-                    lbModelSelect.Items.Add("Reaver w/ " + Weapons[(i * 2) + 1]);
+                    lbModelSelect.Items.Add("Reaver w/ " + Weapons[i * 2]);
                 }
                 else
                 {
-                    lbModelSelect.Items.Add("Reaver w/ " + Weapons[(i * 2) + 1] + " and " + Weapons[(i * 2) + 2]);
+                    lbModelSelect.Items.Add("Reaver w/ " + Weapons[(i * 2) + 1]);
                 }
             }
-
-            cmbOption1.Items.Clear();
-            cmbOption1.Items.AddRange(new string[]
-            {
-                "Blaster (+10 pts)",
-                "Heat Lance (+10 pts)",
-                "Splinter Rifle"
-            });
-
-            cmbOption2.Items.Clear();
-            cmbOption2.Items.AddRange(new string[]
-            {
-                "(None)",
-                "Cluster Caltrops (+5 pts)",
-                "Grav-talon (+5 pts)"
-            });
-
-            cmbOption3.Items.Clear();
-            cmbOption3.Items.AddRange(new string[]
-            {
-                "(None)",
-                "Agoniser (+5 pts)",
-                "Power Sword (+5 pts)"
-            });
-            cmbOption3.SelectedIndex = cmbOption3.Items.IndexOf(Weapons[2]);
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -126,128 +89,65 @@ namespace Roster_Builder.Drukhari
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            ComboBox cmbOption3 = panel.Controls["cmbOption3"] as ComboBox;
+            ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
                 case 11:
-                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    if (currentIndex == 0)
                     {
-                        if(currentIndex == 0)
+                        Weapons[0] = cmbOption1.SelectedItem.ToString();
+
+                        if (Weapons[1] == "(None)")
                         {
-                            Weapons[0] = cmbOption1.SelectedItem.ToString();
-                            if (Weapons[1] == "(None)" && Weapons[2] != "(None)")
-                            {
-                                lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0] + " and " + Weapons[2];
-                            }
-                            else if (Weapons[1] != "(None)" && Weapons[2] == "(None)")
-                            {
-                                lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0] + " and " + Weapons[1];
-                            }
-                            else if (Weapons[1] != "(None)" && Weapons[2] != "(None)")
-                            {
-                                lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0] + ", " + Weapons[1] + ", and " + Weapons[2];
-                            }
-                            else
-                            {
-                                lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0];
-                            }
+                            lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0];
                         }
                         else
                         {
-                            Weapons[(currentIndex * 2) + 1] = cmbOption1.SelectedItem.ToString();
-
-                            if (Weapons[(currentIndex * 2) + 2] == "(None)")
-                            {
-                                lbModelSelect.Items[currentIndex] = "Reaver w/ " + Weapons[(currentIndex * 2) + 1];
-                            }
-                            else
-                            {
-                                lbModelSelect.Items[currentIndex] = "Reaver w/ " + Weapons[(currentIndex * 2) + 1] + " and " + Weapons[(currentIndex * 2) + 2];
-                            }
+                            lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0] + " and " + Weapons[1];
                         }
+                        break;
+                    }
+
+                    Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
+
+                    if (Weapons[(currentIndex * 2) + 1] == "(None)")
+                    {
+                        lbModelSelect.Items[currentIndex] = "Reaver w/ " + Weapons[currentIndex * 2];
                     }
                     else
                     {
-                        if(currentIndex == 0)
-                        {
-                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
-                        }
-                        else
-                        {
-                            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
-                        }
+                        lbModelSelect.Items[currentIndex] = "Reaver w/ " + Weapons[currentIndex * 2] + " and " + Weapons[(currentIndex * 2) + 1];
                     }
 
                     break;
                 case 12:
-                    if (!restrictedIndexes2.Contains(cmbOption2.SelectedIndex))
+                    if (currentIndex == 0)
                     {
-                        if (currentIndex == 0)
+                        Weapons[1] = cmbOption2.SelectedItem.ToString();
+
+                        if (Weapons[1] == "(None)")
                         {
-                            Weapons[1] = cmbOption2.SelectedItem.ToString();
-                            if (Weapons[1] == "(None)" && Weapons[2] != "(None)")
-                            {
-                                lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0] + " and " + Weapons[2];
-                            }
-                            else if (Weapons[1] != "(None)" && Weapons[2] == "(None)")
-                            {
-                                lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0] + " and " + Weapons[1];
-                            }
-                            else if (Weapons[1] != "(None)" && Weapons[2] != "(None)")
-                            {
-                                lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0] + ", " + Weapons[1] + ", and " + Weapons[2];
-                            }
-                            else
-                            {
-                                lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0];
-                            }
+                            lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0];
                         }
                         else
                         {
-                            Weapons[(currentIndex * 2) + 2] = cmbOption2.SelectedItem.ToString();
-
-                            if (Weapons[(currentIndex * 2) + 2] == "(None)")
-                            {
-                                lbModelSelect.Items[currentIndex] = "Reaver w/ " + Weapons[(currentIndex * 2) + 1];
-                            }
-                            else
-                            {
-                                lbModelSelect.Items[currentIndex] = "Reaver w/ " + Weapons[(currentIndex * 2) + 1] + " and " + Weapons[(currentIndex * 2) + 2];
-                            }
+                            lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0] + " and " + Weapons[1];
                         }
+                        break;
+                    }
+
+                    Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
+
+                    if (Weapons[(currentIndex * 2) + 1] == "(None)")
+                    {
+                        lbModelSelect.Items[currentIndex] = "Reaver w/ " + Weapons[currentIndex * 2];
                     }
                     else
                     {
-                        if (currentIndex == 0)
-                        {
-                            cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
-                        }
-                        else
-                        {
-                            cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 2]);
-                        }
+                        lbModelSelect.Items[currentIndex] = "Reaver w/ " + Weapons[currentIndex * 2] + " and " + Weapons[(currentIndex * 2) + 1];
                     }
 
-                    break;
-                case 13:
-                    Weapons[2] = cmbOption3.SelectedItem.ToString();
-                    if (Weapons[1] == "(None)" && Weapons[2] != "(None)")
-                    {
-                        lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0] + " and " + Weapons[2];
-                    }
-                    else if (Weapons[1] != "(None)" && Weapons[2] == "(None)")
-                    {
-                        lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0] + " and " + Weapons[1];
-                    }
-                    else if (Weapons[1] != "(None)" && Weapons[2] != "(None)")
-                    {
-                        lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0] + ", " + Weapons[1] + ", and " + Weapons[2];
-                    }
-                    else
-                    {
-                        lbModelSelect.Items[0] = "Arena Champion w/ " + Weapons[0];
-                    }
                     break;
                 case 30:
                     int temp = UnitSize;
@@ -275,17 +175,13 @@ namespace Roster_Builder.Drukhari
                 case 61:
                     currentIndex = lbModelSelect.SelectedIndex;
                     antiLoop = true;
-                    restrictedIndexes.Clear();
-                    restrictedIndexes2.Clear();
 
                     if (currentIndex < 0)
                     {
                         cmbOption1.Visible = false;
                         cmbOption2.Visible = false;
-                        cmbOption3.Visible = false;
                         panel.Controls["lblOption1"].Visible = false;
                         panel.Controls["lblOption2"].Visible = false;
-                        panel.Controls["lblOption3"].Visible = false;
                         antiLoop = false;
                         break;
                     }
@@ -294,17 +190,31 @@ namespace Roster_Builder.Drukhari
                     {
                         cmbOption1.Visible = true;
                         cmbOption2.Visible = true;
-                        cmbOption3.Visible = true;
                         panel.Controls["lblOption1"].Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
-                        panel.Controls["lblOption3"].Visible = true;
 
+                        cmbOption1.Items.Clear();
+                        cmbOption1.Items.AddRange(new string[]
+                        {
+                            "Blaster",
+                            "Heat Lance",
+                            "Splinter Rifle"
+                        });
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+
+                        cmbOption2.Items.Clear();
+                        cmbOption2.Items.AddRange(new string[]
+                        {
+                            "(None)",
+                            "Agoniser (+5 pts)",
+                            "Power Sword (+5 pts)"
+                        });
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
 
-                        if (restriction[0] == UnitSize / 3 && Weapons[(currentIndex * 2) + 1] == "Splinter Rifle")
+                        if (restriction[0] == UnitSize / 3 && Weapons[currentIndex * 2] == "Splinter Rifle")
                         {
-                            restrictedIndexes.AddRange(new int[] { 0, 1 });
+                            cmbOption1.Items.RemoveAt(1);
+                            cmbOption1.Items.RemoveAt(0);
                         }
 
                         antiLoop = false;
@@ -314,27 +224,39 @@ namespace Roster_Builder.Drukhari
                     {
                         cmbOption1.Visible = true;
                         cmbOption2.Visible = true;
-                        cmbOption3.Visible = false;
                         panel.Controls["lblOption1"].Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
-                        panel.Controls["lblOption3"].Visible = false;
 
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 2]);
-
-                        if (restriction[0] == UnitSize / 3 && Weapons[(currentIndex * 2) + 1] == "Splinter Rifle")
+                        cmbOption1.Items.Clear();
+                        cmbOption1.Items.AddRange(new string[]
                         {
-                            restrictedIndexes.AddRange(new int[] { 0, 1 });
+                            "Blaster (+10 pts)",
+                            "Heat Lance (+10 pts)",
+                            "Splinter Rifle"
+                        });
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex * 2]);
+
+                        cmbOption2.Items.Clear();
+                        cmbOption2.Items.AddRange(new string[]
+                        {
+                            "(None)",
+                            "Cluster Caltrops (+5 pts)",
+                            "Grav-talon (+5 pts)"
+                        });
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
+
+                        if (restriction[0] == UnitSize / 3 && Weapons[currentIndex * 2] == "Splinter Rifle")
+                        {
+                            cmbOption1.Items.RemoveAt(1);
+                            cmbOption1.Items.RemoveAt(0);
                         }
 
-                        if (restriction[1] == UnitSize / 3 && Weapons[(currentIndex * 2) + 2] == "(None)")
+                        if (restriction[1] == UnitSize / 3 && Weapons[(currentIndex * 2) + 1] == "(None)")
                         {
-                            restrictedIndexes2.AddRange(new int[] { 1, 2 });
+                            cmbOption2.Items.RemoveAt(2);
+                            cmbOption2.Items.RemoveAt(1);
                         }
                     }
-
-                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
-                    this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
 
                     antiLoop = false;
                     break;

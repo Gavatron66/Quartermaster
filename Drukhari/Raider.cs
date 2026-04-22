@@ -11,11 +11,11 @@ namespace Roster_Builder.Drukhari
     {
         public Raider()
         {
-            DEFAULT_POINTS = 100;
+            DEFAULT_POINTS = 95;
             UnitSize = 1;
             Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "2m";
-            Weapons.Add("Dark Lance (+5 pts)");
+            Weapons.Add("Dark Lance (+10 pts)");
             Weapons.Add("(None)");
             Keywords.AddRange(new string[]
             {
@@ -40,8 +40,8 @@ namespace Roster_Builder.Drukhari
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Dark Lance (+5 pts)",
-                "Disintegrator Cannon"
+                "Dark Lance (+10 pts)",
+                "Disintegrator Cannon (+5 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
@@ -75,9 +75,13 @@ namespace Roster_Builder.Drukhari
 
             Points = DEFAULT_POINTS * UnitSize;
 
-            if (Weapons[0] == "Dark Lance (+5 pts)")
+            if (Weapons[0] != "Dark Lance (+10 pts)")
             {
                 Points += 5;
+            }
+            else
+            {
+                Points += 10;
             }
 
             if (Weapons[1] != "(None)")

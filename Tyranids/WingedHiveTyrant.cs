@@ -101,13 +101,13 @@ namespace Roster_Builder.Tyranids
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             List<string> psykerpowers = new List<string>();
@@ -133,6 +133,7 @@ namespace Roster_Builder.Tyranids
             {
                 clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
             }
+
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -186,11 +187,9 @@ namespace Roster_Builder.Tyranids
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
-
-                    cmbOption1.Enabled = true;
-                    cbOption1.Enabled = true;
-                    cbOption2.Enabled = true;
-
+                        cmbOption1.Enabled = true;
+                        cbOption1.Enabled = true;
+                        cbOption2.Enabled = true;
                     if (chosenRelic == "The Reaper of Obliterax")
                     {
                         cmbOption1.SelectedIndex = 1;
@@ -221,23 +220,6 @@ namespace Roster_Builder.Tyranids
                         cbOption2.Checked = true;
                         cbOption2.Enabled = false;
                     }
-                    else if (chosenRelic == "Resonance Barb")
-                    {
-                        panel.Controls["lblPsyker"].Text = "Select three of the following:";
-                        PsykerPowers = new string[3] { PsykerPowers[0], PsykerPowers[1], string.Empty };
-                    }
-
-                    if(chosenRelic != "Resonance Barb" && PsykerPowers.Length > 2)
-                    {
-                        panel.Controls["lblPsyker"].Text = "Select two of the following:";
-                        PsykerPowers = new string[2] { string.Empty, string.Empty };
-                        clbPsyker.ClearSelected();
-                        for (int i = 0; i < clbPsyker.Items.Count; i++)
-                        {
-                            clbPsyker.SetItemChecked(i, false);
-                        }
-                    }
-
                     Relic = chosenRelic;
                     break;
                 case 21:
@@ -262,40 +244,20 @@ namespace Roster_Builder.Tyranids
                     else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
-                    if(Relic == "Resonance Barb")
+                    if (clbPsyker.CheckedItems.Count < 2)
                     {
-                        if (clbPsyker.CheckedItems.Count < 3)
-                        {
-                            break;
-                        }
-                        else if (clbPsyker.CheckedItems.Count == 3)
-                        {
-                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
-                            PsykerPowers[2] = clbPsyker.CheckedItems[2] as string;
-                        }
-                        else
-                        {
-                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
-                        }
+                        break;
+                    }
+                    else if (clbPsyker.CheckedItems.Count == 2)
+                    {
+                        PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
                     }
                     else
                     {
-                        if (clbPsyker.CheckedItems.Count < 2)
-                        {
-                            break;
-                        }
-                        else if (clbPsyker.CheckedItems.Count == 2)
-                        {
-                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
-                        }
-                        else
-                        {
-                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
-                        }
+                        clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
                     }
-                    
+
                     break;
                 case 71:
                     if (cbStratagem1.Checked)

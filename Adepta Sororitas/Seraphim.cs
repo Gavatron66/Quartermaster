@@ -43,10 +43,6 @@ namespace Roster_Builder.Adepta_Sororitas
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
-            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
-            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
@@ -61,51 +57,6 @@ namespace Roster_Builder.Adepta_Sororitas
             {
                 lbModelSelect.Items.Add("Seraphim w/ " + Weapons[i]);
             }
-
-            cbStratagem5.Text = repo.StratagemList[2];
-            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblOption1"].Location.X, panel.Controls["cmbOption1"].Location.Y + 32);
-            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
-            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
-            panel.Controls["lblRelic"].Visible = false;
-            cmbRelic.Visible = false;
-
-            cmbRelic.Items.Clear();
-            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
-
-            antiLoop = true;
-            if (Stratagem.Contains(cbStratagem5.Text))
-            {
-                cbStratagem5.Checked = true;
-                cbStratagem5.Enabled = true;
-
-                panel.Controls["lblRelic"].Visible = true;
-                cmbRelic.Visible = true;
-
-                if (Relic == "(None)")
-                {
-                    cmbRelic.SelectedIndex = 0;
-                }
-                else
-                {
-                    if (Relic != null && cmbRelic.Items.Contains(Relic))
-                    {
-                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
-                    }
-                    else
-                    {
-                        cmbRelic.SelectedIndex = 0;
-                    }
-                }
-            }
-            else
-            {
-                cbStratagem5.Checked = false;
-                cmbRelic.SelectedIndex = 0;
-                panel.Controls["lblRelic"].Visible = false;
-                cmbRelic.Visible = false;
-            }
-
-            antiLoop = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -118,46 +69,19 @@ namespace Roster_Builder.Adepta_Sororitas
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
-            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
-            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
                 case 11:
-                    if(!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    Weapons[currentIndex] = cmbOption1.SelectedItem.ToString();
+                    if (currentIndex == 0)
                     {
-                        Weapons[currentIndex] = cmbOption1.SelectedItem.ToString();
-                        if (currentIndex == 0)
-                        {
-                            lbModelSelect.Items[0] = "Seraphim Superior w/ " + Weapons[0];
-                        }
-                        else
-                        {
-                            lbModelSelect.Items[currentIndex] = "Seraphim w/ " + Weapons[currentIndex];
-                        }
+                        lbModelSelect.Items[0] = "Seraphim Superior w/ " + Weapons[0];
                     }
                     else
                     {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex]);
+                        lbModelSelect.Items[currentIndex] = "Seraphim w/ " + Weapons[currentIndex];
                     }
-                    break;
-                case 17:
-                    string chosenRelic = cmbRelic.SelectedItem.ToString();
-                    Relic = chosenRelic;
-                    restrictedIndexes.Clear();
-
-                    if (chosenRelic == "The Ecclesiarch's Fury")
-                    {
-                        cmbOption1.SelectedIndex = 0;
-                        restrictedIndexes.AddRange(new int[] { 1, 2, 4, 5 });
-                    }
-                    else if (chosenRelic == "Redemption")
-                    {
-                        cmbOption1.SelectedIndex = 1;
-                        restrictedIndexes.AddRange(new int[] { 0, 2, 5 });
-                    }
-
-                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     break;
                 case 30:
                     int temp = UnitSize;
@@ -182,9 +106,6 @@ namespace Roster_Builder.Adepta_Sororitas
                     {
                         cmbOption1.Visible = false;
                         panel.Controls["lblOption1"].Visible = false;
-                        cbStratagem5.Visible = false;
-                        panel.Controls["lblRelic"].Visible = false;
-                        cmbRelic.Visible = false;
                         break;
                     }
 
@@ -195,15 +116,6 @@ namespace Roster_Builder.Adepta_Sororitas
                     cmbOption1.Items.Clear();
                     if (currentIndex == 0)
                     {
-                        cmbOption1.Enabled = true;
-                        cbStratagem5.Visible = true;
-
-                        if (Stratagem.Contains(cbStratagem5.Text))
-                        {
-                            panel.Controls["lblRelic"].Visible = true;
-                            cmbRelic.Visible = true;
-                        }
-
                         cmbOption1.Items.AddRange(new string[]
                         {
                             "Bolt Pistol and Chainsword",
@@ -213,28 +125,9 @@ namespace Roster_Builder.Adepta_Sororitas
                             "Plasma Pistol and Power Sword (+10 pts)",
                             "Two Bolt Pistols"
                         });
-
-                        restrictedIndexes.Clear();
-
-                        if (Relic == "The Ecclesiarch's Fury")
-                        {
-                            restrictedIndexes.AddRange(new int[] { 1, 2, 4, 5 });
-                            cmbOption1.SelectedIndex = 0;
-                        }
-                        else if (Relic == "Redemption")
-                        {
-                            restrictedIndexes.AddRange(new int[] { 0, 2, 5 });
-                            cmbOption1.SelectedIndex = 1;
-                        }
-
-                        this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     }
                     else
                     {
-                        cbStratagem5.Visible = false;
-                        panel.Controls["lblRelic"].Visible = false;
-                        cmbRelic.Visible = false;
-
                         cmbOption1.Items.AddRange(new string[]
                         {
                             "Two Bolt Pistols",
@@ -250,32 +143,10 @@ namespace Roster_Builder.Adepta_Sororitas
                         {
                             cmbOption1.Enabled = true;
                         }
-
-                        restrictedIndexes.Clear();
-                        this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     }
-
                     cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex]);
 
                     isLoading = false;
-                    break;
-                case 75:
-                    if (cbStratagem5.Checked)
-                    {
-                        Stratagem.Add(cbStratagem5.Text);
-                        panel.Controls["lblRelic"].Visible = true;
-                        cmbRelic.Visible = true;
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem5.Text))
-                        {
-                            Stratagem.Remove(cbStratagem5.Text);
-                        }
-                        cmbRelic.Visible = false;
-                        panel.Controls["lblRelic"].Visible = false;
-                        cmbRelic.SelectedIndex = 0;
-                    }
                     break;
             }
 

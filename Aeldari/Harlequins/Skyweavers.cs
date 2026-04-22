@@ -11,7 +11,6 @@ namespace Roster_Builder.Aeldari.Harlequins
     public class Skyweavers : Datasheets
     {
         int currentIndex;
-
         public Skyweavers()
         {
             DEFAULT_POINTS = 45;
@@ -45,8 +44,6 @@ namespace Roster_Builder.Aeldari.Harlequins
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 2;

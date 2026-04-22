@@ -52,10 +52,7 @@ namespace Roster_Builder.Tau_Empire
             GroupBox gb = panel.Controls["gbUnitLeader"] as GroupBox;
             ComboBox gb_cmbOption1 = gb.Controls["gb_cmbOption1"] as ComboBox;
 
-            panel.Controls["lblNumModels"].Visible = false;
-            panel.Controls["lblExtra1"].Location = panel.Controls["lblNumModels"].Location;
-            panel.Controls["lblExtra1"].Text = "Number of Models w/ Pulse Rifles: ";
-            panel.Controls["lblExtra1"].Visible = true;
+            panel.Controls["lblNumModels"].Text = "Number of Models w/ Pulse Rifles: ";
             panel.Controls["lblnud1"].Text = "Number of Models w/ Pulse Carbines: ";
 
             nudOption1.Minimum = 0;
@@ -123,11 +120,6 @@ namespace Roster_Builder.Tau_Empire
 
         public override void SaveDatasheets(int code, Panel panel)
         {
-            if(antiLoop)
-            {
-                return;
-            }
-
             NumericUpDown nudOption1 = panel.Controls["nudUnitSize"] as NumericUpDown;
             NumericUpDown nudOption2 = panel.Controls["nudOption1"] as NumericUpDown;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
@@ -140,24 +132,10 @@ namespace Roster_Builder.Tau_Empire
             switch (code)
             {
                 case 11:
-                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
-                    {
-                        Weapons[3] = cmbOption1.SelectedItem.ToString();
-                    }
-                    else
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[3]);
-                    }
+                    Weapons[3] = cmbOption1.SelectedItem.ToString();
                     break;
                 case 12:
-                    if (!restrictedIndexes.Contains(cmbOption2.SelectedIndex))
-                    {
-                        Weapons[4] = cmbOption2.SelectedItem.ToString();
-                    }
-                    else
-                    {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[4]);
-                    }
+                    Weapons[4] = cmbOption2.SelectedItem.ToString();
                     break;
                 case 21:
                     if(cbOption1.Checked)
@@ -182,54 +160,32 @@ namespace Roster_Builder.Tau_Empire
                     }
                     break;
                 case 30:
-                    int temp = Convert.ToInt32(Weapons[0]);
-                    antiLoop = true;
-
-                    if (nudOption1.Value < 0)
+                    if (nudOption1.Value == 0)
                     {
-                        nudOption1.Value++;
+                        break;
                     }
-                    else if (nudOption1.Value > UnitSize)
+                    else if (nudOption1.Value + nudOption2.Value <= 10)
                     {
-                        nudOption1.Value--;
+                        Weapons[0] = Convert.ToString(nudOption1.Value);
                     }
-                    else if (temp < nudOption1.Value)
+                    else
                     {
-                        nudOption2.Value--;
+                        nudOption1.Value -= 1;
                     }
-                    else if (temp > nudOption1.Value)
-                    {
-                        nudOption2.Value++;
-                    }
-                    antiLoop = false;
-
-                    Weapons[0] = Convert.ToString(nudOption1.Value);
-                    Weapons[1] = Convert.ToString(nudOption2.Value);
                     break;
                 case 31:
-                    int temp2 = Convert.ToInt32(Weapons[1]);
-                    antiLoop = true;
-
-                    if (nudOption2.Value < 0)
+                    if (nudOption2.Value == 0)
                     {
-                        nudOption2.Value++;
+                        break;
                     }
-                    else if (nudOption2.Value > UnitSize)
+                    else if (nudOption1.Value + nudOption2.Value <= 10)
                     {
-                        nudOption2.Value--;
+                        Weapons[1] = Convert.ToString(nudOption2.Value);
                     }
-                    else if (temp2 < nudOption2.Value)
+                    else
                     {
-                        nudOption1.Value--;
+                        nudOption2.Value -= 1;
                     }
-                    else if (temp2 > nudOption2.Value)
-                    {
-                        nudOption1.Value++;
-                    }
-                    antiLoop = false;
-
-                    Weapons[0] = Convert.ToString(nudOption1.Value);
-                    Weapons[1] = Convert.ToString(nudOption2.Value);
                     break;
                 case 411:
                     Weapons[5] = gb_cmbOption1.SelectedItem.ToString();
@@ -238,7 +194,6 @@ namespace Roster_Builder.Tau_Empire
 
             Points = DEFAULT_POINTS;
 
-            restrictedIndexes.Clear();
             if(cbOption1.Checked)
             {
                 Points += 5;
@@ -252,13 +207,6 @@ namespace Roster_Builder.Tau_Empire
             else
             {
                 Points += 10;
-
-                if (Weapons[3] == "Guardian Drone (+10 pts)")
-                {
-                    restrictedIndexes.Add(1);
-                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
-                    this.DrawItemWithRestrictions(new List<int>(), cmbOption1);
-                }
             }
 
             if (Weapons[4] == "Shield Drone (+15 pts)")
@@ -269,13 +217,6 @@ namespace Roster_Builder.Tau_Empire
             else
             {
                 Points += 10;
-
-                if (Weapons[4] == "Guardian Drone (+10 pts)")
-                {
-                    restrictedIndexes.Add(1);
-                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
-                    this.DrawItemWithRestrictions(new List<int>(), cmbOption2);
-                }
             }
 
             if (supportTurret)

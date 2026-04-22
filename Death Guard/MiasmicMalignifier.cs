@@ -22,10 +22,7 @@ namespace Roster_Builder.Death_Guard
             });
         }
 
-        public override void LoadDatasheets(Panel panel, Faction f)
-        {
-            repo = f as DeathGuard;
-        }
+        public override void LoadDatasheets(Panel panel, Faction f) { }
 
         public override void SaveDatasheets(int code, Panel panel) { }
 

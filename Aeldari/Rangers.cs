@@ -40,19 +40,11 @@ namespace Roster_Builder.Aeldari
             Label lblnud1 = panel.Controls["lblnud1"] as Label;
             Label lblnud2 = panel.Controls["lblnud2"] as Label;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             lblnud1.Text = "Gloom Fields (+10 pts):";
             lblnud2.Text = "Wireweave Nets (+10 pts):";
 
-            panel.Controls["lblExtra1"].Location = new System.Drawing.Point(lblnud1.Location.X - 40, nudUnitSize.Location.Y + 32);
-            panel.Controls["lblExtra1"].Text = "May take one of the following for every 5 models:";
-            panel.Controls["lblExtra1"].Visible = true;
-
-            lblnud1.Location = new System.Drawing.Point(lblnud1.Location.X - 40, lblnud1.Location.Y + 32);
-            lblnud2.Location = new System.Drawing.Point(lblnud2.Location.X - 40, lblnud2.Location.Y + 32);
-            nudOption1.Location = new System.Drawing.Point(nudOption1.Location.X, nudOption1 .Location.Y + 32);
-            nudOption2.Location = new System.Drawing.Point(nudOption2.Location.X, nudOption2.Location.Y + 32);
+            lblnud1.Location = new System.Drawing.Point(lblnud1.Location.X - 40, lblnud1.Location.Y);
+            lblnud2.Location = new System.Drawing.Point(lblnud2.Location.X - 40, lblnud2.Location.Y);
 
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;

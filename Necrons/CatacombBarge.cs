@@ -50,6 +50,7 @@ namespace Roster_Builder.Necrons
                 cmbWarlord.Items.Add(item);
             }
 
+
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
@@ -93,13 +94,13 @@ namespace Roster_Builder.Necrons
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
@@ -126,23 +127,6 @@ namespace Roster_Builder.Necrons
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
-
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-
-            cbStratagem3.Text = repo.StratagemList[2].ToString();
-            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 30);
-            cbStratagem3.Visible = true;
-
-            if (Stratagem.Contains(cbStratagem3.Text))
-            {
-                cbStratagem3.Checked = true;
-                cbStratagem3.Enabled = true;
-            }
-            else
-            {
-                cbStratagem3.Checked = false;
-                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -158,7 +142,6 @@ namespace Roster_Builder.Necrons
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -180,8 +163,6 @@ namespace Roster_Builder.Necrons
                     break;
                 case 17:
                     Relic = cmbRelic.SelectedItem.ToString();
-                    cbOption1.Enabled = true;
-                    cmbOption2.Enabled = true;
 
                     if (cmbRelic.SelectedItem.ToString() == "Blood Scythe")
                     {
@@ -207,6 +188,10 @@ namespace Roster_Builder.Necrons
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Staff of Light");
                         cmbOption2.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption2.Enabled = true;
                     }
                     break;
                 case 21:
@@ -249,19 +234,6 @@ namespace Roster_Builder.Necrons
                         if (Stratagem.Contains(cbStratagem2.Text))
                         {
                             Stratagem.Remove(cbStratagem2.Text);
-                        }
-                    }
-                    break;
-                case 73:
-                    if (cbStratagem3.Checked)
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
                         }
                     }
                     break;

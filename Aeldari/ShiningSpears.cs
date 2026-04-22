@@ -43,18 +43,13 @@ namespace Roster_Builder.Aeldari
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 3;
             nudUnitSize.Value = nudUnitSize.Minimum;
             nudUnitSize.Maximum = 6;
             nudUnitSize.Value = currentSize;
 
-            Label lblExtra1 = panel.Controls["lblExtra1"] as Label;
-            lblExtra1.Location = new System.Drawing.Point(panel.Controls["lblOption1"].Location.X, panel.Controls["lblOption1"].Location.Y);
-            lblExtra1.Text = "Shining Spears Exarch Weapons:";
-            lblExtra1.Visible = true;
+            panel.Controls["lblOption1"].Text = "Shining Spear Exarch Weapons:";
             panel.Controls["lblOption2"].Visible = false;
 
             cmbOption1.Items.Clear();
@@ -94,13 +89,13 @@ namespace Roster_Builder.Aeldari
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             cmbFaction.Items.Clear();
@@ -114,23 +109,6 @@ namespace Roster_Builder.Aeldari
             {
                 cmbFaction.SelectedIndex = 0;
             }
-
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-
-            cbStratagem3.Text = repo.StratagemList[2];
-            cbStratagem3.Location = new System.Drawing.Point(cmbRelic.Location.X, cmbRelic.Location.Y + 32);
-            cbStratagem3.Visible = true;
-
-            if (Stratagem.Contains(cbStratagem3.Text))
-            {
-                cbStratagem3.Checked = true;
-                cbStratagem3.Enabled = true;
-            }
-            else
-            {
-                cbStratagem3.Checked = false;
-                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -141,7 +119,6 @@ namespace Roster_Builder.Aeldari
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -169,19 +146,6 @@ namespace Roster_Builder.Aeldari
                     break;
                 case 30:
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
-                    break;
-                case 73:
-                    if (cbStratagem3.Checked)
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
-                        }
-                    }
                     break;
             }
 

@@ -36,9 +36,7 @@ namespace Roster_Builder.Space_Marines.Space_Wolves
 
 			NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
-            int currentSize = UnitSize;
+			int currentSize = UnitSize;
 			nudUnitSize.Minimum = 1;
 			nudUnitSize.Value = nudUnitSize.Minimum;
 			nudUnitSize.Maximum = 5;

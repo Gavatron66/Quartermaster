@@ -37,38 +37,6 @@ namespace Roster_Builder.Death_Guard
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
-            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-
-            if (repo.hasWarlord && !isWarlord)
-            {
-                cbWarlord.Enabled = false;
-            }
-
-            cmbWarlord.Items.Clear();
-            List<string> traits = repo.GetWarlordTraits("");
-            foreach (var item in traits)
-            {
-                cmbWarlord.Items.Add(item);
-            }
-
-            if (isWarlord)
-            {
-                cbWarlord.Checked = true;
-                cmbWarlord.Enabled = true;
-                cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
-            }
-            else if (Stratagem.Contains(cbStratagem1.Text))
-            {
-                cbWarlord.Checked = false;
-                cmbWarlord.Enabled = true;
-                cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
-            }
-            else
-            {
-                cbWarlord.Checked = false;
-                cmbWarlord.Enabled = false;
-            }
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -88,6 +56,32 @@ namespace Roster_Builder.Death_Guard
                 "Power Fist"
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
+
+            if (repo.hasWarlord && !isWarlord)
+            {
+                cbWarlord.Enabled = false;
+            }
+            else
+            {
+                cmbWarlord.Items.Clear();
+                List<string> traits = repo.GetWarlordTraits("");
+                foreach (var item in traits)
+                {
+                    cmbWarlord.Items.Add(item);
+                }
+            }
+
+            if (isWarlord)
+            {
+                cbWarlord.Checked = true;
+                cmbWarlord.Enabled = true;
+                cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
+            }
+            else
+            {
+                cbWarlord.Checked = false;
+                cmbWarlord.Enabled = false;
+            }
 
             restrictedIndexes = new List<int>();
             for (int i = 0; i < cmbWarlord.Items.Count; i++)
@@ -121,25 +115,24 @@ namespace Roster_Builder.Death_Guard
             }
             this.DrawItemWithRestrictions(restrictedIndexes, cmbFaction);
 
-            cmbRelic.Items.Clear();
-            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
-
             if (repo.hasRelic && Relic == "(None)")
             {
                 cmbRelic.Enabled = false;
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
             else
             {
                 cmbRelic.Enabled = true;
+                cmbRelic.Items.Clear();
+                cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-                if (Relic != null && cmbRelic.Items.Contains(Relic))
+                if (Relic != null)
                 {
                     cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
                 }
                 else
                 {
-                    cmbRelic.SelectedIndex = 0;
+                    cmbRelic.SelectedIndex = -1;
                 }
             }
 
@@ -155,7 +148,10 @@ namespace Roster_Builder.Death_Guard
 
             panel.Controls["lblFactionupgrade"].Visible = true;
             panel.Controls["cmbFactionupgrade"].Visible = true;
-            
+
+            CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
+            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
+
             if (Stratagem.Contains(cbStratagem1.Text))
             {
                 cbStratagem1.Checked = true;
@@ -315,44 +311,26 @@ namespace Roster_Builder.Death_Guard
                 case 71:
                     if (cbStratagem1.Checked)
                     {
-                        if (!Stratagem.Contains(cbStratagem1.Text))
-                        {
-                            Stratagem.Add(cbStratagem1.Text);
-                        }
-                        warlord.Enabled = true;
+                        Stratagem.Add(cbStratagem1.Text);
                     }
                     else
                     {
                         if (Stratagem.Contains(cbStratagem1.Text))
                         {
                             Stratagem.Remove(cbStratagem1.Text);
-                            if (repo.hasWarlord)
-                            {
-                                warlord.Enabled = false;
-                                warlord.SelectedIndex = -1;
-                            }
                         }
                     }
                     break;
                 case 72:
                     if (cbStratagem2.Checked)
                     {
-                        if (!Stratagem.Contains(cbStratagem2.Text))
-                        {
-                            Stratagem.Add(cbStratagem2.Text);
-                        }
-                        cmbRelic.Enabled = true;
+                        Stratagem.Add(cbStratagem2.Text);
                     }
                     else
                     {
                         if (Stratagem.Contains(cbStratagem2.Text))
                         {
                             Stratagem.Remove(cbStratagem2.Text);
-                            if (repo.hasRelic)
-                            {
-                                cmbRelic.Enabled = false;
-                                cmbRelic.SelectedIndex = 0;
-                            }
                         }
                     }
                     break;

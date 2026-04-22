@@ -86,21 +86,20 @@ namespace Roster_Builder.Genestealer_Cults
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             panel.Controls["lblFactionupgrade"].Visible = true;
             panel.Controls["cmbFactionupgrade"].Visible = true;
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
-            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
+            panel.Controls["cbStratagem2"].Visible = false;
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -112,40 +111,6 @@ namespace Roster_Builder.Genestealer_Cults
                 cbStratagem1.Checked = false;
                 cbStratagem1.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem1.Text));
             }
-
-            if (Stratagem.Contains(cbStratagem2.Text))
-            {
-                cbStratagem2.Checked = true;
-                cbStratagem2.Enabled = true;
-            }
-            else
-            {
-                cbStratagem2.Checked = false;
-                cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
-            }
-
-            cbStratagem3.Text = repo.StratagemList[2].ToString();
-            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X - 20, cbStratagem2.Location.Y + 32);
-            cbStratagem3.Visible = true;
-
-            if (repo.currentSubFaction == "The Bladed Cog")
-            {
-                if (Stratagem.Contains(cbStratagem3.Text))
-                {
-                    cbStratagem3.Checked = true;
-                    cbStratagem3.Enabled = true;
-                }
-                else
-                {
-                    cbStratagem3.Checked = false;
-                    cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-                }
-            }
-            else
-            {
-                cbStratagem3.Enabled = false;
-                cbStratagem3.Checked = false;
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -156,8 +121,6 @@ namespace Roster_Builder.Genestealer_Cults
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
-            CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
             switch (code)
             {
@@ -212,32 +175,6 @@ namespace Roster_Builder.Genestealer_Cults
                         if (Stratagem.Contains(cbStratagem1.Text))
                         {
                             Stratagem.Remove(cbStratagem1.Text);
-                        }
-                    }
-                    break;
-                case 72:
-                    if (cbStratagem2.Checked)
-                    {
-                        Stratagem.Add(cbStratagem2.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem2.Text))
-                        {
-                            Stratagem.Remove(cbStratagem2.Text);
-                        }
-                    }
-                    break;
-                case 73:
-                    if (cbStratagem3.Checked)
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
                         }
                     }
                     break;

@@ -11,13 +11,11 @@ namespace Roster_Builder.Adepta_Sororitas
 {
     public class Canoness : Datasheets
     {
-        List<int> restrictedIndexes2 = new List<int>();
-
         public Canoness()
         {
             DEFAULT_POINTS = 50;
             Points = DEFAULT_POINTS;
-            TemplateCode = "2m_c";
+            TemplateCode = "3m_c";
             Weapons.Add("Plasma Pistol & Rod of Office (+10 pts)");
             Weapons.Add("Power Sword (+5 pts)");
             Weapons.Add("(None)");
@@ -44,6 +42,7 @@ namespace Roster_Builder.Adepta_Sororitas
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            ComboBox cmbOption3 = panel.Controls["cmbOption3"] as ComboBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
@@ -60,16 +59,28 @@ namespace Roster_Builder.Adepta_Sororitas
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
+            cmbOption3.Items.Clear();
+            cmbOption3.Items.AddRange(new string[]
+            {
+                "(None)",
+                "Brazier of Holy Fire (+5 pts)",
+                "Null Rod (+10 pts)"
+            });
+            cmbOption3.SelectedIndex = cmbOption3.Items.IndexOf(Weapons[2]);
+
             cmbOption2.Items.Clear();
             cmbOption2.Items.AddRange(new string[]
             {
                 "Blessed Blade (+10 pts)",
                 "Chainsword",
-                "Chainsword & Brazier of Holy Fire (+5 pts)",
-                "Chainsword & Null Rod (+10 pts)",
                 "Power Sword (+5 pts)"
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
+
+            if (Weapons[2] != "Chainsword")
+            {
+                cmbOption3.Enabled = false;
+            }
 
             cmbWarlord.Items.Clear();
             List<string> traits = repo.GetWarlordTraits("");
@@ -93,13 +104,13 @@ namespace Roster_Builder.Adepta_Sororitas
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             cmbFaction.Items.Clear();
@@ -144,6 +155,7 @@ namespace Roster_Builder.Adepta_Sororitas
         {
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            ComboBox cmbOption3 = panel.Controls["cmbOption3"] as ComboBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
@@ -154,24 +166,22 @@ namespace Roster_Builder.Adepta_Sororitas
             switch (code)
             {
                 case 11:
-                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
-                    {
-                        Weapons[0] = cmbOption1.SelectedItem.ToString();
-                    }
-                    else
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
-                    }
+                    Weapons[0] = cmbOption1.SelectedItem.ToString();
                     break;
                 case 12:
-                    if(!restrictedIndexes2.Contains(cmbOption2.SelectedIndex))
+                    Weapons[1] = cmbOption2.SelectedItem.ToString();
+                    if (Weapons[1] == "Chainsword")
                     {
-                        Weapons[1] = cmbOption2.SelectedItem.ToString();
+                        cmbOption3.Enabled = true;
                     }
                     else
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
+                        cmbOption3.Enabled = false;
+                        cmbOption3.SelectedIndex = 0;
                     }
+                    break;
+                case 13:
+                    Weapons[2] = cmbOption3.SelectedItem.ToString();
                     break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
@@ -188,54 +198,6 @@ namespace Roster_Builder.Adepta_Sororitas
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
-                    cmbOption1.Enabled = true;
-                    cmbOption2.Enabled = true;
-                    restrictedIndexes.Clear();
-                    restrictedIndexes2.Clear();
-
-                    if(chosenRelic == "Blade of Saint Ellynor")
-                    {
-                        cmbOption2.SelectedIndex = 0;
-                        cmbOption2.Enabled = false;
-                    }
-                    else if (chosenRelic == "Brazier of Eternal Flame")
-                    {
-                        cmbOption2.SelectedIndex = 2;
-                        cmbOption2.Enabled = false;
-                    }
-                    else if (chosenRelic == "Wrath of the Emperor")
-                    {
-                        cmbOption1.SelectedIndex = 0;
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "The Ecclesiarch's Fury" || chosenRelic == "Beneficence")
-                    {
-                        restrictedIndexes2.AddRange(new int[] { 0, 4 });
-                        cmbOption2.SelectedIndex = 1;
-                    }
-                    else if (chosenRelic == "Redemption")
-                    {
-                        restrictedIndexes.AddRange(new int[] { 0, 1, 2 });
-                        cmbOption1.SelectedIndex = 3;
-                    }
-                    else if(chosenRelic == "Martyrs' Vengeance")
-                    {
-                        cmbOption1.SelectedIndex = 2;
-                        cmbOption1.Enabled = false;
-                    }
-                    else if(chosenRelic == "Annunciation of the Creed")
-                    {
-                        cmbOption1.SelectedIndex = 1;
-                        cmbOption1.Enabled = false;
-                    }
-                    else if(chosenRelic == "Light of Saint Agnaetha")
-                    {
-                        cmbOption2.SelectedIndex = 2;
-                        cmbOption2.Enabled = false;
-                    }
-
-                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
-                    this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
                     Relic = chosenRelic;
                     break;
                 case 25:
@@ -280,13 +242,13 @@ namespace Roster_Builder.Adepta_Sororitas
 
             foreach (var weapon in Weapons)
             {
-                if(weapon == "Inferno Pistol (+5 pts)" || weapon == "Plasma Pistol (+5 pts)" || weapon == "Chainsword & Brazier of Holy Fire (+5 pts)"
+                if(weapon == "Inferno Pistol (+5 pts)" || weapon == "Plasma Pistol (+5 pts)" || weapon == "Brazier of Holy Fire (+5 pts)"
                     || weapon == "Power Sword (+5 pts)")
                 {
                     Points += 5;
                 }
                 else if (weapon == "Condemnor Boltgun (+10 pts)" || weapon == "Plasma Pistol & Rod of Office (+10 pts)" ||
-                    weapon == "Chainsword & Null Rod (+10 pts)" || weapon == "Blessed Blade (+10 pts)")
+                    weapon == "Null Rod (+10 pts)" || weapon == "Blessed Blade (+10 pts)")
                 {
                     Points += 10;
                 }

@@ -35,8 +35,6 @@ namespace Roster_Builder.Necrons
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 3;
             nudUnitSize.Value = nudUnitSize.Minimum;

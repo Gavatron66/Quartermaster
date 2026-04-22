@@ -48,8 +48,6 @@ namespace Roster_Builder.Drukhari
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 5;
             nudUnitSize.Value = nudUnitSize.Minimum;
@@ -88,30 +86,23 @@ namespace Roster_Builder.Drukhari
             switch (code)
             {
                 case 11:
-                    if(!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    if (currentIndex == 0)
                     {
-                        if (currentIndex == 0)
+                        Weapons[0] = cmbOption1.SelectedItem.ToString();
+
+                        if (Weapons[1] == "(None)")
                         {
-                            Weapons[0] = cmbOption1.SelectedItem.ToString();
-
-                            if (Weapons[1] == "(None)")
-                            {
-                                lbModelSelect.Items[0] = "Solarite w/ " + Weapons[0];
-                            }
-                            else
-                            {
-                                lbModelSelect.Items[0] = "Solarite w/ " + Weapons[0] + " and " + Weapons[1];
-                            }
-                            break;
+                            lbModelSelect.Items[0] = "Solarite w/ " + Weapons[0];
                         }
+                        else
+                        {
+                            lbModelSelect.Items[0] = "Solarite w/ " + Weapons[0] + " and " + Weapons[1];
+                        }
+                        break;
+                    }
 
-                        Weapons[currentIndex + 1] = cmbOption1.SelectedItem.ToString();
-                        lbModelSelect.Items[currentIndex] = "Scourge w/ " + Weapons[currentIndex + 1];
-                    }
-                    else
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
-                    }
+                    Weapons[currentIndex + 1] = cmbOption1.SelectedItem.ToString();
+                    lbModelSelect.Items[currentIndex] = "Scourge w/ " + Weapons[currentIndex + 1];
 
                     break;
                 case 12:
@@ -151,7 +142,6 @@ namespace Roster_Builder.Drukhari
                 case 61:
                     currentIndex = lbModelSelect.SelectedIndex;
                     antiLoop = true;
-                    restrictedIndexes.Clear();
 
                     if (currentIndex < 0)
                     {
@@ -188,6 +178,9 @@ namespace Roster_Builder.Drukhari
                             "Venom Blade (+5 pts)"
                         });
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
+
+                        antiLoop = false;
+                        break;
                     }
                     else
                     {
@@ -197,27 +190,31 @@ namespace Roster_Builder.Drukhari
                         panel.Controls["lblOption2"].Visible = false;
 
                         cmbOption1.Items.Clear();
-
-                        cmbOption1.Items.AddRange(new string[]
-                        {
-                            "Blaster (+10 pts)",
-                            "Dark Lance (+15 pts)",
-                            "Drukhari Haywire Blaster (+10 pts)",
-                            "Heat Lance (+10 pts)",
-                            "Shardcarbine",
-                            "Shredder (+5 pts)",
-                            "Splinter Cannon (+10 pts)"
-                        });
-
                         if(restriction == 4 && Weapons[currentIndex + 1] == "Shardcarbine")
                         {
-                            restrictedIndexes.AddRange(new int[] { 0, 1, 2, 3, 5, 6 });
+                            cmbOption1.Items.AddRange(new string[]
+                            {
+                                "Shardcarbine"
+                            });
+                        }
+                        else
+                        {
+                            cmbOption1.Items.AddRange(new string[]
+                            {
+                                "Blaster (+10 pts)",
+                                "Dark Lance (+15 pts)",
+                                "Drukhari Haywire Blaster (+10 pts)",
+                                "Heat Lance (+10 pts)",
+                                "Shardcarbine",
+                                "Shredder (+5 pts)",
+                                "Splinter Cannon (+10 pts)"
+                            });
+
                         }
 
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
                     }
 
-                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     antiLoop = false;
                     break;
             }

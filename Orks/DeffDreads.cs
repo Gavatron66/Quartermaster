@@ -47,8 +47,6 @@ namespace Roster_Builder.Orks
             ComboBox cmbOption4 = panel.Controls["cmbOption4"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
-            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
-
             int currentSize = UnitSize;
             nudUnitSize.Minimum = 1;
             antiLoop = true;
@@ -158,20 +156,6 @@ namespace Roster_Builder.Orks
                 case 30:
                     int temp = UnitSize;
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
-
-                    if (UnitSize > 1)
-                    {
-                        cmbFaction.Items.Clear();
-                        cmbFaction.Items.Add("(None)");
-                        cmbFaction.SelectedIndex = 0;
-                        cmbFaction.Items.Add("Big Krumpaz Mob");
-                    }
-                    else
-                    {
-                        cmbFaction.Items.Clear();
-                        cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-                        cmbFaction.SelectedIndex = 0;
-                    }
 
                     if (temp < UnitSize)
                     {

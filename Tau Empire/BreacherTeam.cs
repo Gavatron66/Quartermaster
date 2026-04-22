@@ -122,24 +122,10 @@ namespace Roster_Builder.Tau_Empire
             switch (code)
             {
                 case 11:
-                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
-                    {
-                        Weapons[1] = cmbOption1.SelectedItem.ToString();
-                    }
-                    else
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[1]);
-                    }
+                    Weapons[1] = cmbOption1.SelectedItem.ToString();
                     break;
                 case 12:
-                    if (!restrictedIndexes.Contains(cmbOption2.SelectedIndex))
-                    {
-                        Weapons[2] = cmbOption2.SelectedItem.ToString();
-                    }
-                    else
-                    {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[2]);
-                    }
+                    Weapons[2] = cmbOption2.SelectedItem.ToString();
                     break;
                 case 21:
                     if (cbOption1.Checked)
@@ -170,7 +156,6 @@ namespace Roster_Builder.Tau_Empire
 
             Points = DEFAULT_POINTS;
 
-            restrictedIndexes.Clear();
             if (cbOption1.Checked)
             {
                 Points += 5;
@@ -184,13 +169,6 @@ namespace Roster_Builder.Tau_Empire
             else
             {
                 Points += 10;
-
-                if (Weapons[1] == "Guardian Drone (+10 pts)")
-                {
-                    restrictedIndexes.Add(1);
-                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
-                    this.DrawItemWithRestrictions(new List<int>(), cmbOption1);
-                }
             }
 
             if (Weapons[2] == "Shield Drone (+15 pts)")
@@ -201,13 +179,6 @@ namespace Roster_Builder.Tau_Empire
             else
             {
                 Points += 10;
-
-                if (Weapons[2] == "Guardian Drone (+10 pts)")
-                {
-                    restrictedIndexes.Add(1);
-                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
-                    this.DrawItemWithRestrictions(new List<int>(), cmbOption2);
-                }
             }
 
             if (supportTurret)

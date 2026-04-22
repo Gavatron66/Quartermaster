@@ -85,13 +85,13 @@ namespace Roster_Builder.Orks
 			cmbRelic.Items.Clear();
 			cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-			if (Relic != null && cmbRelic.Items.Contains(Relic))
+			if (Relic != null)
 			{
 				cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
 			}
 			else
 			{
-				cmbRelic.SelectedIndex = 0;
+				cmbRelic.SelectedIndex = -1;
 			}
 
 			panel.Controls["lblFactionupgrade"].Visible = true;
@@ -148,7 +148,7 @@ namespace Roster_Builder.Orks
 				case 16:
 					Factionupgrade = cmbFaction.Text;
                     cbOption1.Enabled = true;
-                    if (Factionupgrade == "Bionik Oiler (+10 pts)")
+                    if (Factionupgrade == "Bionik Oiler")
                     {
                         cbOption1.Checked = true;
                         cbOption1.Enabled = false;

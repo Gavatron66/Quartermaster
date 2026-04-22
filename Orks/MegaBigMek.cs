@@ -98,13 +98,13 @@ namespace Roster_Builder.Orks
 			cmbRelic.Items.Clear();
 			cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-			if (Relic != null && cmbRelic.Items.Contains(Relic))
+			if (Relic != null)
 			{
 				cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
 			}
 			else
 			{
-				cmbRelic.SelectedIndex = 0;
+				cmbRelic.SelectedIndex = -1;
 			}
 
 			cmbFaction.Items.Clear();
@@ -179,12 +179,12 @@ namespace Roster_Builder.Orks
 					Factionupgrade = cmbFaction.Text;
                     cbOption1.Enabled = true;
 					cmbOption1.Enabled = true;
-                    if (Factionupgrade == "Bionik Oiler (+10 pts)")
+                    if (Factionupgrade == "Bionik Oiler")
 					{
 						cbOption1.Checked = true;
 						cbOption1.Enabled = false;
                     }
-                    else if (Factionupgrade == "Extra-Kustom Weapon (+10 pts)")
+                    else if (Factionupgrade == "Extra-Kustom Weapon")
                     {
 						cmbOption1.SelectedIndex = 3;
 						cmbOption1.Enabled = false;
@@ -192,20 +192,7 @@ namespace Roster_Builder.Orks
                     break;
 				case 17:
 					string chosenRelic = cmbRelic.SelectedItem.ToString();
-					cmbOption1.Enabled = true;
-
-					if(chosenRelic == "Da Killa Klaw")
-					{
-						cmbOption1.SelectedIndex = 0;
-						cmbOption1.Enabled = false;
-					}
-					else if (chosenRelic == "Da Ded Shiny Shoota" || chosenRelic == "Da Gobshot Thunderbuss")
-					{
-						cmbOption1.SelectedIndex = 4;
-						cmbOption1.Enabled = false;
-					}
-
-						Relic = chosenRelic;
+					Relic = chosenRelic;
 					break;
 				case 21:
 					if (cbOption1.Checked)
