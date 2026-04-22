@@ -17,7 +17,7 @@ namespace Roster_Builder.Chaos_Space_Marines
             StratagemList.AddRange(new string[]
             {
                 "Stratagem: Aspiring Lord",  //Warlord Trait
-                "Stratagem: Gifts of Chaos",    //Relic or 2nd Relic
+                "Stratagem: Gifts of Chaos",    //Relic
                 "Stratagem: Trophies of the Long War", //Extra relic for an 'Aspiring' or 'Champion'
                 "Stratagem: Lord of the Ezekarion", //Extra Warlord Trait for a Black Legion Warlord
                 "Stratagem: Apostle of the Dark Council", //Buff to a Word Bearers Priest
@@ -191,13 +191,9 @@ namespace Roster_Builder.Chaos_Space_Marines
 
             relics.Add("(None)");
 
-            if(!keywords.Contains("DARK COMMUNE") && keywords.Contains("DAEMON PRINCE"))
-            {
-                relics.Add("Ul'o'cca, the Black");
-            }
-
             if(!keywords.Contains("DARK COMMUNE"))
             {
+                relics.Add("Ul'o'cca, the Black");
                 relics.Add("Zaall, the Wrathful");
                 relics.Add("G'holl'ax, the Decayed");
                 relics.Add("Q'o'ak, the Boundless");
@@ -259,7 +255,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 relics.Add("Liber Hereticus");
             }
 
-            if (/*currentSubFaction == "Black Legion"*/true)
+            if (currentSubFaction == "Black Legion")
             {
                 if (keywords.Contains("CHAOS LORD"))
                 {
@@ -294,7 +290,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Word Bearers"*/true)
+            if (currentSubFaction == "Word Bearers")
             {
                 if (keywords.Contains("CHAOS LORD") || keywords.Contains("DARK APOSTLE"))
                 {
@@ -326,7 +322,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Night Lords"*/true)
+            if (currentSubFaction == "Night Lords")
             {
                 if ((keywords.Contains("CHAOS LORD") && keywords.Contains("TERMINATOR")) || keywords.Contains("DAEMON PRINCE"))
                 {
@@ -355,7 +351,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Iron Warriors"*/true)
+            if (currentSubFaction == "Iron Warriors")
             {
                 if (keywords.Contains("CHAOS LORD") || keywords.Contains("EXALTED CHAMPION") || keywords.Contains("DAEMON PRINCE") ||
                     keywords.Contains("WARPSMITH") || keywords.Contains("MASTER OF EXECUTIONS"))
@@ -392,7 +388,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Alpha Legion"*/true)
+            if (currentSubFaction == "Alpha Legion")
             {
                 if (keywords.Contains("CHAOS LORD"))
                 {
@@ -429,7 +425,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Emperor's Children"*/true)
+            if (currentSubFaction == "Emperor's Children")
             {
 
                 if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
@@ -456,7 +452,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 relics.Add("Raiment Revulsive");
             }
 
-            if (/*currentSubFaction == "Red Corsairs"*/true)
+            if (currentSubFaction == "Red Corsairs")
             {
 
                 if ((keywords.Contains("CHAOS LORD") && keywords.Contains("TERMINATOR")) || keywords.Contains("EXALTED CHAMPION") ||
@@ -476,7 +472,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Creations of Bile"*/true)
+            if (currentSubFaction == "Creations of Bile")
             {
                 if (!keywords.Contains("DARK COMMUNE"))
                 {

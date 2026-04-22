@@ -88,57 +88,27 @@ namespace Roster_Builder.Leagues_of_Votann
             }
 
             List<string> psykerpowers = new List<string>();
-            psykerpowers = repo.GetPsykerPowers("");
+            psykerpowers = repo.GetPsykerPowers("Dominus");
             clbPsyker.Items.Clear();
             foreach (string power in psykerpowers)
             {
                 clbPsyker.Items.Add(power);
             }
 
-            if (Relic != "The Murmuring Stave")
+            lblPsyker.Text = "Select two of the following:";
+            clbPsyker.ClearSelected();
+            for (int i = 0; i < clbPsyker.Items.Count; i++)
             {
-                lblPsyker.Text = "Select two of the following:";
-                clbPsyker.ClearSelected();
-                for (int i = 0; i < clbPsyker.Items.Count; i++)
-                {
-                    clbPsyker.SetItemChecked(i, false);
-                }
-
-                if (PsykerPowers[0] != string.Empty)
-                {
-                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
-                }
-                if (PsykerPowers[1] != string.Empty)
-                {
-                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
-                }
+                clbPsyker.SetItemChecked(i, false);
             }
-            else
+
+            if (PsykerPowers[0] != string.Empty)
             {
-                lblPsyker.Text = "Select three of the following:";
-                if (PsykerPowers.Length != 3)
-                {
-                    PsykerPowers = new string[3] { string.Empty, string.Empty, string.Empty };
-                }
-
-                clbPsyker.ClearSelected();
-                for (int i = 0; i < clbPsyker.Items.Count; i++)
-                {
-                    clbPsyker.SetItemChecked(i, false);
-                }
-
-                if (PsykerPowers[0] != string.Empty)
-                {
-                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
-                }
-                if (PsykerPowers[1] != string.Empty)
-                {
-                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
-                }
-                if (PsykerPowers[2] != string.Empty)
-                {
-                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[2]), true);
-                }
+                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+            }
+            if (PsykerPowers[1] != string.Empty)
+            {
+                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
             }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
@@ -194,44 +164,6 @@ namespace Roster_Builder.Leagues_of_Votann
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
-
-                    if (chosenRelic == "The Murmuring Stave")
-                    {
-                        panel.Controls["lblPsyker"].Text = "Select three of the following:";
-                        var temp = PsykerPowers;
-
-                        PsykerPowers = new string[3] { string.Empty, string.Empty, string.Empty };
-                        if (temp[0] != string.Empty)
-                        {
-
-                            for (int i = 0; i < clbPsyker.Items.Count; i++)
-                            {
-                                clbPsyker.SetItemChecked(i, false);
-                            }
-
-                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
-                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                        }
-                    }
-                    else
-                    {
-                        panel.Controls["lblPsyker"].Text = "Select two of the following:";
-                        var temp = PsykerPowers;
-
-                        PsykerPowers = new string[2] { string.Empty, string.Empty };
-                        if (temp[0] != string.Empty)
-                        {
-
-                            for (int i = 0; i < clbPsyker.Items.Count; i++)
-                            {
-                                clbPsyker.SetItemChecked(i, false);
-                            }
-
-                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
-                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                        }
-                    }
-
                     Relic = chosenRelic;
                     break;
                 case 25:
@@ -242,38 +174,18 @@ namespace Roster_Builder.Leagues_of_Votann
                     else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
-                    if (Relic == "The Murmuring Stave")
+                    if (clbPsyker.CheckedItems.Count < 2)
                     {
-                        if (clbPsyker.CheckedItems.Count < 3)
-                        {
-                            break;
-                        }
-                        else if (clbPsyker.CheckedItems.Count == 3)
-                        {
-                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
-                            PsykerPowers[2] = clbPsyker.CheckedItems[2] as string;
-                        }
-                        else
-                        {
-                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
-                        }
+                        break;
+                    }
+                    else if (clbPsyker.CheckedItems.Count == 2)
+                    {
+                        PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
                     }
                     else
                     {
-                        if (clbPsyker.CheckedItems.Count < 2)
-                        {
-                            break;
-                        }
-                        else if (clbPsyker.CheckedItems.Count == 2)
-                        {
-                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
-                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
-                        }
-                        else
-                        {
-                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
-                        }
+                        clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
                     }
                     break;
                 case 71:

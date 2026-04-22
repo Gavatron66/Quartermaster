@@ -64,8 +64,9 @@ Need to double check all the factions for relics and upgrades that allow them to
 Why did I do chosenRelic? Removing it fixes a lot of problems....
 	Best guess it is for something to do with DG, but since I'm not doing the rest to that standard, I'll have to experiment...
 	
-For Future Reference: I figured out the issue with chosenRelic when selecting the unit leader in the list box so that it disables the correct boxes. The example is in Hearthkyn Warriors.
-	Will I go back and double check things? Maybe. It's a decent amount of work for not much benefit, so maybe.
+Apparently, Vehicles can't have Relics! I need to go back and double check some things, because there's not a lot of Characters who also have the VEHICLE keyword.
+What I know:
+	Catacomb Command Barge
 
 ***Leaving these for the future SM supplements***
 Characters to do list:
@@ -334,50 +335,4 @@ Sergeants
 
 
 Characters to do list:
-	AbaddonTheDespoiler(),
-	HaarkenWorldclaimer(),	Lord of Terror
-	HuronBlackheart(),	Reaver Lord
-	DaemonPrince(),
-	FabiusBile(),	Surgical Precision
-	Cypher(),	Unholy Fortitude
-	MasterOfPossession(),
-	ChaosLord(),
-	TerminatorChaosLord(),
-	Sorcerer(),
-	TerminatorSorcerer(),
-	LuciusTheEternal(),	Faultless Duellist
-	LordDiscordant(),
-	Warpsmith(),
-	DarkApostle(),
-	ExaltedChampion(),
-	DarkCommune(),
-	Legionaries(),
-	CulistsMob(),
-	AccursedCultists(),
-	ChaosTerminators(),
-	MasterOfExecutions(),
-	Possessed(),
-	Chosen(),
-	Helbrute(),
-	KhorneBerzerkersCSM(),
-	RubricMarinesCSM(),
-	PlagueMarinesCSM(),
-	NoiseMarines(),
-	Venomcrawler(),
-	ChaosSpawn(),
-	ChaosBikers(),
-	Raptors(),
-	WarpTalons(),
-	Havocs(),
-	Obliterators(),
-	ChaosLandRaider(),
-	ChaosVindicator(),
-	ChaosPredatorDestructor(),
-	ChaosPredatorAnnihilator(),
-	Defiler(),
-	Forgefiend(),
-	Maulerfiend(),
-	ChaosRhino(),
-	Heldrake(),
-	KhorneLordOfSkulls(),
-	NoctilithCrown()
+	Uncomment Strats so they work properly, then I did it!!!!!
