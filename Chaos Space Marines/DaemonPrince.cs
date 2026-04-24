@@ -12,14 +12,15 @@ namespace Roster_Builder.Chaos_Space_Marines
         public DaemonPrince()
         {
             DEFAULT_POINTS = 120;
-            Points = DEFAULT_POINTS;
+            Points = DEFAULT_POINTS + 15;
             TemplateCode = "1m1k_pc";
             Weapons.Add("Hellforged Sword (+10 pts)");
             Weapons.Add("");
             Keywords.AddRange(new string[]
             {
                 "CHAOS", "HERETIC ASTARTES", "TRAITORIS ASTARTES", "<LEGION>",
-                "CHARACTER", "MONSTER", "DAEMON", "DAEMON PRINCE", "MARK OF CHAOS"
+                "CHARACTER", "MONSTER", "DAEMON", "DAEMON PRINCE", "MARK OF CHAOS",
+                "PSYKER"
             });
             PsykerPowers = new string[1] { string.Empty };
             Role = "HQ";
@@ -87,13 +88,13 @@ namespace Roster_Builder.Chaos_Space_Marines
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
+            if (Relic != null)
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }
             else
             {
-                cmbRelic.SelectedIndex = 0;
+                cmbRelic.SelectedIndex = -1;
             }
 
             cmbFaction.Items.Clear();
@@ -118,16 +119,42 @@ namespace Roster_Builder.Chaos_Space_Marines
                 clbPsyker.Items.Add(power);
             }
 
-            lblPsyker.Text = "Select one of the following:";
-            clbPsyker.ClearSelected();
-            for (int i = 0; i < clbPsyker.Items.Count; i++)
+            if (Relic != "Liber Hereticus" || Relic != "Malefic Tome")
             {
-                clbPsyker.SetItemChecked(i, false);
-            }
+                lblPsyker.Text = "Select one of the following:";
+                clbPsyker.ClearSelected();
+                for (int i = 0; i < clbPsyker.Items.Count; i++)
+                {
+                    clbPsyker.SetItemChecked(i, false);
+                }
 
-            if (PsykerPowers[0] != string.Empty)
+                if (PsykerPowers[0] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                }
+            }
+            else
             {
-                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                lblPsyker.Text = "Select two of the following:";
+                if (PsykerPowers.Length != 2)
+                {
+                    PsykerPowers = new string[2] { string.Empty, string.Empty };
+                }
+
+                clbPsyker.ClearSelected();
+                for (int i = 0; i < clbPsyker.Items.Count; i++)
+                {
+                    clbPsyker.SetItemChecked(i, false);
+                }
+
+                if (PsykerPowers[0] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
+                }
+                if (PsykerPowers[1] != string.Empty)
+                {
+                    clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
+                }
             }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
@@ -189,6 +216,10 @@ namespace Roster_Builder.Chaos_Space_Marines
                     if(Factionupgrade == "Mark of Khorne (+15 pts)")
                     {
                         PsykerPowers[0] = string.Empty;
+                        if(PsykerPowers.Length > 1)
+                        {
+                            PsykerPowers[1] = string.Empty;
+                        }
                         clbPsyker.Visible = false;
                         panel.Controls["lblPsyker"].Visible = false;
                     }
@@ -201,8 +232,11 @@ namespace Roster_Builder.Chaos_Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+<<<<<<< Updated upstream
+=======
                     cmbFaction.Enabled = true;
                     cmbOption1.Enabled = true;
+                    cbOption1.Enabled = true;
 
                     if(chosenRelic == "Zaall, the Wrathful" || chosenRelic == "Talisman of Burning Blood")
                     {
@@ -224,13 +258,61 @@ namespace Roster_Builder.Chaos_Space_Marines
                         cmbFaction.SelectedIndex = 3;
                         cmbFaction.Enabled = false;
                     }
-                    else if(chosenRelic == "Ashen Axe")
+                    else if(chosenRelic == "Ashen Axe" || chosenRelic == "Axe of the Forgemaster")
                     {
                         cmbOption1.SelectedIndex = 0;
                         cmbOption1.Enabled = false;
                     }
+                    else if (chosenRelic == "Claw of the Stygian Count")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if(chosenRelic == "Talons of the Night Terror")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
 
-                        Relic = chosenRelic;
+                    if (chosenRelic == "Liber Hereticus" || chosenRelic == "Malefic Tome")
+                    {
+                        panel.Controls["lblPsyker"].Text = "Select two of the following:";
+                        var temp = PsykerPowers;
+
+                        PsykerPowers = new string[2] { string.Empty, string.Empty };
+                        if (temp[0] != string.Empty)
+                        {
+
+                            for (int i = 0; i < clbPsyker.Items.Count; i++)
+                            {
+                                clbPsyker.SetItemChecked(i, false);
+                            }
+
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        }
+                    }
+                    else
+                    {
+                        panel.Controls["lblPsyker"].Text = "Select one of the following:";
+                        var temp = PsykerPowers;
+
+                        PsykerPowers = new string[1] { string.Empty };
+                        if (temp[0] != string.Empty)
+                        {
+
+                            for (int i = 0; i < clbPsyker.Items.Count; i++)
+                            {
+                                clbPsyker.SetItemChecked(i, false);
+                            }
+
+                            clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(temp[0]), true);
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        }
+                    }
+
+>>>>>>> Stashed changes
+                    Relic = chosenRelic;
                     break;
                 case 21:
                     if (cbOption1.Checked)
@@ -250,14 +332,34 @@ namespace Roster_Builder.Chaos_Space_Marines
                     else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
-                    if (clbPsyker.CheckedItems.Count == 1)
+                    if (Relic == "Liber Hereticus" || Relic == "Malefic Tome")
                     {
-                        PsykerPowers[0] = clbPsyker.SelectedItem.ToString();
+                        if (clbPsyker.CheckedItems.Count < 2)
+                        {
+                            break;
+                        }
+                        else if (clbPsyker.CheckedItems.Count == 2)
+                        {
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                            PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
+                        }
+                        else
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        }
                     }
                     else
                     {
-                        clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        if (clbPsyker.CheckedItems.Count == 1)
+                        {
+                            PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        }
+                        else
+                        {
+                            clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
+                        }
                     }
+
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
