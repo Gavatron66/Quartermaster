@@ -11,7 +11,7 @@ namespace Roster_Builder.Chaos_Space_Marines
     {
         public Forgefiend()
         {
-            DEFAULT_POINTS = 110;
+            DEFAULT_POINTS = 140;
             Points = DEFAULT_POINTS + 30;
             UnitSize = 1;
             TemplateCode = "2m";

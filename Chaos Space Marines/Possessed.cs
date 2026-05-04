@@ -57,7 +57,7 @@ namespace Roster_Builder.Chaos_Space_Marines
             }
 
             cbStratagem5.Text = repo.StratagemList[2];
-            cbStratagem5.Location = new System.Drawing.Point(cbOption1.Location.X + 20, cbOption1.Location.Y + 60);
+            cbStratagem5.Location = new System.Drawing.Point(cbOption1.Location.X, cbOption1.Location.Y + 30);
             panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
             cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
             cbStratagem5.Visible = true;

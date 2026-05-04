@@ -11,6 +11,7 @@ namespace Roster_Builder.Chaos_Space_Marines
     {
         int currentIndex;
         List<int> restrictedIndexes2 = new List<int>();
+        int[] restrict = new int[] { 0, 0, 0, 0, 0, 0, 0 };
 
         public ChaosTerminators()
         {
@@ -46,6 +47,8 @@ namespace Roster_Builder.Chaos_Space_Marines
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
@@ -84,6 +87,47 @@ namespace Roster_Builder.Chaos_Space_Marines
             {
                 cmbFaction.SelectedIndex = 0;
             }
+
+            cbStratagem5.Text = repo.StratagemList[2];
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblFactionupgrade"].Location.X, cmbFaction.Location.Y + 30);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                panel.Controls["lblRelic"].Visible = true;
+                cmbRelic.Visible = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
+            }
+
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -93,6 +137,8 @@ namespace Roster_Builder.Chaos_Space_Marines
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
@@ -141,6 +187,38 @@ namespace Roster_Builder.Chaos_Space_Marines
                 case 16:
                     Factionupgrade = cmbFaction.Text;
                     break;
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
+                    Relic = chosenRelic;
+
+                    if(chosenRelic == "Hyper-Growth Bolts" || chosenRelic == "Spitespitter" || chosenRelic == "Loyalty's Reward")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.Add(0);
+                    }
+                    else if(chosenRelic == "Maelstrom's Bite")
+                    {
+                        if (restrict[4] == 2 && Weapons[0] != "Combi-melta")
+                        {
+                            int indexChange = Weapons.LastIndexOf("Combi-melta");
+                            Weapons[indexChange] = "Combi-bolter";
+                            lbModelSelect.Items[indexChange / 2] = "Chaos Terminator w/ " + Weapons[indexChange]
+                                + " and " + Weapons[indexChange + 1];
+                        }
+
+                        cmbOption1.SelectedIndex = 3;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Ashen Axe" || chosenRelic == "Claw of the Stygian Count" || chosenRelic == "The Black Mace")
+                    {
+                        cmbOption2.SelectedIndex = 0;
+                        cmbOption2.Enabled = false;
+                    }
+
+                    LoadOptions(cmbOption1, cmbOption2);
+                    break;
                 case 30:
                     int temp = UnitSize;
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
@@ -176,6 +254,9 @@ namespace Roster_Builder.Chaos_Space_Marines
                         cmbOption2.Visible = false;
                         panel.Controls["lblOption1"].Visible = false;
                         panel.Controls["lblOption2"].Visible = false;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
                         break;
                     }
 
@@ -185,6 +266,15 @@ namespace Roster_Builder.Chaos_Space_Marines
                         cmbOption2.Visible = true;
                         panel.Controls["lblOption1"].Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
+                        cbStratagem5.Visible = true;
+                        cmbOption1.Enabled = true;
+                        cmbOption2.Enabled = true;
+
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            panel.Controls["lblRelic"].Visible = true;
+                            cmbRelic.Visible = true;
+                        }
 
                         cmbOption1.Items.Clear();
                         cmbOption1.Items.AddRange(new string[]
@@ -200,6 +290,17 @@ namespace Roster_Builder.Chaos_Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2)]);
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
                         LoadOptions(cmbOption1, cmbOption2);
+                        
+                        if (Relic == "Maelstrom's Bite")
+                        {
+                            cmbOption1.SelectedIndex = 3;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Ashen Axe" || Relic == "Claw of the Stygian Count" || Relic == "The Black Mace")
+                        {
+                            cmbOption2.SelectedIndex = 0;
+                            cmbOption2.Enabled = false;
+                        }
                     }
                     else
                     {
@@ -207,6 +308,11 @@ namespace Roster_Builder.Chaos_Space_Marines
                         cmbOption2.Visible = true;
                         panel.Controls["lblOption1"].Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbOption1.Enabled = true;
+                        cmbOption2.Enabled = true;
 
                         cmbOption1.Items.Clear();
                         cmbOption1.Items.AddRange(new string[]
@@ -228,6 +334,24 @@ namespace Roster_Builder.Chaos_Space_Marines
 
                     antiLoop = false;
                     break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                    break;
                 default: break;
             }
 
@@ -245,7 +369,7 @@ namespace Roster_Builder.Chaos_Space_Marines
         {
             restrictedIndexes.Clear();
 
-            int[] restrict = new int[] { 0, 0, 0, 0, 0, 0, 0 };
+            restrict = new int[] { 0, 0, 0, 0, 0, 0, 0 };
 
             foreach(var item in Weapons)
             {
@@ -299,6 +423,16 @@ namespace Roster_Builder.Chaos_Space_Marines
             if (restrict[4] == (UnitSize / 5) * 2 && Weapons[currentIndex * 2] != "Combi-melta")
             {
                 restrictedIndexes.Add(3);
+            }
+
+            //Champion Relics
+            if(currentIndex == 0)
+            {
+                if (Relic == "Hyper-Growth Bolts" || Relic == "Spitespitter" || Relic == "Loyalty's Reward")
+                {
+                    cmbOption1.SelectedIndex = 1;
+                    restrictedIndexes.Add(0);
+                }
             }
 
             this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);

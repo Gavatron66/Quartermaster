@@ -137,9 +137,6 @@ namespace Roster_Builder.Chaos_Space_Marines
             cmbRelic.Items.Clear();
             cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
 
-<<<<<<< Updated upstream
-            if (Relic != null)
-=======
             if (repo.currentSubFaction == "Black Legion")
             {
                 cbStratagem3.Visible = true;
@@ -156,7 +153,6 @@ namespace Roster_Builder.Chaos_Space_Marines
             cmbOption6.Items.AddRange(repo.GetWarlordTraits("").ToArray());
 
             if (Relic != null && cmbRelic.Items.Contains(Relic))
->>>>>>> Stashed changes
             {
                 cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
             }

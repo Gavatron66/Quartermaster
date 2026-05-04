@@ -18,7 +18,7 @@ namespace Roster_Builder.Chaos_Space_Marines
         {
             DEFAULT_POINTS = 21;
             UnitSize = 5;
-            Points = DEFAULT_POINTS * UnitSize + 20;
+            Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "NL2m2k";
             Weapons.Add("Boltgun");
             Weapons.Add("Bolt Pistol");
@@ -32,7 +32,6 @@ namespace Roster_Builder.Chaos_Space_Marines
                 "INFANTRY", "CORE", "MARK OF CHAOS", "NOISE MARINES"
             });
             Role = "Elites";
-            Factionupgrade = "Mark of Slaanesh (+20 pts)";
         }
 
         public override Datasheets CreateUnit()
@@ -51,6 +50,10 @@ namespace Roster_Builder.Chaos_Space_Marines
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+
+            panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             cbOption1.Location = new System.Drawing.Point(cbOption1.Location.X, cbOption1.Location.Y + 60);
             cbOption2.Location = new System.Drawing.Point(cbOption2.Location.X, cbOption2.Location.Y + 60);
@@ -96,6 +99,47 @@ namespace Roster_Builder.Chaos_Space_Marines
             cbOption1.Text = "Doom Siren (+10 pts)";
             cbOption2.Text = "Icon of Slaanesh (+5 pts)";
             cbOption2.Visible = true;
+
+            cbStratagem5.Text = repo.StratagemList[2];
+            cbStratagem5.Location = new System.Drawing.Point(cbOption2.Location.X, cbOption2.Location.Y + 30);
+            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
+            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
+
+            cmbRelic.Items.Clear();
+            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+
+                panel.Controls["lblRelic"].Visible = true;
+                cmbRelic.Visible = true;
+
+                if (Relic == "(None)")
+                {
+                    cmbRelic.SelectedIndex = 0;
+                }
+                else
+                {
+                    if (Relic != null && cmbRelic.Items.Contains(Relic))
+                    {
+                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
+                    }
+                    else
+                    {
+                        cmbRelic.SelectedIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cmbRelic.SelectedIndex = 0;
+            }
+
+            panel.Controls["lblRelic"].Visible = false;
+            cmbRelic.Visible = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -111,8 +155,10 @@ namespace Roster_Builder.Chaos_Space_Marines
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
-            switch(code)
+            switch (code)
             {
                 case 11:
                     if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
@@ -157,6 +203,60 @@ namespace Roster_Builder.Chaos_Space_Marines
                     {
                         lbModelSelect.Items[0] = "Noise Champion w/ " + Weapons[0] + " and " + Weapons[1];
                     }
+                    break;
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    Relic = chosenRelic;
+                    cmbOption1.Enabled = true;
+                    cmbOption2.Enabled = true;
+
+                    if (chosenRelic == "Hyper-Growth Bolts (Slot 1)" || chosenRelic == "Loyalty's Reward (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Hyper-Growth Bolts (Slot 2)" || chosenRelic == "Loyalty's Reward (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Ashen Axe (Slot 1)" || chosenRelic == "Axe of the Forgemaster (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Ashen Axe (Slot 2)" || chosenRelic == "Axe of the Forgemaster (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 3;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Viper's Spite" || chosenRelic == "The Warp's Malice")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Distortion (Slot 1)" || chosenRelic == "Blade of the Relentless (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 5;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Distortion (Slot 2)" || chosenRelic == "Blade of the Relentless (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 6;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Black Mace (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 4;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "The Black Mace (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 5;
+                        cmbOption2.Enabled = false;
+                    }
+
+                    antiLoop = false;
                     break;
                 case 21:
                     if (cbOption1.Checked)
@@ -205,6 +305,9 @@ namespace Roster_Builder.Chaos_Space_Marines
                         cbOption1.Visible = false;
                         panel.Controls["lblOption1"].Visible = false;
                         panel.Controls["lblOption2"].Visible = false;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
                         break;
                     }
 
@@ -218,6 +321,15 @@ namespace Roster_Builder.Chaos_Space_Marines
                         cbOption1.Visible = true;
                         panel.Controls["lblOption1"].Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
+                        cbStratagem5.Visible = true;
+                        cmbOption1.Enabled = true;
+                        cmbOption2.Enabled = true;
+
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            panel.Controls["lblRelic"].Visible = true;
+                            cmbRelic.Visible = true;
+                        }
 
                         cmbOption1.Items.Clear();
                         cmbOption1.Items.AddRange(new string[]
@@ -230,9 +342,59 @@ namespace Roster_Builder.Chaos_Space_Marines
                             "Power Sword (+5 pts)",
                             "Tainted Chainaxe (+5 pts)"
                         });
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
+                        antiLoop = true;
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
+                        restrictedIndexes.Clear();
+
+                        #region Champion Relics
+                        if (Relic == "Hyper-Growth Bolts (Slot 1)" || Relic == "Loyalty's Reward (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Hyper-Growth Bolts (Slot 2)" || Relic == "Loyalty's Reward (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        else if (Relic == "Ashen Axe (Slot 1)" || Relic == "Axe of the Forgemaster (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 2;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Ashen Axe (Slot 2)" || Relic == "Axe of the Forgemaster (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 3;
+                            cmbOption2.Enabled = false;
+                        }
+                        else if (Relic == "Viper's Spite" || Relic == "The Warp's Malice")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        else if (Relic == "Distortion (Slot 1)" || Relic == "Blade of the Relentless (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 5;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Distortion (Slot 2)" || Relic == "Blade of the Relentless (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 6;
+                            cmbOption2.Enabled = false;
+                        }
+                        else if (Relic == "The Black Mace (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 4;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "The Black Mace (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 5;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
                     }
                     else
                     {
@@ -241,6 +403,11 @@ namespace Roster_Builder.Chaos_Space_Marines
                         cbOption1.Visible = false;
                         panel.Controls["lblOption1"].Visible = true;
                         panel.Controls["lblOption2"].Visible = false;
+                        cbStratagem5.Visible = false;
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbOption1.Enabled = true;
+                        cmbOption2.Enabled = true;
 
                         cmbOption1.Items.Clear();
                         cmbOption1.Items.AddRange(new string[]
@@ -261,6 +428,24 @@ namespace Roster_Builder.Chaos_Space_Marines
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1 );
 
                     antiLoop = false;
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                        panel.Controls["lblRelic"].Visible = true;
+                        cmbRelic.Visible = true;
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                        cmbRelic.Visible = false;
+                        panel.Controls["lblRelic"].Visible = false;
+                        cmbRelic.SelectedIndex = 0;
+                    }
                     break;
             }
 

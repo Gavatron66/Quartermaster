@@ -232,8 +232,6 @@ namespace Roster_Builder.Chaos_Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
-<<<<<<< Updated upstream
-=======
                     cmbFaction.Enabled = true;
                     cmbOption1.Enabled = true;
                     cbOption1.Enabled = true;
@@ -311,7 +309,6 @@ namespace Roster_Builder.Chaos_Space_Marines
                         }
                     }
 
->>>>>>> Stashed changes
                     Relic = chosenRelic;
                     break;
                 case 21:
