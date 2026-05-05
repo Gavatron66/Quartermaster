@@ -3757,6 +3757,10 @@ namespace Roster_Builder
 
                     panel.Controls["cmbSubCustom3"].Location = new System.Drawing.Point(268, 98);
                     break;
+                case -1:
+                    panel.Controls["lblSubfaction"].Visible = false;
+                    panel.Controls["cmbSubFaction"].Visible = false;
+                    break;
                 default:
                     break;
             }

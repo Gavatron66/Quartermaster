@@ -1,4 +1,5 @@
-﻿using Roster_Builder.Genestealer_Cults;
+﻿using Roster_Builder.Aeldari.Ynnari;
+using Roster_Builder.Genestealer_Cults;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,14 @@ namespace Roster_Builder.Aeldari.Harlequins
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
-            repo = f as Harlequins;
+            if (f is YnnariFaction)
+            {
+                repo = f as YnnariFaction;
+            }
+            else
+            {
+                repo = f as Harlequins;
+            }
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;

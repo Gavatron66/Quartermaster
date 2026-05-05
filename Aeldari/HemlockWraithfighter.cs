@@ -1,4 +1,5 @@
-﻿using Roster_Builder.Space_Marines;
+﻿using Roster_Builder.Aeldari.Ynnari;
+using Roster_Builder.Space_Marines;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Roster_Builder.Aeldari
 {
     public class HemlockWraithfighter : Datasheets
     {
+        string disciplineSelected;
         public HemlockWraithfighter()
         {
             DEFAULT_POINTS = 215;
@@ -32,19 +34,59 @@ namespace Roster_Builder.Aeldari
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
-            repo = f as Aeldari;
+            if (f is YnnariFaction)
+            {
+                repo = f as YnnariFaction;
+            }
+            else
+            {
+                repo = f as Aeldari;
+            }
 
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
+            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
+
+            if (repo is YnnariFaction)
+            {
+                panel.Controls["lblPsykerList"].Visible = true;
+                panel.Controls["cmbDiscipline"].Visible = true;
+            }
+
+            cmbDiscipline.Items.Clear();
+            cmbDiscipline.Items.Add("Battle");
+            if (repo is YnnariFaction)
+            {
+                cmbDiscipline.Items.Add("Revenant");
+            }
+            disciplineSelected = "Battle";
 
             List<string> psykerpowers = new List<string>();
             psykerpowers = repo.GetPsykerPowers("Battle");
+            bool doesContain = false;
+            foreach (var power in psykerpowers)
+            {
+                if (power == PsykerPowers[0])
+                {
+                    doesContain = true;
+                }
+            }
+
+            if (!doesContain)
+            {
+                psykerpowers = repo.GetPsykerPowers(disciplineSelected);
+            }
+            else
+            {
+                disciplineSelected = "Battle";
+            }
 
             clbPsyker.Items.Clear();
             foreach (string power in psykerpowers)
             {
                 clbPsyker.Items.Add(power);
             }
+            cmbDiscipline.SelectedItem = disciplineSelected;
 
             lblPsyker.Text = "Select one of the following:";
             clbPsyker.ClearSelected();
@@ -62,9 +104,21 @@ namespace Roster_Builder.Aeldari
         public override void SaveDatasheets(int code, Panel panel)
         {
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
+            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
 
             switch (code)
             {
+                case 111:
+                    if (cmbDiscipline.SelectedItem.ToString() == disciplineSelected)
+                    {
+                        break;
+                    }
+
+                    disciplineSelected = cmbDiscipline.SelectedItem.ToString();
+                    clbPsyker.Items.Clear();
+                    clbPsyker.Items.AddRange(repo.GetPsykerPowers(disciplineSelected).ToArray());
+                    PsykerPowers = new string[1] { string.Empty };
+                    break;
                 case 60:
                     if (clbPsyker.CheckedItems.Count < 1)
                     {

@@ -26,6 +26,7 @@ using System.Drawing.Imaging;
 using Roster_Builder.Imperial_Knights;
 using Roster_Builder.Leagues_of_Votann;
 using Roster_Builder.Chaos_Space_Marines;
+using Roster_Builder.Aeldari.Ynnari;
 
 namespace Roster_Builder
 {
@@ -84,6 +85,7 @@ namespace Roster_Builder
                 new AdeptusCustodes(),
                 new AdMech(),
                 new Aeldari.Aeldari(),
+                new YnnariFaction(),
                 new AstraMilitarum(),
                 new ChaosSpaceMarines(),
                 new DeathGuard(),
@@ -114,6 +116,7 @@ namespace Roster_Builder
                 new AdeptusCustodes(),
                 new AdMech(),
                 new Aeldari.Aeldari(),
+                new YnnariFaction(),
                 new AstraMilitarum(),
                 new ChaosSpaceMarines(),
                 new DeathGuard(),

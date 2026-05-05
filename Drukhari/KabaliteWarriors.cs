@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Roster_Builder.Aeldari.Harlequins;
+using Roster_Builder.Aeldari.Ynnari;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,7 +42,14 @@ namespace Roster_Builder.Drukhari
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as Drukhari;
+            if (f is YnnariFaction)
+            {
+                repo = f as YnnariFaction;
+            }
+            else
+            {
+                repo = f as Drukhari;
+            }
             Template.LoadTemplate(TemplateCode, panel);
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;

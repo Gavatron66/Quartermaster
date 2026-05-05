@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Roster_Builder.Aeldari.Ynnari;
+using System;
 using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -33,10 +34,15 @@ namespace Roster_Builder.Aeldari.Harlequins
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as Harlequins;
+            if (f is YnnariFaction)
+            {
+                repo = f as YnnariFaction;
+            }
+            else
+            {
+                repo = f as Harlequins;
+            }
             Template.LoadTemplate(TemplateCode, panel);
-            panel.Controls["cmbFactionUpgrade"].Visible = true;
-            panel.Controls["lblFactionUpgrade"].Visible = true;
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
@@ -96,16 +102,21 @@ namespace Roster_Builder.Aeldari.Harlequins
                 cmbRelic.SelectedIndex = 0;
             }
 
-            cmbFaction.Items.Clear();
-            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+            if (repo is Harlequins)
+            {
+                panel.Controls["cmbFactionUpgrade"].Visible = true;
+                panel.Controls["lblFactionUpgrade"].Visible = true;
+                cmbFaction.Items.Clear();
+                cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
 
-            if (Factionupgrade != null)
-            {
-                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-            }
-            else
-            {
-                cmbFaction.SelectedIndex = 0;
+                if (Factionupgrade != null)
+                {
+                    cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+                }
+                else
+                {
+                    cmbFaction.SelectedIndex = 0;
+                }
             }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
@@ -135,30 +146,33 @@ namespace Roster_Builder.Aeldari.Harlequins
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
 
-            panel.Controls["lblOption3"].Location = new System.Drawing.Point(cmbWarlord.Location.X - 4, cmbWarlord.Location.Y + 32);
-            cmbStrat.Location = new System.Drawing.Point(cmbWarlord.Location.X, cmbWarlord.Location.Y + 55);
-            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
-            cbStratagem3.Visible = true;
-            cbStratagem3.Text = repo.StratagemList[2];
-
-            if (Stratagem.Contains(cbStratagem3.Text))
+            if (repo is Harlequins)
             {
-                cbStratagem3.Checked = true;
-                cbStratagem3.Enabled = true;
+                panel.Controls["lblOption3"].Location = new System.Drawing.Point(cmbWarlord.Location.X - 4, cmbWarlord.Location.Y + 32);
+                cmbStrat.Location = new System.Drawing.Point(cmbWarlord.Location.X, cmbWarlord.Location.Y + 55);
+                cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
+                cbStratagem3.Visible = true;
+                cbStratagem3.Text = repo.StratagemList[2];
 
-                panel.Controls["lblOption3"].Visible = true;
-                cmbStrat.Visible = true;
+                if (Stratagem.Contains(cbStratagem3.Text))
+                {
+                    cbStratagem3.Checked = true;
+                    cbStratagem3.Enabled = true;
 
-                cmbStrat.Items.Clear();
-                cmbStrat.Items.AddRange(repo.GetWarlordTraits("").ToArray());
-                cmbStrat.SelectedIndex = cmbStrat.Items.IndexOf(stratWarlordTrait);
-            }
-            else
-            {
-                cbStratagem3.Checked = false;
-                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-                panel.Controls["lblOption3"].Visible = false;
-                cmbStrat.Visible = false;
+                    panel.Controls["lblOption3"].Visible = true;
+                    cmbStrat.Visible = true;
+
+                    cmbStrat.Items.Clear();
+                    cmbStrat.Items.AddRange(repo.GetWarlordTraits("").ToArray());
+                    cmbStrat.SelectedIndex = cmbStrat.Items.IndexOf(stratWarlordTrait);
+                }
+                else
+                {
+                    cbStratagem3.Checked = false;
+                    cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+                    panel.Controls["lblOption3"].Visible = false;
+                    cmbStrat.Visible = false;
+                }
             }
         }
 

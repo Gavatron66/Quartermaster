@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Roster_Builder.Aeldari.Ynnari;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,9 +31,16 @@ namespace Roster_Builder.Drukhari
 		}
 
 		public override void LoadDatasheets(Panel panel, Faction f)
-		{
-			repo = f as Drukhari;
-			Template.LoadTemplate(TemplateCode, panel);
+        {
+            if (f is YnnariFaction)
+            {
+                repo = f as YnnariFaction;
+            }
+            else
+            {
+                repo = f as Drukhari;
+            }
+            Template.LoadTemplate(TemplateCode, panel);
 
 			ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
@@ -90,19 +98,23 @@ namespace Roster_Builder.Drukhari
 				cmbRelic.SelectedIndex = 0;
 			}
 
-			panel.Controls["lblFactionupgrade"].Visible = true;
-			cmbFactionupgrade.Visible = true;
-			cmbFactionupgrade.Items.Clear();
-			cmbFactionupgrade.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+			if(repo is Drukhari)
+			{
+				panel.Controls["lblFactionupgrade"].Visible = true;
+				cmbFactionupgrade.Visible = true;
+				cmbFactionupgrade.Items.Clear();
+				cmbFactionupgrade.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
 
-			if (Factionupgrade != null)
-			{
-				cmbFactionupgrade.SelectedIndex = cmbFactionupgrade.Items.IndexOf(Factionupgrade);
+				if (Factionupgrade != null)
+				{
+					cmbFactionupgrade.SelectedIndex = cmbFactionupgrade.Items.IndexOf(Factionupgrade);
+				}
+				else
+				{
+					cmbFactionupgrade.SelectedIndex = 0;
+				}
 			}
-			else
-			{
-				cmbFactionupgrade.SelectedIndex = 0;
-			}
+
 
 			CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
 			CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;

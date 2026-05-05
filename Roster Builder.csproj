@@ -232,6 +232,7 @@
     <Compile Include="Aeldari\Wraithknight.cs" />
     <Compile Include="Aeldari\Wraithlord.cs" />
     <Compile Include="Aeldari\Ynnari\TheVisarch.cs" />
+    <Compile Include="Aeldari\Ynnari\YnarriFaction.cs" />
     <Compile Include="Aeldari\Ynnari\Yncarne.cs" />
     <Compile Include="Aeldari\Ynnari\Yvraine.cs" />
     <Compile Include="Astra Militarum\AegisDefenceLine.cs" />

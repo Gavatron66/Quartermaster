@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Roster_Builder.Aeldari.Ynnari;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,7 +35,15 @@ namespace Roster_Builder.Aeldari
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as Aeldari;
+            if (f is YnnariFaction)
+            {
+                repo = f as YnnariFaction;
+            }
+            else
+            {
+                repo = f as Aeldari;
+            }
+
             Template.LoadTemplate(TemplateCode, panel);
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;

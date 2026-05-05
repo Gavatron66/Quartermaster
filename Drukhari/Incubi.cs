@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Roster_Builder.Aeldari.Ynnari;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,22 @@ namespace Roster_Builder.Drukhari
             Role = "Elites";
         }
 
+        //For Ynnari-aligned Incubi; they cost +4 pts/model more than normal
+        public Incubi(bool isYnnari)
+        {
+            DEFAULT_POINTS = 22;
+            UnitSize = 5;
+            Points = DEFAULT_POINTS * UnitSize;
+            TemplateCode = "N1k";
+            Weapons.Add("");
+            Keywords.AddRange(new string[]
+            {
+                "AELDARI", "DRUKHARI",
+                "INFANTRY", "CORE", "BLADES FOR HIRE", "INCUBI"
+            });
+            Role = "Elites";
+        }
+
         public override Datasheets CreateUnit()
         {
             return new Incubi();
@@ -31,7 +48,14 @@ namespace Roster_Builder.Drukhari
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as Drukhari;
+            if (f is YnnariFaction)
+            {
+                repo = f as YnnariFaction;
+            }
+            else
+            {
+                repo = f as Drukhari;
+            }
             Template.LoadTemplate(TemplateCode, panel);
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;

@@ -1,4 +1,5 @@
-﻿using Roster_Builder.Death_Guard;
+﻿using Roster_Builder.Aeldari.Ynnari;
+using Roster_Builder.Death_Guard;
 using Roster_Builder.Space_Marines;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace Roster_Builder.Aeldari
     {
         decimal witchblades;
         decimal singingSpears;
+        string disciplineSelected;
 
         public Warlocks()
         {
@@ -39,7 +41,14 @@ namespace Roster_Builder.Aeldari
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as Aeldari;
+            if (f is YnnariFaction)
+            {
+                repo = f as YnnariFaction;
+            }
+            else
+            {
+                repo = f as Aeldari;
+            }
             Template.LoadTemplate(TemplateCode, panel);
 
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
@@ -50,11 +59,19 @@ namespace Roster_Builder.Aeldari
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
+
+            if (repo is YnnariFaction)
+            {
+                panel.Controls["lblPsykerList"].Visible = true;
+                panel.Controls["cmbDiscipline"].Visible = true;
+            }
 
             Label lblnud1 = panel.Controls["lblnud1"] as Label;
             Label lblnud2 = panel.Controls["lblnud2"] as Label;
 
             panel.Controls["lblModelPoints"].Text = "(45 pts for 1, +" + DEFAULT_POINTS + " pts/model for 2+)";
+            cmbDiscipline.Location = new System.Drawing.Point(cmbDiscipline.Location.X, cmbDiscipline.Location.Y + 12);
 
             lblnud1.Text = "Singing Spears (+5 pts):";
             lblnud1.Location = new System.Drawing.Point(lblnud1.Location.X - 20, lblnud1.Location.Y);
@@ -79,15 +96,42 @@ namespace Roster_Builder.Aeldari
             nudOption2.Value = witchblades;
             antiLoop = false;
 
+            cmbDiscipline.Items.Clear();
+            cmbDiscipline.Items.Add("Battle");
+            if (repo is YnnariFaction)
+            {
+                cmbDiscipline.Items.Add("Revenant");
+            }
+            disciplineSelected = "Battle";
+
             List<string> psykerpowers = new List<string>();
             psykerpowers = repo.GetPsykerPowers("Battle");
+            bool doesContain = false;
+            foreach (var power in psykerpowers)
+            {
+                if (power == PsykerPowers[0])
+                {
+                    doesContain = true;
+                }
+            }
+
+            if (!doesContain)
+            {
+                psykerpowers = repo.GetPsykerPowers(disciplineSelected);
+            }
+            else
+            {
+                disciplineSelected = "Battle";
+            }
+
             clbPsyker.Items.Clear();
             foreach (string power in psykerpowers)
             {
                 clbPsyker.Items.Add(power);
             }
+            cmbDiscipline.SelectedItem = disciplineSelected;
 
-            if(UnitSize < 4)
+            if (UnitSize < 4)
             {
                 lblPsyker.Text = "Select one of the following:";
                 clbPsyker.ClearSelected();
@@ -214,11 +258,31 @@ namespace Roster_Builder.Aeldari
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
             switch (code)
             {
+                case 111:
+                    if (cmbDiscipline.SelectedItem.ToString() == disciplineSelected)
+                    {
+                        break;
+                    }
+
+                    disciplineSelected = cmbDiscipline.SelectedItem.ToString();
+                    clbPsyker.Items.Clear();
+                    clbPsyker.Items.AddRange(repo.GetPsykerPowers(disciplineSelected).ToArray());
+                    if(UnitSize >= 4)
+                    {
+                        PsykerPowers = new string[2] { string.Empty, string.Empty };
+                    }
+                    else
+                    {
+                        PsykerPowers = new string[1] { string.Empty };
+                    }
+                    
+                    break;
                 case 30:
                     int oldSize = UnitSize;
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());

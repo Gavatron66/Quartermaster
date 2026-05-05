@@ -1,4 +1,5 @@
-﻿using Roster_Builder.Death_Guard;
+﻿using Roster_Builder.Aeldari.Ynnari;
+using Roster_Builder.Death_Guard;
 using Roster_Builder.Space_Marines;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace Roster_Builder.Aeldari.Harlequins
     public class Shadowseer : Datasheets
     {
         private string stratWarlordTrait;
+        string disciplineSelected;
 
         public Shadowseer()
         {
@@ -35,7 +37,14 @@ namespace Roster_Builder.Aeldari.Harlequins
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as Harlequins;
+            if (f is YnnariFaction)
+            {
+                repo = f as YnnariFaction;
+            }
+            else
+            {
+                repo = f as Harlequins;
+            }
             Template.LoadTemplate(TemplateCode, panel);
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
@@ -45,9 +54,13 @@ namespace Roster_Builder.Aeldari.Harlequins
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
 
-            panel.Controls["cmbFactionUpgrade"].Visible = true;
-            panel.Controls["lblFactionUpgrade"].Visible = true;
+            if (repo is YnnariFaction)
+            {
+                panel.Controls["lblPsykerList"].Visible = true;
+                panel.Controls["cmbDiscipline"].Visible = true;
+            }
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -88,20 +101,52 @@ namespace Roster_Builder.Aeldari.Harlequins
                 cmbRelic.SelectedIndex = 0;
             }
 
-            cmbFaction.Items.Clear();
-            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-
-            if (Factionupgrade != null)
+            if (repo is Harlequins)
             {
-                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+                panel.Controls["cmbFactionUpgrade"].Visible = true;
+                panel.Controls["lblFactionUpgrade"].Visible = true;
+
+                cmbFaction.Items.Clear();
+                cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+
+                if (Factionupgrade != null)
+                {
+                    cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+                }
+                else
+                {
+                    cmbFaction.SelectedIndex = 0;
+                }
+            }
+
+            cmbDiscipline.Items.Clear();
+            cmbDiscipline.Items.Add("Phantasmancy");
+            if (repo is YnnariFaction)
+            {
+                cmbDiscipline.Items.Add("Revenant");
+            }
+            disciplineSelected = "Phantasmancy";
+
+            List<string> psykerpowers = new List<string>();
+            psykerpowers = repo.GetPsykerPowers("Phantasmancy");
+            bool doesContain = false;
+            foreach (var power in psykerpowers)
+            {
+                if (power == PsykerPowers[0])
+                {
+                    doesContain = true;
+                }
+            }
+
+            if (!doesContain)
+            {
+                psykerpowers = repo.GetPsykerPowers(disciplineSelected);
             }
             else
             {
-                cmbFaction.SelectedIndex = 0;
+                disciplineSelected = "Phantasmancy";
             }
 
-            List<string> psykerpowers = new List<string>();
-            psykerpowers = repo.GetPsykerPowers("");
             clbPsyker.Items.Clear();
             foreach (string power in psykerpowers)
             {
@@ -114,6 +159,7 @@ namespace Roster_Builder.Aeldari.Harlequins
             {
                 clbPsyker.SetItemChecked(i, false);
             }
+            cmbDiscipline.SelectedItem = disciplineSelected;
 
             if (PsykerPowers[0] != string.Empty)
             {
@@ -151,30 +197,33 @@ namespace Roster_Builder.Aeldari.Harlequins
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
 
-            panel.Controls["lblOption3"].Location = new System.Drawing.Point(clbPsyker.Location.X - 4, clbPsyker.Location.Y + 32 + clbPsyker.Height);
-            cmbStrat.Location = new System.Drawing.Point(clbPsyker.Location.X, clbPsyker.Location.Y + 55 + clbPsyker.Height);
-            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
-            cbStratagem3.Visible = true;
-            cbStratagem3.Text = repo.StratagemList[2];
-
-            if (Stratagem.Contains(cbStratagem3.Text))
+            if (repo is Harlequins)
             {
-                cbStratagem3.Checked = true;
-                cbStratagem3.Enabled = true;
+                panel.Controls["lblOption3"].Location = new System.Drawing.Point(clbPsyker.Location.X - 4, clbPsyker.Location.Y + 32 + clbPsyker.Height);
+                cmbStrat.Location = new System.Drawing.Point(clbPsyker.Location.X, clbPsyker.Location.Y + 55 + clbPsyker.Height);
+                cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
+                cbStratagem3.Visible = true;
+                cbStratagem3.Text = repo.StratagemList[2];
 
-                panel.Controls["lblOption3"].Visible = true;
-                cmbStrat.Visible = true;
+                if (Stratagem.Contains(cbStratagem3.Text))
+                {
+                    cbStratagem3.Checked = true;
+                    cbStratagem3.Enabled = true;
 
-                cmbStrat.Items.Clear();
-                cmbStrat.Items.AddRange(repo.GetWarlordTraits("").ToArray());
-                cmbStrat.SelectedIndex = cmbStrat.Items.IndexOf(stratWarlordTrait);
-            }
-            else
-            {
-                cbStratagem3.Checked = false;
-                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-                panel.Controls["lblOption3"].Visible = false;
-                cmbStrat.Visible = false;
+                    panel.Controls["lblOption3"].Visible = true;
+                    cmbStrat.Visible = true;
+
+                    cmbStrat.Items.Clear();
+                    cmbStrat.Items.AddRange(repo.GetWarlordTraits("").ToArray());
+                    cmbStrat.SelectedIndex = cmbStrat.Items.IndexOf(stratWarlordTrait);
+                }
+                else
+                {
+                    cbStratagem3.Checked = false;
+                    cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
+                    panel.Controls["lblOption3"].Visible = false;
+                    cmbStrat.Visible = false;
+                }
             }
         }
 
@@ -190,6 +239,7 @@ namespace Roster_Builder.Aeldari.Harlequins
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
             CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
             ComboBox cmbStrat = panel.Controls["cmbOption3"] as ComboBox;
+            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
 
             switch (code)
             {
@@ -224,6 +274,17 @@ namespace Roster_Builder.Aeldari.Harlequins
                         cmbOption1.Enabled = true;
                     }
                     Relic = chosenRelic;
+                    break;
+                case 111:
+                    if (cmbDiscipline.SelectedItem.ToString() == disciplineSelected)
+                    {
+                        break;
+                    }
+
+                    disciplineSelected = cmbDiscipline.SelectedItem.ToString();
+                    clbPsyker.Items.Clear();
+                    clbPsyker.Items.AddRange(repo.GetPsykerPowers(disciplineSelected).ToArray());
+                    PsykerPowers = new string[1] { string.Empty };
                     break;
                 case 25:
                     if (cbWarlord.Checked)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Roster_Builder.Aeldari.Ynnari;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,27 @@ namespace Roster_Builder.Drukhari
             Role = "Fast Attack";
         }
 
+        //For Ynnari-aligned Scourges; they cost +2 pts/model more than normal
+        public Scourges(bool isYnnari)
+        {
+            DEFAULT_POINTS = 14;
+            UnitSize = 5;
+            Points = UnitSize * DEFAULT_POINTS;
+            TemplateCode = "NL2m";
+            Weapons.Add("Shardcarbine");
+            Weapons.Add("(None)");
+            for (int i = 1; i < UnitSize; i++)
+            {
+                Weapons.Add("Shardcarbine");
+            }
+            Keywords.AddRange(new string[]
+            {
+                "AELDARI", "DRUKHARI", "<HAEMONCULUS COVEN>",
+                "INFANTRY", "FLY", "HAYWIRE GRENADE", "CORE", "BLADES FOR HIRE", "SCOURGES"
+            });
+            Role = "Fast Attack";
+        }
+
         public override Datasheets CreateUnit()
         {
             return new Scourges();
@@ -39,7 +61,14 @@ namespace Roster_Builder.Drukhari
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as Drukhari;
+            if (f is YnnariFaction)
+            {
+                repo = f as YnnariFaction;
+            }
+            else
+            {
+                repo = f as Drukhari;
+            }
             Template.LoadTemplate(TemplateCode, panel);
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;

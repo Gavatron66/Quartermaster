@@ -1,4 +1,5 @@
 ﻿using Roster_Builder.Adeptus_Custodes;
+using Roster_Builder.Aeldari.Ynnari;
 using Roster_Builder.Space_Marines;
 using System;
 using System.Collections.Generic;
@@ -33,10 +34,15 @@ namespace Roster_Builder.Aeldari.Harlequins
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as Harlequins;
+            if (f is YnnariFaction)
+            {
+                repo = f as YnnariFaction;
+            }
+            else
+            {
+                repo = f as Harlequins;
+            }
             Template.LoadTemplate(TemplateCode, panel);
-            panel.Controls["cmbFactionUpgrade"].Visible = true;
-            panel.Controls["lblFactionUpgrade"].Visible = true;
 
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
@@ -74,16 +80,21 @@ namespace Roster_Builder.Aeldari.Harlequins
                 cmbRelic.SelectedIndex = 0;
             }
 
-            cmbFaction.Items.Clear();
-            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+            if (repo is Harlequins)
+            {
+                panel.Controls["cmbFactionUpgrade"].Visible = true;
+                panel.Controls["lblFactionUpgrade"].Visible = true;
+                cmbFaction.Items.Clear();
+                cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
 
-            if (Factionupgrade != null)
-            {
-                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-            }
-            else
-            {
-                cmbFaction.SelectedIndex = 0;
+                if (Factionupgrade != null)
+                {
+                    cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+                }
+                else
+                {
+                    cmbFaction.SelectedIndex = 0;
+                }
             }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;

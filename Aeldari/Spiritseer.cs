@@ -1,4 +1,5 @@
-﻿using Roster_Builder.Death_Guard;
+﻿using Roster_Builder.Aeldari.Ynnari;
+using Roster_Builder.Death_Guard;
 using Roster_Builder.Space_Marines;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ namespace Roster_Builder.Aeldari
 {
     public class Spiritseer : Datasheets
     {
+        string disciplineSelected;
+
         public Spiritseer()
         {
             DEFAULT_POINTS = 75;
@@ -32,7 +35,14 @@ namespace Roster_Builder.Aeldari
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as Aeldari;
+            if (f is YnnariFaction)
+            {
+                repo = f as YnnariFaction;
+            }
+            else
+            {
+                repo = f as Aeldari;
+            }
             Template.LoadTemplate(TemplateCode, panel);
 
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
@@ -40,6 +50,10 @@ namespace Roster_Builder.Aeldari
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
+            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
+
+            panel.Controls["lblPsykerList"].Visible = true;
+            panel.Controls["cmbDiscipline"].Visible = true;
 
             cmbWarlord.Items.Clear();
             List<string> traits = repo.GetWarlordTraits("");
@@ -72,13 +86,43 @@ namespace Roster_Builder.Aeldari
                 cmbRelic.SelectedIndex = 0;
             }
 
+            cmbDiscipline.Visible = true;
+            panel.Controls["lblPsykerList"].Visible = true;
+            cmbDiscipline.Items.Clear();
+            cmbDiscipline.Items.Add("Battle");
+            cmbDiscipline.Items.Add("Fortune");
+            if(repo is YnnariFaction)
+            {
+                cmbDiscipline.Items.Add("Revenant");
+            }
+            disciplineSelected = "Battle";
+
             List<string> psykerpowers = new List<string>();
-            psykerpowers = repo.GetPsykerPowers("Spiritseer");
+            psykerpowers = repo.GetPsykerPowers("Battle");
+            bool doesContain = false;
+            foreach (var power in psykerpowers)
+            {
+                if (power == PsykerPowers[0])
+                {
+                    doesContain = true;
+                }
+            }
+
+            if (!doesContain)
+            {
+                psykerpowers = repo.GetPsykerPowers(disciplineSelected);
+            }
+            else
+            {
+                disciplineSelected = "Battle";
+            }
+
             clbPsyker.Items.Clear();
             foreach (string power in psykerpowers)
             {
                 clbPsyker.Items.Add(power);
             }
+            cmbDiscipline.SelectedItem = disciplineSelected;
 
             lblPsyker.Text = "Select one of the following:";
             clbPsyker.ClearSelected();
@@ -125,6 +169,7 @@ namespace Roster_Builder.Aeldari
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
+            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
 
@@ -146,6 +191,17 @@ namespace Roster_Builder.Aeldari
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     Relic = chosenRelic;
+                    break;
+                case 111:
+                    if (cmbDiscipline.SelectedItem.ToString() == disciplineSelected)
+                    {
+                        break;
+                    }
+
+                    disciplineSelected = cmbDiscipline.SelectedItem.ToString();
+                    clbPsyker.Items.Clear();
+                    clbPsyker.Items.AddRange(repo.GetPsykerPowers(disciplineSelected).ToArray());
+                    PsykerPowers = new string[1] { string.Empty };
                     break;
                 case 25:
                     if (cbWarlord.Checked)

@@ -1,22 +1,22 @@
-﻿using Roster_Builder.Aeldari.Ynnari;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Roster_Builder.Aeldari.Harlequins;
+using Roster_Builder.Drukhari;
 
-namespace Roster_Builder.Aeldari
+namespace Roster_Builder.Aeldari.Ynnari
 {
-    public class Aeldari : Faction
+    public class YnnariFaction : Faction
     {
-        public Aeldari()
+        public YnnariFaction()
         {
-            subFactionName = "<Craftworld>";
-            currentSubFaction = string.Empty;
+            subFactionName = "Ynnari";
+            currentSubFaction = "Ynnari";
             factionUpgradeName = "Exarch Powers";
-            customSubFactionTraits = new string[2];
             StratagemList.AddRange(new string[]
             {
                 "Stratagem: Champion of the Aeldari",
@@ -28,60 +28,12 @@ namespace Roster_Builder.Aeldari
 
         public override List<string> GetCustomSubfactionList1()
         {
-            return new List<string>
-            {
-                "Children of Khaine",
-                "Children of Morai-Heg",
-                "Children of Prophecy",
-                "Children of the Open Skies",
-                "Diviners of Fate",
-                "Elite Citizenry",
-                "Expert Crafters",
-                "Grim",
-                "Hail of Doom",
-                "Headstrong",
-                "Hunters of Ancient Relics",
-                "Masterful Shots",
-                "Masters of Concealment",
-                "Mobile Fighters",
-                "Savage Blades",
-                "Swift Strikes",
-                "Students of Vaul",
-                "Superior Shurikens",
-                "Vengeful",
-                "Warding Runes",
-                "Webway Warriors",
-                "Wrath of the Dead"
-            };
+            return new List<string> { };
         }
 
         public override List<string> GetCustomSubfactionList2()
         {
-            return new List<string>
-            {
-                "Children of Khaine",
-                "Children of Morai-Heg",
-                "Children of Prophecy",
-                "Children of the Open Skies",
-                "Diviners of Fate",
-                "Elite Citizenry",
-                "Expert Crafters",
-                "Grim",
-                "Hail of Doom",
-                "Headstrong",
-                "Hunters of Ancient Relics",
-                "Masterful Shots",
-                "Masters of Concealment",
-                "Mobile Fighters",
-                "Savage Blades",
-                "Swift Strikes",
-                "Students of Vaul",
-                "Superior Shurikens",
-                "Vengeful",
-                "Warding Runes",
-                "Webway Warriors",
-                "Wrath of the Dead"
-            };
+            return new List<string> { };
         }
 
         public override List<Datasheets> GetDatasheets()
@@ -89,28 +41,26 @@ namespace Roster_Builder.Aeldari
             return new List<Datasheets>
             {
                 //---------- HQ ----------
-                new AvatarofKhaine(),
                 new FarseerSkyrunner(),
-                new EldradUlthran(),
                 new Farseer(),
                 new Autarch(),
-                new PrinceYriel(),
                 new AutarchSkyrunner(),
-                new Asurmen(),
-                new Baharroth(),
-                new Fuegan(),
-                new JainZar(),
-                new Karandras(),
-                new MauganRa(),
-                new IllicNightspear(),
                 new Spiritseer(),
+	            new Archon(),
+                new Succubus(),
+                new TroupeMaster(),
+                new Shadowseer(),
+                new Yvraine(),
+                new TheVisarch(),
+                new Yncarne(),
                 //---------- Troops ----------
                 new GuardianDefenders(),
                 new Rangers(),
                 new StormGuardians(),
-                new CorsairVoidreavers(),
+    			new KabaliteWarriors(),
+                new Wyches(),
+                new Troupe(),
                 //---------- Elites ----------
-                new CorsairVoidscarred(),
                 new Warlocks(),
                 new WarlockSkyrunners(),
                 new DireAvengers(),
@@ -120,6 +70,9 @@ namespace Roster_Builder.Aeldari
                 new Wraithblades(),
                 new Wraithguard(),
                 new Wraithlord(),
+                new CourtOfTheArchon(),
+                new Incubi(true),
+                new DeathJester(),
                 //---------- Fast Attack ----------
                 new Windriders(),
                 new Vypers(),
@@ -127,6 +80,10 @@ namespace Roster_Builder.Aeldari
                 new WarpSpiders(),
                 new ShiningSpears(),
                 new ShroudRunners(),
+                new Reavers(),
+                new Hellions(),
+                new Scourges(true),
+                new Skyweavers(),
                 //---------- Heavy Support ----------
                 new WarWalkers(),
                 new DarkReapers(),
@@ -134,15 +91,22 @@ namespace Roster_Builder.Aeldari
                 new Falcon(),
                 new NightSpinner(),
                 new FirePrism(),
+                new Ravager(),
+                new Voidweavers(),
                 //---------- Transport ----------
                 new WaveSerpent(),
+	            new Raider(),
+                new Venom(),
+                new Starweaver(),
                 //---------- Flyers ----------
                 new CrimsonHunter(),
                 new HemlockWraithfighter(),
+	            new RazorwingJetfighter(),
+                new VoidravenBomber(),
                 //---------- Lords of War ----------
                 new Wraithknight(),
                 //---------- Fortification ----------
-                new WebwayGate()
+                new WebwayGate(),
             };
         }
 
@@ -197,7 +161,7 @@ namespace Roster_Builder.Aeldari
                 "Nerve Shredding Shriek (+10 pts)"
             };
 
-            if(thirty.Contains(upgrade))
+            if (thirty.Contains(upgrade))
             {
                 points += 30;
             }
@@ -225,7 +189,7 @@ namespace Roster_Builder.Aeldari
         {
             List<string> upgrades = new List<string>() { "(None)" };
 
-            if(keywords.Contains("CRIMSON HUNTER"))
+            if (keywords.Contains("CRIMSON HUNTER"))
             {
                 upgrades.AddRange(new string[]
                 {
@@ -366,41 +330,48 @@ namespace Roster_Builder.Aeldari
                 });
             }
 
-            if(keywords == "Farseer")
+            if (keywords == "Farseer")
             {
                 PsychicPowers.AddRange(new string[]
                 {
-                    "Guide",
-                    "Doom",
-                    "Fortune",
-                    "Executioner",
-                    "Will of Asuryan",
-                    "Mind War",
                     "Fateful Divergence",
                     "Witch Strike",
                     "Ghostwalk",
                     "Crushing Orb",
                     "Focus Will",
-                    "Impair Senses"
+                    "Impair Senses",
+                    "Gaze of Ynnead",
+                    "Storm of Whispers",
+                    "Word of the Phoenix",
+                    "Unbind Souls",
+                    "Shield of Ynnead",
+                    "Ancestors' Grace"
                 });
             }
 
-            if(keywords == "Spiritseer")
+            if (keywords == "Revenant")
             {
                 PsychicPowers.AddRange(new string[]
                 {
-                    "Conceal/Reveal",
-                    "Embolden/Horrify",
-                    "Enhance/Drain",
-                    "Protect/Jinx",
-                    "Quicken/Restrain",
-                    "Empower/Enervate",
-                    "Fateful Divergence",
-                    "Witch Strike",
-                    "Ghostwalk",
-                    "Crushing Orb",
-                    "Focus Will",
-                    "Impair Senses"
+                    "Gaze of Ynnead",
+                    "Storm of Whispers",
+                    "Word of the Phoenix",
+                    "Unbind Souls",
+                    "Shield of Ynnead",
+                    "Ancestors' Grace"
+                });
+            }
+
+            if(keywords == "Phantasmancy")
+            {
+                PsychicPowers.AddRange(new string[]
+                {
+                    "Twilight Pathways",
+                    "Fog of Dreams",
+                    "Mirror of Minds",
+                    "Veil of Tears",
+                    "Shards of Light",
+                    "Webway Dance"
                 });
             }
 
@@ -445,18 +416,19 @@ namespace Roster_Builder.Aeldari
             }
             else
             {
-                if(!keywords.Contains("AUTARCH SKYRUNNER")) {
+                if (!keywords.Contains("AUTARCH SKYRUNNER"))
+                {
                     relics.Add("Kurnous' Bow");
                 }
 
                 relics.Add("The Phoenix Gem");
 
-                if(keywords.Contains("AUTARCH"))
+                if (keywords.Contains("AUTARCH"))
                 {
                     relics.Add("Shard of Anaris");
                 }
 
-                if(!keywords.Contains("BIKER"))
+                if (!keywords.Contains("BIKER"))
                 {
                     relics.Add("Faolchú's Wing");
                 }
@@ -476,31 +448,12 @@ namespace Roster_Builder.Aeldari
                     relics.Add("Aegis of Eldanesh");
                 }
 
-                if(keywords.Contains("PSYKER"))
+                if (keywords.Contains("PSYKER"))
                 {
                     relics.Add("The Weeping Stones");
                 }
 
-                if (currentSubFaction == "Ulthwé" && keywords.Contains("PSYKER"))
-                {
-                    relics.Add("The Ghosthelm of Alishazier");
-                }
-                else if (currentSubFaction == "Alaitoc" && !keywords.Contains("BIKER"))
-                {
-                    relics.Add("Shiftshroud of Alanssair");
-                }
-                else if(currentSubFaction == "Biel-tan" && keywords.Contains("PSYKER"))
-                {
-                    relics.Add("The Spirit Stone of Anath'lan");
-                }
-                else if(currentSubFaction == "Iyanden")
-                {
-                    relics.Add("Psytronome of Iyanden");
-                }
-                else if (currentSubFaction == "Saim-hann")
-                {
-                    relics.Add("Talisman of Tionchar");
-                }
+                relics.Add("The Lost Shroud");
             }
 
             return relics;
@@ -508,16 +461,7 @@ namespace Roster_Builder.Aeldari
 
         public override List<string> GetSubFactions()
         {
-            return new List<string>
-            {
-                string.Empty,
-                "Ulthwé",
-                "Alaitoc",
-                "Biel-tan",
-                "Iyanden",
-                "Saim-hann",
-                "<Custom>"
-            };
+            return new List<string> { };
         }
 
         public override List<string> GetWarlordTraits(string keyword)
@@ -532,65 +476,16 @@ namespace Roster_Builder.Aeldari
                 "Seer of the Shifting Vector"
             };
 
-            if (currentSubFaction == "Ulthwé")
+            if (currentSubFaction == "Ynnari")
             {
                 traits.Add("Fate Reader");
             }
-            else if (currentSubFaction == "Alaitoc")
-            {
-                traits.Add("Master of Ambush");
-            }
-            else if (currentSubFaction == "Biel-tan")
-            {
-                traits.Add("Natural Leader");
-            }
-            else if (currentSubFaction == "Iyanden")
-            {
-                traits.Add("Enduring Resolve");
-            }
-            else if (currentSubFaction == "Saim-hann")
-            {
-                traits.Add("Wild Rider Chieftain");
-            }
-
             return traits;
         }
 
         public override void SaveSubFaction(int code, Panel panel)
         {
-            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
-            ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
-            ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
-            Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
-            Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
 
-            switch (code)
-            {
-                case 50:
-                    currentSubFaction = cmbSubFaction.SelectedItem.ToString();
-                    if (currentSubFaction == "<Custom>")
-                    {
-                        cmbSubCustom1.Visible = true;
-                        cmbSubCustom2.Visible = true;
-                        lblSubCustom1.Visible = true;
-                        lblSubCustom2.Visible = true;
-                    }
-                    else
-                    {
-                        cmbSubCustom1.Visible = false;
-                        cmbSubCustom2.Visible = false;
-                        lblSubCustom1.Visible = false;
-                        lblSubCustom2.Visible = false;
-                        customSubFactionTraits = new string[2];
-                    }
-                    break;
-                case 51:
-                    customSubFactionTraits[0] = cmbSubCustom1.SelectedItem.ToString();
-                    break;
-                case 52:
-                    customSubFactionTraits[1] = cmbSubCustom2.SelectedItem.ToString();
-                    break;
-            }
         }
 
         public override void SetPoints(int points)
@@ -598,105 +493,13 @@ namespace Roster_Builder.Aeldari
         }
         public override void SetSubFactionPanel(Panel panel)
         {
-            if (antiLoop)
-            {
-                return;
-            }
-
-            antiLoop = true;
             Template template = new Template();
-            template.LoadFactionTemplate(3, panel);
-
-            ComboBox cmbSubFaction = panel.Controls["cmbSubFaction"] as ComboBox;
-            ComboBox cmbSubCustom1 = panel.Controls["cmbSubCustom1"] as ComboBox;
-            ComboBox cmbSubCustom2 = panel.Controls["cmbSubCustom2"] as ComboBox;
-            Label lblSubCustom1 = panel.Controls["lblSubCustom1"] as Label;
-            Label lblSubCustom2 = panel.Controls["lblSubCustom2"] as Label;
-
-            if (currentSubFaction != "<Custom>")
-            {
-                cmbSubCustom1.Visible = false;
-                cmbSubCustom2.Visible = false;
-                lblSubCustom1.Visible = false;
-                lblSubCustom2.Visible = false;
-            }
-            else
-            {
-                cmbSubCustom1.Visible = true;
-                cmbSubCustom2.Visible = true;
-                lblSubCustom1.Visible = true;
-                lblSubCustom2.Visible = true;
-            }
-
-            cmbSubFaction.SelectedIndex = cmbSubFaction.Items.IndexOf(currentSubFaction);
-            panel.BringToFront();
-
-            cmbSubCustom1.Items.Clear();
-            cmbSubCustom2.Items.Clear();
-
-            cmbSubCustom1.Items.AddRange(new string[]
-            {
-                "Children of Khaine",
-                "Children of Morai-Heg",
-                "Children of Prophecy",
-                "Children of the Open Skies",
-                "Diviners of Fate",
-                "Elite Citizenry",
-                "Expert Crafters",
-                "Grim",
-                "Hail of Doom",
-                "Headstrong",
-                "Hunters of Ancient Relics",
-                "Masterful Shots",
-                "Masters of Concealment",
-                "Mobile Fighters",
-                "Savage Blades",
-                "Swift Strikes",
-                "Students of Vaul",
-                "Superior Shurikens",
-                "Vengeful",
-                "Warding Runes",
-                "Webway Warriors",
-                "Wrath of the Dead"
-            });
-
-            cmbSubCustom2.Items.AddRange(new string[]
-            {
-                "Children of Khaine",
-                "Children of Morai-Heg",
-                "Children of Prophecy",
-                "Children of the Open Skies",
-                "Diviners of Fate",
-                "Elite Citizenry",
-                "Expert Crafters",
-                "Grim",
-                "Hail of Doom",
-                "Headstrong",
-                "Hunters of Ancient Relics",
-                "Masterful Shots",
-                "Masters of Concealment",
-                "Mobile Fighters",
-                "Savage Blades",
-                "Swift Strikes",
-                "Students of Vaul",
-                "Superior Shurikens",
-                "Vengeful",
-                "Warding Runes",
-                "Webway Warriors",
-                "Wrath of the Dead"
-            });
-
-            if (customSubFactionTraits[0] != null)
-            {
-                cmbSubCustom1.SelectedIndex = cmbSubCustom1.Items.IndexOf(customSubFactionTraits[0]);
-                cmbSubCustom2.SelectedIndex = cmbSubCustom2.Items.IndexOf(customSubFactionTraits[1]);
-            }
-            antiLoop = false;
+            template.LoadFactionTemplate(-1, panel);
         }
 
         public override string ToString()
         {
-            return "Aeldari";
+            return "Aeldari: Ynnari";
         }
 
         public override void UpdateSubFaction(bool code, Datasheets datasheet)
