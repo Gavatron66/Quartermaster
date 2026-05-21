@@ -1,5 +1,4 @@
-﻿using Roster_Builder.Space_Marines;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Cache;
@@ -7,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Genestealer_Cults
+namespace Roster_Builder.Space_Marines
 {
     public class Intercessors : Datasheets
     {
@@ -41,7 +40,6 @@ namespace Roster_Builder.Genestealer_Cults
         {
             repo = f as SpaceMarines;
             Template.LoadTemplate(TemplateCode, panel);
-            loading = true;
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
@@ -51,6 +49,7 @@ namespace Roster_Builder.Genestealer_Cults
             ComboBox gb_cmbOption2 = gb.Controls["gb_cmbOption2"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
 
             panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
@@ -67,6 +66,7 @@ namespace Roster_Builder.Genestealer_Cults
             nudUnitSize.Maximum = 10;
             nudUnitSize.Value = currentSize;
 
+            loading = true;
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new object[]
             {
@@ -75,6 +75,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "Stalker Bolt Rifle"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+            loading = false;
 
             currentSize = Convert.ToInt32(Weapons[1]);
             nudOption1.Minimum = 0;
@@ -92,6 +93,30 @@ namespace Roster_Builder.Genestealer_Cults
                 "Hand Flamer",
                 "Plasma Pistol"
             });
+
+            loading = true;
+            if (Weapons[0] == "Stalker Bolt Rifle")
+            {
+                gb_cmbOption1.Items.Insert(2, Weapons[0]);
+
+                if (Weapons[2].Contains("Bolt Rifle"))
+                {
+                    gb_cmbOption1.SelectedIndex = 2;
+                }
+
+                gb_cmbOption1.Items.RemoveAt(0);
+            }
+            else
+            {
+                gb_cmbOption1.Items.Insert(0, Weapons[0]);
+
+                if (Weapons[2].Contains("Bolt Rifle"))
+                {
+                    gb_cmbOption1.SelectedIndex = 0;
+                }
+
+                gb_cmbOption1.Items.RemoveAt(1);
+            }
             gb_cmbOption1.SelectedIndex = gb_cmbOption1.Items.IndexOf(Weapons[2]);
 
             gb_cmbOption2.Items.Clear();
@@ -104,6 +129,7 @@ namespace Roster_Builder.Genestealer_Cults
                 "Thunder Hammer"
             });
             gb_cmbOption2.SelectedIndex = gb_cmbOption2.Items.IndexOf(Weapons[3]);
+            loading = false;
 
             cbStratagem5.Text = repo.StratagemList[4];
             cbStratagem5.Location = new System.Drawing.Point(gb.Location.X, gb.Location.Y + 10 + gb.Height);
@@ -144,7 +170,47 @@ namespace Roster_Builder.Genestealer_Cults
                 cmbRelic.SelectedIndex = 0;
             }
 
-            loading = false;
+            if (repo.currentSubFaction == "Black Templars")
+            {
+                cbStratagem4.Text = repo.StratagemList[3];
+                cbStratagem4.Location = new System.Drawing.Point(cbStratagem5.Location.X + cbStratagem5.Width + 10, cbStratagem5.Location.Y);
+                cbStratagem4.Visible = true;
+
+                //Relic Bearers Code
+                panel.Controls["lblExtra1"].Visible = true;
+                panel.Controls["lblExtra1"].Location = new System.Drawing.Point(cbStratagem4.Location.X, cbStratagem4.Location.Y + 30);
+                panel.Controls["lblExtra1"].Text = "Relic Bearers";
+
+                ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+                cmbFaction.Visible = true;
+                cmbFaction.Location = new System.Drawing.Point(cbStratagem4.Location.X + 4, cbStratagem4.Location.Y + 54);
+                cmbFaction.Items.Clear();
+                cmbFaction.Items.AddRange(repo.GetFactionUpgrades(this.Keywords).ToArray());
+
+                if (Factionupgrade != null)
+                {
+                    cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+                }
+                else
+                {
+                    cmbFaction.SelectedIndex = 0;
+                }
+            }
+            else
+            {
+                cbStratagem4.Visible = false;
+            }
+
+            if (Stratagem.Contains(cbStratagem4.Text))
+            {
+                cbStratagem4.Checked = true;
+                cbStratagem4.Enabled = true;
+            }
+            else
+            {
+                cbStratagem4.Checked = false;
+                cbStratagem4.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem4.Text));
+            }
         }
 
 
@@ -163,6 +229,8 @@ namespace Roster_Builder.Genestealer_Cults
             ComboBox gb_cmbOption2 = gb.Controls["gb_cmbOption2"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
@@ -181,6 +249,8 @@ namespace Roster_Builder.Genestealer_Cults
                         {
                             gb_cmbOption1.SelectedIndex = 2;
                         }
+
+                        gb_cmbOption1.Items.RemoveAt(0);
                     }
                     else
                     {
@@ -190,6 +260,22 @@ namespace Roster_Builder.Genestealer_Cults
                         {
                             gb_cmbOption1.SelectedIndex = 0;
                         }
+
+                        gb_cmbOption1.Items.RemoveAt(1);
+                    }
+
+                    break;
+                case 16:
+                    Factionupgrade = cmbFaction.Text;
+
+                    if(Factionupgrade == "Fist of Balthus (+10 pts)")
+                    {
+                        gb_cmbOption2.SelectedIndex = 2;
+                        gb_cmbOption2.Enabled = false;
+                    }
+                    else
+                    {
+                        gb_cmbOption2.Enabled = true;
                     }
 
                     break;
@@ -233,11 +319,18 @@ namespace Roster_Builder.Genestealer_Cults
                         gb_cmbOption2.Enabled = false;
                     }
                     #endregion
-                    #region Codex Supplement: Ultramarines
+                    #region Codex Supplement: Dark Angels
                     else if (chosenRelic == "Atonement")
                     {
                         gb_cmbOption1.SelectedIndex = 2;
                         gb_cmbOption1.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: Black Templars
+                    else if (chosenRelic == "Sword of Judgement")
+                    {
+                        gb_cmbOption2.SelectedIndex = 3;
+                        gb_cmbOption2.Enabled = false;
                     }
                     #endregion
 
@@ -267,6 +360,19 @@ namespace Roster_Builder.Genestealer_Cults
                 case 412:
                     Weapons[3] = gb_cmbOption2.SelectedItem.ToString();
                     break;
+                case 74:
+                    if (cbStratagem4.Checked)
+                    {
+                        Stratagem.Add(cbStratagem4.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem4.Text))
+                        {
+                            Stratagem.Remove(cbStratagem4.Text);
+                        }
+                    }
+                    break;
                 case 75:
                     if (cbStratagem5.Checked)
                     {
@@ -288,6 +394,7 @@ namespace Roster_Builder.Genestealer_Cults
             }
 
             Points = DEFAULT_POINTS * UnitSize;
+            Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }
 
         public override string ToString()

@@ -10,6 +10,8 @@ namespace Roster_Builder.Space_Marines
     public class Chaplain : Datasheets
     {
         private string stratWarlordTrait;
+        string disciplineSelected;
+
         public Chaplain()
         {
             DEFAULT_POINTS = 70;
@@ -47,6 +49,7 @@ namespace Roster_Builder.Space_Marines
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox; // For Stratagem 3
+            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -127,13 +130,49 @@ namespace Roster_Builder.Space_Marines
                 cmbRelic.SelectedIndex = 0;
             }
 
+            if (repo.currentSubFaction == "Black Templars")
+            {
+                cmbDiscipline.Visible = true;
+                panel.Controls["lblPsykerList"].Visible = true;
+
+                cmbDiscipline.Items.Clear();
+                cmbDiscipline.Items.Add("Litanies");
+                cmbDiscipline.Items.Add("Devout");
+                disciplineSelected = "Devout";
+            }
+            else
+            {
+                cmbDiscipline.Visible = false;
+                panel.Controls["lblPsykerList"].Visible = false;
+                disciplineSelected = "Litanies";
+            }
+
             List<string> psykerpowers = new List<string>();
             psykerpowers = repo.GetPsykerPowers("Litanies");
+            bool doesContain = false;
+            foreach (var power in psykerpowers)
+            {
+                if (power == PsykerPowers[0])
+                {
+                    doesContain = true;
+                }
+            }
+
+            if (!doesContain)
+            {
+                psykerpowers = repo.GetPsykerPowers(disciplineSelected);
+            }
+            else
+            {
+                disciplineSelected = "Litanies";
+            }
+
             clbPsyker.Items.Clear();
             foreach (string power in psykerpowers)
             {
                 clbPsyker.Items.Add(power);
             }
+            cmbDiscipline.SelectedItem = disciplineSelected;
 
             if (Factionupgrade == "(None)" || Factionupgrade == null)
             {
@@ -441,6 +480,17 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Black Templars
+                    else if (chosenRelic == "Bolts of Judgement")
+                    {
+                        //See the end of SaveDatasheets
+                    }
+                    else if (chosenRelic == "Breath of the Throne")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-flamer");
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -583,7 +633,7 @@ namespace Roster_Builder.Space_Marines
             restrictedIndexes.Clear();
             if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
                 || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
-                || Relic == "Morkai's Teeth Bolts" || Relic == "Bolts of Judgement")
+                || Relic == "Morkai's Teeth Bolts" || Relic == "Bolts of Judgement" || Relic == "Witchseeker Bolts")
             {
                 restrictedIndexes.AddRange(new int[] { 6, 7, 8 });
                 cmbOption1.SelectedIndex = 0;

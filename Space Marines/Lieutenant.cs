@@ -442,6 +442,27 @@ namespace Roster_Builder.Space_Marines
                         //See the end of SaveDatasheets
                     }
                     #endregion
+                    #region Codex Supplement: Black Templars
+                    else if (chosenRelic == "Witchseeker Bolts")
+                    {
+                        //See the end of SaveDatasheets
+                    }
+                    else if (chosenRelic == "Sword of Judgement")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Perdition's Edge")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Breath of the Throne")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-flamer");
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -569,15 +590,15 @@ namespace Roster_Builder.Space_Marines
             restrictedIndexes.Clear();
             if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
                 || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
-                || Relic == "Morkai's Teeth Bolts" || Relic == "Bolts of Judgement")
+                || Relic == "Morkai's Teeth Bolts" || Relic == "Bolts of Judgement" || Relic == "Witchseeker Bolts")
             {
                 restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13, 15 });
-                cmbOption1.SelectedIndex = 1;
+                cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Boltgun");
             }
             else if (Relic == "Banebolts of Eryxia" || Relic == "Artificer Bolt Cache")
             {
                 restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 11, 12, 13, 14, 15, 17, 18 });
-                cmbOption1.SelectedIndex = 1;
+                cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Boltgun");
             }
             this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
             this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);

@@ -10,6 +10,8 @@ namespace Roster_Builder.Space_Marines
     public class TerminatorChaplain : Datasheets
     {
         private string stratWarlordTrait;
+        string disciplineSelected;
+
         public TerminatorChaplain()
         {
             DEFAULT_POINTS = 85;
@@ -44,6 +46,7 @@ namespace Roster_Builder.Space_Marines
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox; // For Stratagem 3
+            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -104,13 +107,49 @@ namespace Roster_Builder.Space_Marines
                 cmbRelic.SelectedIndex = 0;
             }
 
+            if (repo.currentSubFaction == "Black Templars")
+            {
+                cmbDiscipline.Visible = true;
+                panel.Controls["lblPsykerList"].Visible = true;
+
+                cmbDiscipline.Items.Clear();
+                cmbDiscipline.Items.Add("Litanies");
+                cmbDiscipline.Items.Add("Devout");
+                disciplineSelected = "Devout";
+            }
+            else
+            {
+                cmbDiscipline.Visible = false;
+                panel.Controls["lblPsykerList"].Visible = false;
+                disciplineSelected = "Litanies";
+            }
+
             List<string> psykerpowers = new List<string>();
             psykerpowers = repo.GetPsykerPowers("Litanies");
+            bool doesContain = false;
+            foreach (var power in psykerpowers)
+            {
+                if (power == PsykerPowers[0])
+                {
+                    doesContain = true;
+                }
+            }
+
+            if (!doesContain)
+            {
+                psykerpowers = repo.GetPsykerPowers(disciplineSelected);
+            }
+            else
+            {
+                disciplineSelected = "Litanies";
+            }
+
             clbPsyker.Items.Clear();
             foreach (string power in psykerpowers)
             {
                 clbPsyker.Items.Add(power);
             }
+            cmbDiscipline.SelectedItem = disciplineSelected;
 
             if (Factionupgrade == "(None)" || Factionupgrade == null)
             {
@@ -316,6 +355,11 @@ namespace Roster_Builder.Space_Marines
                     else if (chosenRelic == "Foe-smiter")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Breath of the Throne")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-flamer");
                         cmbOption1.Enabled = false;
                     }
                     else

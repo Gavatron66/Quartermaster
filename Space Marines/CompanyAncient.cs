@@ -422,6 +422,28 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = true;
                     }
                     #endregion
+                    #region Codex Supplement: Black Templars
+                    else if (chosenRelic == "Witchseeker Bolts")
+                    {
+                        //See the end of SaveDatasheets
+                        cmbOption1.Enabled = true;
+                    }
+                    else if (chosenRelic == "Sword of Judgement")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Perdition's Edge")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Axe");
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Breath of the Throne")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-flamer");
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -524,7 +546,7 @@ namespace Roster_Builder.Space_Marines
             #region Bolt Relics
             if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
                 || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
-                || Relic == "Morkai's Teeth Bolts" || Relic == "Bolts of Judgement")
+                || Relic == "Morkai's Teeth Bolts" || Relic == "Bolts of Judgement" || Relic == "Witchseeker Bolts")
             {
                 restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
                 cmbOption1.SelectedIndex = 1;

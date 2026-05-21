@@ -569,6 +569,43 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 0;
                     }
                     #endregion
+                    #region Codex Supplement: Black Templars
+                    else if (chosenRelic == "Witchseeker Bolts")
+                    {
+                        restrictedIndexes.Clear();
+                        restrictedIndexes.AddRange(new int[] { 0, 1, 20 });
+                        cmbOption1.SelectedIndex = 6;
+                    }
+                    else if (chosenRelic == "Sword of Judgement")
+                    {
+                        restrictedIndexes.Remove(1);
+                        restrictedIndexes.Remove(5);
+                        restrictedIndexes.Remove(7);
+                        restrictedIndexes.Remove(10);
+                        restrictedIndexes.Remove(13);
+                        restrictedIndexes.Remove(16);
+                        restrictedIndexes.Remove(18);
+                        restrictedIndexes.Remove(19);
+                        restrictedIndexes.Remove(20);
+                        restrictedIndexes.Remove(22);
+                        restrictedIndexes.Remove(25);
+                        restrictedIndexes.Remove(28);
+                        restrictedIndexes.Remove(31);
+                        cmbOption1.SelectedIndex = 13;
+                    }
+                    else if (chosenRelic == "Perdition's Edge")
+                    {
+                        restrictedIndexes.Remove(2);
+                        restrictedIndexes.Remove(3);
+                        cmbOption1.SelectedIndex = 2;
+                    }
+                    else if (chosenRelic == "Breath of the Throne")
+                    {
+                        restrictedIndexes.Remove(2);
+                        restrictedIndexes.Remove(3);
+                        cmbOption1.SelectedIndex = 2;
+                    }
+                    #endregion
                     else
                     {
                         restrictedIndexes.Clear();

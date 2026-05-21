@@ -314,6 +314,13 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Black Templars
+                    else if (chosenRelic == "Sword of Judgement")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
                     else
                     {
                         cmbOption1.Enabled = true;

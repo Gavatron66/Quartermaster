@@ -10,6 +10,7 @@ namespace Roster_Builder.Space_Marines
     public class PrimarisBikeChaplain : Datasheets
     {
         private string stratWarlordTrait;
+        string disciplineSelected;
 
         public PrimarisBikeChaplain()
         {
@@ -43,6 +44,7 @@ namespace Roster_Builder.Space_Marines
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox; // For Stratagem 3
+            ComboBox cmbDiscipline = panel.Controls["cmbDiscipline"] as ComboBox;
 
             cmbWarlord.Items.Clear();
             List<string> traits = repo.GetWarlordTraits("Phobos");
@@ -83,13 +85,49 @@ namespace Roster_Builder.Space_Marines
                 cmbWarlord.Enabled = false;
             }
 
+            if (repo.currentSubFaction == "Black Templars")
+            {
+                cmbDiscipline.Visible = true;
+                panel.Controls["lblPsykerList"].Visible = true;
+
+                cmbDiscipline.Items.Clear();
+                cmbDiscipline.Items.Add("Litanies");
+                cmbDiscipline.Items.Add("Devout");
+                disciplineSelected = "Devout";
+            }
+            else
+            {
+                cmbDiscipline.Visible = false;
+                panel.Controls["lblPsykerList"].Visible = false;
+                disciplineSelected = "Litanies";
+            }
+
             List<string> psykerpowers = new List<string>();
             psykerpowers = repo.GetPsykerPowers("Litanies");
+            bool doesContain = false;
+            foreach (var power in psykerpowers)
+            {
+                if (power == PsykerPowers[0])
+                {
+                    doesContain = true;
+                }
+            }
+
+            if (!doesContain)
+            {
+                psykerpowers = repo.GetPsykerPowers(disciplineSelected);
+            }
+            else
+            {
+                disciplineSelected = "Litanies";
+            }
+
             clbPsyker.Items.Clear();
             foreach (string power in psykerpowers)
             {
                 clbPsyker.Items.Add(power);
             }
+            cmbDiscipline.SelectedItem = disciplineSelected;
 
             if (Factionupgrade == "(None)" || Factionupgrade == null)
             {

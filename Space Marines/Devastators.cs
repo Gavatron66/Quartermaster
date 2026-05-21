@@ -57,6 +57,7 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
             CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
@@ -94,7 +95,6 @@ namespace Roster_Builder.Space_Marines
                 cmbOption1.Items.Insert(3, "Hand Flamer");
                 cmbOption1.Items.Insert(4, "Inferno Pistol");
             }
-            cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[0]);
 
             cbOption1.Text = "May include an Armorium Cherub";
 
@@ -137,6 +137,54 @@ namespace Roster_Builder.Space_Marines
 
             panel.Controls["lblRelic"].Visible = false;
             cmbRelic.Visible = false;
+
+            if (repo.currentSubFaction == "Black Templars")
+            {
+                cbStratagem4.Text = repo.StratagemList[3];
+                cbStratagem4.Location = new System.Drawing.Point(cmbRelic.Location.X, cmbRelic.Location.Y + 30);
+
+                //Relic Bearers Code
+                panel.Controls["lblExtra1"].Visible = true;
+                panel.Controls["lblExtra1"].Location = new System.Drawing.Point(cbStratagem4.Location.X, cbStratagem4.Location.Y + 30);
+                panel.Controls["lblExtra1"].Text = "Relic Bearers";
+
+                ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+                cmbFaction.Visible = true;
+                cmbFaction.Location = new System.Drawing.Point(cbStratagem4.Location.X + 4, cbStratagem4.Location.Y + 54);
+                cmbFaction.Items.Clear();
+                cmbFaction.Items.AddRange(repo.GetFactionUpgrades(this.Keywords).ToArray());
+
+                if (Factionupgrade != null)
+                {
+                    cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+                }
+                else
+                {
+                    cmbFaction.SelectedIndex = 0;
+                }
+
+                cmbFaction.Visible = true;
+
+                if (!Weapons.Contains("Power Fist"))
+                {
+                    this.DrawItemWithRestrictions(new List<int>() { 5 }, cmbFaction);
+                }
+                else
+                {
+                    this.DrawItemWithRestrictions(new List<int>(), cmbFaction);
+                }
+            }
+
+            if (Stratagem.Contains(cbStratagem4.Text))
+            {
+                cbStratagem4.Checked = true;
+                cbStratagem4.Enabled = true;
+            }
+            else
+            {
+                cbStratagem4.Checked = false;
+                cbStratagem4.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem4.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -150,8 +198,10 @@ namespace Roster_Builder.Space_Marines
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
             CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
@@ -173,10 +223,27 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
                     }
+
+                    if (!Weapons.Contains("Power Fist") && Factionupgrade.Contains("Fist of Balthus"))
+                    {
+                        cmbFaction.SelectedIndex = 0;
+                    }
                     break;
                 case 12:
                     Weapons[0] = cmbOption2.SelectedItem.ToString();
                     lbModelSelect.Items[0] = "Devastator Marine Sergeant w/ " + Weapons[1] + " and " + Weapons[0];
+
+                    if (!Weapons.Contains("Power Fist") && Factionupgrade.Contains("Fist of Balthus"))
+                    {
+                        cmbFaction.SelectedIndex = 0;
+                    }
+                    break;
+                case 16:
+                    if (!Weapons.Contains("Power Fist") && cmbFaction.Text.Contains("Fist"))
+                    {
+                        cmbFaction.SelectedIndex = 0;
+                    }
+                    Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
@@ -324,6 +391,28 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Black Templars Strat Relics
+                    else if (chosenRelic == "Witchseeker Bolts (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                    }
+                    else if (chosenRelic == "Witchseeker Bolts (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Sword of Judgement (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 13;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Sword of Judgement (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 8;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     Relic = chosenRelic;
@@ -375,6 +464,7 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption1.Enabled = true;
                         cmbOption2.Visible = true;
+                        cbStratagem4.Visible = true;
                         cbStratagem5.Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[0]);
@@ -410,6 +500,8 @@ namespace Roster_Builder.Space_Marines
                             cmbOption1.Items.Insert(8, "Hand Flamer");
                             cmbOption1.Items.Insert(9, "Inferno Pistol");
                         }
+
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[0]);
 
                         #region Codex Supplement: Ultramarines Strat Relics
                         if (Relic == "Hellfury Bolts (Slot 1)")
@@ -549,6 +641,28 @@ namespace Roster_Builder.Space_Marines
                             cmbOption2.Enabled = false;
                         }
                         #endregion
+                        #region Codex Supplement: Black Templars Strat Relics
+                        else if (Relic == "Witchseeker Bolts (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                        }
+                        else if (Relic == "Witchseeker Bolts (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        else if (Relic == "Sword of Judgement (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 13;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Sword of Judgement (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 8;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
                     }
                     else
                     {
@@ -556,6 +670,7 @@ namespace Roster_Builder.Space_Marines
                         panel.Controls["lblOption2"].Visible = false;
                         panel.Controls["lblRelic"].Visible = false;
                         cmbRelic.Visible = false;
+                        cbStratagem4.Visible = false;
                         cbStratagem5.Visible = false;
 
                         cmbOption1.Items.Clear();
@@ -588,6 +703,19 @@ namespace Roster_Builder.Space_Marines
 
                     antiLoop = false;
                     break;
+                case 74:
+                    if (cbStratagem4.Checked)
+                    {
+                        Stratagem.Add(cbStratagem4.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem4.Text))
+                        {
+                            Stratagem.Remove(cbStratagem4.Text);
+                        }
+                    }
+                    break;
                 case 75:
                     if (cbStratagem5.Checked)
                     {
@@ -609,6 +737,8 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = UnitSize * DEFAULT_POINTS;
+            Points += repo.GetFactionUpgradePoints(Factionupgrade);
+
             weaponsCheck = 0;
             foreach (string item in Weapons)
             {
@@ -621,6 +751,15 @@ namespace Roster_Builder.Space_Marines
                 {
                     weaponsCheck++;
                 }
+            }
+
+            if (!Weapons.Contains("Power Fist"))
+            {
+                this.DrawItemWithRestrictions(new List<int>() { 5 }, cmbFaction);
+            }
+            else
+            {
+                this.DrawItemWithRestrictions(new List<int>(), cmbFaction);
             }
         }
 

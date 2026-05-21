@@ -14,7 +14,8 @@ namespace Roster_Builder.Space_Marines
             DEFAULT_POINTS = 150;
             UnitSize = 1;
             Points = UnitSize * DEFAULT_POINTS;
-            TemplateCode = "3k";
+            TemplateCode = "4k";
+            Weapons.Add("");
             Weapons.Add("");
             Weapons.Add("");
             Weapons.Add("");
@@ -32,11 +33,13 @@ namespace Roster_Builder.Space_Marines
         }
         public override void LoadDatasheets(Panel panel, Faction f)
         {
+            repo = f as SpaceMarines;
             Template.LoadTemplate(TemplateCode, panel);
 
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             CheckBox cbOption3 = panel.Controls["cbOption3"] as CheckBox;
+            CheckBox cbOption4 = panel.Controls["cbOption4"] as CheckBox;
 
             cbOption1.Text = "Ironhail Heavy Stubber";
             if (Weapons[0] != string.Empty)
@@ -67,6 +70,21 @@ namespace Roster_Builder.Space_Marines
             {
                 cbOption3.Checked = false;
             }
+
+            cbOption4.Text = "Multi-melta";
+            if (Weapons[3] != string.Empty)
+            {
+                cbOption4.Checked = true;
+            }
+            else
+            {
+                cbOption4.Checked = false;
+            }
+
+            if (repo.currentSubFaction != "Black Templars")
+            {
+                cbOption4.Visible = false;
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -74,6 +92,7 @@ namespace Roster_Builder.Space_Marines
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
             CheckBox cbOption3 = panel.Controls["cbOption3"] as CheckBox;
+            CheckBox cbOption4 = panel.Controls["cbOption4"] as CheckBox;
 
             switch (code)
             {
@@ -81,8 +100,10 @@ namespace Roster_Builder.Space_Marines
                     if (cbOption1.Checked)
                     {
                         Weapons[0] = cbOption1.Text;
+                        cbOption4.Enabled = false;
+                        cbOption4.Checked = false;
                     }
-                    else { Weapons[0] = string.Empty; }
+                    else { Weapons[0] = string.Empty; cbOption4.Enabled = true; }
                     break;
                 case 22:
                     if (cbOption2.Checked)
@@ -94,9 +115,18 @@ namespace Roster_Builder.Space_Marines
                 case 23:
                     if (cbOption3.Checked)
                     {
-                        Weapons[2] = cbOption2.Text;
+                        Weapons[2] = cbOption3.Text;
                     }
                     else { Weapons[2] = string.Empty; }
+                    break;
+                case 24:
+                    if (cbOption4.Checked)
+                    {
+                        Weapons[3] = cbOption4.Text;
+                        cbOption1.Enabled = false;
+                        cbOption1.Checked = false;
+                    }
+                    else { Weapons[3] = string.Empty; cbOption1.Enabled = true; }
                     break;
             }
 

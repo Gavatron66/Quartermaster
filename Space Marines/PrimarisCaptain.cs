@@ -63,6 +63,13 @@ namespace Roster_Builder.Space_Marines
             {
                 cmbOption1.Items.Add("Special Issue Bolt Carbine");
             }
+            if(f.currentSubFaction == "Black Templars")
+            {
+                cmbOption1.Items.Insert(0, "Auto-flamer and Master-crafted Power Sword");
+                cmbOption1.Items.Insert(0, "Auto-flamer and Master-crafted Power Axe");
+                cmbOption1.Items.Insert(5, "Plasma Pistol and Master-crafted Power Sword");
+                cmbOption1.Items.Insert(5, "Plasma Pistol and Master-crafted Power Axe");
+            }
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
             cbOption1.Text = "Master-crafted Power Sword";
@@ -241,7 +248,7 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
                     }
 
-                    if (Weapons[0] == "Plasma Pistol and Power Fist" || Weapons[0] == "Heavy Bolt Pistol, Master-crafted Power Sword and Relic Shield")
+                    if (Weapons[0] != "Master-crafted Auto Bolt Rifle" && Weapons[0] != "Master-crafted Stalker Bolt Rifle")
                     {
                         cbOption1.Checked = false;
                         cbOption1.Enabled = false;
@@ -253,7 +260,7 @@ namespace Roster_Builder.Space_Marines
                         cbOption2.Enabled = true;
 
                         if (Relic == "The Burning Blade" || Relic == "Drakeblade" || Relic == "The Thief of Secrets"
-                            || Relic == "Frost Weapon" || Relic == "Heavenfall Blade")
+                            || Relic == "Frost Weapon" || Relic == "Heavenfall Blade" || Relic == "Sword of Judgement")
                         {
                             cbOption1.Checked = true;
                             cbOption1.Enabled = false;
@@ -499,6 +506,31 @@ namespace Roster_Builder.Space_Marines
                     {
                         restrictedIndexes.Add(3);
                         cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
+                    #region Codex Supplement: Black Templars
+                    else if (chosenRelic == "Witchseeker Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 1, 5, 6, 7 });
+                        cmbOption1.SelectedIndex = 3;
+                    }
+                    else if (chosenRelic == "Sword of Judgement")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+
+                        restrictedIndexes.AddRange(new int[] { 0, 5, 7 });
+                        cmbOption1.SelectedIndex = 2;
+                    }
+                    else if (chosenRelic == "Perdition's Edge")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 1, 2, 3, 4, 6, 7 });
+                        cmbOption1.SelectedIndex = 0;
+                    }
+                    else if (chosenRelic == "Breath of the Throne")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 2, 3, 4, 5, 6, 7 });
+                        cmbOption1.SelectedIndex = 0;
                     }
                     #endregion
 

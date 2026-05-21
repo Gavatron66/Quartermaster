@@ -298,7 +298,7 @@ namespace Roster_Builder.Space_Marines
                         }
                         else if (chosenRelic == "The Burning Blade")
                         {
-                            cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                            cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Relic Blade");
                             cmbOption2.Enabled = false;
                         }
                         else if (chosenRelic == "The Shield Eternal")
@@ -310,7 +310,7 @@ namespace Roster_Builder.Space_Marines
                     #region Codex Supplement: Ultramarines
                     else if (chosenRelic == "Soldier's Blade")
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Relic Blade");
                         cmbOption2.Enabled = false;
                     }
                     else if (chosenRelic == "Vengeance of Ultramar")
@@ -350,7 +350,7 @@ namespace Roster_Builder.Space_Marines
                     }
                     else if (chosenRelic == "Drakeblade")
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Relic Blade");
                         cmbOption2.Enabled = false;
                     }
                     #endregion
@@ -392,7 +392,7 @@ namespace Roster_Builder.Space_Marines
                     #region Codex Supplement: White Scars
                     else if (chosenRelic == "Scimitar of the Great Khan")
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Relic Blade");
                         cmbOption2.Enabled = false;
                     }
                     else if (chosenRelic == "Equis-pattern Bolt Pistol")
@@ -426,7 +426,7 @@ namespace Roster_Builder.Space_Marines
                     }
                     else if (chosenRelic == "The Thief of Secrets")
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Relic Blade");
                         cmbOption2.Enabled = false;
                     }
                     else if (chosenRelic == "Banebolts of Eryxia" || chosenRelic == "Artificer Bolt Cache")
@@ -469,7 +469,7 @@ namespace Roster_Builder.Space_Marines
                     }
                     else if (chosenRelic == "Heavenfall Blade")
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Relic Blade");
                         cmbOption2.Enabled = false;
                     }
                     else if (chosenRelic == "Atonement")
@@ -480,6 +480,27 @@ namespace Roster_Builder.Space_Marines
                     else if (chosenRelic == "Bolts of Judgement")
                     {
                         //See the end of SaveDatasheets
+                    }
+                    #endregion
+                    #region Codex Supplement: Black Templars
+                    else if (chosenRelic == "Witchseeker Bolts")
+                    {
+                        //See the end of SaveDatasheets
+                    }
+                    else if (chosenRelic == "Sword of Judgement")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Relic Blade");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Perdition's Edge")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Breath of the Throne")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-flamer");
+                        cmbOption1.Enabled = false;
                     }
                     #endregion
 
@@ -595,7 +616,7 @@ namespace Roster_Builder.Space_Marines
             restrictedIndexes.Clear();
             if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
                 || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
-                || Relic == "Morkai's Teeth Bolts" || Relic == "Bolts of Judgement")
+                || Relic == "Morkai's Teeth Bolts" || Relic == "Bolts of Judgement" || Relic == "Witchseeker Bolts")
             {
                 restrictedIndexes.AddRange(new int[] { 0, 6, 7, 9, 10, 11, 12, 13, 15, 16 });
                 cmbOption1.SelectedIndex = 1;

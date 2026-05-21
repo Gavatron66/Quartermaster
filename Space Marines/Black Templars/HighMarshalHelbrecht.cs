@@ -5,28 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Space_Marines.Dark_Angels
+namespace Roster_Builder.Space_Marines.Black_Templars
 {
-    public class Azrael : Datasheets
+    public class HighMarshalHelbrecht : Datasheets
     {
-        public Azrael()
+        public HighMarshalHelbrecht()
         {
-            DEFAULT_POINTS = 170;
+            DEFAULT_POINTS = 140;
             UnitSize = 1;
             TemplateCode = "nc";
             Points = DEFAULT_POINTS;
             Keywords.AddRange(new string[]
             {
-                "IMPERIUM", "ADEPTUS ASTARTES", "DARK ANGELS",
-                "CHARACTER", "INFANTRY", "DEATHWING", "INNER CIRCLE", "CHAPTER MASTER", "AZRAEL"
+                "IMPERIUM", "ADEPTUS ASTARTES", "BLACK TEMPLARS",
+                "INFANTRY", "CHARACTER", "PRIMARIS", "CHAPTER MASTER", "HIGH MARSHAL HELBRECHT"
             });
-            WarlordTrait = "Brilliant Strategist";
+            WarlordTrait = "Front-line Commander";
             Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new Azrael();
+            return new HighMarshalHelbrecht();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
@@ -84,7 +84,7 @@ namespace Roster_Builder.Space_Marines.Dark_Angels
 
         public override string ToString()
         {
-            return "Azrael - " + Points + "pts";
+            return "High Marshal Helbrecht - " + Points + "pts";
         }
     }
 }

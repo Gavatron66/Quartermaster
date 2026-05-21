@@ -14,13 +14,14 @@ namespace Roster_Builder.Space_Marines
             DEFAULT_POINTS = 220;
             UnitSize = 1;
             Points = UnitSize * DEFAULT_POINTS;
-            TemplateCode = "6m1k";
+            TemplateCode = "6m2k";
             Weapons.Add("Twin Heavy Bolter");
             Weapons.Add("Heavy Onslaught Gatling Cannon");
             Weapons.Add("Ironhail Heavy Stubber");
             Weapons.Add("Two Storm Bolters");
             Weapons.Add("Auto Launchers");
             Weapons.Add("Icarus Ironhail Heavy Stubber");
+            Weapons.Add("");
             Weapons.Add("");
             Keywords.AddRange(new string[]
             {
@@ -46,6 +47,7 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbOption5 = panel.Controls["cmbOption5"] as ComboBox;
             ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -106,6 +108,21 @@ namespace Roster_Builder.Space_Marines
             {
                 cbOption1.Checked = false;
             }
+
+            cbOption2.Text = "Multi-melta";
+            if (Weapons[7] != string.Empty)
+            {
+                cbOption2.Checked = true;
+            }
+            else
+            {
+                cbOption2.Checked = false;
+            }
+
+            if (repo.currentSubFaction != "Black Templars")
+            {
+                cbOption2.Visible = false;
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -117,8 +134,9 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbOption5 = panel.Controls["cmbOption5"] as ComboBox;
             ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
 
-            switch(code)
+            switch (code)
             {
                 case 11:
                     Weapons[0] = cmbOption1.SelectedItem.ToString();
@@ -142,8 +160,19 @@ namespace Roster_Builder.Space_Marines
                     if (cbOption1.Checked)
                     {
                         Weapons[6] = cbOption1.Text;
+                        cbOption2.Enabled = false;
+                        cbOption2.Checked = false;
                     }
-                    else { Weapons[6] = string.Empty; }
+                    else { Weapons[6] = string.Empty; cbOption2.Enabled = true; }
+                    break;
+                case 22:
+                    if (cbOption2.Checked)
+                    {
+                        Weapons[7] = cbOption2.Text;
+                        cbOption1.Enabled = false;
+                        cbOption1.Checked = false;
+                    }
+                    else { Weapons[7] = string.Empty; cbOption1.Enabled = true; }
                     break;
             }
 

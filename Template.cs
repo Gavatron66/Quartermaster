@@ -1749,6 +1749,68 @@ namespace Roster_Builder
 
                     break;
                 #endregion
+                #region case "4k"
+                case "4k":
+                    panel.Controls["cbOption1"].Visible = true;
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 60);
+
+                    panel.Controls["cbOption2"].Visible = true;
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(311, 90);
+
+                    panel.Controls["cbOption3"].Visible = true;
+                    panel.Controls["cbOption3"].Location = new System.Drawing.Point(311, 120);
+
+                    panel.Controls["cbOption4"].Visible = true;
+                    panel.Controls["cbOption4"].Location = new System.Drawing.Point(311, 150);
+
+                    break;
+                #endregion
+                #region case "6m2k"
+                case "6m2k":
+                    panel.Controls["lblOption1"].Visible = true;
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["cmbOption1"].Visible = true;
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(311, 25);
+
+                    panel.Controls["lblOption2"].Visible = true;
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(86, 63);
+
+                    panel.Controls["cmbOption2"].Visible = true;
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(311, 59);
+
+                    panel.Controls["lblOption3"].Visible = true;
+                    panel.Controls["lblOption3"].Location = new System.Drawing.Point(86, 97);
+
+                    panel.Controls["cmbOption3"].Visible = true;
+                    panel.Controls["cmbOption3"].Location = new System.Drawing.Point(311, 93);
+
+                    panel.Controls["lblOption4"].Visible = true;
+                    panel.Controls["lblOption4"].Location = new System.Drawing.Point(86, 131);
+
+                    panel.Controls["cmbOption4"].Visible = true;
+                    panel.Controls["cmbOption4"].Location = new System.Drawing.Point(311, 127);
+
+                    panel.Controls["lblOption5"].Visible = true;
+                    panel.Controls["lblOption5"].Location = new System.Drawing.Point(86, 165);
+
+                    panel.Controls["cmbOption5"].Visible = true;
+                    panel.Controls["cmbOption5"].Location = new System.Drawing.Point(311, 161);
+
+                    panel.Controls["lblOption6"].Visible = true;
+                    panel.Controls["lblOption6"].Location = new System.Drawing.Point(86, 199);
+
+                    panel.Controls["cmbOption6"].Visible = true;
+                    panel.Controls["cmbOption6"].Location = new System.Drawing.Point(311, 195);
+
+                    panel.Controls["cbOption1"].Visible = true;
+                    panel.Controls["cbOption1"].Location = new System.Drawing.Point(311, 229);
+
+                    panel.Controls["cbOption2"].Visible = true;
+                    panel.Controls["cbOption2"].Location = new System.Drawing.Point(311, 259);
+
+                    break;
+                #endregion
 
                 //Units with variable Unit Size
                 #region case "N"
@@ -3680,8 +3742,49 @@ namespace Roster_Builder
                     panel.Controls["cbStratagem2"].Location = new System.Drawing.Point(294, 364);
 
                     break;
+                #endregion
+                //Hearthkyn Warriors use a special jury-rigged version of NL2m3k
+                #region case "crusaders"
+                case "crusaders":
+                    panel.Controls["lblNumModels"].Visible = true;
+                    panel.Controls["lblNumModels"].Location = new System.Drawing.Point(86, 29);
+
+                    panel.Controls["nudUnitSize"].Visible = true;
+                    panel.Controls["nudUnitSize"].Location = new System.Drawing.Point(243, 27);
+
+                    panel.Controls["lblModelPoints"].Visible = true;
+                    panel.Controls["lblModelPoints"].Location = new System.Drawing.Point(370, 27);
+
+                    panel.Controls["lblUnitSize2"].Visible = true;
+                    panel.Controls["lblUnitSize2"].Location = new System.Drawing.Point(86, 61);
+
+                    panel.Controls["nudUnitSize2"].Visible = true;
+                    panel.Controls["nudUnitSize2"].Location = new System.Drawing.Point(243, 59);
+
+                    panel.Controls["lblExtra1"].Visible = true;
+                    panel.Controls["lblExtra1"].Location = new System.Drawing.Point(370, 59);
+
+                    panel.Controls["lbModelSelect"].Visible = true;
+                    panel.Controls["lbModelSelect"].Location = new System.Drawing.Point(39, 97);
+                    panel.Controls["lbModelSelect"].Size = new System.Drawing.Size(194, 344);
+
+                    panel.Controls["lblOption1"].Location = new System.Drawing.Point(239, 97);
+
+                    panel.Controls["cmbOption1"].Location = new System.Drawing.Point(282, 120);
+
+                    panel.Controls["lblOption2"].Location = new System.Drawing.Point(239, 151);
+
+                    panel.Controls["cmbOption2"].Location = new System.Drawing.Point(282, 174);
+
+                    panel.Controls["lblFactionUpgrade"].Location = new System.Drawing.Point(239, 235);
+
+                    panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 258);
+                    break;
+                #endregion
+                #region case "primarisCrusaders"
+                case "primarisCrusaders":
+                    break;
                     #endregion
-                    //Hearthkyn Warriors use a special jury-rigged version of NL2m3k
             }
         }
 

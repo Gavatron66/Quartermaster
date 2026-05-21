@@ -64,6 +64,31 @@ namespace Roster_Builder.Space_Marines
                 "Heavy Bolter",
                 "Multi-melta"
             });
+
+            if (repo.currentSubFaction == "Black Templars")
+            {
+                //Relic Bearers Code
+                panel.Controls["lblExtra1"].Visible = true;
+                panel.Controls["lblExtra1"].Location = new System.Drawing.Point(cmbOption1.Location.X, cmbOption1.Location.Y + 30);
+                panel.Controls["lblExtra1"].Text = "Relic Bearers";
+
+                ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+                cmbFaction.Visible = true;
+                cmbFaction.Location = new System.Drawing.Point(cmbOption1.Location.X + 4, cmbOption1.Location.Y + 54);
+                cmbFaction.Items.Clear();
+                cmbFaction.Items.AddRange(repo.GetFactionUpgrades(this.Keywords).ToArray());
+
+                if (Factionupgrade != null)
+                {
+                    cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+                }
+                else
+                {
+                    cmbFaction.SelectedIndex = 0;
+                }
+
+                cmbFaction.Visible = true;
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -76,12 +101,16 @@ namespace Roster_Builder.Space_Marines
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
-            switch(code)
+            switch (code)
             {
                 case 11:
                     Weapons[currentIndex] = cmbOption1.SelectedItem.ToString();
                     lbModelSelect.Items[currentIndex] = "Attack Bike w/ " + Weapons[currentIndex];
+                    break;
+                case 16:
+                    Factionupgrade = cmbFaction.Text;
                     break;
                 case 30:
                     int temp = UnitSize;
@@ -120,6 +149,7 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = DEFAULT_POINTS * UnitSize;
+            Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }
 
         public override string ToString()

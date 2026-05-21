@@ -32,6 +32,7 @@ namespace Roster_Builder.Space_Marines
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
+            repo = f as SpaceMarines;
             Template.LoadTemplate(TemplateCode, panel);
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
@@ -61,6 +62,31 @@ namespace Roster_Builder.Space_Marines
 
             nudOption1.Value = int.Parse(Weapons[0]);
             nudOption2.Value = int.Parse(Weapons[1]);
+
+            if (repo.currentSubFaction == "Black Templars")
+            {
+                //Relic Bearers Code
+                panel.Controls["lblExtra1"].Visible = true;
+                panel.Controls["lblExtra1"].Location = new System.Drawing.Point(nudOption2.Location.X, nudOption2.Location.Y + 30);
+                panel.Controls["lblExtra1"].Text = "Relic Bearers";
+
+                ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+                cmbFaction.Visible = true;
+                cmbFaction.Location = new System.Drawing.Point(nudOption2.Location.X + 4, nudOption2.Location.Y + 54);
+                cmbFaction.Items.Clear();
+                cmbFaction.Items.AddRange(repo.GetFactionUpgrades(this.Keywords).ToArray());
+
+                if (Factionupgrade != null)
+                {
+                    cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+                }
+                else
+                {
+                    cmbFaction.SelectedIndex = 0;
+                }
+
+                cmbFaction.Visible = true;
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -73,9 +99,13 @@ namespace Roster_Builder.Space_Marines
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             NumericUpDown nudOption1 = panel.Controls["nudOption1"] as NumericUpDown;
             NumericUpDown nudOption2 = panel.Controls["nudOption2"] as NumericUpDown;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
+                case 16:
+                    Factionupgrade = cmbFaction.Text;
+                    break;
                 case 30:
                     int oldSize = UnitSize;
                     UnitSize = int.Parse(nudUnitSize.Value.ToString());
@@ -152,6 +182,7 @@ namespace Roster_Builder.Space_Marines
             }
 
             Points = UnitSize * DEFAULT_POINTS;
+            Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }
 
         public override string ToString()

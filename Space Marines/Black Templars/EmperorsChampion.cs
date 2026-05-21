@@ -1,81 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Space_Marines
+namespace Roster_Builder.Space_Marines.Black_Templars
 {
-    public class PrimarisAncient : Datasheets
+    public class EmperorsChampion : Datasheets
     {
         private string stratWarlordTrait;
-        public PrimarisAncient()
+
+        public EmperorsChampion()
         {
-            DEFAULT_POINTS = 70;
+            DEFAULT_POINTS = 90;
             Points = DEFAULT_POINTS;
-            TemplateCode = "1m_c";
-            Weapons.Add("Bolt Rifle");
+            TemplateCode = "c";
             Keywords.AddRange(new string[]
             {
-                "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "INFANTRY", "CHARACTER", "PRIMARIS", "ANCIENT"
+                "IMPERIUM", "ADEPTUS ASTARTES", "BLACK TEMPLARS",
+                "INFANTRY", "CHARACTER", "PRIMARIS", "EMPEROR'S CHAMPION"
             });
-            Role = "Elites";
+            Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new PrimarisAncient();
+            return new EmperorsChampion();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             repo = f as SpaceMarines;
             Template.LoadTemplate(TemplateCode, panel);
-            panel.Controls["cmbFactionUpgrade"].Visible = true;
-            panel.Controls["lblFactionUpgrade"].Visible = true;
 
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
-            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
-            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox; // For Stratagem 3
 
-            cmbOption1.Items.Clear();
-            cmbOption1.Items.AddRange(new string[]
-            {
-                "Bolt Rifle",
-                "Power Sword"
-            });
-            cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+            panel.Controls["cmbRelic"].Visible = false;
+            panel.Controls["lblRelic"].Visible = false;
 
             cmbWarlord.Items.Clear();
-            List<string> traits = repo.GetWarlordTraits("");
+            List<string> traits = repo.GetWarlordTraits("TEC");
             foreach (var item in traits)
             {
                 cmbWarlord.Items.Add(item);
-            }
-
-            cmbFaction.Items.Clear();
-            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-
-            cmbRelic.Items.Clear();
-            cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
-
-            if (Factionupgrade != null)
-            {
-                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-            }
-            else
-            {
-                cmbFaction.SelectedIndex = 0;
-                if (Factionupgrade != "(None)")
-                {
-                    cmbWarlord.Items.Add("Steadfast Example");
-                    cmbRelic.Items.Add("Pennant of the Fallen");
-                }
             }
 
             if (isWarlord)
@@ -84,42 +50,20 @@ namespace Roster_Builder.Space_Marines
                 cmbWarlord.Enabled = true;
                 cmbWarlord.SelectedIndex = cmbWarlord.Items.IndexOf(WarlordTrait);
             }
-
             else
             {
                 cbWarlord.Checked = false;
                 cmbWarlord.Enabled = false;
             }
 
-            if (Relic != null && cmbRelic.Items.Contains(Relic))
-            {
-                cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
-            }
-            else
-            {
-                cmbRelic.SelectedIndex = 0;
-            }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
             CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
 
             cbStratagem3.Visible = true;
             cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
             cbStratagem3.Text = f.StratagemList[2];
-
-            if (f.currentSubFaction != f.customSubFactionTraits[2] && f.customSubFactionTraits[2] != "Unknown")
-            {
-                cbStratagem4.Visible = true;
-            }
-            else
-            {
-                cbStratagem4.Visible = false;
-            }
-
-            cbStratagem4.Location = new System.Drawing.Point(cbStratagem3.Location.X, cbStratagem3.Location.Y + 32);
-            cbStratagem4.Text = f.StratagemList[3];
 
             panel.Controls["lblOption6"].Visible = false;
             panel.Controls["lblOption6"].Location = new System.Drawing.Point(panel.Controls["lblWarlord"].Location.X, cmbWarlord.Location.Y + 33);
@@ -165,37 +109,19 @@ namespace Roster_Builder.Space_Marines
                 cmbOption6.Visible = false;
                 panel.Controls["lblOption6"].Visible = false;
             }
-
-            if (Stratagem.Contains(cbStratagem4.Text))
-            {
-                cbStratagem4.Checked = true;
-                cbStratagem4.Enabled = true;
-            }
-            else
-            {
-                cbStratagem4.Checked = false;
-                cbStratagem4.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem4.Text));
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
-            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
             CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
-            ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox;
 
             switch (code)
             {
-                case 11:
-                    Weapons[0] = cmbOption1.SelectedItem.ToString();
-                    break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
                     {
@@ -205,44 +131,6 @@ namespace Roster_Builder.Space_Marines
                     {
                         WarlordTrait = string.Empty;
                     }
-                    break;
-                case 16:
-                    Factionupgrade = cmbFaction.Text;
-                    if (Factionupgrade != "(None)" && Factionupgrade != null)
-                    {
-                        cmbWarlord.Items.Add("Steadfast Example");
-                        cmbRelic.Items.Add("Pennant of the Fallen");
-                    }
-                    else
-                    {
-                        if (Relic == "Pennant of the Fallen")
-                        {
-                            cmbRelic.SelectedIndex = 0;
-                        }
-
-                        if (WarlordTrait == "Steadfast Example")
-                        {
-                            cmbWarlord.SelectedIndex = -1;
-                        }
-
-                        cmbWarlord.Items.Remove("Steadfast Example");
-                        cmbRelic.Items.Remove("Pennant of the Fallen");
-                    }
-                    break;
-                case 17:
-                    string chosenRelic = cmbRelic.SelectedItem.ToString();
-                    if (chosenRelic == "The Burning Blade" || chosenRelic == "Soldier's Blade" || chosenRelic == "Drakeblade"
-                        || chosenRelic == "Scimitar of the Great Khan" || chosenRelic == "The Thief of Secrets" || chosenRelic == "Frost Weapon"
-                        || chosenRelic == "Heavenfall Blade" || chosenRelic == "Sword of Judgement")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
-                        cmbOption1.Enabled = false;
-                    }
-                    else
-                    {
-                        cmbOption1.Enabled = true;
-                    }
-                    Relic = chosenRelic;
                     break;
                 case 19:
                     stratWarlordTrait = cmbOption6.SelectedItem as string;
@@ -298,36 +186,6 @@ namespace Roster_Builder.Space_Marines
                         cmbOption6.SelectedIndex = -1;
                     }
                     break;
-                case 74:
-                    if (cbStratagem4.Checked)
-                    {
-                        Stratagem.Add(cbStratagem4.Text);
-                        cmbRelic.Items.Clear();
-                        Keywords.Add("Strat");
-                        cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
-                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
-                        Keywords.Remove("Strat");
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem4.Text))
-                        {
-                            Stratagem.Remove(cbStratagem4.Text);
-                        }
-
-                        cmbRelic.Items.Clear();
-                        cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
-
-                        if (cmbRelic.Items.Contains(Relic))
-                        {
-                            cmbRelic.SelectedIndex = 0;
-                        }
-                        else
-                        {
-                            cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
-                        }
-                    }
-                    break;
                 default: break;
             }
 
@@ -338,7 +196,7 @@ namespace Roster_Builder.Space_Marines
 
         public override string ToString()
         {
-            return "Primaris Ancient - " + Points + "pts";
+            return "The Emperor's Champion - " + Points + "pts";
         }
     }
 }

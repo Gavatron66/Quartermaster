@@ -1,84 +1,92 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Roster_Builder.Space_Marines
 {
-    public class CenturionAssault : Datasheets
+    public class PrimarisSwordBrethren : Datasheets
     {
-        int currentIndex;
-        public CenturionAssault()
+        int currentIndex = 0;
+        int[] restrictionsArray = new int[6];
+        List<int> restrictedIndexes2 = new List<int>();
+
+        public PrimarisSwordBrethren()
         {
-            DEFAULT_POINTS = 60;
-            UnitSize = 3;
-            Points = UnitSize * DEFAULT_POINTS;
+            DEFAULT_POINTS = 22;
+            UnitSize = 4;
+            Points = DEFAULT_POINTS * UnitSize;
             TemplateCode = "NL2m";
             for (int i = 0; i < UnitSize; i++)
             {
-                Weapons.Add("Flamers");
-                Weapons.Add("Centurion Assault Launchers");
+                Weapons.Add("Heavy Bolt Pistol");
+                Weapons.Add("Astartes Chainsword");
             }
             Keywords.AddRange(new string[]
             {
-                "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "INFANTRY", "CENTURION", "CENTURION ASSAULT SQUAD"
+                "IMPERIUM", "ADEPTUS ASTARTES", "BLACK TEMPLARS",
+                "INFANTRY", "CORE", "PRIMARIS", "SWORD BRETHREN"
             });
             Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new CenturionAssault();
+            return new PrimarisSwordBrethren();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as SpaceMarines;
             Template.LoadTemplate(TemplateCode, panel);
+            repo = f as SpaceMarines;
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
             CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
 
             panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
             int currentSize = UnitSize;
-            nudUnitSize.Minimum = 3;
+            nudUnitSize.Minimum = 4;
+            antiLoop = true;
             nudUnitSize.Value = nudUnitSize.Minimum;
-            nudUnitSize.Maximum = 6;
+            antiLoop = false;
+            nudUnitSize.Maximum = 10;
             nudUnitSize.Value = currentSize;
 
             lbModelSelect.Items.Clear();
-            lbModelSelect.Items.Add("Assault Centurion Sergeant w/ " + Weapons[0] + " and " + Weapons[1]);
-            for (int i = 1; i < UnitSize; i++)
+            for (int i = 0; i < UnitSize; i++)
             {
-                lbModelSelect.Items.Add("Assault Centurion w/ " + Weapons[i * 2] + " and " + Weapons[(i * 2) + 1]);
+                lbModelSelect.Items.Add("Primaris Sword Brother w/ " + Weapons[i * 2] + " and " + Weapons[(i * 2) + 1]);
             }
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Flamers",
-                "Meltaguns"
+                "Heavy Bolt Pistol",
+                "Plasma Pistol",
+                "Pyre Pistol"
             });
 
             cmbOption2.Items.Clear();
             cmbOption2.Items.AddRange(new string[]
             {
-                "Centurion Assault Launchers",
-                "Hurricane Bolter"
+                "Astartes Chainsword",
+                "Power Axe",
+                "Power Maul",
+                "Power Sword",
+                "Thunder Hammer",
+                "Two Lightning Claws"
             });
 
             cbStratagem5.Text = repo.StratagemList[4];
-            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["cbOption1"].Location.X, panel.Controls["cbOption1"].Location.Y + 60);
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["cmbOption2"].Location.X, panel.Controls["cmbOption2"].Location.Y + 60);
             panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
             cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
             panel.Controls["lblRelic"].Visible = false;
@@ -91,9 +99,6 @@ namespace Roster_Builder.Space_Marines
             {
                 cbStratagem5.Checked = true;
                 cbStratagem5.Enabled = true;
-
-                panel.Controls["lblRelic"].Visible = true;
-                cmbRelic.Visible = true;
 
                 if (Relic == "(None)")
                 {
@@ -117,36 +122,34 @@ namespace Roster_Builder.Space_Marines
                 cmbRelic.SelectedIndex = 0;
             }
 
+            //I don't know why I need this, but otherwise there's a weird bug that occurs if I don't
             panel.Controls["lblRelic"].Visible = false;
             cmbRelic.Visible = false;
 
-            if (repo.currentSubFaction == "Black Templars")
+            cbStratagem4.Text = repo.StratagemList[3];
+            cbStratagem4.Location = new System.Drawing.Point(cmbRelic.Location.X, cmbRelic.Location.Y + 30);
+
+            //Relic Bearers Code
+            panel.Controls["lblExtra1"].Visible = true;
+            panel.Controls["lblExtra1"].Location = new System.Drawing.Point(cbStratagem4.Location.X, cbStratagem4.Location.Y + 30);
+            panel.Controls["lblExtra1"].Text = "Relic Bearers";
+
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            cmbFaction.Visible = true;
+            cmbFaction.Location = new System.Drawing.Point(cbStratagem4.Location.X + 4, cbStratagem4.Location.Y + 54);
+            cmbFaction.Items.Clear();
+            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(this.Keywords).ToArray());
+
+            if (Factionupgrade != null)
             {
-                cbStratagem4.Text = repo.StratagemList[3];
-                cbStratagem4.Location = new System.Drawing.Point(cmbRelic.Location.X, cmbRelic.Location.Y + 30);
-
-                //Relic Bearers Code
-                panel.Controls["lblExtra1"].Visible = true;
-                panel.Controls["lblExtra1"].Location = new System.Drawing.Point(cbStratagem4.Location.X, cbStratagem4.Location.Y + 30);
-                panel.Controls["lblExtra1"].Text = "Relic Bearers";
-
-                ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
-                cmbFaction.Visible = true;
-                cmbFaction.Location = new System.Drawing.Point(cbStratagem4.Location.X + 4, cbStratagem4.Location.Y + 54);
-                cmbFaction.Items.Clear();
-                cmbFaction.Items.AddRange(repo.GetFactionUpgrades(this.Keywords).ToArray());
-
-                if (Factionupgrade != null)
-                {
-                    cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-                }
-                else
-                {
-                    cmbFaction.SelectedIndex = 0;
-                }
-
-                cmbFaction.Visible = true;
+                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
             }
+            else
+            {
+                cmbFaction.SelectedIndex = 0;
+            }
+
+            cmbFaction.Visible = true;
 
             if (Stratagem.Contains(cbStratagem4.Text))
             {
@@ -171,35 +174,33 @@ namespace Roster_Builder.Space_Marines
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
             CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
 
             switch (code)
             {
                 case 11:
-                    Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
-                    if (currentIndex == 0)
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
                     {
-                        lbModelSelect.Items[0] = "Assault Centurion Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
+                        Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
+                        lbModelSelect.Items[currentIndex] = "Primaris Sword Brother w/ " + Weapons[currentIndex * 2] + " and " + Weapons[(currentIndex * 2) + 1];
                     }
                     else
                     {
-                        lbModelSelect.Items[currentIndex] = "Assault Centurion w/ " + Weapons[currentIndex * 2] +
-                            " and " + Weapons[(currentIndex * 2) + 1];
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex * 2]);
                     }
                     break;
                 case 12:
-                    Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
-                    if (currentIndex == 0)
+                    if (!restrictedIndexes2.Contains(cmbOption2.SelectedIndex))
                     {
-                        lbModelSelect.Items[0] = "Assault Centurion Sergeant w/ " + Weapons[0] + " and " + Weapons[1];
+                        Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
+                        lbModelSelect.Items[currentIndex] = "Primaris Sword Brother w/ " + Weapons[currentIndex * 2] + " and " + Weapons[(currentIndex * 2) + 1];
                     }
                     else
                     {
-                        lbModelSelect.Items[currentIndex] = "Assault Centurion w/ " + Weapons[currentIndex * 2] +
-                            " and " + Weapons[(currentIndex * 2) + 1];
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
                     }
                     break;
                 case 16:
@@ -207,18 +208,20 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
+                    Relic = chosenRelic;
+                    cmbOption1.Enabled = true;
                     cmbOption2.Enabled = true;
 
-                    if (chosenRelic == "Hellfury Bolts" || chosenRelic == "Dragonrage Bolts" || chosenRelic == "Korvidari Bolts"
-                        || chosenRelic == "Haywire Bolts" || chosenRelic == "Stormwrath Bolts" || chosenRelic == "Gatebreaker Bolts"
-                        || chosenRelic == "Banebolts of Eryxia" || chosenRelic == "Artificer Bolt Cache" || chosenRelic == "Morkai's Teeth Bolts"
-                        || chosenRelic == "Bolts of Judgement" || chosenRelic == "Witchseeker Bolts")
+                    if (Relic == "Witchseeker Bolts")
                     {
-                        cmbOption2.SelectedIndex = 1;
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (Relic == "Sword of Judgement")
+                    {
+                        cmbOption2.SelectedIndex = 3;
                         cmbOption2.Enabled = false;
                     }
-
-                    Relic = chosenRelic;
                     break;
                 case 30:
                     int temp = UnitSize;
@@ -226,16 +229,15 @@ namespace Roster_Builder.Space_Marines
 
                     if (temp < UnitSize)
                     {
-                        Weapons.Add("Flamers");
-                        Weapons.Add("Centurion Assault Launchers");
-                        lbModelSelect.Items.Add("Assault Centurion w/ " + Weapons[currentIndex * 2] +
-                            " and " + Weapons[(currentIndex * 2) + 1]);
+                        Weapons.Add("Heavy Bolt Pistol");
+                        Weapons.Add("Astartes Chainsword");
+                        lbModelSelect.Items.Add("Primaris Sword Brother w/ " + Weapons[((UnitSize - 1) * 2)] + " and " + Weapons[((UnitSize - 1) * 2) + 1]);
                     }
 
                     if (temp > UnitSize)
                     {
                         lbModelSelect.Items.RemoveAt(temp - 1);
-                        Weapons.RemoveRange((UnitSize * 2) - 1, 2);
+                        Weapons.RemoveRange(((UnitSize - 1) * 2), 2);
                     }
                     break;
                 case 61:
@@ -249,15 +251,18 @@ namespace Roster_Builder.Space_Marines
                         panel.Controls["lblOption2"].Visible = false;
                         break;
                     }
+                    else if (currentIndex == -1)
+                    {
+                        break;
+                    }
+                    antiLoop = true;
 
                     cmbOption1.Visible = true;
                     cmbOption2.Visible = true;
                     panel.Controls["lblOption1"].Visible = true;
                     panel.Controls["lblOption2"].Visible = true;
+                    cmbOption1.Enabled = true;
                     cmbOption2.Enabled = true;
-
-                    cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex * 2]);
-                    cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
 
                     if (currentIndex == 0)
                     {
@@ -268,15 +273,21 @@ namespace Roster_Builder.Space_Marines
                         {
                             panel.Controls["lblRelic"].Visible = true;
                             cmbRelic.Visible = true;
+                        }
+                        else
+                        {
+                            cmbRelic.Visible = false;
+                        }
 
-                            if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
-                                || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
-                                || Relic == "Banebolts of Eryxia" || Relic == "Artificer Bolt Cache" || Relic == "Morkai's Teeth Bolts"
-                                || Relic == "Bolts of Judgement" || Relic == "Witchseeker Bolts")
-                            {
-                                cmbOption2.SelectedIndex = 1;
-                                cmbOption2.Enabled = false;
-                            }
+                        if (Relic == "Witchseeker Bolts")
+                        {
+                            cmbOption1.SelectedIndex = 0;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Sword of Judgement")
+                        {
+                            cmbOption2.SelectedIndex = 3;
+                            cmbOption2.Enabled = false;
                         }
                     }
                     else
@@ -286,6 +297,51 @@ namespace Roster_Builder.Space_Marines
                         cmbRelic.Visible = false;
                         panel.Controls["lblRelic"].Visible = false;
                     }
+
+                    restrictedIndexes.Clear();
+                    restrictedIndexes2.Clear();
+
+                    #region Weapons Check
+                    if (restrictionsArray[0] == (UnitSize / 10) + 1 && Weapons[(currentIndex * 2) + 1] != "Thunder Hammer")
+                    {
+                        restrictedIndexes2.Add(4);
+                    }
+
+                    if (restrictionsArray[1] == (UnitSize / 10) + 1 && Weapons[(currentIndex * 2) + 1] != "Two Lightning Claws")
+                    {
+                        restrictedIndexes2.Add(5);
+                    }
+
+                    if (restrictionsArray[2] == (UnitSize / 10) + 1 && Weapons[(currentIndex * 2) + 1] != "Power Axe")
+                    {
+                        restrictedIndexes2.Add(1);
+                    }
+
+                    if (restrictionsArray[3] == (UnitSize / 10) + 1 && Weapons[(currentIndex * 2) + 1] != "Power Maul")
+                    {
+                        restrictedIndexes2.Add(2);
+                    }
+
+                    if (restrictionsArray[4] == (UnitSize / 10) + 1 && Weapons[currentIndex * 2] != "Plasma Pistol")
+                    {
+                        restrictedIndexes.Add(1);
+                    }
+
+                    if (restrictionsArray[5] == ((UnitSize / 10) + 1) * 2 && Weapons[currentIndex * 2] != "Pyre Pistol")
+                    {
+                        restrictedIndexes.Add(2);
+                    }
+                    #endregion
+
+                    cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex * 2]);
+                    cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
+
+                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+                    this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);
+
+                    antiLoop = false;
+
+                    lbModelSelect.SelectedIndex = currentIndex;
                     break;
                 case 74:
                     if (cbStratagem4.Checked)
@@ -320,13 +376,47 @@ namespace Roster_Builder.Space_Marines
                     break;
             }
 
-            Points = UnitSize * DEFAULT_POINTS;
+            Points = DEFAULT_POINTS * UnitSize;
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
+
+            restrictionsArray = new int[6];
+            foreach (var weapon in Weapons)
+            {
+                if(weapon == "Thunder Hammer")
+                {
+                    restrictionsArray[0]++;
+                }
+
+                if (weapon == "Two Lightning Claws")
+                {
+                    restrictionsArray[1]++;
+                }
+
+                if (weapon == "Power Axe")
+                {
+                    restrictionsArray[2]++;
+                }
+
+                if (weapon == "Power Maul")
+                {
+                    restrictionsArray[3]++;
+                }
+
+                if (weapon == "Plasma Pistol")
+                {
+                    restrictionsArray[4]++;
+                }
+
+                if (weapon == "Pyre Pistol")
+                {
+                    restrictionsArray[5]++;
+                }
+            }
         }
 
         public override string ToString()
         {
-            return "Centurion Assault Squad - " + Points + "pts";
+            return "Primaris Sword Brethren - " + Points + "pts";
         }
     }
 }

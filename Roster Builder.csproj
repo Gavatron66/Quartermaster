@@ -611,6 +611,12 @@
     <Compile Include="Space Marines\AttackBikeSquad.cs" />
     <Compile Include="Space Marines\BikeCaptain.cs" />
     <Compile Include="Space Marines\BikeSquad.cs" />
+    <Compile Include="Space Marines\Black Templars\BTCrusaders.cs" />
+    <Compile Include="Space Marines\Black Templars\ChaplainGrimaldus.cs" />
+    <Compile Include="Space Marines\Black Templars\EmperorsChampion.cs" />
+    <Compile Include="Space Marines\Black Templars\HighMarshalHelbrecht.cs" />
+    <Compile Include="Space Marines\Black Templars\PrimarisCrusaders.cs" />
+    <Compile Include="Space Marines\Black Templars\PrimarisSwordBrethren.cs" />
     <Compile Include="Space Marines\BladeguardAncient.cs" />
     <Compile Include="Space Marines\BladeguardVeterans.cs" />
     <Compile Include="Space Marines\BrutalisDreadnought.cs" />
@@ -927,7 +933,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Space Marines\Black Templars\" />
     <Folder Include="Space Marines\Blood Angels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

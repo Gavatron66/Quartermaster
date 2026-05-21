@@ -14,9 +14,10 @@ namespace Roster_Builder.Space_Marines
             DEFAULT_POINTS = 100;
             UnitSize = 1;
             Points = DEFAULT_POINTS;
-            TemplateCode = "2m1k";
+            TemplateCode = "2m2k";
             Weapons.Add("Two Storm Bolters");
             Weapons.Add("(None)");
+            Weapons.Add("");
             Weapons.Add("");
             Keywords.AddRange(new string[]
             {
@@ -39,6 +40,7 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -68,6 +70,21 @@ namespace Roster_Builder.Space_Marines
             {
                 cbOption1.Checked = false;
             }
+
+            cbOption2.Text = "Multi-melta";
+            if (Weapons[3] != string.Empty)
+            {
+                cbOption2.Checked = true;
+            }
+            else
+            {
+                cbOption2.Checked = false;
+            }
+
+            if (repo.currentSubFaction != "Black Templars")
+            {
+                cbOption2.Visible = false;
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -75,6 +92,7 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
+            CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
 
             switch (code)
             {
@@ -87,9 +105,20 @@ namespace Roster_Builder.Space_Marines
                 case 21:
                     if (cbOption1.Checked)
                     {
-                        Weapons[2] = cbOption1.Text;
+                        Weapons[1] = cbOption1.Text;
+                        cbOption2.Enabled = false;
+                        cbOption2.Checked = false;
                     }
-                    else { Weapons[2] = string.Empty; }
+                    else { Weapons[1] = string.Empty; cbOption2.Enabled = true; }
+                    break;
+                case 22:
+                    if (cbOption2.Checked)
+                    {
+                        Weapons[3] = cbOption2.Text;
+                        cbOption1.Enabled = false;
+                        cbOption1.Checked = false;
+                    }
+                    else { Weapons[3] = string.Empty; cbOption1.Enabled = true; }
                     break;
             }
 
