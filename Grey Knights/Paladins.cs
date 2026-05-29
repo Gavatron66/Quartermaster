@@ -114,7 +114,7 @@ namespace Roster_Builder.Grey_Knights
             }
 
             cbStratagem5.Text = repo.StratagemList[4];
-            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["cbOption1"].Location.X, clbPsyker.Location.Y + 16 + clbPsyker.Height);
+            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblOption1"].Location.X, clbPsyker.Location.Y + 16 + clbPsyker.Height);
             panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
             cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
             panel.Controls["lblRelic"].Visible = false;

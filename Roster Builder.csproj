@@ -849,6 +849,32 @@
     <Compile Include="Testing Form.Designer.cs">
       <DependentUpon>Testing Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Thousand Sons\Ahriman.cs" />
+    <Compile Include="Thousand Sons\MagnusTheRed.cs" />
+    <Compile Include="Thousand Sons\TS_ChaosLandRaider.cs" />
+    <Compile Include="Thousand Sons\TS_ChaosPredatorAnnihilator.cs" />
+    <Compile Include="Thousand Sons\TS_ChaosPredatorDestructor.cs" />
+    <Compile Include="Thousand Sons\MutalithVortexBeast.cs" />
+    <Compile Include="Thousand Sons\TS_ChaosRhino.cs" />
+    <Compile Include="Thousand Sons\TS_ChaosSpawn.cs" />
+    <Compile Include="Thousand Sons\TS_ChaosVindicator.cs" />
+    <Compile Include="Thousand Sons\TS_Defiler.cs" />
+    <Compile Include="Thousand Sons\ExaltedSorcerer.cs" />
+    <Compile Include="Thousand Sons\TS_Forgefiend.cs" />
+    <Compile Include="Thousand Sons\TS_Heldrake.cs" />
+    <Compile Include="Thousand Sons\InfernalMaster.cs" />
+    <Compile Include="Thousand Sons\TS_Maulerfiend.cs" />
+    <Compile Include="Thousand Sons\RubricMarines.cs" />
+    <Compile Include="Thousand Sons\ScarabOccult.cs" />
+    <Compile Include="Thousand Sons\TS_Cultists.cs" />
+    <Compile Include="Thousand Sons\TS_Helbrute.cs" />
+    <Compile Include="Thousand Sons\TS_TerminatorSorcerer.cs" />
+    <Compile Include="Thousand Sons\TS_Sorcerer.cs" />
+    <Compile Include="Thousand Sons\ThousandSons.cs" />
+    <Compile Include="Thousand Sons\TS_DaemonPrince.cs" />
+    <Compile Include="Thousand Sons\TzaangorEnlightened.cs" />
+    <Compile Include="Thousand Sons\Tzaangors.cs" />
+    <Compile Include="Thousand Sons\TzaangorShaman.cs" />
     <Compile Include="Tyranids\Biovores.cs" />
     <Compile Include="Tyranids\Broodlord.cs" />
     <Compile Include="Tyranids\Carnifexes.cs" />

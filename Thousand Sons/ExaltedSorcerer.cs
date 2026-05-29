@@ -5,36 +5,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Space_Marines.Dark_Angels
+namespace Roster_Builder.Thousand_Sons
 {
-    public class InterrogatorChaplain : Datasheets
+    public class ExaltedSorcerer : Datasheets
     {
-        private string stratWarlordTrait;
-        public InterrogatorChaplain()
+        string dilettanteRelic;
+
+        public ExaltedSorcerer()
         {
-            DEFAULT_POINTS = 85;
+            DEFAULT_POINTS = 100;
             Points = DEFAULT_POINTS;
             TemplateCode = "1m2k_pc";
-            Weapons.Add("Bolt Pistol");
+            Weapons.Add("Inferno Bolt Pistol");
             Weapons.Add("");
             Weapons.Add("");
             Keywords.AddRange(new string[]
             {
-                "IMPERIUM", "ADEPTUS ASTARTES", "DARK ANGELS",
-                "CHARACTER", "INFANTRY", "DEATHWING", "INNER CIRCLE", "PRIEST", "CHAPLAIN", "INTERROGATOR-CHAPLAIN"
+                "CHAOS", "TZEENTCH", "HERETIC ASTARTES", "ARCANA ASTARTES", "THOUSAND SONS", "<GREAT CULT>",
+                "CHARACTER", "INFANTRY", "PSYKER", "EXALTED SORCERER"
             });
-            PsykerPowers = new string[1] { string.Empty };
+            PsykerPowers = new string[2] { string.Empty, string.Empty };
             Role = "HQ";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new InterrogatorChaplain();
+            return new ExaltedSorcerer();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as SpaceMarines;
+            repo = f as ThousandSons;
             Template.LoadTemplate(TemplateCode, panel);
             panel.Controls["cmbFactionUpgrade"].Visible = true;
             panel.Controls["lblFactionUpgrade"].Visible = true;
@@ -48,30 +49,21 @@ namespace Roster_Builder.Space_Marines.Dark_Angels
             ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
-            ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox; // For Stratagem 3
+            ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox;
+
+            panel.Controls["lblOption6"].Location = new System.Drawing.Point(clbPsyker.Location.X, clbPsyker.Location.Y + clbPsyker.Height + 32);
+            cmbOption6.Location = new System.Drawing.Point(clbPsyker.Location.X + 4, clbPsyker.Location.Y + clbPsyker.Height + 60);
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Astartes Chainsword",
-                "Boltgun",
-                "Bolt Pistol",
-                "Combi-flamer",
-                "Combi-grav",
-                "Combi-melta",
-                "Combi-plasma",
-                "Grav-pistol",
-                "Lightning Claw",
+                "Inferno Bolt Pistol",
                 "Plasma Pistol",
-                "Power Axe",
-                "Power Maul",
-                "Power Sword",
-                "Storm Bolter",
-                "Thunder Hammer"
+                "Warpflame Pistol"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
-            cbOption1.Text = "Jump Pack (+25 pts)";
+            cbOption1.Text = "Prosperine Khopesh";
             if (Weapons[1] == cbOption1.Text)
             {
                 cbOption1.Checked = true;
@@ -81,7 +73,7 @@ namespace Roster_Builder.Space_Marines.Dark_Angels
                 cbOption1.Checked = false;
             }
 
-            cbOption2.Text = "Power Fist";
+            cbOption2.Text = "Disc of Tzeentch (+25 pts)";
             if (Weapons[2] == cbOption2.Text)
             {
                 cbOption2.Checked = true;
@@ -122,6 +114,18 @@ namespace Roster_Builder.Space_Marines.Dark_Angels
                 cmbRelic.SelectedIndex = 0;
             }
 
+            cmbOption6.Items.Clear();
+            cmbOption6.Items.AddRange(repo.GetRelics(Keywords).ToArray());
+
+            if (dilettanteRelic != null && cmbOption6.Items.Contains(dilettanteRelic))
+            {
+                cmbOption6.SelectedIndex = cmbOption6.Items.IndexOf(dilettanteRelic);
+            }
+            else
+            {
+                cmbOption6.SelectedIndex = 0;
+            }
+
             cmbFaction.Items.Clear();
             cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
 
@@ -134,15 +138,26 @@ namespace Roster_Builder.Space_Marines.Dark_Angels
                 cmbFaction.SelectedIndex = 0;
             }
 
+            if(Factionupgrade == "Dilettante (+30 pts)")
+            {
+                panel.Controls["lblOption6"].Visible = true;
+                cmbOption6.Visible = true;
+            }
+            else
+            {
+                panel.Controls["lblOption6"].Visible = false;
+                cmbOption6.Visible = false;
+            }
+
             List<string> psykerpowers = new List<string>();
-            psykerpowers = repo.GetPsykerPowers("Litanies");
+            psykerpowers = repo.GetPsykerPowers("");
             clbPsyker.Items.Clear();
             foreach (string power in psykerpowers)
             {
                 clbPsyker.Items.Add(power);
             }
 
-            lblPsyker.Text = "Select one of the following:";
+            lblPsyker.Text = "Select two of the following:";
             clbPsyker.ClearSelected();
             for (int i = 0; i < clbPsyker.Items.Count; i++)
             {
@@ -153,34 +168,13 @@ namespace Roster_Builder.Space_Marines.Dark_Angels
             {
                 clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[0]), true);
             }
+            if (PsykerPowers[1] != string.Empty)
+            {
+                clbPsyker.SetItemChecked(clbPsyker.Items.IndexOf(PsykerPowers[1]), true);
+            }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
-
-            cbStratagem3.Visible = true;
-            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
-            cbStratagem3.Text = f.StratagemList[2];
-
-            if (f.currentSubFaction != f.customSubFactionTraits[2] && f.customSubFactionTraits[2] != "Unknown")
-            {
-                cbStratagem4.Visible = true;
-            }
-            else
-            {
-                cbStratagem4.Visible = false;
-            }
-
-            cbStratagem4.Location = new System.Drawing.Point(cbStratagem3.Location.X, cbStratagem3.Location.Y + 32);
-            cbStratagem4.Text = f.StratagemList[3];
-
-            panel.Controls["lblOption6"].Visible = false;
-            panel.Controls["lblOption6"].Location = new System.Drawing.Point(clbPsyker.Location.X, clbPsyker.Location.Y + clbPsyker.Height + 13);
-            cmbOption6.Visible = false;
-            cmbOption6.Location = new System.Drawing.Point(panel.Controls["lblOption6"].Location.X, panel.Controls["lblOption6"].Location.Y + 23);
-            cmbOption6.Items.Clear();
-            cmbOption6.Items.AddRange(repo.GetWarlordTraits("Strat").ToArray());
 
             if (Stratagem.Contains(cbStratagem1.Text))
             {
@@ -203,33 +197,6 @@ namespace Roster_Builder.Space_Marines.Dark_Angels
                 cbStratagem2.Checked = false;
                 cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
-
-            if (Stratagem.Contains(cbStratagem3.Text))
-            {
-                cbStratagem3.Checked = true;
-                cbStratagem3.Enabled = true;
-                cmbOption6.Visible = true;
-                panel.Controls["lblOption6"].Visible = true;
-                cmbOption6.SelectedIndex = cmbOption6.Items.IndexOf(stratWarlordTrait);
-            }
-            else
-            {
-                cbStratagem3.Checked = false;
-                cbStratagem3.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem3.Text));
-                cmbOption6.Visible = false;
-                panel.Controls["lblOption6"].Visible = false;
-            }
-
-            if (Stratagem.Contains(cbStratagem4.Text))
-            {
-                cbStratagem4.Checked = true;
-                cbStratagem4.Enabled = true;
-            }
-            else
-            {
-                cbStratagem4.Checked = false;
-                cbStratagem4.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem4.Text));
-            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -244,8 +211,6 @@ namespace Roster_Builder.Space_Marines.Dark_Angels
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
-            CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
-            CheckBox cbStratagem4 = panel.Controls["cbStratagem4"] as CheckBox;
             ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox;
 
             switch (code)
@@ -272,66 +237,117 @@ namespace Roster_Builder.Space_Marines.Dark_Angels
                     break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
-                    break;
-                case 17:
-                    string chosenRelic = cmbRelic.SelectedItem.ToString();
-                    restrictedIndexes.Clear();
 
-                    if (chosenRelic == "The Teeth of Terra")
+                    if (Factionupgrade == "Dilettante (+30 pts)")
                     {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Astartes Chainsword");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Primarch's Wrath")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "The Burning Blade")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Purgatorus")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Foe-smiter")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Storm Bolter");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Heavenfall Blade")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Atonement")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Atonement")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Plasma Pistol");
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Bolts of Judgement")
-                    {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
-                        restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 14 });
+                        panel.Controls["lblOption6"].Visible = true;
+                        cmbOption6.Visible = true;
                     }
                     else
                     {
-                        cmbOption1.Enabled = true;
-                        cbOption1.Enabled = true;
+                        panel.Controls["lblOption6"].Visible = false;
+                        cmbOption6.Visible = false;
                     }
+                    break;
+                case 17:
+                    string chosenRelic = cmbRelic.SelectedItem.ToString();
                     Relic = chosenRelic;
-                    this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
+                    cmbOption1.Enabled = true;
+                    cbOption1.Enabled = true;
+                    cbOption2.Enabled = true;
+
+                    if (Relic == "Seer's Bane")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else if(Relic == "Coruscator")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if(Relic == "Thrydderghyre")
+                    {
+                        cbOption2.Enabled = false;
+                        cbOption2.Checked = true;
+                    }
+                    else if (Relic == "Incaladion's Cry")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+
+                    //This is so that disabled items stay disabled when both relics are in effect
+                    if (dilettanteRelic == "Seer's Bane")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else if (dilettanteRelic == "Coruscator")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (dilettanteRelic == "Thrydderghyre")
+                    {
+                        cbOption2.Enabled = false;
+                        cbOption2.Checked = true;
+                    }
+                    else if (dilettanteRelic == "Incaladion's Cry")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+
                     break;
                 case 19:
-                    stratWarlordTrait = cmbOption6.SelectedItem as string;
+                    dilettanteRelic = cmbOption6.SelectedItem.ToString();
+                    cmbOption1.Enabled = true;
+                    cbOption1.Enabled = true;
+                    cbOption2.Enabled = true;
+
+                    if (dilettanteRelic == "Seer's Bane")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else if (dilettanteRelic == "Coruscator")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (dilettanteRelic == "Thrydderghyre")
+                    {
+                        cbOption2.Enabled = false;
+                        cbOption2.Checked = true;
+                    }
+                    else if (dilettanteRelic == "Incaladion's Cry")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
+
+                    //This is so that disabled items stay disabled when both relics are in effect
+                    if (Relic == "Seer's Bane")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+                    }
+                    else if (Relic == "Coruscator")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (Relic == "Thrydderghyre")
+                    {
+                        cbOption2.Enabled = false;
+                        cbOption2.Checked = true;
+                    }
+                    else if (Relic == "Incaladion's Cry")
+                    {
+                        cmbOption1.SelectedIndex = 2;
+                        cmbOption1.Enabled = false;
+                    }
                     break;
                 case 21:
                     if (cbOption1.Checked)
@@ -361,14 +377,20 @@ namespace Roster_Builder.Space_Marines.Dark_Angels
                     else { this.isWarlord = false; cmbWarlord.SelectedIndex = -1; }
                     break;
                 case 60:
-                    if (clbPsyker.CheckedItems.Count == 1)
+                    if (clbPsyker.CheckedItems.Count < 2)
                     {
-                        PsykerPowers[0] = clbPsyker.SelectedItem.ToString();
+                        break;
+                    }
+                    else if (clbPsyker.CheckedItems.Count == 2)
+                    {
+                        PsykerPowers[0] = clbPsyker.CheckedItems[0] as string;
+                        PsykerPowers[1] = clbPsyker.CheckedItems[1] as string;
                     }
                     else
                     {
                         clbPsyker.SetItemChecked(clbPsyker.SelectedIndex, false);
                     }
+
                     break;
                 case 71:
                     if (cbStratagem1.Checked)
@@ -396,54 +418,6 @@ namespace Roster_Builder.Space_Marines.Dark_Angels
                         }
                     }
                     break;
-                case 73:
-                    if (cbStratagem3.Checked && !Stratagem.Contains(cbStratagem3.Text))
-                    {
-                        Stratagem.Add(cbStratagem3.Text);
-                        cmbOption6.Visible = true;
-                        panel.Controls["lblOption6"].Visible = true;
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem3.Text))
-                        {
-                            Stratagem.Remove(cbStratagem3.Text);
-                        }
-                        cmbOption6.Visible = false;
-                        panel.Controls["lblOption6"].Visible = false;
-                        cmbOption6.SelectedIndex = -1;
-                    }
-                    break;
-                case 74:
-                    if (cbStratagem4.Checked)
-                    {
-                        Stratagem.Add(cbStratagem4.Text);
-                        cmbRelic.Items.Clear();
-                        Keywords.Add("Strat");
-                        cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
-                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
-                        Keywords.Remove("Strat");
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem4.Text))
-                        {
-                            Stratagem.Remove(cbStratagem4.Text);
-                        }
-
-                        cmbRelic.Items.Clear();
-                        cmbRelic.Items.AddRange(repo.GetRelics(Keywords).ToArray());
-
-                        if (cmbRelic.Items.Contains(Relic))
-                        {
-                            cmbRelic.SelectedIndex = 0;
-                        }
-                        else
-                        {
-                            cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
-                        }
-                    }
-                    break;
                 default: break;
             }
 
@@ -451,7 +425,7 @@ namespace Roster_Builder.Space_Marines.Dark_Angels
 
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
-            if (Weapons.Contains("Jump Pack (+25 pts)"))
+            if (Weapons.Contains("Disc of Tzeentch (+25 pts)"))
             {
                 Points += 25;
             }
@@ -459,7 +433,7 @@ namespace Roster_Builder.Space_Marines.Dark_Angels
 
         public override string ToString()
         {
-            return "Interrogator-Chaplain - " + Points + "pts";
+            return "Exalted Sorcerer - " + Points + "pts";
         }
     }
 }

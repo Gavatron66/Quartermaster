@@ -27,6 +27,7 @@ using Roster_Builder.Imperial_Knights;
 using Roster_Builder.Leagues_of_Votann;
 using Roster_Builder.Chaos_Space_Marines;
 using Roster_Builder.Aeldari.Ynnari;
+using Roster_Builder.Thousand_Sons;
 
 namespace Roster_Builder
 {
@@ -99,6 +100,7 @@ namespace Roster_Builder
                 new Orks.Orks(),
                 new SpaceMarines(),
                 new T_au(),
+                new ThousandSons(),
                 new Tyranids.Tyranids(),
             });
             cmbSelectFaction.Text = string.Empty;
@@ -130,6 +132,7 @@ namespace Roster_Builder
                 new Orks.Orks(),
                 new SpaceMarines(),
                 new T_au(),
+                new ThousandSons(),
                 new Tyranids.Tyranids(),
             });
 

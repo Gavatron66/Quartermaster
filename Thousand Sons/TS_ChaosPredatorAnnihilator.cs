@@ -5,60 +5,76 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Chaos_Space_Marines
+namespace Roster_Builder.Thousand_Sons
 {
-    public class Forgefiend : Datasheets
+    public class TS_ChaosPredatorAnnihilator : Datasheets
     {
-        public Forgefiend()
+        public TS_ChaosPredatorAnnihilator()
         {
-            DEFAULT_POINTS = 140;
+            DEFAULT_POINTS = 115;
             Points = DEFAULT_POINTS;
             UnitSize = 1;
-            TemplateCode = "2m";
-            Weapons.Add("Two Heavy Hades Autocannons (+50 pts)");
-            Weapons.Add("Forgefiend Jaws");
+            TemplateCode = "2m1k";
+            Weapons.Add("(None)");
+            Weapons.Add("(None)");
+            Weapons.Add("");
             Keywords.AddRange(new string[]
             {
-                "CHAOS", "HERETIC ASTARTES", "TRAITORIS ASTARTES", "<LEGION>",
-                "VEHICLE", "DAEMON", "DAEMON ENGINE", "FORGEFIEND"
+                "CHAOS", "TZEENTCH", "HERETIC ASTARTES", "ARCANA ASTARTES", "THOUSAND SONS", "<GREAT CULT>",
+                "VEHICLE", "SMOKESCREEN", "CHAOS PREDATOR ANNIHILATOR"
             });
             Role = "Heavy Support";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new Forgefiend();
+            return new TS_ChaosPredatorAnnihilator();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
-            repo = f as ChaosSpaceMarines;
+            repo = f as ThousandSons;
 
             ComboBox cmbOption1 = panel.Controls["cmboption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Two Ectoplasma Cannons (+30 pts)",
-                "Two Heavy Hades Autocannons (+50 pts)"
+                "(None)",
+                "Two Heavy Bolters",
+                "Two Lascannons (+20 pts)"
             });
             cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
 
             cmbOption2.Items.Clear();
             cmbOption2.Items.AddRange(new string[]
             {
-                "Ectoplasma Cannon (+15 pts)",
-                "Forgefiend Jaws"
+                "(None)",
+                "Inferno Combi-bolter",
+                "Inferno Combi-flamer",
+                "Inferno Combi-melta"
             });
             cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[1]);
+
+            cbOption1.Text = "Havoc Launcher";
+            if (Weapons[2] != string.Empty)
+            {
+                cbOption1.Checked = true;
+            }
+            else
+            {
+                cbOption1.Checked = false;
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
         {
             ComboBox cmbOption1 = panel.Controls["cmboption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
+            CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
 
             switch (code)
             {
@@ -68,28 +84,26 @@ namespace Roster_Builder.Chaos_Space_Marines
                 case 12:
                     Weapons[1] = cmbOption2.SelectedItem.ToString();
                     break;
+                case 21:
+                    if (cbOption1.Checked)
+                    {
+                        Weapons[2] = cbOption1.Text;
+                    }
+                    else { Weapons[2] = string.Empty; }
+                    break;
             }
 
             Points = DEFAULT_POINTS;
 
-            if (Weapons[0] == "Two Ectoplasma Cannons (+30 pts)")
+            if (Weapons[0] == "Two Lascannons (+20 pts)")
             {
-                Points += 30;
-            }
-            else if (Weapons[0] == "Two Heavy Hades Autocannons (+50 pts)")
-            {
-                Points += 50;
-            }
-
-            if (Weapons[1] == "Ectoplasma Cannon (+15 pts)")
-            {
-                Points += 15;
+                Points += 20;
             }
         }
 
         public override string ToString()
         {
-            return "Forgefiend - " + Points + "pts";
+            return "Chaos Predator Annihilator - " + Points + "pts";
         }
     }
 }

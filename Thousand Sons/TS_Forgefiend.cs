@@ -1,17 +1,18 @@
-﻿using System;
+﻿using Roster_Builder.Thousand_Sons;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Chaos_Space_Marines
+namespace Roster_Builder.Thousand_Sons
 {
-    public class Forgefiend : Datasheets
+    public class TS_Forgefiend : Datasheets
     {
-        public Forgefiend()
+        public TS_Forgefiend()
         {
-            DEFAULT_POINTS = 140;
+            DEFAULT_POINTS = 110;
             Points = DEFAULT_POINTS;
             UnitSize = 1;
             TemplateCode = "2m";
@@ -19,7 +20,7 @@ namespace Roster_Builder.Chaos_Space_Marines
             Weapons.Add("Forgefiend Jaws");
             Keywords.AddRange(new string[]
             {
-                "CHAOS", "HERETIC ASTARTES", "TRAITORIS ASTARTES", "<LEGION>",
+                "CHAOS", "HERETIC ASTARTES", "TRAITORIS ASTARTES", "<GREAT CULT>",
                 "VEHICLE", "DAEMON", "DAEMON ENGINE", "FORGEFIEND"
             });
             Role = "Heavy Support";
@@ -27,13 +28,13 @@ namespace Roster_Builder.Chaos_Space_Marines
 
         public override Datasheets CreateUnit()
         {
-            return new Forgefiend();
+            return new TS_Forgefiend();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
             Template.LoadTemplate(TemplateCode, panel);
-            repo = f as ChaosSpaceMarines;
+            repo = f as ThousandSons;
 
             ComboBox cmbOption1 = panel.Controls["cmboption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
