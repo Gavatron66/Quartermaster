@@ -405,7 +405,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 relics.Add("Liber Hereticus");
             }
 
-            if (/*currentSubFaction == "Black Legion"*/ true)
+            if (currentSubFaction == "Black Legion" )
             {
                 if (keywords.Contains("CHAOS LORD") && !keywords.Contains("TERMINATOR"))
                 {
@@ -440,7 +440,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Word Bearers"*/ true)
+            if (currentSubFaction == "Word Bearers" )
             {
                 if (keywords.Contains("CHAOS LORD") || keywords.Contains("DARK APOSTLE"))
                 {
@@ -472,7 +472,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Night Lords"*/ true)
+            if (currentSubFaction == "Night Lords" )
             {
                 if ((keywords.Contains("CHAOS LORD") && keywords.Contains("TERMINATOR")) || keywords.Contains("DAEMON PRINCE"))
                 {
@@ -501,7 +501,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Iron Warriors"*/ true)
+            if (currentSubFaction == "Iron Warriors" )
             {
                 if (keywords.Contains("CHAOS LORD") || keywords.Contains("EXALTED CHAMPION") || keywords.Contains("DAEMON PRINCE") ||
                     keywords.Contains("WARPSMITH") || keywords.Contains("MASTER OF EXECUTIONS"))
@@ -538,7 +538,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Alpha Legion"*/true)
+            if (currentSubFaction == "Alpha Legion")
             {
                 if (keywords.Contains("CHAOS LORD") && !keywords.Contains("TERMINATOR"))
                 {
@@ -575,7 +575,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Emperor's Children"*/true)
+            if (currentSubFaction == "Emperor's Children")
             {
 
                 if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
@@ -602,7 +602,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 relics.Add("Raiment Revulsive");
             }
 
-            if (/*currentSubFaction == "Red Corsairs"*/true)
+            if (currentSubFaction == "Red Corsairs")
             {
 
                 if ((keywords.Contains("CHAOS LORD") && keywords.Contains("TERMINATOR")) || keywords.Contains("EXALTED CHAMPION") ||
@@ -622,7 +622,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                 }
             }
 
-            if (/*currentSubFaction == "Creations of Bile"*/ true)
+            if (currentSubFaction == "Creations of Bile" )
             {
                 if (!keywords.Contains("DARK COMMUNE"))
                 {

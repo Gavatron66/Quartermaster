@@ -322,54 +322,52 @@ namespace Roster_Builder.Thousand_Sons
 
             if (keywords.Contains("ARCANA ASTARTES"))
             {
-                //if(currentSubFaction == "Cult of Mutation" && keywords.Contains("SORCERER"))
+                if(currentSubFaction == "Cult of Mutation" && keywords.Contains("SORCERER"))
                 if (keywords.Contains("SORCERER"))
                 {
                     relics.Add("Exalted Mutation");
                 }
 
-                //if (currentSubFaction == "Cult of Prophecy")
-                //{
-                relics.Add("Oraculae Brazier");
-                //}
+                if (currentSubFaction == "Cult of Prophecy")
+                {
+                    relics.Add("Oraculae Brazier");
+                }
 
-                //if (currentSubFaction == "Cult of Time")
-                //{
-                relics.Add("Hourglass of Manat");
-                //}
+                if (currentSubFaction == "Cult of Time")
+                {
+                    relics.Add("Hourglass of Manat");
+                }
 
-                //if (currentSubFaction == "Cult of Scheming")
-                //{
-                relics.Add("Cha'qi'thl's Theorem");
-                //}
+                if (currentSubFaction == "Cult of Scheming")
+                {
+                    relics.Add("Cha'qi'thl's Theorem");
+                }
 
-                //if (currentSubFaction == "Cult of Magic")
-                //{
-                relics.Add("Arcane Focus");
-                //}
+                if (currentSubFaction == "Cult of Magic")
+                {
+                    relics.Add("Arcane Focus");
+                }
 
-                //if (currentSubFaction == "Cult of Knowledge" && (keywords.Contains("EXALTED SORCERER")
-                //    || (keywords.Contains("SORCERER") && !keywords.Contains("TERMINATOR"))))
-                if (keywords.Contains("EXALTED SORCERER")
-                    || (keywords.Contains("SORCERER") && !keywords.Contains("TERMINATOR")))
+                if (currentSubFaction == "Cult of Knowledge" && (keywords.Contains("EXALTED SORCERER")
+                    || (keywords.Contains("SORCERER") && !keywords.Contains("TERMINATOR"))))
                 {
                     relics.Add("Incaladion's Cry");
                 }
 
-                //if (currentSubFaction == "Cult of Change")
-                //{
-                relics.Add("Capricious Crest");
-                //}
+                if (currentSubFaction == "Cult of Change")
+                {
+                    relics.Add("Capricious Crest");
+                }
 
-                //if (currentSubFaction == "Cult of Duplicity")
-                //{
-                relics.Add("Perfidious Tome");
-                //}
+                if (currentSubFaction == "Cult of Duplicity")
+                {
+                    relics.Add("Perfidious Tome");
+                }
 
-                //if (currentSubFaction == "Cult of Manipulation")
-                //{
-                relics.Add("Sorthis' Mirror");
-                //}
+                if (currentSubFaction == "Cult of Manipulation")
+                {
+                    relics.Add("Sorthis' Mirror");
+                }
             }
 
             return relics;

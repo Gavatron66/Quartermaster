@@ -28,6 +28,7 @@ using Roster_Builder.Leagues_of_Votann;
 using Roster_Builder.Chaos_Space_Marines;
 using Roster_Builder.Aeldari.Ynnari;
 using Roster_Builder.Thousand_Sons;
+using Roster_Builder.Chaos_Daemons;
 
 namespace Roster_Builder
 {
@@ -88,6 +89,7 @@ namespace Roster_Builder
                 new Aeldari.Aeldari(),
                 new YnnariFaction(),
                 new AstraMilitarum(),
+                new ChaosDaemons(),
                 new ChaosSpaceMarines(),
                 new DeathGuard(),
                 new Drukhari.Drukhari(),
@@ -120,6 +122,7 @@ namespace Roster_Builder
                 new Aeldari.Aeldari(),
                 new YnnariFaction(),
                 new AstraMilitarum(),
+                new ChaosDaemons(),
                 new ChaosSpaceMarines(),
                 new DeathGuard(),
                 new Drukhari.Drukhari(),

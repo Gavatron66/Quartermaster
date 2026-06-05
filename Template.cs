@@ -3781,10 +3781,6 @@ namespace Roster_Builder
                     panel.Controls["cmbFactionUpgrade"].Location = new System.Drawing.Point(243, 258);
                     break;
                 #endregion
-                #region case "primarisCrusaders"
-                case "primarisCrusaders":
-                    break;
-                    #endregion
             }
         }
 

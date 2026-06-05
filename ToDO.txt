@@ -331,8 +331,6 @@ Sergeants
             }
 	
 	restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13, 14, 15, 17, 18 });
-	
-	
-	Tzaangor Shaman Relic: Gives an additional Power from either discipline
+
 	
 TODO LIST

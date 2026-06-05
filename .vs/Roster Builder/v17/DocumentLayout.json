@@ -3,120 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\evans\\Desktop\\Quartermaster\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\magnusthered.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\magnusthered.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\chaosdaemons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\chaosdaemons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\thousandsons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\thousandsons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\thousand sons\\ahriman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ahriman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\ts_heldrake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ts_heldrake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\ts_chaospredatordestructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ts_chaospredatordestructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\ts_chaospredatorannihilator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ts_chaospredatorannihilator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\ts_maulerfiend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ts_maulerfiend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\ts_forgefiend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ts_forgefiend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\ts_chaosvindicator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ts_chaosvindicator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\ts_chaoslandraider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ts_chaoslandraider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\ts_defiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ts_defiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\mutalithvortexbeast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\mutalithvortexbeast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\ts_chaosspawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ts_chaosspawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\ts_chaosrhino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ts_chaosrhino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\tzaangorenlightened.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\tzaangorenlightened.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\tzaangorshaman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\tzaangorshaman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\thousand sons\\rubricmarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\rubricmarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\thousand sons\\ts_sorcerer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ts_sorcerer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\thousand sons\\scaraboccult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\scaraboccult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\thousand sons\\infernalmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\infernalmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\thousand sons\\ts_helbrute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ts_helbrute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\thousand sons\\ts_cultists.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ts_cultists.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\thousand sons\\exaltedsorcerer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\exaltedsorcerer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\thousand sons\\tzaangors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\tzaangors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\thousand sons\\ts_terminatorsorcerer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ts_terminatorsorcerer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\thousand sons\\ts_daemonprince.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:thousand sons\\ts_daemonprince.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\spacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -130,24 +30,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAjwGYAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAALUBAAAAAAAAAAArwMIBAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T01:54:33.308Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -155,368 +56,47 @@
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T01:54:21.256Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 4,
               "Title": "SpaceMarines.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\SpaceMarines.cs",
               "RelativeDocumentMoniker": "Space Marines\\SpaceMarines.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\SpaceMarines.cs",
               "RelativeToolTip": "Space Marines\\SpaceMarines.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T01:48:05.566Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Template.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeDocumentMoniker": "Template.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeToolTip": "Template.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAwwAYBAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwCICAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-26T00:47:28.245Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ThousandSons.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\ThousandSons.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\ThousandSons.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\ThousandSons.cs",
-              "RelativeToolTip": "Thousand Sons\\ThousandSons.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAuwDIAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T01:15:08.899Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MagnusTheRed.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\MagnusTheRed.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\MagnusTheRed.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\MagnusTheRed.cs",
-              "RelativeToolTip": "Thousand Sons\\MagnusTheRed.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAfAAAAAAAAAA==",
+              "Title": "ChaosDaemons.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\ChaosDaemons.cs",
+              "RelativeDocumentMoniker": "Chaos Daemons\\ChaosDaemons.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\ChaosDaemons.cs",
+              "RelativeToolTip": "Chaos Daemons\\ChaosDaemons.cs",
+              "ViewState": "AgIAAPoAAAAAAAAAAAAgwBMBAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T02:25:18.673Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TS_Heldrake.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_Heldrake.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TS_Heldrake.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_Heldrake.cs",
-              "RelativeToolTip": "Thousand Sons\\TS_Heldrake.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T02:22:50.286Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TS_ChaosPredatorDestructor.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_ChaosPredatorDestructor.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TS_ChaosPredatorDestructor.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_ChaosPredatorDestructor.cs",
-              "RelativeToolTip": "Thousand Sons\\TS_ChaosPredatorDestructor.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAADkAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T02:21:43Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TS_ChaosPredatorAnnihilator.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_ChaosPredatorAnnihilator.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TS_ChaosPredatorAnnihilator.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_ChaosPredatorAnnihilator.cs",
-              "RelativeToolTip": "Thousand Sons\\TS_ChaosPredatorAnnihilator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T02:20:29.708Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TS_Maulerfiend.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_Maulerfiend.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TS_Maulerfiend.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_Maulerfiend.cs",
-              "RelativeToolTip": "Thousand Sons\\TS_Maulerfiend.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T02:19:43.206Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TS_Forgefiend.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_Forgefiend.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TS_Forgefiend.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_Forgefiend.cs",
-              "RelativeToolTip": "Thousand Sons\\TS_Forgefiend.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T02:16:09.862Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TS_Defiler.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_Defiler.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TS_Defiler.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_Defiler.cs",
-              "RelativeToolTip": "Thousand Sons\\TS_Defiler.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEIAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T02:14:37.102Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "TS_ChaosLandRaider.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_ChaosLandRaider.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TS_ChaosLandRaider.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_ChaosLandRaider.cs",
-              "RelativeToolTip": "Thousand Sons\\TS_ChaosLandRaider.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T02:13:14.403Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "MutalithVortexBeast.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\MutalithVortexBeast.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\MutalithVortexBeast.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\MutalithVortexBeast.cs",
-              "RelativeToolTip": "Thousand Sons\\MutalithVortexBeast.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T02:11:47.294Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TS_ChaosVindicator.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_ChaosVindicator.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TS_ChaosVindicator.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_ChaosVindicator.cs",
-              "RelativeToolTip": "Thousand Sons\\TS_ChaosVindicator.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAlwBUAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T02:06:56.738Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "TS_ChaosRhino.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_ChaosRhino.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TS_ChaosRhino.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_ChaosRhino.cs",
-              "RelativeToolTip": "Thousand Sons\\TS_ChaosRhino.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T02:05:26.959Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "TS_ChaosSpawn.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_ChaosSpawn.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TS_ChaosSpawn.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_ChaosSpawn.cs",
-              "RelativeToolTip": "Thousand Sons\\TS_ChaosSpawn.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T02:04:02.583Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "TzaangorEnlightened.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TzaangorEnlightened.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TzaangorEnlightened.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TzaangorEnlightened.cs",
-              "RelativeToolTip": "Thousand Sons\\TzaangorEnlightened.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBUAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T01:56:11.128Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "TzaangorShaman.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TzaangorShaman.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TzaangorShaman.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TzaangorShaman.cs",
-              "RelativeToolTip": "Thousand Sons\\TzaangorShaman.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T01:35:58.451Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ScarabOccult.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\ScarabOccult.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\ScarabOccult.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\ScarabOccult.cs",
-              "RelativeToolTip": "Thousand Sons\\ScarabOccult.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T01:16:19.025Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "TS_Helbrute.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_Helbrute.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TS_Helbrute.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_Helbrute.cs",
-              "RelativeToolTip": "Thousand Sons\\TS_Helbrute.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAAC4AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-28T02:09:13.959Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "RubricMarines.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\RubricMarines.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\RubricMarines.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\RubricMarines.cs",
-              "RelativeToolTip": "Thousand Sons\\RubricMarines.cs",
-              "ViewState": "AgIAANwAAAAAAAAAAAAkwOEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-28T00:54:46.044Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Tzaangors.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\Tzaangors.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\Tzaangors.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\Tzaangors.cs",
-              "RelativeToolTip": "Thousand Sons\\Tzaangors.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAIBJwCEAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T22:14:27.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "TS_Cultists.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_Cultists.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TS_Cultists.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_Cultists.cs",
-              "RelativeToolTip": "Thousand Sons\\TS_Cultists.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH4AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T21:58:50.857Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "ExaltedSorcerer.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\ExaltedSorcerer.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\ExaltedSorcerer.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\ExaltedSorcerer.cs",
-              "RelativeToolTip": "Thousand Sons\\ExaltedSorcerer.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAgwH8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T21:09:49.54Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "TS_TerminatorSorcerer.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_TerminatorSorcerer.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TS_TerminatorSorcerer.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_TerminatorSorcerer.cs",
-              "RelativeToolTip": "Thousand Sons\\TS_TerminatorSorcerer.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAAGoAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T03:13:56.574Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "TS_Sorcerer.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_Sorcerer.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TS_Sorcerer.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_Sorcerer.cs",
-              "RelativeToolTip": "Thousand Sons\\TS_Sorcerer.cs",
-              "ViewState": "AgIAANYAAAAAAAAAAAAkwOEAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T02:46:34.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "InfernalMaster.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\InfernalMaster.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\InfernalMaster.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\InfernalMaster.cs",
-              "RelativeToolTip": "Thousand Sons\\InfernalMaster.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAO4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T01:38:43.212Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "TS_DaemonPrince.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_DaemonPrince.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\TS_DaemonPrince.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\TS_DaemonPrince.cs",
-              "RelativeToolTip": "Thousand Sons\\TS_DaemonPrince.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T01:13:09.992Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Ahriman.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\Ahriman.cs",
-              "RelativeDocumentMoniker": "Thousand Sons\\Ahriman.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Thousand Sons\\Ahriman.cs",
-              "RelativeToolTip": "Thousand Sons\\Ahriman.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAowKQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T01:00:46.384Z",
+              "WhenOpened": "2026-05-30T00:11:58.169Z",
+              "IsPinned": true,
               "EditorCaption": ""
             }
           ]
