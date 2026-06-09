@@ -3,248 +3,116 @@
   "WorkspaceRootPath": "C:\\Users\\evans\\Desktop\\Quartermaster\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos daemons\\chaosdaemonprince.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\chaosdaemonprince.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\world eaters\\worldeaters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\worldeaters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\world eaters\\exaltedeightbound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\exaltedeightbound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\chaosdaemons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\chaosdaemons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\world eaters\\eightbound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\eightbound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\infernalenrapturess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\infernalenrapturess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\world eaters\\we_heldrake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\we_heldrake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\world eaters\\khorneberzerkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\khorneberzerkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\soulgrinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\soulgrinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\world eaters\\we_terminators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\we_terminators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\fateskimmer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\fateskimmer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\world eaters\\we_helbrute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\we_helbrute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\belakor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\belakor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\world eaters\\lordofskulls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\lordofskulls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\rotigus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\rotigus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\world eaters\\we_forgefiend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\we_forgefiend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\greatuncleanone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\greatuncleanone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\world eaters\\we_chaosrhino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\we_chaosrhino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\exaltedseekerchariot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\exaltedseekerchariot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\world eaters\\we_chaoslandraider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\we_chaoslandraider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\seekerchariot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\seekerchariot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\world eaters\\we_chaospredatordestructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\we_chaospredatordestructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\hellflayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\hellflayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\world eaters\\we_chaospredatorannihilator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\we_chaospredatorannihilator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\skullcannon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\skullcannon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\world eaters\\we_maulerfiend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\we_maulerfiend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\flamers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\flamers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\world eaters\\we_defiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\we_defiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\seekers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\seekers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\world eaters\\we_chaosspawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\we_chaosspawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\bloodcrushers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\bloodcrushers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\chaos space marines\\chaosterminators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\chaosterminators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\fiends.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\fiends.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\screamers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\screamers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\daemonettes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\daemonettes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\bloodletters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\bloodletters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\tormentbringerhellflayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\tormentbringerhellflayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\tormentbringerchariot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\tormentbringerchariot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\tormentbringerexalted.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\tormentbringerexalted.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\tranceweaver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\tranceweaver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\contortedepitome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\contortedepitome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\poxbringer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\poxbringer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\spoilpoxscrivener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\spoilpoxscrivener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\keeperofsecrets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\keeperofsecrets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\syllesske.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\syllesske.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\masqueofslaanesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\masqueofslaanesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\epidemius.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\epidemius.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\sloppitybilepiper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\sloppitybilepiper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\shalaxihelbane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\shalaxihelbane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\lordofchange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\lordofchange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\horticulousslimux.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\horticulousslimux.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\nurglings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\nurglings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\feculentgnarlmaw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\feculentgnarlmaw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\skullaltar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\skullaltar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\plaguedrones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\plaguedrones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\plaguebearers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\plaguebearers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\beastsofnurgle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\beastsofnurgle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\pinkhorrors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\pinkhorrors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\bluehorrors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\bluehorrors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\skarbrand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\skarbrand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\fluxmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\fluxmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\kairosfateweaver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\kairosfateweaver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\burningchariot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\burningchariot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\exaltedflamer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\exaltedflamer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\fleshhounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\fleshhounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\changecaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\changecaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\thebluescribes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\thebluescribes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\karanak.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\karanak.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\thechangeling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\thechangeling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\bloodthirster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\bloodthirster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|c:\\users\\evans\\desktop\\quartermaster\\world eaters\\jakhals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\jakhals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\space marines\\spacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:space marines\\spacemarines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\skullmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\skullmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos space marines\\khorneberzerkerscsm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos space marines\\khorneberzerkerscsm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\rendmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\rendmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\world eaters\\we_masterofexecutions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\we_masterofexecutions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\skulltaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\skulltaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\world eaters\\lordonjuggernaut.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\lordonjuggernaut.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\chaos daemons\\bloodmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:chaos daemons\\bloodmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\world eaters\\lordinvocatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\lordinvocatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\world eaters\\we_daemonprince.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\we_daemonprince.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\world eaters\\angron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:world eaters\\angron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|C:\\Users\\evans\\Desktop\\Quartermaster\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DE955F1E-4E67-43E2-BEE6-949A01A65278}|Roster Builder.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -254,25 +122,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 25,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAALUBAAAAAAAAAAArwMIBAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAvwI0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T01:54:33.308Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 27,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -280,18 +147,17 @@
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T01:54:21.256Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 19,
               "Title": "SpaceMarines.cs",
               "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\SpaceMarines.cs",
               "RelativeDocumentMoniker": "Space Marines\\SpaceMarines.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Space Marines\\SpaceMarines.cs",
               "RelativeToolTip": "Space Marines\\SpaceMarines.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAwwFwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T01:48:05.566Z",
               "IsPinned": true
@@ -304,697 +170,318 @@
               "RelativeDocumentMoniker": "Template.cs",
               "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Template.cs",
               "RelativeToolTip": "Template.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAYwCICAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAC0FAAAAAAAAAAAswHsKAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-26T00:47:28.245Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ChaosDaemons.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\ChaosDaemons.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\ChaosDaemons.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\ChaosDaemons.cs",
-              "RelativeToolTip": "Chaos Daemons\\ChaosDaemons.cs",
-              "ViewState": "AgIAAL0AAAAAAAAAAAAQwKYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T00:11:58.169Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ChaosDaemonPrince.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\ChaosDaemonPrince.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\ChaosDaemonPrince.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\ChaosDaemonPrince.cs",
-              "RelativeToolTip": "Chaos Daemons\\ChaosDaemonPrince.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABKAAAAAAAAAA==",
+              "Title": "WorldEaters.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WorldEaters.cs",
+              "RelativeDocumentMoniker": "World Eaters\\WorldEaters.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WorldEaters.cs",
+              "RelativeToolTip": "World Eaters\\WorldEaters.cs",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAcwDEAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-04T01:54:18.805Z",
+              "WhenOpened": "2026-06-06T00:29:40.588Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ExaltedEightbound.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\ExaltedEightbound.cs",
+              "RelativeDocumentMoniker": "World Eaters\\ExaltedEightbound.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\ExaltedEightbound.cs",
+              "RelativeToolTip": "World Eaters\\ExaltedEightbound.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAkwCgAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T02:06:53.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Eightbound.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\Eightbound.cs",
+              "RelativeDocumentMoniker": "World Eaters\\Eightbound.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\Eightbound.cs",
+              "RelativeToolTip": "World Eaters\\Eightbound.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAkwFMAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T02:02:34.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LordOfSkulls.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\LordOfSkulls.cs",
+              "RelativeDocumentMoniker": "World Eaters\\LordOfSkulls.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\LordOfSkulls.cs",
+              "RelativeToolTip": "World Eaters\\LordOfSkulls.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwBgAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T01:55:35.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WE_Heldrake.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_Heldrake.cs",
+              "RelativeDocumentMoniker": "World Eaters\\WE_Heldrake.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_Heldrake.cs",
+              "RelativeToolTip": "World Eaters\\WE_Heldrake.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwEMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T01:54:17.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WE_ChaosRhino.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_ChaosRhino.cs",
+              "RelativeDocumentMoniker": "World Eaters\\WE_ChaosRhino.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_ChaosRhino.cs",
+              "RelativeToolTip": "World Eaters\\WE_ChaosRhino.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T01:52:51.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "WE_Maulerfiend.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_Maulerfiend.cs",
+              "RelativeDocumentMoniker": "World Eaters\\WE_Maulerfiend.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_Maulerfiend.cs",
+              "RelativeToolTip": "World Eaters\\WE_Maulerfiend.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T01:51:30.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "WE_Forgefiend.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_Forgefiend.cs",
+              "RelativeDocumentMoniker": "World Eaters\\WE_Forgefiend.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_Forgefiend.cs",
+              "RelativeToolTip": "World Eaters\\WE_Forgefiend.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T01:49:47.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "WE_ChaosPredatorAnnihilator.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_ChaosPredatorAnnihilator.cs",
+              "RelativeDocumentMoniker": "World Eaters\\WE_ChaosPredatorAnnihilator.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_ChaosPredatorAnnihilator.cs",
+              "RelativeToolTip": "World Eaters\\WE_ChaosPredatorAnnihilator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T01:48:16.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "WE_ChaosPredatorDestructor.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_ChaosPredatorDestructor.cs",
+              "RelativeDocumentMoniker": "World Eaters\\WE_ChaosPredatorDestructor.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_ChaosPredatorDestructor.cs",
+              "RelativeToolTip": "World Eaters\\WE_ChaosPredatorDestructor.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAkwDUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T01:45:05.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "WE_Defiler.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_Defiler.cs",
+              "RelativeDocumentMoniker": "World Eaters\\WE_Defiler.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_Defiler.cs",
+              "RelativeToolTip": "World Eaters\\WE_Defiler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T01:39:04.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "WE_ChaosLandRaider.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_ChaosLandRaider.cs",
+              "RelativeDocumentMoniker": "World Eaters\\WE_ChaosLandRaider.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_ChaosLandRaider.cs",
+              "RelativeToolTip": "World Eaters\\WE_ChaosLandRaider.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAgwFEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T01:36:02.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "WE_ChaosSpawn.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_ChaosSpawn.cs",
+              "RelativeDocumentMoniker": "World Eaters\\WE_ChaosSpawn.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_ChaosSpawn.cs",
+              "RelativeToolTip": "World Eaters\\WE_ChaosSpawn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T01:34:54.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WE_Helbrute.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_Helbrute.cs",
+              "RelativeDocumentMoniker": "World Eaters\\WE_Helbrute.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_Helbrute.cs",
+              "RelativeToolTip": "World Eaters\\WE_Helbrute.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T01:28:34.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ChaosTerminators.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\ChaosTerminators.cs",
+              "RelativeDocumentMoniker": "Chaos Space Marines\\ChaosTerminators.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\ChaosTerminators.cs",
+              "RelativeToolTip": "Chaos Space Marines\\ChaosTerminators.cs",
+              "ViewState": "AgIAALMBAAAAAAAAAADwv+UBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T01:20:39.864Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "SoulGrinder.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\SoulGrinder.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\SoulGrinder.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\SoulGrinder.cs",
-              "RelativeToolTip": "Chaos Daemons\\SoulGrinder.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAgwE8AAAAaAAAAAAAAAA==",
+              "Title": "WE_Terminators.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_Terminators.cs",
+              "RelativeDocumentMoniker": "World Eaters\\WE_Terminators.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_Terminators.cs",
+              "RelativeToolTip": "World Eaters\\WE_Terminators.cs",
+              "ViewState": "AgIAAC4BAAAAAAAAAAAawNcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-04T01:28:57.212Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Belakor.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Belakor.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Belakor.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Belakor.cs",
-              "RelativeToolTip": "Chaos Daemons\\Belakor.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAkwHEAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-04T01:20:30.821Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ExaltedSeekerChariot.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\ExaltedSeekerChariot.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\ExaltedSeekerChariot.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\ExaltedSeekerChariot.cs",
-              "RelativeToolTip": "Chaos Daemons\\ExaltedSeekerChariot.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAkwCoAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T03:13:26.89Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SeekerChariot.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\SeekerChariot.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\SeekerChariot.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\SeekerChariot.cs",
-              "RelativeToolTip": "Chaos Daemons\\SeekerChariot.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAqwC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T03:12:42.358Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Hellflayer.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Hellflayer.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Hellflayer.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Hellflayer.cs",
-              "RelativeToolTip": "Chaos Daemons\\Hellflayer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T03:11:43.857Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Seekers.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Seekers.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Seekers.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Seekers.cs",
-              "RelativeToolTip": "Chaos Daemons\\Seekers.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAkwFsAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T03:10:05.035Z"
+              "WhenOpened": "2026-06-09T01:16:40.942Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
-              "Title": "Fiends.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Fiends.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Fiends.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Fiends.cs",
-              "RelativeToolTip": "Chaos Daemons\\Fiends.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAgwEQAAAAAAAAAAAAAAA==",
+              "Title": "Jakhals.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\Jakhals.cs",
+              "RelativeDocumentMoniker": "World Eaters\\Jakhals.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\Jakhals.cs",
+              "RelativeToolTip": "World Eaters\\Jakhals.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T03:08:51.087Z"
+              "WhenOpened": "2026-06-08T03:05:44.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "KhorneBerzerkers.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\KhorneBerzerkers.cs",
+              "RelativeDocumentMoniker": "World Eaters\\KhorneBerzerkers.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\KhorneBerzerkers.cs",
+              "RelativeToolTip": "World Eaters\\KhorneBerzerkers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T02:41:11.09Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "Daemonettes.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Daemonettes.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Daemonettes.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Daemonettes.cs",
-              "RelativeToolTip": "Chaos Daemons\\Daemonettes.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAkwF4AAAAAAAAAAAAAAA==",
+              "Title": "KhorneBerzerkersCSM.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\KhorneBerzerkersCSM.cs",
+              "RelativeDocumentMoniker": "Chaos Space Marines\\KhorneBerzerkersCSM.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Space Marines\\KhorneBerzerkersCSM.cs",
+              "RelativeToolTip": "Chaos Space Marines\\KhorneBerzerkersCSM.cs",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAwwLQAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T03:07:33.961Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "TormentbringerHellflayer.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\TormentbringerHellflayer.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\TormentbringerHellflayer.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\TormentbringerHellflayer.cs",
-              "RelativeToolTip": "Chaos Daemons\\TormentbringerHellflayer.cs",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAkwLQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T03:04:57.584Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "TormentbringerChariot.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\TormentbringerChariot.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\TormentbringerChariot.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\TormentbringerChariot.cs",
-              "RelativeToolTip": "Chaos Daemons\\TormentbringerChariot.cs",
-              "ViewState": "AgIAAIwAAAAAAAAAAAAYwLQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T03:03:45.642Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Tranceweaver.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Tranceweaver.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Tranceweaver.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Tranceweaver.cs",
-              "RelativeToolTip": "Chaos Daemons\\Tranceweaver.cs",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAkwLAAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T03:02:25.122Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "TormentbringerExalted.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\TormentbringerExalted.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\TormentbringerExalted.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\TormentbringerExalted.cs",
-              "RelativeToolTip": "Chaos Daemons\\TormentbringerExalted.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T03:00:02.02Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "ContortedEpitome.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\ContortedEpitome.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\ContortedEpitome.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\ContortedEpitome.cs",
-              "RelativeToolTip": "Chaos Daemons\\ContortedEpitome.cs",
-              "ViewState": "AgIAAI8AAAAAAAAAAAAgwLkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T02:57:36.87Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "SyllEsske.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\SyllEsske.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\SyllEsske.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\SyllEsske.cs",
-              "RelativeToolTip": "Chaos Daemons\\SyllEsske.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAkwHcAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T02:53:50.616Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "MasqueOfSlaanesh.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\MasqueOfSlaanesh.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\MasqueOfSlaanesh.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\MasqueOfSlaanesh.cs",
-              "RelativeToolTip": "Chaos Daemons\\MasqueOfSlaanesh.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAkwE0AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T02:52:02.386Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "InfernalEnrapturess.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\InfernalEnrapturess.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\InfernalEnrapturess.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\InfernalEnrapturess.cs",
-              "RelativeToolTip": "Chaos Daemons\\InfernalEnrapturess.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwCoAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T02:50:06.69Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "KeeperOfSecrets.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\KeeperOfSecrets.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\KeeperOfSecrets.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\KeeperOfSecrets.cs",
-              "RelativeToolTip": "Chaos Daemons\\KeeperOfSecrets.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAK4AAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T02:38:37.915Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "ShalaxiHelbane.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\ShalaxiHelbane.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\ShalaxiHelbane.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\ShalaxiHelbane.cs",
-              "RelativeToolTip": "Chaos Daemons\\ShalaxiHelbane.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T02:34:07.034Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "FeculentGnarlmaw.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\FeculentGnarlmaw.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\FeculentGnarlmaw.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\FeculentGnarlmaw.cs",
-              "RelativeToolTip": "Chaos Daemons\\FeculentGnarlmaw.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwB4AAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T02:26:53.233Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "PlagueDrones.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\PlagueDrones.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\PlagueDrones.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\PlagueDrones.cs",
-              "RelativeToolTip": "Chaos Daemons\\PlagueDrones.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAowKcAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T02:03:22.775Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "BeastsOfNurgle.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\BeastsOfNurgle.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\BeastsOfNurgle.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\BeastsOfNurgle.cs",
-              "RelativeToolTip": "Chaos Daemons\\BeastsOfNurgle.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwEAAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T01:58:36.356Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Nurglings.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Nurglings.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Nurglings.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Nurglings.cs",
-              "RelativeToolTip": "Chaos Daemons\\Nurglings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T01:57:10.95Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "Plaguebearers.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Plaguebearers.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Plaguebearers.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Plaguebearers.cs",
-              "RelativeToolTip": "Chaos Daemons\\Plaguebearers.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwFMAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T01:53:31.586Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "HorticulousSlimux.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\HorticulousSlimux.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\HorticulousSlimux.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\HorticulousSlimux.cs",
-              "RelativeToolTip": "Chaos Daemons\\HorticulousSlimux.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAkwFUAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T01:41:34.49Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "SloppityBilepiper.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\SloppityBilepiper.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\SloppityBilepiper.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\SloppityBilepiper.cs",
-              "RelativeToolTip": "Chaos Daemons\\SloppityBilepiper.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAgwJAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T01:39:00.626Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Epidemius.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Epidemius.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Epidemius.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Epidemius.cs",
-              "RelativeToolTip": "Chaos Daemons\\Epidemius.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAYwFgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T01:32:17.904Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "SpoilpoxScrivener.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\SpoilpoxScrivener.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\SpoilpoxScrivener.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\SpoilpoxScrivener.cs",
-              "RelativeToolTip": "Chaos Daemons\\SpoilpoxScrivener.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAkwJAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T01:27:36.838Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Poxbringer.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Poxbringer.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Poxbringer.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Poxbringer.cs",
-              "RelativeToolTip": "Chaos Daemons\\Poxbringer.cs",
-              "ViewState": "AgIAAIoAAAAAAAAAAAAgwLQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T01:20:58.892Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GreatUncleanOne.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\GreatUncleanOne.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\GreatUncleanOne.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\GreatUncleanOne.cs",
-              "RelativeToolTip": "Chaos Daemons\\GreatUncleanOne.cs",
-              "ViewState": "AgIAAMkAAAAAAAAAAAAQwO8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T00:59:06.675Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Rotigus.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Rotigus.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Rotigus.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Rotigus.cs",
-              "RelativeToolTip": "Chaos Daemons\\Rotigus.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAQwHsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T00:54:01.08Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "BurningChariot.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\BurningChariot.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\BurningChariot.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\BurningChariot.cs",
-              "RelativeToolTip": "Chaos Daemons\\BurningChariot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T21:54:14.577Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "ExaltedFlamer.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\ExaltedFlamer.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\ExaltedFlamer.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\ExaltedFlamer.cs",
-              "RelativeToolTip": "Chaos Daemons\\ExaltedFlamer.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T21:51:41.319Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Screamers.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Screamers.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Screamers.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Screamers.cs",
-              "RelativeToolTip": "Chaos Daemons\\Screamers.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAwEQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T21:49:28.137Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Flamers.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Flamers.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Flamers.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Flamers.cs",
-              "RelativeToolTip": "Chaos Daemons\\Flamers.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAYwEQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T21:47:47.584Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "PinkHorrors.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\PinkHorrors.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\PinkHorrors.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\PinkHorrors.cs",
-              "RelativeToolTip": "Chaos Daemons\\PinkHorrors.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAgwF4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T21:45:37.433Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "BlueHorrors.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\BlueHorrors.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\BlueHorrors.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\BlueHorrors.cs",
-              "RelativeToolTip": "Chaos Daemons\\BlueHorrors.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAQwBAAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T21:42:07.547Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "Changecaster.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Changecaster.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Changecaster.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Changecaster.cs",
-              "RelativeToolTip": "Chaos Daemons\\Changecaster.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwMMAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T21:34:21.312Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "TheBlueScribes.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\TheBlueScribes.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\TheBlueScribes.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\TheBlueScribes.cs",
-              "RelativeToolTip": "Chaos Daemons\\TheBlueScribes.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAgwEoAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T21:31:20.152Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "Fluxmaster.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Fluxmaster.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Fluxmaster.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Fluxmaster.cs",
-              "RelativeToolTip": "Chaos Daemons\\Fluxmaster.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T21:24:29.006Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Fateskimmer.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Fateskimmer.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Fateskimmer.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Fateskimmer.cs",
-              "RelativeToolTip": "Chaos Daemons\\Fateskimmer.cs",
-              "ViewState": "AgIAAMIAAAAAAAAAAAAQwOgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T21:08:17.933Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "TheChangeling.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\TheChangeling.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\TheChangeling.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\TheChangeling.cs",
-              "RelativeToolTip": "Chaos Daemons\\TheChangeling.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAkwFcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T21:01:46.418Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "LordOfChange.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\LordOfChange.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\LordOfChange.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\LordOfChange.cs",
-              "RelativeToolTip": "Chaos Daemons\\LordOfChange.cs",
-              "ViewState": "AgIAAMIAAAAAAAAAAAAgwOwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T19:55:35.678Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "KairosFateweaver.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\KairosFateweaver.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\KairosFateweaver.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\KairosFateweaver.cs",
-              "RelativeToolTip": "Chaos Daemons\\KairosFateweaver.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAkwIAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T19:45:33.075Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "SkullAltar.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\SkullAltar.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\SkullAltar.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\SkullAltar.cs",
-              "RelativeToolTip": "Chaos Daemons\\SkullAltar.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T02:39:16.956Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "SkullCannon.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\SkullCannon.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\SkullCannon.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\SkullCannon.cs",
-              "RelativeToolTip": "Chaos Daemons\\SkullCannon.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAqwC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T02:36:04.33Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "FleshHounds.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\FleshHounds.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\FleshHounds.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\FleshHounds.cs",
-              "RelativeToolTip": "Chaos Daemons\\FleshHounds.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAYwEQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T02:33:36.485Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Bloodcrushers.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Bloodcrushers.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Bloodcrushers.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Bloodcrushers.cs",
-              "RelativeToolTip": "Chaos Daemons\\Bloodcrushers.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAYwHIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T02:29:39.74Z"
+              "WhenOpened": "2026-06-08T02:40:50.772Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "Bloodletters.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Bloodletters.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Bloodletters.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Bloodletters.cs",
-              "RelativeToolTip": "Chaos Daemons\\Bloodletters.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAQwF4AAAAAAAAAAAAAAA==",
+              "Title": "WE_MasterOfExecutions.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_MasterOfExecutions.cs",
+              "RelativeDocumentMoniker": "World Eaters\\WE_MasterOfExecutions.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_MasterOfExecutions.cs",
+              "RelativeToolTip": "World Eaters\\WE_MasterOfExecutions.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAkwGsAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T02:24:26.33Z"
+              "WhenOpened": "2026-06-08T02:37:47.143Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "Karanak.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Karanak.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Karanak.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Karanak.cs",
-              "RelativeToolTip": "Chaos Daemons\\Karanak.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAowFgAAAABAAAAAAAAAA==",
+              "DocumentIndex": 22,
+              "Title": "LordOnJuggernaut.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\LordOnJuggernaut.cs",
+              "RelativeDocumentMoniker": "World Eaters\\LordOnJuggernaut.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\LordOnJuggernaut.cs",
+              "RelativeToolTip": "World Eaters\\LordOnJuggernaut.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAswG8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T02:19:55.479Z"
+              "WhenOpened": "2026-06-08T02:31:03.023Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "Rendmaster.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Rendmaster.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Rendmaster.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Rendmaster.cs",
-              "RelativeToolTip": "Chaos Daemons\\Rendmaster.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
+              "DocumentIndex": 24,
+              "Title": "WE_DaemonPrince.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_DaemonPrince.cs",
+              "RelativeDocumentMoniker": "World Eaters\\WE_DaemonPrince.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\WE_DaemonPrince.cs",
+              "RelativeToolTip": "World Eaters\\WE_DaemonPrince.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAQwCsAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T02:15:05.079Z"
+              "WhenOpened": "2026-06-08T02:09:38.601Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "Skullmaster.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Skullmaster.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Skullmaster.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Skullmaster.cs",
-              "RelativeToolTip": "Chaos Daemons\\Skullmaster.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHsAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 23,
+              "Title": "LordInvocatus.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\LordInvocatus.cs",
+              "RelativeDocumentMoniker": "World Eaters\\LordInvocatus.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\LordInvocatus.cs",
+              "RelativeToolTip": "World Eaters\\LordInvocatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T02:12:41.979Z"
+              "WhenOpened": "2026-06-08T02:15:34.564Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
-              "Title": "Bloodmaster.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Bloodmaster.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Bloodmaster.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Bloodmaster.cs",
-              "RelativeToolTip": "Chaos Daemons\\Bloodmaster.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAA/wHsAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 26,
+              "Title": "Angron.cs",
+              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\Angron.cs",
+              "RelativeDocumentMoniker": "World Eaters\\Angron.cs",
+              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\World Eaters\\Angron.cs",
+              "RelativeToolTip": "World Eaters\\Angron.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T02:08:13.562Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 59,
-              "Title": "Skulltaker.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Skulltaker.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Skulltaker.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Skulltaker.cs",
-              "RelativeToolTip": "Chaos Daemons\\Skulltaker.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAswFgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T02:06:26.65Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "Bloodthirster.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Bloodthirster.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Bloodthirster.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Bloodthirster.cs",
-              "RelativeToolTip": "Chaos Daemons\\Bloodthirster.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwCsAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T01:42:17.841Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "Skarbrand.cs",
-              "DocumentMoniker": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Skarbrand.cs",
-              "RelativeDocumentMoniker": "Chaos Daemons\\Skarbrand.cs",
-              "ToolTip": "C:\\Users\\evans\\Desktop\\Quartermaster\\Chaos Daemons\\Skarbrand.cs",
-              "RelativeToolTip": "Chaos Daemons\\Skarbrand.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAgwFgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T01:28:46.675Z"
+              "WhenOpened": "2026-06-08T02:14:27.973Z"
             }
           ]
         }

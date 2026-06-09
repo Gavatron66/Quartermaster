@@ -5,17 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Chaos_Space_Marines
+namespace Roster_Builder.World_Eaters
 {
-    public class ChaosTerminators : Datasheets
+    public class WE_Terminators : Datasheets
     {
         int currentIndex;
         List<int> restrictedIndexes2 = new List<int>();
         int[] restrict = new int[] { 0, 0, 0, 0, 0, 0, 0 };
 
-        public ChaosTerminators()
+        public WE_Terminators()
         {
-            DEFAULT_POINTS = 36;
+            DEFAULT_POINTS = 35;
             UnitSize = 5;
             Points = UnitSize * DEFAULT_POINTS;
             TemplateCode = "NL2m";
@@ -26,29 +26,26 @@ namespace Roster_Builder.Chaos_Space_Marines
             }
             Keywords.AddRange(new string[]
             {
-                "CHAOS", "HERETIC ASTARTES", "TRAITORS ASTARTES", "CHAOS UNDIVDED", "<LEGION>",
-                "INFANTRY", "CORE", "TERMINATOR", "CHAOS TERMINATOR SQUAD"
+                "CHAOS", "KHORNE", "HERETIC ASTARTES", "BUTCHER ASTARTES", "WORLD EATERS",
+                "INFANTRY", "CORE", "TERMINATOR", "TERMINATOR SQUAD"
             });
             Role = "Elites";
         }
 
         public override Datasheets CreateUnit()
         {
-            return new ChaosTerminators();
+            return new WE_Terminators();
         }
 
         public override void LoadDatasheets(Panel panel, Faction f)
         {
-            repo = f as ChaosSpaceMarines;
+            repo = f as WorldEaters;
             Template.LoadTemplate(TemplateCode, panel);
 
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
-            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
-            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 
@@ -59,10 +56,10 @@ namespace Roster_Builder.Chaos_Space_Marines
             nudUnitSize.Value = currentSize;
 
             lbModelSelect.Items.Clear();
-            lbModelSelect.Items.Add("Terminator Champion w/ " + Weapons[0] + " and " + Weapons[1]);
+            lbModelSelect.Items.Add("World Eaters Terminator Champion w/ " + Weapons[0] + " and " + Weapons[1]);
             for (int i = 1; i < UnitSize; i++)
             {
-                lbModelSelect.Items.Add("Chaos Terminator w/ " + Weapons[(i * 2)] + " and " + Weapons[(i * 2) + 1]);
+                lbModelSelect.Items.Add("World Eaters Terminator w/ " + Weapons[(i * 2)] + " and " + Weapons[(i * 2) + 1]);
             }
 
             cmbOption2.Items.Clear();
@@ -72,62 +69,6 @@ namespace Roster_Builder.Chaos_Space_Marines
                 "Chainfist (+5 pts)",
                 "Power Fist (+5 pts)"
             });
-
-            cmbFaction.Visible = true;
-            panel.Controls["lblFactionupgrade"].Visible = true;
-
-            cmbFaction.Items.Clear();
-            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-
-            if (Factionupgrade != null)
-            {
-                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-            }
-            else
-            {
-                cmbFaction.SelectedIndex = 0;
-            }
-
-            cbStratagem5.Text = repo.StratagemList[2];
-            cbStratagem5.Location = new System.Drawing.Point(panel.Controls["lblFactionupgrade"].Location.X, cmbFaction.Location.Y + 30);
-            panel.Controls["lblRelic"].Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 30);
-            cmbRelic.Location = new System.Drawing.Point(cbStratagem5.Location.X, cbStratagem5.Location.Y + 50);
-
-            cmbRelic.Items.Clear();
-            cmbRelic.Items.AddRange(f.GetRelics(this.Keywords).ToArray());
-
-            if (Stratagem.Contains(cbStratagem5.Text))
-            {
-                cbStratagem5.Checked = true;
-                cbStratagem5.Enabled = true;
-
-                panel.Controls["lblRelic"].Visible = true;
-                cmbRelic.Visible = true;
-
-                if (Relic == "(None)")
-                {
-                    cmbRelic.SelectedIndex = 0;
-                }
-                else
-                {
-                    if (Relic != null && cmbRelic.Items.Contains(Relic))
-                    {
-                        cmbRelic.SelectedIndex = cmbRelic.Items.IndexOf(Relic);
-                    }
-                    else
-                    {
-                        cmbRelic.SelectedIndex = 0;
-                    }
-                }
-            }
-            else
-            {
-                cbStratagem5.Checked = false;
-                cmbRelic.SelectedIndex = 0;
-            }
-
-            panel.Controls["lblRelic"].Visible = false;
-            cmbRelic.Visible = false;
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -136,9 +77,6 @@ namespace Roster_Builder.Chaos_Space_Marines
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbOption2 = panel.Controls["cmbOption2"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
-            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
-            ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
 
             switch (code)
             {
@@ -148,11 +86,11 @@ namespace Roster_Builder.Chaos_Space_Marines
                         Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
                         if (currentIndex == 0)
                         {
-                            lbModelSelect.Items[0] = "Terminator Champion w/ " + Weapons[0] + " and " + Weapons[1];
+                            lbModelSelect.Items[0] = "World Eaters Terminator Champion w/ " + Weapons[0] + " and " + Weapons[1];
                         }
                         else
                         {
-                            lbModelSelect.Items[currentIndex] = "Chaos Terminator w/ " + Weapons[(currentIndex * 2)]
+                            lbModelSelect.Items[currentIndex] = "World Eaters Terminator w/ " + Weapons[(currentIndex * 2)]
                                 + " and " + Weapons[(currentIndex * 2) + 1];
                         }
                     }
@@ -161,7 +99,8 @@ namespace Roster_Builder.Chaos_Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex * 2]);
                     }
 
-                    if(Weapons[currentIndex * 2] == "Accursed Weapon ") {
+                    if (Weapons[currentIndex * 2] == "Accursed Weapon ")
+                    {
                         LoadOptions(cmbOption1, cmbOption2);
                     }
                     break;
@@ -171,11 +110,11 @@ namespace Roster_Builder.Chaos_Space_Marines
                         Weapons[(currentIndex * 2) + 1] = cmbOption2.SelectedItem.ToString();
                         if (currentIndex == 0)
                         {
-                            lbModelSelect.Items[0] = "Terminator Champion w/ " + Weapons[0] + " and " + Weapons[1];
+                            lbModelSelect.Items[0] = "World Eaters Terminator Champion w/ " + Weapons[0] + " and " + Weapons[1];
                         }
                         else
                         {
-                            lbModelSelect.Items[currentIndex] = "Chaos Terminator w/ " + Weapons[(currentIndex * 2)]
+                            lbModelSelect.Items[currentIndex] = "World Eaters Terminator w/ " + Weapons[(currentIndex * 2)]
                                 + " and " + Weapons[(currentIndex * 2) + 1];
                         }
                     }
@@ -183,41 +122,6 @@ namespace Roster_Builder.Chaos_Space_Marines
                     {
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
                     }
-                    break;
-                case 16:
-                    Factionupgrade = cmbFaction.Text;
-                    break;
-                case 17:
-                    string chosenRelic = cmbRelic.SelectedItem.ToString();
-                    cmbOption1.Enabled = true;
-                    cmbOption2.Enabled = true;
-                    Relic = chosenRelic;
-
-                    if(chosenRelic == "Hyper-Growth Bolts" || chosenRelic == "Spitespitter" || chosenRelic == "Loyalty's Reward")
-                    {
-                        cmbOption1.SelectedIndex = 1;
-                        restrictedIndexes.Add(0);
-                    }
-                    else if(chosenRelic == "Maelstrom's Bite")
-                    {
-                        if (restrict[4] == 2 && Weapons[0] != "Combi-melta (+5 pts)")
-                        {
-                            int indexChange = Weapons.LastIndexOf("Combi-melta (+5 pts)");
-                            Weapons[indexChange] = "Combi-bolter";
-                            lbModelSelect.Items[indexChange / 2] = "Chaos Terminator w/ " + Weapons[indexChange]
-                                + " and " + Weapons[indexChange + 1];
-                        }
-
-                        cmbOption1.SelectedIndex = 3;
-                        cmbOption1.Enabled = false;
-                    }
-                    else if (chosenRelic == "Ashen Axe" || chosenRelic == "Claw of the Stygian Count" || chosenRelic == "The Black Mace")
-                    {
-                        cmbOption2.SelectedIndex = 0;
-                        cmbOption2.Enabled = false;
-                    }
-
-                    LoadOptions(cmbOption1, cmbOption2);
                     break;
                 case 30:
                     int temp = UnitSize;
@@ -229,7 +133,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                         {
                             Weapons.Add("Combi-bolter");
                             Weapons.Add("Accursed Weapon");
-                            lbModelSelect.Items.Add("Chaos Terminator w/ " + Weapons[(currentIndex * 2)]
+                            lbModelSelect.Items.Add("World Eaters Terminator w/ " + Weapons[(currentIndex * 2)]
                                 + " and " + Weapons[(currentIndex * 2) + 1]);
                         }
                     }
@@ -248,15 +152,12 @@ namespace Roster_Builder.Chaos_Space_Marines
 
                     currentIndex = lbModelSelect.SelectedIndex;
 
-                    if(currentIndex < 0)
+                    if (currentIndex < 0)
                     {
                         cmbOption1.Visible = false;
                         cmbOption2.Visible = false;
                         panel.Controls["lblOption1"].Visible = false;
                         panel.Controls["lblOption2"].Visible = false;
-                        cbStratagem5.Visible = false;
-                        cmbRelic.Visible = false;
-                        panel.Controls["lblRelic"].Visible = false;
                         break;
                     }
 
@@ -266,15 +167,8 @@ namespace Roster_Builder.Chaos_Space_Marines
                         cmbOption2.Visible = true;
                         panel.Controls["lblOption1"].Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
-                        cbStratagem5.Visible = true;
                         cmbOption1.Enabled = true;
                         cmbOption2.Enabled = true;
-
-                        if (Stratagem.Contains(cbStratagem5.Text))
-                        {
-                            panel.Controls["lblRelic"].Visible = true;
-                            cmbRelic.Visible = true;
-                        }
 
                         cmbOption1.Items.Clear();
                         cmbOption1.Items.AddRange(new string[]
@@ -290,17 +184,6 @@ namespace Roster_Builder.Chaos_Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2)]);
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
                         LoadOptions(cmbOption1, cmbOption2);
-                        
-                        if (Relic == "Maelstrom's Bite")
-                        {
-                            cmbOption1.SelectedIndex = 3;
-                            cmbOption1.Enabled = false;
-                        }
-                        else if (Relic == "Ashen Axe" || Relic == "Claw of the Stygian Count" || Relic == "The Black Mace")
-                        {
-                            cmbOption2.SelectedIndex = 0;
-                            cmbOption2.Enabled = false;
-                        }
                     }
                     else
                     {
@@ -308,9 +191,6 @@ namespace Roster_Builder.Chaos_Space_Marines
                         cmbOption2.Visible = true;
                         panel.Controls["lblOption1"].Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
-                        cbStratagem5.Visible = false;
-                        cmbRelic.Visible = false;
-                        panel.Controls["lblRelic"].Visible = false;
                         cmbOption1.Enabled = true;
                         cmbOption2.Enabled = true;
 
@@ -334,24 +214,6 @@ namespace Roster_Builder.Chaos_Space_Marines
 
                     antiLoop = false;
                     break;
-                case 75:
-                    if (cbStratagem5.Checked)
-                    {
-                        Stratagem.Add(cbStratagem5.Text);
-                        panel.Controls["lblRelic"].Visible = true;
-                        cmbRelic.Visible = true;
-                    }
-                    else
-                    {
-                        if (Stratagem.Contains(cbStratagem5.Text))
-                        {
-                            Stratagem.Remove(cbStratagem5.Text);
-                        }
-                        cmbRelic.Visible = false;
-                        panel.Controls["lblRelic"].Visible = false;
-                        cmbRelic.SelectedIndex = 0;
-                    }
-                    break;
                 default: break;
             }
 
@@ -361,7 +223,7 @@ namespace Roster_Builder.Chaos_Space_Marines
 
             foreach (var weapon in Weapons)
             {
-                if(weapon == "Combi-flamer (+5 pts)")
+                if (weapon == "Combi-flamer (+5 pts)")
                 {
                     Points += 5;
                 }
@@ -373,15 +235,15 @@ namespace Roster_Builder.Chaos_Space_Marines
                 {
                     Points += 5;
                 }
-                else if(weapon == "Heavy Flamer (+5 pts)")
+                else if (weapon == "Heavy Flamer (+5 pts)")
                 {
                     Points += 5;
                 }
-                else if(weapon == "Reaper Autocannon (+5 pts)")
+                else if (weapon == "Reaper Autocannon (+5 pts)")
                 {
                     Points += 5;
                 }
-                else if(weapon == "Chainfist (+5 pts)")
+                else if (weapon == "Chainfist (+5 pts)")
                 {
                     Points += 5;
                 }
@@ -394,7 +256,7 @@ namespace Roster_Builder.Chaos_Space_Marines
 
         public override string ToString()
         {
-            return "Chaos Terminator Squad - " + Points + "pts";
+            return "World Eaters Terminator Squad - " + Points + "pts";
         }
 
         private void LoadOptions(ComboBox cmbOption1, ComboBox cmbOption2)
@@ -403,9 +265,9 @@ namespace Roster_Builder.Chaos_Space_Marines
 
             restrict = new int[] { 0, 0, 0, 0, 0, 0, 0 };
 
-            foreach(var item in Weapons)
+            foreach (var item in Weapons)
             {
-                if(item == "Reaper Autocannon (+5 pts)" || item == "Heavy Flamer (+5 pts)")
+                if (item == "Reaper Autocannon (+5 pts)" || item == "Heavy Flamer (+5 pts)")
                 {
                     restrict[0]++;
                 }
@@ -458,7 +320,7 @@ namespace Roster_Builder.Chaos_Space_Marines
             }
 
             //Champion Relics
-            if(currentIndex == 0)
+            if (currentIndex == 0)
             {
                 if (Relic == "Hyper-Growth Bolts" || Relic == "Spitespitter" || Relic == "Loyalty's Reward")
                 {

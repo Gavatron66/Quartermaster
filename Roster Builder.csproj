@@ -974,6 +974,29 @@
     <Compile Include="Tyranids\Venomthropes.cs" />
     <Compile Include="Tyranids\WingedHiveTyrant.cs" />
     <Compile Include="Tyranids\Zoanthropes.cs" />
+    <Compile Include="World Eaters\Angron.cs" />
+    <Compile Include="World Eaters\Eightbound.cs" />
+    <Compile Include="World Eaters\ExaltedEightbound.cs" />
+    <Compile Include="World Eaters\WE_ChaosLandRaider.cs" />
+    <Compile Include="World Eaters\WE_ChaosPredatorAnnihilator.cs" />
+    <Compile Include="World Eaters\WE_ChaosPredatorDestructor.cs" />
+    <Compile Include="World Eaters\WE_ChaosRhino.cs" />
+    <Compile Include="World Eaters\WE_ChaosSpawn.cs" />
+    <Compile Include="World Eaters\WE_Terminators.cs" />
+    <Compile Include="World Eaters\WE_Defiler.cs" />
+    <Compile Include="World Eaters\WE_Forgefiend.cs" />
+    <Compile Include="World Eaters\WE_Helbrute.cs" />
+    <Compile Include="World Eaters\WE_Heldrake.cs" />
+    <Compile Include="World Eaters\Jakhals.cs" />
+    <Compile Include="World Eaters\Kharn.cs" />
+    <Compile Include="World Eaters\KhorneBerzerkers.cs" />
+    <Compile Include="World Eaters\LordOfSkulls.cs" />
+    <Compile Include="World Eaters\LordInvocatus.cs" />
+    <Compile Include="World Eaters\LordOnJuggernaut.cs" />
+    <Compile Include="World Eaters\WE_Maulerfiend.cs" />
+    <Compile Include="World Eaters\WE_DaemonPrince.cs" />
+    <Compile Include="World Eaters\WE_MasterOfExecutions.cs" />
+    <Compile Include="World Eaters\WorldEaters.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

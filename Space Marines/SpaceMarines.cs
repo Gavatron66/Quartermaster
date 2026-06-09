@@ -1,5 +1,4 @@
-﻿using Roster_Builder.Genestealer_Cults;
-using Roster_Builder.Space_Marines;
+﻿using Roster_Builder.Space_Marines;
 using Roster_Builder.Space_Marines.Ultramarines;
 using Roster_Builder.Space_Marines.Salamanders;
 using Roster_Builder.Space_Marines.Raven_Guard;

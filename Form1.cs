@@ -29,6 +29,7 @@ using Roster_Builder.Chaos_Space_Marines;
 using Roster_Builder.Aeldari.Ynnari;
 using Roster_Builder.Thousand_Sons;
 using Roster_Builder.Chaos_Daemons;
+using Roster_Builder.World_Eaters;
 
 namespace Roster_Builder
 {
@@ -104,6 +105,7 @@ namespace Roster_Builder
                 new T_au(),
                 new ThousandSons(),
                 new Tyranids.Tyranids(),
+                new WorldEaters(),
             });
             cmbSelectFaction.Text = string.Empty;
 
@@ -137,6 +139,7 @@ namespace Roster_Builder
                 new T_au(),
                 new ThousandSons(),
                 new Tyranids.Tyranids(),
+                new WorldEaters(),
             });
 
             lbUnits.DrawItem += new DrawItemEventHandler(DrawUnitsWithRestrictions);

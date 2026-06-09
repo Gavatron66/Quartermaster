@@ -1,5 +1,4 @@
-﻿using Roster_Builder.Space_Marines;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Cache;
@@ -7,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Roster_Builder.Genestealer_Cults
+namespace Roster_Builder.Space_Marines
 {
     public class VeteranIntercessors : Datasheets
     {
