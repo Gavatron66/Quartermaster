@@ -328,27 +328,69 @@ namespace Roster_Builder.Imperial_Knights
 
         public override List<string> GetWarlordTraits(string keyword)
         {
+            List<string> traits = new List<string>() { string.Empty };
+
             if(keyword == "Armiger")
             {
-                return new List<string>()
+                traits.AddRange(new string[]
+                {
+                    "Cunning Commander",
+                    "Blessed by the Sacristans",
+                    "Ion Bulwark"
+                });
+            }
+            else
+            {
+                traits.AddRange(new string[]
                 {
                     string.Empty,
                     "Cunning Commander",
                     "Blessed by the Sacristans",
-                    "Ion Bulwark"
-                };
+                    "Ion Bulwark",
+                    "Knight Seneschal",
+                    "Landstrider",
+                    "Revered Knight"
+                });
+
+                if(currentSubFaction == "House Terryn")
+                {
+                    traits.Add("Champion of the Household");
+                }
+                else if(currentSubFaction == "House Griffith")
+                {
+                    traits.Add("Master of the Joust");
+                }
+                else if (currentSubFaction == "House Cadmus")
+                {
+                    traits.Add("Veteran of Gryphonne IV");
+                }
+                else if (currentSubFaction == "House Hawkshroud")
+                {
+                    traits.Add("Duty of the Forsworn");
+                }
+                else if (currentSubFaction == "House Mortan")
+                {
+                    traits.Add("Legacy of the Black Pall");
+                }
+                else if (currentSubFaction == "House Raven")
+                {
+                    traits.Add("Master of the Trial");
+                }
+                else if (currentSubFaction == "House Taranis")
+                {
+                    traits.Add("Knight of Mars");
+                }
+                else if (currentSubFaction == "House Krast")
+                {
+                    traits.Add("First Knight");
+                }
+                else if (currentSubFaction == "House Vulker")
+                {
+                    traits.Add("Adamantine Knight");
+                }
             }
 
-            return new List<string>()
-            {
-                string.Empty,
-                "Cunning Commander",
-                "Blessed by the Sacristans",
-                "Ion Bulwark",
-                "Knight Seneschal",
-                "Landstrider",
-                "Revered Knight"
-            };
+            return traits;
         }
 
         public override void SaveSubFaction(int code, Panel panel)

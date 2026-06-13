@@ -131,6 +131,14 @@ Sergeants
 	Hellblasters
 	Desolation Squad
 
+Arks of Omen TODO List
+	Vashtorr
+	Cartographica Rogue Trader
+	Imperial Navy Breachers
+	Voidsmen-at-arms
+	Vigilant Squad
+	Subductor Squad
+	Exaction Squad
 
             panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 			
@@ -331,3 +339,5 @@ Sergeants
             }
 	
 	restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 12, 13, 14, 15, 17, 18 });
+	
+TODO LIST

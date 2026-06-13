@@ -404,9 +404,12 @@ namespace Roster_Builder.Imperial_Knights
                     }
                     break;
                 case 73:
-                    if (cbStratagem3.Checked && !Stratagem.Contains(cbStratagem3.Text))
+                    if (cbStratagem3.Checked)
                     {
-                        Stratagem.Add(cbStratagem3.Text);
+                        if (!Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Add(cbStratagem3.Text);
+                        }
                         cmbOption6.Visible = true;
                         panel.Controls["lblOption6"].Visible = true;
                     }

@@ -39,7 +39,6 @@ namespace Roster_Builder.Imperial_Knights
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
@@ -49,8 +48,6 @@ namespace Roster_Builder.Imperial_Knights
             panel.Controls["lblOption4"].Location = new System.Drawing.Point(cbOption1.Location.X, cbOption1.Location.Y + 28);
             cmbOption4.Location = new System.Drawing.Point(cbWarlord.Location.X + 4, cbOption1.Location.Y + 56);
 
-            panel.Controls["lblFactionupgrade"].Visible = true;
-            cmbFaction.Visible = true;
             cbOption1.Visible = true;
             panel.Controls["lblOption4"].Visible = true;
             cmbOption4.Visible = true;
@@ -78,7 +75,6 @@ namespace Roster_Builder.Imperial_Knights
                     cmbOption4.SelectedIndex = cmbOption4.Items.IndexOf(freebladeTradition);
                 }
 
-                cmbFaction.Enabled = false;
                 cmbOption4.Enabled = true;
             }
             else if (freebladeTradition != string.Empty)
@@ -86,7 +82,6 @@ namespace Roster_Builder.Imperial_Knights
                 cbOption1.Checked = true;
                 cmbOption4.SelectedIndex = cmbOption4.Items.IndexOf(freebladeTradition);
                 cmbOption4.Enabled = true;
-                cmbFaction.Enabled = false;
             }
             else
             {
@@ -97,18 +92,6 @@ namespace Roster_Builder.Imperial_Knights
                 }
             }
             antiLoop = false;
-
-            cmbFaction.Items.Clear();
-            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-
-            if (Factionupgrade != null)
-            {
-                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-            }
-            else
-            {
-                cmbFaction.SelectedIndex = 0;
-            }
 
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
@@ -259,7 +242,6 @@ namespace Roster_Builder.Imperial_Knights
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
             CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
@@ -313,9 +295,6 @@ namespace Roster_Builder.Imperial_Knights
                         WarlordTrait = string.Empty;
                     }
                     break;
-                case 16:
-                    Factionupgrade = cmbFaction.Text;
-                    break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     cmbOption1.Enabled = true;
@@ -338,23 +317,14 @@ namespace Roster_Builder.Imperial_Knights
                     if (cbOption1.Checked)
                     {
                         cmbOption4.Enabled = true;
-                        cmbFaction.Enabled = false;
 
                         if (repo.currentSubFaction != "Freeblade Lance")
                         {
                             (repo as ImperialKnights).hasFreeblade = true;
                         }
-
-                        if(Factionupgrade != string.Empty)
-                        {
-                            Factionupgrade = string.Empty;
-                            cmbFaction.SelectedIndex = 0;
-                        }
                     }
                     else
                     {
-                        cmbFaction.Enabled = true;
-                        cmbFaction.SelectedIndex = 0;
                         cmbOption4.Enabled = false;
                         cmbOption4.SelectedIndex = -1;
 
@@ -406,9 +376,12 @@ namespace Roster_Builder.Imperial_Knights
                     }
                     break;
                 case 73:
-                    if (cbStratagem3.Checked && !Stratagem.Contains(cbStratagem3.Text))
+                    if (cbStratagem3.Checked)
                     {
-                        Stratagem.Add(cbStratagem3.Text);
+                        if (!Stratagem.Contains(cbStratagem3.Text))
+                        {
+                            Stratagem.Add(cbStratagem3.Text);
+                        }
                         cmbOption6.Visible = true;
                         panel.Controls["lblOption6"].Visible = true;
                     }
@@ -462,8 +435,6 @@ namespace Roster_Builder.Imperial_Knights
             }
 
             Points = DEFAULT_POINTS;
-
-            Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
             if (Weapons[0] == "Meltagun (+5 pts)")
             {

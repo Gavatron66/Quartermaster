@@ -30,6 +30,7 @@ using Roster_Builder.Aeldari.Ynnari;
 using Roster_Builder.Thousand_Sons;
 using Roster_Builder.Chaos_Daemons;
 using Roster_Builder.World_Eaters;
+using Roster_Builder.Chaos_Knights;
 
 namespace Roster_Builder
 {
@@ -91,6 +92,7 @@ namespace Roster_Builder
                 new YnnariFaction(),
                 new AstraMilitarum(),
                 new ChaosDaemons(),
+                new ChaosKnights(),
                 new ChaosSpaceMarines(),
                 new DeathGuard(),
                 new Drukhari.Drukhari(),
@@ -125,6 +127,7 @@ namespace Roster_Builder
                 new YnnariFaction(),
                 new AstraMilitarum(),
                 new ChaosDaemons(),
+                new ChaosKnights(),
                 new ChaosSpaceMarines(),
                 new DeathGuard(),
                 new Drukhari.Drukhari(),

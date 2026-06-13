@@ -349,6 +349,16 @@
     <Compile Include="Chaos Daemons\TormentbringerExalted.cs" />
     <Compile Include="Chaos Daemons\TormentbringerHellflayer.cs" />
     <Compile Include="Chaos Daemons\Tranceweaver.cs" />
+    <Compile Include="Chaos Knights\KnightAbominant.cs" />
+    <Compile Include="Chaos Knights\KnightDesecrator.cs" />
+    <Compile Include="Chaos Knights\KnightDespoiler.cs" />
+    <Compile Include="Chaos Knights\KnightRampager.cs" />
+    <Compile Include="Chaos Knights\KnightTyrant.cs" />
+    <Compile Include="Chaos Knights\WarDogBrigand.cs" />
+    <Compile Include="Chaos Knights\WarDogExecutioner.cs" />
+    <Compile Include="Chaos Knights\WarDogHuntsman.cs" />
+    <Compile Include="Chaos Knights\WarDogKarnivore.cs" />
+    <Compile Include="Chaos Knights\WarDogStalker.cs" />
     <Compile Include="Chaos Space Marines\AbaddonTheDespoiler.cs" />
     <Compile Include="Chaos Space Marines\AccursedCultists.cs" />
     <Compile Include="Chaos Space Marines\ChaosBikers.cs" />
@@ -520,6 +530,7 @@
     <Compile Include="Grey Knights\PurgationSquad.cs" />
     <Compile Include="Grey Knights\Purifiers.cs" />
     <Compile Include="Grey Knights\StrikeSquad.cs" />
+    <Compile Include="Chaos Knights\ChaosKnights.cs" />
     <Compile Include="Imperial Knights\ArmigerWarglaive.cs" />
     <Compile Include="Imperial Knights\ArmigerHelverin.cs" />
     <Compile Include="Imperial Knights\CanisRex.cs" />
