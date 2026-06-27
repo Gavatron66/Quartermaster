@@ -844,6 +844,14 @@ namespace Roster_Builder
         private void cmbSubCustom3_SelectedIndexChanged(object sender, EventArgs e)
         {
             units.SaveSubFaction(53, panelSubFaction);
+
+            if (units is SpaceMarines && units.currentSubFaction == "<Custom>")
+            {
+                lbRoster.Items[0] = units.subFactionName + ": " + units.customSubFactionTraits[2] + " Successor";
+
+                lbUnits.Items.Clear();
+                lbUnits.Items.AddRange(currentDetachment.currentFaction.GetDatasheets().ToArray());
+            }
         }
 
         private void cmbSubCustom4_SelectedIndexChanged(object sender, EventArgs e)

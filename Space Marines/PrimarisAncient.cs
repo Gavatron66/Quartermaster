@@ -194,7 +194,14 @@ namespace Roster_Builder.Space_Marines
             switch (code)
             {
                 case 11:
-                    Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    {
+                        Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+                    }
                     break;
                 case 15:
                     if (cmbWarlord.SelectedIndex != -1)
@@ -233,7 +240,7 @@ namespace Roster_Builder.Space_Marines
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
                     if (chosenRelic == "The Burning Blade" || chosenRelic == "Soldier's Blade" || chosenRelic == "Drakeblade"
                         || chosenRelic == "Scimitar of the Great Khan" || chosenRelic == "The Thief of Secrets" || chosenRelic == "Frost Weapon"
-                        || chosenRelic == "Heavenfall Blade" || chosenRelic == "Sword of Judgement")
+                        || chosenRelic == "Heavenfall Blade" || chosenRelic == "Sword of Judgement" || chosenRelic == "Archangel's Shard")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Power Sword");
                         cmbOption1.Enabled = false;

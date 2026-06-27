@@ -262,7 +262,14 @@ namespace Roster_Builder.Space_Marines
             switch (code)
             {
                 case 11:
-                    Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    if (!restrictedIndexes.Contains(cmbOption1.SelectedIndex))
+                    {
+                        Weapons[0] = cmbOption1.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
+                    }
                     break;
                 case 12:
                     Weapons[1] = cmbOption2.SelectedItem.ToString();
@@ -308,7 +315,7 @@ namespace Roster_Builder.Space_Marines
                     #region Codex: Space Marines
                     if (chosenRelic == "Primarch's Wrath")
                     {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Boltgun");
                         cmbOption1.Enabled = false;
                     }
                     else if (chosenRelic == "Purgatorus")
@@ -323,19 +330,19 @@ namespace Roster_Builder.Space_Marines
                     }
                     else if (chosenRelic == "The Burning Blade")
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Relic Blade");
                         cmbOption2.Enabled = false;
                     }
-                    else if (chosenRelic == "Mortis Machina")
+                    else if (chosenRelic == "The Shield Eternal")
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Omnissian Power Axe");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Storm Shield");
                         cmbOption2.Enabled = false;
                     }
                     #endregion
                     #region Codex Supplement: Ultramarines
                     else if (chosenRelic == "Soldier's Blade")
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Relic Blade");
                         cmbOption2.Enabled = false;
                     }
                     else if (chosenRelic == "Vengeance of Ultramar")
@@ -346,6 +353,7 @@ namespace Roster_Builder.Space_Marines
                     else if (chosenRelic == "Helfury Bolts")
                     {
                         //See the end of SaveDatasheets
+                        cmbOption1.SelectedIndex = 8;
                     }
                     else if (chosenRelic == "Sunwrath Pistol")
                     {
@@ -356,12 +364,12 @@ namespace Roster_Builder.Space_Marines
                     #region Codex Supplement: Salamanders
                     else if (chosenRelic == "Drake-smiter")
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Thunder Hammer");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Thunder Hammer (+10 pts)");
                         cmbOption2.Enabled = false;
                     }
                     else if (chosenRelic == "Wrath of Prometheus")
                     {
-                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Boltgun");
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Master-crafted Boltgun");
                         cmbOption1.Enabled = false;
                     }
                     else if (chosenRelic == "Nocturne's Vengeance")
@@ -369,9 +377,14 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-flamer");
                         cmbOption1.Enabled = false;
                     }
+                    else if (chosenRelic == "Dragonrage Bolts")
+                    {
+                        //See the end of SaveDatasheets
+                        cmbOption1.SelectedIndex = 8;
+                    }
                     else if (chosenRelic == "Drakeblade")
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Relic Blade");
                         cmbOption2.Enabled = false;
                     }
                     #endregion
@@ -380,6 +393,11 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
                         cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Korvidari Bolts")
+                    {
+                        //See the end of SaveDatasheets
+                        cmbOption1.SelectedIndex = 8;
                     }
                     #endregion
                     #region Codex Supplement: Iron Hands
@@ -398,17 +416,27 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Astartes Chainsword");
                         cmbOption2.Enabled = false;
                     }
+                    else if (chosenRelic == "Haywire Bolts")
+                    {
+                        //See the end of SaveDatasheets
+                        cmbOption1.SelectedIndex = 8;
+                    }
                     #endregion
                     #region Codex Supplement: White Scars
                     else if (chosenRelic == "Scimitar of the Great Khan")
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Relic Blade");
                         cmbOption2.Enabled = false;
                     }
                     else if (chosenRelic == "Equis-pattern Bolt Pistol")
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Bolt Pistol");
                         cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Stormwrath Bolts")
+                    {
+                        //See the end of SaveDatasheets
+                        cmbOption1.SelectedIndex = 8;
                     }
                     #endregion
                     #region Codex Supplement: Imperial Fists
@@ -427,12 +455,27 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Fist");
                         cmbOption2.Enabled = false;
                     }
+                    else if (chosenRelic == "Gatebreaker Bolts")
+                    {
+                        //See the end of SaveDatasheets
+                        cmbOption1.SelectedIndex = 8;
+                    }
                     #endregion
                     #region Codex Supplement: Deathwatch
+                    else if (chosenRelic == "Dominus Aegis")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Storm Shield");
+                        cmbOption2.Enabled = false;
+                    }
                     else if (chosenRelic == "The Thief of Secrets")
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Relic Blade");
                         cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Banebolts of Eryxia" || chosenRelic == "Artificer Bolt Cache")
+                    {
+                        //See the end of SaveDatasheets
+                        cmbOption1.SelectedIndex = 10;
                     }
                     #endregion
                     #region Codex Supplement: Space Wolves
@@ -446,10 +489,16 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
                         cmbOption2.Enabled = false;
                     }
+                    else if (chosenRelic == "Morkai's Teeth Bolts")
+                    {
+                        //See the end of SaveDatasheets
+                        cmbOption1.SelectedIndex = 8;
+                    }
                     else if (chosenRelic == "Frost Weapon")
                     {
-                        restrictedIndexes2.AddRange(new int[] { 0, 2, 4, 6, 7 });
+                        restrictedIndexes2.AddRange(new int[] { 0, 2, 4, 5, 7, 8 });
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Axe");
+                        //See the end of SaveDatasheets
                     }
                     #endregion
                     #region Codex Supplement: Dark Angels
@@ -465,7 +514,7 @@ namespace Roster_Builder.Space_Marines
                     }
                     else if (chosenRelic == "Heavenfall Blade")
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Relic Blade");
                         cmbOption2.Enabled = false;
                     }
                     else if (chosenRelic == "Atonement")
@@ -476,16 +525,18 @@ namespace Roster_Builder.Space_Marines
                     else if (chosenRelic == "Bolts of Judgement")
                     {
                         //See the end of SaveDatasheets
+                        cmbOption1.SelectedIndex = 8;
                     }
                     #endregion
                     #region Codex Supplement: Black Templars
                     else if (chosenRelic == "Witchseeker Bolts")
                     {
                         //See the end of SaveDatasheets
+                        cmbOption1.SelectedIndex = 8;
                     }
                     else if (chosenRelic == "Sword of Judgement")
                     {
-                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Relic Blade");
                         cmbOption2.Enabled = false;
                     }
                     else if (chosenRelic == "Perdition's Edge")
@@ -497,6 +548,33 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Combi-flamer");
                         cmbOption1.Enabled = false;
+                    }
+                    #endregion
+                    #region Codex Supplement: Blood Angels
+                    else if (chosenRelic == "Hammer of Baal")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Thunder Hammer");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Severer")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Astartes Chainsword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Quake Bolts")
+                    {
+                        //See the end of SaveDatasheets
+                        cmbOption1.SelectedIndex = 10;
+                    }
+                    else if (chosenRelic == "Archangel's Shard")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Gleaming Pinions")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
                     }
                     #endregion
 
@@ -644,12 +722,10 @@ namespace Roster_Builder.Space_Marines
                 || Relic == "Morkai's Teeth Bolts" || Relic == "Bolts of Judgement" || Relic == "Witchseeker Bolts")
             {
                 restrictedIndexes.AddRange(new int[] { 6, 7 });
-                cmbOption1.SelectedIndex = 0;
             }
-            else if (Relic == "Banebolts of Eryxia" || Relic == "Artificer Bolt Cache")
+            else if (Relic == "Banebolts of Eryxia" || Relic == "Artificer Bolt Cache" || Relic == "Quake Bolts")
             {
                 restrictedIndexes.AddRange(new int[] { 6, 7, 8, 9 });
-                cmbOption1.SelectedIndex = 1;
             }
             this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
             this.DrawItemWithRestrictions(restrictedIndexes2, cmbOption2);

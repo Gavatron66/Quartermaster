@@ -372,6 +372,13 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Blood Angels
+                    else if (chosenRelic == "Quake Bolts")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -439,7 +446,16 @@ namespace Roster_Builder.Space_Marines
                         panel.Controls["lblOption2"].Visible = true;
                         cbOption1.Visible = true;
                         cbOption2.Visible = true;
-                        cbStratagem4.Visible = true;
+
+                        if (repo.currentSubFaction == "Black Templars")
+                        {
+                            cbStratagem4.Visible = true;
+                        }
+                        else
+                        {
+                            cbStratagem4.Visible = false;
+                        }
+
                         cbStratagem5.Visible = true;
 
                         if (Stratagem.Contains(cbStratagem5.Text))

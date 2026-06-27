@@ -269,6 +269,16 @@ namespace Roster_Builder.Space_Marines
                         restrictedIndexes.AddRange(new int[] { 2, 3 });
                         cmbOption1.SelectedIndex = 1;
                     }
+                    else if(chosenRelic == "Hammer of Baal")
+                    {
+                        cmbOption1.SelectedIndex = 3;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Quake Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 3 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
                     else
                     {
                         cmbOption1.Enabled = true;

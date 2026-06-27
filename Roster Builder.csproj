@@ -687,6 +687,24 @@
     <Compile Include="Space Marines\Black Templars\PrimarisSwordBrethren.cs" />
     <Compile Include="Space Marines\BladeguardAncient.cs" />
     <Compile Include="Space Marines\BladeguardVeterans.cs" />
+    <Compile Include="Space Marines\Blood Angels\Astorath.cs" />
+    <Compile Include="Space Marines\Blood Angels\BaalPredator.cs" />
+    <Compile Include="Space Marines\Blood Angels\BrotherCorbulo.cs" />
+    <Compile Include="Space Marines\Blood Angels\CaptainTycho.cs" />
+    <Compile Include="Space Marines\Blood Angels\CommanderDante.cs" />
+    <Compile Include="Space Marines\Blood Angels\DeathCompany.cs" />
+    <Compile Include="Space Marines\Blood Angels\DeathCompanyDreadnought.cs" />
+    <Compile Include="Space Marines\Blood Angels\FuriosoDreadnought.cs" />
+    <Compile Include="Space Marines\Blood Angels\Lemartes.cs" />
+    <Compile Include="Space Marines\Blood Angels\LibrarianDreadnought.cs" />
+    <Compile Include="Space Marines\Blood Angels\Mephiston.cs" />
+    <Compile Include="Space Marines\Blood Angels\PrimarisDeathCompany.cs" />
+    <Compile Include="Space Marines\Blood Angels\SanguinaryAncient.cs" />
+    <Compile Include="Space Marines\Blood Angels\SanguinaryGuard.cs" />
+    <Compile Include="Space Marines\Blood Angels\SanguinaryPriest.cs" />
+    <Compile Include="Space Marines\Blood Angels\TheSanguinor.cs" />
+    <Compile Include="Space Marines\Blood Angels\TychoTheLost.cs" />
+    <Compile Include="Space Marines\Flesh Tearers\GabrielSeth.cs" />
     <Compile Include="Space Marines\BrutalisDreadnought.cs" />
     <Compile Include="Space Marines\Captain.cs" />
     <Compile Include="Space Marines\CenturionAssault.cs" />
@@ -1049,8 +1067,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Space Marines\Blood Angels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

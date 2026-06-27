@@ -380,6 +380,13 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Blood Angels
+                    else if (chosenRelic == "Quake Bolts")
+                    {
+                        cmbOption1.SelectedIndex = 0;
+                        cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -467,7 +474,15 @@ namespace Roster_Builder.Space_Marines
                     if(currentIndex == 0)
                     {
                         cbOption1.Visible = false;
-                        cbStratagem4.Visible = true;
+                        if (repo.currentSubFaction == "Black Templars")
+                        {
+                            cbStratagem4.Visible = true;
+                        }
+                        else
+                        {
+                            cbStratagem4.Visible = false;
+                        }
+
                         cbStratagem5.Visible = true;
 
                         if (Stratagem.Contains(cbStratagem5.Text))
@@ -498,7 +513,8 @@ namespace Roster_Builder.Space_Marines
 
                         if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
                             || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
-                            || Relic == "Morkai's Teeth Bolts" || Relic == "Bolts of Judgement" || Relic == "Witchseeker Bolts")
+                            || Relic == "Morkai's Teeth Bolts" || Relic == "Bolts of Judgement" || Relic == "Witchseeker Bolts"
+                            || Relic == "Quake Bolts")
                         {
                             cmbOption1.Enabled = false;
                         }

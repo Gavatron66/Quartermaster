@@ -64,6 +64,34 @@ namespace Roster_Builder.Space_Marines
                 "Twin Accelerator Autocannon",
                 "Twin Las-talon",
             });
+
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            cbStratagem5.Location = new System.Drawing.Point(cmbOption1.Location.X, cmbOption1.Location.Y + 32);
+            
+            if (repo.customSubFactionTraits[2] == "Blood Angels")
+            {
+                cbStratagem5.Visible = true;
+                cbStratagem5.Text = "Stratagem: Lucifer-pattern Engine";
+            }
+            else
+            {
+                cbStratagem5.Visible = false;
+                if (Stratagem.Contains(cbStratagem5.Text))
+                {
+                    Stratagem.Remove(cbStratagem5.Text);
+                }
+            }
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cbStratagem5.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem5.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -76,6 +104,7 @@ namespace Roster_Builder.Space_Marines
             NumericUpDown nudUnitSize = panel.Controls["nudUnitSize"] as NumericUpDown;
             ListBox lbModelSelect = panel.Controls["lbModelSelect"] as ListBox;
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
 
             switch (code)
             {
@@ -117,6 +146,19 @@ namespace Roster_Builder.Space_Marines
                         isLoading = false;
                         break;
                     }
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                    }
+                    break;
             }
 
             Points = DEFAULT_POINTS * UnitSize;

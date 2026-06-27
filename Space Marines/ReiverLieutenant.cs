@@ -75,15 +75,23 @@ namespace Roster_Builder.Space_Marines
             cmbFaction.Items.Clear();
             cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
 
-            if (Factionupgrade != null)
+            if (repo.customSubFactionTraits[2] == "Blood Angels")
             {
-                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-            }
-            else
-            {
-                cmbFaction.SelectedIndex = 0;
-            }
+                cmbFaction.Visible = true;
+                panel.Controls["lblFactionupgrade"].Visible = true;
 
+                cmbFaction.Items.Clear();
+                cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+
+                if (Factionupgrade != null)
+                {
+                    cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+                }
+                else
+                {
+                    cmbFaction.SelectedIndex = 0;
+                }
+            }
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
             CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;

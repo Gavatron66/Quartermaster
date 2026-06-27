@@ -92,8 +92,8 @@ namespace Roster_Builder.Space_Marines
             });
             if (f.currentSubFaction == "Blood Angels" || f.currentSubFaction == "Deathwatch")
             {
-                cmbOption1.Items.Insert(3, "Hand Flamer");
-                cmbOption1.Items.Insert(4, "Inferno Pistol");
+                cmbOption2.Items.Insert(3, "Hand Flamer");
+                cmbOption2.Items.Insert(4, "Inferno Pistol");
             }
 
             cbOption1.Text = "May include an Armorium Cherub";
@@ -223,10 +223,12 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[currentIndex + 1]);
                     }
-
-                    if (!Weapons.Contains("Power Fist") && Factionupgrade.Contains("Fist of Balthus"))
+                    if (repo.currentSubFaction == "Black Templars")
                     {
-                        cmbFaction.SelectedIndex = 0;
+                        if (!Weapons.Contains("Power Fist") && Factionupgrade.Contains("Fist of Balthus"))
+                        {
+                            cmbFaction.SelectedIndex = 0;
+                        }
                     }
                     break;
                 case 12:
@@ -413,6 +415,18 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Blood Angels Strat Relics
+                    else if (chosenRelic == "Quake Bolts (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17 });
+                    }
+                    else if (chosenRelic == "Quake Bolts (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
                     Relic = chosenRelic;
@@ -464,7 +478,16 @@ namespace Roster_Builder.Space_Marines
                     {
                         cmbOption1.Enabled = true;
                         cmbOption2.Visible = true;
-                        cbStratagem4.Visible = true;
+
+                        if (repo.currentSubFaction == "Black Templars")
+                        {
+                            cbStratagem4.Visible = true;
+                        }
+                        else
+                        {
+                            cbStratagem4.Visible = false;
+                        }
+
                         cbStratagem5.Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
                         cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf(Weapons[0]);
@@ -645,7 +668,7 @@ namespace Roster_Builder.Space_Marines
                         else if (Relic == "Witchseeker Bolts (Slot 1)")
                         {
                             cmbOption1.SelectedIndex = 1;
-                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 15 });
+                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17 });
                         }
                         else if (Relic == "Witchseeker Bolts (Slot 2)")
                         {
@@ -660,6 +683,18 @@ namespace Roster_Builder.Space_Marines
                         else if (Relic == "Sword of Judgement (Slot 2)")
                         {
                             cmbOption2.SelectedIndex = 8;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Blood Angels Strat Relics
+                        else if (Relic == "Witchseeker Bolts (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17 });
+                        }
+                        else if (Relic == "Witchseeker Bolts (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
                             cmbOption2.Enabled = false;
                         }
                         #endregion

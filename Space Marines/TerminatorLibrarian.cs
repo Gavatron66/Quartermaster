@@ -500,6 +500,16 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = true;
                     }
 
+                    if(chosenRelic == "Gallian's Staff")
+                    {
+                        cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf("Force Stave");
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                    }
+
                     Relic = chosenRelic;
 
                     if (!(Factionupgrade == "(None)" || Factionupgrade == null) ^ Relic == "Tome of Malcador")

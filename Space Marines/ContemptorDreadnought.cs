@@ -46,11 +46,16 @@ namespace Roster_Builder.Space_Marines
 
             CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
             cbStratagem5.Location = new System.Drawing.Point(cmbOption1.Location.X, cmbOption1.Location.Y + 32);
-            cbStratagem5.Text = "Stratagem: March of the Ancients";
 
             if (repo.customSubFactionTraits[2] == "Iron Hands")
             {
                 cbStratagem5.Visible = true;
+                cbStratagem5.Text = "Stratagem: March of the Ancients";
+            }
+            else if (repo.customSubFactionTraits[2] == "Blood Angels")
+            {
+                cbStratagem5.Visible = true;
+                cbStratagem5.Text = "Stratagem: Lucifer-pattern Engine";
             }
             else
             {

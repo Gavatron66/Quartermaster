@@ -228,9 +228,12 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[(currentIndex * 2) + 1]);
                     }
 
-                    if (!Weapons.Contains("Power Fist") && Factionupgrade.Contains("Fist of Balthus"))
+                    if (repo.currentSubFaction == "Black Templars")
                     {
-                        cmbFaction.SelectedIndex = 0;
+                        if (!Weapons.Contains("Power Fist") && Factionupgrade.Contains("Fist of Balthus"))
+                        {
+                            cmbFaction.SelectedIndex = 0;
+                        }
                     }
                     break;
                 case 12:
@@ -375,6 +378,13 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Blood Angels
+                    else if (chosenRelic == "Quake Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
 
                     if (chosenRelic != "Frost Weapon") //Space Wolves Sgt Relic
                     {
@@ -478,10 +488,18 @@ namespace Roster_Builder.Space_Marines
                         cbOption1.Visible = true;
                         panel.Controls["lblOption1"].Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
-                        cbStratagem4.Visible = true;
                         cbStratagem5.Visible = true;
                         cmbRelic.Visible = false;
                         panel.Controls["lblRelic"].Visible = false;
+
+                        if (repo.currentSubFaction == "Black Templars")
+                        {
+                            cbStratagem4.Visible = true;
+                        }
+                        else
+                        {
+                            cbStratagem4.Visible = false;
+                        }
 
                         cbOption1.Visible = false;
                         cbStratagem5.Visible = true;

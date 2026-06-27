@@ -237,6 +237,13 @@ namespace Roster_Builder.Space_Marines
                         gb_cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Blood Angels
+                    if (chosenRelic == "Quake Bolts")
+                    {
+                        gb_cmbOption1.SelectedIndex = 0;
+                        gb_cmbOption1.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;

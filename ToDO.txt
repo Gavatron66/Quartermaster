@@ -139,6 +139,17 @@ Arks of Omen TODO List
 	Vigilant Squad
 	Subductor Squad
 	Exaction Squad
+	
+Maybe's TODO LIST
+	Sisters Novitiate - Kill Team, 9th datasheet
+	Agents of the Imperium - Various datasheets and models
+	Uriel Ventris - Black Library Celebration, still present in 10th/11th
+	WD Supplements?
+	Traitor Guardsmen Squad - Kill Team
+	Gellerpox Infected - Kill Team, CSM + DG
+	Mutoid Vermin - Kill Team, CSM + DG
+	Traitor Enforcer - Kill Team
+	Kroot Farstalkers - Kill Team
 
             panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 			

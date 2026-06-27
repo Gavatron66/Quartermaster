@@ -258,7 +258,15 @@ namespace Roster_Builder.Space_Marines
 
                         if(currentIndex == 0)
                         {
-                            cbStratagem4.Visible = true;
+                            if (repo.currentSubFaction == "Black Templars")
+                            {
+                                cbStratagem4.Visible = true;
+                            }
+                            else
+                            {
+                                cbStratagem4.Visible = false;
+                            }
+
                             cbStratagem5.Visible = true;
 
                             if (Stratagem.Contains(cbStratagem5.Text))

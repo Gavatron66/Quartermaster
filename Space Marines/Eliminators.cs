@@ -240,6 +240,12 @@ namespace Roster_Builder.Space_Marines
                         restrictedIndexes.Add(2);
                     }
                     #endregion
+                    #region Codex Supplement: Blood Angels
+                    if (chosenRelic == "Quake Bolts")
+                    {
+                        restrictedIndexes.Add(2);
+                    }
+                    #endregion
 
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption2);
                     Relic = chosenRelic;

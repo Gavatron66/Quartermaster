@@ -163,7 +163,7 @@ namespace Roster_Builder.Space_Marines
                     if (chosenRelic == "Hellfury Bolts" || chosenRelic == "Dragonrage Bolts" || chosenRelic == "Korvidari Bolts"
                         || chosenRelic == "Haywire Bolts" || chosenRelic == "Stormwrath Bolts" || chosenRelic == "Gatebreaker Bolts"
                         || chosenRelic == "Banebolts of Eryxia" || chosenRelic == "Artificer Bolt Cache" || chosenRelic == "Morkai's Teeth Bolts"
-                        || chosenRelic == "Bolts of Judgement")
+                        || chosenRelic == "Bolts of Judgement" || chosenRelic == "Quake Bolts")
                     {
                         cmbOption1.SelectedIndex = 0;
                         cmbOption1.Enabled = false;

@@ -332,6 +332,18 @@ namespace Roster_Builder.Space_Marines
                         cmbOption2.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Blood Angels Strat Relics
+                    if (chosenRelic == "Quake Bolts (Slot 1)")
+                    {
+                        cmbOption1.SelectedIndex = 1;
+                        cmbOption1.Enabled = false;
+                    }
+                    else if (chosenRelic == "Quake Bolts (Slot 2)")
+                    {
+                        cmbOption2.SelectedIndex = 1;
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     antiLoop = false;
@@ -376,7 +388,15 @@ namespace Roster_Builder.Space_Marines
 
                     if (currentIndex == 0)
                     {
-                        cbStratagem4.Visible = true;
+                        if (repo.currentSubFaction == "Black Templars")
+                        {
+                            cbStratagem4.Visible = true;
+                        }
+                        else
+                        {
+                            cbStratagem4.Visible = false;
+                        }
+
                         cbStratagem5.Visible = true;
 
                         if (Stratagem.Contains(cbStratagem5.Text))
@@ -500,6 +520,18 @@ namespace Roster_Builder.Space_Marines
                             cmbOption1.Enabled = false;
                         }
                         else if (Relic == "Witchseeker Bolts (Slot 2)")
+                        {
+                            cmbOption2.SelectedIndex = 1;
+                            cmbOption2.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Blood Angels Strat Relics
+                        if (Relic == "Quake Bolts (Slot 1)")
+                        {
+                            cmbOption1.SelectedIndex = 1;
+                            cmbOption1.Enabled = false;
+                        }
+                        else if (Relic == "Quake Bolts (Slot 2)")
                         {
                             cmbOption2.SelectedIndex = 1;
                             cmbOption2.Enabled = false;

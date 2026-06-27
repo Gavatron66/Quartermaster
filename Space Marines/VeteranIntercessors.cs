@@ -109,11 +109,11 @@ namespace Roster_Builder.Space_Marines
             }
             else
             {
-                gb_cmbOption1.Items.Insert(0, Weapons[0]);
+                gb_cmbOption1.Items.Insert(1, Weapons[0]);
 
                 if (Weapons[2].Contains("Bolt Rifle"))
                 {
-                    gb_cmbOption1.SelectedIndex = 0;
+                    gb_cmbOption1.SelectedIndex = 1;
                 }
 
                 gb_cmbOption1.Items.RemoveAt(1);
@@ -241,7 +241,14 @@ namespace Roster_Builder.Space_Marines
 
                     Weapons[0] = cmbOption1.SelectedItem.ToString();
 
-                    gb_cmbOption1.Items.Remove(temp);
+                    if(temp.Contains("Heavy Bolt Pistol"))
+                    {
+                        gb_cmbOption1.Items.Remove("Heavy Bolt Pistol");
+                    }
+                    else
+                    {
+                        gb_cmbOption1.Items.Remove(temp);
+                    }
 
                     if (Weapons[0] == "Stalker Bolt Rifle")
                     {

@@ -32,6 +32,7 @@ namespace Roster_Builder.Space_Marines
         }
         public override void LoadDatasheets(Panel panel, Faction f)
         {
+            repo = f as SpaceMarines;
             Template.LoadTemplate(TemplateCode, panel);
 
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
@@ -66,6 +67,34 @@ namespace Roster_Builder.Space_Marines
             {
                 cbOption2.Checked = false;
             }
+
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
+            cbStratagem5.Location = new System.Drawing.Point(cbOption1.Location.X, cbOption2.Location.Y + 32);
+
+            if (repo.customSubFactionTraits[2] == "Blood Angels")
+            {
+                cbStratagem5.Visible = true;
+                cbStratagem5.Text = "Stratagem: Lucifer-pattern Engine";
+            }
+            else
+            {
+                cbStratagem5.Visible = false;
+                if (Stratagem.Contains(cbStratagem5.Text))
+                {
+                    Stratagem.Remove(cbStratagem5.Text);
+                }
+            }
+
+            if (Stratagem.Contains(cbStratagem5.Text))
+            {
+                cbStratagem5.Checked = true;
+                cbStratagem5.Enabled = true;
+            }
+            else
+            {
+                cbStratagem5.Checked = false;
+                cbStratagem5.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem5.Text));
+            }
         }
 
         public override void SaveDatasheets(int code, Panel panel)
@@ -73,6 +102,7 @@ namespace Roster_Builder.Space_Marines
             ComboBox cmbOption1 = panel.Controls["cmbOption1"] as ComboBox;
             CheckBox cbOption1 = panel.Controls["cbOption1"] as CheckBox;
             CheckBox cbOption2 = panel.Controls["cbOption2"] as CheckBox;
+            CheckBox cbStratagem5 = panel.Controls["cbStratagem5"] as CheckBox;
 
             switch (code)
             {
@@ -92,6 +122,19 @@ namespace Roster_Builder.Space_Marines
                         Weapons[2] = cbOption2.Text;
                     }
                     else { Weapons[2] = string.Empty; }
+                    break;
+                case 75:
+                    if (cbStratagem5.Checked)
+                    {
+                        Stratagem.Add(cbStratagem5.Text);
+                    }
+                    else
+                    {
+                        if (Stratagem.Contains(cbStratagem5.Text))
+                        {
+                            Stratagem.Remove(cbStratagem5.Text);
+                        }
+                    }
                     break;
             }
 

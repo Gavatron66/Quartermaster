@@ -24,7 +24,7 @@ namespace Roster_Builder.Space_Marines
             Keywords.AddRange(new string[]
             {
                 "IMPERIUM", "ADEPTUS ASTARTES", "<CHAPTER>",
-                "INFANTRY", "CHARACTER", "TERMINATOR","CAPTAIN"
+                "INFANTRY", "CHARACTER", "TERMINATOR", "CAPTAIN"
             });
             Role = "HQ";
         }
@@ -498,6 +498,22 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Blood Angels
+                    else if (chosenRelic == "Quake Bolts")
+                    {
+                        //See the end of SaveDatasheets
+                    }
+                    else if (chosenRelic == "Hammer of Baal")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Thunder Hammer (+5 pts)");
+                        cmbOption2.Enabled = false;
+                    }
+                    else if (chosenRelic == "Archangel's Shard")
+                    {
+                        cmbOption2.SelectedIndex = cmbOption2.Items.IndexOf("Power Sword");
+                        cmbOption2.Enabled = false;
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     break;
@@ -636,10 +652,9 @@ namespace Roster_Builder.Space_Marines
             if (Relic == "Hellfury Bolts" || Relic == "Dragonrage Bolts" || Relic == "Korvidari Bolts"
                 || Relic == "Haywire Bolts" || Relic == "Stormwrath Bolts" || Relic == "Gatebreaker Bolts"
                 || Relic == "Banebolts of Eryxia" || Relic == "Artificer Bolt Cache" || Relic == "Morkai's Teeth Bolts"
-                || Relic == "Bolts of Judgement" || Relic == "Witchseeker Bolts")
+                || Relic == "Bolts of Judgement" || Relic == "Witchseeker Bolts" || Relic == "Quake Bolts")
             {
                 restrictedIndexes.AddRange(new int[] { 5, 6, 8, 9 });
-                cmbOption1.SelectedIndex = 7;
             }
             #endregion
 

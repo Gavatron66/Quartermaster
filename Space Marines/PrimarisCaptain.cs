@@ -533,6 +533,20 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = 0;
                     }
                     #endregion
+                    #region Codex Supplement: Blood Angels
+                    else if (chosenRelic == "Quake Bolts")
+                    {
+                        restrictedIndexes.Add(3);
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    else if (chosenRelic == "Archangel's Shard")
+                    {
+                        cbOption1.Checked = true;
+                        cbOption1.Enabled = false;
+
+                        restrictedIndexes.Add(3);
+                    }
+                    #endregion
 
                     Relic = chosenRelic;
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);

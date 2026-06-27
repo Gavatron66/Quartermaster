@@ -39,7 +39,7 @@ namespace Roster_Builder.Space_Marines
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            ComboBox cmbFactionupgrade = panel.Controls["cmbFactionupgrade"] as ComboBox;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             ComboBox cmbOption6 = panel.Controls["cmbOption6"] as ComboBox; // For Stratagem 3
 
             cmbWarlord.Items.Clear();
@@ -120,6 +120,24 @@ namespace Roster_Builder.Space_Marines
             else
             {
                 cmbRelic.SelectedIndex = 0;
+            }
+
+            if (repo.customSubFactionTraits[2] == "Blood Angels")
+            {
+                cmbFaction.Visible = true;
+                panel.Controls["lblFactionupgrade"].Visible = true;
+
+                cmbFaction.Items.Clear();
+                cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
+
+                if (Factionupgrade != null)
+                {
+                    cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
+                }
+                else
+                {
+                    cmbFaction.SelectedIndex = 0;
+                }
             }
 
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
@@ -206,6 +224,7 @@ namespace Roster_Builder.Space_Marines
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
+            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
             CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
@@ -233,6 +252,9 @@ namespace Roster_Builder.Space_Marines
                     {
                         WarlordTrait = string.Empty;
                     }
+                    break;
+                case 16:
+                    Factionupgrade = cmbFaction.Text;
                     break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
@@ -604,6 +626,29 @@ namespace Roster_Builder.Space_Marines
                         restrictedIndexes.Remove(2);
                         restrictedIndexes.Remove(3);
                         cmbOption1.SelectedIndex = 2;
+                    }
+                    #endregion
+                    #region Codex Supplement: Blood Angels
+                    else if (chosenRelic == "Quake Bolts")
+                    {
+                        restrictedIndexes.Clear();
+                        restrictedIndexes.Add(14);
+                        cmbOption1.SelectedIndex = 0;
+                    }
+                    else if (chosenRelic == "Archangel's Shard")
+                    {
+                        restrictedIndexes.Remove(1);
+                        restrictedIndexes.Remove(4);
+                        restrictedIndexes.Remove(7);
+                        restrictedIndexes.Remove(10);
+                        restrictedIndexes.Remove(12);
+                        restrictedIndexes.Remove(13);
+                        restrictedIndexes.Remove(14);
+                        restrictedIndexes.Remove(16);
+                        restrictedIndexes.Remove(19);
+                        restrictedIndexes.Remove(22);
+                        restrictedIndexes.Remove(25);
+                        cmbOption1.SelectedIndex = 1;
                     }
                     #endregion
                     else

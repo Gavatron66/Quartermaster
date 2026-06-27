@@ -217,9 +217,12 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.SelectedIndex = cmbOption1.Items.IndexOf(Weapons[0]);
                     }
 
-                    if (!Weapons.Contains("Power Fist") && Factionupgrade.Contains("Fist of Balthus"))
+                    if (repo.currentSubFaction == "Black Templars")
                     {
-                        cmbFaction.SelectedIndex = 0;
+                        if (!Weapons.Contains("Power Fist") && Factionupgrade.Contains("Fist of Balthus"))
+                        {
+                            cmbFaction.SelectedIndex = 0;
+                        }
                     }
                     break;
                 case 12:
@@ -350,6 +353,13 @@ namespace Roster_Builder.Space_Marines
                         cmbOption1.Enabled = false;
                     }
                     #endregion
+                    #region Codex Supplement: Blood Angels
+                    else if (chosenRelic == "Quake Bolts")
+                    {
+                        restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16 });
+                        cmbOption1.SelectedIndex = 1;
+                    }
+                    #endregion
 
                     antiLoop = false;
                     this.DrawItemWithRestrictions(restrictedIndexes, cmbOption1);
@@ -390,7 +400,15 @@ namespace Roster_Builder.Space_Marines
                         panel.Controls["lblOption1"].Visible = true;
                         panel.Controls["lblOption2"].Visible = true;
 
-                        cbStratagem4.Visible = true;
+                        if (repo.currentSubFaction == "Black Templars")
+                        {
+                            cbStratagem4.Visible = true;
+                        }
+                        else
+                        {
+                            cbStratagem4.Visible = false;
+                        }
+
                         cbStratagem5.Visible = true;
 
                         if (Stratagem.Contains(cbStratagem5.Text))
@@ -505,6 +523,13 @@ namespace Roster_Builder.Space_Marines
                         {
                             cmbOption1.SelectedIndex = 12;
                             cmbOption1.Enabled = false;
+                        }
+                        #endregion
+                        #region Codex Supplement: Blood Angels
+                        else if (Relic == "Quake Bolts")
+                        {
+                            restrictedIndexes.AddRange(new int[] { 0, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16 });
+                            cmbOption1.SelectedIndex = 1;
                         }
                         #endregion
 

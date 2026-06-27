@@ -183,8 +183,8 @@ namespace Roster_Builder.Grey_Knights
                         {
                             Weapons.Add("Storm Bolter");
                             Weapons.Add("Nemesis Force Sword");
-                            lbModelSelect.Items.Add("Terminator w/ " + Weapons[(currentIndex * 2)]
-                                + " and " + Weapons[(currentIndex * 2) + 1]);
+                            lbModelSelect.Items.Add("Terminator w/ " + Weapons[(temp * 2)]
+                                + " and " + Weapons[(temp * 2) + 1]);
                         }
                     }
 

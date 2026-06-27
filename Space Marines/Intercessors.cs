@@ -249,8 +249,6 @@ namespace Roster_Builder.Space_Marines
                         {
                             gb_cmbOption1.SelectedIndex = 2;
                         }
-
-                        gb_cmbOption1.Items.RemoveAt(0);
                     }
                     else
                     {
@@ -260,8 +258,6 @@ namespace Roster_Builder.Space_Marines
                         {
                             gb_cmbOption1.SelectedIndex = 0;
                         }
-
-                        gb_cmbOption1.Items.RemoveAt(1);
                     }
 
                     break;
