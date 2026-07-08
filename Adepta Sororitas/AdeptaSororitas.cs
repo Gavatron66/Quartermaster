@@ -82,6 +82,7 @@ namespace Roster_Builder.Adepta_Sororitas
                 new EphraelSternKyganil(),
                 //---------- Troops ----------
                 new BattleSisters(),
+                new SistersNovitiate(),
                 //---------- Elites ----------
                 new AestredThurgaAgathaeDolan(),
                 new Imagifier(),
@@ -201,7 +202,8 @@ namespace Roster_Builder.Adepta_Sororitas
             {
                 relics.Add("Litanies of Faith");
 
-                if(!(keywords.Contains("CELESTIAN SACRESANTS") || keywords.Contains("PARAGON WARSUITS") || keywords.Contains("ZEPHYRIM SQUAD")))
+                if(!(keywords.Contains("CELESTIAN SACRESANTS") || keywords.Contains("PARAGON WARSUITS") || keywords.Contains("ZEPHYRIM SQUAD")
+                    || keywords.Contains("SISTERS NOVITIATE")))
                 {
                     relics.Add("The Ecclesiarch's Fury");
                 }

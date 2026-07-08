@@ -31,6 +31,7 @@ using Roster_Builder.Thousand_Sons;
 using Roster_Builder.Chaos_Daemons;
 using Roster_Builder.World_Eaters;
 using Roster_Builder.Chaos_Knights;
+using Roster_Builder.Agents_of_the_Imperium;
 
 namespace Roster_Builder
 {
@@ -90,6 +91,7 @@ namespace Roster_Builder
                 new AdMech(),
                 new Aeldari.Aeldari(),
                 new YnnariFaction(),
+                new ImperialAgents(),
                 new AstraMilitarum(),
                 new ChaosDaemons(),
                 new ChaosKnights(),
@@ -125,6 +127,7 @@ namespace Roster_Builder
                 new AdMech(),
                 new Aeldari.Aeldari(),
                 new YnnariFaction(),
+                new ImperialAgents(),
                 new AstraMilitarum(),
                 new ChaosDaemons(),
                 new ChaosKnights(),

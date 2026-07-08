@@ -41,13 +41,10 @@ namespace Roster_Builder.Chaos_Space_Marines
         {
             repo = f as ChaosSpaceMarines;
             Template.LoadTemplate(TemplateCode, panel);
-            panel.Controls["cmbFactionUpgrade"].Visible = true;
-            panel.Controls["lblFactionUpgrade"].Visible = true;
 
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             Label lblPsyker = panel.Controls["lblPsyker"] as Label;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
@@ -57,7 +54,7 @@ namespace Roster_Builder.Chaos_Space_Marines
 
 
             cmbWarlord.Items.Clear();
-            List<string> traits = repo.GetWarlordTraits("");
+            List<string> traits = repo.GetWarlordTraits("DC");
             foreach (var item in traits)
             {
                 cmbWarlord.Items.Add(item);
@@ -85,18 +82,6 @@ namespace Roster_Builder.Chaos_Space_Marines
             else
             {
                 cmbRelic.SelectedIndex = -1;
-            }
-
-            cmbFaction.Items.Clear();
-            cmbFaction.Items.AddRange(repo.GetFactionUpgrades(Keywords).ToArray());
-
-            if (Factionupgrade != null)
-            {
-                cmbFaction.SelectedIndex = cmbFaction.Items.IndexOf(Factionupgrade);
-            }
-            else
-            {
-                cmbFaction.SelectedIndex = 0;
             }
 
             DHPowers = repo.GetPsykerPowers("DH");
@@ -224,7 +209,6 @@ namespace Roster_Builder.Chaos_Space_Marines
             ComboBox cmbWarlord = panel.Controls["cmbWarlord"] as ComboBox;
             CheckBox cbWarlord = panel.Controls["cbWarlord"] as CheckBox;
             ComboBox cmbRelic = panel.Controls["cmbRelic"] as ComboBox;
-            ComboBox cmbFaction = panel.Controls["cmbFactionupgrade"] as ComboBox;
             CheckedListBox clbPsyker = panel.Controls["clbPsyker"] as CheckedListBox;
             CheckBox cbStratagem1 = panel.Controls["cbStratagem1"] as CheckBox;
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
@@ -233,9 +217,6 @@ namespace Roster_Builder.Chaos_Space_Marines
 
             switch (code)
             {
-                case 16:
-                    Factionupgrade = cmbFaction.Text;
-                    break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
 

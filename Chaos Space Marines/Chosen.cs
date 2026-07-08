@@ -13,7 +13,7 @@ namespace Roster_Builder.Chaos_Space_Marines
         int currentIndex;
         bool icon;
         List<int> restrictedIndexes2 = new List<int>();
-        int[] restrict = new int[3];
+        int[] restrict = new int[4];
 
         public Chosen()
         {
@@ -67,7 +67,18 @@ namespace Roster_Builder.Chaos_Space_Marines
             lbModelSelect.Items.Add("Chosen Champion w/ " + Weapons[0] + ", " + Weapons[1] + " and Accursed Weapon");
             for (int i = 1; i < UnitSize; i++)
             {
-                lbModelSelect.Items.Add("Chosen w/ " + Weapons[currentIndex * 2] + ", " + Weapons[(currentIndex * 2) + 1] + " and Accursed Weapon");
+                if (Weapons[i * 2] == "Accursed Weapon")
+                {
+                    lbModelSelect.Items.Add("Chosen w/ Two Accursed Weapons and " + Weapons[(i * 2) + 1]);
+                }
+                else if (Weapons[i * 2] == "Boltgun and Power Fist")
+                {
+                    lbModelSelect.Items.Add("Chosen w/ Boltgun, " + Weapons[(i * 2) + 1] + " and Power Fist");
+                }
+                else
+                {
+                    lbModelSelect.Items.Add("Chosen w/ " + Weapons[i * 2] + ", " + Weapons[(i * 2) + 1] + " and Accursed Weapon");
+                }
             }
 
             cmbOption1.Items.Clear();
@@ -75,6 +86,7 @@ namespace Roster_Builder.Chaos_Space_Marines
             {
                 "Accursed Weapon",
                 "Boltgun",
+                "Boltgun and Power Fist",
                 "Combi-flamer (+10 pts)",
                 "Combi-melta (+10 pts)",
                 "Combi-plasma (+10 pts)"
@@ -186,7 +198,19 @@ namespace Roster_Builder.Chaos_Space_Marines
                         }
 
                         Weapons[currentIndex * 2] = cmbOption1.SelectedItem.ToString();
-                        lbModelSelect.Items[currentIndex] = "Chosen w/ " + Weapons[currentIndex * 2] + ", " + Weapons[(currentIndex * 2) + 1] + " and Accursed Weapon";
+
+                        if (Weapons[currentIndex * 2] == "Accursed Weapon")
+                        {
+                            lbModelSelect.Items[currentIndex] = "Chosen w/ Two Accursed Weapons and " + Weapons[(currentIndex * 2) + 1];
+                        }
+                        else if (Weapons[currentIndex * 2] == "Boltgun and Power Fist")
+                        {
+                            lbModelSelect.Items[currentIndex] = "Chosen w/ Boltgun, " + Weapons[(currentIndex * 2) + 1] + " and Power Fist";
+                        }
+                        else
+                        {
+                            lbModelSelect.Items[currentIndex] = "Chosen w/ " + Weapons[currentIndex * 2] + ", " + Weapons[(currentIndex * 2) + 1] + " and Accursed Weapon";
+                        }
                     }
                     else
                     {
@@ -231,7 +255,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                         {
                             int indexChange = Weapons.LastIndexOf("Combi-melta");
                             Weapons[indexChange] = "Combi-bolter";
-                            lbModelSelect.Items[indexChange / 2] = "Chaos Terminator w/ " + Weapons[indexChange]
+                            lbModelSelect.Items[indexChange / 2] = "Chosen w/ " + Weapons[indexChange]
                                  + ", " + Weapons[indexChange + 1] + " and Accursed Weapon";
                         }
 
@@ -249,7 +273,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                         {
                             int indexChange = Weapons.LastIndexOf("Combi-flamer");
                             Weapons[indexChange] = "Boltgun";
-                            lbModelSelect.Items[indexChange / 2] = "Chaos Terminator w/ " + Weapons[indexChange]
+                            lbModelSelect.Items[indexChange / 2] = "Chosen w/ " + Weapons[indexChange]
                                  + ", " + Weapons[indexChange + 1] + " and Accursed Weapon";
                         }
 
@@ -396,7 +420,7 @@ namespace Roster_Builder.Chaos_Space_Marines
         private void LoadOptions(ComboBox cmbOption1, ComboBox cmbOption2)
         {
             restrictedIndexes.Clear();
-            restrict = new int[3];
+            restrict = new int[4];
 
             foreach (var item in Weapons)
             {
@@ -412,6 +436,10 @@ namespace Roster_Builder.Chaos_Space_Marines
                 {
                     restrict[2]++;
                 }
+                else if (item == "Boltgun and Power Fist")
+                {
+                    restrict[3]++;
+                }
             }
 
             if (restrict[0] == (UnitSize / 5) * 2 && Weapons[(currentIndex * 2) + 1] != "Plasma Pistol (+5 pts)")
@@ -420,13 +448,17 @@ namespace Roster_Builder.Chaos_Space_Marines
             }
             if (restrict[1] == (UnitSize / 5) * 2 && (Weapons[currentIndex * 2] == "Boltgun" || Weapons[currentIndex * 2] == "Accursed Weapon"))
             {
-                restrictedIndexes.Add(2);
                 restrictedIndexes.Add(3);
                 restrictedIndexes.Add(4);
+                restrictedIndexes.Add(5);
             }
             if (restrict[2] == UnitSize / 5 && Weapons[currentIndex * 2] != "Accursed Weapon")
             {
                 restrictedIndexes.Add(0);
+            }
+            if (restrict[3] == UnitSize / 5 && Weapons[currentIndex * 2] != "Boltgun and Power Fist")
+            {
+                restrictedIndexes.Add(2);
             }
 
             //Champion Relics

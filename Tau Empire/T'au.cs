@@ -96,6 +96,7 @@ namespace Roster_Builder.Tau_Empire
                 new KrootCarnivores(),
                 //---------- Elites ----------
                 new KrootoxRiders(),
+                new KrootFarstalkers(),
                 new CrisisBattlesuits(),
                 new CrisisBodyguards(),
                 new StealthBattlesuits(),

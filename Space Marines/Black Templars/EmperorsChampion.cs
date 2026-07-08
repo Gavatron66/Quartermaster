@@ -61,8 +61,9 @@ namespace Roster_Builder.Space_Marines.Black_Templars
             CheckBox cbStratagem2 = panel.Controls["cbStratagem2"] as CheckBox;
             CheckBox cbStratagem3 = panel.Controls["cbStratagem3"] as CheckBox;
 
+            cbStratagem2.Visible = false;
             cbStratagem3.Visible = true;
-            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y + 32);
+            cbStratagem3.Location = new System.Drawing.Point(cbStratagem2.Location.X, cbStratagem2.Location.Y);
             cbStratagem3.Text = f.StratagemList[2];
 
             panel.Controls["lblOption6"].Visible = false;
@@ -81,17 +82,6 @@ namespace Roster_Builder.Space_Marines.Black_Templars
             {
                 cbStratagem1.Checked = false;
                 cbStratagem1.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem1.Text));
-            }
-
-            if (Stratagem.Contains(cbStratagem2.Text))
-            {
-                cbStratagem2.Checked = true;
-                cbStratagem2.Enabled = true;
-            }
-            else
-            {
-                cbStratagem2.Checked = false;
-                cbStratagem2.Enabled = repo.GetIfEnabled(repo.StratagemList.IndexOf(cbStratagem2.Text));
             }
 
             if (Stratagem.Contains(cbStratagem3.Text))

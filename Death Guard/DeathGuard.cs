@@ -83,7 +83,9 @@ namespace Roster_Builder.Death_Guard
                 new BlightlordTerminators(),
                 new DeathshroudTerminators(),
                 new DG_Helbrute(),
-                new DG_Possessed(), 
+                new DG_Possessed(),
+                new Chaos_Space_Marines.GellerpoxInfected(),
+                new Chaos_Space_Marines.MutoidVermin(),
                 //---------- Fast Attack ----------
                 new DG_ChaosSpawn(),
                 new MyphiticBlightHauler(),

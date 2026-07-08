@@ -122,7 +122,7 @@ namespace Roster_Builder.Space_Marines
                 cmbRelic.SelectedIndex = 0;
             }
 
-            if (repo.customSubFactionTraits[2] == "Blood Angels")
+            if (repo.customSubFactionTraits[2] == "Blood Angels" || repo.customSubFactionTraits[2] == "Dark Angels")
             {
                 cmbFaction.Visible = true;
                 panel.Controls["lblFactionupgrade"].Visible = true;
@@ -255,7 +255,18 @@ namespace Roster_Builder.Space_Marines
                     break;
                 case 16:
                     Factionupgrade = cmbFaction.Text;
-                    break;
+
+                    if (repo.customSubFactionTraits[2] == "Dark Angels" && Factionupgrade != ("(None)")) 
+                    {
+                        cmbOption1.SelectedIndex = 14;
+                        cmbOption1.Enabled = false;
+                    }
+                    else
+                    {
+                        cmbOption1.Enabled = true;
+                    }
+
+                        break;
                 case 17:
                     string chosenRelic = cmbRelic.SelectedItem.ToString();
 

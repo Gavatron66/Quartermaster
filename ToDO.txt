@@ -130,26 +130,22 @@ Sergeants
 	Eradicators
 	Hellblasters
 	Desolation Squad
-
-Arks of Omen TODO List
-	Vashtorr
-	Cartographica Rogue Trader
-	Imperial Navy Breachers
-	Voidsmen-at-arms
-	Vigilant Squad
-	Subductor Squad
-	Exaction Squad
+	
+TODO LIST
+Found a major bug concerning Stratagems. Need to add the following code to every character:
+	
+	if (!Stratagem.Contains(cbStratagem1.Text))
+	{
+		Stratagem.Add(cbStratagem1.Text);
+	}
+						
+	Completely missed Dark Angels Rites of Initiation implementation outside of the Captains
+	Going through the errata, leaving off on Dark Angels and Deathwatch;
+		Death Guard is good
 	
 Maybe's TODO LIST
-	Sisters Novitiate - Kill Team, 9th datasheet
-	Agents of the Imperium - Various datasheets and models
-	Uriel Ventris - Black Library Celebration, still present in 10th/11th
 	WD Supplements?
-	Traitor Guardsmen Squad - Kill Team
-	Gellerpox Infected - Kill Team, CSM + DG
-	Mutoid Vermin - Kill Team, CSM + DG
-	Traitor Enforcer - Kill Team
-	Kroot Farstalkers - Kill Team
+	Forge World?
 
             panel.Controls["lblModelPoints"].Text = "(+" + DEFAULT_POINTS + " pts/model)";
 			

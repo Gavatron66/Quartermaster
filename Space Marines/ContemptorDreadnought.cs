@@ -57,6 +57,11 @@ namespace Roster_Builder.Space_Marines
                 cbStratagem5.Visible = true;
                 cbStratagem5.Text = "Stratagem: Lucifer-pattern Engine";
             }
+            else if (repo.customSubFactionTraits[2] == "Dark Angels")
+            {
+                cbStratagem5.Visible = true;
+                cbStratagem5.Text = "Promote to Deathwing (+10 pts)";
+            }
             else
             {
                 cbStratagem5.Visible = false;
@@ -89,9 +94,14 @@ namespace Roster_Builder.Space_Marines
                     Weapons[0] = cmbOption1.SelectedItem as string;
                     break;
                 case 75:
+
                     if (cbStratagem5.Checked)
                     {
                         Stratagem.Add(cbStratagem5.Text);
+                        if (repo.customSubFactionTraits[2] == "Dark Angels")
+                        {
+                            Factionupgrade = cbStratagem5.Text;
+                        }
                     }
                     else
                     {
@@ -99,11 +109,17 @@ namespace Roster_Builder.Space_Marines
                         {
                             Stratagem.Remove(cbStratagem5.Text);
                         }
+
+                        if (repo.customSubFactionTraits[2] == "Dark Angels")
+                        {
+                            Factionupgrade = "(None)";
+                        }
                     }
                     break;
             }
 
             Points = DEFAULT_POINTS;
+            Points += repo.GetFactionUpgradePoints(Factionupgrade);
         }
 
         public override string ToString()

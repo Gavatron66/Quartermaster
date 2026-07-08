@@ -63,7 +63,6 @@ namespace Roster_Builder.Aeldari
             cmbOption1.Items.Clear();
             cmbOption1.Items.AddRange(new string[]
             {
-                "Biting Blade (+5 pts)",
                 "Shuriken Pistol",
                 "Scorpion's Claw (+10 pts)"
             });
@@ -167,10 +166,6 @@ namespace Roster_Builder.Aeldari
             Points = DEFAULT_POINTS * UnitSize;
             Points += repo.GetFactionUpgradePoints(Factionupgrade);
 
-            if (Weapons[0] == "Biting Blade (+5 pts)")
-            {
-                Points += 5;
-            }
             if (Weapons[0] == "Scorpion's Claw (+10 pts)")
             {
                 Points += 10;

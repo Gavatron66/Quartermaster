@@ -498,6 +498,7 @@ namespace Roster_Builder.Space_Marines
             string[] ten = new string[]
             {
                 "Chapter Champion (+10 pts)",
+                "Promote to Deathwing (Storm Shield only, +10 pts)",
                 "Promote to Deathwing (+10 pts)",
                 "Bones of Mordred (+10 pts)",
                 "Beastpyre (+10 pts)",
@@ -638,10 +639,10 @@ namespace Roster_Builder.Space_Marines
                     upgrades.Add("Deathwing Chapter Master (+50 pts)");
                 }
 
-                if(keywords.Contains("PRIMARIS LIEUTENANT") && !(keywords.Contains("PHOBOS")))
+                if(keywords.Contains("PRIMARIS") && keywords.Contains("LIEUTENANT") && !(keywords.Contains("PHOBOS")))
                 {
                     // Only if it's equipped with a Storm Shield
-                    upgrades.Add("Promote to Deathwing (+10 pts)");
+                    upgrades.Add("Promote to Deathwing (Storm Shield only, +10 pts)");
                 }
 
                 if(keywords.Contains("DREADNOUGHT"))
@@ -650,16 +651,6 @@ namespace Roster_Builder.Space_Marines
                 }
 
                 if (keywords.Contains("LAND RAIDER"))
-                {
-                    upgrades.Add("Promote to Deathwing (+5 pts)");
-                }
-
-                if (keywords.Contains("REPULSOR"))
-                {
-                    upgrades.Add("Promote to Deathwing (+5 pts)");
-                }
-
-                if (keywords.Contains("STORMRAVEN GUNSHIP"))
                 {
                     upgrades.Add("Promote to Deathwing (+5 pts)");
                 }

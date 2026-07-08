@@ -56,13 +56,16 @@ namespace Roster_Builder.Chaos_Space_Marines
                 new DarkApostle(),
                 new ExaltedChampion(),
                 new DarkCommune(),
+                new Vashtorr(),
                 //---------- Troops ----------
                 new Legionaries(),
                 new CulistsMob(),
                 new AccursedCultists(),
+                new TraitorGuard(),
                 //---------- Elites ----------
                 new ChaosTerminators(),
                 new MasterOfExecutions(),
+                new TraitorEnforcer(),
                 new Possessed(),
                 new Chosen(),
                 new Helbrute(),
@@ -70,6 +73,8 @@ namespace Roster_Builder.Chaos_Space_Marines
                 new RubricMarinesCSM(),
                 new PlagueMarinesCSM(),
                 new NoiseMarines(),
+                new GellerpoxInfected(),
+                new MutoidVermin(),
                 //---------- Fast Attack ----------
                 new Venomcrawler(),
                 new ChaosSpawn(),
@@ -191,9 +196,8 @@ namespace Roster_Builder.Chaos_Space_Marines
 
             relics.Add("(None)");
 
-            //Champion/Aspiring Relics
-            //NEEDS TO BE VETTED FOR FACTION CONDITIONS
-            if(keywords.Contains("CORE") || keywords.Contains("CULTISTS MOB") || keywords.Contains("DAEMONKIN"))
+            #region Champion/Aspiring Relics
+            if (keywords.Contains("CORE") || keywords.Contains("CULTISTS MOB") || keywords.Contains("DAEMONKIN"))
             {
                 if(!(keywords.Contains("DAEMONKIN") || keywords.Contains("CULTISTS")))
                 {
@@ -332,13 +336,14 @@ namespace Roster_Builder.Chaos_Space_Marines
 
                 return relics;
             }
+            #endregion
 
-            if(!keywords.Contains("DARK COMMUNE") && !keywords.Contains("DAEMON PRINCE"))
+            if (!keywords.Contains("CULTISTS") && !keywords.Contains("DAEMON PRINCE"))
             {
                 relics.Add("Ul'o'cca, the Black");
             }
 
-            if(!keywords.Contains("DARK COMMUNE"))
+            if(!keywords.Contains("CULTISTS"))
             {
                 if(!keywords.Contains("PSYKER"))
                 {
@@ -355,14 +360,14 @@ namespace Roster_Builder.Chaos_Space_Marines
                 relics.Add("Inferno Tome");
             }
 
-            if (!keywords.Contains("DARK COMMUNE"))
+            if (!keywords.Contains("CULTISTS"))
             {
                 relics.Add("Gorget of Eternal Hate");
             }
 
             relics.Add("Black Rune of Damnation");
 
-            if (!keywords.Contains("DARK COMMUNE"))
+            if (!keywords.Contains("CULTISTS"))
             {
                 relics.Add("Mantle of Traitors");
             }
@@ -384,23 +389,23 @@ namespace Roster_Builder.Chaos_Space_Marines
                 relics.Add("The Warp's Malice");
             }
 
-            if (!keywords.Contains("DARK COMMUNE") && !keywords.Contains("PSYKER"))
+            if (!keywords.Contains("CULTISTS") && !keywords.Contains("PSYKER"))
             {
                 relics.Add("Talisman of Burning Blood");
             }
 
-            if (keywords.Contains("PSYKER") && !keywords.Contains("DARK COMMUNE"))
+            if (keywords.Contains("PSYKER") && !keywords.Contains("CULTISTS"))
             {
                 relics.Add("Eye of Tzeentch");
             }
 
-            if (!keywords.Contains("DARK COMMUNE"))
+            if (!keywords.Contains("CULTISTS"))
             {
                 relics.Add("Orb of Unlife");
                 relics.Add("Intoxicating Elixir");
             }
 
-            if (keywords.Contains("PSYKER") && !keywords.Contains("DARK COMMUNE"))
+            if (keywords.Contains("PSYKER") && !keywords.Contains("CULTISTS"))
             {
                 relics.Add("Liber Hereticus");
             }
@@ -412,7 +417,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                     relics.Add("Ghorisvex's Teeth");
                 }
 
-                if (!keywords.Contains("DARK COMMUNE") && !keywords.Contains("DAEMON PRINCE") && !keywords.Contains("WARPSMITH"))
+                if (!keywords.Contains("CULTISTS") && !keywords.Contains("DAEMON PRINCE") && !keywords.Contains("WARPSMITH"))
                 {
                     relics.Add("Loyalty's Reward");
                 }
@@ -422,14 +427,14 @@ namespace Roster_Builder.Chaos_Space_Marines
                     relics.Add("Veilbreaker Plate");
                 }
 
-                if (!keywords.Contains("DARK COMMUNE"))
+                if (!keywords.Contains("CULTISTS"))
                 {
                     relics.Add("Cloak of Conquest");
                 }
 
                 relics.Add("Sightless Helm");
 
-                if (!keywords.Contains("DARK COMMUNE"))
+                if (!keywords.Contains("CULTISTS"))
                 {
                     relics.Add("Trophies of Slaughter");
                 }
@@ -449,7 +454,7 @@ namespace Roster_Builder.Chaos_Space_Marines
 
                 relics.Add("Crown of the Blasphemer");
 
-                if (keywords.Contains("PSYKER") && !keywords.Contains("DARK COMMUNE"))
+                if (keywords.Contains("PSYKER") && !keywords.Contains("CULTISTS"))
                 {
                     relics.Add("Malefic Tome");
                 }
@@ -465,7 +470,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                     relics.Add("Ashen Axe");
                 }
 
-                if (!keywords.Contains("DARK COMMUNE"))
+                if (!keywords.Contains("CULTISTS"))
                 {
                     relics.Add("The Armour Diabolus");
                     relics.Add("Baleful Icon");
@@ -486,12 +491,12 @@ namespace Roster_Builder.Chaos_Space_Marines
                     relics.Add("Talons of the Night Terror");
                 }
 
-                if (!keywords.Contains("DARK COMMUNE")) {
+                if (!keywords.Contains("CULTISTS")) {
                     relics.Add("Scourging Chains");
                     relics.Add("Misery of the Meek");
                 }
 
-                if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
+                if (!keywords.Contains("CULTISTS") && keywords.Contains("INFANTRY"))
                 {
                     relics.Add("Stormbolt Plate");
                 }
@@ -514,14 +519,14 @@ namespace Roster_Builder.Chaos_Space_Marines
                     relics.Add("Siegebreaker Mace");
                 }
 
-                if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
+                if (!keywords.Contains("CULTISTS") && keywords.Contains("INFANTRY"))
                 {
                     relics.Add("Fleshmetal Exoskeleton");
                 }
 
                 relics.Add("Cranium Malevolus");
 
-                if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
+                if (!keywords.Contains("CULTISTS") && keywords.Contains("INFANTRY"))
                 {
                     relics.Add("Insidium");
                 }
@@ -545,12 +550,12 @@ namespace Roster_Builder.Chaos_Space_Marines
                     relics.Add("Blade of the Hydra");
                 }
 
-                if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
+                if (!keywords.Contains("CULTISTS") && keywords.Contains("INFANTRY"))
                 {
                     relics.Add("Drakescale Plate");
                 }
 
-                if (!keywords.Contains("DARK COMMUNE"))
+                if (!keywords.Contains("CULTISTS"))
                 {
                     relics.Add("Hydra's Wail");
                 }
@@ -562,14 +567,14 @@ namespace Roster_Builder.Chaos_Space_Marines
                     relics.Add("Viper's Spite");
                 }
 
-                if (!keywords.Contains("DARK COMMUNE") && !keywords.Contains("DAEMON PRINCE") && !keywords.Contains("WARPSMITH"))
+                if (!keywords.Contains("CULTISTS") && !keywords.Contains("DAEMON PRINCE") && !keywords.Contains("WARPSMITH"))
                 {
                     relics.Add("Hydra's Teeth");
                 }
 
                 relics.Add("Icon of the Hydra Cult");
 
-                if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
+                if (!keywords.Contains("CULTISTS") && keywords.Contains("INFANTRY"))
                 {
                     relics.Add("Mindveil");
                 }
@@ -578,12 +583,12 @@ namespace Roster_Builder.Chaos_Space_Marines
             if (currentSubFaction == "Emperor's Children")
             {
 
-                if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
+                if (!keywords.Contains("CULTISTS") && keywords.Contains("INFANTRY"))
                 {
                     relics.Add("The Endless Grin");
                 }
 
-                if (!keywords.Contains("DARK COMMUNE"))
+                if (!keywords.Contains("CULTISTS"))
                 {
                     relics.Add("Fatal Sonacy");
                     relics.Add("Armour of Abhorrence");
@@ -616,7 +621,7 @@ namespace Roster_Builder.Chaos_Space_Marines
                     relics.Add("Armour of Badab");
                 }
 
-                if (!keywords.Contains("DARK COMMUNE"))
+                if (!keywords.Contains("CULTISTS"))
                 {
                     relics.Add("Traitor's Laurels");
                 }
@@ -624,17 +629,17 @@ namespace Roster_Builder.Chaos_Space_Marines
 
             if (currentSubFaction == "Creations of Bile" )
             {
-                if (!keywords.Contains("DARK COMMUNE"))
+                if (!keywords.Contains("CULTISTS"))
                 {
                     relics.Add("Helm of All-Seeing");
                 }
 
-                if (!keywords.Contains("DARK COMMUNE") && keywords.Contains("INFANTRY"))
+                if (!keywords.Contains("CULTISTS") && keywords.Contains("INFANTRY"))
                 {
                     relics.Add("Living Carapace");
                 }
 
-                if (!keywords.Contains("DARK COMMUNE") && !keywords.Contains("DAEMON PRINCE") && !keywords.Contains("WARPSMITH"))
+                if (!keywords.Contains("CULTISTS") && !keywords.Contains("DAEMON PRINCE") && !keywords.Contains("WARPSMITH"))
                 {
                     relics.Add("Hyper-Growth Bolts");
                 }
@@ -663,15 +668,27 @@ namespace Roster_Builder.Chaos_Space_Marines
         {
             List<string> traits = new List<string>();
 
-            traits.AddRange(new string[]
+            if (keyword == "DC")
             {
-                "Flames of Spite",
-                "Unholy Fortitude",
-                "Hatred Incarnate",
-                "Lord of Terror",
-                "Eternal Vendetta",
-                "Gaze of the Gods"
-            });
+                traits.AddRange(new string[]
+                {
+                    "Flames of Spite",
+                    "Unholy Fortitude",
+                    "Hatred Incarnate"
+                });
+            }
+            else
+            {
+                traits.AddRange(new string[]
+                {
+                    "Flames of Spite",
+                    "Unholy Fortitude",
+                    "Hatred Incarnate",
+                    "Lord of Terror",
+                    "Eternal Vendetta",
+                    "Gaze of the Gods"
+                });
+            }
 
             if (currentSubFaction == "Black Legion")
             {
